@@ -1,0 +1,30 @@
+@use 'function';
+@use 'mixin';
+
+// Set responsive images and disable image select
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+}
+
+// Fit iframes to parent container
+.iframe-responsive {
+  @include mixin.aspect-ratio(16, 9, iframe);
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+
+  figcaption {
+    margin-top: function.spacer(xs);
+    text-align: center;
+  }
+}

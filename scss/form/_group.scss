@@ -1,0 +1,10 @@
+@use '../function';
+@use '../mixin';
+
+.form-group {
+  @include mixin.layout-stack(function.spacer(xxs), false);
+
+  &--vertical-check {
+    @include mixin.layout-stack(function.spacer(xs), true, left);
+  }
+}

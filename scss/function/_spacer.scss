@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../variable';
+
+// Get spacer value from $spacers Sass map
+@function spacer($key) {
+  @if not map.has-key(variable.$spacers, $key) {
+    @error 'The #{$key} key name doesn\'t exist at the $spacers map.';
+  }
+
+  @return map.get(variable.$spacers, $key);
+}

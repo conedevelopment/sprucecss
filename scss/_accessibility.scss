@@ -1,0 +1,5 @@
+@use 'mixin';
+
+.sr-only {
+  @include mixin.visually-hidden;
+}

@@ -1,0 +1,21 @@
+@use '../function';
+@use '../mixin';
+@use '../variable';
+
+fieldset {
+  @include mixin.layout-stack(function.spacer(s));
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  + fieldset {
+    margin-top: function.spacer(l);
+  }
+}
+
+legend {
+  color: function.color(legend, form);
+  font-size: variable.$legend-font-size;
+  font-weight: variable.$legend-font-weight;
+}

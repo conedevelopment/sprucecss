@@ -1,0 +1,38 @@
+{
+  "name": "sprucecss",
+  "version": "0.1.0",
+  "description": "Spruce - Another CSS Framework",
+  "keywords": [
+    "css",
+    "sass",
+    "framework",
+    "responsive",
+    "front-end",
+    "web"
+  ],
+  "author": "Cone (https://conedevelopment.com)",
+  "homepage": "https://sprucecss.com",
+  "scripts": {
+    "browser-sync": "browser-sync start --server --startPath \"preview/html/index.html\" --files \"**/*\" --directory --no-notify",
+    "delete-dev-folder": "del-cli --force css",
+    "dev": "npm-run-all --parallel pug sass-compile-dev sass-compile-preview browser-sync",
+    "prod": "npm-run-all delete-dev-folder sass-compile-prod",
+    "pug": "pug --watch preview/pug/ --out preview/html/ --pretty",
+    "sass-compile-dev": "sass --load-path=node_modules --load-path=scss --watch --update --style=expanded scss:css",
+    "sass-compile-preview": "sass --load-path=node_modules --load-path=scss --watch --update --style=expanded --no-source-map preview/scss:preview/css",
+    "sass-compile-prod": "sass --load-path=node_modules --load-path=scss --no-source-map --style=compressed scss:css",
+    "sass-lint": "stylelint scss/**/*.scss",
+    "sass-lint-with-fix": "stylelint scss/**/*.scss --fix"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del-cli": "^4.0.1",
+    "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.43.4",
+    "stylelint": "^14.1.0",
+    "stylelint-config-sass-guidelines": "^9.0.1"
+  }
+}

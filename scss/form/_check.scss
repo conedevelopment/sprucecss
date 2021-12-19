@@ -1,0 +1,78 @@
+@use '../variable';
+@use '../function';
+@use '../mixin';
+
+.form-check {
+  $this: &;
+
+  align-items: center;
+  display: inline-flex;
+
+  &--lg {
+    #{$this}__control {
+      font-size: variable.$font-size-lg;
+    }
+  }
+
+  &__control {
+    appearance: none;
+    background-color: function.color(background, form);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid function.color(border, form);
+    flex-shrink: 0;
+    font-size: 1rem;
+    height: 1em;
+    line-height: 1;
+    margin-bottom: -0.1em;
+    margin-inline-end: function.spacer(xs);
+    transition: all var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+    width: 1em;
+
+    &[type='radio'] {
+      border-radius: 50%;
+    }
+
+    &[type='checkbox'] {
+      border-radius: variable.$border-radius-sm;
+    }
+
+    &:focus {
+      @include mixin.field-focus;
+    }
+
+    &:checked {
+      background-color: function.color(check-background, form);
+      border-color: function.color(check-background, form);
+
+      &[type='radio'] {
+        background-image: url('#{function.svg-escape(variable.$form-radio-image)}');
+      }
+
+      &[type='checkbox'] {
+        background-image: url('#{function.svg-escape(variable.$form-checkbox-image)}');
+      }
+    }
+
+    &:indeterminate {
+      &[type='checkbox'] {
+        background-color: function.color(check-background, form);
+        background-image: url('#{function.svg-escape(variable.$form-checkbox-indeterminate-image)}');
+        border-color: function.color(check-background, form);
+      }
+    }
+
+    &:disabled {
+      @include mixin.field-disabled;
+
+      + #{$this}__label {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__label {
+    line-height: variable.$line-height-heading;
+  }
+}

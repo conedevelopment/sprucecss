@@ -1,0 +1,13 @@
+@use '../function';
+
+.field-feedback {
+  display: block;
+
+  &--valid {
+    color: function.color(success, alert);
+  }
+
+  &--invalid {
+    color: function.color(danger, alert);
+  }
+}

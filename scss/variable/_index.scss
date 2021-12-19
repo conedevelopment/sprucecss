@@ -1,0 +1,190 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// CSS variables prefix
+$prefix: 'spruce' !default;
+
+// Settings
+$settings: () !default;
+$settings: map.merge(
+  (
+    hyphens:  true,
+  ),
+  $settings
+);
+
+// Colors
+$colors: () !default;
+$colors: map.deep-merge(
+  (
+    base: (
+      primary: hsl(261, 52%, 59%),
+      secondary: hsl(350, 100%, 88%),
+      background: hsl(0, 0%, 100%),
+      heading: hsl(205, 100%, 2%),
+      text: hsl(208, 7%, 30%),
+      link: hsl(261, 52%, 59%),
+      link-hover: hsl(261, 52%, 35%),
+      border: hsl(0, 0%, 90%),
+      mark-background: hsl(50, 100%, 80%),
+      mark-color: hsl(205, 100%, 2%),
+      code-background: hsl(261, 52%, 95%),
+      code-color: hsl(205, 100%, 2%),
+      blockquote-border: hsl(261, 52%, 59%)
+    ),
+    alert: (
+      danger: hsl(2, 71%, 53%),
+      info: hsl(202, 100%, 37%),
+      success: hsl(160, 74%, 30%),
+      warning: hsl(40, 96%, 32%)
+    ),
+    btn: (
+      primary-background: hsl(261, 52%, 59%),
+      primary-background-hover: hsl(261, 52%, 40%),
+      primary-foreground: hsl(0, 0%, 100%),
+      secondary-background: hsl(350, 100%, 88%),
+      secondary-background-hover: hsl(350, 100%, 92%),
+      secondary-foreground: hsl(350, 100%, 20%)
+    ),
+    form: (
+      background: hsl(0, 0%, 100%),
+      background-disabled: hsl(0, 0%, 95%),
+      border: hsl(0, 0%, 90%),
+      border-disabled: hsl(0, 0%, 90%),
+      border-focus: hsl(261, 52%, 59%),
+      check-foreground: hsl(0, 0%, 100%),
+      check-background: hsl(261, 52%, 59%),
+      label: hsl(205, 100%, 2%),
+      legend: hsl(205, 100%, 2%),
+      placeholder: hsl(208, 7%, 40%),
+      text: hsl(208, 7%, 30%),
+      select-foreground: hsl(261, 52%, 59%)
+    ),
+    table: (
+      border: hsl(0, 0%, 90%),
+      hover: hsla(0, 0%, 0%, 0.05),
+      stripe: hsla(0, 0%, 0%, 0.025)
+    )
+  ),
+  $colors
+);
+
+// Spacers
+$spacer: 1rem !default;
+
+$spacers: () !default;
+$spacers: map.merge(
+  (
+    xxs:  $spacer * 0.25,
+    xs:   $spacer * 0.5,
+    s:    $spacer,
+    m:    $spacer * 1.5,
+    l:    $spacer * 3,
+    xl:   $spacer * 4.5,
+    xxl:  $spacer * 5,
+    xxxl: $spacer * 10
+  ),
+  $spacers
+);
+
+// Display
+$border-radius-sm: 0.25rem !default;
+$border-radius-lg: 0.5rem !default;
+
+// Typography
+$font-size-ratio: 1.333 !default;
+
+$font-size-base: 1rem !default;
+$font-size-sm: 0.9rem !default;
+$font-size-lg: 1.1rem !default;
+$font-size-lead: math.pow($font-size-ratio, 1) * $font-size-base;
+
+$font-sizes: () !default;
+$font-sizes: map.merge(
+  (
+    h1: math.pow($font-size-ratio, 4) * $font-size-base,
+    h2: math.pow($font-size-ratio, 3) * $font-size-base,
+    h3: math.pow($font-size-ratio, 2) * $font-size-base,
+    h4: math.pow($font-size-ratio, 1) * $font-size-base,
+    h5: $font-size-base,
+    h6: $font-size-base
+  ),
+  $font-sizes
+);
+
+$font-family-base: #{system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'} !default;
+$font-family-heading: $font-family-base !default;
+$font-family-cursive: #{SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace} !default;
+
+$line-height-sm: 1.2 !default;
+$line-height-md: 1.5 !default;
+$line-height-lg: 1.8 !default;
+$line-height-base: $line-height-lg !default;
+$line-height-heading: calc(2px + 2ex + 2px) !default;
+
+$inline-text-element-padding: 0.1em 0.3em !default;
+$inline-text-element-border-radius: $border-radius-sm !default;
+
+// Forms
+$form-label-font-size: null !default;
+$form-label-font-style: null !default;
+$form-label-font-weight: null !default;
+
+$btn-border-radius: $border-radius-sm !default;
+$btn-font-size: $font-size-base !default;
+$btn-font-size-sm: 0.8rem !default;
+$btn-font-size-lg: 1.15rem !default;
+$btn-font-style: null !default;
+$btn-font-weight: 500 !default;
+$btn-padding: 0.75em 1em !default;
+$btn-padding-sm: 0.5em !default;
+$btn-padding-lg: 0.9em 1.15em !default;
+$btn-icon-size: 0.85em !default;
+
+$legend-font-size: clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}) !default;
+$legend-font-weight: 700 !default;
+
+$form-description-font-size: $font-size-base !default;
+$form-description-font-style: null !default;
+$form-description-font-weight: null !default;
+
+$form-row-col-width: 20ch !default;
+
+$form-control-font-size: $font-size-base !default;
+$form-control-font-weight: null !default;
+$form-control-line-height: 1.5 !default;
+$form-control-padding: 0.5em 0.75em !default;
+$form-control-padding-sm: 0.25em 0.5em !default;
+$form-control-padding-lg: 0.75em 1em !default;
+$form-control-border-radius: $border-radius-sm !default;
+
+$select-icon-width: 1.25em !default;
+$select-icon-right-offset: 0.5em !default;
+$select-padding-right: calc(0.75em + $select-icon-width) !default;
+$select-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,12.692l-5.203,-5.203c-0.234,-0.234 -0.614,-0.234 -0.849,0l-1.272,1.273c-0.235,0.234 -0.235,0.614 -0,0.849l6.9,6.9c0.234,0.234 0.614,0.234 0.848,-0l6.9,-6.9c0.235,-0.235 0.235,-0.615 0,-0.849l-1.272,-1.273c-0.235,-0.234 -0.615,-0.234 -0.849,0l-5.203,5.203Z" style="fill:#{map.get($colors, form, select-foreground)};"/></svg>' !default;
+
+$form-radio-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="6" style="fill:#{map.get($colors, form, check-foreground)};"/></svg>' !default;
+$form-checkbox-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.525,13.777l-2.411,-2.412c-0.234,-0.233 -0.613,-0.233 -0.846,0l-1.27,1.27c-0.233,0.233 -0.233,0.612 0,0.846l4.104,4.103c0.116,0.117 0.269,0.175 0.422,0.175l0.003,0c0.152,0 0.305,-0.058 0.421,-0.175l9.054,-9.053c0.233,-0.234 0.233,-0.613 -0,-0.846l-1.27,-1.269c-0.233,-0.234 -0.612,-0.234 -0.846,-0l-7.361,7.361Z" style="fill:#{map.get($colors, form, check-foreground)};"/></svg>' !default;
+$form-checkbox-indeterminate-image: '<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M19.5,11.1c-0,-0.331 -0.269,-0.6 -0.6,-0.6l-13.8,0c-0.331,0 -0.6,0.269 -0.6,0.6l0,1.8c0,0.331 0.269,0.6 0.6,0.6l13.8,0c0.331,0 0.6,-0.269 0.6,-0.6l-0,-1.8Z" style="fill:#{map.get($colors, form, check-foreground)};"/></svg>' !default;
+
+$form-valid-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm-1.476,10.182l-2.984,-2.984c-0.065,-0.065 -0.17,-0.065 -0.235,0l-0.943,0.943c-0.065,0.065 -0.065,0.171 -0,0.236l4.043,4.042c0.033,0.033 0.076,0.05 0.119,0.049c0.044,0.001 0.087,-0.016 0.12,-0.049l6.994,-6.994c0.065,-0.065 0.065,-0.17 0,-0.235l-0.943,-0.943c-0.065,-0.065 -0.17,-0.065 -0.235,-0l-5.936,5.935Z" style="fill:#{map.get($colors, alert, success)};"/></svg>' !default;
+$form-invalid-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm0.813,11.649c-0,-0.081 -0.065,-0.146 -0.146,-0.146l-1.334,0c-0.081,0 -0.146,0.065 -0.146,0.146l0,1.169c0,0.08 0.065,0.146 0.146,0.146l1.334,-0c0.081,-0 0.146,-0.066 0.146,-0.146l-0,-1.169Zm-0,-7.784c-0,-0.09 -0.073,-0.163 -0.163,-0.163l-1.3,0c-0.09,0 -0.163,0.073 -0.163,0.163l0,6.351c0,0.09 0.073,0.163 0.163,0.163l1.3,-0c0.09,-0 0.163,-0.073 0.163,-0.163l-0,-6.351Z" style="fill:#{map.get($colors, alert, danger)};"/></svg>' !default;
+
+// Tables
+$table-responsive-width: 40rem !default;
+
+// Layout
+$container-width: 80rem !default;
+
+// Transition and Animation
+$transition-duration: 0.15s;
+$transition-timing-function: ease-in-out;
+
+// Characters to escape using SVG as data:image
+$escaping-characters: (
+  ('<', '%3c'),
+  ('>', '%3e'),
+  ('#', '%23'),
+  ('(', '%28'),
+  (')', '%29'),
+) !default;

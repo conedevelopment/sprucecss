@@ -1,0 +1,71 @@
+@use '../function';
+@use '../mixin';
+@use '../variable';
+
+.btn {
+  align-items: center;
+  border: 0;
+  border-radius: variable.$btn-border-radius;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: variable.$btn-font-size;
+  font-style: variable.$btn-font-style;
+  font-weight: variable.$btn-font-weight;
+  justify-content: center;
+  line-height: 1;
+  padding: variable.$btn-padding;
+  text-align: start;
+  text-decoration: none;
+  transition: all var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+
+  // States
+  &:focus {
+    outline-color: transparent;
+    outline-style: solid;
+  }
+
+  &:disabled,
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  // Sizes
+  &--sm {
+    font-size: variable.$btn-font-size-sm;
+    padding: variable.$btn-padding-sm;
+  }
+
+  &--lg {
+    font-size: variable.$btn-font-size-lg;
+    padding: variable.$btn-padding-lg;
+  }
+
+  // Display types
+  &--block {
+    width: 100%;
+  }
+
+  // Icons
+  &__icon {
+    flex-shrink: 0;
+    height: variable.$btn-icon-size;
+    width: variable.$btn-icon-size;
+
+    &--start {
+      margin-inline-end: function.spacer(xs);
+    }
+
+    &--end {
+      margin-inline-start: function.spacer(xs);
+    }
+  }
+}
+
+.btn--primary {
+  @include mixin.btn-variant(primary-foreground, primary-background);
+}
+
+.btn--secondary {
+  @include mixin.btn-variant(secondary-foreground, secondary-background);
+}

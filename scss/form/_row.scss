@@ -1,0 +1,11 @@
+@use '../function';
+@use '../mixin';
+@use '../variable';
+
+.form-row {
+  &--mixed {
+    --col-width: #{variable.$form-row-col-width};
+
+    @include mixin.layout-flex($width-variable: --col-width);
+  }
+}

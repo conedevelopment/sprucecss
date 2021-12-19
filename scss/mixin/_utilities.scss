@@ -1,0 +1,90 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '../function';
+@use '../variable';
+
+// Hide something from the screen but keep it visible for assistive technology.
+@mixin visually-hidden() {
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+// Crop text and display an ellipsis with multiline.
+@mixin text-ellipsis(
+  $number-of-lines: 1
+) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @supports (-webkit-line-clamp: $number-of-lines) {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: $number-of-lines;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+  }
+}
+
+// Style the input's plaaceholder pseudo elements.
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// Custom aspect ratio generator.
+@mixin aspect-ratio(
+  $width, $height,
+  $descendant-element
+) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: math.div($height, $width) * 100%;
+    width: 100%;
+  }
+
+  > #{$descendant-element} {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+// Custom scrollbar.
+@mixin scrollbar(
+  $size: 0.5rem,
+  $foreground: function.color(primary),
+  $background: hsla(0, 0%, 0%, 0.1),
+  $border-radius: variable.$border-radius-sm
+) {
+  &::-webkit-scrollbar {
+    height: $size;
+    width:  $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground;
+    border-radius: $border-radius;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background;
+    border-radius: $border-radius;
+  }
+}

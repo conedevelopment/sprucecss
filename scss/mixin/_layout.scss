@@ -1,0 +1,107 @@
+@use 'sass:meta';
+@use '../function';
+@use '../variable';
+
+// Create Center layout
+@mixin layout-center($gutter: function.spacer(m), $max-width: variable.$container-width) {
+  margin-inline: auto;
+  max-width: $max-width;
+  padding-inline: $gutter;
+}
+
+// Create Stack layout
+@mixin layout-stack($space: function.spacer(m), $width: true, $align: none, $split: 0) {
+  @if $align == left or $align == right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @if $align == left {
+    align-items: flex-start;
+  }
+
+  @if $align == right {
+    align-items: flex-end;
+  }
+
+  > * {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    @if $width and $align == none {
+      width: 100%;
+    }
+  }
+
+  > * + * {
+    margin-top: $space;
+  }
+
+  @if meta.type-of($split) == number and $split > 0 {
+    &:only-child {
+      height: 100%;
+    }
+
+    > :nth-child(#{$split}) {
+      margin-bottom: auto;
+    }
+  }
+
+  @if meta.type-of($split) != number and $split < 1 {
+    @warn 'The second parameter (split) must be a positive number.';
+  }
+}
+
+// Create Grid layout
+/* stylelint-disable */
+@mixin layout-grid(
+  $gutter: function.spacer(m),
+  $minimum: 12.5rem
+) {
+  display: grid;
+  grid-gap: $gutter;
+
+  @supports (width: min(#{$minimum}, 100%)) {
+    & {
+      grid-template-columns: repeat(auto-fit, minmax(min(#{$minimum}, 100%), 1fr));
+    }
+  }
+}
+/* stylelint-enable */
+
+// Create Sidebar Layout
+/* stylelint-disable */
+@mixin layout-sidebar(
+  $gutter: function.spacer(m),
+  $sidebar-width: 18.75rem
+) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gutter;
+
+  & > :first-child {
+    flex-basis: $sidebar-width;
+    flex-grow: 1;
+  }
+
+  & > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+  }
+}
+/* stylelint-enable */
+
+// Create instinctive flex layout.
+@mixin layout-flex(
+  $gutter: function.spacer(m),
+  $width-variable: --col-width
+) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gutter;
+
+  > * {
+    flex: 1 1 var(#{$width-variable});
+  }
+}

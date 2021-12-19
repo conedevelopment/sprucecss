@@ -1,0 +1,17 @@
+@use '../variable';
+@use '../function';
+
+.form-label {
+  color: function.color(label, form);
+  font-size: variable.$form-label-font-size;
+  font-style: variable.$form-label-font-style;
+  font-weight: variable.$form-label-font-weight;
+
+  &--sm {
+    font-size: variable.$font-size-sm;
+  }
+
+  &--lg {
+    font-size: variable.$font-size-lg;
+  }
+}

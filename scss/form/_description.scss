@@ -1,0 +1,10 @@
+@use '../function';
+@use '../variable';
+
+.form-description {
+  color: function.color(text, form);
+  display: block;
+  font-size: variable.$form-description-font-size;
+  font-style: variable.$form-description-font-style;
+  font-weight: variable.$form-description-font-weight;
+}

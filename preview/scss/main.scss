@@ -1,0 +1,102 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../../scss/spruce' with (
+  $container-width: 50rem,
+  $settings: (
+    hyphens: true
+  ),
+  $spacers: (
+    xl: 10rem
+  )
+);
+
+body {
+  background-color: spruce.color(background);
+}
+
+.main {
+  margin: 5rem 0;
+
+  &__container {
+    @include spruce.layout-center;
+  }
+
+  &__inner {
+    > * + * {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.section {
+  $this: &;
+
+  &--color {
+    #{$this}__body {
+      @include spruce.layout-grid($minimum: 10rem);
+    }
+  }
+
+  &--typography,
+  &--media {
+    #{$this}__body {
+      @include spruce.layout-stack(spruce.spacer(m));
+    }
+  }
+
+  &__title {
+    color: var(--spruce-color-section-title);
+    font-size: 1rem;
+    margin: 0 0 spruce.spacer(m);
+    text-transform: uppercase;
+  }
+}
+
+.color-item {
+  align-items: flex-end;
+  border-radius: spruce.$border-radius-lg;
+  display: flex;
+  height: 100px;
+  overflow: hidden;
+
+  &--bordered {
+    box-shadow: 0 0 0 1px spruce.color(border) inset;
+  }
+
+  &__caption {
+    background-color: #fff;
+    border-radius: spruce.$border-radius-sm;
+    font-size: 0.9rem;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 0.25em 0.5em;
+  }
+}
+
+.ellipsis {
+  @include spruce.text-ellipsis(3);
+}
+
+@each $name, $value in map.get(spruce.$colors, base) {
+  .color-item--base-#{$name} {
+    background-color: $value;
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, alert) {
+  .color-item--alert-#{$name} {
+    background-color: $value;
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, btn) {
+  .color-item--btn-#{$name} {
+    background-color: $value;
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, form) {
+  .color-item--form-#{$name} {
+    background-color: $value;
+  }
+}

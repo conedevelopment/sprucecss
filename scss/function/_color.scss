@@ -1,0 +1,16 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '../variable';
+
+// Get color value from $colors Sass map
+@function color($key, $type: base, $only-color: false) {
+  @if not map.has-key(variable.$colors, $type, $key) {
+    @error 'The #{$key} key name doesn\'t exist under #{$type} at the $colors map.';
+  }
+
+  @if $only-color {
+    @return map.get(variable.$colors, $type, $key);
+  }
+
+  @return var(--#{variable.$prefix}-#{$type}-color-#{$key}, #{map.get(variable.$colors, $type, $key)});
+}

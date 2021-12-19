@@ -1,0 +1,19 @@
+-var time = Date.now();
+
+<!DOCTYPE html>
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Spruce CSS Development Preview
+    link(rel='stylesheet' href=`../css/main.css?time=${time}`)
+  body
+    main(class='main')
+      div(class='main__container')
+        div(class='main__inner')
+          include components/colors
+          include components/typography
+          include components/table
+          include components/media
+          include components/form
+

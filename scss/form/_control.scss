@@ -1,0 +1,81 @@
+@use '../function';
+@use '../mixin';
+@use '../variable';
+
+.form-control {
+  appearance: none;
+  background-color: function.color(background, form);
+  border: 1px solid function.color(border, form);
+  border-radius: variable.$form-control-border-radius;
+  box-sizing: border-box;
+  color: function.color(text, form);
+  display: block;
+  font-size: variable.$form-control-font-size;
+  font-weight: variable.$form-control-font-weight;
+  line-height: variable.$form-control-line-height;
+  padding: variable.$form-control-padding;
+  transition: all var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+  width: 100%;
+
+  @include mixin.placeholder {
+    color: function.color(placeholder, form);
+  };
+
+  &:focus {
+    @include mixin.field-focus;
+  }
+
+  &[disabled],
+  &[disabled='true'] {
+    @include mixin.field-disabled;
+  }
+
+  &--valid {
+    border-color: function.color(success, alert);
+    background-image: url('#{function.svg-escape(variable.$form-valid-image)}');
+    background-position: center right variable.$select-icon-right-offset;
+    background-repeat: no-repeat;
+    background-size: variable.$select-icon-width auto;
+    padding-inline-end: variable.$select-padding-right;
+
+    html[dir='rtl'] & {
+      background-position: center left variable.$select-icon-right-offset;
+    }
+
+    &:focus {
+      border-color: function.color(success, alert);
+      box-shadow: 0 0 0 0.25rem rgba(function.color(success, alert, true), 0.25);
+      outline: 2px solid transparent;
+    }
+  }
+
+  &--invalid {
+    border-color: function.color(danger, alert);
+    background-image: url('#{function.svg-escape(variable.$form-invalid-image)}');
+    background-position: center right variable.$select-icon-right-offset;
+    background-repeat: no-repeat;
+    background-size: variable.$select-icon-width auto;
+    padding-inline-end: variable.$select-padding-right;
+
+    html[dir='rtl'] & {
+      background-position: center left variable.$select-icon-right-offset;
+    }
+
+    &:focus {
+      border-color: function.color(danger, alert);
+      box-shadow: 0 0 0 0.25rem rgba(function.color(danger, alert, true), 0.25);
+      outline: 2px solid transparent;
+    }
+  }
+
+  //Sizes
+  &--sm {
+    font-size: variable.$font-size-sm;
+    padding: variable.$form-control-padding-sm;
+  }
+
+  &--lg {
+    font-size: variable.$font-size-lg;
+    padding: variable.$form-control-padding-lg;
+  }
+}

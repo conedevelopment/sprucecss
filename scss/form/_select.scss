@@ -1,0 +1,16 @@
+@use '../function';
+@use '../variable';
+
+select {
+  &:not([multiple]):not([size]) {
+    background-image: url('#{function.svg-escape(variable.$select-image)}');
+    background-position: center right variable.$select-icon-right-offset;
+    background-repeat: no-repeat;
+    background-size: variable.$select-icon-width auto;
+    padding-inline-end: variable.$select-padding-right;
+
+    html[dir='rtl'] & {
+      background-position: center left variable.$select-icon-right-offset;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use 'function';
+@use 'variable';
+
+::selection {
+  background-color: function.color(primary);
+  color: #fff;
+  text-shadow: none;
+}
+
+html {
+  box-sizing: border-box;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: function.color(background);
+  color: function.color(text);
+}
+
+a {
+  color: function.color(link);
+  text-decoration: underline;
+  transition: color var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+
+  &:hover {
+    color: function.color(link-hover);
+  }
+}
+
+button {
+  color: inherit;
+}
+
+// Turn off double-tap on mobile to zoom
+a,
+button {
+  touch-action: manipulation;
+}

@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../variable';
+
+// Get spacer value from $settings Sass map
+@function setting($key) {
+  @if not map.has-key(variable.$settings, $key) {
+    @error 'The #{$key} key name doesn\'t exist at the $settings map.';
+  }
+
+  @return map.get(variable.$settings, $key);
+}

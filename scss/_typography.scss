@@ -1,0 +1,138 @@
+@use 'function';
+@use 'mixin';
+@use 'variable';
+
+// Basics
+body {
+  font-family: variable.$font-family-base;
+  font-size: variable.$font-size-base;
+  line-height: variable.$line-height-base;
+}
+
+@if function.setting(hyphens) {
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: function.color(heading);
+  font-family: variable.$font-family-heading;
+  font-weight: 700;
+  line-height: variable.$line-height-heading;
+}
+
+h1,
+.h1 {
+  font-size: function.font-size(h1);
+}
+
+h2,
+.h2 {
+  font-size: function.font-size(h2);
+}
+
+h3,
+.h3 {
+  font-size: function.font-size(h3);
+}
+
+h4,
+.h4 {
+  font-size: function.font-size(h4);
+}
+
+h5,
+.h5 {
+  font-size: function.font-size(h5);
+}
+
+h6,
+.h6 {
+  font-size: function.font-size(h6);
+}
+
+// Lists
+ul,
+ol {
+  @include mixin.layout-stack(function.spacer(xxs), $width: false);
+  list-style-position: inside;
+
+  li {
+    list-style-position: outside;
+  }
+}
+
+li > ul,
+li > ol {
+  margin-top: function.spacer(xxs);
+}
+
+dl {
+  dt {
+    color: function.color(heading);
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  dd + dt {
+    margin-top: function.spacer(s);
+  }
+}
+
+// Blockquote
+blockquote {
+  @include mixin.layout-stack(function.spacer(xs));
+  border-left: 0.5rem solid function.color(blockquote-border);
+  margin-left: 0;
+  padding: 0 0 0 function.spacer(m);
+
+  cite {
+    display: block;
+  }
+}
+
+// Inline elmeents
+abbr[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  text-decoration: none;
+}
+
+mark {
+  background-color: function.color(mark-background);
+  border-radius: variable.$inline-text-element-border-radius;
+  color: function.color(mark-color);
+  padding: variable.$inline-text-element-padding;
+}
+
+code,
+kbd,
+samp {
+  background-color: function.color(code-background);
+  border-radius: variable.$inline-text-element-border-radius;
+  color: function.color(code-color);
+  padding: variable.$inline-text-element-padding;
+}
+
+// Lead
+.lead {
+  font-size: variable.$font-size-lead;
+}

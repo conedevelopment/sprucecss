@@ -1,0 +1,45 @@
+@use 'variable';
+@use 'function';
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+
+  table {
+    min-width: variable.$table-responsive-width;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  &--striped {
+    > tbody > tr:nth-child(even) {
+      background-color: function.color(stripe, table);
+    }
+  }
+
+  &--hover {
+    > tbody > tr:hover {
+      background:  function.color(hover, table);
+    }
+  }
+
+  caption {
+    margin-bottom: function.spacer(s);
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid function.color(border, table);
+    color: function.color(heading);
+    line-height: variable.$line-height-md;
+    padding: function.spacer(s);
+  }
+
+  th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+  }
+}

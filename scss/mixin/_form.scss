@@ -1,0 +1,13 @@
+@use '../function';
+
+@mixin field-focus {
+  border-color: function.color(border-focus, form);
+  box-shadow: 0 0 0 0.25rem rgba(function.color(border-focus, form, true), 0.25);
+  outline: 2px solid transparent;
+}
+
+@mixin field-disabled {
+  background-color: function.color(background-disabled, form);
+  border-color: function.color(border-disabled, form);
+  cursor: not-allowed;
+}
