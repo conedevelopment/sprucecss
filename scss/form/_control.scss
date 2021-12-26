@@ -31,11 +31,11 @@
   }
 
   &--valid {
-    border-color: function.color(success, alert);
     background-image: url('#{function.svg-escape(variable.$form-valid-image)}');
     background-position: center right variable.$select-icon-right-offset;
     background-repeat: no-repeat;
     background-size: variable.$select-icon-width auto;
+    border-color: function.color(success, alert);
     padding-inline-end: variable.$select-padding-right;
 
     html[dir='rtl'] & {
@@ -50,11 +50,11 @@
   }
 
   &--invalid {
-    border-color: function.color(danger, alert);
     background-image: url('#{function.svg-escape(variable.$form-invalid-image)}');
     background-position: center right variable.$select-icon-right-offset;
     background-repeat: no-repeat;
     background-size: variable.$select-icon-width auto;
+    border-color: function.color(danger, alert);
     padding-inline-end: variable.$select-padding-right;
 
     html[dir='rtl'] & {

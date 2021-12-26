@@ -53,7 +53,6 @@
 }
 
 // Create Grid layout
-/* stylelint-disable */
 @mixin layout-grid(
   $gutter: function.spacer(m),
   $minimum: 12.5rem
@@ -67,10 +66,8 @@
     }
   }
 }
-/* stylelint-enable */
 
 // Create Sidebar Layout
-/* stylelint-disable */
 @mixin layout-sidebar(
   $gutter: function.spacer(m),
   $sidebar-width: 18.75rem
@@ -90,7 +87,6 @@
     min-width: 50%;
   }
 }
-/* stylelint-enable */
 
 // Create instinctive flex layout.
 @mixin layout-flex(
