@@ -663,6 +663,11 @@ html[dir=rtl] .form-control--invalid {
 .form-group--vertical-check > * + * {
   margin-top: 0.5rem;
 }
+.form-group--grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
 .form-row--mixed {
   --col-width: 20ch;

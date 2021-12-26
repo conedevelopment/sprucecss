@@ -43,20 +43,13 @@ body {
       @include spruce.layout-stack(spruce.spacer(m));
     }
   }
-
-  &__title {
-    color: var(--spruce-color-section-title);
-    font-size: 1rem;
-    margin: 0 0 spruce.spacer(m);
-    text-transform: uppercase;
-  }
 }
 
 .color-item {
   align-items: flex-end;
   border-radius: spruce.$border-radius-lg;
   display: flex;
-  height: 100px;
+  height: 160px;
   overflow: hidden;
 
   &--bordered {
