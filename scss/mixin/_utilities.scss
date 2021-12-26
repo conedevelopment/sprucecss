@@ -34,15 +34,6 @@
   }
 }
 
-// Style the input's plaaceholder pseudo elements.
-@mixin placeholder {
-  &.placeholder { @content; }
-  &:-moz-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &:-ms-input-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
-}
-
 // Custom aspect ratio generator.
 @mixin aspect-ratio(
   $width, $height,

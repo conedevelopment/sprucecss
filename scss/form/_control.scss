@@ -17,7 +17,7 @@
   transition: all var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
   width: 100%;
 
-  @include mixin.placeholder {
+  &::placeholder {
     color: function.color(placeholder, form);
   };
 
