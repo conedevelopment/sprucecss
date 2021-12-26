@@ -7,4 +7,10 @@
   &--vertical-check {
     @include mixin.layout-stack(function.spacer(xs), true, left);
   }
+
+  &--grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: function.spacer(xs);
+  }
 }
