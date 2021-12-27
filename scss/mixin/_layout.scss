@@ -3,25 +3,33 @@
 @use '../variable';
 
 // Create Center layout
-@mixin layout-center($gutter: function.spacer(m), $max-width: variable.$container-width) {
+@mixin layout-center(
+  $gutter: function.spacer(m),
+  $max-width: variable.$container-width
+) {
   margin-inline: auto;
   max-width: $max-width;
   padding-inline: $gutter;
 }
 
 // Create Stack layout
-@mixin layout-stack($space: function.spacer(m), $width: true, $align: none, $split: 0) {
+@mixin layout-stack(
+  $gutter: function.spacer(m),
+  $width: true,
+  $align: none,
+  $split: 0
+) {
   @if $align == left or $align == right {
     display: flex;
     flex-direction: column;
   }
 
   @if $align == left {
-    align-items: flex-start;
+    align-items: start;
   }
 
   @if $align == right {
-    align-items: flex-end;
+    align-items: end;
   }
 
   > * {
@@ -34,7 +42,7 @@
   }
 
   > * + * {
-    margin-top: $space;
+    margin-top: $gutter;
   }
 
   @if meta.type-of($split) == number and $split > 0 {
