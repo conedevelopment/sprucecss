@@ -74,6 +74,10 @@ ol {
 
   li {
     list-style-position: outside;
+
+    &::marker {
+      color: function.color(primary);
+    }
   }
 }
 
