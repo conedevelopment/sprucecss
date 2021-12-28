@@ -36,7 +36,8 @@
 
 // Custom aspect ratio generator.
 @mixin aspect-ratio(
-  $width, $height,
+  $width,
+  $height,
   $descendant-element
 ) {
   position: relative;
