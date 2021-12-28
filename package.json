@@ -1,17 +1,26 @@
 {
   "name": "sprucecss",
   "version": "0.1.0",
-  "description": "Spruce - Another CSS Framework",
+  "description": "Spruce CSS - Another CSS Framework",
   "keywords": [
     "css",
-    "sass",
+    "css-framework",
     "framework",
-    "responsive",
     "front-end",
+    "responsive",
+    "sass",
+    "sass-framework",
     "web"
   ],
   "author": "Cone (https://conedevelopment.com)",
   "homepage": "https://sprucecss.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conedevelopment/sprucecss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/conedevelopment/sprucecss/issues"
+  },
   "scripts": {
     "autoprefixer": "postcss css/*.css -u autoprefixer --replace --no-map",
     "browser-sync": "browser-sync start --server --startPath \"preview/html/index.html\" --files \"**/*\" --directory --no-notify",
