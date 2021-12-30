@@ -17,16 +17,16 @@
   $foreground: primary-foreground,
   $background: primary-background
 ) {
-  @if not map.has-key(variable.$colors, btn, foreground) or not map.has-key(variable.$colors, btn, $background) {
-    @error 'The #{foreground} or #{$background} key name doesn\'t exist under btn at the $colors map.';
+  @if not map.has-key(variable.$colors, btn, $foreground) or not map.has-key(variable.$colors, btn, $background) {
+    @error 'The #{$foreground} or #{$background} key name doesn\'t exist under btn at the $colors map.';
   }
 
   background-color: function.color(#{$background}, btn);
-  color: function.color(#{foreground}, btn);
+  color: function.color(#{$foreground}, btn);
 
   &:hover {
     background-color: function.color(#{$background}-hover, btn);
-    color: function.color(#{foreground}, btn);
+    color: function.color(#{$foreground}, btn);
   }
 
   &:focus {

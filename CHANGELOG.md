@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.2 (2020-12-30)
+
+- Fix $foreground typo at btn-variant() mixin (_button.scss)
+
 ## v0.1.1 (2020-12-30)
 
 - Add Autoprefixer to CSS compile

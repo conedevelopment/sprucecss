@@ -654,7 +654,7 @@ html[dir=rtl] .form-control--invalid {
 .form-group--vertical-check {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: start;
 }
 .form-group--vertical-check > * {
   margin-bottom: 0;
@@ -673,7 +673,7 @@ html[dir=rtl] .form-control--invalid {
   --col-width: 20ch;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .form-row--mixed > * {
   flex: 1 1 var(--col-width);
@@ -917,6 +917,10 @@ ol > * + * {
 ul li,
 ol li {
   list-style-position: outside;
+}
+ul li::marker,
+ol li::marker {
+  color: var(--spruce-base-color-primary, #8660cd);
 }
 
 li > ul,
