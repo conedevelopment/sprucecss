@@ -1,4 +1,4 @@
-<p align="center">
+<p>
   <a href="https://sprucecss.com">
     <br/>
     <img src="https://conedevelopment.com/assets/img/spruce-logo.svg?" alt="Spruce CSS" width="160">
@@ -6,14 +6,13 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="https://sprucecss.com/docs/getting-started/introduction">Documentation</a>
-  <br/>
-  <br/>
-</p>
 
-**Spruce is a simple, base CSS framework to build on. It contains the necessary foundations to create your next UI elements width modern code.**
+**Spruce is an open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.**
 
-## License
+## Documentation
 
-Spruce CSS is open-sourced software licensed under the [MIT](LICENSE).
+For the documentation, please visit our site at [sprucecss.com](https://sprucecss.com).
+
+## Contributing
+
+Thank you for considering contributing to Spruce CSS! The [contribution guide](https://sprucecss.com/docs/getting-started/contribution/) can be found in the documentation.
