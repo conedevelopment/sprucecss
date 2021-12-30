@@ -6,6 +6,6 @@
   &--mixed {
     --col-width: #{variable.$form-row-col-width};
 
-    @include mixin.layout-flex;
+    @include mixin.layout-flex(function.spacer(s));
   }
 }
