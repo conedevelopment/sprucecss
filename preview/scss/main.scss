@@ -93,3 +93,10 @@ body {
     background-color: $value;
   }
 }
+
+.scrollbar {
+  @include spruce.scrollbar;
+  @include spruce.layout-stack;
+  max-height: 15rem;
+  overflow: auto;
+}
