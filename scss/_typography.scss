@@ -32,7 +32,7 @@ h5,
 h6 {
   color: function.color(heading);
   font-family: variable.$font-family-heading;
-  font-weight: 700;
+  font-weight: variable.$heading-font-weight;
   line-height: variable.$line-height-heading;
 }
 

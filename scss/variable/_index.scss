@@ -116,6 +116,8 @@ $font-family-base: #{system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Ne
 $font-family-heading: $font-family-base !default;
 $font-family-cursive: #{SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace} !default;
 
+$heading-font-weight: 700 !default;
+
 $line-height-sm: 1.2 !default;
 $line-height-md: 1.5 !default;
 $line-height-lg: 1.8 !default;
