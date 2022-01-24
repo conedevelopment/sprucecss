@@ -340,28 +340,30 @@ template {
 
 :root {
   --spruce-base-color-primary: #8660cd;
-  --spruce-base-color-secondary: #ffc2cc;
+  --spruce-base-color-secondary: #2350f6;
   --spruce-base-color-background: white;
   --spruce-base-color-heading: #00060a;
   --spruce-base-color-text: #474d52;
   --spruce-base-color-link: #8660cd;
-  --spruce-base-color-link-hover: #4b2b88;
+  --spruce-base-color-link-hover: #663ab7;
   --spruce-base-color-border: #e6e6e6;
   --spruce-base-color-mark-background: #ffee99;
-  --spruce-base-color-mark-color: #00060a;
+  --spruce-base-color-mark-foreground: #00060a;
   --spruce-base-color-code-background: #f0ecf9;
-  --spruce-base-color-code-color: #00060a;
+  --spruce-base-color-code-foreground: #00060a;
   --spruce-base-color-blockquote-border: #8660cd;
   --spruce-alert-color-danger: #dc3832;
   --spruce-alert-color-info: #0078bd;
   --spruce-alert-color-success: #14855f;
   --spruce-alert-color-warning: #a06c03;
   --spruce-btn-color-primary-background: #8660cd;
-  --spruce-btn-color-primary-background-hover: #56319b;
+  --spruce-btn-color-primary-background-hover: #663ab7;
   --spruce-btn-color-primary-foreground: white;
-  --spruce-btn-color-secondary-background: #ffc2cc;
-  --spruce-btn-color-secondary-background-hover: #ffd6dd;
-  --spruce-btn-color-secondary-foreground: #660011;
+  --spruce-btn-color-primary-foreground-hover: white;
+  --spruce-btn-color-secondary-background: #2350f6;
+  --spruce-btn-color-secondary-background-hover: #0936d7;
+  --spruce-btn-color-secondary-foreground: white;
+  --spruce-btn-color-secondary-foreground-hover: white;
   --spruce-form-color-background: white;
   --spruce-form-color-background-disabled: #f2f2f2;
   --spruce-form-color-border: #e6e6e6;
@@ -436,7 +438,7 @@ a {
   transition: color var(--spruce-transition-duration) var(--spruce-transition-timing-function);
 }
 a:hover {
-  color: var(--spruce-base-color-link-hover, #4b2b88);
+  color: var(--spruce-base-color-link-hover, #663ab7);
 }
 
 button {
@@ -506,8 +508,8 @@ hr {
   color: var(--spruce-btn-color-primary-foreground, white);
 }
 .btn--primary:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover, #56319b);
-  color: var(--spruce-btn-color-primary-foreground, white);
+  background-color: var(--spruce-btn-color-primary-background-hover, #663ab7);
+  color: var(--spruce-btn-color-primary-foreground-hover, white);
 }
 .btn--primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(134, 96, 205, 0.25);
@@ -515,15 +517,15 @@ hr {
 }
 
 .btn--secondary {
-  background-color: var(--spruce-btn-color-secondary-background, #ffc2cc);
-  color: var(--spruce-btn-color-secondary-foreground, #660011);
+  background-color: var(--spruce-btn-color-secondary-background, #2350f6);
+  color: var(--spruce-btn-color-secondary-foreground, white);
 }
 .btn--secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background-hover, #ffd6dd);
-  color: var(--spruce-btn-color-secondary-foreground, #660011);
+  background-color: var(--spruce-btn-color-secondary-background-hover, #0936d7);
+  color: var(--spruce-btn-color-secondary-foreground-hover, white);
 }
 .btn--secondary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(255, 194, 204, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(35, 80, 246, 0.25);
   outline: 2px solid transparent;
 }
 
@@ -664,6 +666,7 @@ html[dir=rtl] .form-control--invalid {
   margin-top: 0.5rem;
 }
 .form-group--grid {
+  align-items: start;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -965,7 +968,7 @@ abbr[title] {
 mark {
   background-color: var(--spruce-base-color-mark-background, #ffee99);
   border-radius: 0.25rem;
-  color: var(--spruce-base-color-mark-color, #00060a);
+  color: var(--spruce-base-color-mark-foreground, #00060a);
   padding: 0.1em 0.3em;
 }
 
@@ -974,7 +977,7 @@ kbd,
 samp {
   background-color: var(--spruce-base-color-code-background, #f0ecf9);
   border-radius: 0.25rem;
-  color: var(--spruce-base-color-code-color, #00060a);
+  color: var(--spruce-base-color-code-foreground, #00060a);
   padding: 0.1em 0.3em;
 }
 

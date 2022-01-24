@@ -52,9 +52,11 @@ $colors: map.deep-merge(
       primary-background: $color-primary,
       primary-background-hover: color.scale($color-primary, $lightness: -20%),
       primary-foreground: $color-white,
+      primary-foreground-hover: $color-white,
       secondary-background: $color-secondary,
       secondary-background-hover: color.scale($color-secondary, $lightness: -20%),
-      secondary-foreground: $color-white
+      secondary-foreground: $color-white,
+      secondary-foreground-hover: $color-white
     ),
     form: (
       background: $color-white,

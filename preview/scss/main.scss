@@ -1,6 +1,18 @@
+@use 'sass:color';
 @use 'sass:math';
 @use 'sass:map';
+
+$color-tertiary: hsl(320, 52%, 59%);
+
 @use '../../scss/spruce' with (
+  $colors: (
+    btn: (
+      tertiary-background: $color-tertiary,
+      tertiary-background-hover: color.scale($color-tertiary, $lightness: -20%),
+      tertiary-foreground: #fff,
+      tertiary-foreground-hover: #fff,
+    )
+  ),
   $container-width: 50rem,
   $settings: (
     hyphens: true
@@ -9,6 +21,10 @@
     xl: 10rem
   )
 );
+
+.btn--tertiary {
+  @include spruce.btn-variant(tertiary-foreground, tertiary-background);
+}
 
 body {
   background-color: spruce.color(background);
@@ -30,6 +46,21 @@ body {
 
 .section {
   $this: &;
+
+  &-subtitle {
+    font-size: spruce.font-size(h5);
+  }
+
+  &__body {
+    #{$this}-subtitle {
+      margin-bottom: spruce.spacer(xs);
+      margin-top: 0;
+
+      &:not(:first-child) {
+        margin-top: spruce.spacer(m);
+      }
+    }
+  }
 
   &--color {
     #{$this}__body {
