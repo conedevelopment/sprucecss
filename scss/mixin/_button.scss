@@ -26,7 +26,7 @@
 
   &:hover {
     background-color: function.color(#{$background}-hover, btn);
-    color: function.color(#{$foreground}, btn);
+    color: function.color(#{$foreground}-hover, btn);
   }
 
   &:focus {
