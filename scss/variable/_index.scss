@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'sass:map';
 @use 'sass:math';
 
@@ -14,23 +15,32 @@ $settings: map.merge(
 );
 
 // Colors
+$color-primary: hsl(261, 52%, 59%) !default;
+$color-secondary: hsl(227, 92%, 55%) !default;
+
+$color-black: hsl(205, 100%, 2%) !default;
+$color-white: hsl(0, 0%, 100%) !default;
+
+$color-gray-light: hsl(0, 0%, 90%) !default;
+$color-gray: hsl(208, 7%, 30%) !default;
+
 $colors: () !default;
 $colors: map.deep-merge(
   (
     base: (
-      primary: hsl(261, 52%, 59%),
-      secondary: hsl(350, 100%, 88%),
-      background: hsl(0, 0%, 100%),
-      heading: hsl(205, 100%, 2%),
-      text: hsl(208, 7%, 30%),
-      link: hsl(261, 52%, 59%),
-      link-hover: hsl(261, 52%, 35%),
-      border: hsl(0, 0%, 90%),
+      primary: $color-primary,
+      secondary: $color-secondary,
+      background: $color-white,
+      heading: $color-black,
+      text: $color-gray,
+      link: $color-primary,
+      link-hover: color.scale($color-primary, $lightness: -20%),
+      border: $color-gray-light,
       mark-background: hsl(50, 100%, 80%),
-      mark-color: hsl(205, 100%, 2%),
+      mark-color: $color-black,
       code-background: hsl(261, 52%, 95%),
-      code-color: hsl(205, 100%, 2%),
-      blockquote-border: hsl(261, 52%, 59%)
+      code-color: $color-black,
+      blockquote-border: $color-primary
     ),
     alert: (
       danger: hsl(2, 71%, 53%),
@@ -39,29 +49,29 @@ $colors: map.deep-merge(
       warning: hsl(40, 96%, 32%)
     ),
     btn: (
-      primary-background: hsl(261, 52%, 59%),
-      primary-background-hover: hsl(261, 52%, 40%),
-      primary-foreground: hsl(0, 0%, 100%),
-      secondary-background: hsl(350, 100%, 88%),
-      secondary-background-hover: hsl(350, 100%, 92%),
-      secondary-foreground: hsl(350, 100%, 20%)
+      primary-background: $color-primary,
+      primary-background-hover: color.scale($color-primary, $lightness: -20%),
+      primary-foreground: $color-white,
+      secondary-background: $color-secondary,
+      secondary-background-hover: color.scale($color-secondary, $lightness: -20%),
+      secondary-foreground: $color-white
     ),
     form: (
-      background: hsl(0, 0%, 100%),
+      background: $color-white,
       background-disabled: hsl(0, 0%, 95%),
-      border: hsl(0, 0%, 90%),
-      border-disabled: hsl(0, 0%, 90%),
-      border-focus: hsl(261, 52%, 59%),
-      check-foreground: hsl(0, 0%, 100%),
-      check-background: hsl(261, 52%, 59%),
-      label: hsl(205, 100%, 2%),
-      legend: hsl(205, 100%, 2%),
+      border: $color-gray-light,
+      border-disabled: $color-gray-light,
+      border-focus: $color-primary,
+      check-foreground: $color-white,
+      check-background: $color-primary,
+      label: $color-black,
+      legend: $color-black,
       placeholder: hsl(208, 7%, 40%),
-      text: hsl(208, 7%, 30%),
-      select-foreground: hsl(261, 52%, 59%)
+      text: $color-gray,
+      select-foreground: $color-primary
     ),
     table: (
-      border: hsl(0, 0%, 90%),
+      border: $color-gray-light,
       hover: hsla(0, 0%, 0%, 0.05),
       stripe: hsla(0, 0%, 0%, 0.025)
     )
