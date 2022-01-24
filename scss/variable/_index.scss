@@ -9,7 +9,7 @@ $prefix: 'spruce' !default;
 $settings: () !default;
 $settings: map.merge(
   (
-    hyphens:  true,
+    hyphens: true,
   ),
   $settings
 );
@@ -37,9 +37,9 @@ $colors: map.deep-merge(
       link-hover: color.scale($color-primary, $lightness: -20%),
       border: $color-gray-light,
       mark-background: hsl(50, 100%, 80%),
-      mark-color: $color-black,
+      mark-foreground: $color-black,
       code-background: hsl(261, 52%, 95%),
-      code-color: $color-black,
+      code-foreground: $color-black,
       blockquote-border: $color-primary
     ),
     alert: (

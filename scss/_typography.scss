@@ -123,7 +123,7 @@ abbr[title] {
 mark {
   background-color: function.color(mark-background);
   border-radius: variable.$inline-text-element-border-radius;
-  color: function.color(mark-color);
+  color: function.color(mark-foreground);
   padding: variable.$inline-text-element-padding;
 }
 
@@ -132,7 +132,7 @@ kbd,
 samp {
   background-color: function.color(code-background);
   border-radius: variable.$inline-text-element-border-radius;
-  color: function.color(code-color);
+  color: function.color(code-foreground);
   padding: variable.$inline-text-element-padding;
 }
 
