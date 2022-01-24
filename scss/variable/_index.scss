@@ -125,21 +125,23 @@ $line-height-heading: calc(2px + 2ex + 2px) !default;
 $inline-text-element-padding: 0.1em 0.3em !default;
 $inline-text-element-border-radius: $border-radius-sm !default;
 
-// Forms
-$form-label-font-size: null !default;
-$form-label-font-style: null !default;
-$form-label-font-weight: null !default;
-
+// Btn
 $btn-border-radius: $border-radius-sm !default;
 $btn-font-size: $font-size-base !default;
 $btn-font-size-sm: 0.8rem !default;
 $btn-font-size-lg: 1.15rem !default;
+$btn-font-family: null !default;
 $btn-font-style: null !default;
 $btn-font-weight: 500 !default;
 $btn-padding: 0.75em 1em !default;
 $btn-padding-sm: 0.5em !default;
 $btn-padding-lg: 0.9em 1.15em !default;
 $btn-icon-size: 0.85em !default;
+
+// Forms
+$form-label-font-size: null !default;
+$form-label-font-style: null !default;
+$form-label-font-weight: null !default;
 
 $legend-font-size: clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}) !default;
 $legend-font-weight: 700 !default;
