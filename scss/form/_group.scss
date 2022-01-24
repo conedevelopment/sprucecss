@@ -9,6 +9,7 @@
   }
 
   &--grid {
+    align-items: start;
     display: flex;
     flex-wrap: wrap;
     gap: function.spacer(xs);
