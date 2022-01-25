@@ -43,10 +43,10 @@ $colors: map.deep-merge(
       blockquote-border: $color-primary
     ),
     alert: (
-      danger: hsl(2, 71%, 53%),
-      info: hsl(202, 100%, 37%),
-      success: hsl(160, 74%, 30%),
-      warning: hsl(40, 96%, 32%)
+      danger: hsl(0, 71%, 51%),
+      info: hsl(195, 100%, 42%),
+      success: hsl(150, 100%, 33%),
+      warning: hsl(48, 89%, 55%)
     ),
     btn: (
       primary-background: $color-primary,
