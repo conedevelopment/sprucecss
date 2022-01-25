@@ -352,10 +352,10 @@ template {
   --spruce-base-color-code-background: #f0ecf9;
   --spruce-base-color-code-foreground: #00060a;
   --spruce-base-color-blockquote-border: #8660cd;
-  --spruce-alert-color-danger: #dc3832;
-  --spruce-alert-color-info: #0078bd;
-  --spruce-alert-color-success: #14855f;
-  --spruce-alert-color-warning: #a06c03;
+  --spruce-alert-color-danger: #db2929;
+  --spruce-alert-color-info: #00a1d6;
+  --spruce-alert-color-success: #00a854;
+  --spruce-alert-color-warning: #f2ca26;
   --spruce-btn-color-primary-background: #8660cd;
   --spruce-btn-color-primary-background-hover: #663ab7;
   --spruce-btn-color-primary-foreground: white;
@@ -463,6 +463,7 @@ hr {
   display: inline-flex;
   font-size: 1rem;
   font-weight: 500;
+  gap: 0.5rem;
   justify-content: center;
   line-height: 1;
   padding: 0.75em 1em;
@@ -478,6 +479,15 @@ hr {
   opacity: 0.5;
   pointer-events: none;
 }
+.btn--icon {
+  padding: 0.75em;
+}
+.btn--icon.btn--sm {
+  padding: 0.5em;
+}
+.btn--icon.btn--lg {
+  padding: 0.9em;
+}
 .btn--sm {
   font-size: 0.8rem;
   padding: 0.5em;
@@ -491,16 +501,8 @@ hr {
 }
 .btn__icon {
   flex-shrink: 0;
-  height: 0.85em;
-  width: 0.85em;
-}
-.btn__icon--start {
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
-}
-.btn__icon--end {
-  -webkit-margin-start: 0.5rem;
-          margin-inline-start: 0.5rem;
+  height: 1em;
+  width: 1em;
 }
 
 .btn--primary {
@@ -598,11 +600,11 @@ legend {
   cursor: not-allowed;
 }
 .form-control--valid {
-  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"%3e%3cpath d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm-1.476,10.182l-2.984,-2.984c-0.065,-0.065 -0.17,-0.065 -0.235,0l-0.943,0.943c-0.065,0.065 -0.065,0.171 -0,0.236l4.043,4.042c0.033,0.033 0.076,0.05 0.119,0.049c0.044,0.001 0.087,-0.016 0.12,-0.049l6.994,-6.994c0.065,-0.065 0.065,-0.17 0,-0.235l-0.943,-0.943c-0.065,-0.065 -0.17,-0.065 -0.235,-0l-5.936,5.935Z" style="fill:%2314855f;"/%3e%3c/svg%3e');
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"%3e%3cpath d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm-1.476,10.182l-2.984,-2.984c-0.065,-0.065 -0.17,-0.065 -0.235,0l-0.943,0.943c-0.065,0.065 -0.065,0.171 -0,0.236l4.043,4.042c0.033,0.033 0.076,0.05 0.119,0.049c0.044,0.001 0.087,-0.016 0.12,-0.049l6.994,-6.994c0.065,-0.065 0.065,-0.17 0,-0.235l-0.943,-0.943c-0.065,-0.065 -0.17,-0.065 -0.235,-0l-5.936,5.935Z" style="fill:%2300a854;"/%3e%3c/svg%3e');
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  border-color: var(--spruce-alert-color-success, #14855f);
+  border-color: var(--spruce-alert-color-success, #00a854);
   -webkit-padding-end: 2em;
           padding-inline-end: 2em;
 }
@@ -610,16 +612,16 @@ html[dir=rtl] .form-control--valid {
   background-position: center left 0.5em;
 }
 .form-control--valid:focus {
-  border-color: var(--spruce-alert-color-success, #14855f);
-  box-shadow: 0 0 0 0.25rem rgba(20, 133, 95, 0.25);
+  border-color: var(--spruce-alert-color-success, #00a854);
+  box-shadow: 0 0 0 0.25rem rgba(0, 168, 84, 0.25);
   outline: 2px solid transparent;
 }
 .form-control--invalid {
-  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"%3e%3cpath d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm0.813,11.649c-0,-0.081 -0.065,-0.146 -0.146,-0.146l-1.334,0c-0.081,0 -0.146,0.065 -0.146,0.146l0,1.169c0,0.08 0.065,0.146 0.146,0.146l1.334,-0c0.081,-0 0.146,-0.066 0.146,-0.146l-0,-1.169Zm-0,-7.784c-0,-0.09 -0.073,-0.163 -0.163,-0.163l-1.3,0c-0.09,0 -0.163,0.073 -0.163,0.163l0,6.351c0,0.09 0.073,0.163 0.163,0.163l1.3,-0c0.09,-0 0.163,-0.073 0.163,-0.163l-0,-6.351Z" style="fill:%23dc3832;"/%3e%3c/svg%3e');
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"%3e%3cpath d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm0.813,11.649c-0,-0.081 -0.065,-0.146 -0.146,-0.146l-1.334,0c-0.081,0 -0.146,0.065 -0.146,0.146l0,1.169c0,0.08 0.065,0.146 0.146,0.146l1.334,-0c0.081,-0 0.146,-0.066 0.146,-0.146l-0,-1.169Zm-0,-7.784c-0,-0.09 -0.073,-0.163 -0.163,-0.163l-1.3,0c-0.09,0 -0.163,0.073 -0.163,0.163l0,6.351c0,0.09 0.073,0.163 0.163,0.163l1.3,-0c0.09,-0 0.163,-0.073 0.163,-0.163l-0,-6.351Z" style="fill:%23db2929;"/%3e%3c/svg%3e');
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  border-color: var(--spruce-alert-color-danger, #dc3832);
+  border-color: var(--spruce-alert-color-danger, #db2929);
   -webkit-padding-end: 2em;
           padding-inline-end: 2em;
 }
@@ -627,8 +629,8 @@ html[dir=rtl] .form-control--invalid {
   background-position: center left 0.5em;
 }
 .form-control--invalid:focus {
-  border-color: var(--spruce-alert-color-danger, #dc3832);
-  box-shadow: 0 0 0 0.25rem rgba(220, 56, 50, 0.25);
+  border-color: var(--spruce-alert-color-danger, #db2929);
+  box-shadow: 0 0 0 0.25rem rgba(219, 41, 41, 0.25);
   outline: 2px solid transparent;
 }
 .form-control--sm {
@@ -762,10 +764,10 @@ html[dir=rtl] select:not([multiple]):not([size]) {
   display: block;
 }
 .field-feedback--valid {
-  color: var(--spruce-alert-color-success, #14855f);
+  color: var(--spruce-alert-color-success, #00a854);
 }
 .field-feedback--invalid {
-  color: var(--spruce-alert-color-danger, #dc3832);
+  color: var(--spruce-alert-color-danger, #db2929);
 }
 
 img {

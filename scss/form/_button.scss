@@ -3,6 +3,8 @@
 @use '../variable';
 
 .btn {
+  $this: &;
+
   align-items: center;
   border: 0;
   border-radius: variable.$btn-border-radius;
@@ -30,6 +32,19 @@
   &--disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  // Icon button
+  &--icon {
+    padding: variable.$btn-icon-padding;
+
+    &#{$this}--sm {
+      padding: variable.$btn-icon-padding-sm;
+    }
+
+    &#{$this}--lg {
+      padding: variable.$btn-icon-padding-lg;
+    }
   }
 
   // Sizes
