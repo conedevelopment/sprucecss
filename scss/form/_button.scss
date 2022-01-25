@@ -12,6 +12,7 @@
   font-size: variable.$btn-font-size;
   font-style: variable.$btn-font-style;
   font-weight: variable.$btn-font-weight;
+  gap: function.spacer(xs);
   justify-content: center;
   line-height: 1;
   padding: variable.$btn-padding;
@@ -52,14 +53,6 @@
     flex-shrink: 0;
     height: variable.$btn-icon-size;
     width: variable.$btn-icon-size;
-
-    &--start {
-      margin-inline-end: function.spacer(xs);
-    }
-
-    &--end {
-      margin-inline-start: function.spacer(xs);
-    }
   }
 }
 
