@@ -60,7 +60,7 @@
 
 // Custom scrollbar.
 @mixin scrollbar(
-  $thumb-background-color: rgba(0, 0, 0, 0.15),
+  $thumb-background-color: hsla(0, 0%, 0%, 0.15),
   $thumb-background-color-hover: hsla(0, 0%, 0%, 0.25),
   $track-background-color: hsla(0, 0%, 0%, 0.05),
   $size: 0.5rem,
