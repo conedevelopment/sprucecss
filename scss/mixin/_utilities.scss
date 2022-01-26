@@ -60,9 +60,9 @@
 
 // Custom scrollbar.
 @mixin scrollbar(
-  $thumb-bg: rgba(0, 0, 0, 0.15),
-  $thumb-bg-hover: hsla(0, 0%, 0%, 0.25),
-  $track-bg: hsla(0, 0%, 0%, 0.05),
+  $thumb-background-color: rgba(0, 0, 0, 0.15),
+  $thumb-background-color-hover: hsla(0, 0%, 0%, 0.25),
+  $track-background-color: hsla(0, 0%, 0%, 0.05),
   $size: 0.5rem,
   $border-radius: variable.$border-radius-sm
 ) {
@@ -72,16 +72,16 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $thumb-bg;
+    background: $thumb-background-color;
     border-radius: $border-radius;
 
     &:hover {
-      background: $thumb-bg-hover;
+      background: $thumb-background-color-hover;
     }
   }
 
   &::-webkit-scrollbar-track {
-    background: $track-bg;
+    background: $track-background-color;
     border-radius: $border-radius;
   }
 }

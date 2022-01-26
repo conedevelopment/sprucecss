@@ -127,7 +127,9 @@ body {
 }
 
 .scrollbar {
-  @include spruce.scrollbar;
+  @include spruce.scrollbar(
+    $thumb-background-color: spruce.color(primary)
+  );
   @include spruce.layout-stack;
   max-height: 15rem;
   overflow: auto;
