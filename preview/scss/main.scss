@@ -15,7 +15,8 @@ $color-tertiary: hsl(320, 52%, 59%);
   ),
   $container-width: 50rem,
   $settings: (
-    hyphens: true
+    hyphens: true,
+    color-fallback: true
   ),
   $spacers: (
     xl: 10rem

@@ -10,6 +10,7 @@ $settings: () !default;
 $settings: map.merge(
   (
     hyphens: true,
+    color-fallback: false
   ),
   $settings
 );

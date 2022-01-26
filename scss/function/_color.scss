@@ -12,5 +12,9 @@
     @return map.get(variable.$colors, $type, $key);
   }
 
-  @return var(--#{variable.$prefix}-#{$type}-color-#{$key}, #{map.get(variable.$colors, $type, $key)});
+  @if map.get(variable.$settings, color-fallback) {
+    @return var(--#{variable.$prefix}-#{$type}-color-#{$key}, #{map.get(variable.$colors, $type, $key)});
+  }
+
+  @return var(--#{variable.$prefix}-#{$type}-color-#{$key});
 }
