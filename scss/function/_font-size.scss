@@ -3,7 +3,12 @@
 @use '../variable';
 
 // Get font-size value from $font-sizes Sass map
-@function font-size($key, $fluid: true, $scaler: 15) {
+@function font-size(
+  $key,
+  $fluid: true,
+  $scaler: 15,
+  $optimal-size: map.get(variable.$settings, optimal-responsive-font-size)
+) {
   @if not map.has-key(variable.$font-sizes, $key) {
     @error 'The #{$key} key name doesn\'t exist at the $font-sizes map.';
   }
@@ -19,17 +24,21 @@
       @return map.get(variable.$font-sizes, $key);
     }
 
-    @return clamp(#{$scaled-size}, 5vw + 1rem, #{map.get(variable.$font-sizes, $key)});
+    @return clamp(#{$scaled-size}, #{$optimal-size}, #{map.get(variable.$font-sizes, $key)});
   }
 
   @return map.get(variable.$font-sizes, $key);
 }
 
 // Generate responsive font-size value using clamp().
-@function responsive-font-size($size, $scaler: 15) {
+@function responsive-font-size(
+  $size,
+  $scaler: 15,
+  $optimal-size: map.get(variable.$settings, optimal-responsive-font-size)
+) {
   @if $scaler < 0 or $scaler > 100 {
     @error 'The $scaler value must be between 0 and 100.';
   }
 
-  @return clamp(#{$size * math.div(100 - $scaler, 100)}, 5vw + 1rem, #{$size});
+  @return clamp(#{$size * math.div(100 - $scaler, 100)}, #{$optimal-size}, #{$size});
 }

@@ -1,7 +1,10 @@
 @use 'sass:map';
 @use '../variable';
 
-@mixin breakpoint($breakpoint, $logic: false) {
+@mixin breakpoint(
+  $breakpoint,
+  $logic: false
+) {
   @if map.has-key(variable.$breakpoints, $breakpoint) {
     $breakpoint: map-get(variable.$breakpoints, $breakpoint);
 

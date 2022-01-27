@@ -11,6 +11,7 @@ $settings: map.merge(
   (
     color-fallback: false,
     hyphens: true,
+    optimal-responsive-font-size: '2vw + 1rem'
   ),
   $settings
 );

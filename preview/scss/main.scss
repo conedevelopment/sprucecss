@@ -5,6 +5,9 @@
 $color-tertiary: hsl(320, 52%, 59%);
 
 @use '../../scss/spruce' with (
+  $breakpoints: (
+    md: 60em,
+  ),
   $colors: (
     btn: (
       tertiary-background: $color-tertiary,
@@ -133,4 +136,8 @@ body {
   @include spruce.layout-stack;
   max-height: 15rem;
   overflow: auto;
+}
+
+.custom-heading-size {
+  font-size: spruce.responsive-font-size(4rem, 30, 4vw);
 }

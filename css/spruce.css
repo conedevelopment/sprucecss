@@ -493,8 +493,12 @@ hr {
   padding: 0.5em;
 }
 .btn--lg {
-  font-size: 1.15rem;
   padding: 0.9em 1.15em;
+}
+@media (min-width: 64em) {
+  .btn--lg {
+    font-size: 1.15rem;
+  }
 }
 .btn--block {
   width: 100%;
@@ -878,22 +882,22 @@ h6 {
 
 h1,
 .h1 {
-  font-size: clamp(2.6837343406rem, 5vw + 1rem, 3.1573345183rem);
+  font-size: clamp(2.6837343406rem, 2vw + 1rem, 3.1573345183rem);
 }
 
 h2,
 .h2 {
-  font-size: clamp(2.0133040815rem, 5vw + 1rem, 2.368593037rem);
+  font-size: clamp(2.0133040815rem, 2vw + 1rem, 2.368593037rem);
 }
 
 h3,
 .h3 {
-  font-size: clamp(1.51035565rem, 5vw + 1rem, 1.776889rem);
+  font-size: clamp(1.51035565rem, 2vw + 1rem, 1.776889rem);
 }
 
 h4,
 .h4 {
-  font-size: clamp(1.13305rem, 5vw + 1rem, 1.333rem);
+  font-size: clamp(1.13305rem, 2vw + 1rem, 1.333rem);
 }
 
 h5,
