@@ -54,8 +54,11 @@
   }
 
   &--lg {
-    font-size: variable.$btn-font-size-lg;
     padding: variable.$btn-padding-lg;
+
+    @include mixin.breakpoint(md) {
+      font-size: variable.$btn-font-size-lg;
+    }
   }
 
   // Display types
