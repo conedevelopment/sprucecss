@@ -9,8 +9,8 @@ $prefix: 'spruce' !default;
 $settings: () !default;
 $settings: map.merge(
   (
+    color-fallback: false,
     hyphens: true,
-    color-fallback: false
   ),
   $settings
 );
@@ -202,8 +202,8 @@ $table-responsive-width: 40rem !default;
 $container-width: 80rem !default;
 
 // Transition and Animation
-$transition-duration: 0.15s;
-$transition-timing-function: ease-in-out;
+$transition-duration: 0.15s !default;
+$transition-timing-function: ease-in-out !default;
 
 // Characters to escape using SVG as data:image
 $escaping-characters: (
@@ -213,3 +213,17 @@ $escaping-characters: (
   ('(', '%28'),
   (')', '%29'),
 ) !default;
+
+// Breakpoints
+$breakpoints: () !default;
+$breakpoints: map.merge(
+  (
+    xs: 32em,
+    sm: 48em,
+    md: 64em,
+    lg: 80em,
+    xl: 90em,
+    xxl: 110em
+  ),
+  $breakpoints
+);
