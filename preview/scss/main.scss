@@ -10,10 +10,10 @@ $color-tertiary: hsl(320, 52%, 59%);
   ),
   $colors: (
     btn: (
-      tertiary-background: $color-tertiary,
-      tertiary-background-hover: color.scale($color-tertiary, $lightness: -20%),
-      tertiary-foreground: #fff,
-      tertiary-foreground-hover: #fff,
+      custom-background: hsl(0, 0%, 100%),
+      custom-background-hover: hsl(332, 49%, 29%),
+      custom-foreground: hsl(0, 0%, 0%),
+      custom-foreground-hover: hsl(0, 0%, 100%),
     )
   ),
   $container-width: 50rem,
@@ -26,8 +26,12 @@ $color-tertiary: hsl(320, 52%, 59%);
   )
 );
 
-.btn--tertiary {
-  @include spruce.btn-variant(tertiary-foreground, tertiary-background);
+.btn--custom {
+  @include spruce.btn-variant(custom-foreground, custom-background);
+  box-shadow: -3px 5px spruce.color(custom-foreground, btn);
+  border: 3px solid spruce.color(custom-foreground, btn);
+  border-radius: 0;
+  font-family: spruce.$font-family-cursive;
 }
 
 body {
