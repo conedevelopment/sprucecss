@@ -4,10 +4,10 @@
 
 - Add `$btn-font-family` to control the button's font family.
 - Add `$heading-font-weight` to control the heading's font-weight.
-- Rename some keys in the `$colors` map (`mark-color` -> `mark-foreground`, `code-color` -> `code-foreground`).
+- Rename some keys in the `$colors` map (`mark-color` : `mark-foreground`, `code-color` : `code-foreground`).
 - Reorganize the recurrent colors into variables.
 - Modify `btn-variant()` mixin: add hover foreground color.
-- Add [icon button](https://sprucecss.com/docs/elements/buttons#with-icon) variant (`.btn--icon`).
+- Add [icon button](https://sprucecss.com/docs/elements/buttons#icon) variant (`.btn--icon`).
 - Global switch to `color()` function's fallback value under the [`$settings`](https://sprucecss.com/docs/sass/variables#settings) map.
 - Modify the [`scrollbar()`](https://sprucecss.com/docs/sass/mixins#scrollbar) mixin to accept hover thumb background-color value.
 - Make `$breakpoints` overwriteable by key.
