@@ -1,11 +1,15 @@
 <p>
-  <a href="https://sprucecss.com">
+  <a href="https://sprucecss.com/#gh-light-mode-only">
     <br/>
-    <img src="https://conedevelopment.com/assets/img/spruce-logo.svg?" alt="Spruce CSS" width="160">
+    <img src="./.github/spruce-logo-dark.svg" alt="Spruce CSS" width="160">
+    <br/>
+  </a>
+  <a href="https://sprucecss.com/#gh-dark-mode-only">
+    <br/>
+    <img src="./.github/spruce-logo-light.svg" alt="Spruce CSS" width="160">
     <br/>
   </a>
 </p>
-
 
 **Spruce is an open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.**
 
