@@ -1,4 +1,4 @@
-# Spruce Changelog
+# Spruce CSS Changelog
 
 ## v0.2.0 (2022-01-28)
 

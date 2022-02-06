@@ -2,8 +2,8 @@
 @use 'variable';
 
 ::selection {
-  background-color: function.color(primary);
-  color: #fff;
+  background-color: function.color(background, selection);
+  color: function.color(foreground, selection);
   text-shadow: none;
 }
 

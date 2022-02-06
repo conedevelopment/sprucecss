@@ -44,6 +44,10 @@ $colors: map.deep-merge(
       code-foreground: $color-black,
       blockquote-border: $color-primary
     ),
+    selection: (
+      foreground: $color-white,
+      background: $color-primary
+    ),
     alert: (
       danger: hsl(0, 71%, 51%),
       info: hsl(195, 100%, 42%),
