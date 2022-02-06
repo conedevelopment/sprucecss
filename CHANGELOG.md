@@ -27,12 +27,12 @@
 ## v0.1.2 (2021-12-30)
 
 ### Bugfix
-- Fix $foreground typo at btn-variant() mixin (_button.scss)
+- Fix `$foreground` typo at `btn-variant()` mixin (_button.scss)
 
 ## v0.1.1 (2021-12-30)
 
 ### Improvements
-- Colorize list bullets with ::marker
+- Colorize list bullets with `::marker`
 - Add Autoprefixer to CSS compile
 - Add compiled CSS to the repository
 - Fix Stylelint errors
