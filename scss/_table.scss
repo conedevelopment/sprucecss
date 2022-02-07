@@ -12,6 +12,7 @@
 
 .table {
   border-collapse: collapse;
+  color: color(text, table);
   width: 100%;
 
   &--striped {
@@ -27,18 +28,19 @@
   }
 
   caption {
+    color: color(caption, table);
     margin-bottom: spacer(s);
   }
 
   th,
   td {
     border-bottom: 1px solid color(border, table);
-    color: color(heading);
     line-height: $line-height-md;
     padding: spacer(s);
   }
 
   th {
+    color: color(heading, table);
     text-align: inherit;
     text-align: -webkit-match-parent;
   }

@@ -78,7 +78,10 @@ $colors: map.deep-merge(
     ),
     table: (
       border: $color-gray-light,
+      caption: $color-gray,
+      heading: $color-black,
       hover: hsla(0, 0%, 0%, 0.05),
+      text: $color-gray,
       stripe: hsla(0, 0%, 0%, 0.025)
     )
   ),

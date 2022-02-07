@@ -14,13 +14,15 @@ $color-tertiary: hsl(320, 52%, 59%);
       custom-background-hover: hsl(332, 49%, 29%),
       custom-foreground: hsl(0, 0%, 0%),
       custom-foreground-hover: hsl(0, 0%, 100%),
+    ),
+    form: (
+      custom: red
     )
   ),
   $container-width: 50rem,
   $settings: (
     hyphens: true,
-    color-fallback: true,
-    prefix: bazar
+    color-fallback: true
   ),
   $spacers: (
     xl: 10rem
