@@ -8,9 +8,15 @@
   align-items: center;
   display: inline-flex;
 
+  &--sm {
+    #{$this}__control {
+      font-size: $form-check-font-size-sm;
+    }
+  }
+
   &--lg {
     #{$this}__control {
-      font-size: $font-size-lg;
+      font-size: $form-check-font-size-lg;
     }
   }
 
@@ -22,7 +28,7 @@
     background-size: contain;
     border: 1px solid color(border, form);
     flex-shrink: 0;
-    font-size: 1rem;
+    font-size: $form-check-font-size;
     height: 1em;
     line-height: 1;
     margin-bottom: -0.1em;

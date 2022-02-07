@@ -114,8 +114,10 @@ $border-radius-lg: 0.5rem !default;
 $font-size-ratio: 1.333 !default;
 
 $font-size-base: 1rem !default;
+
 $font-size-sm: 0.9rem !default;
 $font-size-lg: 1.1rem !default;
+
 $font-size-lead: math.pow($font-size-ratio, 1) * $font-size-base;
 
 $font-sizes: () !default;
@@ -169,6 +171,9 @@ $btn-icon-size: 1em !default;
 
 // Forms
 $form-label-font-size: null !default;
+$form-label-font-size-sm: $font-size-sm !default;
+$form-label-font-size-lg: $font-size-lg !default;
+
 $form-label-font-style: null !default;
 $form-label-font-weight: null !default;
 
@@ -182,12 +187,19 @@ $form-description-font-weight: null !default;
 $form-row-col-width: 20ch !default;
 
 $form-control-font-size: $font-size-base !default;
+$form-control-font-size-sm: $font-size-sm !default;
+$form-control-font-size-lg: $font-size-lg !default;
+
 $form-control-font-weight: null !default;
 $form-control-line-height: 1.5 !default;
 $form-control-padding: 0.5em 0.75em !default;
 $form-control-padding-sm: 0.25em 0.5em !default;
 $form-control-padding-lg: 0.75em 1em !default;
 $form-control-border-radius: $border-radius-sm !default;
+
+$form-check-font-size: $font-size-base !default;
+$form-check-font-size-sm: $font-size-sm !default;
+$form-check-font-size-lg: $font-size-lg !default;
 
 $select-icon-width: 1.25em !default;
 $select-icon-right-offset: 0.5em !default;

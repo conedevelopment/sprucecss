@@ -70,12 +70,12 @@
 
   //Sizes
   &--sm {
-    font-size: $font-size-sm;
+    font-size: $form-control-font-size-sm;
     padding: $form-control-padding-sm;
   }
 
   &--lg {
-    font-size: $font-size-lg;
+    font-size: $form-control-font-size-lg;
     padding: $form-control-padding-lg;
   }
 }
