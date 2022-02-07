@@ -1,17 +1,17 @@
-@use '../function';
-@use '../mixin';
+@use '../function' as *;
+@use '../mixin' as *;
 
 .form-group {
-  @include mixin.layout-stack(function.spacer(xxs), false);
+  @include layout-stack(spacer(xxs), false);
 
   &--vertical-check {
-    @include mixin.layout-stack(function.spacer(xs), true, left);
+    @include layout-stack(spacer(xs), true, left);
   }
 
   &--grid {
     align-items: start;
     display: flex;
     flex-wrap: wrap;
-    gap: function.spacer(xs);
+    gap: spacer(xs);
   }
 }

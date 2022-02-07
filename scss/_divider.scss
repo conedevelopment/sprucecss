@@ -1,6 +1,6 @@
-@use 'function';
+@use 'function' as *;
 
 hr {
   border: 0;
-  border-top: 1px solid function.color(border);
+  border-top: 1px solid color(border);
 }

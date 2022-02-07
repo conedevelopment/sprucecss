@@ -1,15 +1,15 @@
-@use 'function';
-@use 'mixin';
-@use 'variable';
+@use 'function' as *;
+@use 'mixin' as *;
+@use 'variable' as *;
 
 // Basics
 body {
-  font-family: variable.$font-family-base;
-  font-size: variable.$font-size-base;
-  line-height: variable.$line-height-base;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 }
 
-@if function.setting(hyphens) {
+@if setting(hyphens) {
   p,
   li,
   h1,
@@ -30,65 +30,65 @@ h3,
 h4,
 h5,
 h6 {
-  color: function.color(heading);
-  font-family: variable.$font-family-heading;
-  font-weight: variable.$heading-font-weight;
-  line-height: variable.$line-height-heading;
+  color: color(heading);
+  font-family: $font-family-heading;
+  font-weight: $heading-font-weight;
+  line-height: $line-height-heading;
 }
 
 h1,
 .h1 {
-  font-size: function.font-size(h1);
+  font-size: font-size(h1);
 }
 
 h2,
 .h2 {
-  font-size: function.font-size(h2);
+  font-size: font-size(h2);
 }
 
 h3,
 .h3 {
-  font-size: function.font-size(h3);
+  font-size: font-size(h3);
 }
 
 h4,
 .h4 {
-  font-size: function.font-size(h4);
+  font-size: font-size(h4);
 }
 
 h5,
 .h5 {
-  font-size: function.font-size(h5);
+  font-size: font-size(h5);
 }
 
 h6,
 .h6 {
-  font-size: function.font-size(h6);
+  font-size: font-size(h6);
 }
 
 // Lists
 ul,
 ol {
-  @include mixin.layout-stack(function.spacer(xxs), $width: false);
+  @include layout-stack(spacer(xxs), $width: false);
   list-style-position: inside;
 
   li {
     list-style-position: outside;
 
     &::marker {
-      color: function.color(primary);
+      color: color(primary);
     }
   }
 }
 
 li > ul,
 li > ol {
-  margin-top: function.spacer(xxs);
+  margin-top: spacer(xxs);
 }
 
 dl {
   dt {
-    color: function.color(heading);
+    color: color(heading);
     font-weight: bold;
   }
 
@@ -97,16 +97,16 @@ dl {
   }
 
   dd + dt {
-    margin-top: function.spacer(s);
+    margin-top: spacer(s);
   }
 }
 
 // Blockquote
 blockquote {
-  @include mixin.layout-stack(function.spacer(xs));
-  border-left: 0.5rem solid function.color(blockquote-border);
+  @include layout-stack(spacer(xs));
+  border-left: 0.5rem solid color(blockquote-border);
   margin-left: 0;
-  padding: 0 0 0 function.spacer(m);
+  padding: 0 0 0 spacer(m);
 
   cite {
     display: block;
@@ -121,22 +121,22 @@ abbr[title] {
 }
 
 mark {
-  background-color: function.color(mark-background);
-  border-radius: variable.$inline-text-element-border-radius;
-  color: function.color(mark-foreground);
-  padding: variable.$inline-text-element-padding;
+  background-color: color(mark-background);
+  border-radius: $inline-text-element-border-radius;
+  color: color(mark-foreground);
+  padding: $inline-text-element-padding;
 }
 
 code,
 kbd,
 samp {
-  background-color: function.color(code-background);
-  border-radius: variable.$inline-text-element-border-radius;
-  color: function.color(code-foreground);
-  padding: variable.$inline-text-element-padding;
+  background-color: color(code-background);
+  border-radius: $inline-text-element-border-radius;
+  color: color(code-foreground);
+  padding: $inline-text-element-padding;
 }
 
 // Lead
 .lead {
-  font-size: variable.$font-size-lead;
+  font-size: $font-size-lead;
 }

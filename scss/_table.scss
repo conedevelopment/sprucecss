@@ -1,12 +1,12 @@
-@use 'variable';
-@use 'function';
+@use 'variable' as *;
+@use 'function' as *;
 
 .table-responsive {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 
   table {
-    min-width: variable.$table-responsive-width;
+    min-width: $table-responsive-width;
   }
 }
 
@@ -16,26 +16,26 @@
 
   &--striped {
     > tbody > tr:nth-child(even) {
-      background-color: function.color(stripe, table);
+      background-color: color(stripe, table);
     }
   }
 
   &--hover {
     > tbody > tr:hover {
-      background: function.color(hover, table);
+      background: color(hover, table);
     }
   }
 
   caption {
-    margin-bottom: function.spacer(s);
+    margin-bottom: spacer(s);
   }
 
   th,
   td {
-    border-bottom: 1px solid function.color(border, table);
-    color: function.color(heading);
-    line-height: variable.$line-height-md;
-    padding: function.spacer(s);
+    border-bottom: 1px solid color(border, table);
+    color: color(heading);
+    line-height: $line-height-md;
+    padding: spacer(s);
   }
 
   th {

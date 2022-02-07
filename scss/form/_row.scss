@@ -1,11 +1,11 @@
-@use '../function';
-@use '../mixin';
-@use '../variable';
+@use '../function' as *;
+@use '../mixin' as *;
+@use '../variable' as *;
 
 .form-row {
   &--mixed {
-    --col-width: #{variable.$form-row-col-width};
+    --col-width: #{$form-row-col-width};
 
-    @include mixin.layout-flex(function.spacer(s));
+    @include layout-flex(spacer(s));
   }
 }

@@ -1,11 +1,11 @@
 @use 'sass:meta';
-@use '../function';
-@use '../variable';
+@use '../function' as *;
+@use '../variable' as *;
 
 // Create Center layout
 @mixin layout-center(
-  $gutter: function.spacer(m),
-  $max-width: variable.$container-width
+  $gutter: spacer(m),
+  $max-width: $container-width
 ) {
   margin-inline: auto;
   max-width: $max-width;
@@ -14,7 +14,7 @@
 
 // Create Stack layout
 @mixin layout-stack(
-  $gutter: function.spacer(m),
+  $gutter: spacer(m),
   $width: true,
   $align: none,
   $split: 0
@@ -62,7 +62,7 @@
 
 // Create Grid layout
 @mixin layout-grid(
-  $gutter: function.spacer(m),
+  $gutter: spacer(m),
   $minimum: 12.5rem
 ) {
   display: grid;
@@ -77,7 +77,7 @@
 
 // Create Sidebar Layout
 @mixin layout-sidebar(
-  $gutter: function.spacer(m),
+  $gutter: spacer(m),
   $sidebar-width: 18.75rem
 ) {
   display: flex;
@@ -98,7 +98,7 @@
 
 // Create instinctive flex layout.
 @mixin layout-flex(
-  $gutter: function.spacer(m),
+  $gutter: spacer(m),
   $width-variable: --col-width
 ) {
   display: flex;

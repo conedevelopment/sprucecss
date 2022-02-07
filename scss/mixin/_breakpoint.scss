@@ -1,12 +1,12 @@
 @use 'sass:map';
-@use '../variable';
+@use '../variable' as *;
 
 @mixin breakpoint(
   $breakpoint,
   $logic: false
 ) {
-  @if map.has-key(variable.$breakpoints, $breakpoint) {
-    $breakpoint: map-get(variable.$breakpoints, $breakpoint);
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint: map-get($breakpoints, $breakpoint);
 
     @if $logic {
       @media #{$logic} and (min-width: $breakpoint) {

@@ -1,13 +1,13 @@
-@use '../function';
+@use '../function' as *;
 
 .field-feedback {
   display: block;
 
   &--valid {
-    color: function.color(success, alert);
+    color: color(success, alert);
   }
 
   &--invalid {
-    color: function.color(danger, alert);
+    color: color(danger, alert);
   }
 }

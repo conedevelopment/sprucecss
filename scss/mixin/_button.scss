@@ -1,15 +1,15 @@
 @use 'sass:map';
-@use '../function';
-@use '../variable';
+@use '../function' as *;
+@use '../variable' as *;
 
 @mixin btn-focus(
   $background: primary-background
 ) {
-  @if not map.has-key(variable.$colors, btn, $background) {
+  @if not map.has-key($colors, btn, $background) {
     @error 'The #{$background} key name doesn\'t exist under btn at the $colors map.';
   }
 
-  box-shadow: 0 0 0 0.25rem rgba(function.color(#{$background}, btn, true), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(color(#{$background}, btn, true), 0.25);
   outline: 2px solid transparent;
 }
 
@@ -17,16 +17,16 @@
   $foreground: primary-foreground,
   $background: primary-background
 ) {
-  @if not map.has-key(variable.$colors, btn, $foreground) or not map.has-key(variable.$colors, btn, $background) {
+  @if not map.has-key($colors, btn, $foreground) or not map.has-key($colors, btn, $background) {
     @error 'The #{$foreground} or #{$background} key name doesn\'t exist under btn at the $colors map.';
   }
 
-  background-color: function.color(#{$background}, btn);
-  color: function.color(#{$foreground}, btn);
+  background-color: color(#{$background}, btn);
+  color: color(#{$foreground}, btn);
 
   &:hover {
-    background-color: function.color(#{$background}-hover, btn);
-    color: function.color(#{$foreground}-hover, btn);
+    background-color: color(#{$background}-hover, btn);
+    color: color(#{$foreground}-hover, btn);
   }
 
   &:focus {

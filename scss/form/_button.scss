@@ -1,26 +1,26 @@
-@use '../function';
-@use '../mixin';
-@use '../variable';
+@use '../function' as *;
+@use '../mixin' as *;
+@use '../variable' as *;
 
 .btn {
   $this: &;
 
   align-items: center;
   border: 0;
-  border-radius: variable.$btn-border-radius;
+  border-radius: $btn-border-radius;
   cursor: pointer;
   display: inline-flex;
-  font-family: variable.$btn-font-family;
-  font-size: variable.$btn-font-size;
-  font-style: variable.$btn-font-style;
-  font-weight: variable.$btn-font-weight;
-  gap: function.spacer(xs);
+  font-family: $btn-font-family;
+  font-size: $btn-font-size;
+  font-style: $btn-font-style;
+  font-weight: $btn-font-weight;
+  gap: spacer(xs);
   justify-content: center;
   line-height: 1;
-  padding: variable.$btn-padding;
+  padding: $btn-padding;
   text-align: start;
   text-decoration: none;
-  transition: all var(--#{function.setting(prefix)}-transition-duration) var(--#{function.setting(prefix)}-transition-timing-function);
+  transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
 
   // States
   &:focus {
@@ -36,28 +36,28 @@
 
   // Icon button
   &--icon {
-    padding: variable.$btn-icon-padding;
+    padding: $btn-icon-padding;
 
     &#{$this}--sm {
-      padding: variable.$btn-icon-padding-sm;
+      padding: $btn-icon-padding-sm;
     }
 
     &#{$this}--lg {
-      padding: variable.$btn-icon-padding-lg;
+      padding: $btn-icon-padding-lg;
     }
   }
 
   // Sizes
   &--sm {
-    font-size: variable.$btn-font-size-sm;
-    padding: variable.$btn-padding-sm;
+    font-size: $btn-font-size-sm;
+    padding: $btn-padding-sm;
   }
 
   &--lg {
-    padding: variable.$btn-padding-lg;
+    padding: $btn-padding-lg;
 
-    @include mixin.breakpoint(md) {
-      font-size: variable.$btn-font-size-lg;
+    @include breakpoint(md) {
+      font-size: $btn-font-size-lg;
     }
   }
 
@@ -69,15 +69,15 @@
   // Icons
   &__icon {
     flex-shrink: 0;
-    height: variable.$btn-icon-size;
-    width: variable.$btn-icon-size;
+    height: $btn-icon-size;
+    width: $btn-icon-size;
   }
 }
 
 .btn--primary {
-  @include mixin.btn-variant(primary-foreground, primary-background);
+  @include btn-variant(primary-foreground, primary-background);
 }
 
 .btn--secondary {
-  @include mixin.btn-variant(secondary-foreground, secondary-background);
+  @include btn-variant(secondary-foreground, secondary-background);
 }

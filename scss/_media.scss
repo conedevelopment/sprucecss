@@ -1,5 +1,5 @@
-@use 'function';
-@use 'mixin';
+@use 'function' as *;
+@use 'mixin' as *;
 
 // Set responsive images and disable image select
 img {
@@ -11,7 +11,7 @@ img {
 
 // Fit iframes to parent container
 .iframe-responsive {
-  @include mixin.aspect-ratio(16, 9, iframe);
+  @include aspect-ratio(16, 9, iframe);
 }
 
 iframe {
@@ -24,7 +24,7 @@ figure {
   margin-right: 0;
 
   figcaption {
-    margin-top: function.spacer(xs);
+    margin-top: spacer(xs);
     text-align: center;
   }
 }

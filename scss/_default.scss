@@ -1,9 +1,9 @@
-@use 'function';
-@use 'variable';
+@use 'function' as *;
+@use 'variable' as *;
 
 ::selection {
-  background-color: function.color(background, selection);
-  color: function.color(foreground, selection);
+  background-color: color(background, selection);
+  color: color(foreground, selection);
   text-shadow: none;
 }
 
@@ -22,17 +22,17 @@ html {
 }
 
 body {
-  background: function.color(background);
-  color: function.color(text);
+  background: color(background);
+  color: color(text);
 }
 
 a {
-  color: function.color(link);
+  color: color(link);
   text-decoration: underline;
-  transition: color var(--#{function.setting(prefix)}-transition-duration) var(--#{function.setting(prefix)}-transition-timing-function);
+  transition: color var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
 
   &:hover {
-    color: function.color(link-hover);
+    color: color(link-hover);
   }
 }
 

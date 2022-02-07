@@ -1,4 +1,4 @@
-@use '../variable';
+@use '../variable' as *;
 
 // Replace `$search` with `$replace` in `$string`
 // @author Kitty Giraudel
@@ -18,7 +18,7 @@
 
 // See https://codepen.io/kevinweber/pen/dXWoRw
 @function svg-escape($svg) {
-  @each $char, $encoded in variable.$escaping-characters {
+  @each $char, $encoded in $escaping-characters {
     $svg: str-replace($svg, $char, $encoded);
   }
   @return 'data:image/svg+xml,' + $svg;

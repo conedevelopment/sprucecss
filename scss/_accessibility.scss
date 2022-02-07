@@ -1,5 +1,5 @@
-@use 'mixin';
+@use 'mixin' as *;
 
 .sr-only {
-  @include mixin.visually-hidden;
+  @include visually-hidden;
 }

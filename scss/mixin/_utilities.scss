@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use 'sass:math';
-@use '../function';
-@use '../variable';
+@use '../function' as *;
+@use '../variable' as *;
 
 // Hide something from the screen but keep it visible for assistive technology.
 @mixin visually-hidden() {
@@ -64,7 +64,7 @@
   $thumb-background-color-hover: hsla(0, 0%, 0%, 0.25),
   $track-background-color: hsla(0, 0%, 0%, 0.05),
   $size: 0.5rem,
-  $border-radius: variable.$border-radius-sm
+  $border-radius: $border-radius-sm
 ) {
   &::-webkit-scrollbar {
     height: $size;

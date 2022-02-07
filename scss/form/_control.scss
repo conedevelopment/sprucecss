@@ -1,81 +1,81 @@
-@use '../function';
-@use '../mixin';
-@use '../variable';
+@use '../function' as *;
+@use '../mixin' as *;
+@use '../variable' as *;
 
 .form-control {
   appearance: none;
-  background-color: function.color(background, form);
-  border: 1px solid function.color(border, form);
-  border-radius: variable.$form-control-border-radius;
+  background-color: color(background, form);
+  border: 1px solid color(border, form);
+  border-radius: $form-control-border-radius;
   box-sizing: border-box;
-  color: function.color(text, form);
+  color: color(text, form);
   display: block;
-  font-size: variable.$form-control-font-size;
-  font-weight: variable.$form-control-font-weight;
-  line-height: variable.$form-control-line-height;
-  padding: variable.$form-control-padding;
-  transition: all var(--#{function.setting(prefix)}-transition-duration) var(--#{function.setting(prefix)}-transition-timing-function);
+  font-size: $form-control-font-size;
+  font-weight: $form-control-font-weight;
+  line-height: $form-control-line-height;
+  padding: $form-control-padding;
+  transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
   width: 100%;
 
   &::placeholder {
-    color: function.color(placeholder, form);
+    color: color(placeholder, form);
   };
 
   &:focus {
-    @include mixin.field-focus;
+    @include field-focus;
   }
 
   &[disabled],
   &[disabled='true'] {
-    @include mixin.field-disabled;
+    @include field-disabled;
   }
 
   &--valid {
-    background-image: url('#{function.svg-escape(variable.$form-valid-image)}');
-    background-position: center right variable.$select-icon-right-offset;
+    background-image: url('#{svg-escape($form-valid-image)}');
+    background-position: center right $select-icon-right-offset;
     background-repeat: no-repeat;
-    background-size: variable.$select-icon-width auto;
-    border-color: function.color(success, alert);
-    padding-inline-end: variable.$select-padding-right;
+    background-size: $select-icon-width auto;
+    border-color: color(success, alert);
+    padding-inline-end: $select-padding-right;
 
     html[dir='rtl'] & {
-      background-position: center left variable.$select-icon-right-offset;
+      background-position: center left $select-icon-right-offset;
     }
 
     &:focus {
-      border-color: function.color(success, alert);
-      box-shadow: 0 0 0 0.25rem rgba(function.color(success, alert, true), 0.25);
+      border-color: color(success, alert);
+      box-shadow: 0 0 0 0.25rem rgba(color(success, alert, true), 0.25);
       outline: 2px solid transparent;
     }
   }
 
   &--invalid {
-    background-image: url('#{function.svg-escape(variable.$form-invalid-image)}');
-    background-position: center right variable.$select-icon-right-offset;
+    background-image: url('#{svg-escape($form-invalid-image)}');
+    background-position: center right $select-icon-right-offset;
     background-repeat: no-repeat;
-    background-size: variable.$select-icon-width auto;
-    border-color: function.color(danger, alert);
-    padding-inline-end: variable.$select-padding-right;
+    background-size: $select-icon-width auto;
+    border-color: color(danger, alert);
+    padding-inline-end: $select-padding-right;
 
     html[dir='rtl'] & {
-      background-position: center left variable.$select-icon-right-offset;
+      background-position: center left $select-icon-right-offset;
     }
 
     &:focus {
-      border-color: function.color(danger, alert);
-      box-shadow: 0 0 0 0.25rem rgba(function.color(danger, alert, true), 0.25);
+      border-color: color(danger, alert);
+      box-shadow: 0 0 0 0.25rem rgba(color(danger, alert, true), 0.25);
       outline: 2px solid transparent;
     }
   }
 
   //Sizes
   &--sm {
-    font-size: variable.$font-size-sm;
-    padding: variable.$form-control-padding-sm;
+    font-size: $font-size-sm;
+    padding: $form-control-padding-sm;
   }
 
   &--lg {
-    font-size: variable.$font-size-lg;
-    padding: variable.$form-control-padding-lg;
+    font-size: $font-size-lg;
+    padding: $form-control-padding-lg;
   }
 }

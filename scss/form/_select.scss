@@ -1,16 +1,16 @@
-@use '../function';
-@use '../variable';
+@use '../function' as *;
+@use '../variable' as *;
 
 select {
   &:not([multiple]):not([size]) {
-    background-image: url('#{function.svg-escape(variable.$select-image)}');
-    background-position: center right variable.$select-icon-right-offset;
+    background-image: url('#{svg-escape($select-image)}');
+    background-position: center right $select-icon-right-offset;
     background-repeat: no-repeat;
-    background-size: variable.$select-icon-width auto;
-    padding-inline-end: variable.$select-padding-right;
+    background-size: $select-icon-width auto;
+    padding-inline-end: $select-padding-right;
 
     html[dir='rtl'] & {
-      background-position: center left variable.$select-icon-right-offset;
+      background-position: center left $select-icon-right-offset;
     }
   }
 }
