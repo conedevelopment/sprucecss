@@ -20,7 +20,7 @@
   padding: variable.$btn-padding;
   text-align: start;
   text-decoration: none;
-  transition: all var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+  transition: all var(--#{function.setting(prefix)}-transition-duration) var(--#{function.setting(prefix)}-transition-timing-function);
 
   // States
   &:focus {

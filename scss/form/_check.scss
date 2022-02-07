@@ -27,7 +27,7 @@
     line-height: 1;
     margin-bottom: -0.1em;
     margin-inline-end: function.spacer(xs);
-    transition: all var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+    transition: all var(--#{function.setting(prefix)}-transition-duration) var(--#{function.setting(prefix)}-transition-timing-function);
     width: 1em;
 
     &[type='radio'] {

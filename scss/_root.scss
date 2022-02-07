@@ -1,18 +1,19 @@
 @use 'sass:map';
+@use 'function';
 @use 'variable';
 
 // Generate the $base-colors and $form-colors maps into CSS cusotm properties
 :root {
   @each $key, $value in variable.$colors {
     @each $name, $color in $value {
-      --#{variable.$prefix}-#{$key}-color-#{$name}: #{$color};
+      --#{function.setting(prefix)}-#{$key}-color-#{$name}: #{$color};
     }
   }
 
-  --#{variable.$prefix}-transition-duration: #{variable.$transition-duration};
-  --#{variable.$prefix}-transition-timing-function: #{variable.$transition-timing-function};
+  --#{function.setting(prefix)}-transition-duration: #{variable.$transition-duration};
+  --#{function.setting(prefix)}-transition-timing-function: #{variable.$transition-timing-function};
 
   @media (prefers-reduced-motion: reduce) {
-    --#{variable.$prefix}-transition-duration: 0;
+    --#{function.setting(prefix)}-transition-duration: 0;
   }
 }

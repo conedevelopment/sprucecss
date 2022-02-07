@@ -352,6 +352,8 @@ template {
   --spruce-base-color-code-background: #f0ecf9;
   --spruce-base-color-code-foreground: #00060a;
   --spruce-base-color-blockquote-border: #8660cd;
+  --spruce-selection-color-foreground: white;
+  --spruce-selection-color-background: #8660cd;
   --spruce-alert-color-danger: #db2929;
   --spruce-alert-color-info: #00a1d6;
   --spruce-alert-color-success: #00a854;
@@ -401,14 +403,14 @@ template {
 }
 
 ::-moz-selection {
-  background-color: var(--spruce-base-color-primary);
-  color: #fff;
+  background-color: var(--spruce-selection-color-background);
+  color: var(--spruce-selection-color-foreground);
   text-shadow: none;
 }
 
 ::selection {
-  background-color: var(--spruce-base-color-primary);
-  color: #fff;
+  background-color: var(--spruce-selection-color-background);
+  color: var(--spruce-selection-color-foreground);
   text-shadow: none;
 }
 

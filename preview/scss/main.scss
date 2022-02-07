@@ -19,7 +19,8 @@ $color-tertiary: hsl(320, 52%, 59%);
   $container-width: 50rem,
   $settings: (
     hyphens: true,
-    color-fallback: true
+    color-fallback: true,
+    prefix: bazar
   ),
   $spacers: (
     xl: 10rem
@@ -144,4 +145,12 @@ body {
 
 .custom-heading-size {
   font-size: spruce.responsive-font-size(4rem, 30, 4vw);
+}
+
+.custom-link {
+  transition: all var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
+
+  &:hover {
+    background-color: aqua;
+  }
 }

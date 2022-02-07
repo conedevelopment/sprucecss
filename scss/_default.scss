@@ -29,7 +29,7 @@ body {
 a {
   color: function.color(link);
   text-decoration: underline;
-  transition: color var(--#{variable.$prefix}-transition-duration) var(--#{variable.$prefix}-transition-timing-function);
+  transition: color var(--#{function.setting(prefix)}-transition-duration) var(--#{function.setting(prefix)}-transition-timing-function);
 
   &:hover {
     color: function.color(link-hover);
