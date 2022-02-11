@@ -126,7 +126,7 @@ $font-size-base: 1rem !default;
 $font-size-sm: 0.9rem !default;
 $font-size-lg: 1.1rem !default;
 
-$font-size-lead: math.pow($font-size-ratio, 1) * $font-size-base;
+$font-size-lead: math.pow($font-size-ratio, 1) * $font-size-base !default;
 
 $font-sizes: () !default;
 $font-sizes: map.merge(
