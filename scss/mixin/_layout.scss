@@ -17,6 +17,7 @@
   $gap: spacer(m),
   $width: true,
   $align: none,
+  $important: false,
   $split: 0
 ) {
   @if $align == left or $align == right {
@@ -42,7 +43,11 @@
   }
 
   > * + * {
-    margin-top: $gap;
+    @if $important == true {
+      margin-top: $gap !important;
+    } @else {
+      margin-top: $gap;
+    }
   }
 
   @if meta.type-of($split) == number and $split > 0 {

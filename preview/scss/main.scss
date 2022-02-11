@@ -86,7 +86,10 @@ body {
   &--typography,
   &--media {
     #{$this}__body {
-      @include spruce.layout-stack(spruce.spacer(m));
+      @include spruce.layout-stack(
+        spruce.spacer(m),
+        $important: true
+      );
     }
   }
 }
