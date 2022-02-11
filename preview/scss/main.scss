@@ -28,6 +28,11 @@
   $form-check-font-size-lg: 1.35rem
 );
 
+@include spruce.generate-color-variables(
+  $colors: spruce.$colors,
+  $selector: ':root[data-theme-mode="dark"]'
+);
+
 .btn--custom {
   @include spruce.btn-variant(custom-foreground, custom-background);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
@@ -113,25 +118,25 @@ body {
 
 @each $name, $value in map.get(spruce.$colors, base) {
   .color-item--base-#{$name} {
-    background-color: $value;
+    background-color: spruce.color($name, base);
   }
 }
 
 @each $name, $value in map.get(spruce.$colors, alert) {
   .color-item--alert-#{$name} {
-    background-color: $value;
+    background-color: spruce.color($name, alert);
   }
 }
 
 @each $name, $value in map.get(spruce.$colors, btn) {
   .color-item--btn-#{$name} {
-    background-color: $value;
+    background-color: spruce.color($name, btn);
   }
 }
 
 @each $name, $value in map.get(spruce.$colors, form) {
   .color-item--form-#{$name} {
-    background-color: $value;
+    background-color: spruce.color($name, form);
   }
 }
 

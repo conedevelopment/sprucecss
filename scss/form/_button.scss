@@ -71,6 +71,11 @@
     flex-shrink: 0;
     height: $btn-icon-size;
     width: $btn-icon-size;
+
+    &--sm {
+      height: $btn-icon-size-sm;
+      width: $btn-icon-size-sm;
+    }
   }
 }
 
