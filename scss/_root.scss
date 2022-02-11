@@ -1,15 +1,10 @@
 @use 'sass:map';
 @use 'function' as *;
+@use 'mixin' as *;
 @use 'variable' as *;
 
 // Generate the $base-colors and $form-colors maps into CSS cusotm properties
-@each $key, $value in $colors {
-  :root {
-    @each $name, $color in $value {
-      --#{setting(prefix)}-#{$key}-color-#{$name}: #{$color};
-    }
-  }
-}
+@include generate-color-variables;
 
 :root {
   --#{setting(prefix)}-transition-duration: #{$transition-duration};

@@ -96,6 +96,12 @@ $colors: map.deep-merge(
   $colors
 );
 
+$dark-colors: () !default;
+$dark-colors: map.deep-merge(
+  (),
+  $dark-colors
+);
+
 // Spacers
 $spacer: 1rem !default;
 

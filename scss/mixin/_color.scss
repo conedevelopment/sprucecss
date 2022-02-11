@@ -1,0 +1,15 @@
+@use '../function' as *;
+@use '../variable' as *;
+
+@mixin generate-color-variables(
+  $colors: $colors,
+  $selector: ':root'
+) {
+  @each $key, $value in $colors {
+    #{$selector} {
+      @each $name, $color in $value {
+        --#{setting(prefix)}-#{$key}-color-#{$name}: #{$color};
+      }
+    }
+  }
+}
