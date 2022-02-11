@@ -2,21 +2,19 @@
 @use 'sass:math';
 @use 'sass:map';
 
-$color-tertiary: hsl(320, 52%, 59%);
-
 @use '../../scss/spruce' with (
   $breakpoints: (
     md: 60em,
   ),
   $colors: (
     btn: (
-      custom-background: hsl(0, 0%, 100%),
-      custom-background-hover: hsl(332, 49%, 29%),
-      custom-foreground: hsl(0, 0%, 0%),
-      custom-foreground-hover: hsl(0, 0%, 100%),
+      custom-background: hsl(0 0% 100%),
+      custom-background-hover: hsl(332 49% 29%),
+      custom-foreground: hsl(0 0% 0%),
+      custom-foreground-hover: hsl(0 0% 100%),
     ),
     form: (
-      custom: red
+      custom: hsl(0 100% 50%)
     )
   ),
   $container-width: 50rem,

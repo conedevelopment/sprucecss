@@ -4,17 +4,17 @@
 
 // Create Center layout
 @mixin layout-center(
-  $gutter: spacer(m),
+  $gap: spacer(m),
   $max-width: $container-width
 ) {
   margin-inline: auto;
   max-width: $max-width;
-  padding-inline: $gutter;
+  padding-inline: $gap;
 }
 
 // Create Stack layout
 @mixin layout-stack(
-  $gutter: spacer(m),
+  $gap: spacer(m),
   $width: true,
   $align: none,
   $split: 0
@@ -42,7 +42,7 @@
   }
 
   > * + * {
-    margin-top: $gutter;
+    margin-top: $gap;
   }
 
   @if meta.type-of($split) == number and $split > 0 {
@@ -62,11 +62,11 @@
 
 // Create Grid layout
 @mixin layout-grid(
-  $gutter: spacer(m),
+  $gap: spacer(m),
   $minimum: 12.5rem
 ) {
   display: grid;
-  grid-gap: $gutter;
+  grid-gap: $gap;
 
   @supports (width: min(#{$minimum}, 100%)) {
     & {
@@ -77,12 +77,12 @@
 
 // Create Sidebar Layout
 @mixin layout-sidebar(
-  $gutter: spacer(m),
+  $gap: spacer(m),
   $sidebar-width: 18.75rem
 ) {
   display: flex;
   flex-wrap: wrap;
-  gap: $gutter;
+  gap: $gap;
 
   & > :first-child {
     flex-basis: $sidebar-width;
@@ -98,12 +98,12 @@
 
 // Create instinctive flex layout.
 @mixin layout-flex(
-  $gutter: spacer(m),
+  $gap: spacer(m),
   $width-variable: --col-width
 ) {
   display: flex;
   flex-wrap: wrap;
-  gap: $gutter;
+  gap: $gap;
 
   > * {
     flex: 1 1 var(#{$width-variable});

@@ -3,7 +3,7 @@
 @use '../variable' as *;
 
 fieldset {
-  @include layout-stack(spacer(s));
+  @include layout-stack($fieldset-gap-size);
 
   border: 0;
   margin: 0;
