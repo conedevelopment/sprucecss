@@ -3,13 +3,15 @@
 @use 'variable' as *;
 
 // Generate the $base-colors and $form-colors maps into CSS cusotm properties
-:root {
-  @each $key, $value in $colors {
+@each $key, $value in $colors {
+  :root {
     @each $name, $color in $value {
       --#{setting(prefix)}-#{$key}-color-#{$name}: #{$color};
     }
   }
+}
 
+:root {
   --#{setting(prefix)}-transition-duration: #{$transition-duration};
   --#{setting(prefix)}-transition-timing-function: #{$transition-timing-function};
 
