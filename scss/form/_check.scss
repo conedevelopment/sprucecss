@@ -26,7 +26,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    border: 1px solid color(border, form);
+    border: $form-check-border-width solid color(border, form);
     flex-shrink: 0;
     font-size: $form-check-font-size;
     height: 1em;

@@ -205,11 +205,13 @@ $form-control-line-height: 1.5 !default;
 $form-control-padding: 0.5em 0.75em !default;
 $form-control-padding-sm: 0.25em 0.5em !default;
 $form-control-padding-lg: 0.75em 1em !default;
+$form-control-border-width: 1px !default;
 $form-control-border-radius: $border-radius-sm !default;
 
 $form-check-font-size: $font-size-base !default;
 $form-check-font-size-sm: $font-size-sm !default;
 $form-check-font-size-lg: $font-size-lg !default;
+$form-check-border-width: 1px !default;
 
 $form-input-shadow-width: 0.25rem !default;
 
