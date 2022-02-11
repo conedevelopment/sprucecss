@@ -36,23 +36,21 @@
     );
   }
 
-  &--valid {
-    background-image: url('#{svg-escape($form-valid-image)}');
+  &--valid,
+  &--invalid {
     background-position: center right $select-icon-right-offset;
     background-repeat: no-repeat;
     background-size: $select-icon-width auto;
-    border-color: color(success, alert);
     padding-inline-end: $select-padding-right;
 
     html[dir='rtl'] & {
       background-position: center left $select-icon-right-offset;
     }
+  }
 
-    &:focus {
-      border-color: color(success, alert);
-      box-shadow: 0 0 0 0.25rem rgba(color(success, alert, true), 0.25);
-      outline: 2px solid transparent;
-    }
+  &--valid {
+    background-image: url('#{svg-escape($form-valid-image)}');
+    border-color: color(success, alert);
 
     &:focus {
       @include field-focus(
@@ -64,15 +62,7 @@
 
   &--invalid {
     background-image: url('#{svg-escape($form-invalid-image)}');
-    background-position: center right $select-icon-right-offset;
-    background-repeat: no-repeat;
-    background-size: $select-icon-width auto;
     border-color: color(danger, alert);
-    padding-inline-end: $select-padding-right;
-
-    html[dir='rtl'] & {
-      background-position: center left $select-icon-right-offset;
-    }
 
     &:focus {
       @include field-focus(
