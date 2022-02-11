@@ -45,7 +45,10 @@
     }
 
     &:focus {
-      @include field-focus;
+      @include field-focus(
+        $border: color(border-focus, form),
+        $box-shadow: color(shadow-focus, form)
+      );
     }
 
     &:checked {
@@ -70,7 +73,10 @@
     }
 
     &:disabled {
-      @include field-disabled;
+      @include field-disabled(
+        $background: color(background-disabled, form),
+        $border: color(border-disabled, form)
+      );
 
       + #{$this}__label {
         opacity: 0.5;

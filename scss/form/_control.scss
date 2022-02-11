@@ -22,12 +22,18 @@
   };
 
   &:focus {
-    @include field-focus;
+    @include field-focus(
+      $border: color(border-focus, form),
+      $box-shadow: color(shadow-focus, form)
+    );
   }
 
   &[disabled],
   &[disabled='true'] {
-    @include field-disabled;
+    @include field-disabled(
+      $background: color(background-disabled, form),
+      $border: color(border-disabled, form)
+    );
   }
 
   &--valid {
@@ -47,6 +53,13 @@
       box-shadow: 0 0 0 0.25rem rgba(color(success, alert, true), 0.25);
       outline: 2px solid transparent;
     }
+
+    &:focus {
+      @include field-focus(
+        $border: color(valid, form),
+        $box-shadow: color(valid-shadow, form)
+      );
+    }
   }
 
   &--invalid {
@@ -62,9 +75,10 @@
     }
 
     &:focus {
-      border-color: color(danger, alert);
-      box-shadow: 0 0 0 0.25rem rgba(color(danger, alert, true), 0.25);
-      outline: 2px solid transparent;
+      @include field-focus(
+        $border: color(invalid, form),
+        $box-shadow: color(invalid-shadow, form)
+      );
     }
   }
 
