@@ -1,9 +1,11 @@
+@use 'sass:map';
 @use '../function' as *;
+@use '../mixin' as *;
 @use '../variable' as *;
 
 select {
   &:not([multiple]):not([size]) {
-    background-image: url('#{svg-escape($select-image)}');
+    @include field-icon($select-image, map.get($colors, form, select-foreground));
     background-position: center right $select-icon-right-offset;
     background-repeat: no-repeat;
     background-size: $select-icon-width auto;

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../mixin' as *;
 @use '../variable' as *;
@@ -49,7 +50,7 @@
   }
 
   &--valid {
-    background-image: url('#{svg-escape($form-valid-image)}');
+    @include field-icon($form-valid-image, map.get($colors, alert, success));
     border-color: color(success, alert);
 
     &:focus {
@@ -61,7 +62,7 @@
   }
 
   &--invalid {
-    background-image: url('#{svg-escape($form-invalid-image)}');
+    @include field-icon($form-invalid-image, map.get($colors, alert, danger));
     border-color: color(danger, alert);
 
     &:focus {

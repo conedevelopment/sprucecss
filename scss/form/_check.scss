@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../variable' as *;
 @use '../function' as *;
 @use '../mixin' as *;
@@ -56,18 +57,18 @@
       border-color: color(check-background, form);
 
       &[type='radio'] {
-        background-image: url('#{svg-escape($form-radio-image)}');
+        @include field-icon($form-radio-image, map.get($colors, form, check-foreground));
       }
 
       &[type='checkbox'] {
-        background-image: url('#{svg-escape($form-checkbox-image)}');
+        @include field-icon($form-checkbox-image, map.get($colors, form, check-foreground));
       }
     }
 
     &:indeterminate {
       &[type='checkbox'] {
+        @include field-icon($form-checkbox-indeterminate-image, map.get($colors, form, check-foreground));
         background-color: color(check-background, form);
-        background-image: url('#{svg-escape($form-checkbox-indeterminate-image)}');
         border-color: color(check-background, form);
       }
     }

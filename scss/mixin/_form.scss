@@ -1,13 +1,27 @@
+@use '../function' as *;
 @use '../variable' as *;
 
-@mixin field-focus($border, $box-shadow) {
+@mixin field-focus(
+  $border,
+  $box-shadow
+) {
   border-color: $border;
   box-shadow: 0 0 0 $form-input-shadow-width $box-shadow;
   outline: 2px solid transparent;
 }
 
-@mixin field-disabled($background, $border) {
+@mixin field-disabled(
+  $background,
+  $border
+) {
   background-color: $background;
   border-color: $border;
   cursor: not-allowed;
+}
+
+@mixin field-icon(
+  $icon,
+  $color
+) {
+  background-image: url('#{svg-escape(str-replace($icon, '#COLOR#', $color))}');
 }

@@ -578,7 +578,7 @@ fieldset > * {
   width: 100%;
 }
 fieldset > * + * {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 fieldset + fieldset {
   margin-top: 3rem;
@@ -765,8 +765,8 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M9.525,13.777l-2.411,-2.412c-0.234,-0.233 -0.613,-0.233 -0.846,0l-1.27,1.27c-0.233,0.233 -0.233,0.612 0,0.846l4.104,4.103c0.116,0.117 0.269,0.175 0.422,0.175l0.003,0c0.152,0 0.305,-0.058 0.421,-0.175l9.054,-9.053c0.233,-0.234 0.233,-0.613 -0,-0.846l-1.27,-1.269c-0.233,-0.234 -0.612,-0.234 -0.846,-0l-7.361,7.361Z" style="fill:white;"/%3e%3c/svg%3e');
 }
 .form-check__control:indeterminate[type=checkbox] {
-  background-color: var(--spruce-form-color-check-background);
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M19.5,11.1c-0,-0.331 -0.269,-0.6 -0.6,-0.6l-13.8,0c-0.331,0 -0.6,0.269 -0.6,0.6l0,1.8c0,0.331 0.269,0.6 0.6,0.6l13.8,0c0.331,0 0.6,-0.269 0.6,-0.6l-0,-1.8Z" style="fill:white;"/%3e%3c/svg%3e');
+  background-color: var(--spruce-form-color-check-background);
   border-color: var(--spruce-form-color-check-background);
 }
 .form-check__control:disabled {

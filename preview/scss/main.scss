@@ -33,6 +33,15 @@
   $selector: ':root[data-theme-mode="dark"]'
 );
 
+html[data-theme-mode='dark'] {
+  select:not([multiple]):not([size]) {
+    @include spruce.field-icon(
+      spruce.$select-image,
+      spruce.color(secondary, $only-color: true)
+    );
+  }
+}
+
 .btn--custom {
   @include spruce.btn-variant(custom-foreground, custom-background);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
