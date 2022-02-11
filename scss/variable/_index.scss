@@ -185,6 +185,8 @@ $form-label-font-size-lg: $font-size-lg !default;
 $form-label-font-style: null !default;
 $form-label-font-weight: null !default;
 
+$fieldset-gap-size: map.get($spacers, xs) !default;
+
 $legend-font-size: clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}) !default;
 $legend-font-weight: 700 !default;
 
