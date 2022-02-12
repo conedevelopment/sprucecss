@@ -191,3 +191,21 @@ body {
     background-color: aqua;
   }
 }
+
+.cleared-list {
+  @include spruce.clear-list;
+}
+
+.card {
+  @include spruce.a11y-card-link('.card__link', true);
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-lg;
+  padding: spruce.spacer(m);
+
+  &__link {
+    color: spruce.color(heading);
+    font-size: spruce.font-size(h3);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

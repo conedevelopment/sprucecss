@@ -103,3 +103,24 @@
   margin: 0;
   padding: 0;
 }
+
+// More accessible card linking
+@mixin a11y-card-link($link, $at-root: false) {
+  position: relative;
+
+  @if $at-root == true {
+    @at-root {
+      #{$link}::before {
+        content: '';
+        inset: 0;
+        position: absolute;
+      }
+    }
+  } @else {
+    #{$link}::before {
+      content: '';
+      inset: 0;
+      position: absolute;
+    }
+  }
+}
