@@ -859,12 +859,6 @@ figure figcaption {
   color: var(--spruce-table-color-text);
   width: 100%;
 }
-.table--striped > tbody > tr:nth-child(even) {
-  background-color: var(--spruce-table-color-stripe);
-}
-.table--hover > tbody > tr:hover {
-  background: var(--spruce-table-color-hover);
-}
 .table caption {
   color: var(--spruce-table-color-caption);
   margin-bottom: 1rem;
@@ -879,6 +873,30 @@ figure figcaption {
   color: var(--spruce-table-color-heading);
   text-align: inherit;
   text-align: -webkit-match-parent;
+}
+.table--striped > tbody > tr:nth-child(even) {
+  background-color: var(--spruce-table-color-stripe);
+}
+.table--hover > tbody > tr:hover {
+  background: var(--spruce-table-color-hover);
+}
+.table--clear-border th,
+.table--clear-border td {
+  border: 0;
+}
+.table--sm th,
+.table--sm td {
+  padding: 0.25rem 0.5rem;
+}
+.table--rounded th:first-child,
+.table--rounded td:first-child {
+  border-start-start-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+}
+.table--rounded th:last-child,
+.table--rounded td:last-child {
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
 }
 
 body {

@@ -1,0 +1,7 @@
+@use 'function' as *;
+
+@if setting(utilities) == true {
+  .hidden {
+    display: none !important;
+  }
+}
