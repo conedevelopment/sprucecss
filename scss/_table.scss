@@ -15,6 +15,24 @@
   color: color(text, table);
   width: 100%;
 
+  caption {
+    color: color(caption, table);
+    margin-bottom: spacer(s);
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid color(border, table);
+    line-height: $line-height-md;
+    padding: $table-padding;
+  }
+
+  th {
+    color: color(heading, table);
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+  }
+
   &--striped {
     > tbody > tr:nth-child(even) {
       background-color: color(stripe, table);
@@ -27,21 +45,17 @@
     }
   }
 
-  caption {
-    color: color(caption, table);
-    margin-bottom: spacer(s);
+  &--clear-border {
+    th,
+    td {
+      border: 0;
+    }
   }
 
-  th,
-  td {
-    border-bottom: 1px solid color(border, table);
-    line-height: $line-height-md;
-    padding: spacer(s);
-  }
-
-  th {
-    color: color(heading, table);
-    text-align: inherit;
-    text-align: -webkit-match-parent;
+  &--sm {
+    th,
+    td {
+      padding: $table-padding-sm;
+    }
   }
 }

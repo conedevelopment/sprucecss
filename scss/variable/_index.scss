@@ -236,6 +236,9 @@ $form-invalid-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg
 
 // Tables
 $table-responsive-width: 40rem !default;
+$table-padding: map.get($spacers, s) !default;
+$table-padding-sm: map.get($spacers, xxs) map.get($spacers, xs) !default;
+
 
 // Layout
 $container-width: 80rem !default;
