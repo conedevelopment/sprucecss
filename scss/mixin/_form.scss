@@ -2,6 +2,7 @@
 @use '../function' as *;
 @use '../variable' as *;
 
+// Style field focus state
 @mixin field-focus(
   $border,
   $box-shadow
@@ -11,6 +12,7 @@
   outline: 2px solid transparent;
 }
 
+// Style field disabled state
 @mixin field-disabled(
   $background,
   $border
@@ -20,6 +22,7 @@
   cursor: not-allowed;
 }
 
+// Get custom icon background for input and select fields
 @mixin field-icon(
   $icon,
   $color
@@ -27,6 +30,7 @@
   background-image: url('#{svg-escape(str-replace($icon, '#COLOR#', $color))}');
 }
 
+// Create custom checkbox and radio
 @mixin form-check(
   $parent,
   $input,
