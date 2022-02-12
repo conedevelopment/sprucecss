@@ -81,7 +81,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -367,13 +368,11 @@ template {
 
 :root {
   --spruce-btn-color-primary-background: #8660cd;
-  --spruce-btn-color-primary-background-hover: #663ab7;
   --spruce-btn-color-primary-foreground: white;
-  --spruce-btn-color-primary-foreground-hover: white;
+  --spruce-btn-color-primary-shadow-focus: rgba(134, 96, 205, 0.25);
   --spruce-btn-color-secondary-background: #2350f6;
-  --spruce-btn-color-secondary-background-hover: #0936d7;
   --spruce-btn-color-secondary-foreground: white;
-  --spruce-btn-color-secondary-foreground-hover: white;
+  --spruce-btn-color-secondary-shadow-focus: rgba(35, 80, 246, 0.25);
 }
 
 :root {
@@ -425,6 +424,12 @@ template {
   position: absolute !important;
   white-space: nowrap !important;
   width: 1px !important;
+}
+
+::-moz-selection {
+  background-color: var(--spruce-selection-color-background);
+  color: var(--spruce-selection-color-foreground);
+  text-shadow: none;
 }
 
 ::selection {
@@ -539,11 +544,11 @@ hr {
   color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
-  color: var(--spruce-btn-color-primary-foreground-hover);
+  background-color: #543097;
+  color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(134, 96, 205, 0.25);
+  box-shadow: 0 0 0 0.25rem var(--spruce-btn-color-primary-shadow-focus);
   outline: 2px solid transparent;
 }
 
@@ -552,11 +557,11 @@ hr {
   color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background-hover);
-  color: var(--spruce-btn-color-secondary-foreground-hover);
+  background-color: #072bab;
+  color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(35, 80, 246, 0.25);
+  box-shadow: 0 0 0 0.25rem var(--spruce-btn-color-secondary-shadow-focus);
   outline: 2px solid transparent;
 }
 
@@ -594,7 +599,9 @@ legend {
 }
 
 .form-control {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: var(--spruce-form-color-background);
   border: 1px solid var(--spruce-form-color-border);
   border-radius: 0.25rem;
@@ -606,6 +613,12 @@ legend {
   padding: 0.5em 0.75em;
   transition: all var(--spruce-transition-duration) var(--spruce-transition-timing-function);
   width: 100%;
+}
+.form-control::-moz-placeholder {
+  color: var(--spruce-form-color-placeholder);
+}
+.form-control:-ms-input-placeholder {
+  color: var(--spruce-form-color-placeholder);
 }
 .form-control::placeholder {
   color: var(--spruce-form-color-placeholder);
@@ -624,7 +637,8 @@ legend {
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  padding-inline-end: 2em;
+  -webkit-padding-end: 2em;
+          padding-inline-end: 2em;
 }
 html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   background-position: center left 0.5em;
@@ -712,7 +726,9 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 
 .form-check__control {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: var(--spruce-form-color-background);
   background-position: center;
   background-repeat: no-repeat;
@@ -723,7 +739,8 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   height: 1em;
   line-height: 1;
   margin-bottom: -0.1em;
-  margin-inline-end: 0.5rem;
+  -webkit-margin-end: 0.5rem;
+          margin-inline-end: 0.5rem;
   transition: all var(--spruce-transition-duration) var(--spruce-transition-timing-function);
   width: 1em;
 }
@@ -771,7 +788,8 @@ select:not([multiple]):not([size]) {
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  padding-inline-end: 2em;
+  -webkit-padding-end: 2em;
+          padding-inline-end: 2em;
 }
 html[dir=rtl] select:not([multiple]):not([size]) {
   background-position: center left 0.5em;
@@ -791,7 +809,10 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .iframe-responsive {
@@ -874,7 +895,9 @@ h3,
 h4,
 h5,
 h6 {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   overflow-wrap: break-word;
 }
 
@@ -1000,5 +1023,3 @@ samp {
 .lead {
   font-size: 1.333rem;
 }
-
-/*# sourceMappingURL=spruce.css.map */

@@ -57,13 +57,11 @@ $colors: map.deep-merge(
     ),
     btn: (
       primary-background: $color-primary,
-      primary-background-hover: color.scale($color-primary, $lightness: -20%),
       primary-foreground: $color-white,
-      primary-foreground-hover: $color-white,
+      primary-shadow-focus: color.adjust($color-primary, $alpha: -0.75),
       secondary-background: $color-secondary,
-      secondary-background-hover: color.scale($color-secondary, $lightness: -20%),
       secondary-foreground: $color-white,
-      secondary-foreground-hover: $color-white
+      secondary-shadow-focus: color.adjust($color-secondary, $alpha: -0.75)
     ),
     form: (
       background: $color-white,
@@ -183,6 +181,8 @@ $btn-padding-lg: 0.9em 1.15em !default;
 
 $btn-icon-size-sm: 0.85em !default;
 $btn-icon-size: 1em !default;
+
+$btn-shadow-width: 0.25rem !default;
 
 // Forms
 $form-label-font-size: null !default;

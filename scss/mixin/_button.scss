@@ -1,35 +1,44 @@
+@use 'sass:color';
 @use 'sass:map';
 @use '../function' as *;
 @use '../variable' as *;
 
 @mixin btn-focus(
-  $background: primary-background
+  $box-shadow
 ) {
-  @if not map.has-key($colors, btn, $background) {
-    @error 'The #{$background} key name doesn\'t exist under btn at the $colors map.';
-  }
-
-  box-shadow: 0 0 0 0.25rem rgba(color(#{$background}, btn, true), 0.25);
+  box-shadow: 0 0 0 $btn-shadow-width $box-shadow;
   outline: 2px solid transparent;
 }
 
 @mixin btn-variant(
-  $foreground: primary-foreground,
-  $background: primary-background
+  $type: primary
 ) {
-  @if not map.has-key($colors, btn, $foreground) or not map.has-key($colors, btn, $background) {
-    @error 'The #{$foreground} or #{$background} key name doesn\'t exist under btn at the $colors map.';
+  @if not map.has-key($colors, btn, $type + '-foreground') or not map.has-key($colors, btn, $type + '-background') {
+    @error 'The #{$type + '-foreground'} or #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
   }
 
-  background-color: color(#{$background}, btn);
-  color: color(#{$foreground}, btn);
+  background-color: color($type + '-background', btn);
+  color: color($type + '-foreground', btn);
 
   &:hover {
-    background-color: color(#{$background}-hover, btn);
-    color: color(#{$foreground}-hover, btn);
+    @if map.has-key($colors, btn, $type + '-foreground-hover') {
+      background-color: color($type + '-background-hover', btn);
+    } @else {
+      background-color: color.adjust(color($type + '-background', btn, true), $lightness: -20%);
+    }
+
+    @if map.has-key($colors, btn, $type + '-foreground-hover') {
+      color: color($type + '-foreground-hover', btn);
+    } @else {
+      color: color($type + '-foreground', btn);
+    }
   }
 
   &:focus {
-    @include btn-focus($background);
+    @if map.has-key($colors, btn, $type + '-shadow-focus') {
+      @include btn-focus(color($type + '-shadow-focus', btn));
+    } @else {
+      @include btn-focus(color.adjust(color($type + '-background', btn, true), $alpha: -0.75));
+    }
   }
 }

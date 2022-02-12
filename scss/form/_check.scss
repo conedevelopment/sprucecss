@@ -3,4 +3,5 @@
 @use '../function' as *;
 @use '../mixin' as *;
 
+// Create the custom checkbox with form-check() mixin https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L33
 @include form-check('.form-check', '.form-check__control', '.form-check__label', true);

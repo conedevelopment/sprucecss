@@ -80,9 +80,9 @@
 }
 
 .btn--primary {
-  @include btn-variant(primary-foreground, primary-background);
+  @include btn-variant(primary);
 }
 
 .btn--secondary {
-  @include btn-variant(secondary-foreground, secondary-background);
+  @include btn-variant(secondary);
 }

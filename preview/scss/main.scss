@@ -13,7 +13,10 @@ $color-tertiary: hsl(337, 55%, 43%);
       custom-background: hsl(0 0% 100%),
       custom-background-hover: hsl(332 49% 29%),
       custom-foreground: hsl(0 0% 0%),
-      custom-foreground-hover: hsl(0 0% 100%)
+      custom-foreground-hover: hsl(0 0% 100%),
+      tertiary-background: $color-tertiary,
+      tertiary-foreground: hsl(0 0% 100%),
+      tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75)
     ),
     form: (
       custom: hsl(0 100% 50%)
@@ -51,11 +54,15 @@ html[data-theme-mode='dark'] {
 }
 
 .btn--custom {
-  @include spruce.btn-variant(custom-foreground, custom-background);
+  @include spruce.btn-variant(custom);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
   border: 3px solid spruce.color(custom-foreground, btn);
   border-radius: 0;
   font-family: spruce.$font-family-cursive;
+}
+
+.btn--tertiary {
+  @include spruce.btn-variant(tertiary);
 }
 
 body {
