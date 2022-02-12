@@ -2,6 +2,8 @@
 @use 'sass:math';
 @use 'sass:map';
 
+$color-tertiary: hsl(337, 55%, 43%);
+
 @use '../../scss/spruce' with (
   $breakpoints: (
     md: 60em,
@@ -11,7 +13,7 @@
       custom-background: hsl(0 0% 100%),
       custom-background-hover: hsl(332 49% 29%),
       custom-foreground: hsl(0 0% 0%),
-      custom-foreground-hover: hsl(0 0% 100%),
+      custom-foreground-hover: hsl(0 0% 100%)
     ),
     form: (
       custom: hsl(0 100% 50%)
@@ -31,6 +33,12 @@
 @include spruce.generate-color-variables(
   $colors: spruce.$colors,
   $selector: ':root[data-theme-mode="dark"]'
+);
+
+@include spruce.form-check(
+  '.wpcf7-list-item label',
+  '.wpcf7-list-item input',
+  '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
 html[data-theme-mode='dark'] {

@@ -81,8 +81,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -428,12 +427,6 @@ template {
   width: 1px !important;
 }
 
-::-moz-selection {
-  background-color: var(--spruce-selection-color-background);
-  color: var(--spruce-selection-color-foreground);
-  text-shadow: none;
-}
-
 ::selection {
   background-color: var(--spruce-selection-color-background);
   color: var(--spruce-selection-color-foreground);
@@ -601,9 +594,7 @@ legend {
 }
 
 .form-control {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--spruce-form-color-background);
   border: 1px solid var(--spruce-form-color-border);
   border-radius: 0.25rem;
@@ -615,12 +606,6 @@ legend {
   padding: 0.5em 0.75em;
   transition: all var(--spruce-transition-duration) var(--spruce-transition-timing-function);
   width: 100%;
-}
-.form-control::-moz-placeholder {
-  color: var(--spruce-form-color-placeholder);
-}
-.form-control:-ms-input-placeholder {
-  color: var(--spruce-form-color-placeholder);
 }
 .form-control::placeholder {
   color: var(--spruce-form-color-placeholder);
@@ -639,8 +624,7 @@ legend {
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  -webkit-padding-end: 2em;
-          padding-inline-end: 2em;
+  padding-inline-end: 2em;
 }
 html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   background-position: center left 0.5em;
@@ -718,16 +702,17 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   align-items: center;
   display: inline-flex;
 }
+
 .form-check--sm .form-check__control {
   font-size: 0.9rem;
 }
+
 .form-check--lg .form-check__control {
   font-size: 1.1rem;
 }
+
 .form-check__control {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--spruce-form-color-background);
   background-position: center;
   background-repeat: no-repeat;
@@ -738,8 +723,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   height: 1em;
   line-height: 1;
   margin-bottom: -0.1em;
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
+  margin-inline-end: 0.5rem;
   transition: all var(--spruce-transition-duration) var(--spruce-transition-timing-function);
   width: 1em;
 }
@@ -777,6 +761,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 .form-check__control:disabled + .form-check__label {
   opacity: 0.5;
 }
+
 .form-check__label {
   line-height: calc(2px + 2ex + 2px);
 }
@@ -786,8 +771,7 @@ select:not([multiple]):not([size]) {
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  -webkit-padding-end: 2em;
-          padding-inline-end: 2em;
+  padding-inline-end: 2em;
 }
 html[dir=rtl] select:not([multiple]):not([size]) {
   background-position: center left 0.5em;
@@ -807,10 +791,7 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .iframe-responsive {
@@ -893,9 +874,7 @@ h3,
 h4,
 h5,
 h6 {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   overflow-wrap: break-word;
 }
 
@@ -1021,3 +1000,5 @@ samp {
 .lead {
   font-size: 1.333rem;
 }
+
+/*# sourceMappingURL=spruce.css.map */

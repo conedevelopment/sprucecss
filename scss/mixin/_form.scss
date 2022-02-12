@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../variable' as *;
 
@@ -24,4 +25,100 @@
   $color
 ) {
   background-image: url('#{svg-escape(str-replace($icon, '#COLOR#', $color))}');
+}
+
+@mixin form-check(
+  $parent,
+  $input,
+  $label,
+  $has-sizes: false
+) {
+  #{$parent} {
+    align-items: center;
+    display: inline-flex;
+  }
+
+  @if ($has-sizes) {
+    #{$parent}--sm {
+      #{$input} {
+        font-size: $form-check-font-size-sm;
+      }
+    }
+
+    #{$parent}--lg {
+      #{$input} {
+        font-size: $form-check-font-size-lg;
+      }
+    }
+  }
+
+  @at-root {
+    #{$input} {
+      appearance: none;
+      background-color: color(background, form);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: $form-check-border-width solid color(border, form);
+      flex-shrink: 0;
+      font-size: $form-check-font-size;
+      height: 1em;
+      line-height: 1;
+      margin-bottom: -0.1em;
+      margin-inline-end: spacer(xs);
+      transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+      width: 1em;
+
+      &[type='radio'] {
+        border-radius: 50%;
+      }
+
+      &[type='checkbox'] {
+        border-radius: $border-radius-sm;
+      }
+
+      &:focus {
+        @include field-focus(
+          $border: color(border-focus, form),
+          $box-shadow: color(shadow-focus, form)
+        );
+      }
+
+      &:checked {
+        background-color: color(check-background, form);
+        border-color: color(check-background, form);
+
+        &[type='radio'] {
+          @include field-icon($form-radio-image, map.get($colors, form, check-foreground));
+        }
+
+        &[type='checkbox'] {
+          @include field-icon($form-checkbox-image, map.get($colors, form, check-foreground));
+        }
+      }
+
+      &:indeterminate {
+        &[type='checkbox'] {
+          @include field-icon($form-checkbox-indeterminate-image, map.get($colors, form, check-foreground));
+          background-color: color(check-background, form);
+          border-color: color(check-background, form);
+        }
+      }
+
+      &:disabled {
+        @include field-disabled(
+          $background: color(background-disabled, form),
+          $border: color(border-disabled, form)
+        );
+
+        + #{$label} {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    #{$label} {
+      line-height: $line-height-heading;
+    }
+  }
 }
