@@ -3,7 +3,7 @@
 @use '../function' as *;
 @use '../variable' as *;
 
-// Hide something from the screen but keep it visible for assistive technology.
+// Hide something from the screen but keep it visible for assistive technology
 @mixin visually-hidden() {
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;
@@ -16,7 +16,7 @@
   width: 1px !important;
 }
 
-// Crop text and display an ellipsis with multiline.
+// Crop text and display an ellipsis with multiline
 @mixin text-ellipsis(
   $number-of-lines: 1
 ) {
@@ -34,7 +34,7 @@
   }
 }
 
-// Custom aspect ratio generator.
+// Custom aspect ratio generator
 @mixin aspect-ratio(
   $width,
   $height,
@@ -58,7 +58,7 @@
   }
 }
 
-// Custom scrollbar.
+// Custom scrollbar
 @mixin scrollbar(
   $thumb-background-color: hsla(0, 0%, 0%, 0.15),
   $thumb-background-color-hover: hsla(0, 0%, 0%, 0.25),
@@ -84,4 +84,15 @@
     background: $track-background-color;
     border-radius: $border-radius;
   }
+}
+
+// Clear default button styles
+@mixin clear-btn() {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  outline: inherit;
+  padding: 0;
 }

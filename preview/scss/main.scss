@@ -65,6 +65,10 @@ html[data-theme-mode='dark'] {
   @include spruce.btn-variant(tertiary);
 }
 
+.clear-btn {
+  @include spruce.clear-btn;
+}
+
 body {
   background-color: spruce.color(background);
 }
