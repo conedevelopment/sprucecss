@@ -1,5 +1,32 @@
 # Spruce CSS Changelog
 
+## v0.3.0 (2022-02-22)
+
+### New features
+- Add reset ul, ol mixin with `clear-list()`.
+- Add clear button style mixin with `clear-btn()`.
+- Add `a11y-card-link()` mixin.
+- New table variants: sm size, bordered, clear-border style.
+- Add `hidden` utility class.
+- Add `generate-color-variables()` mixins to generate color variables.
+- Add `field-icon()` mixin to get and color form element images.
+
+### Improvements
+- `::selection' add foreground color variable.
+- Move `$prefix` under the `$settings` map.
+- Use `as *` import internally.
+- Add color variable to the table.
+- Add font-size variable to `.form-check--lg`.
+- Use newer HSL syntax at colors.
+- Fieldset stack gap got a variable.
+- Button icon got a new, smaller size option.
+- `layout-stack()` has !important parameter.
+- Reorganize `.form-check` styling under a mixin.
+- Simplify button declaration colors (now we can init a button with only two colors).
+
+### Bugfix
+- `$font-size-lead`: add !default.
+
 ## v0.2.0 (2022-01-28)
 
 ### New features

@@ -571,12 +571,15 @@ fieldset {
   padding: 0;
 }
 fieldset > * {
-  margin-bottom: 0;
-  margin-top: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
   width: 100%;
 }
 fieldset > * + * {
-  margin-top: 1rem;
+  -webkit-margin-before: 1rem;
+          margin-block-start: 1rem;
 }
 fieldset + fieldset {
   margin-top: 3rem;
@@ -677,11 +680,14 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 
 .form-group > * {
-  margin-bottom: 0;
-  margin-top: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
 }
 .form-group > * + * {
-  margin-top: 0.25rem;
+  -webkit-margin-before: 0.25rem;
+          margin-block-start: 0.25rem;
 }
 .form-group--vertical-check {
   display: flex;
@@ -689,11 +695,14 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   align-items: start;
 }
 .form-group--vertical-check > * {
-  margin-bottom: 0;
-  margin-top: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
 }
 .form-group--vertical-check > * + * {
-  margin-top: 0.5rem;
+  -webkit-margin-before: 0.5rem;
+          margin-block-start: 0.5rem;
 }
 .form-group--grid {
   align-items: start;
@@ -967,12 +976,15 @@ ol {
 }
 ul > *,
 ol > * {
-  margin-bottom: 0;
-  margin-top: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
 }
 ul > * + *,
 ol > * + * {
-  margin-top: 0.25rem;
+  -webkit-margin-before: 0.25rem;
+          margin-block-start: 0.25rem;
 }
 ul li,
 ol li {
@@ -1005,12 +1017,15 @@ blockquote {
   padding: 0 0 0 1.5rem;
 }
 blockquote > * {
-  margin-bottom: 0;
-  margin-top: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
   width: 100%;
 }
 blockquote > * + * {
-  margin-top: 0.5rem;
+  -webkit-margin-before: 0.5rem;
+          margin-block-start: 0.5rem;
 }
 blockquote cite {
   display: block;

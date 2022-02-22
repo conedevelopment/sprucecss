@@ -4,9 +4,9 @@
 @use '../variable' as *;
 
 @mixin btn-focus(
-  $color
+  $box-shadow
 ) {
-  box-shadow: 0 0 0 $btn-shadow-width $color;
+  box-shadow: 0 0 0 $btn-shadow-width $box-shadow;
   outline: 2px solid transparent;
 }
 

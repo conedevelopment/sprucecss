@@ -3,6 +3,7 @@
 @use 'sass:map';
 
 $color-tertiary: hsl(337, 55%, 43%);
+$spacer: 1.25rem;
 
 @use '../../scss/spruce' with (
   $breakpoints: (
@@ -29,7 +30,7 @@ $color-tertiary: hsl(337, 55%, 43%);
     utilities: false
   ),
   $spacers: (
-    xl: 10rem
+    xl: $spacer * 10rem
   ),
   $form-check-font-size-lg: 1.35rem
 );
