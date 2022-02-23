@@ -58,10 +58,14 @@ $colors: map.deep-merge(
     ),
     btn: (
       primary-background: $color-primary,
+      primary-background-hover: color.adjust($color-primary, $lightness: -20%),
       primary-foreground: $color-white,
+      primary-foreground-hover: $color-white,
       primary-shadow-focus: color.adjust($color-primary, $alpha: -0.75),
       secondary-background: $color-secondary,
+      secondary-background-hover: color.adjust($color-secondary, $lightness: -20%),
       secondary-foreground: $color-white,
+      secondary-foreground-hover: $color-white,
       secondary-shadow-focus: color.adjust($color-secondary, $alpha: -0.75)
     ),
     form: (
