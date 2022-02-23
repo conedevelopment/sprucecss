@@ -21,7 +21,7 @@
   color: color($type + '-foreground', btn);
 
   &:hover {
-    @if map.has-key($colors, btn, $type + '-foreground-hover') {
+    @if map.has-key($colors, btn, $type + '-background-hover') {
       background-color: color($type + '-background-hover', btn);
     } @else {
       background-color: color.adjust(color($type + '-background', btn, true), $lightness: -20%);
