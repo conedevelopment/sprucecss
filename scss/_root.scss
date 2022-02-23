@@ -3,7 +3,7 @@
 @use 'mixin' as *;
 @use 'variable' as *;
 
-// Generate the $base-colors and $form-colors maps into CSS cusotm properties
+// Generate the $colors maps into CSS custom properties.
 @include generate-color-variables;
 
 :root {

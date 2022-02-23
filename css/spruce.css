@@ -368,10 +368,14 @@ template {
 
 :root {
   --spruce-btn-color-primary-background: #8660cd;
+  --spruce-btn-color-primary-background-hover: #543097;
   --spruce-btn-color-primary-foreground: white;
+  --spruce-btn-color-primary-foreground-hover: white;
   --spruce-btn-color-primary-shadow-focus: rgba(134, 96, 205, 0.25);
   --spruce-btn-color-secondary-background: #2350f6;
+  --spruce-btn-color-secondary-background-hover: #072bab;
   --spruce-btn-color-secondary-foreground: white;
+  --spruce-btn-color-secondary-foreground-hover: white;
   --spruce-btn-color-secondary-shadow-focus: rgba(35, 80, 246, 0.25);
 }
 
@@ -544,8 +548,8 @@ hr {
   color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:hover {
-  background-color: #543097;
-  color: var(--spruce-btn-color-primary-foreground);
+  background-color: var(--spruce-btn-color-primary-background-hover);
+  color: var(--spruce-btn-color-primary-foreground-hover);
 }
 .btn--primary:focus {
   box-shadow: 0 0 0 0.25rem var(--spruce-btn-color-primary-shadow-focus);
@@ -557,8 +561,8 @@ hr {
   color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:hover {
-  background-color: #072bab;
-  color: var(--spruce-btn-color-secondary-foreground);
+  background-color: var(--spruce-btn-color-secondary-background-hover);
+  color: var(--spruce-btn-color-secondary-foreground-hover);
 }
 .btn--secondary:focus {
   box-shadow: 0 0 0 0.25rem var(--spruce-btn-color-secondary-shadow-focus);

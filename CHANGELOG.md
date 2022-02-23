@@ -1,5 +1,8 @@
 # Spruce CSS Changelog
 
+## v0.3.1 (2022-02-23)
+- Fix typos
+
 ## v0.3.0 (2022-02-22)
 
 ### New features
