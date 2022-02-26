@@ -2,12 +2,12 @@
 @use 'sass:math';
 @use 'sass:map';
 
-@use 'config';
-@use 'dark-mode';
-@use '../../../scss/spruce';
-
-@include spruce.generate-content;
-@include spruce.generate-form;
+@forward 'config';
+@forward 'dark-mode';
+@forward 'styles';
+@forward 'layout';
+@forward 'component';
+@use 'spruce';
 
 @include spruce.generate-form-check(
   '.wpcf7-list-item label',
@@ -15,6 +15,23 @@
   '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
+.site-header {
+  background-color: #18002E;
+  padding-block: spruce.spacer(m);
+
+  &__container {
+    @include spruce.layout-center;
+  }
+
+  &__logo {
+    height: 1.85rem;
+  }
+
+  &__title {
+    color: #fff;
+    padding-block: spruce.spacer(l) spruce.spacer(m);
+  }
+}
 
 .btn--custom {
   @include spruce.btn-variant(custom);
@@ -135,12 +152,11 @@ body {
 }
 
 .scrollbar {
-  @include spruce.scrollbar(
-    $thumb-background-color: spruce.color(primary)
-  );
+  @include spruce.scrollbar;
   @include spruce.layout-stack;
   max-height: 15rem;
   overflow: auto;
+  padding-inline-end: spruce.spacer(m);
 }
 
 .custom-heading-size {

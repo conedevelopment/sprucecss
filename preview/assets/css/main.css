@@ -1111,6 +1111,78 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   color: var(--spruce-alert-color-danger, #db2929);
 }
 
+.site-main {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+}
+.site-main__container {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.5rem;
+}
+.site-main__inner {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 48em) {
+  .site-main__inner {
+    grid-template-columns: minmax(0, 15rem) minmax(0, 3.5fr);
+  }
+}
+.site-main__body {
+  display: grid;
+  column-gap: 3rem;
+  grid-auto-rows: min-content;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 1.5rem;
+  order: -1;
+}
+@media (min-width: 48em) {
+  .site-main__body {
+    order: 2;
+  }
+}
+@media (min-width: 80em) {
+  .site-main__body {
+    grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
+  }
+}
+
+.sidebar {
+  position: relative;
+}
+@media (min-width: 48em) {
+  .sidebar {
+    border-inline-end: 1px solid rgba(0, 0, 0, 0.05);
+    padding-inline-end: 1.5rem;
+  }
+}
+.sidebar > * + * {
+  margin-top: 3rem;
+}
+
+.sidebar-navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-navigation > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  width: 100%;
+}
+.sidebar-navigation > * + * {
+  margin-block-start: 1rem;
+}
+.sidebar-navigation a {
+  color: var(--spruce-base-color-text, #474d52);
+  text-decoration: none;
+}
+.sidebar-navigation a[aria-current=page] {
+  color: var(--spruce-base-color-primary, #8660cd);
+  font-weight: 700;
+}
+
 .wpcf7-list-item label {
   align-items: center;
   display: inline-flex;
@@ -1171,6 +1243,23 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   line-height: calc(2px + 2ex + 2px);
 }
 
+.site-header {
+  background-color: #18002E;
+  padding-block: 1.5rem;
+}
+.site-header__container {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.5rem;
+}
+.site-header__logo {
+  height: 1.85rem;
+}
+.site-header__title {
+  color: #fff;
+  padding-block: 3rem 1.5rem;
+}
+
 .btn--custom {
   background-color: var(--spruce-btn-color-custom-background, white);
   color: var(--spruce-btn-color-custom-foreground, black);
@@ -1220,7 +1309,7 @@ body {
 }
 .main__container {
   margin-inline: auto;
-  max-width: 50rem;
+  max-width: 80rem;
   padding-inline: 1.5rem;
 }
 .main__inner > * + * {
@@ -1501,13 +1590,14 @@ body {
 .scrollbar {
   max-height: 15rem;
   overflow: auto;
+  padding-inline-end: 1.5rem;
 }
 .scrollbar::-webkit-scrollbar {
   height: 0.5rem;
   width: 0.5rem;
 }
 .scrollbar::-webkit-scrollbar-thumb {
-  background: var(--spruce-base-color-primary, #8660cd);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
 .scrollbar::-webkit-scrollbar-thumb:hover {

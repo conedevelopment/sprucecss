@@ -3,7 +3,7 @@
 $color-tertiary: hsl(337, 55%, 43%);
 $spacer: 1.25rem;
 
-@use '../../../scss/spruce' with (
+@use 'spruce' with (
   $breakpoints: (
     md: 60em,
   ),
@@ -21,14 +21,10 @@ $spacer: 1.25rem;
       custom: hsl(0 100% 50%)
     )
   ),
-  $container-width: 50rem,
   $settings: (
     color-fallback: true,
     hyphens: true,
     utilities: false
-  ),
-  $spacers: (
-    xl: $spacer * 10rem
   ),
   $form-check-font-size-lg: 1.35rem
 );
