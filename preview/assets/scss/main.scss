@@ -2,46 +2,12 @@
 @use 'sass:math';
 @use 'sass:map';
 
-$color-tertiary: hsl(337, 55%, 43%);
-$spacer: 1.25rem;
-
-@use '../../scss/spruce' with (
-  $breakpoints: (
-    md: 60em,
-  ),
-  $colors: (
-    btn: (
-      custom-background: hsl(0 0% 100%),
-      custom-background-hover: hsl(332 49% 29%),
-      custom-foreground: hsl(0 0% 0%),
-      custom-foreground-hover: hsl(0 0% 100%),
-      tertiary-background: $color-tertiary,
-      tertiary-foreground: hsl(0 0% 100%),
-      tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75)
-    ),
-    form: (
-      custom: hsl(0 100% 50%)
-    )
-  ),
-  $container-width: 50rem,
-  $settings: (
-    color-fallback: true,
-    hyphens: true,
-    utilities: false
-  ),
-  $spacers: (
-    xl: $spacer * 10rem
-  ),
-  $form-check-font-size-lg: 1.35rem
-);
+@use 'config';
+@use 'dark-mode';
+@use '../../../scss/spruce';
 
 @include spruce.generate-content;
 @include spruce.generate-form;
-
-@include spruce.generate-color-variables(
-  $colors: spruce.$colors,
-  $selector: ':root[data-theme-mode="dark"]'
-);
 
 @include spruce.generate-form-check(
   '.wpcf7-list-item label',
@@ -49,14 +15,6 @@ $spacer: 1.25rem;
   '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
-html[data-theme-mode='dark'] {
-  select:not([multiple]):not([size]) {
-    @include spruce.field-icon(
-      spruce.$select-image,
-      spruce.color(secondary, $only-color: true)
-    );
-  }
-}
 
 .btn--custom {
   @include spruce.btn-variant(custom);

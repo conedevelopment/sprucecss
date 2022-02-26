@@ -1,0 +1,34 @@
+@use 'sass:color';
+
+$color-tertiary: hsl(337, 55%, 43%);
+$spacer: 1.25rem;
+
+@use '../../../scss/spruce' with (
+  $breakpoints: (
+    md: 60em,
+  ),
+  $colors: (
+    btn: (
+      custom-background: hsl(0 0% 100%),
+      custom-background-hover: hsl(332 49% 29%),
+      custom-foreground: hsl(0 0% 0%),
+      custom-foreground-hover: hsl(0 0% 100%),
+      tertiary-background: $color-tertiary,
+      tertiary-foreground: hsl(0 0% 100%),
+      tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75)
+    ),
+    form: (
+      custom: hsl(0 100% 50%)
+    )
+  ),
+  $container-width: 50rem,
+  $settings: (
+    color-fallback: true,
+    hyphens: true,
+    utilities: false
+  ),
+  $spacers: (
+    xl: $spacer * 10rem
+  ),
+  $form-check-font-size-lg: 1.35rem
+);

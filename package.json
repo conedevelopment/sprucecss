@@ -29,7 +29,7 @@
     "prod": "npm-run-all delete-dev-folder sass-compile-prod-expanded sass-compile-prod-compressed autoprefixer",
     "pug": "pug --watch preview/pug/ --out preview/html/ --pretty",
     "sass-compile-dev": "sass --load-path=node_modules --load-path=scss --watch --update --style=expanded scss:css",
-    "sass-compile-preview": "sass --load-path=node_modules --load-path=scss --watch --update --style=expanded --no-source-map preview/scss:preview/css",
+    "sass-compile-preview": "sass --load-path=node_modules --load-path=scss --watch --update --style=expanded --no-source-map preview/assets/scss:preview/assets/css",
     "sass-compile-prod-expanded": "sass --load-path=node_modules --load-path=scss --no-source-map --style=expanded scss/spruce.scss:css/spruce.css",
     "sass-compile-prod-compressed": "sass --load-path=node_modules --load-path=scss --no-source-map --style=compressed scss/spruce.scss:css/spruce.min.css",
     "sass-lint": "stylelint scss/**/*.scss",
