@@ -27,5 +27,5 @@
   $icon,
   $color
 ) {
-  background-image: url('#{svg-escape(str-replace($icon, '#COLOR#', $color))}');
+  background-image: url('#{svg-escape(str-replace($icon, "#COLOR#", $color))}');
 }
