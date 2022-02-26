@@ -1,0 +1,144 @@
+@use 'function' as *;
+@use 'mixin' as *;
+@use 'variable' as *;
+
+@mixin generate-typography() {
+  // Basics
+  body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  @if setting(hyphens) {
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+  }
+
+  // Headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: color(heading);
+    font-family: $font-family-heading;
+    font-weight: $heading-font-weight;
+    line-height: $line-height-heading;
+  }
+
+  h1,
+  .h1 {
+    font-size: font-size(h1);
+  }
+
+  h2,
+  .h2 {
+    font-size: font-size(h2);
+  }
+
+  h3,
+  .h3 {
+    font-size: font-size(h3);
+  }
+
+  h4,
+  .h4 {
+    font-size: font-size(h4);
+  }
+
+  h5,
+  .h5 {
+    font-size: font-size(h5);
+  }
+
+  h6,
+  .h6 {
+    font-size: font-size(h6);
+  }
+
+  // Lists
+  ul,
+  ol {
+    @include layout-stack(spacer(xxs), $width: false);
+    list-style-position: inside;
+
+    li {
+      list-style-position: outside;
+
+      &::marker {
+        color: color(primary);
+      }
+    }
+  }
+
+  li > ul,
+  li > ol {
+    margin-top: spacer(xxs);
+  }
+
+  dl {
+    dt {
+      color: color(heading);
+      font-weight: bold;
+    }
+
+    dd {
+      margin: 0;
+    }
+
+    dd + dt {
+      margin-top: spacer(s);
+    }
+  }
+
+  // Blockquote
+  blockquote {
+    @include layout-stack(spacer(xs));
+    border-left: 0.5rem solid color(blockquote-border);
+    margin-left: 0;
+    padding: 0 0 0 spacer(m);
+
+    cite {
+      display: block;
+    }
+  }
+
+  // Inline elmeents
+  abbr[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+    text-decoration: none;
+  }
+
+  mark {
+    background-color: color(mark-background);
+    border-radius: $inline-text-element-border-radius;
+    color: color(mark-foreground);
+    padding: $inline-text-element-padding;
+  }
+
+  code,
+  kbd,
+  samp {
+    background-color: color(code-background);
+    border-radius: $inline-text-element-border-radius;
+    color: color(code-foreground);
+    padding: $inline-text-element-padding;
+  }
+
+  // Lead
+  .lead {
+    font-size: $font-size-lead;
+  }
+}

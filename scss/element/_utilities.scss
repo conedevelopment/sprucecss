@@ -1,0 +1,9 @@
+@use 'function' as *;
+
+@mixin generate-utilities() {
+  @if setting(utilities) == true {
+    .hidden {
+      display: none !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use 'function' as *;
+@use 'mixin' as *;
+@use 'variable' as *;
+
+@mixin generate-root() {
+  // Generate the $colors maps into CSS custom properties.
+  @include generate-color-variables;
+
+  :root {
+    --#{setting(prefix)}-transition-duration: #{$transition-duration};
+    --#{setting(prefix)}-transition-timing-function: #{$transition-timing-function};
+
+    @media (prefers-reduced-motion: reduce) {
+      --#{setting(prefix)}-transition-duration: 0;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use 'function' as *;
+@use 'mixin' as *;
+
+@mixin generate-media() {
+  // Set responsive images and disable image select
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    user-select: none;
+  }
+
+  // Fit iframes to parent container
+  .iframe-responsive {
+    @include aspect-ratio(16, 9, iframe);
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+
+    figcaption {
+      margin-top: spacer(xs);
+      text-align: center;
+    }
+  }
+}

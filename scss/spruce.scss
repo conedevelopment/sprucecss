@@ -1,13 +1,6 @@
 @forward 'variable';
 @forward 'function';
 @forward 'mixin';
-@forward 'normalize.css/normalize';
-@forward 'root';
-@forward 'accessibility';
-@forward 'default';
-@forward 'divider';
+@forward 'element';
 @forward 'form';
-@forward 'media';
-@forward 'table';
-@forward 'typography';
-@forward 'utilities';
+@forward 'mixin/content';

@@ -35,6 +35,8 @@ $spacer: 1.25rem;
   $form-check-font-size-lg: 1.35rem
 );
 
+// @include spruce.generate-content;
+
 @include spruce.generate-color-variables(
   $colors: spruce.$colors,
   $selector: ':root[data-theme-mode="dark"]'
