@@ -1,17 +1,19 @@
 @use '../variable' as *;
 @use '../function' as *;
 
-.form-label {
-  color: color(label, form);
-  font-size: $form-label-font-size;
-  font-style: $form-label-font-style;
-  font-weight: $form-label-font-weight;
+@mixin generate-form-label {
+  .form-label {
+    color: color(label, form);
+    font-size: $form-label-font-size;
+    font-style: $form-label-font-style;
+    font-weight: $form-label-font-weight;
 
-  &--sm {
-    font-size: $form-label-font-size-sm;
-  }
+    &--sm {
+      font-size: $form-label-font-size-sm;
+    }
 
-  &--lg {
-    font-size: $form-label-font-size-lg;
+    &--lg {
+      font-size: $form-label-font-size-lg;
+    }
   }
 }

@@ -1,13 +1,15 @@
 @use '../function' as *;
 
-.field-feedback {
-  display: block;
+@mixin generate-field-feedback {
+  .field-feedback {
+    display: block;
 
-  &--valid {
-    color: color(success, alert);
-  }
+    &--valid {
+      color: color(success, alert);
+    }
 
-  &--invalid {
-    color: color(danger, alert);
+    &--invalid {
+      color: color(danger, alert);
+    }
   }
 }

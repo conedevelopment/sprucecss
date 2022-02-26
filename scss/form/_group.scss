@@ -1,17 +1,19 @@
 @use '../function' as *;
 @use '../mixin' as *;
 
-.form-group {
-  @include layout-stack(spacer(xxs), false);
+@mixin generate-form-group {
+  .form-group {
+    @include layout-stack(spacer(xxs), false);
 
-  &--vertical-check {
-    @include layout-stack(spacer(xs), true, left);
-  }
+    &--vertical-check {
+      @include layout-stack(spacer(xs), true, left);
+    }
 
-  &--grid {
-    align-items: start;
-    display: flex;
-    flex-wrap: wrap;
-    gap: spacer(xs);
+    &--grid {
+      align-items: start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: spacer(xs);
+    }
   }
 }

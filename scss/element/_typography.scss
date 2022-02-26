@@ -2,7 +2,7 @@
 @use 'mixin' as *;
 @use 'variable' as *;
 
-@mixin generate-typography() {
+@mixin generate-typography {
   // Basics
   body {
     font-family: $font-family-base;

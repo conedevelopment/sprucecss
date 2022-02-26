@@ -1,0 +1,33 @@
+@use '../element' as *;
+@use '../plugin' as *;
+@use '../form' as *;
+
+@mixin generate-content {
+  @include generate-normalize;
+  @include generate-root;
+  @include generate-accessibility;
+  @include generate-default;
+  @include generate-divider;
+  @include generate-media;
+  @include generate-table;
+  @include generate-typography;
+  @include generate-utilities;
+}
+
+@mixin generate-form-content {
+  @include generate-btn;
+  @include generate-form-check(
+    '.form-check',
+    '.form-check__control',
+    '.form-check__label',
+    true
+  );
+  @include generate-form-control;
+  @include generate-form-description;
+  @include generate-fieldset;
+  @include generate-form-group;
+  @include generate-form-label;
+  @include generate-form-row;
+  @include generate-form-select;
+  @include generate-field-feedback;
+}

@@ -1,6 +1,6 @@
 @use 'mixin' as *;
 
-@mixin generate-accessibility() {
+@mixin generate-accessibility {
   .sr-only {
     @include visually-hidden;
   }

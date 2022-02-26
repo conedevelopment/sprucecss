@@ -1,7 +1,7 @@
 @use 'function' as *;
 @use 'mixin' as *;
 
-@mixin generate-media() {
+@mixin generate-media {
   // Set responsive images and disable image select
   img {
     display: block;

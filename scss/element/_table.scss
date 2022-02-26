@@ -1,7 +1,7 @@
 @use 'variable' as *;
 @use 'function' as *;
 
-@mixin generate-table() {
+@mixin generate-table {
   .table-responsive {
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;

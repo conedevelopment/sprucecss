@@ -2,10 +2,12 @@
 @use '../mixin' as *;
 @use '../variable' as *;
 
-.form-row {
-  &--mixed {
-    --col-width: #{$form-row-col-width};
+@mixin generate-form-row {
+  .form-row {
+    &--mixed {
+      --col-width: #{$form-row-col-width};
 
-    @include layout-flex(spacer(s));
+      @include layout-flex(spacer(s));
+    }
   }
 }

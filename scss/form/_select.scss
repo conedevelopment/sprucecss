@@ -3,16 +3,18 @@
 @use '../mixin' as *;
 @use '../variable' as *;
 
-select {
-  &:not([multiple]):not([size]) {
-    @include field-icon($select-image, map.get($colors, form, select-foreground));
-    background-position: center right $select-icon-right-offset;
-    background-repeat: no-repeat;
-    background-size: $select-icon-width auto;
-    padding-inline-end: $select-padding-right;
+@mixin generate-form-select {
+  select.form-control {
+    &:not([multiple]):not([size]) {
+      @include field-icon($select-image, map.get($colors, form, select-foreground));
+      background-position: center right $select-icon-right-offset;
+      background-repeat: no-repeat;
+      background-size: $select-icon-width auto;
+      padding-inline-end: $select-padding-right;
 
-    html[dir='rtl'] & {
-      background-position: center left $select-icon-right-offset;
+      html[dir='rtl'] & {
+        background-position: center left $select-icon-right-offset;
+      }
     }
   }
 }

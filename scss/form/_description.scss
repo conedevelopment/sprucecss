@@ -1,10 +1,12 @@
 @use '../function' as *;
 @use '../variable' as *;
 
-.form-description {
-  color: color(text, form);
-  display: block;
-  font-size: $form-description-font-size;
-  font-style: $form-description-font-style;
-  font-weight: $form-description-font-weight;
+@mixin generate-form-description {
+  .form-description {
+    color: color(text, form);
+    display: block;
+    font-size: $form-description-font-size;
+    font-style: $form-description-font-style;
+    font-weight: $form-description-font-weight;
+  }
 }

@@ -1,6 +1,6 @@
 @use 'function' as *;
 
-@mixin generate-divider() {
+@mixin generate-divider {
   hr {
     border: 0;
     border-top: 1px solid color(border);

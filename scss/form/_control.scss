@@ -3,84 +3,86 @@
 @use '../mixin' as *;
 @use '../variable' as *;
 
-.form-control {
-  appearance: none;
-  background-color: color(background, form);
-  border: $form-control-border-width solid color(border, form);
-  border-radius: $form-control-border-radius;
-  box-sizing: border-box;
-  color: color(text, form);
-  display: block;
-  font-size: $form-control-font-size;
-  font-weight: $form-control-font-weight;
-  line-height: $form-control-line-height;
-  padding: $form-control-padding;
-  transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
-  width: 100%;
+@mixin generate-form-control {
+  .form-control {
+    appearance: none;
+    background-color: color(background, form);
+    border: $form-control-border-width solid color(border, form);
+    border-radius: $form-control-border-radius;
+    box-sizing: border-box;
+    color: color(text, form);
+    display: block;
+    font-size: $form-control-font-size;
+    font-weight: $form-control-font-weight;
+    line-height: $form-control-line-height;
+    padding: $form-control-padding;
+    transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+    width: 100%;
 
-  &::placeholder {
-    color: color(placeholder, form);
-  };
-
-  &:focus {
-    @include field-focus(
-      $border: color(border-focus, form),
-      $box-shadow: color(shadow-focus, form)
-    );
-  }
-
-  &[disabled],
-  &[disabled='true'] {
-    @include field-disabled(
-      $background: color(background-disabled, form),
-      $border: color(border-disabled, form)
-    );
-  }
-
-  &--valid,
-  &--invalid {
-    background-position: center right $select-icon-right-offset;
-    background-repeat: no-repeat;
-    background-size: $select-icon-width auto;
-    padding-inline-end: $select-padding-right;
-
-    html[dir='rtl'] & {
-      background-position: center left $select-icon-right-offset;
-    }
-  }
-
-  &--valid {
-    @include field-icon($form-valid-image, map.get($colors, alert, success));
-    border-color: color(success, alert);
+    &::placeholder {
+      color: color(placeholder, form);
+    };
 
     &:focus {
       @include field-focus(
-        $border: color(valid, form),
-        $box-shadow: color(valid-shadow, form)
+        $border: color(border-focus, form),
+        $box-shadow: color(shadow-focus, form)
       );
     }
-  }
 
-  &--invalid {
-    @include field-icon($form-invalid-image, map.get($colors, alert, danger));
-    border-color: color(danger, alert);
-
-    &:focus {
-      @include field-focus(
-        $border: color(invalid, form),
-        $box-shadow: color(invalid-shadow, form)
+    &[disabled],
+    &[disabled='true'] {
+      @include field-disabled(
+        $background: color(background-disabled, form),
+        $border: color(border-disabled, form)
       );
     }
-  }
 
-  //Sizes
-  &--sm {
-    font-size: $form-control-font-size-sm;
-    padding: $form-control-padding-sm;
-  }
+    &--valid,
+    &--invalid {
+      background-position: center right $select-icon-right-offset;
+      background-repeat: no-repeat;
+      background-size: $select-icon-width auto;
+      padding-inline-end: $select-padding-right;
 
-  &--lg {
-    font-size: $form-control-font-size-lg;
-    padding: $form-control-padding-lg;
+      html[dir='rtl'] & {
+        background-position: center left $select-icon-right-offset;
+      }
+    }
+
+    &--valid {
+      @include field-icon($form-valid-image, map.get($colors, alert, success));
+      border-color: color(success, alert);
+
+      &:focus {
+        @include field-focus(
+          $border: color(valid, form),
+          $box-shadow: color(valid-shadow, form)
+        );
+      }
+    }
+
+    &--invalid {
+      @include field-icon($form-invalid-image, map.get($colors, alert, danger));
+      border-color: color(danger, alert);
+
+      &:focus {
+        @include field-focus(
+          $border: color(invalid, form),
+          $box-shadow: color(invalid-shadow, form)
+        );
+      }
+    }
+
+    //Sizes
+    &--sm {
+      font-size: $form-control-font-size-sm;
+      padding: $form-control-padding-sm;
+    }
+
+    &--lg {
+      font-size: $form-control-font-size-lg;
+      padding: $form-control-padding-lg;
+    }
   }
 }

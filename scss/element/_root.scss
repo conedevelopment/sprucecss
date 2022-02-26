@@ -3,7 +3,7 @@
 @use 'mixin' as *;
 @use 'variable' as *;
 
-@mixin generate-root() {
+@mixin generate-root {
   // Generate the $colors maps into CSS custom properties.
   @include generate-color-variables;
 
