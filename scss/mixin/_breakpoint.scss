@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../variable' as *;
+@use '../config' as *;
 
 @mixin breakpoint(
   $breakpoint,

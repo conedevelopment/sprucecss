@@ -1,5 +1,5 @@
 @use '../function' as *;
-@use '../variable' as *;
+@use '../config' as *;
 
 @mixin generate-form-description {
   .form-description {

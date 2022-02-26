@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use 'sass:math';
 @use '../function' as *;
-@use '../variable' as *;
+@use '../config' as *;
 
 // Hide something from the screen but keep it visible for assistive technology
 @mixin visually-hidden() {

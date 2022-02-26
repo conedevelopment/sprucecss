@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use 'spacer' as *;
+
+// Tables
+$table-responsive-width: 40rem !default;
+$table-padding: map.get($spacers, s) !default;
+$table-padding-sm: map.get($spacers, xxs) map.get($spacers, xs) !default;

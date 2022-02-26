@@ -1,6 +1,6 @@
 @use '../function' as *;
 @use '../mixin' as *;
-@use '../variable' as *;
+@use '../config' as *;
 
 @mixin generate-form-row {
   .form-row {

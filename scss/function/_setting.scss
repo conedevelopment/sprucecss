@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../variable' as *;
+@use '../config' as *;
 
 // Get spacer value from $settings Sass map
 @function setting($key) {

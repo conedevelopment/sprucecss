@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use 'sass:map';
 @use '../function' as *;
-@use '../variable' as *;
+@use '../config' as *;
 
 @mixin btn-focus(
   $box-shadow

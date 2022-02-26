@@ -1,6 +1,6 @@
 @use 'sass:meta';
 @use '../function' as *;
-@use '../variable' as *;
+@use '../config' as *;
 
 // Create Center layout
 @mixin layout-center(

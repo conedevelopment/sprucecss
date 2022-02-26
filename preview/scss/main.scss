@@ -36,7 +36,7 @@ $spacer: 1.25rem;
 );
 
 @include spruce.generate-content;
-@include spruce.generate-form-content;
+@include spruce.generate-form;
 
 @include spruce.generate-color-variables(
   $colors: spruce.$colors,

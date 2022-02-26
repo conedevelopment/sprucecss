@@ -2,6 +2,7 @@
 @use '../plugin' as *;
 @use '../form' as *;
 
+// Generate content styling
 @mixin generate-content {
   @include generate-normalize;
   @include generate-root;
@@ -14,7 +15,8 @@
   @include generate-utilities;
 }
 
-@mixin generate-form-content {
+// Generate form styling
+@mixin generate-form {
   @include generate-btn;
   @include generate-form-check(
     '.form-check',

@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use 'sass:map';
-@use '../variable' as *;
+@use '../config' as *;
 
 // Get color value from $colors Sass map
 @function color(

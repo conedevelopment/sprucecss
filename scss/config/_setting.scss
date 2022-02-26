@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+// Settings
+$settings: () !default;
+$settings: map.merge(
+  (
+    color-fallback: false,
+    hyphens: true,
+    optimal-responsive-font-size: '2vw + 1rem',
+    prefix: 'spruce',
+    utilities: false
+  ),
+  $settings
+);

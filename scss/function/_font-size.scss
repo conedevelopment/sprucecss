@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'sass:math';
-@use '../variable' as *;
+@use '../config' as *;
 
 // Get font-size value from $font-sizes Sass map
 @function font-size(

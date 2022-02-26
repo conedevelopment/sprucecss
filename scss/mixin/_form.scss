@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use '../function' as *;
-@use '../variable' as *;
+@use '../config' as *;
 
 // Style field focus state
 @mixin field-focus(
