@@ -7,42 +7,22 @@ block variables
 block content
   h2(class='section-title') Base
   div(class='color-items')
-    div(class='color-item color-item--base-primary')
-      span(class='color-item__caption') primary
-    div(class='color-item color-item--base-secondary')
-      span(class='color-item__caption') secondary
-    div(class='color-item color-item--base-background color-item--bordered')
-      span(class='color-item__caption') background
-    div(class='color-item color-item--base-heading color-item--bordered')
-      span(class='color-item__caption') heading
-    div(class='color-item color-item--base-text')
-      span(class='color-item__caption') text
-    div(class='color-item color-item--base-link')
-      span(class='color-item__caption') link
-    div(class='color-item color-item--base-link-hover')
-      span(class='color-item__caption') link-hover
-    div(class='color-item color-item--base-border')
-      span(class='color-item__caption') border
-    div(class='color-item color-item--base-mark-background')
-      span(class='color-item__caption') mark-background
-    div(class='color-item color-item--base-mark-foreground')
-      span(class='color-item__caption') mark-color
-    div(class='color-item color-item--base-code-background')
-      span(class='color-item__caption') code-background
-    div(class='color-item color-item--base-code-foreground')
-      span(class='color-item__caption') code-color
-    div(class='color-item color-item--base-blockquote-border')
-      span(class='color-item__caption') blockquote-border
+    each color in baseColors
+      div(class=`color-item color-item--base-${color.name} ${color.bordered === 'true' ? 'color-item--bordered' : ''}`)
+        span(class='color-item__color')
+        span(class='color-item__caption')= color.name
+  h2(class='section-title') Selection
+  div(class='color-items')
+    each color in selectionColors
+      div(class=`color-item color-item--selection-${color.name} ${color.bordered === 'true' ? 'color-item--bordered' : ''}`)
+        span(class='color-item__color')
+        span(class='color-item__caption')= color.name
   h2(class='section-title') Alert
   div(class='color-items')
-    div(class='color-item color-item--alert-success')
-      span(class='color-item__caption') success
-    div(class='color-item color-item--alert-info')
-      span(class='color-item__caption') info
-    div(class='color-item color-item--alert-warning')
-      span(class='color-item__caption') warning
-    div(class='color-item color-item--alert-danger')
-      span(class='color-item__caption') danger
+    each color in alertColors
+      div(class=`color-item color-item--alert-${color.name} ${color.bordered === 'true' ? 'color-item--bordered' : ''}`)
+        span(class='color-item__color')
+        span(class='color-item__caption')= color.name
   h2(class='section-title') Button
   div(class='color-items')
     div(class='color-item color-item--btn-primary-background')

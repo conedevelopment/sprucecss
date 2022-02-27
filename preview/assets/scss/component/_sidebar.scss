@@ -1,21 +1,9 @@
 @use 'spruce';
 
-.sidebar {
-  position: relative;
-
-  @include spruce.breakpoint(sm) {
-    border-inline-end: 1px solid rgba(0, 0, 0, 0.05);
-    padding-inline-end: spruce.spacer(m);
-  }
-
-  > * + * {
-    margin-top: 3rem;
-  }
-}
-
 .sidebar-navigation {
   @include spruce.clear-list;
   @include spruce.layout-stack(spruce.spacer(s));
+  font-size: 1.1rem;
 
   a {
     color: spruce.color(text);

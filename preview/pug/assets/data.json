@@ -1,0 +1,84 @@
+{
+  "baseColors": [
+    {
+      "name": "primary",
+      "bordered": "false"
+    },
+    {
+      "name": "secondary",
+      "bordered": "false"
+    },
+    {
+      "name": "background",
+      "bordered": "true"
+    },
+    {
+      "name": "heading",
+      "bordered": "false"
+    },
+    {
+      "name": "text",
+      "bordered": "false"
+    },
+    {
+      "name": "link",
+      "bordered": "false"
+    },
+    {
+      "name": "link-hover",
+      "bordered": "false"
+    },
+    {
+      "name": "border",
+      "bordered": "false"
+    },
+    {
+      "name": "mark-background",
+      "bordered": "false"
+    },
+    {
+      "name": "mark-foreground",
+      "bordered": "false"
+    },
+    {
+      "name": "code-background",
+      "bordered": "false"
+    },
+    {
+      "name": "code-foreground",
+      "bordered": "false"
+    },
+    {
+      "name": "blockquote-border",
+      "bordered": "false"
+    }
+  ],
+  "selectionColors": [
+    {
+      "name": "background",
+      "bordered": "false"
+    },
+    {
+      "name": "foreground",
+      "bordered": "true"
+    }
+  ],
+  "alertColors": [
+    {
+      "name": "danger",
+      "bordered": "false"
+    },
+    {
+      "name": "info",
+      "bordered": "false"
+    },
+    {
+      "name": "success",
+      "bordered": "false"
+    },
+    {
+      "name": "warning",
+      "bordered": "false"
+    },
+  ]
+}

@@ -850,7 +850,7 @@ samp {
 .btn--lg {
   padding: 0.9em 1.15em;
 }
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .btn--lg {
     font-size: 1.15rem;
   }
@@ -1136,7 +1136,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 }
 @media (min-width: 48em) {
   .site-main__inner {
-    grid-template-columns: minmax(0, 17rem) minmax(0, 3.5fr);
+    grid-template-columns: minmax(0, 12rem) minmax(0, 3.5fr);
   }
 }
 .site-main__body {
@@ -1188,23 +1188,11 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   padding-block: 3rem 1.5rem;
 }
 
-.sidebar {
-  position: relative;
-}
-@media (min-width: 48em) {
-  .sidebar {
-    border-inline-end: 1px solid rgba(0, 0, 0, 0.05);
-    padding-inline-end: 1.5rem;
-  }
-}
-.sidebar > * + * {
-  margin-top: 3rem;
-}
-
 .sidebar-navigation {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 1.1rem;
 }
 .sidebar-navigation > * {
   margin-block-end: 0;
@@ -1348,22 +1336,20 @@ body {
 }
 
 .color-item {
-  align-items: end;
-  border-radius: 0.5rem;
+  align-items: center;
   display: flex;
-  height: 160px;
-  overflow: hidden;
+  gap: 1.5rem;
 }
-.color-item--bordered {
+.color-item--bordered .color-item__color {
   box-shadow: 0 0 0 1px var(--spruce-base-color-border, #e6e6e6) inset;
 }
+.color-item__color {
+  border-radius: 25px;
+  height: 50px;
+  width: 50px;
+}
 .color-item__caption {
-  background-color: #fff;
-  border-radius: 0.25rem;
-  font-size: 0.9rem;
-  line-height: 1;
-  margin: 0.5em;
-  padding: 0.25em 0.5em;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
 .ellipsis {
@@ -1382,71 +1368,79 @@ body {
   }
 }
 
-.color-item--base-primary {
+.color-item--base-primary .color-item__color {
   background-color: var(--spruce-base-color-primary, #8660cd);
 }
 
-.color-item--base-secondary {
+.color-item--base-secondary .color-item__color {
   background-color: var(--spruce-base-color-secondary, #2350f6);
 }
 
-.color-item--base-background {
+.color-item--base-background .color-item__color {
   background-color: var(--spruce-base-color-background, white);
 }
 
-.color-item--base-heading {
+.color-item--base-heading .color-item__color {
   background-color: var(--spruce-base-color-heading, #00060a);
 }
 
-.color-item--base-text {
+.color-item--base-text .color-item__color {
   background-color: var(--spruce-base-color-text, #474d52);
 }
 
-.color-item--base-link {
+.color-item--base-link .color-item__color {
   background-color: var(--spruce-base-color-link, #8660cd);
 }
 
-.color-item--base-link-hover {
+.color-item--base-link-hover .color-item__color {
   background-color: var(--spruce-base-color-link-hover, #663ab7);
 }
 
-.color-item--base-border {
+.color-item--base-border .color-item__color {
   background-color: var(--spruce-base-color-border, #e6e6e6);
 }
 
-.color-item--base-mark-background {
+.color-item--base-mark-background .color-item__color {
   background-color: var(--spruce-base-color-mark-background, #ffee99);
 }
 
-.color-item--base-mark-foreground {
+.color-item--base-mark-foreground .color-item__color {
   background-color: var(--spruce-base-color-mark-foreground, #00060a);
 }
 
-.color-item--base-code-background {
+.color-item--base-code-background .color-item__color {
   background-color: var(--spruce-base-color-code-background, #f0ecf9);
 }
 
-.color-item--base-code-foreground {
+.color-item--base-code-foreground .color-item__color {
   background-color: var(--spruce-base-color-code-foreground, #00060a);
 }
 
-.color-item--base-blockquote-border {
+.color-item--base-blockquote-border .color-item__color {
   background-color: var(--spruce-base-color-blockquote-border, #8660cd);
 }
 
-.color-item--alert-danger {
+.color-item--selection-foreground .color-item__color {
+  background-color: var(--spruce-selection-color-foreground, white);
+}
+
+.color-item--selection-background .color-item__color {
+  background-color: var(--spruce-selection-color-background, #8660cd);
+}
+
+.color-item--alert-danger .color-item__color {
   background-color: var(--spruce-alert-color-danger, #db2929);
 }
 
-.color-item--alert-info {
+.color-item--alert-info .color-item__color {
   background-color: var(--spruce-alert-color-info, #00a1d6);
 }
 
-.color-item--alert-success {
+.color-item--alert-success .color-item__color {
   background-color: var(--spruce-alert-color-success, #00a854);
 }
 
-.color-item--alert-warning {
+.color-item--alert-warning .color-item__color {
   background-color: var(--spruce-alert-color-warning, #f2ca26);
 }
 

@@ -51,23 +51,24 @@ body {
 }
 
 .color-item {
-  align-items: end;
-  border-radius: spruce.$border-radius-lg;
-  display: flex;
-  height: 160px;
-  overflow: hidden;
+  $this: &;
 
-  &--bordered {
+  align-items: center;
+  display: flex;
+  gap: spruce.spacer(m);
+
+  &--bordered #{$this}__color {
     box-shadow: 0 0 0 1px spruce.color(border) inset;
   }
 
+  &__color {
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+  }
+
   &__caption {
-    background-color: #fff;
-    border-radius: spruce.$border-radius-sm;
-    font-size: 0.9rem;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 0.25em 0.5em;
+    font-family: spruce.$font-family-cursive;
   }
 }
 
@@ -76,13 +77,19 @@ body {
 }
 
 @each $name, $value in map.get(spruce.$colors, base) {
-  .color-item--base-#{$name} {
+  .color-item--base-#{$name} .color-item__color {
     background-color: spruce.color($name, base);
   }
 }
 
+@each $name, $value in map.get(spruce.$colors, selection) {
+  .color-item--selection-#{$name} .color-item__color {
+    background-color: spruce.color($name, selection);
+  }
+}
+
 @each $name, $value in map.get(spruce.$colors, alert) {
-  .color-item--alert-#{$name} {
+  .color-item--alert-#{$name} .color-item__color {
     background-color: spruce.color($name, alert);
   }
 }
