@@ -1,0 +1,127 @@
+extends ../layout.pug
+
+block variables
+  -var title = 'Form';
+  -var page = 'form';
+
+block content
+  form
+    fieldset
+      legend Your Name
+      div(class='form-group')
+        label(for='first-name' class='form-label') First Name
+        input(class='form-control' id='first-name' name='first-name' type='text')
+        span(class='form-description') Just a help text for presentation purpose
+      div(class='form-group')
+        label(for='last-name' class='form-label') Last Name
+        input(class='form-control' id='last-name' name='last-name' type='text' disabled)
+    fieldset
+      legend Address
+      div(class='form-row')
+        div(class='form-group')
+          label(for='street-address' class='form-label') Street Address
+          input(id='street-address' class='form-control form-control--valid' name='street-address' type='text' placeholder='Your street address...')
+          span(class='field-feedback field-feedback--valid') Looks fine
+      div(class='form-row form-row--mixed')
+        div(class='form-group')
+          label(for='city' class='form-label') City
+          input(id='city' class='form-control form-control--invalid' name='city' type='text')
+          span(class='field-feedback field-feedback--invalid') Not that fine
+        div(class='form-group')
+          label(for='state' class='form-label') State
+          input(id='state' class='form-control' name='state' type='text')
+        div(class='form-group form-group--width-auto' style='--col-width: 8ch;')
+          label(for='zip' class='form-label') Zip
+          input(id='zip' class='form-control' name='zip' type='text')
+    fieldset
+      legend Sizes
+      div(class='form-row')
+        div(class='form-group')
+          label(for='street-address-1' class='form-label') Street Address
+          input(id='street-address-1' class='form-control form-control--lg' name='street-address-1' type='text')
+      div(class='form-row')
+        div(class='form-group')
+          label(for='street-address-2' class='form-label') Street Address
+          input(id='street-address-2' class='form-control form-control--sm' name='street-address-2' type='text')
+    fieldset
+      legend Do you own or rent?
+      div(class='form-group form-group--vertical-check')
+        label(class='form-check')
+          input(type='radio' class='form-check__control' value='own' name='property-ownership')
+          span(class='form-label form-check__label') Own
+        label(class='form-check')
+          input(type='radio' class='form-check__control' value='rent' name='property-ownership')
+          span(class='form-label form-check__label') Rent
+    fieldset
+      legend Which one of you like?
+      div(class='form-group form-group--vertical-check')
+        label(class='form-check')
+          input(type='checkbox' class='form-check__control' value='own' name='property-ownership2')
+          span(class='form-label form-check__label') Own
+        label(class='form-check')
+          input(type='checkbox' class='form-check__control' value='rent' name='property-ownership2' disabled)
+          span(class='form-label form-check__label') Rent
+        label(class='form-check')
+          input(type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
+          span(class='form-label form-check__label') Misc
+        label(class='form-check')
+          input(id='indeterminate' type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
+          span(class='form-label form-check__label') Indeterminate
+      div(class='form-group form-group--vertical-check')
+        label(class='form-check form-check--lg')
+          input(type='checkbox' class='form-check__control' value='own' name='property-ownership3')
+          span(class='form-label form-check__label') Own
+        label(class='form-check form-check--lg')
+          input(type='checkbox' class='form-check__control' value='rent' name='property-ownership3' disabled)
+          span(class='form-label form-check__label') Rent
+        label(class='form-check form-check--lg')
+          input(type='checkbox' class='form-check__control' value='misc' name='property-ownership3')
+          span(class='form-label form-check__label') Misc
+      div(class='form-group')
+        label(for='cars' class='form-label') Your favorite car brand
+        select(id='cars' class='form-control' name='cars')
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars2' class='form-label') Your favorite car brand
+        select(id='cars2' class='form-control form-control--lg' name='cars2')
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars3' class='form-label') Your favorite car brand
+        select(id='cars3' class='form-control form-control--sm' name='cars3')
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars4' class='form-label') Your favorite car brand
+        select(id='cars4' class='form-control' name='cars4' disabled)
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars5' class='form-label') Your favorite car brand
+        select(id='cars5' class='form-control' name='cars5' multiple)
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        span(class='wpcf7-form-control-wrap acceptance-784')
+          span(class='wpcf7-form-control wpcf7-acceptance')
+            span(class='wpcf7-list-item')
+              label
+                input(type='checkbox' name='acceptance-784' value='1' aria-invalid='false')
+                span(class='wpcf7-list-item-label')
+                  | I accept the
+                  a(href='#' target='_blank') privacy policy
+                  | .
+  script.
+    var checkbox = document.getElementById('indeterminate');
+    checkbox.indeterminate = true;

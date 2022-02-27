@@ -23,7 +23,7 @@
   },
   "scripts": {
     "autoprefixer": "postcss css/*.css -u autoprefixer --replace --no-map",
-    "browser-sync": "browser-sync start --server --startPath \"preview/html/index.html\" --files \"**/*\" --directory --no-notify",
+    "browser-sync": "browser-sync start --server --startPath \"preview/html/page/color.html\" --files \"**/*\" --directory --no-notify",
     "delete-dev-folder": "del-cli --force css",
     "dev": "npm-run-all --parallel pug sass-compile-dev sass-compile-preview browser-sync",
     "prod": "npm-run-all delete-dev-folder sass-compile-prod-expanded sass-compile-prod-compressed autoprefixer",

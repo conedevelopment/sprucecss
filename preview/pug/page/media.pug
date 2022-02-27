@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block variables
+  -var title = 'Media';
+  -var page = 'media';
+
+block content
+  div(class='iframe-responsive')
+    iframe(width='560' height='315' src='https://www.youtube.com/embed/-6Xl9tBWt54' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen)
+  img(src='https://images.unsplash.com/photo-1482539259217-f31001045448?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80' alt='...')
+  figure(class='figure')
+    img(src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80' class='figure-img img-fluid rounded' alt='...')
+    figcaption(class='figure-caption') A caption for the above image.

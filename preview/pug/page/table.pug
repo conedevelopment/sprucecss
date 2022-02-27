@@ -1,0 +1,85 @@
+extends ../layout.pug
+
+block variables
+  -var title = 'Table';
+  -var page = 'table';
+
+block content
+  div(class='table-responsive')
+    table(class='table table--striped table--dark table--hover')
+      caption This is a regular sized table.
+      thead
+        tr
+          th(scope='col') Person
+          th(scope='col') Number
+          th(scope='col') Third&nbsp;Column
+      tbody
+        tr
+          td Someone Lastname
+          td 900
+          td Nullam quis risus eget urna mollis ornare vel eu leo.
+        tr
+          td
+            a(href='#') Person Name
+          td 1200
+          td Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.
+        tr
+          td Another Person
+          td 1500
+          td Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        tr
+          td Last One
+          td 2800
+          td Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+  div(class='table-responsive')
+    table(class='table table--clear-border table--rounded table--striped table--dark table--hover')
+      caption This is a regular sized table.
+      thead
+        tr
+          th(scope='col') Person
+          th(scope='col') Number
+          th(scope='col') Third&nbsp;Column
+      tbody
+        tr
+          td Someone Lastname
+          td 900
+          td Nullam quis risus eget urna mollis ornare vel eu leo.
+        tr
+          td
+            a(href='#') Person Name
+          td 1200
+          td Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.
+        tr
+          td Another Person
+          td 1500
+          td Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        tr
+          td Last One
+          td 2800
+          td Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+  div(class='table-responsive')
+    table(class='table table--sm table--striped table--dark table--hover')
+      caption This is a small sized table.
+      thead
+        tr
+          th(scope='col') Person
+          th(scope='col') Number
+          th(scope='col') Third&nbsp;Column
+      tbody
+        tr
+          td Someone Lastname
+          td 900
+          td Nullam quis risus eget urna mollis ornare vel eu leo.
+        tr
+          td
+            a(href='#') Person Name
+          td 1200
+          td Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.
+        tr
+          td Another Person
+          td 1500
+          td Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        tr
+          td Last One
+          td 2800
+          td Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
