@@ -15,24 +15,6 @@
   '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
-.site-header {
-  background-color: #18002E;
-  padding-block: spruce.spacer(m);
-
-  &__container {
-    @include spruce.layout-center;
-  }
-
-  &__logo {
-    height: 1.85rem;
-  }
-
-  &__title {
-    color: #fff;
-    padding-block: spruce.spacer(l) spruce.spacer(m);
-  }
-}
-
 .btn--custom {
   @include spruce.btn-variant(custom);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
@@ -53,53 +35,19 @@ body {
   background-color: spruce.color(background);
 }
 
-.main {
-  margin: 5rem 0;
+.section-title {
+  border-bottom: 1px dashed spruce.color(border);
+  font-size: spruce.font-size(h4);
+  margin-block-end: spruce.spacer(s);
+  padding-block-end: spruce.spacer(xs);
 
-  &__container {
-    @include spruce.layout-center;
-  }
-
-  &__inner {
-    > * + * {
-      margin-top: 5rem;
-    }
+  * + & {
+    margin-block-start: spruce.spacer(l);
   }
 }
 
-.section {
-  $this: &;
-
-  &-subtitle {
-    font-size: spruce.font-size(h5);
-  }
-
-  &__body {
-    #{$this}-subtitle {
-      margin-bottom: spruce.spacer(xs);
-      margin-top: 0;
-
-      &:not(:first-child) {
-        margin-top: spruce.spacer(m);
-      }
-    }
-  }
-
-  &--color {
-    #{$this}__body {
-      @include spruce.layout-grid($minimum: 10rem);
-    }
-  }
-
-  &--typography,
-  &--media {
-    #{$this}__body {
-      @include spruce.layout-stack(
-        spruce.spacer(m),
-        $important: true
-      );
-    }
-  }
+.color-items {
+  @include spruce.layout-grid($minimum: 15rem);
 }
 
 .color-item {

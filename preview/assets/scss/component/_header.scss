@@ -1,0 +1,19 @@
+@use 'spruce';
+
+.site-header {
+  background-color: spruce.color(background, header);
+  padding-block: spruce.spacer(m);
+
+  &__container {
+    @include spruce.layout-center;
+  }
+
+  &__logo {
+    height: 1.85rem;
+  }
+
+  &__title {
+    color: spruce.color(foreground, header);
+    padding-block: spruce.spacer(l) spruce.spacer(m);
+  }
+}

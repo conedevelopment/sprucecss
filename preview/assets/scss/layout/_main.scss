@@ -13,7 +13,7 @@
     grid-template-columns: minmax(0, 1fr);
 
     @include spruce.breakpoint(sm) {
-      grid-template-columns: minmax(0, 15rem) minmax(0, 3.5fr);
+      grid-template-columns: minmax(0, 17rem) minmax(0, 3.5fr);
     }
   }
 
@@ -32,5 +32,12 @@
     @include spruce.breakpoint(lg) {
       grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
     }
+  }
+
+  &__content {
+    @include spruce.layout-stack(spruce.spacer(s));
+    margin-inline: auto;
+    max-width: 100%;
+    width: 85ch;
   }
 }
