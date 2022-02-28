@@ -79,6 +79,140 @@
     {
       "name": "warning",
       "bordered": "false"
+    }
+  ],
+  "btnColors": [
+    {
+      "name": "primary-background",
+      "bordered": "false"
     },
+    {
+      "name": "primary-background-hover",
+      "bordered": "false"
+    },
+    {
+      "name": "primary-foreground",
+      "bordered": "true"
+    },
+    {
+      "name": "primary-foreground-hover",
+      "bordered": "true"
+    },
+    {
+      "name": "primary-shadow-focus",
+      "bordered": "false"
+    },
+    {
+      "name": "secondary-background",
+      "bordered": "false"
+    },
+    {
+      "name": "secondary-background-hover",
+      "bordered": "false"
+    },
+    {
+      "name": "secondary-foreground",
+      "bordered": "true"
+    },
+    {
+      "name": "secondary-foreground-hover",
+      "bordered": "true"
+    },
+    {
+      "name": "secondary-shadow-focus",
+      "bordered": "false"
+    }
+  ],
+  "formColors": [
+    {
+      "name": "background",
+      "bordered": "true"
+    },
+    {
+      "name": "background-disabled",
+      "bordered": "false"
+    },
+    {
+      "name": "border",
+      "bordered": "false"
+    },
+    {
+      "name": "border-disabled",
+      "bordered": "false"
+    },
+    {
+      "name": "shadow-focus",
+      "bordered": "false"
+    },
+    {
+      "name": "check-foreground",
+      "bordered": "true"
+    },
+    {
+      "name": "check-background",
+      "bordered": "false"
+    },
+    {
+      "name": "invalid",
+      "bordered": "false"
+    },
+    {
+      "name": "invalid-shadow",
+      "bordered": "false"
+    },
+    {
+      "name": "label",
+      "bordered": "false"
+    },
+    {
+      "name": "legend",
+      "bordered": "false"
+    },
+    {
+      "name": "placeholder",
+      "bordered": "false"
+    },
+    {
+      "name": "text",
+      "bordered": "false"
+    },
+    {
+      "name": "select-foreground",
+      "bordered": "false"
+    },
+    {
+      "name": "valid",
+      "bordered": "false"
+    },
+    {
+      "name": "valid-shadow",
+      "bordered": "false"
+    }
+  ],
+  "tableColors": [
+    {
+      "name": "border",
+      "bordered": "false"
+    },
+    {
+      "name": "caption",
+      "bordered": "false"
+    },
+    {
+      "name": "heading",
+      "bordered": "false"
+    },
+    {
+      "name": "hover",
+      "bordered": "false"
+    },
+    {
+      "name": "text",
+      "bordered": "false"
+    },
+    {
+      "name": "stripe",
+      "bordered": "false"
+    }
   ]
 }

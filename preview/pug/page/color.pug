@@ -25,45 +25,20 @@ block content
         span(class='color-item__caption')= color.name
   h2(class='section-title') Button
   div(class='color-items')
-    div(class='color-item color-item--btn-primary-background')
-      span(class='color-item__caption') primary-background
-    div(class='color-item color-item--btn-primary-foreground color-item--bordered')
-      span(class='color-item__caption') primary-foreground
-    div(class='color-item color-item--btn-primary-background-hover')
-      span(class='color-item__caption') primary-background-hover
-    div(class='color-item color-item--btn-primary-foreground-hover color-item--bordered')
-      span(class='color-item__caption') primary-foreground-hover
-    div(class='color-item color-item--btn-secondary-background')
-      span(class='color-item__caption') secondary-background
-    div(class='color-item color-item--btn-secondary-foreground color-item--bordered')
-      span(class='color-item__caption') secondary-foreground
-    div(class='color-item color-item--btn-secondary-background-hover')
-      span(class='color-item__caption') secondary-background-hover
-    div(class='color-item color-item--btn-secondary-foreground-hover color-item--bordered')
-      span(class='color-item__caption') secondary-foreground-hover
-  h2(class='section-title') Form Colors
+    each color in btnColors
+      div(class=`color-item color-item--btn-${color.name} ${color.bordered === 'true' ? 'color-item--bordered' : ''}`)
+        span(class='color-item__color')
+        span(class='color-item__caption')= color.name
+  h2(class='section-title') Form
   div(class='color-items')
-    div(class='color-item color-item--form-background color-item--bordered')
-      span(class='color-item__caption') background
-    div(class='color-item color-item--form-background-disabled')
-      span(class='color-item__caption') background-disabled
-    div(class='color-item color-item--form-border')
-      span(class='color-item__caption') border
-    div(class='color-item color-item--form-border-disabled')
-      span(class='color-item__caption') border-disabled
-    div(class='color-item color-item--form-border-focus')
-      span(class='color-item__caption') border-focus
-    div(class='color-item color-item--form-check-foreground color-item--bordered')
-      span(class='color-item__caption') check-foreground
-    div(class='color-item color-item--form-check-background')
-      span(class='color-item__caption') check-background
-    div(class='color-item color-item--form-label')
-      span(class='color-item__caption') label
-    div(class='color-item color-item--form-legend')
-      span(class='color-item__caption') legend
-    div(class='color-item color-item--form-placeholder')
-      span(class='color-item__caption') placeholder
-    div(class='color-item color-item--form-text')
-      span(class='color-item__caption') text
-    div(class='color-item color-item--form-select-foreground')
-      span(class='color-item__caption') select-foreground
+    each color in formColors
+      div(class=`color-item color-item--form-${color.name} ${color.bordered === 'true' ? 'color-item--bordered' : ''}`)
+        span(class='color-item__color')
+        span(class='color-item__caption')= color.name
+  h2(class='section-title') Table
+  div(class='color-items')
+    each color in tableColors
+      div(class=`color-item color-item--table-${color.name} ${color.bordered === 'true' ? 'color-item--bordered' : ''}`)
+        span(class='color-item__color')
+        span(class='color-item__caption')= color.name
+

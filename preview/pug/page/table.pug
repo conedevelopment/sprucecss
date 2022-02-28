@@ -5,9 +5,10 @@ block variables
   -var page = 'table';
 
 block content
+  h2(class='section-title') Regular
   div(class='table-responsive')
     table(class='table table--striped table--dark table--hover')
-      caption This is a regular sized table.
+      caption(class='hidden') This is a regular sized table.
       thead
         tr
           th(scope='col') Person
@@ -31,9 +32,10 @@ block content
           td Last One
           td 2800
           td Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+  h2(class='section-title') Rounded
   div(class='table-responsive')
     table(class='table table--clear-border table--rounded table--striped table--dark table--hover')
-      caption This is a regular sized table.
+      caption This is a regular sized, rounded, borderless table.
       thead
         tr
           th(scope='col') Person
@@ -57,6 +59,7 @@ block content
           td Last One
           td 2800
           td Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+  h2(class='section-title') Small
   div(class='table-responsive')
     table(class='table table--sm table--striped table--dark table--hover')
       caption This is a small sized table.

@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use 'spruce';
+
+.color-items {
+  @include spruce.layout-grid($minimum: 15rem);
+}
+
+.color-item {
+  $this: &;
+
+  align-items: center;
+  display: flex;
+  gap: spruce.spacer(m);
+
+  &--bordered #{$this}__color {
+    box-shadow: 0 0 0 1px spruce.color(border) inset;
+  }
+
+  &__color {
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+  }
+
+  &__caption {
+    font-family: spruce.$font-family-cursive;
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, base) {
+  .color-item--base-#{$name} .color-item__color {
+    background-color: spruce.color($name, base);
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, selection) {
+  .color-item--selection-#{$name} .color-item__color {
+    background-color: spruce.color($name, selection);
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, alert) {
+  .color-item--alert-#{$name} .color-item__color {
+    background-color: spruce.color($name, alert);
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, btn) {
+  .color-item--btn-#{$name} .color-item__color {
+    background-color: spruce.color($name, btn);
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, form) {
+  .color-item--form-#{$name} .color-item__color {
+    background-color: spruce.color($name, form);
+  }
+}
+
+@each $name, $value in map.get(spruce.$colors, table) {
+  .color-item--table-#{$name} .color-item__color {
+    background-color: spruce.color($name, table);
+  }
+}
