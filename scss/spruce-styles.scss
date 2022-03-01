@@ -1,0 +1,4 @@
+@use 'spruce';
+
+@include spruce.generate-content;
+@include spruce.generate-form;
