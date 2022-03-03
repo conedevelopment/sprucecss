@@ -1,5 +1,5 @@
-@use 'config' as *;
-@use 'function' as *;
+@use '../config' as *;
+@use '../function' as *;
 
 @mixin generate-default {
   ::selection {

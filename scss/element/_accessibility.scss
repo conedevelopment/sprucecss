@@ -1,4 +1,4 @@
-@use 'mixin' as *;
+@use '../mixin' as *;
 
 @mixin generate-accessibility {
   .sr-only {
