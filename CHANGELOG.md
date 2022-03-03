@@ -1,5 +1,12 @@
 # Spruce CSS Changelog
 
+## v0.4.0 (2022-03-03)
+
+### Improvements
+- Add generator mixins
+- Rework preview
+
+
 ## v0.3.1 (2022-02-23)
 - Fix typos
 
