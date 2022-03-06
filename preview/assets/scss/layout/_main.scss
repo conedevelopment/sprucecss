@@ -1,4 +1,4 @@
-@use 'spruce';
+@use '../../../../scss/spruce';
 
 .site-main {
   padding-block: clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));

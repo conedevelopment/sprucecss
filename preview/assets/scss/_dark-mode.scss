@@ -1,4 +1,4 @@
-@use 'spruce';
+@use '../../../scss/spruce';
 
 @include spruce.generate-color-variables(
   $colors: spruce.$colors,

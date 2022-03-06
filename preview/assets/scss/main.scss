@@ -7,7 +7,7 @@
 @forward 'styles';
 @forward 'layout';
 @forward 'component';
-@use 'spruce';
+@use '../../../scss/spruce';
 
 @include spruce.generate-form-check(
   '.wpcf7-list-item label',

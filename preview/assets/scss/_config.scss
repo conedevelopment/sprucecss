@@ -3,7 +3,7 @@
 $color-tertiary: hsl(337, 55%, 43%);
 $spacer: 1.25rem;
 
-@use 'spruce' with (
+@use '../../../scss/spruce' with (
   $colors: (
     btn: (
       custom-background: hsl(0 0% 100%),
