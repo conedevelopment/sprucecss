@@ -585,23 +585,6 @@ img {
   user-select: none;
 }
 
-.iframe-responsive {
-  position: relative;
-}
-.iframe-responsive::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%;
-  width: 100%;
-}
-.iframe-responsive > iframe {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
 iframe {
   height: 100%;
   width: 100%;
@@ -614,6 +597,18 @@ figure {
 figure figcaption {
   margin-top: 0.5rem;
   text-align: center;
+}
+
+.aspect-ratio-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4/3;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1/1;
 }
 
 .table-responsive {
@@ -808,6 +803,10 @@ samp {
 
 .lead {
   font-size: 1.333rem;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .btn {

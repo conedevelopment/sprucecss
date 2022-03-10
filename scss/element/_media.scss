@@ -10,11 +10,6 @@
     user-select: none;
   }
 
-  // Fit iframes to parent container
-  .iframe-responsive {
-    @include aspect-ratio(16, 9, iframe);
-  }
-
   iframe {
     height: 100%;
     width: 100%;
@@ -28,5 +23,11 @@
       margin-top: spacer(xs);
       text-align: center;
     }
+  }
+
+  @if setting(utilities) == true {
+    .aspect-ratio-16-9 { aspect-ratio: 16 / 9; }
+    .aspect-ratio-4-3 { aspect-ratio: 4 / 3; }
+    .aspect-ratio-1-1 { aspect-ratio: 1 / 1; }
   }
 }
