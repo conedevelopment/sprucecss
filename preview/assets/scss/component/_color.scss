@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../../../../scss/spruce';
+@use 'spruce';
 
 .color-items {
   @include spruce.layout-grid($minimum: 15rem);
