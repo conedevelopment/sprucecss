@@ -4,7 +4,7 @@
 @use '../config' as *;
 
 // Hide something from the screen but keep it visible for assistive technology
-@mixin visually-hidden() {
+@mixin visually-hidden {
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;
   height: 1px !important;
@@ -63,7 +63,7 @@
 }
 
 // Clear default button styles
-@mixin clear-btn() {
+@mixin clear-btn {
   background: none;
   border: 0;
   color: inherit;
@@ -74,7 +74,7 @@
 }
 
 // Clear list styles
-@mixin clear-list() {
+@mixin clear-list {
   list-style: none;
   margin: 0;
   padding: 0;
