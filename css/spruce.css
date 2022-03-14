@@ -548,6 +548,16 @@ figure figcaption {
 .table--clear-border td {
   border: 0;
 }
+.table--in-line th:first-child,
+.table--in-line td:first-child {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+.table--in-line th:last-child,
+.table--in-line td:last-child {
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
+}
 .table--sm th,
 .table--sm td {
   padding: 0.25rem 0.5rem;
