@@ -87,3 +87,7 @@ body {
     text-decoration: none;
   }
 }
+
+.break-long-url {
+  @include spruce.word-wrap;
+}
