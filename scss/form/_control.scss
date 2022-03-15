@@ -3,8 +3,15 @@
 @use '../mixin' as *;
 @use '../config' as *;
 
-@mixin generate-form-control {
-  .form-control {
+@mixin generate-form-control(
+  $input,
+  $has-states: false,
+  $has-sizes: false,
+  $has-select: true
+) {
+  #{$input} {
+    $this: &;
+
     appearance: none;
     background-color: color(background, form);
     border: $form-control-border-width solid color(border, form);
@@ -38,51 +45,73 @@
       );
     }
 
-    &--valid,
-    &--invalid {
-      background-position: center right $select-icon-right-offset;
-      background-repeat: no-repeat;
-      background-size: $select-icon-width auto;
-      padding-inline-end: $select-padding-right;
+    // Validation states
+    @if ($has-states) {
+      &--valid,
+      &--invalid {
+        background-position: center right $select-icon-right-offset;
+        background-repeat: no-repeat;
+        background-size: $select-icon-width auto;
+        padding-inline-end: $select-padding-right;
 
-      html[dir='rtl'] & {
-        background-position: center left $select-icon-right-offset;
+        html[dir='rtl'] & {
+          background-position: center left $select-icon-right-offset;
+        }
+      }
+
+      &--valid {
+        @include field-icon($form-valid-image, map.get($colors, alert, success));
+        border-color: color(success, alert);
+
+        &:focus {
+          @include field-focus(
+            $border: color(valid, form),
+            $box-shadow: color(valid-shadow, form)
+          );
+        }
+      }
+
+      &--invalid {
+        @include field-icon($form-invalid-image, map.get($colors, alert, danger));
+        border-color: color(danger, alert);
+
+        &:focus {
+          @include field-focus(
+            $border: color(invalid, form),
+            $box-shadow: color(invalid-shadow, form)
+          );
+        }
       }
     }
 
-    &--valid {
-      @include field-icon($form-valid-image, map.get($colors, alert, success));
-      border-color: color(success, alert);
+    // Sizes
+    @if ($has-sizes) {
+      &--sm {
+        font-size: $form-control-font-size-sm;
+        padding: $form-control-padding-sm;
+      }
 
-      &:focus {
-        @include field-focus(
-          $border: color(valid, form),
-          $box-shadow: color(valid-shadow, form)
-        );
+      &--lg {
+        font-size: $form-control-font-size-lg;
+        padding: $form-control-padding-lg;
       }
     }
+  }
 
-    &--invalid {
-      @include field-icon($form-invalid-image, map.get($colors, alert, danger));
-      border-color: color(danger, alert);
+  // Generate select styling
+  @if ($has-select) {
+    select#{$input} {
+      &:not([multiple]):not([size]) {
+        @include field-icon($select-image, map.get($colors, form, select-foreground));
+        background-position: center right $select-icon-right-offset;
+        background-repeat: no-repeat;
+        background-size: $select-icon-width auto;
+        padding-inline-end: $select-padding-right;
 
-      &:focus {
-        @include field-focus(
-          $border: color(invalid, form),
-          $box-shadow: color(invalid-shadow, form)
-        );
+        html[dir='rtl'] & {
+          background-position: center left $select-icon-right-offset;
+        }
       }
-    }
-
-    //Sizes
-    &--sm {
-      font-size: $form-control-font-size-sm;
-      padding: $form-control-padding-sm;
-    }
-
-    &--lg {
-      font-size: $form-control-font-size-lg;
-      padding: $form-control-padding-lg;
     }
   }
 }

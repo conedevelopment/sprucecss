@@ -24,12 +24,16 @@
     '.form-check__label',
     true
   );
-  @include generate-form-control;
+  @include generate-form-control(
+    '.form-control',
+    true,
+    true,
+    true
+  );
   @include generate-form-description;
   @include generate-fieldset;
   @include generate-form-group;
   @include generate-form-label;
   @include generate-form-row;
-  @include generate-form-select;
   @include generate-field-feedback;
 }

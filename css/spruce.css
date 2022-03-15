@@ -949,6 +949,18 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   padding: 0.75em 1em;
 }
 
+select.form-control:not([multiple]):not([size]) {
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12,12.692l-5.203,-5.203c-0.234,-0.234 -0.614,-0.234 -0.849,0l-1.272,1.273c-0.235,0.234 -0.235,0.614 -0,0.849l6.9,6.9c0.234,0.234 0.614,0.234 0.848,-0l6.9,-6.9c0.235,-0.235 0.235,-0.615 0,-0.849l-1.272,-1.273c-0.235,-0.234 -0.615,-0.234 -0.849,0l-5.203,5.203Z" style="fill:%238660cd;"/%3e%3c/svg%3e');
+  background-position: center right 0.5em;
+  background-repeat: no-repeat;
+  background-size: 1.25em auto;
+  -webkit-padding-end: 2em;
+          padding-inline-end: 2em;
+}
+html[dir=rtl] select.form-control:not([multiple]):not([size]) {
+  background-position: center left 0.5em;
+}
+
 .form-description {
   color: var(--spruce-form-color-text);
   display: block;
@@ -1031,18 +1043,6 @@ legend {
 }
 .form-row--mixed > * {
   flex: 1 1 var(--col-width);
-}
-
-select.form-control:not([multiple]):not([size]) {
-  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12,12.692l-5.203,-5.203c-0.234,-0.234 -0.614,-0.234 -0.849,0l-1.272,1.273c-0.235,0.234 -0.235,0.614 -0,0.849l6.9,6.9c0.234,0.234 0.614,0.234 0.848,-0l6.9,-6.9c0.235,-0.235 0.235,-0.615 0,-0.849l-1.272,-1.273c-0.235,-0.234 -0.615,-0.234 -0.849,0l-5.203,5.203Z" style="fill:%238660cd;"/%3e%3c/svg%3e');
-  background-position: center right 0.5em;
-  background-repeat: no-repeat;
-  background-size: 1.25em auto;
-  -webkit-padding-end: 2em;
-          padding-inline-end: 2em;
-}
-html[dir=rtl] select.form-control:not([multiple]):not([size]) {
-  background-position: center left 0.5em;
 }
 
 .field-feedback {
