@@ -1,5 +1,19 @@
 # Spruce CSS Changelog
 
+## v0.5.0 (2022-03-15)
+
+### New features
+- Add word-wrap mixin.
+- Add in-line table style.
+- Add aspect-ratio-* utility classes.
+
+### Improvements
+- Rework form-control generator.
+- Add display: block; to iframes.
+
+### Removed
+- Remove aspect-ratio mixin.
+
 ## v0.4.1 (2022-03-03)
 
 ### Bugfix
