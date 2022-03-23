@@ -80,6 +80,11 @@ $colors: map.deep-merge(
       hover: hsl(0 0% 0% / 0.05),
       text: $color-gray,
       stripe: hsl(0 0% 0% / 0.025)
+    ),
+    scrollbar: (
+      thumb-background: hsl(0 0% 0% / 0.15),
+      thumb-background-hover:	hsl(0 0% 0% / 0.25),
+      track-background:	hsl(0 0% 0% / 0.05)
     )
   ),
   $colors

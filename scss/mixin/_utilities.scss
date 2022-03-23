@@ -1,5 +1,3 @@
-@use 'sass:color';
-@use 'sass:math';
 @use '../function' as *;
 @use '../config' as *;
 
@@ -36,9 +34,9 @@
 
 // Custom scrollbar
 @mixin scrollbar(
-  $thumb-background-color: hsla(0, 0%, 0%, 0.15),
-  $thumb-background-color-hover: hsla(0, 0%, 0%, 0.25),
-  $track-background-color: hsla(0, 0%, 0%, 0.05),
+  $thumb-background-color: color(thumb-background, scrollbar),
+  $thumb-background-color-hover: color(thumb-background-hover, scrollbar),
+  $track-background-color: color(track-background, scrollbar),
   $size: 0.5rem,
   $border-radius: $border-radius-sm
 ) {
