@@ -15,7 +15,7 @@
 // Create Stack layout
 @mixin layout-stack(
   $gap: spacer(m),
-  $width: true,
+  $width: false,
   $align: none,
   $important: false,
   $split: 0
