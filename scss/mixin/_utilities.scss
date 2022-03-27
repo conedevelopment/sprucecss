@@ -103,11 +103,9 @@
 // @author Chris Coyier
 // https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
 @mixin word-wrap {
+  hyphens: auto;
   overflow-wrap: break-word;
-  word-wrap: break-word;
-
   word-break: break-all;
   word-break: break-word;
-
-  hyphens: auto;
+  word-wrap: break-word;
 }
