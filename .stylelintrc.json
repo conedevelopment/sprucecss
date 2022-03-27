@@ -17,6 +17,7 @@
       {
         "ignoreValues": ["box"]
       }
-    ]
+    ],
+    "color-function-notation": "modern"
   }
 }
