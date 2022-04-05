@@ -35,9 +35,6 @@
     "sass-lint-with-fix": "stylelint scss/**/*.scss --fix"
   },
   "license": "MIT",
-  "dependencies": {
-    "normalize.css": "^8.0.1"
-  },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.7",
