@@ -13,9 +13,9 @@
 
 **Spruce CSS is an open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.**
 
-[![Github release](https://img.shields.io/github/v/release/conedevelopment/sprucecss?color=8660cd&logo=github&logoColor=white)](https://github.com/conedevelopment/sprucecss/releases/latest)
-[![npm version](https://img.shields.io/npm/v/sprucecss?color=8660cd)](https://www.npmjs.com/package/sprucecss)
-[![License](https://img.shields.io/badge/license-MIT-%238660cd)](https://github.com/conedevelopment/sprucecss/blob/main/LICENSE)
+[![Github release](https://img.shields.io/github/v/release/conedevelopment/sprucecss?color=8660cd&logo=github&logoColor=white&style=for-the-badge)](https://github.com/conedevelopment/sprucecss/releases/latest)
+[![npm version](https://img.shields.io/npm/v/sprucecss?color=8660cd&style=for-the-badge)](https://www.npmjs.com/package/sprucecss)
+[![License](https://img.shields.io/badge/license-MIT-%238660cd?style=for-the-badge)](https://github.com/conedevelopment/sprucecss/blob/main/LICENSE)
 
 ## What is Spruce CSS?
 
