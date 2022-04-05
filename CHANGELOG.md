@@ -1,5 +1,15 @@
 # Spruce CSS Changelog
 
+## v0.6.0 (2022-04-05)
+
+### New features
+- Add [transition(https://sprucecss.com/docs/sass/functions#transition) function.
+
+### Improvements
+- Add scrollbar colors to $colors map.
+- Set layout-stack `$width`'s default value to `false`.
+- Set Stylelint's `color-function-notation` to `modern`.
+
 ## v0.5.0 (2022-03-15)
 
 ### New features
