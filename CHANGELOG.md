@@ -3,7 +3,7 @@
 ## v0.6.0 (2022-04-05)
 
 ### New features
-- Add [transition(https://sprucecss.com/docs/sass/functions#transition) function.
+- Add [transition](https://sprucecss.com/docs/sass/functions#transition) function.
 
 ### Improvements
 - Add scrollbar colors to $colors map.
