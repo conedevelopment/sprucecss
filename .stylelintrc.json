@@ -18,6 +18,8 @@
         "ignoreValues": ["box"]
       }
     ],
-    "color-function-notation": "modern"
+    "color-function-notation": "modern",
+    "selector-class-pattern": null,
+    "scss/percent-placeholder-pattern": null
   }
 }
