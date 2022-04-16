@@ -30,7 +30,9 @@
   a {
     color: color(link);
     text-decoration: underline;
-    transition: color var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+    transition-duration: transition(duration);
+    transition-property: color;
+    transition-timing-function: transition(timing-function);
 
     &:hover {
       color: color(link-hover);

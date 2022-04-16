@@ -43,7 +43,9 @@
       line-height: 1;
       margin-bottom: -0.1em;
       margin-inline-end: spacer(xs);
-      transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+      transition-duration: transition(duration);
+      transition-property: background-color, border, box-shadow;
+      transition-timing-function: transition(timing-function);
       width: 1em;
 
       &[type='radio'] {

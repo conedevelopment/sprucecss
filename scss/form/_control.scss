@@ -23,7 +23,9 @@
     font-weight: $form-control-font-weight;
     line-height: $form-control-line-height;
     padding: $form-control-padding;
-    transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+    transition-duration: transition(duration);
+    transition-property: border, box-shadow;
+    transition-timing-function: transition(timing-function);
     width: 100%;
 
     &::placeholder {

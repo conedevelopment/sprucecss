@@ -64,7 +64,7 @@ body {
 
 .custom-link {
   transition-duration: spruce.transition(duration);
-  transition-property: all;
+  transition-property: background-color;
   transition-timing-function: spruce.transition(timing-function);
 
   &:hover {

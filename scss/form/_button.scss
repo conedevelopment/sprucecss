@@ -21,7 +21,9 @@
     padding: $btn-padding;
     text-align: start;
     text-decoration: none;
-    transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+    transition-duration: transition(duration);
+    transition-property: background-color, box-shadow, color;
+    transition-timing-function: transition(timing-function);
 
     // States
     &:focus {
