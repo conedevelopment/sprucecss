@@ -37,6 +37,14 @@ There is nothing new if you previously used Sass unless you don’t know the new
 
 To start a new Spruce-based project (or experiment), we suggest using our [starter kit](https://github.com/conedevelopment/sprucecss-starter-kit) containing a simple Sass build environment.
 
+## Examples
+
+[Simple examples](https://sprucecss.com/examples/) for how to use and how to get started with Spruce CSS.
+
+- **[Auth](https://sprucecss.com/examples/html/auth.html)**: A simple login layout.
+
+[Find the examples on GitHub](https://github.com/conedevelopment/sprucecss-examples).
+
 ## Documentation
 
 For complete the documentation, please visit our site at [sprucecss.com](https://sprucecss.com).
