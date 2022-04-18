@@ -1,5 +1,16 @@
 # Spruce CSS Changelog
 
+## v0.7.0 (2022-04-18)
+
+### Improvements
+- Add smaller `line-height` to `.form-description`, `.field-feedback` and `.form-label`.
+- Update `transition` properties to use new function.
+- Update `.form-control`’s `transition` properties.
+- Stylelint: enable underscores in class names and placeholders (BEM).
+
+### Bugfix
+- Fix $font-family-* quotes.
+
 ## v0.6.0 (2022-04-05)
 
 ### New features
