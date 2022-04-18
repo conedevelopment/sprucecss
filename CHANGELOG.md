@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v0.7.1 (2022-04-18)
+
+### Bugfix
+- Remove `background-color` from `transition-property` at `generate-form-check` mixin.
+
 ## v0.7.0 (2022-04-18)
 
 ### Improvements

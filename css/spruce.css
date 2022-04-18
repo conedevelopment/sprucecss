@@ -845,7 +845,7 @@ samp {
   -webkit-margin-end: 0.5rem;
           margin-inline-end: 0.5rem;
   transition-duration: var(--spruce-transition-duration);
-  transition-property: background-color, border, box-shadow;
+  transition-property: border, box-shadow;
   transition-timing-function: var(--spruce-transition-timing-function);
   width: 1em;
 }
