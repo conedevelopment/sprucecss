@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v0.7.1 (2022-04-21)
+
+### Bugfix
+- Change `start` to `flex-start` and `end` to `flex-end` at flex properties.
+
 ## v0.7.1 (2022-04-18)
 
 ### Bugfix
