@@ -1019,7 +1019,7 @@ legend {
 .form-group--vertical-check {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .form-group--vertical-check > * {
   -webkit-margin-after: 0;
@@ -1032,7 +1032,7 @@ legend {
           margin-block-start: 0.5rem;
 }
 .form-group--grid {
-  align-items: start;
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;

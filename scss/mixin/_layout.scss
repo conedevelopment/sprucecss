@@ -26,11 +26,11 @@
   }
 
   @if $align == left {
-    align-items: start;
+    align-items: flex-start;
   }
 
   @if $align == right {
-    align-items: end;
+    align-items: flex-end;
   }
 
   > * {
