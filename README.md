@@ -41,7 +41,8 @@ To start a new Spruce-based project (or experiment), we suggest using our [start
 
 [Simple examples](https://sprucecss.com/examples/) for how to use and how to get started with Spruce CSS.
 
-- **[Auth](https://sprucecss.com/examples/html/auth.html)**: A simple login layout.
+- **[Authentication](https://sprucecss.com/examples/html/auth.html)**: A simple login example where you can check out the form styling and some usage of Spruce’s mixins and functions.
+- **[Article](https://sprucecss.com/examples/html/article.html)**: A centered, breaking-out article layout for seeing the typography.
 
 [Find the examples on GitHub](https://github.com/conedevelopment/sprucecss-examples).
 
