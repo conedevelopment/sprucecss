@@ -6,7 +6,7 @@
     @include layout-stack(spacer(xxs), false);
 
     &--vertical-check {
-      @include layout-stack(spacer(xs), true, left);
+      @include layout-stack(spacer(s), true, left);
     }
 
     &--grid {
