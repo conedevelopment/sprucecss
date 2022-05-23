@@ -9,3 +9,20 @@
 
   @return map.get($spacers, $key);
 }
+
+// Get value returned in a clamp from $spacers and $font-sizes maps.
+@function spacer-clamp(
+  $min,
+  $max,
+  $preferred: map.get($settings, optimal-spacer-size)
+) {
+  @if not map.has-key($spacers, $min) {
+    @error 'The #{$min} key name doesn\'t exist at the $spacers or $font-sizes map.';
+  }
+
+  @if not map.has-key($spacers, $max) {
+    @error 'The #{$max} key name doesn\'t exist at the $spacers or $font-sizes map.';
+  }
+
+  @return clamp(#{map.get($spacers, $min)}, #{$preferred}, #{map.get($spacers, $max)});
+}

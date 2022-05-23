@@ -93,3 +93,7 @@ body {
 .break-long-url {
   @include spruce.word-wrap;
 }
+
+.spacer-clamp-mixin {
+  margin-block: spruce.spacer-clamp(m, l);
+}
