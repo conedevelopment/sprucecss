@@ -97,6 +97,7 @@
     }
 
     #{$label} {
+      font-weight: $form-check-font-weight;
       line-height: $line-height-heading;
     }
   }
