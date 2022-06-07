@@ -5,6 +5,7 @@ $settings: () !default;
 $settings: map.merge(
   (
     color-fallback: false,
+    html-smooth-scrolling: true,
     hyphens: true,
     optimal-responsive-font-size: '2vw + 1rem',
     optimal-spacer-size: '5vw',

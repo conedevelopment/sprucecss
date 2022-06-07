@@ -11,8 +11,10 @@
   html {
     box-sizing: border-box;
 
-    @media (prefers-reduced-motion: no-preference) {
-      scroll-behavior: smooth;
+    @if setting(html-smooth-scrolling) {
+      @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+      }
     }
   }
 
