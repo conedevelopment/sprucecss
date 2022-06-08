@@ -1,5 +1,20 @@
 # Spruce CSS Changelog
 
+## v0.8.0 (2022-06-08)
+
+### New features
+- Add `spacer-clamp` function which help to generate `clamp()` functions from the `$spacers` map.
+
+### Improvements
+- Add `html-smooth-scrolling` to `$settings`.
+- Add `$form-check-font-weight` variable.
+- Add `$form-check-line-height` variable.
+- Add `$table-line-height` variable.
+- Modify `$font-size-ratio`’s default value to `1.25`.
+
+### Bugfix
+- Fix `generate-form-label` order under `generate-form` mixin.
+
 ## v0.7.1 (2022-04-21)
 
 ### Bugfix
