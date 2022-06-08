@@ -4,6 +4,6 @@
 
 // Tables
 $table-responsive-width: 40rem !default;
-$table-line-height: $line-height-md;
+$table-line-height: $line-height-md !default;
 $table-padding: map.get($spacers, s) !default;
 $table-padding-sm: map.get($spacers, xxs) map.get($spacers, xs) !default;

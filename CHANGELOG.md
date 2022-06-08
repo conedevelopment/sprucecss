@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v0.8.1 (2022-06-08)
+
+### Bugfix
+- Add `!default` to `$table-line-height`.
+
 ## v0.8.0 (2022-06-08)
 
 ### New features
