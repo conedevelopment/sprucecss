@@ -9,6 +9,6 @@
       @error 'It seems that this is not a valid CSS custom property name.';
     }
 
-    #{string.insert($name, '#{map.get($settings, prefix)}-', 3)}: #{$value};
+    #{string.insert($name, '#{if(map.get($settings, prefix), map.get($settings, prefix) + '-', '')}', 3)}: #{$value};
   }
 }

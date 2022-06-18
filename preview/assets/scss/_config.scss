@@ -26,7 +26,8 @@ $spacer: 1.25rem;
     color-fallback: true,
     html-smooth-scrolling: false,
     hyphens: true,
-    utilities: true
+    utilities: true,
+    prefix: null
   ),
   $form-check-font-size-lg: 1.35rem,
   $form-check-font-weight: 600,

@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use 'sass:map';
+@use 'setting' as *;
 @use '../config' as *;
 
 // Get color value from $colors Sass map
@@ -12,13 +13,15 @@
     @error 'The #{$key} key name doesn\'t exist under #{$type} at the $colors map.';
   }
 
+  $prefix: if(setting(prefix), setting(prefix) + '-', '');
+
   @if $only-color {
     @return map.get($colors, $type, $key);
   }
 
   @if map.get($settings, color-fallback) {
-    @return var(--#{map.get($settings, prefix)}-#{$type}-color-#{$key}, #{map.get($colors, $type, $key)});
+    @return var(--#{$prefix}#{$type}-color-#{$key}, #{map.get($colors, $type, $key)});
   }
 
-  @return var(--#{map.get($settings, prefix)}-#{$type}-color-#{$key});
+  @return var(--#{$prefix}#{$type}-color-#{$key});
 }
