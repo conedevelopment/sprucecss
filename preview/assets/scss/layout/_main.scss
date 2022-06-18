@@ -4,7 +4,9 @@
   padding-block: clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
 
   &__container {
-    @include spruce.layout-center;
+    @include spruce.layout-center(
+      spruce.get-css-variable(--container-gap)
+    );
   }
 
   &__inner {

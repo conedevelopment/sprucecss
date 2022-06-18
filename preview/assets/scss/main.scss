@@ -9,6 +9,12 @@
 @forward 'component';
 @use 'spruce';
 
+:root {
+  @include spruce.set-css-variable((
+    --container-gap: spruce.spacer-clamp(m, l)
+  ));
+}
+
 @include spruce.generate-form-check(
   '.wpcf7-list-item label',
   '.wpcf7-list-item input',
@@ -92,8 +98,4 @@ body {
 
 .break-long-url {
   @include spruce.word-wrap;
-}
-
-.spacer-clamp-mixin {
-  margin-block: spruce.spacer-clamp(m, l);
 }

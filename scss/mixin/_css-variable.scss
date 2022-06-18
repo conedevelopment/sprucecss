@@ -1,0 +1,14 @@
+@use 'sass:string';
+@use 'sass:map';
+@use '../config' as *;
+
+// Declare CSS custom properties through Spruce to add the prefix
+@mixin set-css-variable($vars) {
+  @each $name, $value in $vars {
+    @if string.index($name, --) != 1 {
+      @error 'It seems that this is not a valid CSS custom property name.';
+    }
+
+    #{string.insert($name, '#{map.get($settings, prefix)}-', 3)}: #{$value};
+  }
+}

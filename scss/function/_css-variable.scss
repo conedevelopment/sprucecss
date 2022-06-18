@@ -1,0 +1,12 @@
+@use 'sass:string';
+@use 'sass:map';
+@use '../config' as *;
+
+// Add the prefix value to a CSS custom properties
+@function get-css-variable($variable) {
+  @if string.index($variable, --) != 1 {
+    @error 'It seems that this is not a valid CSS custom property name.';
+  }
+
+  @return var(string.insert($variable, '#{map.get($settings, prefix)}-', 3));
+}

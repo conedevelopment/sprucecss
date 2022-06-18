@@ -5,7 +5,9 @@
   padding-block: spruce.spacer(m);
 
   &__container {
-    @include spruce.layout-center;
+    @include spruce.layout-center(
+      spruce.get-css-variable(--container-gap)
+    );
   }
 
   &__logo {
