@@ -3,10 +3,10 @@
 
 @mixin generate-form-group {
   .form-group {
-    @include layout-stack(spacer(xxs), false);
+    @include layout-stack(xxs, false);
 
     &--vertical-check {
-      @include layout-stack(spacer(s), true, left);
+      @include layout-stack(s, true, left);
     }
 
     &--grid {

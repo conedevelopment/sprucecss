@@ -7,7 +7,7 @@
     &--mixed {
       --col-width: #{$form-row-col-width};
 
-      @include layout-flex(spacer(s));
+      @include layout-flex(s);
     }
   }
 }

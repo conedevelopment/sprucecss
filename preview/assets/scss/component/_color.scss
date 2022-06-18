@@ -17,9 +17,9 @@
   }
 
   &__color {
-    border-radius: 25px;
-    height: 50px;
-    width: 50px;
+    border-radius: spruce.$border-radius-lg;
+    height: 3rem;
+    width: 3rem;
   }
 
   &__caption {

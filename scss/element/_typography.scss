@@ -70,7 +70,7 @@
   // Lists
   ul,
   ol {
-    @include layout-stack(spacer(xxs), $width: false);
+    @include layout-stack(xxs, $width: false);
     list-style-position: inside;
 
     li {
@@ -104,7 +104,7 @@
 
   // Blockquote
   blockquote {
-    @include layout-stack(spacer(xs));
+    @include layout-stack(xs);
     border-left: 0.5rem solid color(blockquote-border);
     margin-left: 0;
     padding: 0 0 0 spacer(m);

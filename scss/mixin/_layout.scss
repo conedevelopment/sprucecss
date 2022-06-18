@@ -1,12 +1,17 @@
+@use 'sass:map';
 @use 'sass:meta';
 @use '../function' as *;
 @use '../config' as *;
 
 // Create Center layout
 @mixin layout-center(
-  $gap: spacer(m),
+  $gap: m,
   $max-width: $container-width
 ) {
+  @if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
   margin-inline: auto;
   max-width: $max-width;
   padding-inline: $gap;
@@ -14,12 +19,16 @@
 
 // Create Stack layout
 @mixin layout-stack(
-  $gap: spacer(m),
+  $gap: m,
   $width: false,
   $align: none,
   $important: false,
   $split: 0
 ) {
+  @if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
   @if $align == left or $align == right {
     display: flex;
     flex-direction: column;
@@ -67,9 +76,13 @@
 
 // Create Grid layout
 @mixin layout-grid(
-  $gap: spacer(m),
+  $gap: m,
   $minimum: 12.5rem
 ) {
+  @if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
   display: grid;
   grid-gap: $gap;
 
@@ -82,9 +95,13 @@
 
 // Create Sidebar Layout
 @mixin layout-sidebar(
-  $gap: spacer(m),
+  $gap: m,
   $sidebar-width: 18.75rem
 ) {
+  @if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
@@ -103,9 +120,13 @@
 
 // Create instinctive flex layout.
 @mixin layout-flex(
-  $gap: spacer(m),
+  $gap: m,
   $width-variable: --col-width
 ) {
+  @if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
