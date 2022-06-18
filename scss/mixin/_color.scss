@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../config' as *;
 
@@ -7,8 +8,12 @@
 ) {
   @each $key, $value in $colors {
     #{$selector} {
-      @each $name, $color in $value {
-        --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
+      @if $key == accent {
+        accent-color: #{map.get($value, color)};
+      } @else {
+        @each $name, $color in $value {
+          --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
+        }
       }
     }
   }

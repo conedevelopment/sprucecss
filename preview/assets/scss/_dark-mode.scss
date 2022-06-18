@@ -1,5 +1,6 @@
 @use 'spruce';
 
+/*
 @include spruce.generate-color-variables(
   $colors: spruce.$colors,
   $selector: ':root[data-theme-mode="dark"]'
@@ -13,3 +14,4 @@ html[data-theme-mode='dark'] {
     );
   }
 }
+*/

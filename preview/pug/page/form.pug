@@ -15,6 +15,9 @@ block content
       div(class='form-group')
         label(for='last-name' class='form-label') Last Name
         input(class='form-control' id='last-name' name='last-name' type='text' disabled)
+    div(class='form-group')
+      label(for='first-name' class='form-label') Range
+      input(type='range' min='1' max='100' value='50' class='slider' id='myRange')
     fieldset
       legend Address
       div(class='form-row')
@@ -54,6 +57,19 @@ block content
           span(class='form-label form-check__label') Rent
     fieldset
       legend Which one of you like?
+      div(class='form-group form-group--vertical-check')
+        label(class='form-check')
+          input(type='checkbox' value='own' name='property-ownership2')
+          span(class='form-label form-check__label') Own
+        label(class='form-check')
+          input(type='checkbox' class='form-check__control' value='rent' name='property-ownership2' disabled)
+          span(class='form-label form-check__label') Rent
+        label(class='form-check')
+          input(type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
+          span(class='form-label form-check__label') Misc
+        label(class='form-check')
+          input(id='indeterminate' type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
+          span(class='form-label form-check__label') Indeterminate
       div(class='form-group form-group--vertical-check')
         label(class='form-check')
           input(type='checkbox' class='form-check__control' value='own' name='property-ownership2')

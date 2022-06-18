@@ -17,6 +17,9 @@ $color-success: hsl(150 100% 33%) !default;
 $colors: () !default;
 $colors: map.deep-merge(
   (
+    accent :(
+      color: red
+    ),
     base: (
       primary: $color-primary,
       secondary: $color-secondary,
