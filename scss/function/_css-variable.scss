@@ -8,5 +8,5 @@
     @error 'It seems that this is not a valid CSS custom property name.';
   }
 
-  @return var(string.insert($variable, '#{if(map.get($settings, prefix), map.get($settings, prefix) + '-', '')}', 3));
+  @return var(string.insert($variable, '#{$internal-prefix}', 3));
 }

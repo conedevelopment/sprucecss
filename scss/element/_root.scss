@@ -4,17 +4,15 @@
 @use '../config' as *;
 
 @mixin generate-root {
-  $prefix: if(setting(prefix), setting(prefix) + '-', '');
-
   // Generate the $colors maps into CSS custom properties.
   @include generate-color-variables;
 
   :root {
-    --#{$prefix}transition-duration: #{$transition-duration};
-    --#{$prefix}transition-timing-function: #{$transition-timing-function};
+    --#{$internal-prefix}transition-duration: #{$transition-duration};
+    --#{$internal-prefix}transition-timing-function: #{$transition-timing-function};
 
     @media (prefers-reduced-motion: reduce) {
-      --#{$prefix}transition-duration: 0;
+      --#{$internal-prefix}transition-duration: 0;
     }
   }
 }

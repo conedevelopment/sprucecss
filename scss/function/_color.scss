@@ -13,15 +13,13 @@
     @error 'The #{$key} key name doesn\'t exist under #{$type} at the $colors map.';
   }
 
-  $prefix: if(setting(prefix), setting(prefix) + '-', '');
-
   @if $only-color {
     @return map.get($colors, $type, $key);
   }
 
   @if map.get($settings, color-fallback) {
-    @return var(--#{$prefix}#{$type}-color-#{$key}, #{map.get($colors, $type, $key)});
+    @return var(--#{$internal-prefix}#{$type}-color-#{$key}, #{map.get($colors, $type, $key)});
   }
 
-  @return var(--#{$prefix}#{$type}-color-#{$key});
+  @return var(--#{$internal-prefix}#{$type}-color-#{$key});
 }

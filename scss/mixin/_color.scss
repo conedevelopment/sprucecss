@@ -8,7 +8,7 @@
   @each $key, $value in $colors {
     #{$selector} {
       @each $name, $color in $value {
-        --#{if(setting(prefix), setting(prefix) + '-', '')}#{$key}-color-#{$name}: #{$color};
+        --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
       }
     }
   }
