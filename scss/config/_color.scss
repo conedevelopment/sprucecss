@@ -57,7 +57,7 @@ $colors: map.deep-merge(
     form: (
       background: $color-white,
       background-disabled: hsl(0 0% 95%),
-      border: rgb(177, 175, 181),
+      border: hsl(260 4% 70%),
       border-disabled: $color-gray-light,
       border-focus: $color-primary,
       shadow-focus: color.adjust($color-primary, $alpha: -0.75),
