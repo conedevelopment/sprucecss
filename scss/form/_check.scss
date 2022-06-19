@@ -13,6 +13,7 @@
   #{$parent} {
     align-items: center;
     display: inline-flex;
+    gap: spacer(xs);
   }
 
   @if ($has-sizes) {
@@ -42,7 +43,6 @@
       height: 1em;
       line-height: 1;
       margin-bottom: -0.1em;
-      margin-inline-end: spacer(xs);
       transition-duration: transition(duration);
       transition-property: border, box-shadow;
       transition-timing-function: transition(timing-function);

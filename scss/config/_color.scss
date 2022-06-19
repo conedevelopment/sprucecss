@@ -17,9 +17,6 @@ $color-success: hsl(150 100% 33%) !default;
 $colors: () !default;
 $colors: map.deep-merge(
   (
-    accent :(
-      color: red
-    ),
     base: (
       primary: $color-primary,
       secondary: $color-secondary,
@@ -60,7 +57,7 @@ $colors: map.deep-merge(
     form: (
       background: $color-white,
       background-disabled: hsl(0 0% 95%),
-      border: $color-gray-light,
+      border: rgb(177, 175, 181),
       border-disabled: $color-gray-light,
       border-focus: $color-primary,
       shadow-focus: color.adjust($color-primary, $alpha: -0.75),
@@ -72,7 +69,7 @@ $colors: map.deep-merge(
       legend: $color-black,
       placeholder: hsl(208 7% 40%),
       text: $color-gray,
-      select-foreground: $color-primary,
+      select-foreground: $color-black,
       valid: $color-success,
       valid-shadow: color.adjust($color-success, $alpha: -0.75)
     ),

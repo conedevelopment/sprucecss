@@ -8,12 +8,8 @@
 ) {
   @each $key, $value in $colors {
     #{$selector} {
-      @if $key == accent {
-        accent-color: #{map.get($value, color)};
-      } @else {
-        @each $name, $color in $value {
-          --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
-        }
+      @each $name, $color in $value {
+        --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
       }
     }
   }
