@@ -28,7 +28,7 @@
     -webkit-line-clamp: $number-of-lines;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: initial;
+    white-space: nowrap;
   }
 }
 

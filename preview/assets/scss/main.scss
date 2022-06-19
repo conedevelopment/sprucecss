@@ -56,6 +56,11 @@ body {
   @include spruce.text-ellipsis(3);
 }
 
+.btn--ellipsis {
+  @include spruce.text-ellipsis(1);
+  max-width: 10ch;
+}
+
 .scrollbar {
   @include spruce.scrollbar;
   @include spruce.layout-stack;
