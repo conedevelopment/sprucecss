@@ -46,7 +46,7 @@ $form-input-shadow-width: 0.25rem !default;
 $select-icon-width: 1.25em !default;
 $select-icon-right-offset: 0.5em !default;
 $select-padding-right: calc(0.75em + $select-icon-width) !default;
-$select-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,12.692l-5.203,-5.203c-0.234,-0.234 -0.614,-0.234 -0.849,0l-1.272,1.273c-0.235,0.234 -0.235,0.614 -0,0.849l6.9,6.9c0.234,0.234 0.614,0.234 0.848,-0l6.9,-6.9c0.235,-0.235 0.235,-0.615 0,-0.849l-1.272,-1.273c-0.235,-0.234 -0.615,-0.234 -0.849,0l-5.203,5.203Z" style="fill:#COLOR#;"/></svg>' !default;
+$select-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,12.507l-3.816,-3.815c-0.171,-0.172 -0.45,-0.172 -0.622,-0l-0.933,0.933c-0.172,0.172 -0.172,0.451 0,0.623l5.06,5.06c0.172,0.172 0.45,0.172 0.622,0l5.06,-5.06c0.172,-0.172 0.172,-0.451 -0,-0.623l-0.933,-0.933c-0.172,-0.172 -0.451,-0.172 -0.622,-0l-3.816,3.815Z" style="fill:#COLOR#;"/></svg>' !default;
 
 $form-radio-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="6" style="fill:#COLOR#;"/></svg>' !default;
 $form-checkbox-image: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.525,13.777l-2.411,-2.412c-0.234,-0.233 -0.613,-0.233 -0.846,0l-1.27,1.27c-0.233,0.233 -0.233,0.612 0,0.846l4.104,4.103c0.116,0.117 0.269,0.175 0.422,0.175l0.003,0c0.152,0 0.305,-0.058 0.421,-0.175l9.054,-9.053c0.233,-0.234 0.233,-0.613 -0,-0.846l-1.27,-1.269c-0.233,-0.234 -0.612,-0.234 -0.846,-0l-7.361,7.361Z" style="fill:#COLOR#;"/></svg>' !default;
