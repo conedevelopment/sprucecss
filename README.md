@@ -1,7 +1,7 @@
 <p>
   <a href="https://sprucecss.com/#gh-light-mode-only">
     <br/>
-    <img src="../.github/spruce-logo-dark.svg" alt="Spruce CSS" width="160">
+    <img src="./.github/spruce-logo-dark.svg" alt="Spruce CSS" width="160">
     <br/>
   </a>
   <a href="https://sprucecss.com/#gh-dark-mode-only">
