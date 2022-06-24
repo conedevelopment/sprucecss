@@ -339,24 +339,24 @@ template {
 }
 
 :root {
-  --spruce-base-color-primary: hsl(261deg, 52%, 59%);
+  --spruce-base-color-primary: hsl(262deg, 71%, 49%);
   --spruce-base-color-secondary: hsl(227deg, 92%, 55%);
   --spruce-base-color-background: hsl(0deg, 0%, 100%);
   --spruce-base-color-heading: hsl(205deg, 100%, 2%);
   --spruce-base-color-text: hsl(208deg, 7%, 30%);
-  --spruce-base-color-link: hsl(261deg, 52%, 59%);
-  --spruce-base-color-link-hover: #663ab7;
+  --spruce-base-color-link: hsl(262deg, 71%, 49%);
+  --spruce-base-color-link-hover: #511dab;
   --spruce-base-color-border: hsl(0deg, 0%, 90%);
   --spruce-base-color-mark-background: hsl(50deg, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(205deg, 100%, 2%);
   --spruce-base-color-code-background: hsl(261deg, 52%, 95%);
   --spruce-base-color-code-foreground: hsl(205deg, 100%, 2%);
-  --spruce-base-color-blockquote-border: hsl(261deg, 52%, 59%);
+  --spruce-base-color-blockquote-border: hsl(262deg, 71%, 49%);
 }
 
 :root {
   --spruce-selection-color-foreground: hsl(0deg, 0%, 100%);
-  --spruce-selection-color-background: hsl(261deg, 52%, 59%);
+  --spruce-selection-color-background: hsl(262deg, 71%, 49%);
 }
 
 :root {
@@ -367,13 +367,13 @@ template {
 }
 
 :root {
-  --spruce-btn-color-primary-background: hsl(261deg, 52%, 59%);
-  --spruce-btn-color-primary-background-hover: #543097;
+  --spruce-btn-color-primary-background: hsl(262deg, 71%, 49%);
+  --spruce-btn-color-primary-background-hover: #511daa;
   --spruce-btn-color-primary-foreground: hsl(0deg, 0%, 100%);
   --spruce-btn-color-primary-foreground-hover: hsl(0deg, 0%, 100%);
-  --spruce-btn-color-primary-shadow-focus: rgba(134, 96, 205, 0.25);
+  --spruce-btn-color-primary-shadow-focus: rgba(101, 36, 214, 0.25);
   --spruce-btn-color-secondary-background: hsl(227deg, 92%, 55%);
-  --spruce-btn-color-secondary-background-hover: #072bab;
+  --spruce-btn-color-secondary-background-hover: #0937dc;
   --spruce-btn-color-secondary-foreground: hsl(0deg, 0%, 100%);
   --spruce-btn-color-secondary-foreground-hover: hsl(0deg, 0%, 100%);
   --spruce-btn-color-secondary-shadow-focus: rgba(35, 80, 246, 0.25);
@@ -382,19 +382,19 @@ template {
 :root {
   --spruce-form-color-background: hsl(0deg, 0%, 100%);
   --spruce-form-color-background-disabled: hsl(0deg, 0%, 95%);
-  --spruce-form-color-border: hsl(0deg, 0%, 90%);
+  --spruce-form-color-border: hsl(260deg, 4%, 70%);
   --spruce-form-color-border-disabled: hsl(0deg, 0%, 90%);
-  --spruce-form-color-border-focus: hsl(261deg, 52%, 59%);
-  --spruce-form-color-shadow-focus: rgba(134, 96, 205, 0.25);
+  --spruce-form-color-border-focus: hsl(262deg, 71%, 49%);
+  --spruce-form-color-shadow-focus: rgba(101, 36, 214, 0.25);
   --spruce-form-color-check-foreground: hsl(0deg, 0%, 100%);
-  --spruce-form-color-check-background: hsl(261deg, 52%, 59%);
+  --spruce-form-color-check-background: hsl(262deg, 71%, 49%);
   --spruce-form-color-invalid: hsl(0deg, 71%, 51%);
   --spruce-form-color-invalid-shadow: rgba(219, 41, 41, 0.25);
   --spruce-form-color-label: hsl(205deg, 100%, 2%);
   --spruce-form-color-legend: hsl(205deg, 100%, 2%);
   --spruce-form-color-placeholder: hsl(208deg, 7%, 40%);
   --spruce-form-color-text: hsl(208deg, 7%, 30%);
-  --spruce-form-color-select-foreground: hsl(261deg, 52%, 59%);
+  --spruce-form-color-select-foreground: hsl(205deg, 100%, 2%);
   --spruce-form-color-valid: hsl(150deg, 100%, 33%);
   --spruce-form-color-valid-shadow: rgba(0, 168, 84, 0.25);
 }
@@ -901,7 +901,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 
 select.form-control:not([multiple]):not([size]) {
-  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12,12.692l-5.203,-5.203c-0.234,-0.234 -0.614,-0.234 -0.849,0l-1.272,1.273c-0.235,0.234 -0.235,0.614 -0,0.849l6.9,6.9c0.234,0.234 0.614,0.234 0.848,-0l6.9,-6.9c0.235,-0.235 0.235,-0.615 0,-0.849l-1.272,-1.273c-0.235,-0.234 -0.615,-0.234 -0.849,0l-5.203,5.203Z" style="fill:hsl%28261deg, 52%, 59%%29;"/%3e%3c/svg%3e');
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12,12.507l-3.816,-3.815c-0.171,-0.172 -0.45,-0.172 -0.622,-0l-0.933,0.933c-0.172,0.172 -0.172,0.451 0,0.623l5.06,5.06c0.172,0.172 0.45,0.172 0.622,0l5.06,-5.06c0.172,-0.172 0.172,-0.451 -0,-0.623l-0.933,-0.933c-0.172,-0.172 -0.451,-0.172 -0.622,-0l-3.816,3.815Z" style="fill:hsl%28205deg, 100%, 2%%29;"/%3e%3c/svg%3e');
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
@@ -915,6 +915,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 .form-check {
   align-items: center;
   display: inline-flex;
+  gap: 0.5rem;
 }
 
 .form-check--sm .form-check__control {
@@ -939,8 +940,6 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   height: 1em;
   line-height: 1;
   margin-bottom: -0.1em;
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
   transition-duration: var(--spruce-transition-duration);
   transition-property: border, box-shadow;
   transition-timing-function: var(--spruce-transition-timing-function);

@@ -1,5 +1,18 @@
 # Spruce CSS Changelog
 
+## v0.9.0 (2022-06-24)
+
+### New features
+- Add `set-css-variable` mixin and `get-css-variable` function to handle the prefix using CSS variables.
+
+### Improvements
+- Add `$form-check-margin` variable to control the `.form-check` vertical offset.
+- Modify `layout-*` mixins to accept a shorthand value of for spacer from the $spacers map (now you can use any defined key like m, l, xl and so on).
+
+### Bugfix
+- Fix `text-ellipsis` mixin bug.
+- Fix null prefix variable generating. Now you can null its value correctly under the $settings map.
+
 ## v0.8.1 (2022-06-08)
 
 ### Bugfix
