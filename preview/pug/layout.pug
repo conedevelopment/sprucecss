@@ -11,11 +11,6 @@ html(lang='en' data-theme-mode='dark')
     link(rel='stylesheet' href=`../../assets/css/main.css?time=${time}`)
     link(rel='icon' href='../../assets/img/favicon-32x32.png' type='image/png')
   body
-    header(class='site-header')
-      div(class='site-header__container')
-        a(href='color.html')
-          img(src='../../assets/img/spruce-logo-light.svg' class='site-header__logo')
-        h1(class='site-header__title')= title
     main(class='site-main')
       div(class='site-main__container')
         div(class='site-main__inner')
@@ -35,5 +30,7 @@ html(lang='en' data-theme-mode='dark')
                 a(href='form.html' aria-current=page === 'form' ? 'page' : '') Form
               li
                 a(href='mixin.html' aria-current=page === 'mixin' ? 'page' : '') Mixin
-          div(class='site-main__content')
-            block content
+          div(class='site-main__body')
+            h1(class='site-title')= title
+            div(class='site-main__content')
+              block content
