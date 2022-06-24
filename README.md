@@ -1,5 +1,5 @@
 <p>
-  <a href="https://sprucecss.com/#gh-light-mode-only">
+  <a href="https://sprucecss.com/">
     <br/>
     <img src="./.github/spruce-logo.svg" alt="Spruce CSS" width="160">
     <br/>
