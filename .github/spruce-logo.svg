@@ -5,6 +5,11 @@
       --icon-color: hsl(262 71% 49%);
     }
 
+    [data-color-mode="dark"] {
+      --letter-color: hsl(0 0% 95%);
+      --icon-color: hsl(261 54% 70%);
+    }
+
     @media (prefers-color-scheme: dark) {
       --letter-color: hsl(0 0% 95%);
       --icon-color: hsl(261 54% 70%);
