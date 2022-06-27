@@ -6,7 +6,7 @@
   $logic: false
 ) {
   @if map.has-key($breakpoints, $breakpoint) {
-    $breakpoint: map-get($breakpoints, $breakpoint);
+    $breakpoint: map.get($breakpoints, $breakpoint);
 
     @if $logic {
       @media #{$logic} and (min-width: $breakpoint) {
