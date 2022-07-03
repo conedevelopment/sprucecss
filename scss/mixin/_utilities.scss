@@ -23,7 +23,7 @@
 
   @if $number-of-lines == 1 {
     white-space: nowrap;
-  } else {
+  } @else {
     white-space: inherit;
   }
 
