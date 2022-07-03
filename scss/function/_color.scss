@@ -24,3 +24,12 @@
 
   @return var(--#{$internal-prefix}#{$type}-color-#{$key});
 }
+
+// Get a white or black color contrast for any color
+@function color-contrast($color) {
+  @if color.lightness($color) > 60% {
+    @return hsl(0 100% 0%);
+  } @else {
+    @return hsl(0 0% 100%);
+  }
+}
