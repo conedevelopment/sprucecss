@@ -20,7 +20,12 @@
 ) {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+
+  @if $number-of-lines == 1 {
+    white-space: nowrap;
+  } else {
+    white-space: inherit;
+  }
 
   @supports (-webkit-line-clamp: $number-of-lines) {
     -webkit-box-orient: vertical;
@@ -28,7 +33,6 @@
     -webkit-line-clamp: $number-of-lines;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }
 

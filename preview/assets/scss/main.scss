@@ -53,8 +53,11 @@ body {
 }
 
 .ellipsis {
-  @include spruce.text-ellipsis(3);
-  @include spruce.selection(darkblue);
+  @include spruce.text-ellipsis(2);
+}
+
+.selection {
+  @include spruce.selection(pink);
 }
 
 .btn--ellipsis {
