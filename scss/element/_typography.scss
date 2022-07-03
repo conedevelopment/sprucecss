@@ -4,6 +4,10 @@
 
 @mixin generate-typography {
   // Basics
+  html {
+    -webkit-tap-highlight-color: hsl(0 0% 0% / 0);
+  }
+
   body {
     font-family: $font-family-base;
     font-size: $font-size-base;
