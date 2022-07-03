@@ -54,7 +54,7 @@ body {
 
 .ellipsis {
   @include spruce.text-ellipsis(3);
-  @include spruce.selection(olive);
+  @include spruce.selection(darkblue);
 }
 
 .btn--ellipsis {

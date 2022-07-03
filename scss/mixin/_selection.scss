@@ -11,7 +11,9 @@
     $background: color($background, $only-color: true);
   }
 
-  $foreground: color-contrast($background);
+  @if not $foreground {
+    $foreground: color-contrast($background);
+  }
 
   ::selection {
     background-color: #{$background};
