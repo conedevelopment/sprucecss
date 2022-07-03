@@ -7,18 +7,19 @@
 @function color(
   $key,
   $type: base,
-  $only-color: false
+  $only-color: false,
+  $map: $colors
 ) {
-  @if not map.has-key($colors, $type, $key) {
-    @error 'The #{$key} key name doesn\'t exist under #{$type} at the $colors map.';
+  @if not map.has-key($map, $type, $key) {
+    @error 'The #{$key} key name doesn\'t exist under #{$type} at the specified map (default: $colors).';
   }
 
   @if $only-color {
-    @return map.get($colors, $type, $key);
+    @return map.get($map, $type, $key);
   }
 
   @if map.get($settings, color-fallback) {
-    @return var(--#{$internal-prefix}#{$type}-color-#{$key}, #{map.get($colors, $type, $key)});
+    @return var(--#{$internal-prefix}#{$type}-color-#{$key}, #{map.get($map, $type, $key)});
   }
 
   @return var(--#{$internal-prefix}#{$type}-color-#{$key});

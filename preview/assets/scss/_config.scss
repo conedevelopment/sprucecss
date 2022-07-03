@@ -18,6 +18,11 @@ $spacer: 1.25rem;
       custom: hsl(0 100% 50%)
     )
   ),
+  $dark-colors: (
+    form: (
+      select-foreground: rgb(255, 0, 191)
+    )
+  ),
   $settings: (
     color-fallback: true,
     html-smooth-scrolling: false,
