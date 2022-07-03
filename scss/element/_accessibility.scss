@@ -4,4 +4,8 @@
   .sr-only {
     @include visually-hidden;
   }
+
+  [tabindex='-1']:focus {
+    outline: none !important;
+  }
 }
