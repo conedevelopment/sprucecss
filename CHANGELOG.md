@@ -1,5 +1,19 @@
 # Spruce CSS Changelog
 
+## v0.10.0 (2022-07-08)
+
+### New features
+- Add `selection` mixin to handle the `::selection` a bit simpler.
+
+### Improvements
+- Add `marker` color under `base` to controle the list's `::marker`.
+- Add `-webkit-tap-highlight-color` with `transparent` value to `html` element.
+- Remove `outline` from `[tabindex='-1']:focus`.
+- Add `$map` argument to the `color` function to use it any map.
+
+### Bugfix
+- Fix `text-ellipsis` multiline bug.
+
 ## v0.9.0 (2022-06-24)
 
 ### New features

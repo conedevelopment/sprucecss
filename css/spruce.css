@@ -349,6 +349,7 @@ template {
   --spruce-base-color-border: hsl(0deg, 0%, 90%);
   --spruce-base-color-mark-background: hsl(50deg, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(205deg, 100%, 2%);
+  --spruce-base-color-marker: hsl(262deg, 71%, 49%);
   --spruce-base-color-code-background: hsl(261deg, 52%, 95%);
   --spruce-base-color-code-foreground: hsl(205deg, 100%, 2%);
   --spruce-base-color-blockquote-border: hsl(262deg, 71%, 49%);
@@ -434,6 +435,10 @@ template {
   position: absolute !important;
   white-space: nowrap !important;
   width: 1px !important;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
 }
 
 ::-moz-selection {
@@ -581,6 +586,10 @@ figure figcaption {
   border-start-end-radius: 0.5rem;
 }
 
+html {
+  -webkit-tap-highlight-color: hsla(0deg, 0%, 0%, 0);
+}
+
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -665,7 +674,7 @@ ol li {
 }
 ul li::marker,
 ol li::marker {
-  color: var(--spruce-base-color-primary);
+  color: var(--spruce-base-color-marker);
 }
 
 li > ul,
