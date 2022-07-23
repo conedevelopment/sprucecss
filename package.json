@@ -22,14 +22,14 @@
     "url": "https://github.com/conedevelopment/sprucecss/issues"
   },
   "scripts": {
-    "autoprefixer": "postcss css/*.css -u autoprefixer --replace --no-map",
+    "autoprefixer": "postcss dist/css/*.css -u autoprefixer --replace --no-map",
     "browser-sync": "browser-sync start --server --startPath \"preview/html/page/color.html\" --files \"**/*\" --directory --no-notify --no-open",
     "delete:dev-folder": "del-cli --force css",
     "prod": "npm-run-all delete:dev-folder sass:prod:expanded sass:prod:compressed autoprefixer",
     "pug": "pug --obj preview/pug/assets/data.json --watch preview/pug/ --out preview/html/ --pretty",
     "sass:preview": "sass --watch --update --style=expanded --no-source-map preview/assets/scss:preview/assets/css --load-path=scss",
-    "sass:prod:expanded": "sass --no-source-map --style=expanded scss/spruce-styles.scss:css/spruce.css",
-    "sass:prod:compressed": "sass --no-source-map --style=compressed scss/spruce-styles.scss:css/spruce.min.css",
+    "sass:prod:expanded": "sass --no-source-map --style=expanded scss/spruce-styles.scss:dist/css/spruce.css",
+    "sass:prod:compressed": "sass --no-source-map --style=compressed scss/spruce-styles.scss:dist/css/spruce.min.css",
     "sass:lint": "stylelint scss/**/*.scss",
     "sass:lint:with-fix": "stylelint scss/**/*.scss --fix",
     "start": "npm-run-all --parallel pug sass:preview browser-sync"

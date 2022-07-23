@@ -350,7 +350,7 @@ template {
   --spruce-base-color-mark-background: hsl(50deg, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(205deg, 100%, 2%);
   --spruce-base-color-marker: hsl(262deg, 71%, 49%);
-  --spruce-base-color-code-background: hsl(261deg, 52%, 95%);
+  --spruce-base-color-code-background: #f0e9fb;
   --spruce-base-color-code-foreground: hsl(205deg, 100%, 2%);
   --spruce-base-color-blockquote-border: hsl(262deg, 71%, 49%);
 }
