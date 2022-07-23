@@ -23,10 +23,10 @@
   },
   "scripts": {
     "autoprefixer": "postcss dist/css/*.css -u autoprefixer --replace --no-map",
-    "babel": "npx babel js --out-file dist/js/spruce.js",
     "browser-sync": "browser-sync start --server --startPath \"preview/html/page/color.html\" --files \"**/*\" --directory --no-notify --no-open",
     "delete:dev-folder": "del-cli --force css",
-    "prod": "npm-run-all delete:dev-folder sass:prod:expanded sass:prod:compressed autoprefixer",
+    "js:prod": "npx babel js --out-file dist/js/spruce.js",
+    "prod": "npm-run-all delete:dev-folder js:prod sass:prod:expanded sass:prod:compressed autoprefixer",
     "pug": "pug --obj preview/pug/assets/data.json --watch preview/pug/ --out preview/html/ --pretty",
     "sass:preview": "sass --watch --update --style=expanded --no-source-map preview/assets/scss:preview/assets/css --load-path=scss",
     "sass:prod:expanded": "sass --no-source-map --style=expanded scss/spruce-styles.scss:dist/css/spruce.css",
