@@ -24,13 +24,13 @@
   @if ($has-sizes) {
     #{$parent}--sm {
       #{$input} {
-        font-size: $form-check-font-size-sm;
+        font-size: $form-switch-font-size-sm;
       }
     }
 
     #{$parent}--lg {
       #{$input} {
-        font-size: $form-check-font-size-lg;
+        font-size: $form-switch-font-size-lg;
       }
     }
   }
@@ -44,12 +44,12 @@
       background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
-      border: $form-check-border-width solid color(border, form);
+      border: $form-switch-border-width solid color(border, form);
       flex-shrink: 0;
-      font-size: $form-check-font-size;
+      font-size: $form-switch-font-size;
       height: 1em;
       line-height: 1;
-      margin-bottom: $form-check-margin-bottom;
+      margin-bottom: $form-switch-margin-bottom;
       transition-duration: transition(duration);
       transition-property: background-position border, box-shadow;
       transition-timing-function: transition(timing-function);
@@ -90,8 +90,8 @@
     }
 
     #{$label} {
-      font-weight: $form-check-font-weight;
-      line-height: $form-check-line-height;
+      font-weight: $form-switch-font-weight;
+      line-height: $form-switch-line-height;
     }
   }
 }
