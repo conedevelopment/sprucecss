@@ -6,10 +6,8 @@
 * 2. Prevent adjustments of font size after orientation changes in iOS.
 */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -44,12 +42,9 @@ h1 {
 * 2. Show the overflow in Edge and IE.
 */
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -57,10 +52,8 @@ hr {
 * 2. Correct the odd `em` font sizing in all browsers.
 */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -77,13 +70,10 @@ a {
 * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -101,10 +91,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -154,14 +142,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -169,8 +153,7 @@ textarea {
 * 1. Show the overflow in Edge.
 */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -179,8 +162,7 @@ input {
 * 1. Remove the inheritance of text transform in Firefox.
 */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -229,18 +211,12 @@ fieldset {
 *    `fieldset` elements in all browsers.
 */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -263,10 +239,8 @@ textarea {
 */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -282,10 +256,8 @@ textarea {
 * 2. Correct the outline style in Safari.
 */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -300,10 +272,8 @@ textarea {
 * 2. Change font properties to `inherit` in Safari.
 */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -504,7 +474,6 @@ img {
   max-width: 100%;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -605,7 +574,6 @@ h4,
 h5,
 h6 {
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
   overflow-wrap: break-word;
 }
@@ -856,9 +824,6 @@ samp {
 .form-control::-moz-placeholder {
   color: var(--spruce-form-color-placeholder);
 }
-.form-control:-ms-input-placeholder {
-  color: var(--spruce-form-color-placeholder);
-}
 .form-control::placeholder {
   color: var(--spruce-form-color-placeholder);
 }
@@ -990,6 +955,76 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 }
 
 .form-check__label {
+  line-height: calc(2px + 2ex + 2px);
+}
+
+.form-switch {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+.form-switch--block {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-switch--sm .form-switch__control {
+  font-size: 0.9rem;
+}
+
+.form-switch--lg .form-switch__control {
+  font-size: 1.1rem;
+}
+
+.form-switch__control {
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:hsl%28260deg, 4%, 70%%29;"/%3e%3c/svg%3e');
+  border-radius: 2em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: var(--spruce-form-color-background);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid var(--spruce-form-color-border);
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 1em;
+  line-height: 1;
+  margin-bottom: -0.1em;
+  transition-duration: var(--spruce-transition-duration);
+  transition-property: background-position border, box-shadow;
+  transition-timing-function: var(--spruce-transition-timing-function);
+  width: 2em;
+}
+.form-switch__control:focus {
+  border-color: var(--spruce-form-color-border-focus);
+  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-shadow-focus);
+  outline: 2px solid transparent;
+}
+.form-switch__control:checked {
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:white;"/%3e%3c/svg%3e');
+  background-position: right center;
+  background-color: var(--spruce-form-color-check-background);
+  border-color: var(--spruce-form-color-check-background);
+}
+.form-switch__control:disabled {
+  background-color: var(--spruce-form-color-background-disabled);
+  border-color: var(--spruce-form-color-border-disabled);
+  cursor: not-allowed;
+}
+.form-switch__control:disabled + .form-switch__label {
+  opacity: 0.5;
+}
+
+[dir=rtl] .form-switch__control {
+  background-position: right center;
+}
+[dir=rtl] .form-switch__control:checked {
+  background-position: left center;
+}
+
+.form-switch__label {
   line-height: calc(2px + 2ex + 2px);
 }
 

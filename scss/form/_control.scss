@@ -62,7 +62,7 @@
       }
 
       &--valid {
-        @include field-icon($form-valid-image, map.get($colors, alert, success));
+        @include field-icon($form-valid-icon, map.get($colors, alert, success));
         border-color: color(success, alert);
 
         &:focus {
@@ -74,7 +74,7 @@
       }
 
       &--invalid {
-        @include field-icon($form-invalid-image, map.get($colors, alert, danger));
+        @include field-icon($form-invalid-icon, map.get($colors, alert, danger));
         border-color: color(danger, alert);
 
         &:focus {
@@ -104,7 +104,7 @@
   @if ($has-select) {
     select#{$input} {
       &:not([multiple]):not([size]) {
-        @include field-icon($select-image, map.get($colors, form, select-foreground));
+        @include field-icon($select-icon, map.get($colors, form, select-foreground));
         background-position: center right $select-icon-right-offset;
         background-repeat: no-repeat;
         background-size: $select-icon-width auto;

@@ -37,7 +37,7 @@
 
   @at-root {
     #{$input} {
-      @include field-icon($form-switch-image, map.get($colors, form, border));
+      @include field-icon($form-switch-icon, map.get($colors, form, border));
       border-radius: 2em;
       appearance: none;
       background-color: color(background, form);
@@ -63,7 +63,7 @@
       }
 
       &:checked {
-        @include field-icon($form-switch-image, white);
+        @include field-icon($form-switch-icon, white);
         background-position: right center;
         background-color: color(check-background, form);
         border-color: color(check-background, form);
