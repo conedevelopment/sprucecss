@@ -38,8 +38,8 @@
   @at-root {
     #{$input} {
       @include field-icon($form-switch-icon, color(border, form));
-      border-radius: 2em;
       appearance: none;
+      border-radius: 2em;
       background-color: color(background, form);
       background-position: left center;
       background-repeat: no-repeat;
@@ -64,8 +64,8 @@
 
       &:checked {
         @include field-icon($form-switch-icon, white);
-        background-position: right center;
         background-color: color(check-background, form);
+        background-position: right center;
         border-color: color(check-background, form);
       }
 
