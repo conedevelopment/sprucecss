@@ -1,0 +1,89 @@
+@use 'sass:map';
+@use '../config' as *;
+@use '../function' as *;
+@use '../mixin' as *;
+
+// Create custom checkbox and radio
+@mixin generate-form-switch(
+  $parent,
+  $input,
+  $label,
+  $has-sizes: false
+) {
+  #{$parent} {
+    align-items: center;
+    display: inline-flex;
+    gap: spacer(xs);
+
+    &--block {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @if ($has-sizes) {
+    #{$parent}--sm {
+      #{$input} {
+        font-size: $form-check-font-size-sm;
+      }
+    }
+
+    #{$parent}--lg {
+      #{$input} {
+        font-size: $form-check-font-size-lg;
+      }
+    }
+  }
+
+  @at-root {
+    #{$input} {
+      @include field-icon($form-switch-image, map.get($colors, form, border));
+      border-radius: 2em;
+      appearance: none;
+      background-color: color(background, form);
+      background-position: left-center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: $form-check-border-width solid color(border, form);
+      flex-shrink: 0;
+      font-size: $form-check-font-size;
+      height: 1em;
+      line-height: 1;
+      margin-bottom: $form-check-margin-bottom;
+      transition-duration: transition(duration);
+      transition-property: background-position border, box-shadow;
+      transition-timing-function: transition(timing-function);
+      width: 2em;
+
+      &:focus {
+        @include field-focus(
+          $border: color(border-focus, form),
+          $box-shadow: color(shadow-focus, form)
+        );
+      }
+
+      &:checked {
+        @include field-icon($form-switch-image, white);
+        background-position: right center;
+        background-color: color(check-background, form);
+        border-color: color(check-background, form);
+      }
+
+      &:disabled {
+        @include field-disabled(
+          $background: color(background-disabled, form),
+          $border: color(border-disabled, form)
+        );
+
+        + #{$label} {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    #{$label} {
+      font-weight: $form-check-font-weight;
+      line-height: $form-check-line-height;
+    }
+  }
+}

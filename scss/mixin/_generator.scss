@@ -31,6 +31,12 @@
     '.form-check__label',
     true
   );
+  @include generate-form-switch(
+    '.form-switch',
+    '.form-switch__control',
+    '.form-switch__label',
+    true
+  );
   @include generate-form-description;
   @include generate-fieldset;
   @include generate-form-group;
