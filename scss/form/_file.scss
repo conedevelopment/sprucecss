@@ -1,0 +1,9 @@
+@use '../function' as *;
+@use '../mixin' as *;
+@use '../config' as *;
+
+input[type='file'] {
+  &::file-selector-button {
+    background-color: aqua;
+  }
+}

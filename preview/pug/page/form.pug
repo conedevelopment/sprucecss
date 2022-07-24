@@ -91,17 +91,26 @@ block content
       legend Switches
       div(class='form-group form-group--vertical-check')
         label(class='form-switch form-switch--sm')
-          span(class='form-label form-switch__label') Own
-          input(type='checkbox' class='form-switch__control' value='own' name='property-ownership3')
+          span(class='form-label form-switch__label') Enable notifications
+          input(type='checkbox' class='form-switch__control' value='true' name='notification')
         label(class='form-switch')
-          span(class='form-label form-switch__label') Own
-          input(type='checkbox' class='form-switch__control' value='own' name='property-ownership3')
+          span(class='form-label form-switch__label') Enable notifications
+          input(type='checkbox' class='form-switch__control' value='true' name='notification')
         label(class='form-switch form-switch--lg form-switch--block')
-          span(class='form-label form-switch__label') Own
-          input(type='checkbox' class='form-switch__control' value='own' name='property-ownership3')
+          span(class='form-label form-switch__label') Enable notifications
+          input(type='checkbox' class='form-switch__control' value='true' name='notification')
         label(class='form-switch form-switch--lg form-switch--block')
-          span(class='form-label form-switch__label') Own
-          input(type='checkbox' class='form-switch__control' value='own' name='property-ownership3' disabled)
+          span(class='form-label form-switch__label') Enable notifications
+          input(type='checkbox' class='form-switch__control' value='true' name='notification' disabled)
+    fieldset
+      legend File upload
+      div(class='form-group form-group--vertical-check')
+        div(class='form-group')
+          label(for='avatar' class='form-label') Avatar
+          input( type="file" id="avatar" name="avatar" accept="image/png, image/jpeg")
+        div(class='form-group')
+          label(for='files' class='form-label') Files
+          input( type="file" id="files" name="files" multiple accept="image/png, image/jpeg")
       div(class='form-group')
         label(for='cars' class='form-label') Your favorite car brand
         select(id='cars' class='form-control' name='cars')
