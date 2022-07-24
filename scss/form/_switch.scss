@@ -16,8 +16,8 @@
     gap: spacer(xs);
 
     &--block {
-      display: flex;
       justify-content: space-between;
+      width: 100%;
     }
   }
 
@@ -41,7 +41,7 @@
       border-radius: 2em;
       appearance: none;
       background-color: color(background, form);
-      background-position: left-center;
+      background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
       border: $form-check-border-width solid color(border, form);
@@ -78,6 +78,14 @@
         + #{$label} {
           opacity: 0.5;
         }
+      }
+    }
+
+    [dir='rtl'] #{$input} {
+      background-position: right center;
+
+      &:checked {
+        background-position: left center;
       }
     }
 
