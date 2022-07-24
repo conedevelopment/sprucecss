@@ -39,12 +39,12 @@
     #{$input} {
       @include field-icon($form-switch-icon, color(border, form));
       appearance: none;
-      border-radius: 2em;
       background-color: color(background, form);
       background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
       border: $form-switch-border-width solid color(border, form);
+      border-radius: 2em;
       flex-shrink: 0;
       font-size: $form-switch-font-size;
       height: 1em;
