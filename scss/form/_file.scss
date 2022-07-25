@@ -12,5 +12,5 @@ input[type='file'] {
 @include generate-btn($selector);
 
 #{$selector} {
-  @include btn-variant(primary);
+  @include btn-variant($form-file-background-color);
 }
