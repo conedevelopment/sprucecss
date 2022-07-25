@@ -1,9 +1,16 @@
 @use '../function' as *;
 @use '../mixin' as *;
 @use '../config' as *;
+@use 'button' as *;
+
+$selector: 'input[type='file']::file-selector-button';
 
 input[type='file'] {
-  &::file-selector-button {
-    background-color: aqua;
-  }
+  display: block;
+}
+
+@include generate-btn($selector);
+
+#{$selector} {
+  @include btn-variant(primary);
 }
