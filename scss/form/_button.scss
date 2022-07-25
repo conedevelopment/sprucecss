@@ -2,8 +2,12 @@
 @use '../mixin' as *;
 @use '../config' as *;
 
-@mixin generate-btn {
-  .btn {
+@mixin generate-btn(
+  $selector,
+  $has-icons: true,
+  $has-sizes: true,
+)  {
+  #{$selector} {
     $this: &;
 
     align-items: center;
@@ -37,56 +41,52 @@
       pointer-events: none;
     }
 
-    // Icon button
-    &--icon {
-      padding: $btn-icon-padding;
+    @if ($has-icons) {
+      // Icon button
+      &--icon {
+        padding: $btn-icon-padding;
 
-      &#{$this}--sm {
-        padding: $btn-icon-padding-sm;
+        &#{$this}--sm {
+          padding: $btn-icon-padding-sm;
+        }
+
+        &#{$this}--lg {
+          padding: $btn-icon-padding-lg;
+        }
       }
 
-      &#{$this}--lg {
-        padding: $btn-icon-padding-lg;
+      // Icons
+      &__icon {
+        flex-shrink: 0;
+        height: $btn-icon-size;
+        width: $btn-icon-size;
+
+        &--sm {
+          height: $btn-icon-size-sm;
+          width: $btn-icon-size-sm;
+        }
       }
     }
 
-    // Sizes
-    &--sm {
-      font-size: $btn-font-size-sm;
-      padding: $btn-padding-sm;
-    }
-
-    &--lg {
-      padding: $btn-padding-lg;
-
-      @include breakpoint(md) {
-        font-size: $btn-font-size-lg;
-      }
-    }
-
-    // Display types
-    &--block {
-      width: 100%;
-    }
-
-    // Icons
-    &__icon {
-      flex-shrink: 0;
-      height: $btn-icon-size;
-      width: $btn-icon-size;
-
+    @if ($has-sizes) {
+      // Sizes
       &--sm {
-        height: $btn-icon-size-sm;
-        width: $btn-icon-size-sm;
+        font-size: $btn-font-size-sm;
+        padding: $btn-padding-sm;
+      }
+
+      &--lg {
+        padding: $btn-padding-lg;
+
+        @include breakpoint(md) {
+          font-size: $btn-font-size-lg;
+        }
+      }
+
+      // Display types
+      &--block {
+        width: 100%;
       }
     }
-  }
-
-  .btn--primary {
-    @include btn-variant(primary);
-  }
-
-  .btn--secondary {
-    @include btn-variant(secondary);
   }
 }
