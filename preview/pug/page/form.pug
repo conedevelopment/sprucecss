@@ -8,13 +8,17 @@ block content
   form
     fieldset
       legend Your Name
-      div(class='form-group form-group--row')
+      div(class='form-group--row')
         label(for='first-name' class='form-label') First Name
         input(class='form-control' id='first-name' name='first-name' type='text')
         span(class='form-description') Just a help text for presentation purpose
       div(class='form-group')
         label(for='last-name' class='form-label') Last Name
         input(class='form-control' id='last-name' name='last-name' type='text' disabled)
+      div(class='form-group--stacked')
+        input(class='form-control' id='first-name' name='first-name' type='text' aria-label='First Name')
+        input(class='form-control' id='last-name' name='last-name' type='text' aria-label='Last Name')
+        button(class='btn btn--primary') Submit
     fieldset
       legend Address
       div(class='form-row')
