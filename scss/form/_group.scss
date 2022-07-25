@@ -3,10 +3,33 @@
 
 @mixin generate-form-group {
   .form-group {
-    @include layout-stack(xxs, false);
+    display: flex;
+    flex-direction: column;
+    gap: spacer(xxs);
 
     &--vertical-check {
       @include layout-stack(s, true, left);
+    }
+
+    &--row {
+      --gap: #{spacer(xxs)} #{spacer(s)};
+      --label-column: 10rem;
+
+      align-items: center;
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: minmax(0, 1fr);
+
+      @include breakpoint(sm) {
+        grid-template-columns: minmax(0, var(--label-column)) minmax(0, 1fr);
+      }
+
+      .form-description,
+      .field-feedback {
+        @include breakpoint(sm) {
+          grid-column-start: 2;
+        }
+      }
     }
 
     &--grid {
