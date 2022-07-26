@@ -7,7 +7,88 @@ block variables
 block content
   form
     fieldset
-      legend Your Name
+      legend Inputs
+      div(class='form-group')
+        label(for='email-address' class='form-label') Email address
+        input(class='form-control' id='email-address' type='email')
+      div(class='form-group')
+        label(for='number' class='form-label') Number
+        input(class='form-control' id='number' type='number')
+      div(class='form-group')
+        label(for='password' class='form-label') Password
+        input(class='form-control' id='password' type='password')
+      div(class='form-group')
+        label(for='search' class='form-label') Search
+        input(class='form-control' id='search' type='search')
+      div(class='form-group')
+        label(for='tel' class='form-label') Telephone number
+        input(class='form-control' id='tel' type='tel')
+      div(class='form-group')
+        label(for='text' class='form-label') Text
+        input(class='form-control' id='text' type='text')
+      div(class='form-group')
+        label(for='url' class='form-label') URL
+        input(class='form-control' id='url' type='url')
+      div(class='form-group')
+        label(for='color' class='form-label') Color
+        input(class='form-control' id='color' type='color')
+      div(class='form-group')
+        label(for='date' class='form-label') Date
+        input(class='form-control' id='date' type='date')
+      div(class='form-group')
+        label(for='datetime' class='form-label') Date / Time
+        input(class='form-control' id='datetime' type='datetime')
+      div(class='form-group')
+        label(for='datetime-local' class='form-label') Date / Time local
+        input(class='form-control' id='datetime-local' type='datetime-local')
+      div(class='form-group')
+        label(for='month' class='form-label') Month
+        input(class='form-control' id='month' type='month')
+      div(class='form-group')
+        label(for='week' class='form-label') Week
+        input(class='form-control' id='week' type='week')
+      div(class='form-group')
+        label(for='time' class='form-label') Time
+        input(class='form-control' id='time' type='time')
+    fieldset
+      legend Selects
+      div(class='form-group')
+        label(for='cars' class='form-label') Your favorite car brand
+        select(id='cars' class='form-control' name='cars')
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars2' class='form-label') Your favorite car brand
+        select(id='cars2' class='form-control form-control--lg' name='cars2')
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars3' class='form-label') Your favorite car brand
+        select(id='cars3' class='form-control form-control--sm' name='cars3')
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars4' class='form-label') Your favorite car brand
+        select(id='cars4' class='form-control' name='cars4' disabled)
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+      div(class='form-group')
+        label(for='cars5' class='form-label') Your favorite car brand
+        select(id='cars5' class='form-control' name='cars5' multiple)
+          option(value='volvo') Volvo
+          option(value='saab') Saab
+          option(value='mercedes') Mercedes
+          option(value='audi') Audi
+    fieldset
+      legend Inputs
       div(class='form-group--row')
         label(for='first-name' class='form-label') First Name
         input(class='form-control' id='first-name' name='first-name' type='text')
@@ -115,41 +196,7 @@ block content
         div(class='form-group')
           label(for='files' class='form-label') Files
           input( type="file" id="files" name="files" multiple accept="image/png, image/jpeg")
-      div(class='form-group')
-        label(for='cars' class='form-label') Your favorite car brand
-        select(id='cars' class='form-control' name='cars')
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
-      div(class='form-group')
-        label(for='cars2' class='form-label') Your favorite car brand
-        select(id='cars2' class='form-control form-control--lg' name='cars2')
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
-      div(class='form-group')
-        label(for='cars3' class='form-label') Your favorite car brand
-        select(id='cars3' class='form-control form-control--sm' name='cars3')
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
-      div(class='form-group')
-        label(for='cars4' class='form-label') Your favorite car brand
-        select(id='cars4' class='form-control' name='cars4' disabled)
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
-      div(class='form-group')
-        label(for='cars5' class='form-label') Your favorite car brand
-        select(id='cars5' class='form-control' name='cars5' multiple)
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
+
       div(class='form-group')
         span(class='wpcf7-form-control-wrap acceptance-784')
           span(class='wpcf7-form-control wpcf7-acceptance')
