@@ -1,13 +1,10 @@
 @use 'sass:color';
 
-$color-tertiary: hsl(337, 55%, 43%);
+$color-tertiary: hsl(337 55% 43%);
 $spacer: 1.25rem;
 
 @use 'spruce' with (
   $colors: (
-    base: (
-      marker: pink
-    ),
     btn: (
       custom-background: hsl(0 0% 100%),
       custom-background-hover: hsl(332 49% 29%),
@@ -16,14 +13,11 @@ $spacer: 1.25rem;
       tertiary-background: $color-tertiary,
       tertiary-foreground: hsl(0 0% 100%),
       tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75)
-    ),
-    form: (
-      custom: hsl(0 100% 50%)
     )
   ),
   $dark-colors: (
     form: (
-      select-foreground: rgb(255, 0, 191)
+      select-foreground: hsl(315 100% 50%)
     )
   ),
   $settings: (

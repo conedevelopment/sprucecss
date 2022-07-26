@@ -51,42 +51,50 @@ block content
         label(for='time' class='form-label') Time
         input(class='form-control' id='time' type='time')
     fieldset
+      legend File Inputs
+      div(class='form-group')
+        label(for='avatar' class='form-label') Avatar
+        input( type="file" id="avatar" accept="image/png, image/jpeg")
+      div(class='form-group')
+        label(for='files' class='form-label') Files
+        input( type="file" id="files" multiple accept="image/png, image/jpeg")
+    fieldset
       legend Selects
       div(class='form-group')
-        label(for='cars' class='form-label') Your favorite car brand
-        select(id='cars' class='form-control' name='cars')
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
+        label(for='front-end-frameworks-sm' class='form-label') Front-end Frameworks (Small)
+        select(id='front-end-frameworks-sm' class='form-control form-control--sm')
+          option(value='react') React
+          option(value='vue') Vue
+          option(value='svelte') Svelte
+          option(value='ember') Ember
       div(class='form-group')
-        label(for='cars2' class='form-label') Your favorite car brand
-        select(id='cars2' class='form-control form-control--lg' name='cars2')
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
+        label(for='front-end-frameworks' class='form-label') Front-end Frameworks
+        select(id='front-end-frameworks' class='form-control')
+          option(value='react') React
+          option(value='vue') Vue
+          option(value='svelte') Svelte
+          option(value='ember') Ember
       div(class='form-group')
-        label(for='cars3' class='form-label') Your favorite car brand
-        select(id='cars3' class='form-control form-control--sm' name='cars3')
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
+        label(for='front-end-frameworks-disabled' class='form-label') Front-end Frameworks
+        select(id='front-end-frameworks-disabled' class='form-control' disabled)
+          option(value='react') React
+          option(value='vue') Vue
+          option(value='svelte') Svelte
+          option(value='ember') Ember
       div(class='form-group')
-        label(for='cars4' class='form-label') Your favorite car brand
-        select(id='cars4' class='form-control' name='cars4' disabled)
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
+        label(for='front-end-frameworks-lg' class='form-label') Front-end Frameworks (Large)
+        select(id='front-end-frameworks-lg' class='form-control form-control--lg')
+          option(value='react') React
+          option(value='vue') Vue
+          option(value='svelte') Svelte
+          option(value='ember') Ember
       div(class='form-group')
-        label(for='cars5' class='form-label') Your favorite car brand
-        select(id='cars5' class='form-control' name='cars5' multiple)
-          option(value='volvo') Volvo
-          option(value='saab') Saab
-          option(value='mercedes') Mercedes
-          option(value='audi') Audi
+        label(for='front-end-frameworks-multiple' class='form-label') Front-end Frameworks (Mulitple)
+        select(id='front-end-frameworks-multiple' class='form-control' multiple)
+          option(value='react') React
+          option(value='vue') Vue
+          option(value='svelte') Svelte
+          option(value='ember') Ember
     fieldset
       legend Inputs
       div(class='form-group--row')
@@ -187,16 +195,6 @@ block content
         label(class='form-switch form-switch--lg form-switch--block')
           span(class='form-label form-switch__label') Enable notifications
           input(type='checkbox' class='form-switch__control' value='true' name='notification' disabled)
-    fieldset
-      legend File upload
-      div(class='form-group form-group--vertical-check')
-        div(class='form-group')
-          label(for='avatar' class='form-label') Avatar
-          input( type="file" id="avatar" name="avatar" accept="image/png, image/jpeg")
-        div(class='form-group')
-          label(for='files' class='form-label') Files
-          input( type="file" id="files" name="files" multiple accept="image/png, image/jpeg")
-
       div(class='form-group')
         span(class='wpcf7-form-control-wrap acceptance-784')
           span(class='wpcf7-form-control wpcf7-acceptance')
