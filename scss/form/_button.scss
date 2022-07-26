@@ -4,12 +4,11 @@
 
 @mixin generate-btn(
   $selector,
+  $pseudo-selector: null,
   $has-icons: true,
   $has-sizes: true,
-)  {
-  #{$selector} {
-    $this: &;
-
+) {
+  #{$selector}#{$pseudo-selector} {
     align-items: center;
     border: 0;
     border-radius: $btn-border-radius;
@@ -28,65 +27,64 @@
     transition-duration: transition(duration);
     transition-property: background-color, box-shadow, color;
     transition-timing-function: transition(timing-function);
+  }
 
-    // States
-    &:focus {
-      outline-color: transparent;
-      outline-style: solid;
-    }
+  #{$selector}:focus {
+    outline-color: transparent;
+    outline-style: solid;
+  }
 
-    &:disabled,
-    &--disabled {
-      opacity: 0.5;
-      pointer-events: none;
-    }
+  #{$selector}:disabled,
+  #{$selector}--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 
-    @if ($has-icons) {
-      // Icon button
-      &--icon {
-        padding: $btn-icon-padding;
+  @if ($has-icons) {
+    // Icon button
+    #{$selector}--icon {
+      padding: $btn-icon-padding;
 
-        &#{$this}--sm {
-          padding: $btn-icon-padding-sm;
-        }
-
-        &#{$this}--lg {
-          padding: $btn-icon-padding-lg;
-        }
+      #{$selector}--sm {
+        padding: $btn-icon-padding-sm;
       }
 
-      // Icons
-      &__icon {
-        flex-shrink: 0;
-        height: $btn-icon-size;
-        width: $btn-icon-size;
-
-        &--sm {
-          height: $btn-icon-size-sm;
-          width: $btn-icon-size-sm;
-        }
+      #{$selector}--lg {
+        padding: $btn-icon-padding-lg;
       }
     }
 
-    @if ($has-sizes) {
-      // Sizes
+    // Icons
+    #{$selector}__icon {
+      flex-shrink: 0;
+      height: $btn-icon-size;
+      width: $btn-icon-size;
+
       &--sm {
-        font-size: $btn-font-size-sm;
-        padding: $btn-padding-sm;
+        height: $btn-icon-size-sm;
+        width: $btn-icon-size-sm;
       }
+    }
+  }
 
-      &--lg {
-        padding: $btn-padding-lg;
+  @if ($has-sizes) {
+    // Sizes
+    #{$selector}--sm#{$pseudo-selector} {
+      font-size: $btn-font-size-sm;
+      padding: $btn-padding-sm;
+    }
 
-        @include breakpoint(md) {
-          font-size: $btn-font-size-lg;
-        }
+    #{$selector}--lg#{$pseudo-selector} {
+      padding: $btn-padding-lg;
+
+      @include breakpoint(md) {
+        font-size: $btn-font-size-lg;
       }
+    }
 
-      // Display types
-      &--block {
-        width: 100%;
-      }
+    // Display types
+    #{$selector}--block#{$pseudo-selector} {
+      width: 100%;
     }
   }
 }

@@ -3,14 +3,12 @@
 @use '../config' as *;
 @use 'button' as *;
 
-$selector: 'input[type='file']::file-selector-button';
-
-input[type='file'] {
+.form-file {
   display: block;
 }
 
-@include generate-btn($selector, false, false);
+@include generate-btn('.form-file', '::file-selector-button', false, true);
 
-#{$selector} {
+.form-file::file-selector-button {
   @include btn-variant($form-file-background-color);
 }
