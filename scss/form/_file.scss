@@ -1,14 +1,31 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../mixin' as *;
 @use '../config' as *;
 @use 'button' as *;
 
-.form-file {
-  display: block;
-}
+@mixin generate-file-btn(
+  $selector,
+  $pseudo-selector: null,
+  $has-icons: true,
+  $has-sizes: true,
+) {
+  @include generate-btn($selector, $pseudo-selector, $has-icons, $has-sizes);
 
-@include generate-btn('.form-file', '::file-selector-button', false, true);
+  #{$selector} {
+    display: block;
 
-.form-file::file-selector-button {
-  @include btn-variant($form-file-background-color);
+    &:focus-within#{$pseudo-selector} {
+      @if map.has-key($colors, btn, $form-file-background-color + '-shadow-focus') {
+        box-shadow: 0 0 0 $btn-shadow-width color($form-file-background-color + '-shadow-focus', btn);
+      } @else {
+        box-shadow: 0 0 0 $btn-shadow-width color.adjust(color($form-file-background-color + '-background', btn, true), $alpha: -0.75);
+      }
+    }
+
+    &#{$pseudo-selector} {
+      @include btn-variant($form-file-background-color, false);
+      margin-inline-end: spacer(s);
+    }
+  }
 }

@@ -19,6 +19,12 @@
 // Generate form styling
 @mixin generate-form {
   @include generate-btn('.btn');
+  @include generate-file-btn(
+    '.form-file',
+    '::file-selector-button',
+    false,
+    true
+  );
   @include generate-form-label;
   @include generate-form-control(
     '.form-control',

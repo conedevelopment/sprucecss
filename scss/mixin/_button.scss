@@ -3,15 +3,9 @@
 @use '../function' as *;
 @use '../config' as *;
 
-@mixin btn-focus(
-  $box-shadow
-) {
-  box-shadow: 0 0 0 $btn-shadow-width $box-shadow;
-  outline: 2px solid transparent;
-}
-
 @mixin btn-variant(
-  $type: primary
+  $type: primary,
+  $focus: true
 ) {
   @if not map.has-key($colors, btn, $type + '-foreground') or not map.has-key($colors, btn, $type + '-background') {
     @error 'The #{$type + '-foreground'} or #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
@@ -34,11 +28,14 @@
     }
   }
 
-  &:focus {
-    @if map.has-key($colors, btn, $type + '-shadow-focus') {
-      @include btn-focus(color($type + '-shadow-focus', btn));
-    } @else {
-      @include btn-focus(color.adjust(color($type + '-background', btn, true), $alpha: -0.75));
+  @if $focus {
+    &:focus {
+      @if map.has-key($colors, btn, $type + '-shadow-focus') {
+        box-shadow: 0 0 0 $btn-shadow-width color($type + '-shadow-focus', btn);
+      } @else {
+        box-shadow: 0 0 0 $btn-shadow-width color.adjust(color($type + '-background', btn, true), $alpha: -0.75);
+      }
+      outline: 2px solid transparent;
     }
   }
 }
