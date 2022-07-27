@@ -1,1 +1,1 @@
-import './Cookie.js';
+import './utils/cookie.js';

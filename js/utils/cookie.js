@@ -1,5 +1,4 @@
-export default class Cookie
-{
+export default class Cookie {
   /**
    * Set a cookie value for the given key.
    *
@@ -10,8 +9,7 @@ export default class Cookie
    * @param  {object}  options
    * @return {void}
    */
-  set(key, value, expires = null, path = '/', options = {})
-  {
+  set(key, value, expires = null, path = '/', options = {}) {
     const pairs = Object.assign({
       [key]: value,
       expires,
@@ -32,8 +30,7 @@ export default class Cookie
    * @param  {mixed}  value
    * @return {mixed}
    */
-  get(key, value = null)
-  {
+  get(key, value = null) {
     const cookie = document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)'));
 
     return (cookie && cookie[2]) ? cookie[2] : value;
@@ -45,8 +42,7 @@ export default class Cookie
    * @param  {string}  key
    * @return {bool}
    */
-  isset(key)
-  {
+  isset(key) {
     return document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)')) !== null;
   }
 
@@ -56,8 +52,7 @@ export default class Cookie
    * @param  {string}  key
    * @return {void}
    */
-  remove(key)
-  {
+  remove(key) {
     this.set(key, null, 'Thu, 01 Jan 1970 00:00:01 GMT');
   }
 }

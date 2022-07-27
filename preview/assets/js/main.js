@@ -1,4 +1,4 @@
-import Cookie from '../../../js/Cookie.js';
+import Cookie from '../../../js/utils/cookie.js';
 
 const cookie = new Cookie();
 

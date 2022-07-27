@@ -16,11 +16,9 @@
     display: block;
 
     &:focus-within#{$pseudo-selector} {
-      @if map.has-key($colors, btn, $form-file-background-color + '-shadow-focus') {
-        box-shadow: 0 0 0 $btn-shadow-width color($form-file-background-color + '-shadow-focus', btn);
-      } @else {
-        box-shadow: 0 0 0 $btn-shadow-width color.adjust(color($form-file-background-color + '-background', btn, true), $alpha: -0.75);
-      }
+      background-color: color(background);
+      box-shadow: 0 0 0 2px color($form-file-background-color + '-background', btn) inset;
+      color: color($form-file-background-color + '-background', btn);
     }
 
     &#{$pseudo-selector} {
