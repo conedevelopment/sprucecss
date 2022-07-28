@@ -39,6 +39,24 @@
       );
     }
 
+    &[type='color'] {
+      height: calc(#{$form-control-line-height}em + 0.5em * 2 + #{$form-control-border-width});
+
+      &::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+
+      &::-moz-color-swatch {
+        border: none;
+        border-radius: $form-control-border-radius;
+      }
+
+      &::-webkit-color-swatch {
+        border: none;
+        border-radius: $form-control-border-radius;
+      }
+    }
+
     &[disabled],
     &[disabled='true'] {
       @include field-disabled(
