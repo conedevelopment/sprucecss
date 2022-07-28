@@ -41,6 +41,7 @@
 
     &[type='color'] {
       height: calc(#{$form-control-line-height}em + 0.5em * 2 + #{$form-control-border-width});
+      padding: $form-control-padding-color;
 
       &::-webkit-color-swatch-wrapper {
         padding: 0;
