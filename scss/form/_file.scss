@@ -16,7 +16,7 @@
     display: block;
 
     &:focus-within#{$pseudo-selector} {
-      background-color: color(background);
+      background-color: transparent;
       box-shadow: 0 0 0 2px color($form-file-background-color + '-background', btn) inset;
       color: color($form-file-background-color + '-background', btn);
     }
