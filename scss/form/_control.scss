@@ -48,12 +48,12 @@
       }
 
       &::-moz-color-swatch {
-        border: none;
+        border: 0;
         border-radius: $form-control-border-radius;
       }
 
       &::-webkit-color-swatch {
-        border: none;
+        border: 0;
         border-radius: $form-control-border-radius;
       }
     }
