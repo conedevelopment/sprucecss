@@ -1,0 +1,6 @@
+@use 'spruce';
+
+@include spruce.generate-color-variables(
+  spruce.$dark-colors,
+  ':root[data-theme-mode="dark"]'
+);

@@ -3,8 +3,6 @@
 @use 'sass:map';
 
 @forward 'config';
-@forward 'dark-mode';
-@forward 'styles';
 @forward 'layout';
 @forward 'component';
 @use 'spruce';
