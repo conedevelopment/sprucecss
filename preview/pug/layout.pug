@@ -5,8 +5,13 @@ block variables
 <!DOCTYPE html>
 html(lang='en')
   head
-    script(type='module')
-      include ../assets/js/read-cookies.js
+    script.
+      if (localStorage.getItem('spruce-reading-direction')) {
+        document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+      }
+      if (localStorage.getItem('spruce-theme-mode')) {
+        document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+      }
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Spruce CSS Development Preview
@@ -46,5 +51,12 @@ html(lang='en')
             h1(class='site-title')= title
             div(class='site-main__content')
               block content
+    script.
+      if (localStorage.getItem('spruce-reading-direction')) {
+        document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+      }
+      if (localStorage.getItem('spruce-theme-mode')) {
+        document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+      }
     script(src='../../assets/js/reading-direction.js' type='module')
     script(src='../../assets/js/theme-mode.js' type='module')
