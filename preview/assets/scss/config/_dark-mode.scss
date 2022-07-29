@@ -4,3 +4,14 @@
   spruce.$dark-colors,
   ':root[data-theme-mode="dark"]'
 );
+
+[data-theme-mode='dark'] {
+  color-scheme: dark;
+
+  select.form-control:not([multiple]):not([size]) {
+    @include spruce.field-icon(
+      spruce.$select-icon,
+      spruce.color(select-foreground, form, true, spruce.$dark-colors)
+    );
+  }
+}
