@@ -9,6 +9,7 @@
 @forward 'layout';
 @forward 'transition';
 @forward 'breakpoint';
+@forward 'print';
 
 // Characters to escape using SVG as data:image
 $escaping-characters: (

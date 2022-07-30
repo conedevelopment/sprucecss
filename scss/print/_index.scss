@@ -1,0 +1,19 @@
+@use '../config' as *;
+@use '../function' as *;
+@use '../mixin' as *;
+
+@if setting(print) == true {
+  @media print {
+    @page {
+      margin: $print-page-margin;
+    }
+
+    #{$print-hidden-elements} {
+      display: none !important;
+    }
+
+    a[href^="http"]:after {
+      content: " (" attr(href) ")";
+    }
+  }
+}

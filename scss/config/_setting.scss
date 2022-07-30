@@ -10,7 +10,8 @@ $settings: map.merge(
     optimal-responsive-font-size: '2vw + 1rem',
     optimal-spacer-size: '5vw',
     prefix: 'spruce',
-    utilities: false
+    utilities: false,
+    print: false
   ),
   $settings
 );
