@@ -40,8 +40,8 @@
     }
 
     &[type='color'] {
-      height: calc(#{$form-control-line-height}em + 0.5em * 2 + #{$form-control-border-width});
-      padding: $form-control-padding-color;
+      height: $form-control-color-height;
+      padding: $form-control-color-padding;
 
       &::-webkit-color-swatch-wrapper {
         padding: 0;
@@ -53,7 +53,6 @@
       }
 
       &::-webkit-color-swatch {
-        border: 0;
         border-radius: $form-control-border-radius;
       }
     }
@@ -110,11 +109,21 @@
       &--sm {
         font-size: $form-control-font-size-sm;
         padding: $form-control-padding-sm;
+
+        &[type='color'] {
+          height: $form-control-color-height-sm;
+          padding: $form-control-color-padding-sm;
+        }
       }
 
       &--lg {
         font-size: $form-control-font-size-lg;
         padding: $form-control-padding-lg;
+
+        &[type='color'] {
+          height: $form-control-color-height-lg;
+          padding: $form-control-color-padding-lg;
+        }
       }
     }
   }

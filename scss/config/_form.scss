@@ -31,9 +31,15 @@ $form-control-line-height: 1.5 !default;
 $form-control-padding: 0.5em 0.75em !default;
 $form-control-padding-sm: 0.25em 0.5em !default;
 $form-control-padding-lg: 0.75em 1em !default;
-$form-control-padding-color: 0.5em !default;
 $form-control-border-width: 1px !default;
 $form-control-border-radius: $border-radius-sm !default;
+
+$form-control-color-padding: 0.5em !default;
+$form-control-color-padding-sm: 0.25em !default;
+$form-control-color-padding-lg: 0.75em !default;
+$form-control-color-height: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding} + #{$form-control-border-width} ) * 2) !default;
+$form-control-color-height-sm: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-sm} + #{$form-control-border-width} ) * 2) !default;
+$form-control-color-height-lg: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-lg} + #{$form-control-border-width} ) * 2) !default;
 
 $form-check-border-width: 1px !default;
 $form-check-font-size: 1.125rem !default;
