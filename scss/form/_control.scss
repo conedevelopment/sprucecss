@@ -53,6 +53,7 @@
       }
 
       &::-webkit-color-swatch {
+        border: 0;
         border-radius: $form-control-border-radius;
       }
     }
