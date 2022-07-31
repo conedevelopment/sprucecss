@@ -88,7 +88,7 @@
 
   li > ul,
   li > ol {
-    margin-top: spacer(xxs);
+    margin-block-start: spacer(xxs);
   }
 
   dl {
@@ -102,7 +102,7 @@
     }
 
     dd + dt {
-      margin-top: spacer(s);
+      margin-block-start: spacer(s);
     }
   }
 

@@ -35,7 +35,7 @@
   &::-webkit-slider-thumb {
     appearance: none;
     border-radius: 1rem;
-    margin-top: calc(0.25rem / 2 - 1rem / 2);
+    margin-block-start: calc(0.25rem / 2 - 1rem / 2);
     background-color: color(primary);
     height: 1rem;
     width: 1rem;
