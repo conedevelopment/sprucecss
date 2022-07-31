@@ -12,8 +12,8 @@
       display: none !important;
     }
 
-    a[href^="http"]:after {
-      content: " (" attr(href) ")";
+    a[href^='http']::after {
+      content: ' (' attr(href) ')';
     }
   }
 }
