@@ -106,16 +106,27 @@
     }
   }
 
-  // Blockquote
+  // Quote, blockquote
+  .quote {
+    @include layout-stack(xs);
+    border-inline-start: 0.5rem solid color(blockquote-border);
+    padding-inline-start: spacer(m);
+
+    blockquote {
+      border-inline-start: 0;
+      padding-inline-start: 0;
+    }
+
+    figcaption {
+      text-align: start;
+    }
+  }
+
   blockquote {
     @include layout-stack(xs);
-    border-left: 0.5rem solid color(blockquote-border);
-    margin-left: 0;
-    padding: 0 0 0 spacer(m);
-
-    cite {
-      display: block;
-    }
+    border-inline-start: 0.5rem solid color(blockquote-border);
+    margin-inline-start: 0;
+    padding-inline-start: spacer(m);
   }
 
   // Inline elmeents

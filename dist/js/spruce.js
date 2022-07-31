@@ -1,5 +1,8 @@
 "use strict";
 
+require("./utils/cookie.js");
+"use strict";
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -69,6 +72,3 @@ class Cookie {
 }
 
 exports.default = Cookie;
-"use strict";
-
-require("./Cookie.js");
