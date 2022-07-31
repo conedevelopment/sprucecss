@@ -62,6 +62,11 @@ block content
         label(for='files' class='form-label') Files
         input(class='form-file form-file--sm' type='file' id='files' multiple accept='image/png, image/jpeg')
     fieldset
+      legend Range
+      div(class='form-group')
+        label(for='rating' class='form-label') Your Rating
+        input(class='form-range form-range--lg' type='range' id='rating' min='-10' max='10')
+    fieldset
       legend Selects
       div(class='form-group')
         label(for='front-end-frameworks-sm' class='form-label') Front-end Frameworks (Small)

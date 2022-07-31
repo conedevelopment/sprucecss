@@ -1,0 +1,53 @@
+@use '../config' as *;
+@use '../function' as *;
+
+.form-range {
+  appearance: none;
+
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      border: 1px solid red;
+      outline: 3px solid red;
+      outline-offset: 0.125rem;
+    }
+
+    &::-moz-range-thumb {
+      border: 1px solid red;
+      outline: 3px solid red;
+      outline-offset: 0.125rem;
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    background-color: hsl(260deg, 4%, 70%);
+    border-radius: 0.15rem;
+    height: 0.25rem;
+  }
+
+  &::-moz-range-track {
+    background-color: hsl(260deg, 4%, 70%);
+    border-radius: 0.15rem;
+    height: 0.25rem;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    border-radius: 1rem;
+    margin-top: calc(0.25rem / 2 - 1rem / 2);
+    background-color: color(primary);
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 1rem;
+
+    /*custom styles*/
+    background-color: color(primary);
+    height: 1rem;
+    width: 1rem;
+  }
+}
