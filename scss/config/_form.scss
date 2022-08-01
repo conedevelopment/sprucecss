@@ -61,6 +61,12 @@ $form-input-shadow-width: 0.25rem !default;
 
 $form-file-background-color: primary !default;
 
+$form-range-track-height: 0.25rem !default;
+$form-range-track-broder-radius: 0.05rem !default;
+$form-range-thumb-height: 1rem !default;
+$form-range-thumb-width: 1rem !default;
+$form-range-thumb-broder-radius: 0.25rem !default;
+
 $select-icon-width: 1.25em !default;
 $select-icon-right-offset: 0.5em !default;
 $select-padding-right: calc(0.75em + $select-icon-width) !default;

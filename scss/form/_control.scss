@@ -10,8 +10,6 @@
   $has-select: true
 ) {
   #{$input} {
-    $this: &;
-
     appearance: none;
     background-color: color(background, form);
     border: $form-control-border-width solid color(border, form);

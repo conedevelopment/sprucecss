@@ -6,13 +6,11 @@
 }
 
 .color-item {
-  $this: &;
-
   align-items: center;
   display: flex;
   gap: spruce.spacer(m);
 
-  &--bordered #{$this}__color {
+  &--bordered &__color {
     box-shadow: 0 0 0 1px spruce.color(border) inset;
   }
 
