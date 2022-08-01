@@ -1,48 +1,50 @@
 @use '../config' as *;
 @use '../function' as *;
 
-.form-range {
-  appearance: none;
-  margin-block-start: calc(#{$form-range-thumb-height} / 2 - #{$form-range-track-height} / 2);
+@mixin generate-form-range {
+  .form-range {
+    appearance: none;
+    margin-block-start: calc(#{$form-range-thumb-height} / 2 - #{$form-range-track-height} / 2);
 
-  &:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+
+      &::-webkit-slider-thumb {
+        box-shadow: 0 0 0 $form-input-shadow-width color(range-thumb-shadow, form);
+      }
+
+      &::-moz-range-thumb {
+        box-shadow: 0 0 0 $form-input-shadow-width color(range-thumb-shadow, form);
+      }
+    }
+
+    &::-webkit-slider-runnable-track {
+      background-color: color(range-track, form);
+      border-radius: $form-range-track-broder-radius;
+      height: $form-range-track-height;
+    }
+
+    &::-moz-range-track {
+      background-color: color(range-track, form);
+      border-radius: $form-range-track-broder-radius;
+      height: $form-range-track-height;
+    }
 
     &::-webkit-slider-thumb {
-      box-shadow: 0 0 0 $form-input-shadow-width color(range-thumb-shadow, form);
+      appearance: none;
+      background-color: color(range-thumb, form);
+      border-radius: $form-range-thumb-broder-radius;
+      height: $form-range-thumb-height;
+      margin-block-start: calc(#{$form-range-track-height} / 2 - #{$form-range-thumb-height} / 2);
+      width: 1rem;
     }
 
     &::-moz-range-thumb {
-      box-shadow: 0 0 0 $form-input-shadow-width color(range-thumb-shadow, form);
+      background-color: color(range-thumb, form);
+      border: 0; /*Removes extra border that FF applies*/
+      border-radius: $form-range-thumb-broder-radius;
+      height: $form-range-thumb-height;
+      width: $form-range-thumb-width;
     }
-  }
-
-  &::-webkit-slider-runnable-track {
-    background-color: color(range-track, form);
-    border-radius: $form-range-track-broder-radius;
-    height: $form-range-track-height;
-  }
-
-  &::-moz-range-track {
-    background-color: color(range-track, form);
-    border-radius: $form-range-track-broder-radius;
-    height: $form-range-track-height;
-  }
-
-  &::-webkit-slider-thumb {
-    appearance: none;
-    background-color: color(range-thumb, form);
-    border-radius: $form-range-thumb-broder-radius;
-    height: $form-range-thumb-height;
-    margin-block-start: calc(#{$form-range-track-height} / 2 - #{$form-range-thumb-height} / 2);
-    width: 1rem;
-  }
-
-  &::-moz-range-thumb {
-    background-color: color(range-thumb, form);
-    border: 0; /*Removes extra border that FF applies*/
-    border-radius: $form-range-thumb-broder-radius;
-    height: $form-range-thumb-height;
-    width: $form-range-thumb-width;
   }
 }
