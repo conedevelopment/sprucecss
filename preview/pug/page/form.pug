@@ -104,6 +104,21 @@ block content
           option(value='svelte') Svelte
           option(value='ember') Ember
     fieldset
+      legend Checkbox
+      div(class='form-group form-group--vertical-check')
+        label(class='form-check')
+          input(type='radio' class='form-check__control' value='react' name='checkbox-example')
+          span(class='form-label form-check__label') React
+        label(class='form-check')
+          input(type='radio' class='form-check__control' value='vue' name='checkbox-example')
+          span(class='form-label form-check__label') Vue
+        label(class='form-check')
+          input(type='radio' class='form-check__control' value='svelte' name='checkbox-example')
+          span(class='form-label form-check__label') Svelte
+        label(class='form-check')
+          input(type='radio' class='form-check__control' value='ember' name='checkbox-example')
+          span(class='form-label form-check__label') Ember
+    fieldset
       legend Inputs
       div(class='form-group--row')
         label(for='first-name' class='form-label') First Name
@@ -144,15 +159,6 @@ block content
         div(class='form-group')
           label(for='street-address-2' class='form-label') Street Address
           input(id='street-address-2' class='form-control form-control--sm' name='street-address-2' type='text')
-    fieldset
-      legend Do you own or rent?
-      div(class='form-group form-group--vertical-check')
-        label(class='form-check')
-          input(type='radio' class='form-check__control' value='own' name='property-ownership')
-          span(class='form-label form-check__label') Own
-        label(class='form-check')
-          input(type='radio' class='form-check__control' value='rent' name='property-ownership')
-          span(class='form-label form-check__label') Rent
     fieldset
       legend Which one of you like?
       div(class='form-group form-group--vertical-check')
