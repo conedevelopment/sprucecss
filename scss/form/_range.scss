@@ -19,20 +19,20 @@
     }
 
     &::-webkit-slider-runnable-track {
-      background-color: color(range-track, form);
+      background-color: color(range-track-background, form);
       border-radius: $form-range-track-broder-radius;
       height: $form-range-track-height;
     }
 
     &::-moz-range-track {
-      background-color: color(range-track, form);
+      background-color: color(range-track-background, form);
       border-radius: $form-range-track-broder-radius;
       height: $form-range-track-height;
     }
 
     &::-webkit-slider-thumb {
       appearance: none;
-      background-color: color(range-thumb, form);
+      background-color: color(range-thumb-background, form);
       border-radius: $form-range-thumb-broder-radius;
       height: $form-range-thumb-height;
       margin-block-start: calc(#{$form-range-track-height} / 2 - #{$form-range-thumb-height} / 2);
@@ -40,7 +40,7 @@
     }
 
     &::-moz-range-thumb {
-      background-color: color(range-thumb, form);
+      background-color: color(range-thumb-background, form);
       border: 0; /*Removes extra border that FF applies*/
       border-radius: $form-range-thumb-broder-radius;
       height: $form-range-thumb-height;

@@ -60,3 +60,9 @@
     background-color: spruce.color($name, table);
   }
 }
+
+@each $name, $value in map.get(spruce.$colors, scrollbar) {
+  .color-item--scrollbar-#{$name} .color-item__color {
+    background-color: spruce.color($name, scrollbar);
+  }
+}

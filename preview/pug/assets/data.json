@@ -41,6 +41,10 @@
       "bordered": "false"
     },
     {
+      "name": "marker",
+      "bordered": "false"
+    },
+    {
       "name": "code-background",
       "bordered": "false"
     },
@@ -173,6 +177,18 @@
       "bordered": "false"
     },
     {
+      "name": "range-thumb-background",
+      "bordered": "false"
+    },
+    {
+      "name": "range-thumb-shadow",
+      "bordered": "false"
+    },
+    {
+      "name": "range-track-background",
+      "bordered": "false"
+    },
+    {
       "name": "text",
       "bordered": "false"
     },
@@ -212,7 +228,21 @@
     },
     {
       "name": "stripe",
+      "bordered": "true"
+    }
+  ],
+  "scrollbar": [
+    {
+      "name": "thumb-background",
       "bordered": "false"
+    },
+    {
+      "name": "thumb-background-hover",
+      "bordered": "false"
+    },
+    {
+      "name": "track-background",
+      "bordered": "true"
     }
   ]
 }
