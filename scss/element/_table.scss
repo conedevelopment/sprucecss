@@ -23,7 +23,7 @@
 
     th,
     td {
-      border-bottom: 1px solid color(border, table);
+      border-block-end: 1px solid color(border, table);
       line-height: $table-line-height;
       padding: $table-padding;
     }

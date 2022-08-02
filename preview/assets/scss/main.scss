@@ -40,7 +40,7 @@ body {
 }
 
 .section-title {
-  border-bottom: 1px solid spruce.color(border);
+  border-block-end: 1px solid spruce.color(border);
   font-size: spruce.font-size(h4);
   margin-block-end: spruce.spacer(s);
   padding-block-end: spruce.spacer(xs);
