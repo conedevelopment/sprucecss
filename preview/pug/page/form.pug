@@ -27,6 +27,15 @@ block content
         label(for='text' class='form-label') Text
         input(class='form-control' id='text' type='text')
       div(class='form-group')
+        label(for='text-disabled' class='form-label') Text (Disabled)
+        input(class='form-control' id='text-disabled' type='text' disabled)
+      div(class='form-group')
+        label(for='text-small' class='form-label') Text (Small)
+        input(class='form-control form-control--sm' id='text-small' type='text')
+      div(class='form-group')
+        label(for='text-large' class='form-label') Text (Large)
+        input(class='form-control form-control--lg' id='text-large' type='text')
+      div(class='form-group')
         label(for='url' class='form-label') URL
         input(class='form-control' id='url' type='url')
       div(class='form-group')
@@ -50,6 +59,11 @@ block content
       div(class='form-group')
         label(for='time' class='form-label') Time
         input(class='form-control' id='time' type='time')
+    fieldset
+      legend Textarea
+      div(class='form-group')
+        label(for='textarea' class='form-label') Message
+        textarea(class='form-control' id='textarea')
     fieldset
       legend File Inputs
       div(class='form-group')
@@ -110,14 +124,14 @@ block content
           input(type='radio' class='form-check__control' value='react' name='radio-example-vertical')
           span(class='form-label form-check__label') React
         label(class='form-check')
-          input(type='radio' class='form-check__control' value='vue' name='radio-example-vertical')
+          input(type='radio' class='form-check__control' value='vue' name='radio-example-vertical' disabled)
           span(class='form-label form-check__label') Vue
         label(class='form-check')
           input(type='radio' class='form-check__control' value='svelte' name='radio-example-vertical')
           span(class='form-label form-check__label') Svelte
         label(class='form-check')
           input(type='radio' class='form-check__control' value='ember' name='radio-example-vertical')
-          span(class='form-label form-check__label') Emberfieldset
+          span(class='form-label form-check__label') Ember
     fieldset
       legend Radio (Horizontal)
       div(class='form-group form-group--horizontal-check')
@@ -140,131 +154,108 @@ block content
           input(type='checkbox' class='form-check__control' value='react' name='checkbox-example')
           span(class='form-label form-check__label') React
         label(class='form-check')
-          input(type='checkbox' class='form-check__control' value='vue' name='checkbox-example')
+          input(type='checkbox' class='form-check__control' value='vue' name='checkbox-example' disabled)
           span(class='form-label form-check__label') Vue
         label(class='form-check')
           input(type='checkbox' class='form-check__control' value='svelte' name='checkbox-example')
           span(class='form-label form-check__label') Svelte
         label(class='form-check')
           input(type='checkbox' class='form-check__control' value='ember' name='checkbox-example')
-          span(class='form-label form-check__label') Emberfieldset
+          span(class='form-label form-check__label') Ember
     fieldset
       legend Checkbox (Sizes)
       div(class='form-group form-group--vertical-check')
         label(class='form-check form-check--lg')
-          input(type='checkbox' class='form-check__control' value='react' name='checkbox-example')
+          input(type='checkbox' class='form-check__control' value='react' name='checkbox-example-sizes')
           span(class='form-label form-check__label') React
         label(class='form-check form-check--lg')
-          input(type='checkbox' class='form-check__control' value='vue' name='checkbox-example')
+          input(type='checkbox' class='form-check__control' value='vue' name='checkbox-example-sizes')
           span(class='form-label form-check__label') Vue
       div(class='form-group form-group--vertical-check')
         label(class='form-check form-check--sm')
-          input(type='checkbox' class='form-check__control' value='svelte' name='checkbox-example')
+          input(type='checkbox' class='form-check__control' value='svelte' name='checkbox-example-sizes')
           span(class='form-label form-check__label') Svelte
         label(class='form-check form-check--sm')
-          input(type='checkbox' class='form-check__control' value='ember' name='checkbox-example')
-          span(class='form-label form-check__label') Emberfieldset
+          input(type='checkbox' class='form-check__control' value='ember' name='checkbox-example-sizes')
+          span(class='form-label form-check__label') Ember
     fieldset
-      legend Inputs
-      div(class='form-group--row')
-        label(for='first-name' class='form-label') First Name
-        input(class='form-control' id='first-name' name='first-name' type='text')
-        span(class='form-description') Just a help text for presentation purpose
-      div(class='form-group')
-        label(for='last-name' class='form-label') Last Name
-        input(class='form-control' id='last-name' name='last-name' type='text' disabled)
-      div(class='form-group--stacked')
-        input(class='form-control' id='first-name' name='first-name' type='text' aria-label='First Name')
-        input(class='form-control' id='last-name' name='last-name' type='text' aria-label='Last Name')
-        button(class='btn btn--primary') Submit
-    fieldset
-      legend Address
-      div(class='form-row')
-        div(class='form-group')
-          label(for='street-address' class='form-label') Street Address
-          input(id='street-address' class='form-control form-control--valid' name='street-address' type='text' placeholder='Your street address...')
-          span(class='field-feedback field-feedback--valid') Looks fine
-      div(class='form-row form-row--mixed')
-        div(class='form-group')
-          label(for='city' class='form-label') City
-          input(id='city' class='form-control form-control--invalid' name='city' type='text')
-          span(class='field-feedback field-feedback--invalid') Not that fine
-        div(class='form-group')
-          label(for='state' class='form-label') State
-          input(id='state' class='form-control' name='state' type='text')
-        div(class='form-group form-group--width-auto' style='--col-width: 8ch;')
-          label(for='zip' class='form-label') Zip
-          input(id='zip' class='form-control' name='zip' type='text')
-    fieldset
-      legend Sizes
-      div(class='form-row')
-        div(class='form-group')
-          label(for='street-address-1' class='form-label') Street Address
-          input(id='street-address-1' class='form-control form-control--lg' name='street-address-1' type='text')
-      div(class='form-row')
-        div(class='form-group')
-          label(for='street-address-2' class='form-label') Street Address
-          input(id='street-address-2' class='form-control form-control--sm' name='street-address-2' type='text')
-    fieldset
-      legend Which one of you like?
-      div(class='form-group form-group--vertical-check')
-        label(class='form-check form-check--sm')
-          input(type='checkbox' class='form-check__control' value='rent' name='property-ownership2' disabled)
-          span(class='form-label form-check__label') Rent
-        label(class='form-check form-check--sm')
-          input(type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
-          span(class='form-label form-check__label') Misc
-        label(class='form-check')
-          input(id='indeterminate' type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
-          span(class='form-label form-check__label') Indeterminate
-      div(class='form-group form-group--vertical-check')
-        label(class='form-check')
-          input(type='checkbox' class='form-check__control' value='own' name='property-ownership2')
-          span(class='form-label form-check__label') Own
-        label(class='form-check')
-          input(type='checkbox' class='form-check__control' value='rent' name='property-ownership2' disabled)
-          span(class='form-label form-check__label') Rent
-        label(class='form-check')
-          input(type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
-          span(class='form-label form-check__label') Misc
-        label(class='form-check')
-          input(id='indeterminate' type='checkbox' class='form-check__control' value='misc' name='property-ownership2')
-          span(class='form-label form-check__label') Indeterminate
-      div(class='form-group form-group--vertical-check')
-        label(class='form-check form-check--lg')
-          input(type='checkbox' class='form-check__control' value='own' name='property-ownership3')
-          span(class='form-label form-check__label') Own
-        label(class='form-check form-check--lg')
-          input(type='checkbox' class='form-check__control' value='rent' name='property-ownership3' disabled)
-          span(class='form-label form-check__label') Rent
-        label(class='form-check form-check--lg')
-          input(type='checkbox' class='form-check__control' value='misc' name='property-ownership3')
-          span(class='form-label form-check__label') Misc
-    fieldset
-      legend Switches
-      div(class='form-group form-group--vertical-check')
-        label(class='form-switch form-switch--sm')
-          span(class='form-label form-switch__label') Enable notifications
-          input(type='checkbox' class='form-switch__control' value='true' name='notification')
-        label(class='form-switch')
-          span(class='form-label form-switch__label') Enable notifications
-          input(type='checkbox' class='form-switch__control' value='true' name='notification')
-        label(class='form-switch form-switch--lg form-switch--block')
-          span(class='form-label form-switch__label') Enable notifications
-          input(type='checkbox' class='form-switch__control' value='true' name='notification')
-        label(class='form-switch form-switch--lg form-switch--block')
-          span(class='form-label form-switch__label') Enable notifications
-          input(type='checkbox' class='form-switch__control' value='true' name='notification' disabled)
+      legend Custom Checkbox
       div(class='form-group')
         span(class='wpcf7-form-control-wrap acceptance-784')
           span(class='wpcf7-form-control wpcf7-acceptance')
             span(class='wpcf7-list-item')
               label
                 input(type='checkbox' name='acceptance-784' value='1' aria-invalid='false')
-                span(class='wpcf7-list-item-label')
-                  | I accept the
-                  a(href='#' target='_blank') privacy policy
-                  | .
+                span(class='wpcf7-list-item-label') I accept the #[a(href='#') privacy policy].
+    fieldset
+      legend Switches
+      div(class='form-group form-group--vertical-check')
+        label(class='form-switch form-switch--sm')
+          span(class='form-label form-switch__label') Enable notifications
+          input(type='checkbox' class='form-switch__control' value='true')
+        label(class='form-switch')
+          input(type='checkbox' class='form-switch__control' value='true')
+          span(class='form-label form-switch__label') Enable notifications
+        label(class='form-switch form-switch--lg form-switch--block')
+          span(class='form-label form-switch__label') Enable notifications
+          input(type='checkbox' class='form-switch__control' value='true')
+        label(class='form-switch form-switch--lg form-switch--block')
+          input(type='checkbox' class='form-switch__control' value='true' disabled)
+          span(class='form-label form-switch__label') Enable notifications
+    fieldset
+      legend Form Group Row
+      div(class='form-group--row')
+        label(for='first-name-row' class='form-label') First Name
+        input(class='form-control' id='first-name-row' type='text')
+        span(class='form-description') Just a help text for presentation purpose
+      div(class='form-group--row')
+        label(for='front-end-frameworks-row' class='form-label') Front-end Frameworks
+        select(id='front-end-frameworks-row' class='form-control')
+          option(value='react') React
+          option(value='vue') Vue
+          option(value='svelte') Svelte
+          option(value='ember') Ember
+      div(class='form-group--row')
+        div(id='row-radio-label' class='form-label') Radio (Horizontal)
+        div(class='form-group form-group--horizontal-check')
+          label(class='form-check')
+            input(type='radio' class='form-check__control' value='react' name='radio-example-horizontal-row' aria-describedby='row-radio-label')
+            span(class='form-label form-check__label') React
+          label(class='form-check')
+            input(type='radio' class='form-check__control' value='vue' name='radio-example-horizontal-row' aria-describedby='row-radio-label')
+            span(class='form-label form-check__label') Vue
+          label(class='form-check')
+            input(type='radio' class='form-check__control' value='svelte' name='radio-example-horizontal-row' aria-describedby='row-radio-label')
+            span(class='form-label form-check__label') Svelte
+          label(class='form-check')
+            input(type='radio' class='form-check__control' value='ember' name='radio-example-horizontal-row' aria-describedby='row-radio-label')
+            span(class='form-label form-check__label') Ember
+    fieldset
+      div(class='form-group--stacked')
+        input(class='form-control' type='text' aria-label='First Name')
+        input(class='form-control' type='text' aria-label='Last Name')
+      div(class='form-group--stacked')
+        input(class='form-control' type='text' aria-label='First Name')
+        input(class='form-control' type='text' aria-label='Last Name')
+        button(class='btn btn--primary') Submit
+    fieldset
+      legend Validation
+      div(class='form-row')
+        div(class='form-group')
+          label(for='street-address' class='form-label') Street Address
+          input(id='street-address' class='form-control form-control--valid' type='text' placeholder='Your street address...')
+          span(class='field-feedback field-feedback--valid') Looks fine
+      div(class='form-row form-row--mixed')
+        div(class='form-group')
+          label(for='city' class='form-label') City
+          input(id='city' class='form-control form-control--invalid' type='text')
+          span(class='field-feedback field-feedback--invalid') Not that fine
+        div(class='form-group')
+          label(for='state' class='form-label') State
+          input(id='state' class='form-control' type='text')
+        div(class='form-group form-group--width-auto' style='--col-width: 8ch;')
+          label(for='zip' class='form-label') Zip
+          input(id='zip' class='form-control' type='text')
   script.
     var checkbox = document.getElementById('indeterminate');
     checkbox.indeterminate = true;
