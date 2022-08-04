@@ -17,6 +17,7 @@
 
     &--vertical-check {
       @include layout-stack(s, true, left);
+      gap: 0;
     }
 
     &--row {
