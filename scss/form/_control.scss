@@ -67,7 +67,7 @@
     // Set height to textarea
     @at-root {
       textarea#{$selector} {
-        height: 10rem;
+        height: $form-control-textarea-height;
       }
     }
 
