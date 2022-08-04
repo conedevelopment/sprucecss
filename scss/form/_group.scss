@@ -8,6 +8,13 @@
     flex-direction: column;
     gap: spacer(xxs);
 
+    &--horizontal-check {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: spacer(s);
+    }
+
     &--vertical-check {
       @include layout-stack(s, true, left);
     }
