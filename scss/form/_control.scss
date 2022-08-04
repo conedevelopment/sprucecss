@@ -4,12 +4,12 @@
 @use '../config' as *;
 
 @mixin generate-form-control(
-  $input,
+  $selector,
   $has-states: false,
   $has-sizes: false,
   $has-select: true
 ) {
-  #{$input} {
+  #{$selector} {
     appearance: none;
     background-color: color(background, form);
     border: $form-control-border-width solid color(border, form);
@@ -62,6 +62,13 @@
         $background: color(background-disabled, form),
         $border: color(border-disabled, form)
       );
+    }
+
+    // Set height to textarea
+    @at-root {
+      textarea#{$selector} {
+        height: 10rem;
+      }
     }
 
     // Validation states
@@ -129,7 +136,7 @@
 
   // Generate select styling
   @if ($has-select) {
-    select#{$input} {
+    select#{$selector} {
       &:not([multiple]):not([size]) {
         @include field-icon($select-icon, map.get($colors, form, select-foreground));
         background-position: center right $select-icon-right-offset;
