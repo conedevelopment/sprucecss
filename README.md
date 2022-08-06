@@ -49,7 +49,7 @@ To start a new Spruce-based project (or experiment), we suggest using our [start
 
 ## Documentation
 
-For complete the documentation, please visit our site at [sprucecss.com](https://sprucecss.com).
+For the complete documentation, please visit our site at [sprucecss.com](https://sprucecss.com). You can edit it at our [separate repository](https://github.com/conedevelopment/sprucecss-site).
 
 ### Getting Started
 
