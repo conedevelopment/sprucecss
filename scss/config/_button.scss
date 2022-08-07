@@ -1,18 +1,16 @@
 @use 'display' as *;
 @use 'typography' as *;
 
-// Btn
 $btn-border-radius: $border-radius-sm !default;
 
 $btn-font-family: null !default;
 $btn-font-style: null !default;
 $btn-font-weight: 500 !default;
-
-$btn-shadow-width: 0.25rem !default;
-
 $btn-font-size: $font-size-base !default;
 $btn-font-size-sm: 0.8rem !default;
 $btn-font-size-lg: 1.15rem !default;
+
+$btn-shadow-width: 0.25rem !default;
 
 $btn-padding: 0.75em 1em !default;
 $btn-padding-sm: 0.5em !default;
