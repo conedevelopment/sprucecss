@@ -1,6 +1,5 @@
 @use 'sass:map';
 
-// Settings
 $settings: () !default;
 $settings: map.merge(
   (
