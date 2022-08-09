@@ -68,6 +68,8 @@
     @at-root {
       textarea#{$selector} {
         height: $form-control-textarea-height;
+        min-height: $form-control-textarea-height;
+        resize: vertical;
       }
     }
 
