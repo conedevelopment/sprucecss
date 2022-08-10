@@ -15,7 +15,7 @@ $fieldset-gap-size: map.get($spacers, s) !default;
 $legend-font-size: clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}) !default;
 $legend-font-weight: 700 !default;
 
-$form-description-font-size: $font-size-base !default;
+$form-description-font-size: null !default;
 $form-description-font-style: null !default;
 $form-description-font-weight: null !default;
 
