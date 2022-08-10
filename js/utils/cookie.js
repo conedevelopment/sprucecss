@@ -9,7 +9,7 @@ export default class Cookie {
    * @param  {object}  options
    * @return {void}
    */
-  set(key, value, expires = null, path = '/', options = {}) {
+  static set(key, value, expires = null, path = '/', options = {}) {
     const pairs = Object.assign({
       [key]: value,
       expires,
@@ -30,7 +30,7 @@ export default class Cookie {
    * @param  {mixed}  value
    * @return {mixed}
    */
-  get(key, value = null) {
+  static get(key, value = null) {
     const cookie = document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)'));
 
     return (cookie && cookie[2]) ? cookie[2] : value;
@@ -42,7 +42,7 @@ export default class Cookie {
    * @param  {string}  key
    * @return {bool}
    */
-  isset(key) {
+  static isset(key) {
     return document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)')) !== null;
   }
 
