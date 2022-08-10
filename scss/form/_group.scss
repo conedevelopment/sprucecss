@@ -84,12 +84,5 @@
         }
       }
     }
-
-    &--grid {
-      align-items: flex-start;
-      display: flex;
-      flex-wrap: wrap;
-      gap: spacer(xs);
-    }
   }
 }
