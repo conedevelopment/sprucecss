@@ -106,3 +106,9 @@ body {
 .break-long-url {
   @include spruce.word-wrap;
 }
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: spruce.spacer(s);
+}

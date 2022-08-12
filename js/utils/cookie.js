@@ -10,13 +10,15 @@ export default class Cookie {
    * @return {void}
    */
   static set(key, value, expires = null, path = '/', options = {}) {
-    const pairs = Object.assign({
+    const defaults = {
       [key]: value,
       expires,
       path,
       SameSite: 'Lax',
       Secure: true,
-    }, options);
+    };
+
+    const pairs = { ...defaults, ...options };
 
     document.cookie = Object.entries(pairs)
       .reduce((stack, entry) => stack.concat(entry.join('=')), [])
@@ -31,7 +33,7 @@ export default class Cookie {
    * @return {mixed}
    */
   static get(key, value = null) {
-    const cookie = document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)'));
+    const cookie = document.cookie.match(new RegExp(`(^| )${key}=([^;]+)`));
 
     return (cookie && cookie[2]) ? cookie[2] : value;
   }
@@ -43,7 +45,7 @@ export default class Cookie {
    * @return {bool}
    */
   static isset(key) {
-    return document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)')) !== null;
+    return document.cookie.match(new RegExp(`(^| )${key}=([^;]+)`)) !== null;
   }
 
   /**
@@ -52,7 +54,7 @@ export default class Cookie {
    * @param  {string}  key
    * @return {void}
    */
-  remove(key) {
+  static remove(key) {
     this.set(key, null, 'Thu, 01 Jan 1970 00:00:01 GMT');
   }
 }

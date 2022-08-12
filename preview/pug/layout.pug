@@ -37,6 +37,8 @@ html(lang='en')
                 a(href='form.html' aria-current=page === 'form' ? 'page' : '') Form
               li
                 a(href='mixin.html' aria-current=page === 'mixin' ? 'page' : '') Mixin
+              li
+                a(href='js.html' aria-current=page === 'js' ? 'page' : '') JS
             div(class='form-group')
               label(class='form-label') Reading direction
               select(id='reading-direction' class='form-control form-control--sm')
@@ -58,5 +60,6 @@ html(lang='en')
       if (localStorage.getItem('spruce-theme-mode')) {
         document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
       }
-    script(src='../../assets/js/reading-direction.js' type='module')
-    script(src='../../assets/js/theme-mode.js' type='module')
+    script(src='../../assets/js/reading-direction.js')
+    script(src='../../assets/js/theme-mode.js')
+    block scripts
