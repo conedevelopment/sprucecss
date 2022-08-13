@@ -6,7 +6,7 @@ document.addEventListener('click', (e) => {
 
   switch (e.target.dataset.cookie) {
     case 'set':
-      setCookie('spruce-test', true, new Date(Date.now() + 86400 * 1000 * 365).toUTCString(), '/');
+      setCookie('spruce-test', true, 10, '/');
       break;
     case 'get':
       // eslint-disable-next-line no-alert

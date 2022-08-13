@@ -19,11 +19,12 @@ export function setCookie(key, value, expires = null, path = '/', options = {}) 
 
   const pairs = { ...defaults, ...options };
 
+  pairs.expires = pairs.expires ? new Date(Date.now() + 86400 * 1000 * pairs.expires)
+    .toUTCString() : null;
+
   document.cookie = Object.entries(pairs)
     .reduce((stack, entry) => stack.concat(entry.join('=')), [])
     .join('; ');
-
-  console.log(document.cookie = Object.entries(pairs).reduce((stack, entry) => stack.concat(entry.join('=')), []).join('; '));
 }
 
 /**
