@@ -31,13 +31,12 @@ export function setCookie(key, value, expires = null, path = '/', options = {}) 
  * Get the cookie with the given key.
  *
  * @param  {string}  key
- * @param  {mixed}  value
  * @return {mixed}
  */
-export function getCookie(key, value = null) {
+export function getCookie(key) {
   const cookie = document.cookie.match(new RegExp(`(^| )${key}=([^;]+)`));
 
-  return (cookie && cookie[2]) ? cookie[2] : value;
+  return (cookie && cookie[2]) ? cookie[2] : null;
 }
 
 /**
