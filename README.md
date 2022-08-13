@@ -60,6 +60,7 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 - [Inclusivity and Accessibility](https://sprucecss.com/docs/getting-started/accessibility)
 - [Internationalization](https://sprucecss.com/docs/getting-started/internationalization)
 - [Print](https://sprucecss.com/docs/getting-started/print)
+- [JS](https://sprucecss.com/docs/getting-started/js)
 - [Contribution](https://sprucecss.com/docs/getting-started/contribution)
 - [Appendix](https://sprucecss.com/docs/getting-started/appendix)
 
