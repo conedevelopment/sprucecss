@@ -20,8 +20,10 @@
 @mixin generate-form {
   @include generate-btn('.btn');
 
+  /* stylelint-disable */
   .btn--primary { @include btn-variant(primary); }
   .btn--secondary { @include btn-variant(secondary); }
+  /* stylelint-enable */
 
   @include generate-file-btn(
     '.form-file',

@@ -809,6 +809,7 @@ samp {
   width: 100%;
 }
 
+/* stylelint-disable */
 .btn--primary {
   background-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
@@ -835,6 +836,7 @@ samp {
   outline: 2px solid transparent;
 }
 
+/* stylelint-enable */
 .form-file::-webkit-file-upload-button {
   align-items: center;
   border: 0;
@@ -854,7 +856,6 @@ samp {
   transition-property: background-color, box-shadow, color;
   transition-timing-function: var(--spruce-transition-timing-function);
 }
-
 .form-file::file-selector-button {
   align-items: center;
   border: 0;
