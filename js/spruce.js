@@ -1,1 +1,1 @@
-import './utils/cookie';
+import './util/cookie';
