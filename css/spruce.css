@@ -741,6 +741,7 @@ samp {
   font-size: 1.25rem;
 }
 
+/* stylelint-disable */
 .btn {
   align-items: center;
   border: 0;
@@ -1411,3 +1412,5 @@ legend {
   height: 1rem;
   width: 1rem;
 }
+
+/* stylelint-enable */

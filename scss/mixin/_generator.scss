@@ -18,6 +18,7 @@
 
 // Generate form styling
 @mixin generate-form {
+  /* stylelint-disable */
   @include generate-btn('.btn');
 
   /* stylelint-disable */
@@ -56,4 +57,5 @@
   @include generate-form-row;
   @include generate-field-feedback;
   @include generate-form-range;
+  /* stylelint-enable */
 }
