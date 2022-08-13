@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v1.0.1 (2022-08-13)
+
+### Bugfix
+- Fix stylelint error.
+
 ## v1.0.0 (2022-08-13)
 
 ### New features
