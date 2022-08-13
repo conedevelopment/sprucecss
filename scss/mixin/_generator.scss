@@ -19,6 +19,10 @@
 // Generate form styling
 @mixin generate-form {
   @include generate-btn('.btn');
+
+  .btn--primary { @include btn-variant(primary); }
+  .btn--secondary { @include btn-variant(secondary); }
+
   @include generate-file-btn(
     '.form-file',
     '::file-selector-button',
@@ -50,7 +54,4 @@
   @include generate-form-row;
   @include generate-field-feedback;
   @include generate-form-range;
-
-  .btn--primary { @include btn-variant(primary); }
-  .btn--secondary { @include btn-variant(secondary); }
 }

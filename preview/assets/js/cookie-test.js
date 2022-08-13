@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/extensions
-import {setCookie, getCookie, issetCookie, removeCookie} from '../../../js/util/cookie.js';
+import {setCookie, getCookie, issetCookie, removeCookie} from '../../../js/cookie.js';
 
 document.addEventListener('click', (e) => {
   if (!e.target.matches('[data-cookie]')) return;

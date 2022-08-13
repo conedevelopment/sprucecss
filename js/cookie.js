@@ -22,6 +22,8 @@ export function setCookie(key, value, expires = null, path = '/', options = {}) 
   document.cookie = Object.entries(pairs)
     .reduce((stack, entry) => stack.concat(entry.join('=')), [])
     .join('; ');
+
+  console.log(document.cookie = Object.entries(pairs).reduce((stack, entry) => stack.concat(entry.join('=')), []).join('; '));
 }
 
 /**
@@ -54,5 +56,5 @@ export function issetCookie(key) {
  * @return {void}
  */
 export function removeCookie(key) {
-  this.set(key, null, 'Thu, 01 Jan 1970 00:00:01 GMT');
+  setCookie(key, null, 'Thu, 01 Jan 1970 00:00:01 GMT');
 }
