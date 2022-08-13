@@ -68,17 +68,17 @@
         border-color: color(check-background, form);
 
         &[type='radio'] {
-          @include field-icon($form-radio-icon, color(check-foreground, form));
+          @include field-icon($form-radio-icon, color(check-foreground, form, true));
         }
 
         &[type='checkbox'] {
-          @include field-icon($form-checkbox-icon, color(check-foreground, form));
+          @include field-icon($form-checkbox-icon, color(check-foreground, form, true));
         }
       }
 
       &:indeterminate {
         &[type='checkbox'] {
-          @include field-icon($form-checkbox-indeterminate-icon, color(check-foreground, form));
+          @include field-icon($form-checkbox-indeterminate-icon, color(check-foreground, form, true));
           background-color: color(check-background, form);
           border-color: color(check-background, form);
         }
