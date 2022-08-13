@@ -1,5 +1,21 @@
 # Spruce CSS Changelog
 
+## v1.0.0 (2022-08-13)
+
+### New features
+- Add new form element stylings: `.form-file`, `.form-range`, `.form-switch`.
+- Add different input display options under `.form-group`.
+- Add a small set of [print styles](https://sprucecss.com/docs/getting-started/print).
+- Add an optional [cookie helper script](https://sprucecss.com/docs/getting-started/js).
+
+### Improvements
+- Add `.quote` as a helper for cited blockquote.
+
+### Bugfix
+- Fix color input.
+
+And a lot more minor changes and fixes.
+
 ## v0.10.0 (2022-07-08)
 
 ### New features
