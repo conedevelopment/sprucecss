@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v1.0.2 (2022-08-13)
+
+### Bugfix
+- Fix field-icon colors
+
 ## v1.0.1 (2022-08-13)
 
 ### Bugfix
