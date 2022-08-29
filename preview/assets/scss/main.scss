@@ -50,7 +50,11 @@ body {
   }
 }
 
-.ellipsis {
+.ellipsis-1 {
+  @include spruce.text-ellipsis(1);
+}
+
+.ellipsis-2 {
   @include spruce.text-ellipsis(2);
 }
 
@@ -58,7 +62,7 @@ body {
   @include spruce.selection(olive);
 }
 
-.btn--ellipsis {
+.ellipsis-btn {
   @include spruce.text-ellipsis(1);
   max-width: 10ch;
 }

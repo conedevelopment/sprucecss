@@ -25,14 +25,12 @@
     white-space: nowrap;
   } @else {
     white-space: inherit;
-  }
 
-  @supports (-webkit-line-clamp: $number-of-lines) {
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: $number-of-lines;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @supports (-webkit-line-clamp: $number-of-lines) {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: $number-of-lines;
+    }
   }
 }
 
