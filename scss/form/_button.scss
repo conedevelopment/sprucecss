@@ -45,11 +45,11 @@
     #{$selector}--icon {
       padding: $btn-icon-padding;
 
-      #{$selector}--sm {
+      &#{$selector}--sm {
         padding: $btn-icon-padding-sm;
       }
 
-      #{$selector}--lg {
+      &#{$selector}--lg {
         padding: $btn-icon-padding-lg;
       }
     }
