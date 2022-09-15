@@ -775,10 +775,10 @@ samp {
 .btn--icon {
   padding: 0.75em;
 }
-.btn--icon .btn--sm {
+.btn--icon.btn--sm {
   padding: 0.5em;
 }
-.btn--icon .btn--lg {
+.btn--icon.btn--lg {
   padding: 0.9em;
 }
 
@@ -1058,7 +1058,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 .form-control--lg {
   font-size: 1.1rem;
-  padding: 0.75em 1em;
+  padding: 0.65em 1em;
 }
 .form-control--lg[type=color] {
   height: calc(1.5em + ( 0.75em + 1px ) * 2);

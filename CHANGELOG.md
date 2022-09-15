@@ -1,5 +1,15 @@
 # Spruce CSS Changelog
 
+## v1.0.3 (2022-09-15)
+
+### Bugfix
+- Fix `.btn--icon` size padding bug.
+
+### Improvements
+- Modify `$container-width`'s default value
+- Cleanup and fix `text-ellipsis` mixin
+- Modify `$form-control-padding-lg`
+
 ## v1.0.2 (2022-08-13)
 
 ### Bugfix
