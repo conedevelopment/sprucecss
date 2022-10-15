@@ -11,9 +11,17 @@
   $has-sizes: false
 ) {
   #{$parent} {
-    align-items: center;
+    align-items: $form-check-vertical-alignment;
     display: inline-flex;
     gap: spacer(xs);
+  }
+
+  #{$parent}--vertical-center {
+    align-items: center;
+  }
+
+  #{$parent}--vertical-start {
+    align-items: flex-start;
   }
 
   @if ($has-sizes) {
