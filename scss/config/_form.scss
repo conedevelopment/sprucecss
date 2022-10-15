@@ -49,7 +49,7 @@ $form-check-font-size-sm: $font-size-base !default;
 $form-check-font-size-lg: $font-size-lg !default;
 $form-check-font-weight: $form-label-font-weight !default;
 $form-check-line-height: $line-height-heading !default;
-$form-check-margin-bottom: -0.1em !default;
+$form-check-margin-block-start: 0.1em !default;
 
 $form-switch-border-width: 1px !default;
 $form-switch-font-size: 1.125rem !default;
@@ -57,7 +57,7 @@ $form-switch-font-size-sm: $font-size-base !default;
 $form-switch-font-size-lg: $font-size-lg !default;
 $form-switch-font-weight: $form-label-font-weight !default;
 $form-switch-line-height: $line-height-heading !default;
-$form-switch-margin-bottom: $form-check-margin-bottom !default;
+$form-switch-margin-block-start: 0.25em !default;
 
 $form-input-shadow-width: 0.25rem !default;
 

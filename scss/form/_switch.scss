@@ -49,7 +49,7 @@
       font-size: $form-switch-font-size;
       height: 1em;
       line-height: 1;
-      margin-block-end: $form-switch-margin-bottom;
+      margin-block-start: $form-switch-margin-block-start;
       transition-duration: transition(duration);
       transition-property: background-position border, box-shadow;
       transition-timing-function: transition(timing-function);

@@ -42,7 +42,7 @@
       font-size: $form-check-font-size;
       height: 1em;
       line-height: 1;
-      margin-block-end: $form-check-margin-bottom;
+      margin-block-start: $form-check-margin-block-start;
       transition-duration: transition(duration);
       transition-property: border, box-shadow;
       transition-timing-function: transition(timing-function);
