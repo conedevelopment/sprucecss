@@ -18,6 +18,9 @@
 
     caption {
       color: color(caption, table);
+      font-size: $table-caption-font-size;
+      font-style: $table-caption-font-style;
+      font-weight: $table-caption-font-weight;
       margin-block-end: spacer(s);
     }
 
