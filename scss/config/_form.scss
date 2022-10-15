@@ -43,6 +43,7 @@ $form-control-color-height-lg: calc(#{$form-control-line-height}em + ( #{$form-c
 $form-control-textarea-height: 6rem !default;
 
 $form-check-border-width: 1px !default;
+$form-check-checkbox-border-radius: $border-radius-sm !default;
 $form-check-font-size: 1.125rem !default;
 $form-check-font-size-sm: $font-size-base !default;
 $form-check-font-size-lg: $font-size-lg !default;
