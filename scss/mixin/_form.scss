@@ -4,12 +4,27 @@
 
 // Style field focus state
 @mixin field-focus(
-  $border,
-  $box-shadow
+  $type: 'box-shadow',
+  $border-color,
+  $ring-color,
+  $box-shadow-type: 'outset'
 ) {
-  border-color: $border;
-  box-shadow: 0 0 0 $form-input-shadow-width $box-shadow;
-  outline: 2px solid transparent;
+  @debug $box-shadow-type;
+
+  @if $type == 'box-shadow' {
+    border-color: $border-color;
+    @if $box-shadow-type == 'inset' {
+      box-shadow: 0 0 0 $form-input-focus-ring-width $ring-color inset;
+    } @else {
+      box-shadow: 0 0 0 $form-input-focus-ring-width $ring-color;
+    }
+    outline: 2px solid transparent;
+  }
+
+  @if $type == 'outline' {
+    outline: $form-input-focus-ring-width solid $ring-color;
+    outline-offset: $form-input-focus-ring-offset;
+  }
 }
 
 // Style field disabled state

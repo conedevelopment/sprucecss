@@ -60,7 +60,8 @@ $form-switch-font-weight: $form-label-font-weight !default;
 $form-switch-line-height: $line-height-heading !default;
 $form-switch-margin-block-start: 0.25em !default;
 
-$form-input-shadow-width: 0.25rem !default;
+$form-input-focus-ring-width: 0.25rem !default;
+$form-input-focus-ring-offset: 2px !default;
 
 $form-file-background: primary !default;
 

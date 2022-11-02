@@ -32,8 +32,10 @@
 
     &:focus {
       @include field-focus(
-        $border: color(border-focus, form),
-        $box-shadow: color(shadow-focus, form)
+        $type: 'outline',
+        $border-color: color(border-focus, form),
+        $ring-color: color(shadow-focus, form),
+        $box-shadow-type: 'inset'
       );
     }
 
@@ -93,8 +95,8 @@
 
         &:focus {
           @include field-focus(
-            $border: color(valid, form),
-            $box-shadow: color(valid-shadow, form)
+            $border-color: color(valid, form),
+            $ring-color: color(valid-shadow, form)
           );
         }
       }
@@ -105,8 +107,8 @@
 
         &:focus {
           @include field-focus(
-            $border: color(invalid, form),
-            $box-shadow: color(invalid-shadow, form)
+            $border-color: color(invalid, form),
+            $ring-color: color(invalid-shadow, form)
           );
         }
       }

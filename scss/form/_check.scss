@@ -66,8 +66,9 @@
 
       &:focus {
         @include field-focus(
-          $border: color(border-focus, form),
-          $box-shadow: color(shadow-focus, form)
+          $type: 'outline',
+          $border-color: color(border-focus, form),
+          $ring-color: color(shadow-focus, form)
         );
       }
 

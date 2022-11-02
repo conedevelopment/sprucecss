@@ -10,11 +10,11 @@
       outline: none;
 
       &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 $form-input-shadow-width color(range-thumb-shadow, form);
+        box-shadow: 0 0 0 $form-input-focus-ring-width color(range-thumb-shadow, form);
       }
 
       &::-moz-range-thumb {
-        box-shadow: 0 0 0 $form-input-shadow-width color(range-thumb-shadow, form);
+        box-shadow: 0 0 0 $form-input-focus-ring-width color(range-thumb-shadow, form);
       }
     }
 

@@ -14,6 +14,9 @@ $spacer: 1.25rem;
       tertiary-background: $color-tertiary,
       tertiary-foreground: hsl(0 0% 100%),
       tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75)
+    ),
+    form: (
+      shadow-focus: hsl(262 71% 49%)
     )
   ),
   $dark-colors: dark.$colors,
@@ -26,5 +29,7 @@ $spacer: 1.25rem;
     print: true
   ),
   $form-check-font-size-lg: 1.35rem,
-  $form-check-font-weight: 400
+  $form-check-font-weight: 400,
+  $form-input-focus-ring-width: 2px,
+  $form-input-focus-ring-offset: -4px
 );
