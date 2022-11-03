@@ -42,12 +42,12 @@
 
 
       @include focus-ring(
-        $type: $form-check-focus-ring-type,
+        $type: $btn-focus-ring-type,
         $border-color: null,
         $ring-color: $ring-color,
-        $box-shadow-type: $form-check-focus-ring-box-shadow-type,
-        $ring-width: $form-check-focus-ring-width,
-        $ring-offset: $form-check-focus-ring-offset
+        $box-shadow-type: $btn-focus-ring-box-shadow-type,
+        $ring-width: $btn-focus-ring-width,
+        $ring-offset: $btn-focus-ring-offset
       );
     }
   }
