@@ -35,7 +35,6 @@
 
       @if map.has-key($colors, btn, $type + '-focus-ring') {
         $ring-color: color($type + '-focus-ring', btn);
-        @debug $ring-color;
       } @else {
         $ring-color: color($type + '-background', btn);
       }
