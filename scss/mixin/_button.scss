@@ -29,7 +29,7 @@
   }
 
   @if $focus {
-    &:focus {
+    &:focus-visible {
       @if map.has-key($colors, btn, $type + '-shadow-focus') {
         box-shadow: 0 0 0 $btn-shadow-width color($type + '-shadow-focus', btn);
       } @else {

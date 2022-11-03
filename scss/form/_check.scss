@@ -64,9 +64,9 @@
         border-radius: $form-check-checkbox-border-radius;
       }
 
-      &:focus {
+      &:focus-visible {
         @include field-focus(
-          $type: 'outline',
+          $type: outline,
           $border-color: color(border-focus, form),
           $ring-color: color(shadow-focus, form)
         );

@@ -55,8 +55,9 @@
       transition-timing-function: transition(timing-function);
       width: 2em;
 
-      &:focus {
+      &:focus-visible {
         @include field-focus(
+          $type: 'outline',
           $border-color: color(border-focus, form),
           $ring-color: color(shadow-focus, form)
         );
