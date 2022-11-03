@@ -1,20 +1,35 @@
 @use '../config' as *;
 @use '../function' as *;
+@use '../mixin' as *;
 
 @mixin generate-form-range {
   .form-range {
     appearance: none;
     margin-block-start: calc(#{$form-range-thumb-height} / 2 - #{$form-range-track-height} / 2);
 
-    &:focus {
+    &:focus-visible {
       outline: none;
 
       &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 $form-input-focus-ring-width color(range-thumb-shadow, form);
+        @include focus-ring(
+          $type: $form-range-focus-ring-type,
+          $border-color: null,
+          $ring-color: color(range-thumb-focus-ring, form),
+          $box-shadow-type: $form-range-focus-ring-box-shadow-type,
+          $ring-width: $form-range-focus-ring-width,
+          $ring-offset: $form-range-focus-ring-offset
+        );
       }
 
       &::-moz-range-thumb {
-        box-shadow: 0 0 0 $form-input-focus-ring-width color(range-thumb-shadow, form);
+        @include focus-ring(
+          $type: $form-range-focus-ring-type,
+          $border-color: null,
+          $ring-color: color(range-thumb-focus-ring, form),
+          $box-shadow-type: $form-range-focus-ring-box-shadow-type,
+          $ring-width: $form-range-focus-ring-width,
+          $ring-offset: $form-range-focus-ring-offset
+        );
       }
     }
 

@@ -30,11 +30,11 @@
       color: color(placeholder, form);
     };
 
-    &:focus-visible {
-      @include field-focus(
+    &:focus {
+      @include focus-ring(
         $type: $form-control-focus-ring-type,
         $border-color: color(border-focus, form),
-        $ring-color: color(shadow-focus, form),
+        $ring-color: color(ring-focus, form),
         $box-shadow-type: $form-control-focus-ring-box-shadow-type,
         $ring-width: $form-control-focus-ring-width,
         $ring-offset: $form-control-focus-ring-offset
@@ -96,7 +96,7 @@
         border-color: color(success, alert);
 
         &:focus {
-          @include field-focus(
+          @include focus-ring(
             $border-color: color(valid, form),
             $ring-color: color(valid-shadow, form)
           );
@@ -108,7 +108,7 @@
         border-color: color(danger, alert);
 
         &:focus {
-          @include field-focus(
+          @include focus-ring(
             $border-color: color(invalid, form),
             $ring-color: color(invalid-shadow, form)
           );

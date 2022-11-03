@@ -3,7 +3,7 @@
 @use '../config' as *;
 
 // Style field focus state
-@mixin field-focus(
+@mixin focus-ring(
   $type: 'box-shadow',
   $border-color,
   $ring-color,
@@ -11,8 +11,6 @@
   $ring-width: 2px,
   $ring-offset: 2px
 ) {
-  @debug $box-shadow-type;
-
   @if $type == 'box-shadow' {
     border-color: $border-color;
     @if $box-shadow-type == 'inset' {

@@ -51,15 +51,18 @@
       line-height: 1;
       margin-block-start: $form-switch-margin-block-start;
       transition-duration: transition(duration);
-      transition-property: background-position border, box-shadow;
+      transition-property: background-position, border, box-shadow;
       transition-timing-function: transition(timing-function);
       width: 2em;
 
       &:focus-visible {
-        @include field-focus(
-          $type: 'outline',
+        @include focus-ring(
+          $type: $form-check-focus-ring-type,
           $border-color: color(border-focus, form),
-          $ring-color: color(shadow-focus, form)
+          $ring-color: color(check-focus-ring, form),
+          $box-shadow-type: $form-check-focus-ring-box-shadow-type,
+          $ring-width: $form-check-focus-ring-width,
+          $ring-offset: $form-check-focus-ring-offset
         );
       }
 

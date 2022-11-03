@@ -65,10 +65,13 @@
       }
 
       &:focus-visible {
-        @include field-focus(
-          $type: outline,
+        @include focus-ring(
+          $type: $form-check-focus-ring-type,
           $border-color: color(border-focus, form),
-          $ring-color: color(shadow-focus, form)
+          $ring-color: color(check-focus-ring, form),
+          $box-shadow-type: $form-check-focus-ring-box-shadow-type,
+          $ring-width: $form-check-focus-ring-width,
+          $ring-offset: $form-check-focus-ring-offset
         );
       }
 
