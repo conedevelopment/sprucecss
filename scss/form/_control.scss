@@ -97,8 +97,12 @@
 
         &:focus {
           @include focus-ring(
+            $type: $form-control-focus-ring-type,
             $border-color: color(valid, form),
-            $ring-color: color(valid-shadow, form)
+            $ring-color: color(valid-focus-ring, form),
+            $box-shadow-type: $form-control-focus-ring-box-shadow-type,
+            $ring-width: $form-control-focus-ring-width,
+            $ring-offset: $form-control-focus-ring-offset
           );
         }
       }
@@ -109,8 +113,12 @@
 
         &:focus {
           @include focus-ring(
+            $type: $form-control-focus-ring-type,
             $border-color: color(invalid, form),
-            $ring-color: color(invalid-shadow, form)
+            $ring-color: color(invalid-focus-ring, form),
+            $box-shadow-type: $form-control-focus-ring-box-shadow-type,
+            $ring-width: $form-control-focus-ring-width,
+            $ring-offset: $form-control-focus-ring-offset
           );
         }
       }

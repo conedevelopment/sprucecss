@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use '../function' as *;
 @use '../config' as *;
+@use 'form' as *;
 
 @mixin btn-variant(
   $type: primary,
@@ -30,12 +31,24 @@
 
   @if $focus {
     &:focus-visible {
-      @if map.has-key($colors, btn, $type + '-shadow-focus') {
-        box-shadow: 0 0 0 $btn-shadow-width color($type + '-shadow-focus', btn);
+      $ring-color: null;
+
+      @if map.has-key($colors, btn, $type + '-focus-ring') {
+        $ring-color: color($type + '-focus-ring', btn);
+        @debug $ring-color;
       } @else {
-        box-shadow: 0 0 0 $btn-shadow-width color.adjust(color($type + '-background', btn, true), $alpha: -0.75);
+        $ring-color: color($type + '-background', btn);
       }
-      outline: 2px solid transparent;
+
+
+      @include focus-ring(
+        $type: $form-check-focus-ring-type,
+        $border-color: null,
+        $ring-color: $ring-color,
+        $box-shadow-type: $form-check-focus-ring-box-shadow-type,
+        $ring-width: $form-check-focus-ring-width,
+        $ring-offset: $form-check-focus-ring-offset
+      );
     }
   }
 }
