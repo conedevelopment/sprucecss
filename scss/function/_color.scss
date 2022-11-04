@@ -14,6 +14,10 @@
     @error 'The #{$key} key name doesn\'t exist under #{$type} at the specified map (default: $colors).';
   }
 
+  @if map.get($map, $type, $key) == null {
+    @return null;
+  }
+
   @if $only-color {
     @return map.get($map, $type, $key);
   }

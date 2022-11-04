@@ -19,10 +19,6 @@
   '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
-body {
-  background-color: spruce.color(background);
-}
-
 .btn--custom {
   @include spruce.btn-variant(custom);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
