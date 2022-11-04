@@ -10,6 +10,8 @@
   $has-select: true
 ) {
   #{$selector} {
+    --webkit-date-line-height: 1.375;
+
     appearance: none;
     background-color: color(background, form);
     border: $form-control-border-width solid color(border, form);
@@ -29,6 +31,10 @@
     &::placeholder {
       color: color(placeholder, form);
     };
+
+    &::-webkit-datetime-edit {
+      line-height: var(--webkit-date-line-height);
+    }
 
     &:focus {
       @include focus-ring(
@@ -127,6 +133,8 @@
     // Sizes
     @if ($has-sizes) {
       &--sm {
+        --webkit-date-line-height: 1.36;
+
         font-size: $form-control-font-size-sm;
         padding: $form-control-padding-sm;
 
@@ -137,6 +145,8 @@
       }
 
       &--lg {
+        --webkit-date-line-height: 1.387;
+
         font-size: $form-control-font-size-lg;
         padding: $form-control-padding-lg;
 
