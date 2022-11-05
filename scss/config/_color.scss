@@ -28,7 +28,7 @@ $colors: map.deep-merge(
       mark-background: hsl(50 100% 80%),
       mark-foreground: $color-black,
       marker: $color-primary,
-      code-background: color.change($color-primary, $lightness: 95%),
+      code-background: color.change($color-primary, $lightness: 97%),
       code-foreground: $color-black,
       blockquote-border: $color-primary
     ),
