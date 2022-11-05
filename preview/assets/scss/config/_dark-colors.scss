@@ -38,14 +38,11 @@ $colors: (
   btn: (
     primary-background: hsl(261 52% 59%),
     primary-foreground: $color-white,
-    primary-shadow-focus: color.adjust(hsl(261 52% 59%), $alpha: -0.75),
     secondary-background: $color-secondary,
     secondary-foreground: $color-white,
-    secondary-shadow-focus: color.adjust($color-secondary, $alpha: -0.75),
     install-background: hsl(207 39% 17%),
     install-background-hover: hsl(207 23% 26%),
-    install-foreground: hsl(0 0% 100%),
-    install-foreground-hover: hsl(0 0% 100%),
+    install-foreground: hsl(0 0% 100%)
   ),
   form: (
     background: color.scale($color-black, $lightness: 5%),
@@ -53,21 +50,22 @@ $colors: (
     border: $color-gray-dark,
     border-disabled: $color-gray-dark,
     border-focus: $color-primary,
-    shadow-focus: color.adjust($color-primary, $alpha: -0.75),
+    ring-focus: color.adjust($color-primary, $alpha: -0.75),
     check-foreground: $color-black,
     check-background: $color-primary,
+    check-focus-ring: $color-primary,
     invalid: $color-danger,
-    invalid-shadow: color.adjust($color-danger, $alpha: -0.75),
+    invalid-focus-ring: color.adjust($color-danger, $alpha: -0.75),
     label: $color-white,
     legend: $color-white,
     placeholder: hsl(0 0% 60%),
     range-thumb-background: $color-primary,
-    range-thumb-shadow: color.adjust($color-primary, $alpha: -0.75),
-    range-track-background: color.scale($color-black, $lightness: 10%),
+    range-thumb-focus-ring: $color-primary,
+    range-track-background: $color-gray-dark,
     text: $color-gray,
     select-foreground: hsl(0 0% 100%),
     valid: $color-success,
-    valid-shadow: color.adjust($color-success, $alpha: -0.75)
+    valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
   ),
   table: (
     border: $color-gray-dark,

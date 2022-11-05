@@ -16,7 +16,6 @@
 -   Add `$table-caption-*` variables.
 
 ### Breaking changes
-
 Although this is not a major feature, some moderate breaking changes can be related to the `focus-ring()` mixin and its colors.
 
 And other smaller modifications and fixes.
