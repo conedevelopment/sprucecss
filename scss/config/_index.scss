@@ -10,12 +10,4 @@
 @forward 'transition';
 @forward 'breakpoint';
 @forward 'print';
-
-// Characters to escape using SVG as data:image
-$escaping-characters: (
-  ('<', '%3c'),
-  ('>', '%3e'),
-  ('#', '%23'),
-  ('(', '%28'),
-  (')', '%29'),
-) !default;
+@forward 'escaping-characters';
