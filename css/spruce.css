@@ -320,7 +320,7 @@ template {
   --spruce-base-color-mark-background: hsl(50deg, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(205deg, 100%, 2%);
   --spruce-base-color-marker: hsl(262deg, 71%, 49%);
-  --spruce-base-color-code-background: #f0e9fb;
+  --spruce-base-color-code-background: #f6f2fd;
   --spruce-base-color-code-foreground: hsl(205deg, 100%, 2%);
   --spruce-base-color-blockquote-border: hsl(262deg, 71%, 49%);
 }
@@ -339,15 +339,9 @@ template {
 
 :root {
   --spruce-btn-color-primary-background: hsl(262deg, 71%, 49%);
-  --spruce-btn-color-primary-background-hover: #511daa;
   --spruce-btn-color-primary-foreground: hsl(0deg, 0%, 100%);
-  --spruce-btn-color-primary-foreground-hover: hsl(0deg, 0%, 100%);
-  --spruce-btn-color-primary-shadow-focus: rgba(101, 36, 214, 0.25);
   --spruce-btn-color-secondary-background: hsl(227deg, 92%, 55%);
-  --spruce-btn-color-secondary-background-hover: #0937dc;
   --spruce-btn-color-secondary-foreground: hsl(0deg, 0%, 100%);
-  --spruce-btn-color-secondary-foreground-hover: hsl(0deg, 0%, 100%);
-  --spruce-btn-color-secondary-shadow-focus: rgba(35, 80, 246, 0.25);
 }
 
 :root {
@@ -356,21 +350,22 @@ template {
   --spruce-form-color-border: hsl(260deg, 4%, 70%);
   --spruce-form-color-border-disabled: hsl(0deg, 0%, 90%);
   --spruce-form-color-border-focus: hsl(262deg, 71%, 49%);
-  --spruce-form-color-shadow-focus: rgba(101, 36, 214, 0.25);
+  --spruce-form-color-ring-focus: rgba(101, 36, 214, 0.25);
   --spruce-form-color-check-foreground: hsl(0deg, 0%, 100%);
   --spruce-form-color-check-background: hsl(262deg, 71%, 49%);
+  --spruce-form-color-check-focus-ring: hsl(262deg, 71%, 49%);
   --spruce-form-color-invalid: hsl(0deg, 71%, 51%);
-  --spruce-form-color-invalid-shadow: rgba(219, 41, 41, 0.25);
+  --spruce-form-color-invalid-focus-ring: rgba(219, 41, 41, 0.25);
   --spruce-form-color-label: hsl(205deg, 100%, 2%);
   --spruce-form-color-legend: hsl(205deg, 100%, 2%);
   --spruce-form-color-placeholder: hsl(208deg, 7%, 40%);
   --spruce-form-color-range-thumb-background: hsl(262deg, 71%, 49%);
-  --spruce-form-color-range-thumb-shadow: rgba(101, 36, 214, 0.25);
+  --spruce-form-color-range-thumb-focus-ring: hsl(262deg, 71%, 49%);
   --spruce-form-color-range-track-background: hsl(0deg, 0%, 90%);
   --spruce-form-color-text: hsl(208deg, 7%, 30%);
   --spruce-form-color-select-foreground: hsl(205deg, 100%, 2%);
   --spruce-form-color-valid: hsl(150deg, 100%, 33%);
-  --spruce-form-color-valid-shadow: rgba(0, 168, 84, 0.25);
+  --spruce-form-color-valid-focus-ring: rgba(0, 168, 84, 0.25);
 }
 
 :root {
@@ -548,17 +543,17 @@ figure figcaption {
 }
 .table--sm th,
 .table--sm td {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
 }
 .table--rounded th:first-child,
 .table--rounded td:first-child {
-  border-end-start-radius: 0.925rem;
-  border-start-start-radius: 0.925rem;
+  border-end-start-radius: 0.425rem;
+  border-start-start-radius: 0.425rem;
 }
 .table--rounded th:last-child,
 .table--rounded td:last-child {
-  border-end-end-radius: 0.925rem;
-  border-start-end-radius: 0.925rem;
+  border-end-end-radius: 0.425rem;
+  border-start-end-radius: 0.425rem;
 }
 
 html {
@@ -738,7 +733,7 @@ samp {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
 }
 
 /* stylelint-disable */
@@ -815,12 +810,12 @@ samp {
   color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
-  color: var(--spruce-btn-color-primary-foreground-hover);
+  background-color: #511daa;
+  color: var(--spruce-btn-color-primary-foreground);
 }
-.btn--primary:focus {
-  box-shadow: 0 0 0 0.25rem var(--spruce-btn-color-primary-shadow-focus);
-  outline: 2px solid transparent;
+.btn--primary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-primary-background);
+  outline-offset: 2px;
 }
 
 .btn--secondary {
@@ -828,12 +823,12 @@ samp {
   color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background-hover);
-  color: var(--spruce-btn-color-secondary-foreground-hover);
+  background-color: #0937dc;
+  color: var(--spruce-btn-color-secondary-foreground);
 }
-.btn--secondary:focus {
-  box-shadow: 0 0 0 0.25rem var(--spruce-btn-color-secondary-shadow-focus);
-  outline: 2px solid transparent;
+.btn--secondary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-secondary-background);
+  outline-offset: 2px;
 }
 
 .form-file::-webkit-file-upload-button {
@@ -946,12 +941,12 @@ samp {
           margin-inline-end: 1rem;
 }
 .form-file::-webkit-file-upload-button:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
-  color: var(--spruce-btn-color-primary-foreground-hover);
+  background-color: #511daa;
+  color: var(--spruce-btn-color-primary-foreground);
 }
 .form-file::file-selector-button:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
-  color: var(--spruce-btn-color-primary-foreground-hover);
+  background-color: #511daa;
+  color: var(--spruce-btn-color-primary-foreground);
 }
 
 .form-label {
@@ -966,6 +961,7 @@ samp {
 }
 
 .form-control {
+  --webkit-date-line-height: 1.375;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -989,9 +985,12 @@ samp {
 .form-control::placeholder {
   color: var(--spruce-form-color-placeholder);
 }
+.form-control::-webkit-datetime-edit {
+  line-height: var(--webkit-date-line-height);
+}
 .form-control:focus {
   border-color: var(--spruce-form-color-border-focus);
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-shadow-focus);
+  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-ring-focus);
   outline: 2px solid transparent;
 }
 .form-control[type=color] {
@@ -1036,7 +1035,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 .form-control--valid:focus {
   border-color: var(--spruce-form-color-valid);
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-valid-shadow);
+  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-valid-focus-ring);
   outline: 2px solid transparent;
 }
 .form-control--invalid {
@@ -1045,10 +1044,11 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 .form-control--invalid:focus {
   border-color: var(--spruce-form-color-invalid);
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-invalid-shadow);
+  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-invalid-focus-ring);
   outline: 2px solid transparent;
 }
 .form-control--sm {
+  --webkit-date-line-height: 1.36;
   font-size: 0.9rem;
   padding: 0.25em 0.5em;
 }
@@ -1057,6 +1057,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   padding: 0.25em;
 }
 .form-control--lg {
+  --webkit-date-line-height: 1.387;
   font-size: 1.1rem;
   padding: 0.65em 1em;
 }
@@ -1083,6 +1084,14 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   gap: 0.5rem;
 }
 
+.form-check--vertical-center {
+  align-items: center;
+}
+
+.form-check--vertical-start {
+  align-items: flex-start;
+}
+
 .form-check--sm .form-check__control {
   font-size: 1rem;
 }
@@ -1104,8 +1113,8 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   font-size: 1.125rem;
   height: 1em;
   line-height: 1;
-  -webkit-margin-after: -0.1em;
-          margin-block-end: -0.1em;
+  -webkit-margin-before: 0.1em;
+          margin-block-start: 0.1em;
   transition-duration: var(--spruce-transition-duration);
   transition-property: border, box-shadow;
   transition-timing-function: var(--spruce-transition-timing-function);
@@ -1117,10 +1126,9 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 .form-check__control[type=checkbox] {
   border-radius: 0.425rem;
 }
-.form-check__control:focus {
-  border-color: var(--spruce-form-color-border-focus);
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-shadow-focus);
-  outline: 2px solid transparent;
+.form-check__control:focus-visible {
+  outline: 2px solid var(--spruce-form-color-check-focus-ring);
+  outline-offset: 2px;
 }
 .form-check__control:checked {
   background-color: var(--spruce-form-color-check-background);
@@ -1183,17 +1191,16 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   font-size: 1.125rem;
   height: 1em;
   line-height: 1;
-  -webkit-margin-after: -0.1em;
-          margin-block-end: -0.1em;
+  -webkit-margin-before: 0.25em;
+          margin-block-start: 0.25em;
   transition-duration: var(--spruce-transition-duration);
-  transition-property: background-position border, box-shadow;
+  transition-property: background-position, border, box-shadow;
   transition-timing-function: var(--spruce-transition-timing-function);
   width: 2em;
 }
-.form-switch__control:focus {
-  border-color: var(--spruce-form-color-border-focus);
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-shadow-focus);
-  outline: 2px solid transparent;
+.form-switch__control:focus-visible {
+  outline: 2px solid var(--spruce-form-color-check-focus-ring);
+  outline-offset: 2px;
 }
 .form-switch__control:checked {
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:hsl%280deg, 0%, 100%%29;"/%3e%3c/svg%3e');
@@ -1375,14 +1382,16 @@ legend {
   -webkit-margin-before: calc(1rem / 2 - 0.25rem / 2);
           margin-block-start: calc(1rem / 2 - 0.25rem / 2);
 }
-.form-range:focus {
+.form-range:focus-visible {
   outline: none;
 }
-.form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-range-thumb-shadow);
+.form-range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--spruce-form-color-range-thumb-focus-ring);
+  outline-offset: 2px;
 }
-.form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 0.25rem var(--spruce-form-color-range-thumb-shadow);
+.form-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--spruce-form-color-range-thumb-focus-ring);
+  outline-offset: 2px;
 }
 .form-range::-webkit-slider-runnable-track {
   background-color: var(--spruce-form-color-range-track-background);
@@ -1398,7 +1407,7 @@ legend {
   -webkit-appearance: none;
           appearance: none;
   background-color: var(--spruce-form-color-range-thumb-background);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   height: 1rem;
   -webkit-margin-before: calc(0.25rem / 2 - 1rem / 2);
           margin-block-start: calc(0.25rem / 2 - 1rem / 2);
@@ -1407,7 +1416,7 @@ legend {
 .form-range::-moz-range-thumb {
   background-color: var(--spruce-form-color-range-thumb-background);
   border: 0; /*Removes extra border that FF applies*/
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   height: 1rem;
   width: 1rem;
 }
