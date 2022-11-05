@@ -33,6 +33,11 @@ $form-control-padding-lg: 0.65em 1em !default;
 $form-control-border-width: 1px !default;
 $form-control-border-radius: $border-radius-sm !default;
 
+$form-control-focus-ring-type: box-shadow !default;
+$form-control-focus-ring-box-shadow-type: outside !default;
+$form-control-focus-ring-width: 0.25rem !default;
+$form-control-focus-ring-offset: 2px !default;
+
 $form-control-color-padding: 0.5em !default;
 $form-control-color-padding-sm: 0.25em !default;
 $form-control-color-padding-lg: 0.75em !default;
@@ -41,11 +46,6 @@ $form-control-color-height-sm: calc(#{$form-control-line-height}em + ( #{$form-c
 $form-control-color-height-lg: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-lg} + #{$form-control-border-width} ) * 2) !default;
 
 $form-control-textarea-height: 6rem !default;
-
-$form-control-focus-ring-type: box-shadow !default;
-$form-control-focus-ring-box-shadow-type: outside !default;
-$form-control-focus-ring-width: 0.25rem !default;
-$form-control-focus-ring-offset: 2px !default;
 
 $form-check-border-width: 1px !default;
 $form-check-checkbox-border-radius: $border-radius-sm !default;
@@ -69,9 +69,6 @@ $form-switch-font-size-lg: $font-size-lg !default;
 $form-switch-font-weight: $form-label-font-weight !default;
 $form-switch-line-height: $line-height-heading !default;
 $form-switch-margin-block-start: 0.25em !default;
-
-$form-input-focus-ring-width: 0.25rem !default;
-$form-input-focus-ring-offset: 2px !default;
 
 $form-file-background: primary !default;
 
