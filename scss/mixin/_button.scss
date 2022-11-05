@@ -39,10 +39,8 @@
         $ring-color: color($type + '-background', btn);
       }
 
-
       @include focus-ring(
         $type: $btn-focus-ring-type,
-        $border-color: null,
         $ring-color: $ring-color,
         $box-shadow-type: $btn-focus-ring-box-shadow-type,
         $ring-width: $btn-focus-ring-width,

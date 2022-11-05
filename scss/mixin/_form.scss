@@ -5,7 +5,7 @@
 // Style field focus state
 @mixin focus-ring(
   $type: 'box-shadow',
-  $border-color,
+  $border-color: null,
   $ring-color,
   $box-shadow-type: outset,
   $ring-width: 2px,
