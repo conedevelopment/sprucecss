@@ -18,7 +18,7 @@
     font-size: $btn-font-size;
     font-style: $btn-font-style;
     font-weight: $btn-font-weight;
-    gap: spacer(xs);
+    gap: $btn-gap;
     justify-content: center;
     line-height: 1;
     padding: $btn-padding;
@@ -71,10 +71,12 @@
     // Sizes
     #{$selector}--sm#{$pseudo-selector} {
       font-size: $btn-font-size-sm;
+      gap: $btn-gap-sm;
       padding: $btn-padding-sm;
     }
 
     #{$selector}--lg#{$pseudo-selector} {
+      gap: $btn-gap-lg;
       padding: $btn-padding-lg;
 
       @include breakpoint(md) {
