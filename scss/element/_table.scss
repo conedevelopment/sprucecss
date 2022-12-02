@@ -38,7 +38,7 @@
     }
 
     &--striped {
-      > tbody > tr:nth-child(even) {
+      > tbody > tr:nth-child(#{$table-stripe}) {
         background-color: color(stripe, table);
       }
     }

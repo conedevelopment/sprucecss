@@ -10,3 +10,5 @@ $table-padding-sm: map.get($spacers, xs) !default;
 $table-caption-font-size: null !default;
 $table-caption-font-style: null !default;
 $table-caption-font-weight: null !default;
+
+$table-stripe: odd !default;
