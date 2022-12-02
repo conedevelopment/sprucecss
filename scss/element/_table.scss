@@ -1,7 +1,10 @@
 @use '../config' as *;
 @use '../function' as *;
 
-@mixin generate-table {
+@mixin generate-table(
+  $selector: '.table',
+  $has-variations: true
+) {
   .table-responsive {
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
@@ -11,7 +14,7 @@
     }
   }
 
-  .table {
+  #{$selector} {
     border-collapse: collapse;
     color: color(text, table);
     width: 100%;
@@ -37,55 +40,57 @@
       text-align: -webkit-match-parent;
     }
 
-    &--striped {
-      > tbody > tr:nth-child(#{$table-stripe}) {
-        background-color: color(stripe, table);
-      }
-    }
-
-    &--hover {
-      > tbody > tr:hover {
-        background: color(hover, table);
-      }
-    }
-
-    &--clear-border {
-      th,
-      td {
-        border: 0;
-      }
-    }
-
-    &--in-line {
-      th:first-child,
-      td:first-child {
-        padding-inline-start: 0;
+    @if ($has-variations) {
+      &--striped {
+        > tbody > tr:nth-child(#{$table-stripe}) {
+          background-color: color(stripe, table);
+        }
       }
 
-      th:last-child,
-      td:last-child {
-        padding-inline-end: 0;
+      &--hover {
+        > tbody > tr:hover {
+          background: color(hover, table);
+        }
       }
-    }
 
-    &--sm {
-      th,
-      td {
-        padding: $table-padding-sm;
+      &--clear-border {
+        th,
+        td {
+          border: 0;
+        }
       }
-    }
 
-    &--rounded {
-      th,
-      td {
-        &:first-child {
-          border-end-start-radius: $border-radius-sm;
-          border-start-start-radius: $border-radius-sm;
+      &--in-line {
+        th:first-child,
+        td:first-child {
+          padding-inline-start: 0;
         }
 
-        &:last-child {
-          border-end-end-radius: $border-radius-sm;
-          border-start-end-radius: $border-radius-sm;
+        th:last-child,
+        td:last-child {
+          padding-inline-end: 0;
+        }
+      }
+
+      &--sm {
+        th,
+        td {
+          padding: $table-padding-sm;
+        }
+      }
+
+      &--rounded {
+        th,
+        td {
+          &:first-child {
+            border-end-start-radius: $border-radius-sm;
+            border-start-start-radius: $border-radius-sm;
+          }
+
+          &:last-child {
+            border-end-end-radius: $border-radius-sm;
+            border-start-end-radius: $border-radius-sm;
+          }
         }
       }
     }

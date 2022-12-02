@@ -19,6 +19,11 @@
   '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
+@include spruce.generate-table(
+  'table',
+  false
+);
+
 .btn--custom {
   @include spruce.btn-variant(custom);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
