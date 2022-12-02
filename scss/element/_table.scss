@@ -3,14 +3,18 @@
 
 @mixin generate-table(
   $selector: '.table',
-  $has-variations: true
+  $has-variations: true,
+  $has-responsive-table: true
 ) {
-  .table-responsive {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
+  @if ($has-responsive-table) {
+    .table-responsive {
+      --min-width: #{$table-responsive-width};
+      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
 
-    table {
-      min-width: $table-responsive-width;
+      table {
+        min-width: var(--min-width);
+      }
     }
   }
 

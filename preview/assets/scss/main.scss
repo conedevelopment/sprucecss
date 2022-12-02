@@ -21,6 +21,7 @@
 
 @include spruce.generate-table(
   'table',
+  false,
   false
 );
 
