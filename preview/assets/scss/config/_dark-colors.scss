@@ -12,6 +12,8 @@ $color-gray-dark: hsl(0 0% 100% / 8%);
 $color-danger: hsl(0 71% 51%);
 $color-success: hsl(150 100% 33%);
 
+@debug $color-black;
+
 $colors: (
   base: (
     card-border: hsl(207 90% 13%),
@@ -37,8 +39,10 @@ $colors: (
   ),
   btn: (
     primary-background: hsl(261 52% 59%),
+    primary-background-hover: hsl(261 52% 65%),
     primary-foreground: $color-white,
     secondary-background: $color-secondary,
+    secondary-background-hover: color.adjust($color-secondary, $lightness: 5%),
     secondary-foreground: $color-white,
     install-background: hsl(207 39% 17%),
     install-background-hover: hsl(207 23% 26%),
@@ -79,21 +83,5 @@ $colors: (
     thumb-background: hsl(0 0% 100% / 0.15),
     thumb-background-hover:	hsl(0 0% 100% / 0.25),
     track-background:	hsl(0 0% 100% / 0.05)
-  ),
-  breadcrumb: (
-    arrow: hsl(0 0% 100% / 0.1)
-  ),
-  prism: (
-    color: hsl(217 34% 88%),
-    background: hsl(207 95% 8%),
-    comment: hsl(180 9% 43%),
-    punctuation: hsl(276 68% 75%),
-    namespace: hsl(197 31% 77%),
-    deleted: hsl(1 83% 63% / 0.56),
-    boolean: hsl(350 100% 67%),
-    number: hsl(14 90% 70%),
-    constant: hsl(221 100% 75%),
-    class-name: hsl(33 100% 77%),
-    regex: hsl(217 34% 88%)
   )
 );

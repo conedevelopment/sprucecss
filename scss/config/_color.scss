@@ -44,8 +44,10 @@ $colors: map.deep-merge(
     ),
     btn: (
       primary-background: $color-primary,
+      primary-background-hover: color.adjust($color-primary, $lightness: -10%),
       primary-foreground: $color-white,
       secondary-background: $color-secondary,
+      secondary-background-hover: color.adjust($color-secondary, $lightness: -10%),
       secondary-foreground: $color-white
     ),
     form: (

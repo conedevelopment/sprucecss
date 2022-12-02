@@ -6,9 +6,6 @@ $spacer: 1.25rem;
 
 @use 'spruce' with (
   $colors: (
-    base: (
-      background: null
-    ),
     btn: (
       custom-background: hsl(0 0% 100%),
       custom-background-hover: hsl(332 49% 29%),
