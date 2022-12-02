@@ -9,7 +9,9 @@
   @each $key, $value in $colors {
     #{$selector} {
       @each $name, $color in $value {
-        --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
+        @if $color {
+          --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
+        }
       }
     }
   }
