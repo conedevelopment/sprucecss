@@ -38,15 +38,6 @@ There is nothing new if you previously used Sass unless you don’t know the new
 
 To start a new Spruce-based project (or experiment), we suggest using our [starter kit](https://github.com/conedevelopment/sprucecss-starter-kit) containing a simple Sass build environment.
 
-## Examples
-
-[Simple examples](https://sprucecss.com/examples/) for how to use and how to get started with Spruce CSS.
-
-- **[Authentication](https://sprucecss.com/examples/html/auth.html)**: A simple login example where you can check out the form styling and some usage of Spruce’s mixins and functions.
-- **[Article](https://sprucecss.com/examples/html/article.html)**: A centered, breaking-out article layout for seeing the typography.
-
-[Find the examples on GitHub](https://github.com/conedevelopment/sprucecss-examples).
-
 ## Documentation
 
 For the complete documentation, please visit our site at [sprucecss.com](https://sprucecss.com). You can edit it at our [separate repository](https://github.com/conedevelopment/sprucecss-site).
@@ -80,6 +71,38 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 - [Buttons](https://sprucecss.com/docs/elements/buttons)
 - [Forms](https://sprucecss.com/docs/elements/forms)
 - [Medias](https://sprucecss.com/docs/elements/media)
+
+## Components
+
+[This collection of reusable user interfaces](https://sprucecss.com/components/) aims to help you create more coherently with Spruce CSS.
+
+### Components
+
+- [Accordion Card](https://sprucecss.com/ui/component/accordion-card)
+- [Accordion List](https://sprucecss.com/ui/component/accordion-list)
+- [Auth Form](https://sprucecss.com/ui/component/auth-form)
+- [Breadcrumb List](https://sprucecss.com/ui/component/breadcrumb-list)
+- [Container](https://sprucecss.com/ui/component/container)
+- [Cookie Consent](https://sprucecss.com/ui/component/cookie-consent)
+- [Post Author](https://sprucecss.com/ui/component/post-author)
+- [Post Card](https://sprucecss.com/ui/component/post-card)
+- [Site Navigation](https://sprucecss.com/ui/component/site-navigation)
+- [Skip Link](https://sprucecss.com/ui/component/skip-link)
+- [Theme Switcher](https://sprucecss.com/ui/component/theme-switcher)
+
+### Sections
+
+- [Gallery](https://sprucecss.com/ui/section/gallery)
+- [Post Content](https://sprucecss.com/ui/section/post-content)
+- [Post Heading](https://sprucecss.com/ui/section/post-heading)
+- [Post List](https://sprucecss.com/ui/section/post-list)
+- [Site Footer](https://sprucecss.com/ui/section/site-footer)
+- [Site Header](https://sprucecss.com/ui/section/site-header)
+
+### Pages
+
+- [Auth](https://sprucecss.com/ui/page/auth)
+- [Post](https://sprucecss.com/ui/page/post)
 
 ## Contributing
 
