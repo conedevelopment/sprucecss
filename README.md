@@ -76,7 +76,7 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 
 <details>
   <summary>
-    [This collection of reusable user interfaces](https://sprucecss.com/ui/getting-started/introduction) aims to help you create more coherently with Spruce CSS.
+    <a href="https://sprucecss.com/ui/getting-started/introduction">This collection of reusable user interfaces</a> aims to help you create more coherently with Spruce CSS.
   </summary>
 
   ### Components
