@@ -74,35 +74,39 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 
 ## Components
 
-[This collection of reusable user interfaces](https://sprucecss.com/components/) aims to help you create more coherently with Spruce CSS.
+<details>
+  <summary>
+    [This collection of reusable user interfaces](https://sprucecss.com/ui/getting-started/introduction) aims to help you create more coherently with Spruce CSS.
+  </summary>
 
-### Components
+  ### Components
 
-- [Accordion Card](https://sprucecss.com/ui/component/accordion-card)
-- [Accordion List](https://sprucecss.com/ui/component/accordion-list)
-- [Auth Form](https://sprucecss.com/ui/component/auth-form)
-- [Breadcrumb List](https://sprucecss.com/ui/component/breadcrumb-list)
-- [Container](https://sprucecss.com/ui/component/container)
-- [Cookie Consent](https://sprucecss.com/ui/component/cookie-consent)
-- [Post Author](https://sprucecss.com/ui/component/post-author)
-- [Post Card](https://sprucecss.com/ui/component/post-card)
-- [Site Navigation](https://sprucecss.com/ui/component/site-navigation)
-- [Skip Link](https://sprucecss.com/ui/component/skip-link)
-- [Theme Switcher](https://sprucecss.com/ui/component/theme-switcher)
+  - [Accordion Card](https://sprucecss.com/ui/component/accordion-card)
+  - [Accordion List](https://sprucecss.com/ui/component/accordion-list)
+  - [Auth Form](https://sprucecss.com/ui/component/auth-form)
+  - [Breadcrumb List](https://sprucecss.com/ui/component/breadcrumb-list)
+  - [Container](https://sprucecss.com/ui/component/container)
+  - [Cookie Consent](https://sprucecss.com/ui/component/cookie-consent)
+  - [Post Author](https://sprucecss.com/ui/component/post-author)
+  - [Post Card](https://sprucecss.com/ui/component/post-card)
+  - [Site Navigation](https://sprucecss.com/ui/component/site-navigation)
+  - [Skip Link](https://sprucecss.com/ui/component/skip-link)
+  - [Theme Switcher](https://sprucecss.com/ui/component/theme-switcher)
 
-### Sections
+  ### Sections
 
-- [Gallery](https://sprucecss.com/ui/section/gallery)
-- [Post Content](https://sprucecss.com/ui/section/post-content)
-- [Post Heading](https://sprucecss.com/ui/section/post-heading)
-- [Post List](https://sprucecss.com/ui/section/post-list)
-- [Site Footer](https://sprucecss.com/ui/section/site-footer)
-- [Site Header](https://sprucecss.com/ui/section/site-header)
+  - [Gallery](https://sprucecss.com/ui/section/gallery)
+  - [Post Content](https://sprucecss.com/ui/section/post-content)
+  - [Post Heading](https://sprucecss.com/ui/section/post-heading)
+  - [Post List](https://sprucecss.com/ui/section/post-list)
+  - [Site Footer](https://sprucecss.com/ui/section/site-footer)
+  - [Site Header](https://sprucecss.com/ui/section/site-header)
 
-### Pages
+  ### Pages
 
-- [Auth](https://sprucecss.com/ui/page/auth)
-- [Post](https://sprucecss.com/ui/page/post)
+  - [Auth](https://sprucecss.com/ui/page/auth)
+  - [Post](https://sprucecss.com/ui/page/post)
+</details>
 
 ## Contributing
 
