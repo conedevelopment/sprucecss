@@ -15,7 +15,7 @@
 
 [![Github release](https://img.shields.io/github/v/release/conedevelopment/sprucecss?color=2350f6&logo=github&logoColor=white&style=for-the-badge)](https://github.com/conedevelopment/sprucecss/releases/latest)
 [![npm version](https://img.shields.io/npm/v/sprucecss?color=2350f6&style=for-the-badge)](https://www.npmjs.com/package/sprucecss)
-[![Back-end](https://img.shields.io/github/actions/workflow/status/conedevelopment/sprucecss/test.yml?branch=main)](https://github.com/conedevelopment/sprucecss/actions/workflows/test.yml)
+[![Back-end](https://img.shields.io/github/actions/workflow/status/conedevelopment/sprucecss/test.yml?branch=main&logo=github&style=for-the-badge&label=Test)](https://github.com/conedevelopment/sprucecss/actions/workflows/test.yml)
 [![License](https://img.shields.io/badge/license-MIT-2350f6?style=for-the-badge)](https://github.com/conedevelopment/sprucecss/blob/main/LICENSE)
 
 ## What is Spruce CSS?
