@@ -16,7 +16,7 @@
   }
 
   ::selection {
-    background-color: #{$background};
-    color: #{$foreground};
+    background-color: $background;
+    color: $foreground;
   }
 }
