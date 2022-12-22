@@ -1,0 +1,21 @@
+@use 'sass:string';
+
+@mixin font-face(
+  $font-family: null,
+  $src: null,
+  $font-weight: 400,
+  $font-style: normal,
+  $font-display: swap
+) {
+  @if not string.index($src, '.woff2') {
+    @error 'It seems that your font format is not .woff2, please use a that format.';
+  }
+
+  @font-face {
+    font-display: $font-display;
+    font-family: $font-family;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url('#{$src}') format('woff2');
+  }
+}

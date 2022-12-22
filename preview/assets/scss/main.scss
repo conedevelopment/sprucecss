@@ -25,6 +25,17 @@
   false
 );
 
+@include spruce.font-face(
+  'Montserrat',
+  '../fonts/montserrat-v25-latin-ext_latin-regular.woff2'
+);
+
+@include spruce.font-face(
+  'Montserrat',
+  '../fonts/montserrat-v25-latin-ext_latin-700.woff2',
+  '700'
+);
+
 .btn--custom {
   @include spruce.btn-variant(custom);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
@@ -79,6 +90,7 @@
 
 .custom-heading-size {
   font-size: spruce.responsive-font-size(4rem, 30, 4vw);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .custom-link {
