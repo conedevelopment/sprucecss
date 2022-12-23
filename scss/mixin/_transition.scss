@@ -1,5 +1,19 @@
-/*
-transition-duration: spruce.transition(duration);
-transition-property: all;
-transition-timing-function: spruce.transition(timing-function);
-*/
+@use '../function' as *;
+
+@mixin transition(
+  $duration: duration,
+  $property: all,
+  $timing-function: timing-function,
+) {
+  @if $duration == duration {
+    transition-duration: transition($duration);
+  } @else {
+    transition-duration: $duration;
+  }
+  transition-property: $property;
+  @if $timing-function == timing-function {
+    transition-timing-function: transition($timing-function);
+  } @else {
+    transition-timing-function: $timing-function;
+  }
+}

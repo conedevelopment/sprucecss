@@ -94,9 +94,12 @@
 }
 
 .custom-link {
+  /*
   transition-duration: spruce.transition(duration);
   transition-property: background-color;
   transition-timing-function: spruce.transition(timing-function);
+  */
+  @include spruce.transition(2s, background-color, linear);
 
   &:hover {
     background-color: aqua;
