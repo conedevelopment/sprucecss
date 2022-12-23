@@ -16,13 +16,13 @@
   $max,
   $optimal: map.get($settings, optimal-spacer-size)
 ) {
-  @if not map.has-key($spacers, $min) {
-    @error 'The #{$min} key name doesn\'t exist at the $spacers or $font-sizes map.';
+  @if map.has-key($spacers, $min) {
+    $min: map.get($spacers, $min);
   }
 
-  @if not map.has-key($spacers, $max) {
-    @error 'The #{$max} key name doesn\'t exist at the $spacers or $font-sizes map.';
+  @if map.has-key($spacers, $max) {
+    $max: map.get($spacers, $max);
   }
 
-  @return clamp(#{map.get($spacers, $min)}, #{$optimal}, #{map.get($spacers, $max)});
+  @return clamp(#{$min}, #{$optimal}, #{$max});
 }
