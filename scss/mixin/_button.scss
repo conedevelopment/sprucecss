@@ -66,7 +66,7 @@
   }
 
   background-color: transparent;
-  border: 1px solid currentColor;
+  border: $btn-outline-width solid currentColor;
   color: color($type + '-background', btn);
 
   &:hover {
