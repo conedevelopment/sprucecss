@@ -5,6 +5,7 @@
 @mixin generate-btn(
   $selector,
   $pseudo-selector: null,
+  $has-outline: true,
   $has-icons: true,
   $has-sizes: true,
 ) {

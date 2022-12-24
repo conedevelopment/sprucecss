@@ -339,8 +339,10 @@ template {
 
 :root {
   --spruce-btn-color-primary-background: hsl(262deg, 71%, 49%);
+  --spruce-btn-color-primary-background-hover: #511daa;
   --spruce-btn-color-primary-foreground: hsl(0deg, 0%, 100%);
   --spruce-btn-color-secondary-background: hsl(227deg, 92%, 55%);
+  --spruce-btn-color-secondary-background-hover: #0937dc;
   --spruce-btn-color-secondary-foreground: hsl(0deg, 0%, 100%);
 }
 
@@ -492,11 +494,12 @@ figure figcaption {
 }
 
 .table-responsive {
+  --min-width: 40rem;
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
 .table-responsive table {
-  min-width: 40rem;
+  min-width: var(--min-width);
 }
 
 .table {
@@ -521,7 +524,7 @@ figure figcaption {
   text-align: inherit;
   text-align: -webkit-match-parent;
 }
-.table--striped > tbody > tr:nth-child(even) {
+.table--striped > tbody > tr:nth-child(odd) {
   background-color: var(--spruce-table-color-stripe);
 }
 .table--hover > tbody > tr:hover {
@@ -789,10 +792,12 @@ samp {
 
 .btn--sm {
   font-size: 0.8rem;
+  gap: 0.25rem;
   padding: 0.5em;
 }
 
 .btn--lg {
+  gap: 0.5rem;
   padding: 0.9em 1.15em;
 }
 @media (min-width: 64em) {
@@ -810,7 +815,7 @@ samp {
   color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:hover {
-  background-color: #511daa;
+  background-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:focus-visible {
@@ -823,10 +828,38 @@ samp {
   color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:hover {
-  background-color: #0937dc;
+  background-color: var(--spruce-btn-color-secondary-background-hover);
   color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-secondary-background);
+  outline-offset: 2px;
+}
+
+.btn--outline-primary {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: var(--spruce-btn-color-primary-background);
+}
+.btn--outline-primary:hover {
+  background-color: var(--spruce-btn-color-primary-background);
+  color: var(--spruce-btn-color-primary-foreground);
+}
+.btn--outline-primary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-primary-background);
+  outline-offset: 2px;
+}
+
+.btn--outline-secondary {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: var(--spruce-btn-color-secondary-background);
+}
+.btn--outline-secondary:hover {
+  background-color: var(--spruce-btn-color-secondary-background);
+  color: var(--spruce-btn-color-secondary-foreground);
+}
+.btn--outline-secondary:focus-visible {
   outline: 2px solid var(--spruce-btn-color-secondary-background);
   outline-offset: 2px;
 }
@@ -881,21 +914,45 @@ samp {
   pointer-events: none;
 }
 
+.form-file--icon {
+  padding: 0.75em;
+}
+.form-file--icon.form-file--sm {
+  padding: 0.5em;
+}
+.form-file--icon.form-file--lg {
+  padding: 0.9em;
+}
+
+.form-file__icon {
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+}
+.form-file__icon--sm {
+  height: 0.85em;
+  width: 0.85em;
+}
+
 .form-file--sm::-webkit-file-upload-button {
   font-size: 0.8rem;
+  gap: 0.25rem;
   padding: 0.5em;
 }
 
 .form-file--sm::file-selector-button {
   font-size: 0.8rem;
+  gap: 0.25rem;
   padding: 0.5em;
 }
 
 .form-file--lg::-webkit-file-upload-button {
+  gap: 0.5rem;
   padding: 0.9em 1.15em;
 }
 
 .form-file--lg::file-selector-button {
+  gap: 0.5rem;
   padding: 0.9em 1.15em;
 }
 @media (min-width: 64em) {
@@ -941,11 +998,11 @@ samp {
           margin-inline-end: 1rem;
 }
 .form-file::-webkit-file-upload-button:hover {
-  background-color: #511daa;
+  background-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
 .form-file::file-selector-button:hover {
-  background-color: #511daa;
+  background-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
 

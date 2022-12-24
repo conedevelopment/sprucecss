@@ -24,6 +24,9 @@
   .btn--primary { @include btn-variant(primary); }
   .btn--secondary { @include btn-variant(secondary); }
 
+  .btn--outline-primary { @include btn-variant-outline(primary); }
+  .btn--outline-secondary { @include btn-variant-outline(secondary); }
+
   @include generate-file-btn(
     '.form-file',
     '::file-selector-button',

@@ -4,6 +4,31 @@
 @use '../config' as *;
 @use 'form' as *;
 
+@mixin btn-focus-helper(
+  $type: primary,
+  $focus: true
+) {
+  @if $focus {
+    &:focus-visible {
+      $ring-color: null;
+
+      @if map.has-key($colors, btn, $type + '-focus-ring') {
+        $ring-color: color($type + '-focus-ring', btn);
+      } @else {
+        $ring-color: color($type + '-background', btn);
+      }
+
+      @include focus-ring(
+        $type: $btn-focus-ring-type,
+        $ring-color: $ring-color,
+        $box-shadow-type: $btn-focus-ring-box-shadow-type,
+        $ring-width: $btn-focus-ring-width,
+        $ring-offset: $btn-focus-ring-offset
+      );
+    }
+  }
+}
+
 @mixin btn-variant(
   $type: primary,
   $focus: true
@@ -29,23 +54,25 @@
     }
   }
 
-  @if $focus {
-    &:focus-visible {
-      $ring-color: null;
+  @include btn-focus-helper($type, $focus);
+}
 
-      @if map.has-key($colors, btn, $type + '-focus-ring') {
-        $ring-color: color($type + '-focus-ring', btn);
-      } @else {
-        $ring-color: color($type + '-background', btn);
-      }
-
-      @include focus-ring(
-        $type: $btn-focus-ring-type,
-        $ring-color: $ring-color,
-        $box-shadow-type: $btn-focus-ring-box-shadow-type,
-        $ring-width: $btn-focus-ring-width,
-        $ring-offset: $btn-focus-ring-offset
-      );
-    }
+@mixin btn-variant-outline(
+  $type: primary,
+  $focus: true
+) {
+  @if not map.has-key($colors, btn, $type + '-foreground') or not map.has-key($colors, btn, $type + '-background') {
+    @error 'The #{$type + '-foreground'} or #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
   }
+
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: color($type + '-background', btn);
+
+  &:hover {
+    background-color: color($type + '-background', btn);
+    color: color($type + '-foreground', btn);
+  }
+
+  @include btn-focus-helper($type, $focus);
 }
