@@ -40,13 +40,16 @@
   @include btn-focus-helper($type, $focus);
 
   background-color: color($type + '-background', btn);
+  border-color: color($type + '-background', btn);
   color: color($type + '-foreground', btn);
 
   &:hover {
     @if map.has-key($colors, btn, $type + '-background-hover') {
       background-color: color($type + '-background-hover', btn);
+      border-color: color($type + '-background-hover', btn);
     } @else {
       background-color: color.adjust(color($type + '-background', btn, true), $lightness: -10%);
+      border-color: color.adjust(color($type + '-background', btn, true), $lightness: -10%);
     }
 
     @if map.has-key($colors, btn, $type + '-foreground-hover') {
@@ -68,7 +71,7 @@
   @include btn-focus-helper($type, $focus);
 
   background-color: transparent;
-  border: $btn-outline-width solid color($type + '-background', btn);
+  border-color: color($type + '-background', btn);
   color: color($type + '-background', btn);
 
   &:hover {

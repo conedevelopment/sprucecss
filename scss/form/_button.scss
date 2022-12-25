@@ -11,7 +11,8 @@
 ) {
   #{$selector}#{$pseudo-selector} {
     align-items: center;
-    border: 0;
+    border-style: solid;
+    border-width: $btn-outline-width;
     border-radius: $btn-border-radius;
     cursor: pointer;
     display: inline-flex;
@@ -26,7 +27,7 @@
     text-align: start;
     text-decoration: none;
     transition-duration: transition(duration);
-    transition-property: background-color, box-shadow, color;
+    transition-property: background-color,border-color, box-shadow, color;
     transition-timing-function: transition(timing-function);
   }
 
