@@ -11,9 +11,9 @@
 ) {
   #{$selector}#{$pseudo-selector} {
     align-items: center;
+    border-radius: $btn-border-radius;
     border-style: solid;
     border-width: $btn-outline-width;
-    border-radius: $btn-border-radius;
     cursor: pointer;
     display: inline-flex;
     font-family: $btn-font-family;
