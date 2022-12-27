@@ -742,8 +742,9 @@ samp {
 /* stylelint-disable */
 .btn {
   align-items: center;
-  border: 0;
   border-radius: 0.425rem;
+  border-style: solid;
+  border-width: 1px;
   cursor: pointer;
   display: inline-flex;
   font-size: 1rem;
@@ -755,7 +756,7 @@ samp {
   text-align: start;
   text-decoration: none;
   transition-duration: var(--spruce-transition-duration);
-  transition-property: background-color, box-shadow, color;
+  transition-property: background-color, border-color, box-shadow, color;
   transition-timing-function: var(--spruce-transition-timing-function);
 }
 
@@ -812,62 +813,67 @@ samp {
 
 .btn--primary {
   background-color: var(--spruce-btn-color-primary-background);
-  color: var(--spruce-btn-color-primary-foreground);
-}
-.btn--primary:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
+  border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--primary:focus-visible {
   outline: 2px solid var(--spruce-btn-color-primary-background);
   outline-offset: 2px;
 }
+.btn--primary:hover {
+  background-color: var(--spruce-btn-color-primary-background-hover);
+  border-color: var(--spruce-btn-color-primary-background-hover);
+  color: var(--spruce-btn-color-primary-foreground);
+}
 
 .btn--secondary {
   background-color: var(--spruce-btn-color-secondary-background);
-  color: var(--spruce-btn-color-secondary-foreground);
-}
-.btn--secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background-hover);
+  border-color: var(--spruce-btn-color-secondary-background);
   color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--secondary:focus-visible {
   outline: 2px solid var(--spruce-btn-color-secondary-background);
   outline-offset: 2px;
 }
+.btn--secondary:hover {
+  background-color: var(--spruce-btn-color-secondary-background-hover);
+  border-color: var(--spruce-btn-color-secondary-background-hover);
+  color: var(--spruce-btn-color-secondary-foreground);
+}
 
 .btn--outline-primary {
   background-color: transparent;
-  border: 1px solid currentColor;
+  border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-background);
-}
-.btn--outline-primary:hover {
-  background-color: var(--spruce-btn-color-primary-background);
-  color: var(--spruce-btn-color-primary-foreground);
 }
 .btn--outline-primary:focus-visible {
   outline: 2px solid var(--spruce-btn-color-primary-background);
   outline-offset: 2px;
 }
+.btn--outline-primary:hover {
+  background-color: var(--spruce-btn-color-primary-background);
+  color: var(--spruce-btn-color-primary-foreground);
+}
 
 .btn--outline-secondary {
   background-color: transparent;
-  border: 1px solid currentColor;
+  border-color: var(--spruce-btn-color-secondary-background);
   color: var(--spruce-btn-color-secondary-background);
-}
-.btn--outline-secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background);
-  color: var(--spruce-btn-color-secondary-foreground);
 }
 .btn--outline-secondary:focus-visible {
   outline: 2px solid var(--spruce-btn-color-secondary-background);
   outline-offset: 2px;
 }
+.btn--outline-secondary:hover {
+  background-color: var(--spruce-btn-color-secondary-background);
+  color: var(--spruce-btn-color-secondary-foreground);
+}
 
 .form-file::-webkit-file-upload-button {
   align-items: center;
-  border: 0;
   border-radius: 0.425rem;
+  border-style: solid;
+  border-width: 1px;
   cursor: pointer;
   display: inline-flex;
   font-size: 1rem;
@@ -879,15 +885,16 @@ samp {
   text-align: start;
   text-decoration: none;
   transition-duration: var(--spruce-transition-duration);
-  -webkit-transition-property: background-color, box-shadow, color;
-  transition-property: background-color, box-shadow, color;
+  -webkit-transition-property: background-color, border-color, box-shadow, color;
+  transition-property: background-color, border-color, box-shadow, color;
   transition-timing-function: var(--spruce-transition-timing-function);
 }
 
 .form-file::file-selector-button {
   align-items: center;
-  border: 0;
   border-radius: 0.425rem;
+  border-style: solid;
+  border-width: 1px;
   cursor: pointer;
   display: inline-flex;
   font-size: 1rem;
@@ -899,7 +906,7 @@ samp {
   text-align: start;
   text-decoration: none;
   transition-duration: var(--spruce-transition-duration);
-  transition-property: background-color, box-shadow, color;
+  transition-property: background-color, border-color, box-shadow, color;
   transition-timing-function: var(--spruce-transition-timing-function);
 }
 
@@ -987,22 +994,26 @@ samp {
 }
 .form-file::-webkit-file-upload-button {
   background-color: var(--spruce-btn-color-primary-background);
+  border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
   -webkit-margin-end: 1rem;
           margin-inline-end: 1rem;
 }
 .form-file::file-selector-button {
   background-color: var(--spruce-btn-color-primary-background);
+  border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
   -webkit-margin-end: 1rem;
           margin-inline-end: 1rem;
 }
 .form-file::-webkit-file-upload-button:hover {
   background-color: var(--spruce-btn-color-primary-background-hover);
+  border-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
 .form-file::file-selector-button:hover {
   background-color: var(--spruce-btn-color-primary-background-hover);
+  border-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
 

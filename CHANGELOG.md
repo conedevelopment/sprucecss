@@ -1,19 +1,33 @@
 # Spruce CSS Changelog
 
+## v1.2.0 (2022-12-27)
+
+### Improvements
+- Introduce `$table-stripe` variable to control the table stripe pattern (odd, even).
+- Enable selector at [`generate-table`](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_table.scss) mixin.
+- Add `--min-width` variable to `.responsive-table` to control width individually.
+- Add `$font-weight-base` variable.
+- Allow generic value at `spacer-clamp` mixin (not just map key).
+- Add `transition` mixin to get the default transition values easier.
+
+### New features
+- Add `.btn--outline-*` button variants.
+- Add [`font-face`](https://sprucecss.com/docs/sass/mixins#font-face) mixin.
+
 ## v1.1.0 (2022-11-05)
 
 ### Improvements
 - Rework the focus states by adding `focus-ring()` mixin to control the different variations of focus states.
--   Add variables related to focus.
--   Make `$font-size-lead` responsive by default.
--   Add `$form-check-checkbox-border-radius` variable.
--   Change `$form-switch-margin-bottom variable` to `$form-switch-margin-block-start`.
--   Handle null values at color mixin.
--   Hack that date/time input height in webkit.
+- Add variables related to focus.
+- Make `$font-size-lead` responsive by default.
+- Add `$form-check-checkbox-border-radius` variable.
+- Change `$form-switch-margin-bottom variable` to `$form-switch-margin-block-start`.
+- Handle null values at color mixin.
+- Hack that date/time input height in webkit.
 
 ### New features
--   Add `$form-check-vertical-alignment` variable add `.form-check--vertical-center` and `.form-check--vertical-start`.
--   Add `$table-caption-*` variables.
+- Add `$form-check-vertical-alignment` variable add `.form-check--vertical-center` and `.form-check--vertical-start`.
+- Add `$table-caption-*` variables.
 
 ### Breaking changes
 Although this is not a major feature, some moderate breaking changes can be related to the `focus-ring()` mixin and its colors.
