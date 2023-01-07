@@ -76,7 +76,7 @@ And a lot more minor changes and fixes.
 - Add `selection` mixin to handle the `::selection` a bit simpler.
 
 ### Improvements
-- Add `marker` color under `base` to controle the list's `::marker`.
+- Add `marker` color under `base` to control the list's `::marker`.
 - Add `-webkit-tap-highlight-color` with `transparent` value to `html` element.
 - Remove `outline` from `[tabindex='-1']:focus`.
 - Add `$map` argument to the `color` function to use it any map.
