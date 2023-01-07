@@ -70,7 +70,7 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 - [Tables](https://sprucecss.com/docs/elements/tables)
 - [Buttons](https://sprucecss.com/docs/elements/buttons)
 - [Forms](https://sprucecss.com/docs/elements/forms)
-- [Medias](https://sprucecss.com/docs/elements/media)
+- [Media](https://sprucecss.com/docs/elements/media)
 
 ## Components
 
