@@ -1,5 +1,11 @@
 # Spruce CSS Changelog
 
+## v1.2.1 (2023-01-28)
+
+### Improvements
+- Remove unnecessary `$has-outline` argument at `generate-btn` mixin.
+- Reorganize print styles into the `generate-print` mixin.
+
 ## v1.2.0 (2022-12-27)
 
 ### Improvements
