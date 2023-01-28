@@ -2,18 +2,20 @@
 @use '../function' as *;
 @use '../mixin' as *;
 
-@if setting(print) == true {
-  @media print {
-    @page {
-      margin: $print-page-margin;
-    }
+@mixin generate-print {
+  @if setting(print) == true {
+    @media print {
+      @page {
+        margin: $print-page-margin;
+      }
 
-    #{$print-hidden-elements} {
-      display: none !important;
-    }
+      #{$print-hidden-elements} {
+        display: none !important;
+      }
 
-    a[href^='http']::after {
-      content: ' (' attr(href) ')';
+      a[href^='http']::after {
+        content: ' (' attr(href) ')';
+      }
     }
   }
 }

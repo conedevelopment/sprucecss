@@ -14,6 +14,7 @@
   @include generate-table;
   @include generate-typography;
   @include generate-utilities;
+  @include generate-print;
 }
 
 // Generate form styling
