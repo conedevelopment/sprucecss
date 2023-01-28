@@ -83,18 +83,23 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 
   - [Accordion Card](https://sprucecss.com/ui/component/accordion-card)
   - [Accordion List](https://sprucecss.com/ui/component/accordion-list)
+  - [Alert](https://sprucecss.com/ui/component/alert)
   - [Auth Form](https://sprucecss.com/ui/component/auth-form)
   - [Breadcrumb List](https://sprucecss.com/ui/component/breadcrumb-list)
   - [Container](https://sprucecss.com/ui/component/container)
   - [Cookie Consent](https://sprucecss.com/ui/component/cookie-consent)
+  - [Invoice](https://sprucecss.com/ui/component/invoice)
+  - [Pagination](https://sprucecss.com/ui/component/pagination)
   - [Post Author](https://sprucecss.com/ui/component/post-author)
   - [Post Card](https://sprucecss.com/ui/component/post-card)
+  - [Preloader](https://sprucecss.com/ui/component/preloader)
   - [Site Navigation](https://sprucecss.com/ui/component/site-navigation)
   - [Skip Link](https://sprucecss.com/ui/component/skip-link)
   - [Theme Switcher](https://sprucecss.com/ui/component/theme-switcher)
 
   ### Sections
 
+  - [Feature](https://sprucecss.com/ui/section/feature)
   - [Gallery](https://sprucecss.com/ui/section/gallery)
   - [Post Content](https://sprucecss.com/ui/section/post-content)
   - [Post Heading](https://sprucecss.com/ui/section/post-heading)
