@@ -82,7 +82,7 @@ And a lot more minor changes and fixes.
 - Add `selection` mixin to handle the `::selection` a bit simpler.
 
 ### Improvements
-- Add `marker` color under `base` to controle the list's `::marker`.
+- Add `marker` color under `base` to control the list's `::marker`.
 - Add `-webkit-tap-highlight-color` with `transparent` value to `html` element.
 - Remove `outline` from `[tabindex='-1']:focus`.
 - Add `$map` argument to the `color` function to use it any map.
@@ -222,7 +222,7 @@ And a lot more minor changes and fixes.
 - Modify `btn-variant()` mixin: add hover foreground color.
 - Global switch to `color()` function's fallback value under the [`$settings`](https://sprucecss.com/docs/sass/variables#settings) map.
 - Modify the [`scrollbar()`](https://sprucecss.com/docs/sass/mixins#scrollbar) mixin to accept hover thumb background-color value.
-- Make `$breakpoints` overwriteable by key.
+- Make `$breakpoints` overwritable by key.
 - Modify `font-size()` and `responsive-font-size()` function to accept optimal size value. The optimal value will fallback to a global settnigs under the `$settings` map.
 
 ### Bugfix
