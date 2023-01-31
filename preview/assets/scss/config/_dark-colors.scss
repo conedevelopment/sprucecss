@@ -12,8 +12,6 @@ $color-gray-dark: hsl(0 0% 100% / 8%);
 $color-danger: hsl(0 71% 51%);
 $color-success: hsl(150 100% 33%);
 
-@debug $color-black;
-
 $colors: (
   base: (
     card-border: hsl(207 90% 13%),
@@ -32,10 +30,6 @@ $colors: (
     code-foreground: $color-white,
     blockquote-border: $color-primary,
     footer-background: hsl(0 0% 0% / 0.15)
-  ),
-  selection: (
-    foreground: $color-white,
-    background: $color-primary
   ),
   btn: (
     primary-background: hsl(261 52% 59%),
@@ -71,6 +65,15 @@ $colors: (
     valid: $color-success,
     valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
   ),
+  selection: (
+    foreground: $color-white,
+    background: $color-primary
+  ),
+  scrollbar: (
+    thumb-background: hsl(0 0% 100% / 0.15),
+    thumb-background-hover:	hsl(0 0% 100% / 0.25),
+    track-background:	hsl(0 0% 100% / 0.05)
+  ),
   table: (
     border: $color-gray-dark,
     caption: $color-gray,
@@ -78,10 +81,5 @@ $colors: (
     hover: hsl(0 0% 100% / 0.05),
     text: $color-gray,
     stripe: hsl(0 0% 100% / 0.025)
-  ),
-  scrollbar: (
-    thumb-background: hsl(0 0% 100% / 0.15),
-    thumb-background-hover:	hsl(0 0% 100% / 0.25),
-    track-background:	hsl(0 0% 100% / 0.05)
   )
 );

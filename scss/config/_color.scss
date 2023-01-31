@@ -16,6 +16,12 @@ $color-success: hsl(150 100% 33%) !default;
 $colors: () !default;
 $colors: map.deep-merge(
   (
+    alert: (
+      danger: $color-danger,
+      info: hsl(195 100% 42%),
+      success: $color-success,
+      warning: hsl(48 89% 55%)
+    ),
     base: (
       primary: $color-primary,
       secondary: $color-secondary,
@@ -31,16 +37,6 @@ $colors: map.deep-merge(
       code-background: color.change($color-primary, $lightness: 97%),
       code-foreground: $color-black,
       blockquote-border: $color-primary
-    ),
-    selection: (
-      foreground: $color-white,
-      background: $color-primary
-    ),
-    alert: (
-      danger: $color-danger,
-      info: hsl(195 100% 42%),
-      success: $color-success,
-      warning: hsl(48 89% 55%)
     ),
     btn: (
       primary-background: $color-primary,
@@ -73,6 +69,15 @@ $colors: map.deep-merge(
       valid: $color-success,
       valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
     ),
+    selection: (
+      foreground: $color-white,
+      background: $color-primary
+    ),
+    scrollbar: (
+      thumb-background: hsl(0 0% 0% / 0.15),
+      thumb-background-hover:	hsl(0 0% 0% / 0.25),
+      track-background:	hsl(0 0% 0% / 0.05)
+    ),
     table: (
       border: $color-gray-light,
       caption: $color-gray,
@@ -80,11 +85,6 @@ $colors: map.deep-merge(
       hover: hsl(0 0% 0% / 0.05),
       text: $color-gray,
       stripe: hsl(0 0% 0% / 0.025)
-    ),
-    scrollbar: (
-      thumb-background: hsl(0 0% 0% / 0.15),
-      thumb-background-hover:	hsl(0 0% 0% / 0.25),
-      track-background:	hsl(0 0% 0% / 0.05)
     )
   ),
   $colors
