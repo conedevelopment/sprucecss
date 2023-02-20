@@ -72,7 +72,7 @@
 }
 
 .selection {
-  @include spruce.selection(olive);
+  @include spruce.selection(secondary);
 }
 
 .ellipsis-btn {

@@ -7,12 +7,18 @@
   $background: primary,
   $foreground: null,
 ) {
+  $is-variable: false;
+  $original-background: $background;
+
   @if map.has-key($colors, 'base', $background) {
-    $background: color($background, $only-color: true);
+    $background: color($background);
+    $is-variable: true;
   }
 
-  @if not $foreground {
+  @if not $foreground and not $is-variable {
     $foreground: color-contrast($background);
+  } @else if not $foreground and $is-variable {
+    $foreground: color-contrast(color($original-background, $only-color: true));
   }
 
   ::selection {
