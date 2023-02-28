@@ -2,7 +2,11 @@
 @use '../function' as *;
 @use '../config' as *;
 
-// Set ::selection with automatic foreground color
+/// Set the ::selection of an element with automatic foreground color.
+/// @param {color} $background - The background color.
+/// @param {color} $foreground - The foreground color. If null, the color will be automatically calculated.
+/// @param {boolean} $is-direct - If true, the selection will be applied to the current element if false it will be applied to its children.
+/// @return {mixin} - The selection mixin.
 @mixin selection(
   $background: primary,
   $foreground: null,

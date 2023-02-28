@@ -8,7 +8,7 @@
 /// @param {string} $type - The type of the color group (base, dark, etc.).
 /// @param {boolean} $only-color - If true, return only the color value.
 /// @param {map} $map - The map to get the color from.
-/// @return {color} - The color value.
+/// @return {color} - The color value or the variable.
 @function color(
   $key,
   $type: base,
