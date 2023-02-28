@@ -71,8 +71,12 @@
   @include spruce.text-ellipsis(2);
 }
 
-.selection {
-  @include spruce.selection(secondary);
+.selection-1 {
+  @include spruce.selection(secondary, $is-direct: true);
+}
+
+.selection-2 {
+  @include spruce.selection(aqua, $is-direct: true);
 }
 
 .ellipsis-btn {

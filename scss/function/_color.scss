@@ -3,7 +3,12 @@
 @use 'setting' as *;
 @use '../config' as *;
 
-// Get color value from $colors Sass map
+/// Get any color value from $colors (or any) Sass map.
+/// @param {string} $key - The key name of the color.
+/// @param {string} $type - The type of the color group (base, dark, etc.).
+/// @param {boolean} $only-color - If true, return only the color value.
+/// @param {map} $map - The map to get the color from.
+/// @return {color} - The color value.
 @function color(
   $key,
   $type: base,
@@ -29,11 +34,17 @@
   @return var(--#{$internal-prefix}#{$type}-color-#{$key});
 }
 
-// Get a white or black color contrast for any color
+/// Get a white or black contrast color for any color (on WCAG standards).
+/// Thanks for David Halford for this function: https://codepen.io/davidhalford/pen/ALrbEP
+/// @param {color} $color - The color to get the contrast color.
+/// @return {color} - The contrast color.
 @function color-contrast($color) {
-  @if color.lightness($color) > 60% {
-    @return hsl(0 100% 0%);
-  } @else {
+  $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
+  $light-color: round((red(#fff) * 299) + (green(#fff) * 587) + (blue(#fff) * 114) / 1000);
+
+  @if abs($color-brightness) < ($light-color / 2) {
     @return hsl(0 0% 100%);
+  } @else {
+    @return hsl(0 100% 0%);
   }
 }

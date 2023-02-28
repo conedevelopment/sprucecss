@@ -6,6 +6,7 @@
 @mixin selection(
   $background: primary,
   $foreground: null,
+  $is-direct: false
 ) {
   $is-variable: false;
   $original-background: $background;
@@ -21,8 +22,15 @@
     $foreground: color-contrast(color($original-background, $only-color: true));
   }
 
-  ::selection {
-    background-color: $background;
-    color: $foreground;
+  @if $is-direct {
+    &::selection {
+      background-color: $background;
+      color: $foreground;
+    }
+  } @else {
+    ::selection {
+      background-color: $background;
+      color: $foreground;
+    }
   }
 }
