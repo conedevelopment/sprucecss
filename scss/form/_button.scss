@@ -25,6 +25,7 @@
     padding: $btn-padding;
     text-align: start;
     text-decoration: none;
+    text-transform: $btn-text-transform;
     transition-duration: transition(duration);
     transition-property: background-color,border-color, box-shadow, color;
     transition-timing-function: transition(timing-function);
