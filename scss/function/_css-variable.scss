@@ -2,7 +2,9 @@
 @use 'sass:map';
 @use '../config' as *;
 
-// Add the prefix value to a CSS custom properties
+/// Add the prefix value to a CSS custom properties.
+/// @param {string} $var - The name of the CSS custom property.
+/// @return {string} - The CSS custom property with the prefix.
 @function get-css-variable($var) {
   @if string.index($var, --) != 1 {
     @error 'It seems that this is not a valid CSS custom property name.';
