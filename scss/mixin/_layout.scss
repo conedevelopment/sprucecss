@@ -84,7 +84,7 @@
   }
 
   display: grid;
-  grid-gap: $gap;
+  gap: $gap;
 
   @supports (width: min(#{$minimum}, 100%)) {
     & {
