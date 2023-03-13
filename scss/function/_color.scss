@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use 'sass:map';
+@use "sass:math";
 @use 'setting' as *;
 @use '../config' as *;
 
@@ -39,10 +40,10 @@
 /// @param {color} $color - The color to get the contrast color.
 /// @return {color} - The contrast color.
 @function color-contrast($color) {
-  $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
-  $light-color: round((red(#fff) * 299) + (green(#fff) * 587) + (blue(#fff) * 114) / 1000);
+  $color-brightness: round((red($color) * 299) + (green($color) * 587) + math.div(blue($color) * 114, 1000));
+  $light-color: round((red(#fff) * 299) + (green(#fff) * 587) + math.div(blue(#fff) * 114, 1000));
 
-  @if abs($color-brightness) < ($light-color / 2) {
+  @if abs($color-brightness) < math.div($light-color, 2) {
     @return hsl(0 0% 100%);
   } @else {
     @return hsl(0 100% 0%);
