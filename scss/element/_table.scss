@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 
@@ -87,13 +88,13 @@
         th,
         td {
           &:first-child {
-            border-end-start-radius: $border-radius-sm;
-            border-start-start-radius: $border-radius-sm;
+            border-end-start-radius: map.get($display, border-radius-sm);
+            border-start-start-radius: map.get($display, border-radius-sm);
           }
 
           &:last-child {
-            border-end-end-radius: $border-radius-sm;
-            border-start-end-radius: $border-radius-sm;
+            border-end-end-radius: map.get($display, border-radius-sm);
+            border-start-end-radius: map.get($display, border-radius-sm);
           }
         }
       }

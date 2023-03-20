@@ -1,5 +1,2 @@
-# Layout mixins
 scss/mixin/_layout.scss
-
-# Normalize
 scss/plugin/_normalize.scss

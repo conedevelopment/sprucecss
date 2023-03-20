@@ -39,4 +39,4 @@ $line-height-base: $line-height-lg !default;
 $line-height-heading: calc(2px + 2ex + 2px) !default;
 
 $inline-text-element-padding: 0.1em 0.3em !default;
-$inline-text-element-border-radius: $border-radius-sm !default;
+$inline-text-element-border-radius: map.get($display, border-radius-sm) !default;

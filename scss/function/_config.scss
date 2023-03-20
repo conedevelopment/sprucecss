@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'setting' as *;
+@use '../config' as *;
+
+@function config(
+  $key,
+  $map
+) {
+  @if $map == display {
+    $map: $display;
+  } @else if $map == btn {
+    $map: $btn;
+  }
+
+  @if not map.has-key($map, $key) {
+    @error 'The #{$key} key name doesn\'t exist under #{$type} at the specified map.';
+  }
+
+  @if map.get($map, $key) == null {
+    @return null;
+  }
+
+  @return map.get($map, $key);
+}

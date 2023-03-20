@@ -15,7 +15,7 @@
   }
 
   &__color {
-    border-radius: spruce.$border-radius-lg;
+    border-radius: spruce.config(border-radius-lg, display);
     height: 3rem;
     width: 3rem;
   }

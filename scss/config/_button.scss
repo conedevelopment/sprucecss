@@ -3,7 +3,7 @@
 @use 'typography' as *;
 @use 'spacer' as *;
 
-$btn-border-radius: $border-radius-sm !default;
+$btn-border-radius: map.get($display, border-radius-sm) !default;
 
 $btn-font-family: null !default;
 $btn-font-size: $font-size-base !default;
