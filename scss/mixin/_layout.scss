@@ -3,7 +3,10 @@
 @use '../function' as *;
 @use '../config' as *;
 
-// Create Center layout
+/// Create Center layout
+/// @param {string} $gap - The gap between the container and the content.
+/// @param {string} $max-width - The maximum width of the container.
+/// @return {mixin} - The centered layout.
 @mixin layout-center(
   $gap: m,
   $max-width: $container-width
