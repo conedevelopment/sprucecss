@@ -13,7 +13,7 @@ $spacer: 1.25rem;
       custom-foreground-hover: hsl(0 0% 100%),
       tertiary-background: $color-tertiary,
       tertiary-foreground: hsl(0 0% 100%),
-      tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75)
+      tertiary-shadow-focus: color.adjust($color-tertiary, $alpha: -0.75),
     )
   ),
   $dark-colors: dark.$colors,
@@ -21,11 +21,15 @@ $spacer: 1.25rem;
     color-fallback: false,
     html-smooth-scrolling: false,
     hyphens: true,
+    prefix: 'spruce',
+    print: true,
     utilities: true,
-    prefix: null,
-    print: true
+    css-custom-properties: false,
   ),
-  $btn-text-transform: uppercase,
+  $btn: (
+    'text-transform': uppercase
+  ),
+  // $btn-text-transform: uppercase,
   $form-check-font-size-lg: 1.35rem,
-  $form-check-font-weight: 400
+  $form-check-font-weight: 400,
 );

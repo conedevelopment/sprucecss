@@ -1,6 +1,31 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../mixin' as *;
 @use '../config' as *;
+
+@mixin styles {
+  @if map.get($settings, 'css-custom-properties') {
+    @each $key, $value in $btn {
+      --#{$internal-prefix}#{$key}: #{$value};
+    }
+  }
+}
+
+@mixin styles-lg {
+  @if map.get($settings, 'css-custom-properties') {
+    @each $key, $value in $btn-lg {
+      --#{$internal-prefix}#{$key}: #{$value};
+    }
+  }
+}
+
+@mixin styles-sm {
+  @if map.get($settings, 'css-custom-properties') {
+    @each $key, $value in $btn-sm {
+      --#{$internal-prefix}#{$key}: #{$value};
+    }
+  }
+}
 
 @mixin generate-btn(
   $selector,
@@ -9,23 +34,25 @@
   $has-sizes: true,
 ) {
   #{$selector}#{$pseudo-selector} {
+    @include styles;
+
     align-items: center;
-    border-radius: $btn-border-radius;
+    border-radius: config('border-radius', 'btn');
     border-style: solid;
-    border-width: $btn-outline-width;
+    border-width: map.get($btn, outline-width);
     cursor: pointer;
     display: inline-flex;
-    font-family: $btn-font-family;
-    font-size: $btn-font-size;
-    font-style: $btn-font-style;
-    font-weight: $btn-font-weight;
-    gap: $btn-gap;
+    font-family: map.get($btn, font-family);
+    font-size: config('font-size', 'btn');
+    font-style: map.get($btn, font-style);
+    font-weight: map.get($btn, font-weight);
+    gap: map.get($btn, gap);
     justify-content: center;
     line-height: 1;
-    padding: $btn-padding;
+    padding: config('padding', 'btn');
     text-align: start;
     text-decoration: none;
-    text-transform: $btn-text-transform;
+    text-transform: map.get($btn, text-transform);
     transition-duration: transition(duration);
     transition-property: background-color,border-color, box-shadow, color;
     transition-timing-function: transition(timing-function);
@@ -45,26 +72,26 @@
   @if ($has-icons) {
     // Icon button
     #{$selector}--icon {
-      padding: $btn-icon-padding;
+      padding: map.get($btn, icon-padding);
 
       &#{$selector}--sm {
-        padding: $btn-icon-padding-sm;
+        padding: map.get($btn, icon-padding-sm);
       }
 
       &#{$selector}--lg {
-        padding: $btn-icon-padding-lg;
+        padding: config(icon-padding, btn);
       }
     }
 
     // Icons
     #{$selector}__icon {
       flex-shrink: 0;
-      height: $btn-icon-size;
-      width: $btn-icon-size;
+      height: map.get($btn, icon-size);
+      width: map.get($btn, icon-size);
 
       &--sm {
-        height: $btn-icon-size-sm;
-        width: $btn-icon-size-sm;
+        height: map.get($btn, icon-size-sm);
+        width: map.get($btn, icon-size-sm);
       }
     }
   }
@@ -72,17 +99,21 @@
   @if ($has-sizes) {
     // Sizes
     #{$selector}--sm#{$pseudo-selector} {
-      font-size: $btn-font-size-sm;
-      gap: $btn-gap-sm;
-      padding: $btn-padding-sm;
+      font-size: map.get($btn, font-size-sm);
+      gap: map.get($btn, gap-sm);
+      padding: map.get($btn, padding-sm);
     }
 
     #{$selector}--lg#{$pseudo-selector} {
-      gap: $btn-gap-lg;
-      padding: $btn-padding-lg;
+      @include styles-lg;
 
-      @include breakpoint(md) {
-        font-size: $btn-font-size-lg;
+      @if not map.get($settings, 'css-custom-properties') {
+        gap: config(gap, btn-lg);
+        padding: config(padding, btn-lg);
+
+        @include breakpoint(md) {
+          font-size: config(font-size, btn-lg);
+        }
       }
     }
 

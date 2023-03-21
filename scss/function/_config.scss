@@ -4,11 +4,13 @@
 
 @function config(
   $key,
-  $map
+  $name
 ) {
-  @if $map == display {
+  $map: null;
+
+  @if $name == 'display' {
     $map: $display;
-  } @else if $map == btn {
+  } @else if $name == 'btn' {
     $map: $btn;
   }
 
@@ -18,6 +20,10 @@
 
   @if map.get($map, $key) == null {
     @return null;
+  }
+
+  @if map.get($settings, 'css-custom-properties') {
+    @return var(--#{$internal-prefix}#{$key});
   }
 
   @return map.get($map, $key);

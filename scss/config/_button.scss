@@ -3,37 +3,48 @@
 @use 'typography' as *;
 @use 'spacer' as *;
 
-$btn-border-radius: map.get($display, border-radius-sm) !default;
+$btn: () !default;
+$btn: map.merge(
+  (
+    'border-radius': map.get($display, border-radius-sm),
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-type': outline,
+    'focus-ring-width': 2px,
+    'font-family': null,
+    'font-size': $font-size-base,
+    'font-style': null,
+    'font-weight': 500,
+    'gap': map.get($spacers, xs),
+    'icon-padding': 0.75em,
+    'icon-size': 1em,
+    'outline-width': 1px,
+    'padding': 0.75em 1em,
+    'shadow-width': 0.25rem,
+    'text-transform': null,
+  ),
+  $btn
+);
 
-$btn-font-family: null !default;
-$btn-font-size: $font-size-base !default;
-$btn-font-size-sm: 0.8rem !default;
-$btn-font-size-lg: 1.15rem !default;
-$btn-font-style: null !default;
-$btn-font-weight: 500 !default;
+$btn-lg: () !default;
+$btn-lg: map.merge(
+  (
+    'font-size': 1.15rem,
+    'gap': map.get($spacers, xs),
+    'icon-padding': 0.9em,
+    'padding': 0.9em 1.15em,
+  ),
+  $btn-lg
+);
 
-$btn-focus-ring-type: outline !default;
-$btn-focus-ring-box-shadow-type: outside !default;
-$btn-focus-ring-width: 2px !default;
-$btn-focus-ring-offset: 2px !default;
-
-$btn-icon-padding: 0.75em !default;
-$btn-icon-padding-sm: 0.5em !default;
-$btn-icon-padding-lg: 0.9em !default;
-
-$btn-icon-size-sm: 0.85em !default;
-$btn-icon-size: 1em !default;
-
-$btn-gap: map.get($spacers, xs) !default;
-$btn-gap-sm: map.get($spacers, xxs) !default;
-$btn-gap-lg: map.get($spacers, xs) !default;
-
-$btn-padding: 0.75em 1em !default;
-$btn-padding-sm: 0.5em !default;
-$btn-padding-lg: 0.9em 1.15em !default;
-
-$btn-text-transform: null !default;
-
-$btn-shadow-width: 0.25rem !default;
-
-$btn-outline-width: 1px !default;
+$btn-sm: () !default;
+$btn-sm: map.merge(
+  (
+    'font-size': 0.8rem,
+    'gap': map.get($spacers, xxs),
+    'icon-padding': 0.5em,
+    'icon-size': 0.85em,
+    'padding': 0.5em,
+  ),
+  $btn-sm
+);

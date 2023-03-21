@@ -19,11 +19,11 @@
       }
 
       @include focus-ring(
-        $type: $btn-focus-ring-type,
+        $type: map.get($btn, focus-ring-type),
         $ring-color: $ring-color,
-        $box-shadow-type: $btn-focus-ring-box-shadow-type,
-        $ring-width: $btn-focus-ring-width,
-        $ring-offset: $btn-focus-ring-offset
+        $box-shadow-type: map.get($btn, focus-ring-box-shadow-type),
+        $ring-width: map.get($btn, focus-ring-width),
+        $ring-offset: map.get($btn, focus-ring-offset)
       );
     }
   }
