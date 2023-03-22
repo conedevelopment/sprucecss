@@ -24,10 +24,15 @@ $spacer: 1.25rem;
     prefix: 'spruce',
     print: true,
     utilities: true,
-    css-custom-properties: false,
+    css-custom-properties: true,
   ),
   $btn: (
-    'text-transform': uppercase
+    'border-radius': 3em,
+    'text-transform': none,
+  ),
+  $btn-lg: (
+    'border-radius': 0.25em,
+    'text-transform': uppercase,
   ),
   // $btn-text-transform: uppercase,
   $form-check-font-size-lg: 1.35rem,

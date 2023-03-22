@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use '../config' as *;
+
+@mixin generate-variables($map) {
+  @if map.get($settings, 'css-custom-properties') {
+    @each $key, $value in $map {
+      --#{$internal-prefix}#{$key}: #{$value};
+    }
+  }
+}
