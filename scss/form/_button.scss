@@ -37,19 +37,19 @@
     @include styles;
 
     align-items: center;
-    border-radius: config('border-radius', 'btn');
+    border-radius: config('border-radius', $btn);
     border-style: solid;
     border-width: map.get($btn, outline-width);
     cursor: pointer;
     display: inline-flex;
     font-family: map.get($btn, font-family);
-    font-size: config('font-size', 'btn');
+    font-size: config('font-size', $btn);
     font-style: map.get($btn, font-style);
     font-weight: map.get($btn, font-weight);
     gap: map.get($btn, gap);
     justify-content: center;
     line-height: 1;
-    padding: config('padding', 'btn');
+    padding: config('padding', $btn);
     text-align: start;
     text-decoration: none;
     text-transform: map.get($btn, text-transform);
@@ -79,7 +79,7 @@
       }
 
       &#{$selector}--lg {
-        padding: config(icon-padding, btn);
+        padding: config(icon-padding, $btn);
       }
     }
 
@@ -108,11 +108,11 @@
       @include styles-lg;
 
       @if not map.get($settings, 'css-custom-properties') {
-        gap: config(gap, btn-lg);
-        padding: config(padding, btn-lg);
+        gap: config(gap, $btn-lg);
+        padding: config(padding, $btn-lg);
 
         @include breakpoint(md) {
-          font-size: config(font-size, btn-lg);
+          font-size: config(font-size, $btn-lg);
         }
       }
     }

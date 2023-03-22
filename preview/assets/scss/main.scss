@@ -117,7 +117,7 @@
 .card {
   @include spruce.a11y-card-link('.card__link', true);
   border: 1px solid spruce.color(border);
-  border-radius: spruce.config(border-radius-lg, display);
+  border-radius: spruce.config(border-radius-lg, spruce.$display);
   padding: spruce.spacer(m);
 
   &__link {

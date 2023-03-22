@@ -1,19 +1,12 @@
 @use 'sass:map';
+@use 'sass:string';
 @use 'setting' as *;
 @use '../config' as *;
 
 @function config(
   $key,
-  $name
+  $map
 ) {
-  $map: null;
-
-  @if $name == 'display' {
-    $map: $display;
-  } @else if $name == 'btn' {
-    $map: $btn;
-  }
-
   @if not map.has-key($map, $key) {
     @error 'The #{$key} key name doesn\'t exist under #{$type} at the specified map.';
   }
