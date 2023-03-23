@@ -1,10 +1,15 @@
 @use 'sass:map';
+@use 'sass:string';
 @use '../config' as *;
 
-@mixin generate-variables($map) {
+@mixin generate-variables($map, $exclude: null) {
   @if map.get($settings, 'css-custom-properties') {
     @each $key, $value in $map {
-      --#{$internal-prefix}#{$key}: #{$value};
+      @if $exclude and not string.index($key, $exclude) and $value {
+        --#{$internal-prefix}#{$key}: #{$value};
+      } @else if not $exclude and $value {
+        --#{$internal-prefix}#{$key}: #{$value};
+      }
     }
   }
 }

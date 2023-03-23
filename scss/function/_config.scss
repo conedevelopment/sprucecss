@@ -5,7 +5,8 @@
 
 @function config(
   $key,
-  $map
+  $map,
+  $custom-property: true
 ) {
   @if not map.has-key($map, $key) {
     @error $key;
@@ -14,6 +15,10 @@
 
   @if map.get($map, $key) == null {
     @return null;
+  }
+
+  @if not $custom-property {
+    @return map.get($map, $key);
   }
 
   @if map.get($settings, 'css-custom-properties') {

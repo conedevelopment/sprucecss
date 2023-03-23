@@ -11,7 +11,7 @@
 ) {
   #{$selector} {
     --webkit-date-line-height: 1.375;
-    @include generate-variables($form-control);
+    @include generate-variables($form-control, 'focus-');
 
     appearance: none;
     background-color: color(background, form);
@@ -39,12 +39,12 @@
 
     &:focus {
       @include focus-ring(
-        $type: config('focus-ring-type', $form-control),
+        $type: config('focus-ring-type', $form-control, false),
         $border-color: color(border-focus, form),
         $ring-color: color(ring-focus, form),
-        $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
-        $ring-width: config('focus-ring-width', $form-control),
-        $ring-offset: config('focus-ring-offset', $form-control)
+        $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
+        $ring-width: config('focus-ring-width', $form-control, false),
+        $ring-offset: config('focus-ring-offset', $form-control, false)
       );
     }
 
@@ -104,12 +104,12 @@
 
         &:focus {
           @include focus-ring(
-            $type: config('focus-ring-type', $form-control),
+            $type: config('focus-ring-type', $form-control, false),
             $border-color: color(valid, form),
-            $ring-color: color(valid-focus-ring, form),
+            $ring-color: color(valid-focus-ring, form, false),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
-            $ring-width: config('focus-ring-width', $form-control),
-            $ring-offset: config('focus-ring-offset', $form-control)
+            $ring-width: config('focus-ring-width', $form-control, false),
+            $ring-offset: config('focus-ring-offset', $form-control, false)
           );
         }
       }
@@ -137,9 +137,6 @@
         --webkit-date-line-height: 1.36;
         @include generate-variables($form-control-sm);
 
-        font-size: config('font-size', $form-control-sm);
-        padding: config('padding', $form-control-sm);
-
         &[type='color'] {
           height: config('color-height', $form-control-sm);
           padding: config('color-padding', $form-control-sm);
@@ -149,9 +146,6 @@
       &--lg {
         --webkit-date-line-height: 1.387;
         @include generate-variables($form-control-lg);
-
-        font-size: config('font-size', $form-control-lg);
-        padding: config('padding', $form-control-lg);
 
         &[type='color'] {
           height: config('color-height', $form-control-lg);

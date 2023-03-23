@@ -44,7 +44,7 @@ $btn-sm: map.merge(
     'gap': map.get($spacers, xxs),
     'icon-padding': 0.5em,
     'icon-size': 0.85em,
-    'padding': 0.5em,
+    'padding': 0.5em 1em,
   ),
   $btn-sm
 );

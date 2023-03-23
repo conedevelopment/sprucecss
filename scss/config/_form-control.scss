@@ -41,5 +41,5 @@ $form-control-sm: map.merge(
     'color-padding': 0.25em,
     'color-height': calc(#{map.get($form-control-sm, 'line-height')}em + ( #{map.get($form-control-sm, 'line-height')} + #{map.get($form-control, 'border-width')} ) * 2),
   ),
-  $form-control
+  $form-control-sm
 );
