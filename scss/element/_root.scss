@@ -14,5 +14,7 @@
     @media (prefers-reduced-motion: reduce) {
       --#{$internal-prefix}transition-duration: 0;
     }
+
+    @include generate-variables($display);
   }
 }
