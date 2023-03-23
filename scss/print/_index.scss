@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 @use '../mixin' as *;
@@ -9,7 +10,7 @@
         margin: config('page-margin', $print);
       }
 
-      #{config('hidden-elements', $print)} {
+      #{map.get($print, 'hidden-elements')} {
         display: none !important;
       }
 

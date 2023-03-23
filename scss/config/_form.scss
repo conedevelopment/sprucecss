@@ -21,32 +21,6 @@ $form-description-font-weight: null !default;
 
 $form-row-col-width: 20ch !default;
 
-$form-control-font-size: $font-size-base !default;
-$form-control-font-size-sm: $font-size-sm !default;
-$form-control-font-size-lg: $font-size-lg !default;
-
-$form-control-font-weight: null !default;
-$form-control-line-height: 1.5 !default;
-$form-control-padding: 0.5em 0.75em !default;
-$form-control-padding-sm: 0.25em 0.5em !default;
-$form-control-padding-lg: 0.65em 1em !default;
-$form-control-border-width: 1px !default;
-$form-control-border-radius: map.get($display, border-radius-sm) !default;
-
-$form-control-focus-ring-type: box-shadow !default;
-$form-control-focus-ring-box-shadow-type: outside !default;
-$form-control-focus-ring-width: 0.25rem !default;
-$form-control-focus-ring-offset: 2px !default;
-
-$form-control-color-padding: 0.5em !default;
-$form-control-color-padding-sm: 0.25em !default;
-$form-control-color-padding-lg: 0.75em !default;
-$form-control-color-height: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding} + #{$form-control-border-width} ) * 2) !default;
-$form-control-color-height-sm: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-sm} + #{$form-control-border-width} ) * 2) !default;
-$form-control-color-height-lg: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-lg} + #{$form-control-border-width} ) * 2) !default;
-
-$form-control-textarea-height: 6rem !default;
-
 $form-check-border-width: 1px !default;
 $form-check-checkbox-border-radius: map.get($display, border-radius-sm) !default;
 $form-check-font-size: 1.125rem !default;

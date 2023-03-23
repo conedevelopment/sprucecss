@@ -16,5 +16,7 @@
     }
 
     @include generate-variables($display);
+    @include generate-variables($layout);
+    @include generate-variables($print);
   }
 }

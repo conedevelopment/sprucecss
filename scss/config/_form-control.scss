@@ -1,0 +1,45 @@
+@use 'sass:map';
+@use 'display' as *;
+@use 'typography' as *;
+
+$form-control: () !default;
+$form-control: map.merge(
+  (
+    'font-size': $font-size-base,
+    'font-weight': null,
+    'line-height': 1.5,
+    'padding': 0.5em 0.75em,
+    'border-width': 1px,
+    'border-radius': map.get($display, border-radius-sm),
+    'focus-ring-type': box-shadow,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-width': 0.25rem,
+    'focus-ring-offset': 2px,
+    'color-padding': 0.5em,
+    'color-height': calc(#{map.get($form-control, 'line-height')}em + ( #{map.get($form-control, 'color-padding')} + #{map.get($form-control, 'border-width')} ) * 2),
+    'textarea-height': 6rem,
+  ),
+  $form-control
+);
+
+$form-control-lg: () !default;
+$form-control-lg: map.merge(
+  (
+    'font-size': $font-size-lg,
+    'padding': 0.65em 1em,
+    'color-padding': 0.75em,
+    'color-height': calc(#{map.get($form-control-lg, 'line-height')}em + ( #{map.get($form-control-lg, 'line-height')} + #{map.get($form-control, 'border-width')} ) * 2),
+  ),
+  $form-control-lg
+);
+
+$form-control-sm: () !default;
+$form-control-sm: map.merge(
+  (
+    'font-size': $font-size-sm,
+    'padding': 0.25em 0.5em,
+    'color-padding': 0.25em,
+    'color-height': calc(#{map.get($form-control-sm, 'line-height')}em + ( #{map.get($form-control-sm, 'line-height')} + #{map.get($form-control, 'border-width')} ) * 2),
+  ),
+  $form-control
+);

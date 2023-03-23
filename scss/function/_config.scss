@@ -8,7 +8,8 @@
   $map
 ) {
   @if not map.has-key($map, $key) {
-    @error 'The #{$key} key name doesn\'t exist under #{$type} at the specified map.';
+    @error $key;
+    @error 'The #{$key} key name doesn\'t exist under #{$map} at the specified map.';
   }
 
   @if map.get($map, $key) == null {

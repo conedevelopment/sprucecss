@@ -11,18 +11,19 @@
 ) {
   #{$selector} {
     --webkit-date-line-height: 1.375;
+    @include generate-variables($form-control);
 
     appearance: none;
     background-color: color(background, form);
-    border: $form-control-border-width solid color(border, form);
-    border-radius: $form-control-border-radius;
+    border: config('border-width', $form-control) solid color(border, form);
+    border-radius: config('border-radius', $form-control);
     box-sizing: border-box;
     color: color(text, form);
     display: block;
-    font-size: $form-control-font-size;
-    font-weight: $form-control-font-weight;
-    line-height: $form-control-line-height;
-    padding: $form-control-padding;
+    font-size: config('font-size', $form-control);
+    font-weight: config('font-weight', $form-control);
+    line-height: config('line-height', $form-control);
+    padding: config('padding', $form-control);
     transition-duration: transition(duration);
     transition-property: border, box-shadow;
     transition-timing-function: transition(timing-function);
@@ -38,18 +39,18 @@
 
     &:focus {
       @include focus-ring(
-        $type: $form-control-focus-ring-type,
+        $type: config('focus-ring-type', $form-control),
         $border-color: color(border-focus, form),
         $ring-color: color(ring-focus, form),
-        $box-shadow-type: $form-control-focus-ring-box-shadow-type,
-        $ring-width: $form-control-focus-ring-width,
-        $ring-offset: $form-control-focus-ring-offset
+        $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
+        $ring-width: config('focus-ring-width', $form-control),
+        $ring-offset: config('focus-ring-offset', $form-control)
       );
     }
 
     &[type='color'] {
-      height: $form-control-color-height;
-      padding: $form-control-color-padding;
+      height: config('color-height', $form-control);
+      padding: config('color-padding', $form-control);
 
       &::-webkit-color-swatch-wrapper {
         padding: 0;
@@ -57,12 +58,12 @@
 
       &::-moz-color-swatch {
         border: 0;
-        border-radius: $form-control-border-radius;
+        border-radius: config('border-radius', $form-control);
       }
 
       &::-webkit-color-swatch {
         border: 0;
-        border-radius: $form-control-border-radius;
+        border-radius: config('border-radius', $form-control);
       }
     }
 
@@ -77,8 +78,8 @@
     // Set height to textarea
     @at-root {
       textarea#{$selector} {
-        height: $form-control-textarea-height;
-        min-height: $form-control-textarea-height;
+        height: config('textarea-height', $form-control);
+        min-height: config('textarea-height', $form-control);
         resize: vertical;
       }
     }
@@ -103,12 +104,12 @@
 
         &:focus {
           @include focus-ring(
-            $type: $form-control-focus-ring-type,
+            $type: config('focus-ring-type', $form-control),
             $border-color: color(valid, form),
             $ring-color: color(valid-focus-ring, form),
-            $box-shadow-type: $form-control-focus-ring-box-shadow-type,
-            $ring-width: $form-control-focus-ring-width,
-            $ring-offset: $form-control-focus-ring-offset
+            $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
+            $ring-width: config('focus-ring-width', $form-control),
+            $ring-offset: config('focus-ring-offset', $form-control)
           );
         }
       }
@@ -119,12 +120,12 @@
 
         &:focus {
           @include focus-ring(
-            $type: $form-control-focus-ring-type,
+            $type: config('focus-ring-type', $form-control),
             $border-color: color(invalid, form),
             $ring-color: color(invalid-focus-ring, form),
-            $box-shadow-type: $form-control-focus-ring-box-shadow-type,
-            $ring-width: $form-control-focus-ring-width,
-            $ring-offset: $form-control-focus-ring-offset
+            $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
+            $ring-width: config('focus-ring-width', $form-control),
+            $ring-offset: config('focus-ring-offset', $form-control)
           );
         }
       }
@@ -134,25 +135,27 @@
     @if ($has-sizes) {
       &--sm {
         --webkit-date-line-height: 1.36;
+        @include generate-variables($form-control-sm);
 
-        font-size: $form-control-font-size-sm;
-        padding: $form-control-padding-sm;
+        font-size: config('font-size', $form-control-sm);
+        padding: config('padding', $form-control-sm);
 
         &[type='color'] {
-          height: $form-control-color-height-sm;
-          padding: $form-control-color-padding-sm;
+          height: config('color-height', $form-control-sm);
+          padding: config('color-padding', $form-control-sm);
         }
       }
 
       &--lg {
         --webkit-date-line-height: 1.387;
+        @include generate-variables($form-control-lg);
 
-        font-size: $form-control-font-size-lg;
-        padding: $form-control-padding-lg;
+        font-size: config('font-size', $form-control-lg);
+        padding: config('padding', $form-control-lg);
 
         &[type='color'] {
-          height: $form-control-color-height-lg;
-          padding: $form-control-color-padding-lg;
+          height: config('color-height', $form-control-lg);
+          padding: config('color-padding', $form-control-lg);
         }
       }
     }

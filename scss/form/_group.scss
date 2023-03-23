@@ -55,7 +55,7 @@
 
           @include breakpoint(sm) {
             border-end-start-radius: 0;
-            border-start-end-radius: $form-control-border-radius;
+            border-start-end-radius: config('border-radius', $form-control);
             margin-block-start: 0;
             margin-inline-start: -1px;
           }
@@ -74,7 +74,7 @@
         /* stylelint-disable */
         @include breakpoint(sm) {
           &:first-child {
-            border-end-start-radius: $form-control-border-radius;
+            border-end-start-radius: config('border-radius', $form-control);
           }
         }
         /* stylelint-enable */
