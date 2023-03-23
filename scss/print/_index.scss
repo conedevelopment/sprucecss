@@ -6,10 +6,10 @@
   @if setting(print) == true {
     @media print {
       @page {
-        margin: $print-page-margin;
+        margin: config('page-margin', $print);
       }
 
-      #{$print-hidden-elements} {
+      #{config('hidden-elements', $print)} {
         display: none !important;
       }
 

@@ -9,7 +9,7 @@
 /// @return {mixin} - The centered layout.
 @mixin layout-center(
   $gap: m,
-  $max-width: $container-width
+  $max-width: config('container-width', $layout)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
