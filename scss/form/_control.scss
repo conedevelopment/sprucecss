@@ -49,8 +49,11 @@
     }
 
     &[type='color'] {
-      height: config('color-height', $form-control);
-      padding: config('color-padding', $form-control);
+      @include generate-variables($form-control-color);
+      aspect-ratio: config('aspect-ratio', $form-control-color);
+      height: config('height', $form-control-color);
+      padding: config('padding', $form-control-color);
+      width: config('width', $form-control-color);
 
       &::-webkit-color-swatch-wrapper {
         padding: 0;
@@ -138,8 +141,7 @@
         @include generate-variables($form-control-sm);
 
         &[type='color'] {
-          height: config('color-height', $form-control-sm);
-          padding: config('color-padding', $form-control-sm);
+          @include generate-variables($form-control-color-sm);
         }
       }
 
@@ -148,8 +150,7 @@
         @include generate-variables($form-control-lg);
 
         &[type='color'] {
-          height: config('color-height', $form-control-lg);
-          padding: config('color-padding', $form-control-lg);
+          @include generate-variables($form-control-color-lg);
         }
       }
     }

@@ -10,7 +10,7 @@
         margin: config('page-margin', $print);
       }
 
-      #{map.get($print, 'hidden-elements')} {
+      #{config('hidden-elements', $print, false)} {
         display: none !important;
       }
 

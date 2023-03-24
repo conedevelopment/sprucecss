@@ -15,8 +15,6 @@ $form-control: map.merge(
     'focus-ring-box-shadow-type': outside,
     'focus-ring-width': 0.25rem,
     'focus-ring-offset': 2px,
-    'color-padding': 0.5em,
-    'color-height': calc(#{map.get($form-control, 'line-height')}em + ( #{map.get($form-control, 'color-padding')} + #{map.get($form-control, 'border-width')} ) * 2),
     'textarea-height': 6rem,
   ),
   $form-control
@@ -27,8 +25,6 @@ $form-control-lg: map.merge(
   (
     'font-size': $font-size-lg,
     'padding': 0.65em 1em,
-    'color-padding': 0.75em,
-    'color-height': calc(#{map.get($form-control-lg, 'line-height')}em + ( #{map.get($form-control-lg, 'line-height')} + #{map.get($form-control, 'border-width')} ) * 2),
   ),
   $form-control-lg
 );
@@ -38,8 +34,39 @@ $form-control-sm: map.merge(
   (
     'font-size': $font-size-sm,
     'padding': 0.25em 0.5em,
-    'color-padding': 0.25em,
-    'color-height': calc(#{map.get($form-control-sm, 'line-height')}em + ( #{map.get($form-control-sm, 'line-height')} + #{map.get($form-control, 'border-width')} ) * 2),
   ),
   $form-control-sm
+);
+
+$form-control-color: () !default;
+$form-control-color: map.merge(
+  (
+    'aspect-ratio': 1,
+    'height': 100%,
+    'padding': 0.5em,
+    'width': 2.625rem,
+  ),
+  $form-control-color
+);
+
+$form-control-color-lg: () !default;
+$form-control-color-lg: map.merge(
+  (
+    'aspect-ratio': 1,
+    'height': 100%,
+    'padding': 0.5em,
+    'width': 3.204rem,
+  ),
+  $form-control-color-lg
+);
+
+$form-control-color-sm: () !default;
+$form-control-color-sm: map.merge(
+  (
+    'aspect-ratio': 1,
+    'height': 100%,
+    'padding': 0.25em,
+    'width': 1.925rem,
+  ),
+  $form-control-color-sm
 );
