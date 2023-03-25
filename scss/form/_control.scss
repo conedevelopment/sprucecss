@@ -143,6 +143,18 @@
         &[type='color'] {
           @include generate-variables($form-control-color-sm);
         }
+
+        @if not map.get($settings, 'css-custom-properties') {
+          font-size: config('font-size', $form-control-sm);
+          padding: config('padding', $form-control-sm);
+
+          &[type='color'] {
+            aspect-ratio: config('aspect-ratio', $form-control-color-sm);
+            height: config('height', $form-control-color-sm);
+            padding: config('padding', $form-control-color-sm);
+            width: config('width', $form-control-color-sm);
+          }
+        }
       }
 
       &--lg {
@@ -151,6 +163,18 @@
 
         &[type='color'] {
           @include generate-variables($form-control-color-lg);
+        }
+
+        @if not map.get($settings, 'css-custom-properties') {
+          font-size: config('font-size', $form-control-lg);
+          padding: config('padding', $form-control-lg);
+
+          &[type='color'] {
+            aspect-ratio: config('aspect-ratio', $form-control-color-lg);
+            height: config('height', $form-control-color-lg);
+            padding: config('padding', $form-control-color-lg);
+            width: config('width', $form-control-color-lg);
+          }
         }
       }
     }
