@@ -4,15 +4,14 @@
 
 @mixin generate-variables($map, $exclude: null) {
   @if map.get($settings, 'css-custom-properties') {
-    $excludeMap: ();
+    $excludeMap: $map;
 
     @if $exclude {
       @each $key, $value in $map {
         @if $value {
           @each $fraction in $exclude {
-            @debug string.index($key, $fraction);
-            @if not string.index($key, $fraction) {
-              $excludeMap: map.set($excludeMap, $key, $value);
+            @if string.index($key, $fraction) {
+              $excludeMap: map.remove($excludeMap, $key);
             }
           }
         }
