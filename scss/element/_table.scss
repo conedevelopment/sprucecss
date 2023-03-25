@@ -80,6 +80,8 @@
       }
 
       &--sm {
+        @include generate-variables($table-sm);
+
         th,
         td {
           padding: config('padding', $table-sm);
