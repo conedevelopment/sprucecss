@@ -3,13 +3,6 @@
 @use 'spacer' as *;
 @use 'display' as *;
 
-$form-label-font-size: null !default;
-$form-label-font-size-sm: map.get($typography, 'size-sm') !default;
-$form-label-font-size-lg: map.get($typography, 'size-lg') !default;
-
-$form-label-font-style: null !default;
-$form-label-font-weight: null !default;
-
 $fieldset-gap-size: map.get($spacers, s) !default;
 
 $legend-font-size: clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}) !default;
@@ -25,7 +18,8 @@ $form-switch-border-width: 1px !default;
 $form-switch-font-size: 1.125rem !default;
 $form-switch-font-size-sm: map.get($typography, 'size-base') !default;
 $form-switch-font-size-lg: map.get($typography, 'size-lg') !default;
-$form-switch-font-weight: $form-label-font-weight !default;
+// $form-switch-font-weight: map.get($form-label, 'font-weight') !default;
+$form-switch-font-weight: 1rem !default;
 $form-switch-line-height: map.get($typography, 'line-height-heading') !default;
 $form-switch-margin-block-start: 0.25em !default;
 

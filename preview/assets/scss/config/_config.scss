@@ -24,10 +24,11 @@ $spacer: 1.25rem;
     'prefix': 'spruce',
     'print': true,
     'utilities': true,
-    'css-custom-properties': false,
+    'css-custom-properties': true,
   ),
   $btn: (
     'border-radius': 3em,
+    'font-weight': 400,
     'text-transform': none,
   ),
   $btn-lg: (
@@ -36,6 +37,9 @@ $spacer: 1.25rem;
   ),
   $form-control: (
     'font-weight': 400,
+  ),
+  $typography: (
+    'weight-base': 300,
   ),
   // $btn-text-transform: uppercase,
   // $form-check-font-size-lg: 1.35rem,

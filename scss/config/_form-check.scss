@@ -9,7 +9,7 @@ $form-check: map.merge(
     'border-width': 1px,
     'border-radius': map.get($display, border-radius-sm),
     'font-size': 1.125rem,
-    'font-weight': $form-label-font-weight,
+    'font-weight': map.get($form-check, 'font-weight'),
     'line-height': map.get($typography, 'line-height-heading'),
     'margin-block-start': 0.1em,
     'vertical-alignment': center,

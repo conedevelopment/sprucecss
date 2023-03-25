@@ -5,17 +5,9 @@
 @mixin generate-form-label {
   .form-label {
     color: color(label, form);
-    font-size: $form-label-font-size;
-    font-style: $form-label-font-style;
-    font-weight: $form-label-font-weight;
+    font-size: map.get($form-label, 'font-size');
+    font-style: map.get($form-label, 'font-style');
+    font-weight: map.get($form-label, 'font-weight');
     line-height: map.get($typography, 'line-height-md');
-
-    &--sm {
-      font-size: $form-label-font-size-sm;
-    }
-
-    &--lg {
-      font-size: $form-label-font-size-lg;
-    }
   }
 }
