@@ -11,7 +11,7 @@
 ) {
   #{$selector} {
     --webkit-date-line-height: 1.375;
-    @include generate-variables($form-control, 'focus-');
+    @include generate-variables($form-control, ('focus-'));
 
     appearance: none;
     background-color: color(background, form);

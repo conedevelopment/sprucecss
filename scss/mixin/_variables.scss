@@ -4,11 +4,34 @@
 
 @mixin generate-variables($map, $exclude: null) {
   @if map.get($settings, 'css-custom-properties') {
-    @each $key, $value in $map {
-      @if $exclude and not string.index($key, $exclude) and $value {
-        --#{$internal-prefix}#{$key}: #{$value};
-      } @else if not $exclude and $value {
-        --#{$internal-prefix}#{$key}: #{$value};
+    $excludeMap: ();
+
+    @if $exclude {
+      @each $key, $value in $map {
+        @if $value {
+          @each $fraction in $exclude {
+            @debug string.index($key, $fraction);
+            @if not string.index($key, $fraction) {
+              $excludeMap: map.set($excludeMap, $key, $value);
+            }
+          }
+        }
+      }
+    }
+
+    @if $exclude {
+      @each $key, $value in $excludeMap {
+        @if $value {
+          --#{$internal-prefix}#{$key}: #{$value};
+        }
+      }
+    }
+
+    @if not $exclude {
+      @each $key, $value in $map {
+        @if $value {
+          --#{$internal-prefix}#{$key}: #{$value};
+        }
       }
     }
   }

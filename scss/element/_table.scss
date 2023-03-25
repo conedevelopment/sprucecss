@@ -1,6 +1,6 @@
-@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
+@use '../mixin' as *;
 
 @mixin generate-table(
   $selector: '.table',
@@ -9,7 +9,7 @@
 ) {
   @if ($has-responsive-table) {
     .table-responsive {
-      --min-width: #{$table-responsive-width};
+      --min-width: #{config('responsive-width', $table)};
       -webkit-overflow-scrolling: touch;
       overflow-x: auto;
 
@@ -20,23 +20,25 @@
   }
 
   #{$selector} {
+    @include generate-variables($table);
+
     border-collapse: collapse;
     color: color(text, table);
     width: 100%;
 
     caption {
       color: color(caption, table);
-      font-size: $table-caption-font-size;
-      font-style: $table-caption-font-style;
-      font-weight: $table-caption-font-weight;
+      font-size: config('caption-font-size', $table);
+      font-style: config('caption-font-style', $table);
+      font-weight: config('caption-font-weight', $table);
       margin-block-end: spacer(s);
     }
 
     th,
     td {
       border-block-end: 1px solid color(border, table);
-      line-height: $table-line-height;
-      padding: $table-padding;
+      line-height: config('line-height', $table);
+      padding: config('padding', $table);
     }
 
     th {
@@ -47,7 +49,7 @@
 
     @if ($has-variations) {
       &--striped {
-        > tbody > tr:nth-child(#{$table-stripe}) {
+        > tbody > tr:nth-child(#{config('stripe', $table, false)}) {
           background-color: color(stripe, table);
         }
       }
@@ -80,7 +82,7 @@
       &--sm {
         th,
         td {
-          padding: $table-padding-sm;
+          padding: config('padding', $table-sm);
         }
       }
 
@@ -88,13 +90,13 @@
         th,
         td {
           &:first-child {
-            border-end-start-radius: map.get($display, border-radius-sm);
-            border-start-start-radius: map.get($display, border-radius-sm);
+            border-end-start-radius: config('border-radius-sm', $display);
+            border-start-start-radius: config('border-radius-sm', $display);
           }
 
           &:last-child {
-            border-end-end-radius: map.get($display, border-radius-sm);
-            border-start-end-radius: map.get($display, border-radius-sm);
+            border-end-end-radius: config('border-radius-sm', $display);
+            border-start-end-radius: config('border-radius-sm', $display);
           }
         }
       }
