@@ -5,12 +5,12 @@
 $form-control: () !default;
 $form-control: map.merge(
   (
-    'font-size': $font-size-base,
+    'font-size': map.get($typography, 'size-base'),
     'font-weight': null,
     'line-height': 1.5,
     'padding': 0.5em 0.75em,
     'border-width': 1px,
-    'border-radius': map.get($display, border-radius-sm),
+    'border-radius': map.get($display, 'border-radius-sm'),
     'focus-ring-type': box-shadow,
     'focus-ring-box-shadow-type': outside,
     'focus-ring-width': 0.25rem,
@@ -23,7 +23,7 @@ $form-control: map.merge(
 $form-control-lg: () !default;
 $form-control-lg: map.merge(
   (
-    'font-size': $font-size-lg,
+    'font-size': map.get($typography, 'size-lg'),
     'padding': 0.65em 1em,
   ),
   $form-control-lg
@@ -32,7 +32,7 @@ $form-control-lg: map.merge(
 $form-control-sm: () !default;
 $form-control-sm: map.merge(
   (
-    'font-size': $font-size-sm,
+    'font-size': map.get($typography, 'size-sm'),
     'padding': 0.25em 0.5em,
   ),
   $form-control-sm

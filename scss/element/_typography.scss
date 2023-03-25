@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../mixin' as *;
 @use '../config' as *;
@@ -5,14 +6,14 @@
 @mixin generate-typography {
   // Basics
   html {
-    -webkit-tap-highlight-color: hsl(0 0% 0% / 0);
+    -webkit-tap-highlight-color: hsl(0deg 0% 0% / 0%);
   }
 
   body {
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    font-weight: $font-weight-base;
-    line-height: $line-height-base;
+    font-family: map.get($typography, 'family-base');
+    font-size: map.get($typography, 'size-base');
+    font-weight: map.get($typography, 'weight-base');
+    line-height: map.get($typography, 'line-height-base');
   }
 
   @if setting(hyphens) {
@@ -37,9 +38,9 @@
   h5,
   h6 {
     color: color(heading);
-    font-family: $font-family-heading;
-    font-weight: $heading-font-weight;
-    line-height: $line-height-heading;
+    font-family: map.get($typography, 'family-heading');
+    font-weight: map.get($typography, 'weight-heading');
+    line-height: map.get($typography, 'line-height-heading');
   }
 
   h1,
@@ -139,22 +140,22 @@
 
   mark {
     background-color: color(mark-background);
-    border-radius: $inline-text-element-border-radius;
+    border-radius: map.get($typography, 'inline-border-radius');
     color: color(mark-foreground);
-    padding: $inline-text-element-padding;
+    padding: map.get($typography, 'inline-padding');
   }
 
   code,
   kbd,
   samp {
     background-color: color(code-background);
-    border-radius: $inline-text-element-border-radius;
+    border-radius: map.get($typography, 'inline-border-radius');
     color: color(code-foreground);
-    padding: $inline-text-element-padding;
+    padding: map.get($typography, 'inline-padding');
   }
 
   // Lead
   .lead {
-    font-size: $font-size-lead;
+    font-size: map.get($typography, 'size-lead');
   }
 }

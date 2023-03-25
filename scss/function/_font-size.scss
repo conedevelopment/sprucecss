@@ -20,7 +20,7 @@
   @if $fluid {
     $scaled-size: map.get($font-sizes, $key) * math.div(100 - $scaler, 100);
 
-    @if $scaled-size < $font-size-base {
+    @if $scaled-size < map.get($typography, 'size-base') {
       @return map.get($font-sizes, $key);
     }
 

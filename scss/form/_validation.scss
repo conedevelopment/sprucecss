@@ -1,10 +1,11 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 
 @mixin generate-field-feedback {
   .field-feedback {
     display: block;
-    line-height: $line-height-md;
+    line-height: map.get($typography, 'line-height-md');
 
     &--valid {
       color: color(success, alert);

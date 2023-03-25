@@ -2,41 +2,39 @@
 @use 'sass:math';
 @use 'display' as *;
 
-$font-size-ratio: 1.25 !default;
-
-$font-size-base: 1rem !default;
-
-$font-size-sm: 0.9rem !default;
-$font-size-lg: 1.1rem !default;
+$typography: () !default;
+$typography: map.merge(
+  (
+    'family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
+    'family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
+    'family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
+    'inline-border-radius': map.get($display, border-radius-sm),
+    'inline-padding': 0.1em 0.3em,
+    'line-height-base': 1.8,
+    'line-height-heading': calc(2px + 2ex + 2px),
+    'line-height-lg': 1.8,
+    'line-height-md': 1.5,
+    'line-height-sm': 1.2,
+    'size-base': 1rem,
+    'size-lead': clamp(#{1.5rem, 2vw, 1.25rem}),
+    'size-lg': 1.1rem,
+    'size-ratio': 1.25,
+    'size-sm': 0.9rem,
+    'weight-base': null,
+    'weight-heading': 700,
+  ),
+  $typography
+);
 
 $font-sizes: () !default;
 $font-sizes: map.merge(
   (
-    h1: math.pow($font-size-ratio, 4) * $font-size-base,
-    h2: math.pow($font-size-ratio, 3) * $font-size-base,
-    h3: math.pow($font-size-ratio, 2) * $font-size-base,
-    h4: math.pow($font-size-ratio, 1) * $font-size-base,
-    h5: $font-size-base,
-    h6: $font-size-base
+    h1: math.pow(map.get($typography, 'size-ratio'), 4) * map.get($typography, 'size-base'),
+    h2: math.pow(map.get($typography, 'size-ratio'), 3) * map.get($typography, 'size-base'),
+    h3: math.pow(map.get($typography, 'size-ratio'), 2) * map.get($typography, 'size-base'),
+    h4: math.pow(map.get($typography, 'size-ratio'), 1) * map.get($typography, 'size-base'),
+    h5: map.get($typography, 'size-base'),
+    h6: map.get($typography, 'size-base')
   ),
   $font-sizes
 );
-
-$font-size-lead: clamp(#{$font-size-lg}, 2vw, #{map.get($font-sizes, h4)}) !default;
-
-$font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
-$font-family-heading: $font-family-base !default;
-$font-family-cursive: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
-
-$font-weight-base: null !default;
-
-$heading-font-weight: 700 !default;
-
-$line-height-sm: 1.2 !default;
-$line-height-md: 1.5 !default;
-$line-height-lg: 1.8 !default;
-$line-height-base: $line-height-lg !default;
-$line-height-heading: calc(2px + 2ex + 2px) !default;
-
-$inline-text-element-padding: 0.1em 0.3em !default;
-$inline-text-element-border-radius: map.get($display, border-radius-sm) !default;

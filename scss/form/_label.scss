@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 
@@ -7,7 +8,7 @@
     font-size: $form-label-font-size;
     font-style: $form-label-font-style;
     font-weight: $form-label-font-weight;
-    line-height: $line-height-md;
+    line-height: map.get($typography, 'line-height-md');
 
     &--sm {
       font-size: $form-label-font-size-sm;

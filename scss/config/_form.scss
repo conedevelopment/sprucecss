@@ -4,8 +4,8 @@
 @use 'display' as *;
 
 $form-label-font-size: null !default;
-$form-label-font-size-sm: $font-size-sm !default;
-$form-label-font-size-lg: $font-size-lg !default;
+$form-label-font-size-sm: map.get($typography, 'size-sm') !default;
+$form-label-font-size-lg: map.get($typography, 'size-lg') !default;
 
 $form-label-font-style: null !default;
 $form-label-font-weight: null !default;
@@ -24,10 +24,10 @@ $form-row-col-width: 20ch !default;
 $form-check-border-width: 1px !default;
 $form-check-checkbox-border-radius: map.get($display, border-radius-sm) !default;
 $form-check-font-size: 1.125rem !default;
-$form-check-font-size-sm: $font-size-base !default;
-$form-check-font-size-lg: $font-size-lg !default;
+$form-check-font-size-sm: map.get($typography, 'size-base') !default;
+$form-check-font-size-lg: map.get($typography, 'size-lg') !default;
 $form-check-font-weight: $form-label-font-weight !default;
-$form-check-line-height: $line-height-heading !default;
+$form-check-line-height: map.get($typography, 'line-height-heading') !default;
 $form-check-margin-block-start: 0.1em !default;
 $form-check-vertical-alignment: center !default;
 
@@ -38,10 +38,10 @@ $form-check-focus-ring-offset: 2px !default;
 
 $form-switch-border-width: 1px !default;
 $form-switch-font-size: 1.125rem !default;
-$form-switch-font-size-sm: $font-size-base !default;
-$form-switch-font-size-lg: $font-size-lg !default;
+$form-switch-font-size-sm: map.get($typography, 'size-base') !default;
+$form-switch-font-size-lg: map.get($typography, 'size-lg') !default;
 $form-switch-font-weight: $form-label-font-weight !default;
-$form-switch-line-height: $line-height-heading !default;
+$form-switch-line-height: map.get($typography, 'line-height-heading') !default;
 $form-switch-margin-block-start: 0.25em !default;
 
 $form-file-background: primary !default;
