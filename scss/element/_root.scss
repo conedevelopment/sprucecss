@@ -8,11 +8,8 @@
   @include generate-color-variables;
 
   :root {
-    --#{$internal-prefix}transition-duration: #{$transition-duration};
-    --#{$internal-prefix}transition-timing-function: #{$transition-timing-function};
-
-    @media (prefers-reduced-motion: reduce) {
-      --#{$internal-prefix}transition-duration: 0;
+    @media (prefers-reduced-motion: no-preference) {
+      @include generate-variables($transition);
     }
 
     @include generate-variables($display);

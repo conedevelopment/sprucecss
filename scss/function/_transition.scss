@@ -9,5 +9,5 @@
     @error 'The #{$key} key name not supported, use duration or timing-function.';
   }
 
-  @return var(--#{$internal-prefix}transition-#{$key});
+  @return var(--#{$internal-prefix}#{$key});
 }
