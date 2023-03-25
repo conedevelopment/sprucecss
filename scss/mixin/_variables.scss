@@ -2,9 +2,14 @@
 @use 'sass:string';
 @use '../config' as *;
 
-@mixin generate-variables($map, $exclude: null) {
+@mixin generate-variables($map, $exclude: null, $include: null) {
+  @if $exclude and $include {
+    @error 'You can\'t use both $exclude and $include arguments.';
+  }
+
   @if map.get($settings, 'css-custom-properties') {
     $excludeMap: $map;
+    $includeMap: ();
 
     @if $exclude {
       @each $key, $value in $map {
@@ -12,6 +17,18 @@
           @each $fraction in $exclude {
             @if string.index($key, $fraction) {
               $excludeMap: map.remove($excludeMap, $key);
+            }
+          }
+        }
+      }
+    }
+
+    @if $include {
+      @each $key, $value in $map {
+        @if $value {
+          @each $fraction in $include {
+            @if string.index($key, $fraction) {
+              $includeMap: map.set($includeMap, $key, $value);
             }
           }
         }
@@ -26,7 +43,15 @@
       }
     }
 
-    @if not $exclude {
+    @if $include {
+      @each $key, $value in $includeMap {
+        @if $value {
+          --#{$internal-prefix}#{$key}: #{$value};
+        }
+      }
+    }
+
+    @if not $exclude and not $include {
       @each $key, $value in $map {
         @if $value {
           --#{$internal-prefix}#{$key}: #{$value};

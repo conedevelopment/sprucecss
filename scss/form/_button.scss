@@ -10,7 +10,7 @@
   $has-sizes: true,
 ) {
   #{$selector}#{$pseudo-selector} {
-    @include generate-variables($btn, ('focus-'));
+    @include generate-variables($btn, ('focus-', 'font-'));
 
     align-items: center;
     border-radius: config('border-radius', $btn);
