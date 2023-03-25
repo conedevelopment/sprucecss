@@ -11,7 +11,9 @@
   $has-sizes: false
 ) {
   #{$parent} {
-    align-items: $form-check-vertical-alignment;
+    @include generate-variables($form-check, ('focus-'));
+
+    align-items: config('vertical-alignment', $form-check);
     display: inline-flex;
     gap: spacer(xs);
   }
@@ -27,13 +29,13 @@
   @if ($has-sizes) {
     #{$parent}--sm {
       #{$input} {
-        font-size: $form-check-font-size-sm;
+        font-size: config('font-size', $form-check-sm);
       }
     }
 
     #{$parent}--lg {
       #{$input} {
-        font-size: $form-check-font-size-lg;
+        font-size: config('font-size', $form-check-lg);
       }
     }
   }
@@ -45,12 +47,12 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      border: $form-check-border-width solid color(border, form);
+      border: config('border-width', $form-check) solid color(border, form);
       flex-shrink: 0;
-      font-size: $form-check-font-size;
+      font-size: config('font-size', $form-check);
       height: 1em;
       line-height: 1;
-      margin-block-start: $form-check-margin-block-start;
+      margin-block-start: config('margin-block-start', $form-check);
       transition-duration: transition(duration);
       transition-property: border, box-shadow;
       transition-timing-function: transition(timing-function);
@@ -61,17 +63,17 @@
       }
 
       &[type='checkbox'] {
-        border-radius: $form-check-checkbox-border-radius;
+        border-radius: config('border-radius', $form-check);
       }
 
       &:focus-visible {
         @include focus-ring(
-          $type: $form-check-focus-ring-type,
+          $type: config('focus-ring-type', $form-check),
           $border-color: color(border-focus, form),
           $ring-color: color(check-focus-ring, form),
-          $box-shadow-type: $form-check-focus-ring-box-shadow-type,
-          $ring-width: $form-check-focus-ring-width,
-          $ring-offset: $form-check-focus-ring-offset
+          $box-shadow-type: config('focus-ring-box-shadow-type', $form-check),
+          $ring-width: config('focus-ring-width', $form-check),
+          $ring-offset: config('focus-ring-offset', $form-check),
         );
       }
 
@@ -109,8 +111,8 @@
     }
 
     #{$label} {
-      font-weight: $form-check-font-weight;
-      line-height: $form-check-line-height;
+      font-weight: config('font-weight', $form-check);
+      line-height: config('line-height', $form-check);
     }
   }
 }

@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use 'display' as *;
+@use 'typography' as *;
+@use 'form' as *;
+
+$form-check: () !default;
+$form-check: map.merge(
+  (
+    'border-width': 1px,
+    'border-radius': map.get($display, border-radius-sm),
+    'font-size': 1.125rem,
+    'font-weight': $form-label-font-weight,
+    'line-height': map.get($typography, 'line-height-heading'),
+    'margin-block-start': 0.1em,
+    'vertical-alignment': center,
+    'focus-ring-type': outline,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-width': 2px,
+    'focus-ring-offset': 2px,
+  ),
+  $form-check
+);
+
+$form-check-sm: () !default;
+$form-check-sm: map.merge(
+  (
+    'font-size': map.get($typography, 'size-base'),
+  ),
+  $form-check-sm
+);
+
+$form-check-lg: () !default;
+$form-check-lg: map.merge(
+  (
+    'font-size': map.get($typography, 'size-lg'),
+  ),
+  $form-check-lg
+);

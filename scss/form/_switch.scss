@@ -57,12 +57,12 @@
 
       &:focus-visible {
         @include focus-ring(
-          $type: $form-check-focus-ring-type,
+          $type: config('focus-ring-type', $form-check),
           $border-color: color(border-focus, form),
           $ring-color: color(check-focus-ring, form),
-          $box-shadow-type: $form-check-focus-ring-box-shadow-type,
-          $ring-width: $form-check-focus-ring-width,
-          $ring-offset: $form-check-focus-ring-offset
+          $box-shadow-type: config('focus-ring-box-shadow-type', $form-check),
+          $ring-width: config('focus-ring-width', $form-check),
+          $ring-offset: config('focus-ring-offset', $form-check),
         );
       }
 
