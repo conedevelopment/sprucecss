@@ -15,10 +15,12 @@
   #{$selector} {
     display: block;
 
+    &:focus {
+      outline: revert;
+    }
+
     &:focus-within#{$pseudo-selector} {
-      background-color: transparent;
-      box-shadow: 0 0 0 2px color(config('background', $form-file, false) + '-background', btn) inset;
-      color: color(config('background', $form-file, false) + '-background', btn);
+      background-color: color(config('background', $form-file, false) + '-background-hover', btn);
     }
 
     &#{$pseudo-selector} {
