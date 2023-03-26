@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'spacer' as *;
-@use 'typography' as *;
+@use '../spacer' as *;
+@use '../typography' as *;
 
 $form-fieldset: () !default;
 $form-fieldset: map.merge(

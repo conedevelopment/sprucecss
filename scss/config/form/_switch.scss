@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'typography' as *;
-@use 'form-label' as *;
+@use '../typography' as *;
+@use 'label' as *;
 
 $form-switch: () !default;
 $form-switch: map.merge(

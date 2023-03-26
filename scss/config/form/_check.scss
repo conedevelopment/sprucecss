@@ -1,7 +1,6 @@
 @use 'sass:map';
-@use 'display' as *;
-@use 'typography' as *;
-@use 'form' as *;
+@use '../display' as *;
+@use '../typography' as *;
 
 $form-check: () !default;
 $form-check: map.merge(
