@@ -4,8 +4,10 @@
 
 @mixin generate-form-row {
   .form-row {
+    @include generate-variables($form-row);
+
     &--mixed {
-      --col-width: #{$form-row-col-width};
+      --col-width: #{config('col-width', $form-row)};
 
       @include layout-flex(s);
     }

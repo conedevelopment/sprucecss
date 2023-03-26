@@ -1,0 +1,11 @@
+@use 'sass:map';
+
+$form-description: () !default;
+$form-description: map.merge(
+  (
+    'font-size': null,
+    'font-style': null,
+    'font-weight': null,
+  ),
+  $form-description
+);

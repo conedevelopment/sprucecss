@@ -23,33 +23,42 @@
 
   @if ($has-sizes) {
     #{$parent}--sm {
-      #{$input} {
-        font-size: $form-switch-font-size-sm;
+      @include generate-variables($form-switch-sm, ('focus-'));
+
+      @if not map.get($settings, 'css-custom-properties') {
+        #{$input} {
+          font-size: config('font-size', $form-switch-sm);
+        }
       }
     }
 
     #{$parent}--lg {
-      #{$input} {
-        font-size: $form-switch-font-size-lg;
+      @include generate-variables($form-switch-lg, ('focus-'));
+
+      @if not map.get($settings, 'css-custom-properties') {
+        #{$input} {
+          font-size: config('font-size', $form-switch-lg);
+        }
       }
     }
   }
 
   @at-root {
     #{$input} {
-      @include field-icon($form-switch-icon, color(border, form, true));
+      @include generate-variables($form-switch, ('focus-'));
+      @include field-icon(config('switch', $form-icon, false), color(border, form, true));
       appearance: none;
       background-color: color(background, form);
       background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
-      border: $form-switch-border-width solid color(border, form);
+      border: config('border-width', $form-switch) solid color(border, form);
       border-radius: 2em;
       flex-shrink: 0;
-      font-size: $form-switch-font-size;
+      font-size: config('font-size', $form-switch);
       height: 1em;
       line-height: 1;
-      margin-block-start: $form-switch-margin-block-start;
+      margin-block-start: config('margin-block-start', $form-switch);
       transition-duration: transition(duration);
       transition-property: background-position, border, box-shadow;
       transition-timing-function: transition(timing-function);
@@ -67,7 +76,7 @@
       }
 
       &:checked {
-        @include field-icon($form-switch-icon, color(check-foreground, form, true));
+        @include field-icon(config('switch', $form-icon, false), color(check-foreground, form, true));
         background-color: color(check-background, form);
         background-position: right center;
         border-color: color(check-background, form);
@@ -94,8 +103,8 @@
     }
 
     #{$label} {
-      font-weight: $form-switch-font-weight;
-      line-height: $form-switch-line-height;
+      font-weight: config('font-weight', $form-switch);
+      line-height: config('line-height', $form-switch);
     }
   }
 }

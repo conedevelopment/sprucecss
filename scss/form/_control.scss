@@ -91,18 +91,18 @@
     @if ($has-states) {
       &--valid,
       &--invalid {
-        background-position: center right $select-icon-right-offset;
+        background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
-        background-size: $select-icon-width auto;
-        padding-inline-end: $select-padding-right;
+        background-size: config('icon-width', $form-select, false) auto;
+        padding-inline-end: config('padding-right', $form-select, false);
 
         html[dir='rtl'] & {
-          background-position: center left $select-icon-right-offset;
+          background-position: center left config('icon-right-offset', $form-select, false);
         }
       }
 
       &--valid {
-        @include field-icon($form-valid-icon, color(success, alert, true));
+        @include field-icon(config('valid', $form-icon, false), color(success, alert, true));
         border-color: color(success, alert);
 
         &:focus {
@@ -118,7 +118,7 @@
       }
 
       &--invalid {
-        @include field-icon($form-invalid-icon, color(danger, alert, true));
+        @include field-icon(config('invalid', $form-icon, false), color(danger, alert, true));
         border-color: color(danger, alert);
 
         &:focus {
@@ -184,14 +184,14 @@
   @if ($has-select) {
     select#{$selector} {
       &:not([multiple]):not([size]) {
-        @include field-icon($select-icon, color(select-foreground, form, true));
-        background-position: center right $select-icon-right-offset;
+        @include field-icon(config('select', $form-icon, false), color(select-foreground, form, true));
+        background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
-        background-size: $select-icon-width auto;
-        padding-inline-end: $select-padding-right;
+        background-size: config('icon-width', $form-select, false) auto;
+        padding-inline-end: config('padding-right', $form-select, false);
 
         html[dir='rtl'] & {
-          background-position: center left $select-icon-right-offset;
+          background-position: center left config('icon-right-offset', $form-select, false);
         }
       }
     }

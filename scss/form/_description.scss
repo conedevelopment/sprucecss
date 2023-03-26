@@ -1,14 +1,17 @@
 @use 'sass:map';
 @use '../function' as *;
+@use '../mixin' as *;
 @use '../config' as *;
 
 @mixin generate-form-description {
   .form-description {
+    @include generate-variables($form-description);
+
     color: color(text, form);
     display: block;
-    font-size: $form-description-font-size;
-    font-style: $form-description-font-style;
-    font-weight: $form-description-font-weight;
-    line-height: map.get($typography, 'line-height-md');
+    font-size: config('font-size', $form-description);
+    font-style: config('font-style', $form-description);
+    font-weight: config('font-weight', $form-description);
+    line-height: config('line-height-md', $typography);
   }
 }

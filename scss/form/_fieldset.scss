@@ -4,7 +4,8 @@
 
 @mixin generate-fieldset {
   fieldset {
-    @include layout-stack($fieldset-gap-size);
+    @include generate-variables($form-fieldset);
+    @include layout-stack(config('gap', $form-fieldset));
 
     border: 0;
     margin: 0;
@@ -17,7 +18,7 @@
 
   legend {
     color: color(legend, form);
-    font-size: $legend-font-size;
-    font-weight: $legend-font-weight;
+    font-size: config('legend-font-size', $form-fieldset);
+    font-weight: config('legend-font-weight', $form-fieldset);
   }
 }

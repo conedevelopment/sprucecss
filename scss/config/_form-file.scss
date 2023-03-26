@@ -1,0 +1,9 @@
+@use 'sass:map';
+
+$form-file: () !default;
+$form-file: map.merge(
+  (
+    'background': 'primary',
+  ),
+  $form-file
+);

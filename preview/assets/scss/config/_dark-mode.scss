@@ -10,7 +10,7 @@
 
   select.form-control:not([multiple]):not([size]) {
     @include spruce.field-icon(
-      spruce.$select-icon,
+      spruce.config('select', spruce.$form-icon, false),
       spruce.color(select-foreground, form, true, spruce.$dark-colors)
     );
   }
