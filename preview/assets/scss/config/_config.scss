@@ -27,9 +27,7 @@ $spacer: 1.25rem;
     'css-custom-properties': true,
   ),
   $btn: (
-    'border-radius': 3em,
-    'font-weight': 400,
-    'text-transform': none,
+    'font-style': italic,
   ),
   $btn-lg: (
     'border-radius': 0.25em,
@@ -41,7 +39,4 @@ $spacer: 1.25rem;
   $typography: (
     'weight-base': 300,
   ),
-  // $btn-text-transform: uppercase,
-  // $form-check-font-size-lg: 1.35rem,
-  // $form-check-font-weight: 400,
 );

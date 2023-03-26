@@ -112,7 +112,7 @@
             $ring-color: color(valid-focus-ring, form, false),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
             $ring-width: config('focus-ring-width', $form-control, false),
-            $ring-offset: config('focus-ring-offset', $form-control, false)
+            $ring-offset: config('focus-ring-offset', $form-control, false),
           );
         }
       }
@@ -123,12 +123,12 @@
 
         &:focus {
           @include focus-ring(
-            $type: config('focus-ring-type', $form-control),
+            $type: config('focus-ring-type', $form-control, false),
             $border-color: color(invalid, form),
             $ring-color: color(invalid-focus-ring, form),
-            $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
-            $ring-width: config('focus-ring-width', $form-control),
-            $ring-offset: config('focus-ring-offset', $form-control)
+            $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
+            $ring-width: config('focus-ring-width', $form-control, false),
+            $ring-offset: config('focus-ring-offset', $form-control, false),
           );
         }
       }

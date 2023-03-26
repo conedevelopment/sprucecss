@@ -14,13 +14,13 @@
       overflow-x: auto;
 
       table {
-        min-width: var(--min-width);
+        min-width: get-css-variable(--responsive-width);
       }
     }
   }
 
   #{$selector} {
-    @include generate-variables($table);
+    @include generate-variables($table, ('stripe'));
 
     border-collapse: collapse;
     color: color(text, table);

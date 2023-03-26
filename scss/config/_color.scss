@@ -80,7 +80,7 @@ $colors: map.deep-merge(
       'caption': $color-gray,
       'heading': $color-black,
       'hover': hsl(0deg 0% 0% / 5%),
-      'stripe': hsl(0deg 0% 0% / 0.025%),
+      'stripe': hsl(0deg 0% 0% / 2.5%),
       'text': $color-gray,
     )
   ),
