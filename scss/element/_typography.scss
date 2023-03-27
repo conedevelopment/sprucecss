@@ -4,16 +4,15 @@
 @use '../config' as *;
 
 @mixin generate-typography {
-  // Basics
   html {
     -webkit-tap-highlight-color: hsl(0deg 0% 0% / 0%);
   }
 
   body {
-    font-family: map.get($typography, 'family-base');
-    font-size: map.get($typography, 'size-base');
-    font-weight: map.get($typography, 'weight-base');
-    line-height: map.get($typography, 'line-height-base');
+    font-family: config('family-base', $typography);
+    font-size: config('size-base', $typography);
+    font-weight: config('weight-base', $typography);
+    line-height: config('line-height-base', $typography);
   }
 
   @if setting(hyphens) {
@@ -30,7 +29,6 @@
     }
   }
 
-  // Headings
   h1,
   h2,
   h3,
@@ -38,9 +36,9 @@
   h5,
   h6 {
     color: color(heading);
-    font-family: map.get($typography, 'family-heading');
-    font-weight: map.get($typography, 'weight-heading');
-    line-height: map.get($typography, 'line-height-heading');
+    font-family: config('family-heading', $typography);
+    font-weight: config('weight-heading', $typography);
+    line-height: config('line-height-heading', $typography);
   }
 
   h1,
@@ -73,7 +71,6 @@
     font-size: font-size(h6);
   }
 
-  // Lists
   ul,
   ol {
     @include layout-stack(xxs, $width: false);
@@ -108,7 +105,6 @@
     }
   }
 
-  // Quote, blockquote
   .quote {
     @include layout-stack(xs);
     border-inline-start: 0.5rem solid color(blockquote-border);
@@ -131,7 +127,6 @@
     padding-inline-start: spacer(m);
   }
 
-  // Inline elmeents
   abbr[title] {
     border-block-end: 1px dotted;
     cursor: help;
@@ -140,22 +135,21 @@
 
   mark {
     background-color: color(mark-background);
-    border-radius: map.get($typography, 'inline-border-radius');
+    border-radius: config('inline-border-radius', $typography);
     color: color(mark-foreground);
-    padding: map.get($typography, 'inline-padding');
+    padding: config('inline-padding', $typography);
   }
 
   code,
   kbd,
   samp {
     background-color: color(code-background);
-    border-radius: map.get($typography, 'inline-border-radius');
+    border-radius: config('inline-border-radius', $typography);
     color: color(code-foreground);
-    padding: map.get($typography, 'inline-padding');
+    padding: config('inline-padding', $typography);
   }
 
-  // Lead
   .lead {
-    font-size: map.get($typography, 'size-lead');
+    font-size: config('size-lead', $typography);
   }
 }

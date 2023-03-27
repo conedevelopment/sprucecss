@@ -12,6 +12,7 @@
       @include generate-variables($transition);
     }
 
+    @include generate-variables($typography);
     @include generate-variables($display);
     @include generate-variables($layout);
     @include generate-variables($print);
