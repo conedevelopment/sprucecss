@@ -17,7 +17,7 @@ $form-switch: map.merge(
 $form-switch-sm: () !default;
 $form-switch-sm: map.merge(
   (
-    'font-size': map.get($typography, 'size-base'),
+    'font-size': map.get($typography, 'font-size-base'),
   ),
   $form-switch-sm
 );

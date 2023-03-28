@@ -9,8 +9,8 @@
   }
 
   body {
-    font-family: config('family-base', $typography);
-    font-size: config('size-base', $typography);
+    font-family: config('font-family-base', $typography);
+    font-size: config('font-size-base', $typography);
     font-weight: config('weight-base', $typography);
     line-height: config('line-height-base', $typography);
   }
@@ -36,8 +36,8 @@
   h5,
   h6 {
     color: color(heading);
-    font-family: config('family-heading', $typography);
-    font-weight: config('weight-heading', $typography);
+    font-family: config('font-family-heading', $typography);
+    font-weight: config('font-weight-heading', $typography);
     line-height: config('line-height-heading', $typography);
   }
 
@@ -150,6 +150,6 @@
   }
 
   .lead {
-    font-size: config('size-lead', $typography);
+    font-size: config('font-size-lead', $typography);
   }
 }

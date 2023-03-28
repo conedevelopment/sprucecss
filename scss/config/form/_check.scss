@@ -23,7 +23,7 @@ $form-check: map.merge(
 $form-check-sm: () !default;
 $form-check-sm: map.merge(
   (
-    'font-size': map.get($typography, 'size-base'),
+    'font-size': map.get($typography, 'font-size-base'),
   ),
   $form-check-sm
 );

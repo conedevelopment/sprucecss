@@ -21,7 +21,7 @@
   }
 
   &__caption {
-    font-family: spruce.config('family-cursive', spruce.$typography);
+    font-family: spruce.config('font-family-cursive', spruce.$typography);
   }
 }
 

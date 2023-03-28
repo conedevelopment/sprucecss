@@ -5,9 +5,16 @@
 $typography: () !default;
 $typography: map.merge(
   (
-    'family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
-    'family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
-    'family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
+    'font-family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
+    'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
+    'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
+    'font-size-base': 1rem,
+    'font-size-lead': clamp(1.35rem, 2vw, 1.15rem),
+    'font-size-lg': 1.125rem,
+    'font-size-ratio': 1.25,
+    'font-size-sm': 0.875rem,
+    'font-weight-base': null,
+    'font-weight-heading': 700,
     'inline-border-radius': map.get($display, border-radius-sm),
     'inline-padding': 0.1em 0.3em,
     'line-height-base': 1.8,
@@ -15,13 +22,6 @@ $typography: map.merge(
     'line-height-lg': 1.8,
     'line-height-md': 1.5,
     'line-height-sm': 1.2,
-    'size-base': 1rem,
-    'size-lead': clamp(#{1.35rem, 2vw, 1.15rem}),
-    'size-lg': 1.125rem,
-    'size-ratio': 1.25,
-    'size-sm': 0.875rem,
-    'weight-base': null,
-    'weight-heading': 700,
   ),
   $typography
 );
@@ -29,12 +29,12 @@ $typography: map.merge(
 $font-sizes: () !default;
 $font-sizes: map.merge(
   (
-    h1: math.pow(map.get($typography, 'size-ratio'), 4) * map.get($typography, 'size-base'),
-    h2: math.pow(map.get($typography, 'size-ratio'), 3) * map.get($typography, 'size-base'),
-    h3: math.pow(map.get($typography, 'size-ratio'), 2) * map.get($typography, 'size-base'),
-    h4: math.pow(map.get($typography, 'size-ratio'), 1) * map.get($typography, 'size-base'),
-    h5: map.get($typography, 'size-base'),
-    h6: map.get($typography, 'size-base')
+    h1: math.pow(map.get($typography, 'font-size-ratio'), 4) * map.get($typography, 'font-size-base'),
+    h2: math.pow(map.get($typography, 'font-size-ratio'), 3) * map.get($typography, 'font-size-base'),
+    h3: math.pow(map.get($typography, 'font-size-ratio'), 2) * map.get($typography, 'font-size-base'),
+    h4: math.pow(map.get($typography, 'font-size-ratio'), 1) * map.get($typography, 'font-size-base'),
+    h5: map.get($typography, 'font-size-base'),
+    h6: map.get($typography, 'font-size-base')
   ),
   $font-sizes
 );

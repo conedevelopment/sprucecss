@@ -12,7 +12,7 @@ $btn: map.merge(
     'focus-ring-type': outline,
     'focus-ring-width': 2px,
     'font-family': null,
-    'font-size': map.get($typography, 'size-base'),
+    'font-size': map.get($typography, 'font-size-base'),
     'font-style': null,
     'font-weight': 500,
     'gap': map.get($spacers, xs),

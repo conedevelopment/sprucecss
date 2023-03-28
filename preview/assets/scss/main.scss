@@ -41,7 +41,7 @@
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
   border: 3px solid spruce.color(custom-foreground, btn);
   border-radius: 0;
-  font-family: spruce.config('family-cursive', spruce.$typography);
+  font-family: spruce.config('font-family-cursive', spruce.$typography);
 }
 
 .btn--tertiary {
