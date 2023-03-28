@@ -11,7 +11,7 @@
   body {
     font-family: config('font-family-base', $typography);
     font-size: config('font-size-base', $typography);
-    font-weight: config('weight-base', $typography);
+    font-weight: config('font-weight-base', $typography);
     line-height: config('line-height-base', $typography);
   }
 
