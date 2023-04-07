@@ -50,7 +50,7 @@
   $thumb-background-color-hover: color('thumb-background-hover', 'scrollbar'),
   $track-background-color: color('track-background', 'scrollbar'),
   $size: 0.5rem,
-  $border-radius: map.get($display, 'border-radius-sm')
+  $border-radius: config('border-radius-sm', $display)
 ) {
   &::-webkit-scrollbar {
     height: $size;
