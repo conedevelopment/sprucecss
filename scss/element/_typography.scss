@@ -35,58 +35,58 @@
   h4,
   h5,
   h6 {
-    color: color(heading);
+    color: color('heading');
     font-family: config('font-family-heading', $typography);
     font-weight: config('font-weight-heading', $typography);
     line-height: config('line-height-heading', $typography);
   }
 
   h1 {
-    font-size: font-size(h1);
+    font-size: font-size('h1');
   }
 
   h2 {
-    font-size: font-size(h2);
+    font-size: font-size('h2');
   }
 
   h3 {
-    font-size: font-size(h3);
+    font-size: font-size('h3');
   }
 
   h4 {
-    font-size: font-size(h4);
+    font-size: font-size('h4');
   }
 
   h5 {
-    font-size: font-size(h5);
+    font-size: font-size('h5');
   }
 
   h6 {
-    font-size: font-size(h6);
+    font-size: font-size('h6');
   }
 
   ul,
   ol {
-    @include layout-stack(xxs, $width: false);
+    @include layout-stack('xxs', $width: false);
     list-style-position: inside;
 
     li {
       list-style-position: outside;
 
       &::marker {
-        color: color(marker);
+        color: color('marker');
       }
     }
   }
 
   li > ul,
   li > ol {
-    margin-block-start: spacer(xxs);
+    margin-block-start: spacer('xxs');
   }
 
   dl {
     dt {
-      color: color(heading);
+      color: color('heading');
       font-weight: bold;
     }
 
@@ -95,13 +95,13 @@
     }
 
     dd + dt {
-      margin-block-start: spacer(s);
+      margin-block-start: spacer('s');
     }
   }
 
   .quote {
-    @include layout-stack(xs);
-    border-inline-start: 0.5rem solid color(blockquote-border);
+    @include layout-stack('xs');
+    border-inline-start: 0.5rem solid color('blockquote-border');
     padding-inline-start: spacer(m);
 
     blockquote {
@@ -115,10 +115,10 @@
   }
 
   blockquote {
-    @include layout-stack(xs);
-    border-inline-start: 0.5rem solid color(blockquote-border);
+    @include layout-stack('xs');
+    border-inline-start: 0.5rem solid color('blockquote-border');
     margin-inline-start: 0;
-    padding-inline-start: spacer(m);
+    padding-inline-start: spacer('m');
   }
 
   abbr[title] {
@@ -128,18 +128,18 @@
   }
 
   mark {
-    background-color: color(mark-background);
+    background-color: color('mark-background');
     border-radius: config('inline-border-radius', $typography);
-    color: color(mark-foreground);
+    color: color('mark-foreground');
     padding: config('inline-padding', $typography);
   }
 
   code,
   kbd,
   samp {
-    background-color: color(code-background);
+    background-color: color('code-background');
     border-radius: config('inline-border-radius', $typography);
-    color: color(code-foreground);
+    color: color('code-foreground');
     padding: config('inline-padding', $typography);
   }
 
