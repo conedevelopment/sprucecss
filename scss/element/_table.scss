@@ -23,7 +23,7 @@
     @include generate-variables($table, ('stripe'));
 
     border-collapse: collapse;
-    color: color(text, table);
+    color: color('text', 'table');
     width: 100%;
 
     caption {
@@ -31,18 +31,18 @@
       font-size: config('caption-font-size', $table);
       font-style: config('caption-font-style', $table);
       font-weight: config('caption-font-weight', $table);
-      margin-block-end: spacer(s);
+      margin-block-end: spacer('s');
     }
 
     th,
     td {
-      border-block-end: 1px solid color(border, table);
+      border-block-end: 1px solid color('border', 'table');
       line-height: config('line-height', $table);
       padding: config('padding', $table);
     }
 
     th {
-      color: color(heading, table);
+      color: color('heading', 'table');
       text-align: inherit;
       text-align: -webkit-match-parent;
     }
@@ -50,13 +50,13 @@
     @if ($has-variations) {
       &--striped {
         > tbody > tr:nth-child(#{config('stripe', $table, false)}) {
-          background-color: color(stripe, table);
+          background-color: color('stripe', 'table');
         }
       }
 
       &--hover {
         > tbody > tr:hover {
-          background: color(hover, table);
+          background: color('hover', 'table');
         }
       }
 

@@ -15,7 +15,7 @@ $typography: map.merge(
     'font-size-sm': 0.875rem,
     'font-weight-base': null,
     'font-weight-heading': 700,
-    'inline-border-radius': map.get($display, border-radius-sm),
+    'inline-border-radius': map.get($display, 'border-radius-sm'),
     'inline-padding': 0.1em 0.3em,
     'line-height-base': 1.8,
     'line-height-heading': calc(2px + 2ex + 2px),

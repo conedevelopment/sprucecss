@@ -12,12 +12,12 @@
     padding: 0;
 
     + fieldset {
-      margin-block-start: spacer(l);
+      margin-block-start: spacer('l');
     }
   }
 
   legend {
-    color: color(legend, form);
+    color: color('legend', 'form');
     font-size: config('legend-font-size', $form-fieldset);
     font-weight: config('legend-font-weight', $form-fieldset);
   }

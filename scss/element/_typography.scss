@@ -102,7 +102,7 @@
   .quote {
     @include layout-stack('xs');
     border-inline-start: 0.5rem solid color('blockquote-border');
-    padding-inline-start: spacer(m);
+    padding-inline-start: spacer('m');
 
     blockquote {
       border-inline-start: 0;

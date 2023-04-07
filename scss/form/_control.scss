@@ -14,23 +14,23 @@
     @include generate-variables($form-control, ('focus-'));
 
     appearance: none;
-    background-color: color(background, form);
-    border: config('border-width', $form-control) solid color(border, form);
+    background-color: color('background', 'form');
+    border: config('border-width', $form-control) solid color('border', 'form');
     border-radius: config('border-radius', $form-control);
     box-sizing: border-box;
-    color: color(text, form);
+    color: color('text', 'form');
     display: block;
     font-size: config('font-size', $form-control);
     font-weight: config('font-weight', $form-control);
     line-height: config('line-height', $form-control);
     padding: config('padding', $form-control);
-    transition-duration: transition(duration);
+    transition-duration: transition('duration');
     transition-property: border, box-shadow;
-    transition-timing-function: transition(timing-function);
+    transition-timing-function: transition('timing-function');
     width: 100%;
 
     &::placeholder {
-      color: color(placeholder, form);
+      color: color('placeholder', 'form');
     };
 
     &::-webkit-datetime-edit {
@@ -40,8 +40,8 @@
     &:focus {
       @include focus-ring(
         $type: config('focus-ring-type', $form-control, false),
-        $border-color: color(border-focus, form),
-        $ring-color: color(ring-focus, form),
+        $border-color: color('border-focus', 'form'),
+        $ring-color: color('ring-focus', 'form'),
         $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
         $ring-width: config('focus-ring-width', $form-control, false),
         $ring-offset: config('focus-ring-offset', $form-control, false)
@@ -73,12 +73,11 @@
     &[disabled],
     &[disabled='true'] {
       @include field-disabled(
-        $background: color(background-disabled, form),
-        $border: color(border-disabled, form)
+        $background: color('background-disabled', 'form'),
+        $border: color('border-disabled', 'form')
       );
     }
 
-    // Set height to textarea
     @at-root {
       textarea#{$selector} {
         height: config('textarea-height', $form-control);
@@ -87,7 +86,6 @@
       }
     }
 
-    // Validation states
     @if ($has-states) {
       &--valid,
       &--invalid {
@@ -102,14 +100,14 @@
       }
 
       &--valid {
-        @include field-icon(config('valid', $form-icon, false), color(success, alert, true));
-        border-color: color(success, alert);
+        @include field-icon(config('valid', $form-icon, false), color('success', 'alert', true));
+        border-color: color('success', 'alert');
 
         &:focus {
           @include focus-ring(
             $type: config('focus-ring-type', $form-control, false),
-            $border-color: color(valid, form),
-            $ring-color: color(valid-focus-ring, form, false),
+            $border-color: color('valid', 'form'),
+            $ring-color: color('valid-focus-ring', 'form', false),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
             $ring-width: config('focus-ring-width', $form-control, false),
             $ring-offset: config('focus-ring-offset', $form-control, false),
@@ -118,14 +116,14 @@
       }
 
       &--invalid {
-        @include field-icon(config('invalid', $form-icon, false), color(danger, alert, true));
-        border-color: color(danger, alert);
+        @include field-icon(config('invalid', $form-icon, false), color('danger', 'alert', true));
+        border-color: color('danger', 'alert');
 
         &:focus {
           @include focus-ring(
             $type: config('focus-ring-type', $form-control, false),
-            $border-color: color(invalid, form),
-            $ring-color: color(invalid-focus-ring, form),
+            $border-color: color('invalid', 'form'),
+            $ring-color: color('invalid-focus-ring', 'form'),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
             $ring-width: config('focus-ring-width', $form-control, false),
             $ring-offset: config('focus-ring-offset', $form-control, false),
@@ -134,7 +132,6 @@
       }
     }
 
-    // Sizes
     @if ($has-sizes) {
       &--sm {
         --webkit-date-line-height: 1.36;
@@ -180,11 +177,10 @@
     }
   }
 
-  // Generate select styling
   @if ($has-select) {
     select#{$selector} {
       &:not([multiple]):not([size]) {
-        @include field-icon(config('select', $form-icon, false), color(select-foreground, form, true));
+        @include field-icon(config('select', $form-icon, false), color('select-foreground', 'form', true));
         background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
         background-size: config('icon-width', $form-select, false) auto;

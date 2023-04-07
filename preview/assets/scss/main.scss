@@ -73,6 +73,7 @@
 
 .selection-1 {
   @include spruce.selection(secondary, $is-direct: true);
+  @include spruce.transition;
 }
 
 .selection-2 {

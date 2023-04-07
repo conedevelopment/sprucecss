@@ -12,7 +12,7 @@
 /// @return {color} - The color value or the variable.
 @function color(
   $key,
-  $type: base,
+  $type: 'base',
   $only-color: false,
   $map: $colors
 ) {

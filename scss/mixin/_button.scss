@@ -9,7 +9,7 @@
 /// @param {boolean} $focus - If the focus ring should be generated.
 /// @return {string} - The generated focus ring.
 @mixin btn-focus-helper(
-  $type: primary,
+  $type: 'primary',
   $focus: true
 ) {
   @if $focus {
@@ -39,7 +39,7 @@
 /// @return {string} - The generated button variant.
 /// @throws {error} - If the color key doesn't exist.
 @mixin btn-variant(
-  $type: primary,
+  $type: 'primary',
   $focus: true
 ) {
   @if not map.has-key($colors, btn, $type + '-foreground') or not map.has-key($colors, btn, $type + '-background') {

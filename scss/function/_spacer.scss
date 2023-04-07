@@ -21,7 +21,7 @@
 @function spacer-clamp(
   $min,
   $max,
-  $optimal: map.get($settings, optimal-spacer-size)
+  $optimal: map.get($settings, 'optimal-spacer-size')
 ) {
   @if map.has-key($spacers, $min) {
     $min: map.get($spacers, $min);

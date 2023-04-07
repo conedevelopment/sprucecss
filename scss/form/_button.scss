@@ -46,7 +46,6 @@
   }
 
   @if ($has-icons) {
-    // Icon button
     #{$selector}--icon {
       padding: config('icon-padding', $btn);
 
@@ -59,7 +58,6 @@
       }
     }
 
-    // Icons
     #{$selector}__icon {
       flex-shrink: 0;
       height: config('icon-size', $btn);
@@ -95,7 +93,6 @@
       }
     }
 
-    // Display types
     #{$selector}--block#{$pseudo-selector} {
       width: 100%;
     }

@@ -9,7 +9,7 @@ $table: map.merge(
     'caption-font-style': null,
     'caption-font-weight': null,
     'line-height': map.get($typography, 'line-height-md'),
-    'padding': map.get($spacers, s),
+    'padding': map.get($spacers, 's'),
     'responsive-width': 40rem,
     'stripe': odd,
   ),
@@ -19,7 +19,7 @@ $table: map.merge(
 $table-sm: () !default;
 $table-sm: map.merge(
   (
-    'padding': map.get($spacers, xs),
+    'padding': map.get($spacers, 'xs'),
   ),
   $table-sm
 );

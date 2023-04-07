@@ -6,7 +6,7 @@
 $btn: () !default;
 $btn: map.merge(
   (
-    'border-radius': map.get($display, border-radius-sm),
+    'border-radius': map.get($display, 'border-radius-sm'),
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
     'focus-ring-type': outline,
@@ -15,7 +15,7 @@ $btn: map.merge(
     'font-size': map.get($typography, 'font-size-base'),
     'font-style': null,
     'font-weight': 500,
-    'gap': map.get($spacers, xs),
+    'gap': map.get($spacers, 'xs'),
     'icon-padding': 0.75em,
     'icon-size': 1em,
     'outline-width': 1px,
@@ -30,7 +30,7 @@ $btn-lg: () !default;
 $btn-lg: map.merge(
   (
     'font-size': 1.15rem,
-    'gap': map.get($spacers, xs),
+    'gap': map.get($spacers, 'xs'),
     'icon-padding': 0.9em,
     'padding': 0.9em 1.15em,
   ),
@@ -41,7 +41,7 @@ $btn-sm: () !default;
 $btn-sm: map.merge(
   (
     'font-size': 0.8rem,
-    'gap': map.get($spacers, xxs),
+    'gap': map.get($spacers, 'xxs'),
     'icon-padding': 0.5em,
     'icon-size': 0.85em,
     'padding': 0.5em 1em,

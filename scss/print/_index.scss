@@ -4,7 +4,7 @@
 @use '../mixin' as *;
 
 @mixin generate-print {
-  @if setting(print) == true {
+  @if setting('print') == true {
     @media print {
       @page {
         margin: config('page-margin', $print);

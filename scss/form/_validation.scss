@@ -8,11 +8,11 @@
     line-height: map.get($typography, 'line-height-md');
 
     &--valid {
-      color: color(success, alert);
+      color: color('success', 'alert');
     }
 
     &--invalid {
-      color: color(danger, alert);
+      color: color('danger', 'alert');
     }
   }
 }

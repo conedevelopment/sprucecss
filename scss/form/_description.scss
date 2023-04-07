@@ -7,7 +7,7 @@
   .form-description {
     @include generate-variables($form-description);
 
-    color: color(text, form);
+    color: color('text', 'form');
     display: block;
     font-size: config('font-size', $form-description);
     font-style: config('font-style', $form-description);

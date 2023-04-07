@@ -28,7 +28,7 @@
 /// @param {number} $split - The number of element where it should split the layout.
 /// @return {mixin} - The stacked layout.
 @mixin layout-stack(
-  $gap: m,
+  $gap: 'm',
   $width: false,
   $align: none,
   $important: false,
@@ -88,7 +88,7 @@
 /// @param {string} $minimum - The minimum width of the elements.
 /// @return {mixin} - The grid layout.
 @mixin layout-grid(
-  $gap: m,
+  $gap: 'm',
   $minimum: 12.5rem
 ) {
   @if map.has-key($spacers, $gap) {
@@ -110,7 +110,7 @@
 /// @param {string} $sidebar-width - The width of the sidebar.
 /// @return {mixin} - The sidebar layout.
 @mixin layout-sidebar(
-  $gap: m,
+  $gap: 'm',
   $sidebar-width: 18.75rem
 ) {
   @if map.has-key($spacers, $gap) {
@@ -138,7 +138,7 @@
 /// @param {string} $width-variable - The width of the elements.
 /// @return {mixin} - The instinctive flex layout.
 @mixin layout-flex(
-  $gap: m,
+  $gap: 'm',
   $width-variable: get-css-variable(--col-width)
 ) {
   @if map.has-key($spacers, $gap) {

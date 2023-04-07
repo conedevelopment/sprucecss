@@ -6,7 +6,7 @@
   .form-row {
     &--mixed {
       @include generate-variables($form-row);
-      @include layout-flex(s);
+      @include layout-flex('s');
     }
   }
 }

@@ -8,7 +8,11 @@
 /// @param {list} $include - The list of keys (or a segment of it) to include.
 /// @return {string} - The generated CSS custom properties.
 /// @throws {error} - If you use both $exclude and $include arguments.
-@mixin generate-variables($map, $exclude: null, $include: null) {
+@mixin generate-variables(
+  $map,
+  $exclude: null,
+  $include: null
+) {
   @if $exclude and $include {
     @error 'You can\'t use both $exclude and $include arguments.';
   }

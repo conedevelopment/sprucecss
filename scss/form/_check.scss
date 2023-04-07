@@ -15,7 +15,7 @@
 
     align-items: config('vertical-alignment', $form-check);
     display: inline-flex;
-    gap: spacer(xs);
+    gap: spacer('xs');
   }
 
   #{$parent}--vertical-center {
@@ -47,19 +47,19 @@
   @at-root {
     #{$input} {
       appearance: none;
-      background-color: color(background, form);
+      background-color: color('background', 'form');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      border: config('border-width', $form-check) solid color(border, form);
+      border: config('border-width', $form-check) solid color('border', 'form');
       flex-shrink: 0;
       font-size: config('font-size', $form-check);
       height: 1em;
       line-height: 1;
       margin-block-start: config('margin-block-start', $form-check);
-      transition-duration: transition(duration);
+      transition-duration: transition('duration');
       transition-property: border, box-shadow;
-      transition-timing-function: transition(timing-function);
+      transition-timing-function: transition('timing-function');
       width: 1em;
 
       &[type='radio'] {
@@ -73,8 +73,8 @@
       &:focus-visible {
         @include focus-ring(
           $type: config('focus-ring-type', $form-check, false),
-          $border-color: color(border-focus, form),
-          $ring-color: color(check-focus-ring, form),
+          $border-color: color('border-focus', 'form'),
+          $ring-color: color('check-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-check, false),
           $ring-width: config('focus-ring-width', $form-check, false),
           $ring-offset: config('focus-ring-offset', $form-check, false),
@@ -82,30 +82,30 @@
       }
 
       &:checked {
-        background-color: color(check-background, form);
-        border-color: color(check-background, form);
+        background-color: color('check-background', 'form');
+        border-color: color('check-background', 'form');
 
         &[type='radio'] {
-          @include field-icon(config('radio', $form-icon, false), color(check-foreground, form, true));
+          @include field-icon(config('radio', $form-icon, false), color('check-foreground', 'form', true));
         }
 
         &[type='checkbox'] {
-          @include field-icon(config('checkbox', $form-icon, false), color(check-foreground, form, true));
+          @include field-icon(config('checkbox', $form-icon, false), color('check-foreground', 'form', true));
         }
       }
 
       &:indeterminate {
         &[type='checkbox'] {
-          @include field-icon(config('checkbox-indeterminate', $form-icon, false), color(check-foreground, form, true));
-          background-color: color(check-background, form);
-          border-color: color(check-background, form);
+          @include field-icon(config('checkbox-indeterminate', $form-icon, false), color('check-foreground', 'form', true));
+          background-color: color('check-background', 'form');
+          border-color: color('check-background', 'form');
         }
       }
 
       &:disabled {
         @include field-disabled(
-          $background: color(background-disabled, form),
-          $border: color(border-disabled, form)
+          $background: color('background-disabled', 'form'),
+          $border: color('border-disabled', 'form')
         );
 
         + #{$label} {

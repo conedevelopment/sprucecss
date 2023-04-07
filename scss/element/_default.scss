@@ -3,15 +3,15 @@
 
 @mixin generate-default {
   ::selection {
-    background-color: color(background, selection);
-    color: color(foreground, selection);
+    background-color: color('background', 'selection');
+    color: color('foreground', 'selection');
     text-shadow: none;
   }
 
   html {
     box-sizing: border-box;
 
-    @if setting(html-smooth-scrolling) {
+    @if setting('html-smooth-scrolling') {
       @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth;
       }
@@ -25,19 +25,19 @@
   }
 
   body {
-    background: color(background);
-    color: color(text);
+    background: color('background');
+    color: color('text');
   }
 
   a {
-    color: color(link);
+    color: color('link');
     text-decoration: underline;
-    transition-duration: transition(duration);
+    transition-duration: transition('duration');
     transition-property: color;
-    transition-timing-function: transition(timing-function);
+    transition-timing-function: transition('timing-function');
 
     &:hover {
-      color: color(link-hover);
+      color: color('link-hover');
     }
   }
 

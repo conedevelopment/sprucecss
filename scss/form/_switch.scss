@@ -13,7 +13,7 @@
   #{$parent} {
     align-items: center;
     display: inline-flex;
-    gap: spacer(xs);
+    gap: spacer('xs');
 
     &--block {
       justify-content: space-between;
@@ -46,29 +46,29 @@
   @at-root {
     #{$input} {
       @include generate-variables($form-switch, ('focus-'));
-      @include field-icon(config('switch', $form-icon, false), color(border, form, true));
+      @include field-icon(config('switch', $form-icon, false), color('border', 'form', 'true'));
       appearance: none;
-      background-color: color(background, form);
+      background-color: color('background', 'form');
       background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
-      border: config('border-width', $form-switch) solid color(border, form);
+      border: config('border-width', $form-switch) solid color('border', 'form');
       border-radius: 2em;
       flex-shrink: 0;
       font-size: config('font-size', $form-switch);
       height: 1em;
       line-height: 1;
       margin-block-start: config('margin-block-start', $form-switch);
-      transition-duration: transition(duration);
+      transition-duration: transition('duration');
       transition-property: background-position, border, box-shadow;
-      transition-timing-function: transition(timing-function);
+      transition-timing-function: transition('timing-function');
       width: 2em;
 
       &:focus-visible {
         @include focus-ring(
           $type: config('focus-ring-type', $form-check),
-          $border-color: color(border-focus, form),
-          $ring-color: color(check-focus-ring, form),
+          $border-color: color('border-focus', 'form'),
+          $ring-color: color('check-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-check),
           $ring-width: config('focus-ring-width', $form-check),
           $ring-offset: config('focus-ring-offset', $form-check),
@@ -76,16 +76,16 @@
       }
 
       &:checked {
-        @include field-icon(config('switch', $form-icon, false), color(check-foreground, form, true));
-        background-color: color(check-background, form);
+        @include field-icon(config('switch', $form-icon, false), color('check-foreground', 'form', 'true'));
+        background-color: color('check-background', 'form');
         background-position: right center;
-        border-color: color(check-background, form);
+        border-color: color('check-background', 'form');
       }
 
       &:disabled {
         @include field-disabled(
-          $background: color(background-disabled, form),
-          $border: color(border-disabled, form)
+          $background: color('background-disabled', 'form'),
+          $border: color('border-disabled', 'form')
         );
 
         + #{$label} {

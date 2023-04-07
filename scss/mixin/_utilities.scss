@@ -46,11 +46,11 @@
 /// @param {string} $border-radius - The border radius of the scrollbar.
 /// @return {mixin} - The scrollbar mixin.
 @mixin scrollbar(
-  $thumb-background-color: color(thumb-background, scrollbar),
-  $thumb-background-color-hover: color(thumb-background-hover, scrollbar),
-  $track-background-color: color(track-background, scrollbar),
+  $thumb-background-color: color('thumb-background', 'scrollbar'),
+  $thumb-background-color-hover: color('thumb-background-hover', 'scrollbar'),
+  $track-background-color: color('track-background', 'scrollbar'),
   $size: 0.5rem,
-  $border-radius: map.get($display, border-radius-sm)
+  $border-radius: map.get($display, 'border-radius-sm')
 ) {
   &::-webkit-scrollbar {
     height: $size;
