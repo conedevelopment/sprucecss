@@ -52,7 +52,7 @@
       border-radius: config('thumb-border-radius', $form-range);
       height: config('thumb-height', $form-range);
       margin-block-start: calc(#{config('track-height', $form-range)} / 2 - #{config('thumb-height', $form-range)} / 2);
-      width: 1rem;
+      width: config('thumb-width', $form-range);
     }
 
     &::-moz-range-thumb {
