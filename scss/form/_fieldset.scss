@@ -2,7 +2,7 @@
 @use '../mixin' as *;
 @use '../config' as *;
 
-@mixin generate-fieldset {
+@mixin generate-form-fieldset {
   fieldset {
     @include generate-variables($form-fieldset);
     @include layout-stack(config('gap', $form-fieldset));

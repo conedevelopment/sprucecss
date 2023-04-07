@@ -2,7 +2,7 @@
 @use '../config' as *;
 @use '../function' as *;
 
-@mixin generate-field-feedback {
+@mixin generate-form-feedback {
   .field-feedback {
     display: block;
     line-height: map.get($typography, 'line-height-md');

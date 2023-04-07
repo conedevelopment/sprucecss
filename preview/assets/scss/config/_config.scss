@@ -1,18 +1,18 @@
 @use 'sass:color';
 @use 'dark-colors' as dark;
 
-$color-tertiary: hsl(337 55% 43%);
+$color-tertiary: hsl(337deg 55% 43%);
 $spacer: 1.25rem;
 
 @use 'spruce' with (
   $colors: (
     'btn': (
-      'custom-background': hsl(0 0% 100%),
-      'custom-background-hover': hsl(332 49% 29%),
-      'custom-foreground': hsl(0 0% 0%),
-      'custom-foreground-hover': hsl(0 0% 100%),
+      'custom-background': hsl(0deg 0% 100%),
+      'custom-background-hover': hsl(332deg 49% 29%),
+      'custom-foreground': hsl(0deg 0% 0%),
+      'custom-foreground-hover': hsl(0deg 0% 100%),
       'tertiary-background': $color-tertiary,
-      'tertiary-foreground': hsl(0 0% 100%),
+      'tertiary-foreground': hsl(0deg 0% 100%),
       'tertiary-shadow-focus': color.adjust($color-tertiary, $alpha: -0.75),
     ),
   ),
@@ -36,8 +36,19 @@ $spacer: 1.25rem;
   $form-control: (
     'font-weight': 400,
   ),
+  $form-range: (
+    'thumb-height': 2rem,
+    'thumb-width': 3rem,
+  ),
+  $generator: (
+    'content': (
+      'normalize': true,
+    ),
+    'form': (
+      'btn': true,
+    )
+  ),
   $typography: (
     'font-weight-base': 300,
-    'font-weight-heading': 300,
   ),
 );

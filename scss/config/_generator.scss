@@ -1,0 +1,34 @@
+@use 'sass:map';
+
+$generator: () !default;
+$generator: map.deep-merge(
+  (
+    'content': (
+      'normalize': true,
+      'root': true,
+      'accessibility': true,
+      'default': true,
+      'divider': true,
+      'media': true,
+      'table': true,
+      'typography': true,
+      'utilities': true,
+      'print': true,
+    ),
+    'form': (
+      'btn': true,
+      'file-btn': true,
+      'form-label': true,
+      'form-control': true,
+      'form-check': true,
+      'form-switch': true,
+      'form-description': true,
+      'form-fieldset': true,
+      'form-group': true,
+      'form-row': true,
+      'form-feedback': true,
+      'form-range': true,
+    )
+  ),
+  $generator
+);
