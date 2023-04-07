@@ -2,7 +2,10 @@
 @use 'sass:map';
 @use '../config' as *;
 
-// Declare CSS custom properties through Spruce to add the prefix
+/// Declare CSS custom properties through Spruce to add the prefix.
+/// @param {map} $vars - The CSS custom properties.
+/// @return {null}
+/// @throws {error} - If the CSS custom property name is invalid.
 @mixin set-css-variable($vars) {
   @each $name, $value in $vars {
     @if string.index($name, --) != 1 {

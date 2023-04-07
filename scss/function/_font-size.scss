@@ -2,7 +2,13 @@
 @use 'sass:math';
 @use '../config' as *;
 
-// Get font-size value from $font-sizes Sass map
+/// Get the font size of a key from the $font-sizes map.
+/// @param {string} $key - The key name.
+/// @param {boolean} $fluid - Whether to return the fluid font size.
+/// @param {number} $scaler - The scaler value (15 = 15% smaller).
+/// @param {number} $optimal-size - The optimal font size.
+/// @return {string} - The font size of the key.
+/// @throws {error} - If the key doesn't exist.
 @function font-size(
   $key,
   $fluid: true,

@@ -1,5 +1,13 @@
 @use 'sass:string';
 
+/// Generate font-face declaration.
+/// @param {string} $font-family - The font family name.
+/// @param {string} $src - The font source.
+/// @param {number} $font-weight - The font weight.
+/// @param {string} $font-style - The font style.
+/// @param {string} $font-display - The font display.
+/// @return {string} - The generated font-face declaration.
+/// @throws {error} - If the font format is not .woff2.
 @mixin font-face(
   $font-family: null,
   $src: null,

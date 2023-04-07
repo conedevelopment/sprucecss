@@ -4,7 +4,6 @@
 @use '../config' as *;
 
 @mixin generate-root {
-  // Generate the $colors maps into CSS custom properties.
   @include generate-color-variables;
 
   :root {

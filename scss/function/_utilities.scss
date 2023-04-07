@@ -16,7 +16,10 @@
   @return $string;
 }
 
-// See https://codepen.io/kevinweber/pen/dXWoRw
+/// Escape a string to be used as a data URI.
+/// @param {String} $string - The string to escape.
+/// @return {String} - The escaped string.
+/// @author Kevin Weber - https://codepen.io/kevinweber/pen/dXWoRw
 @function svg-escape($svg) {
   @each $char, $encoded in $escaping-characters {
     $svg: str-replace($svg, $char, $encoded);

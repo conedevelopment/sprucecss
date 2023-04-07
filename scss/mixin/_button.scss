@@ -4,6 +4,10 @@
 @use '../config' as *;
 @use 'form' as *;
 
+/// Generate a button focus ring.
+/// @param {string} $type - The type of the button for the color value.
+/// @param {boolean} $focus - If the focus ring should be generated.
+/// @return {string} - The generated focus ring.
 @mixin btn-focus-helper(
   $type: primary,
   $focus: true
@@ -29,6 +33,11 @@
   }
 }
 
+/// Generate a button variant.
+/// @param {string} $type - The type of the button for the color value.
+/// @param {boolean} $focus - If the focus ring should be generated.
+/// @return {string} - The generated button variant.
+/// @throws {error} - If the color key doesn't exist.
 @mixin btn-variant(
   $type: primary,
   $focus: true
@@ -60,6 +69,11 @@
   }
 }
 
+/// Generate a button variant with outline.
+/// @param {string} $type - The type of the button for the color value.
+/// @param {boolean} $focus - If the focus ring should be generated.
+/// @return {string} - The generated button variant with outline.
+/// @throws {error} - If the color key doesn't exist.
 @mixin btn-variant-outline(
   $type: primary,
   $focus: true

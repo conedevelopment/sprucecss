@@ -3,6 +3,12 @@
 @use 'setting' as *;
 @use '../config' as *;
 
+/// Get the value of a key from a map.
+/// @param {string} $key - The key name.
+/// @param {map} $map - The map to get the value from.
+/// @param {boolean} $custom-property - Whether to return the value as a CSS custom property.
+/// @return {string} - The value of the key.
+/// @throws {error} - If the key doesn't exist.
 @function config(
   $key,
   $map,

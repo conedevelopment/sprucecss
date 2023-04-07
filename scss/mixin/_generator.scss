@@ -6,6 +6,7 @@
 @use '../print' as *;
 @use 'button' as *;
 
+/// Generate all the styles.
 @mixin generate-styles {
   @if map.get($generators, 'content', 'normalize') {
     @include generate-normalize;

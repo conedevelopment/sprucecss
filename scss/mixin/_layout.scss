@@ -3,7 +3,7 @@
 @use '../function' as *;
 @use '../config' as *;
 
-/// Create Center layout
+/// Create center layout.
 /// @param {string} $gap - The gap between the container and the content.
 /// @param {string} $max-width - The maximum width of the container.
 /// @return {mixin} - The centered layout.
@@ -20,7 +20,13 @@
   padding-inline: $gap;
 }
 
-// Create Stack layout
+/// Create stack layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {boolean} $width - The width of the elements.
+/// @param {string} $align - The horizontal alignment of the elements.
+/// @param {boolean} $important - Whether it should use the !important keyword.
+/// @param {number} $split - The number of element where it should split the layout.
+/// @return {mixin} - The stacked layout.
 @mixin layout-stack(
   $gap: m,
   $width: false,
@@ -77,7 +83,10 @@
   }
 }
 
-// Create Grid layout
+/// Create grid layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {string} $minimum - The minimum width of the elements.
+/// @return {mixin} - The grid layout.
 @mixin layout-grid(
   $gap: m,
   $minimum: 12.5rem
@@ -96,7 +105,10 @@
   }
 }
 
-// Create Sidebar Layout
+/// Create sidebar layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {string} $sidebar-width - The width of the sidebar.
+/// @return {mixin} - The sidebar layout.
 @mixin layout-sidebar(
   $gap: m,
   $sidebar-width: 18.75rem
@@ -121,7 +133,10 @@
   }
 }
 
-// Create instinctive flex layout.
+/// Create instinctive flex layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {string} $width-variable - The width of the elements.
+/// @return {mixin} - The instinctive flex layout.
 @mixin layout-flex(
   $gap: m,
   $width-variable: get-css-variable(--col-width)

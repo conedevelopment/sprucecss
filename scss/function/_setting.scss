@@ -1,7 +1,10 @@
 @use 'sass:map';
 @use '../config' as *;
 
-// Get spacer value from $settings Sass map
+/// Get spacer value from $settings map.
+/// @param {string} $key - The key name.
+/// @return {string} - The value of the key.
+/// @throws {error} - If the key doesn't exist.
 @function setting($key) {
   @if not map.has-key($settings, $key) {
     @error 'The #{$key} key name doesn\'t exist at the $settings map.';
