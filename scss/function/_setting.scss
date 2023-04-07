@@ -5,7 +5,22 @@
 /// @param {string} $key - The key name.
 /// @return {string} - The value of the key.
 /// @throws {error} - If the key doesn't exist.
-@function setting($key) {
+@function setting(
+  $key,
+  $group: null
+) {
+  @if $group {
+    @if not map.has-key($settings, $group) {
+      @error 'The #{$group} key name doesn\'t exist at the $settings map.';
+    }
+
+    @if not map.has-key(map.get($settings, $group), $key) {
+      @error 'The #{$key} key name doesn\'t exist at the #{$group} map.';
+    }
+
+    @return map.get(map.get($settings, $group), $key);
+  }
+
   @if not map.has-key($settings, $key) {
     @error 'The #{$key} key name doesn\'t exist at the $settings map.';
   }

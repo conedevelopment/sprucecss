@@ -23,7 +23,9 @@ $spacer: 1.25rem;
     'hyphens': true,
     'prefix': 'spruce',
     'print': true,
-    'utilities': true,
+    'utilities': (
+      'typography': false,
+    ),
     'css-custom-properties': true,
   ),
   $btn: (

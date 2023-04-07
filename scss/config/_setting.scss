@@ -1,7 +1,7 @@
 @use 'sass:map';
 
 $settings: () !default;
-$settings: map.merge(
+$settings: map.deep-merge(
   (
     'color-fallback': false,
     'html-smooth-scrolling': true,
@@ -10,7 +10,10 @@ $settings: map.merge(
     'optimal-spacer-size': '5vw',
     'prefix': 'spruce',
     'print': false,
-    'utilities': false,
+    'utilities': (
+      'display': true,
+      'typography': true,
+    ),
     'css-custom-properties': false,
   ),
   $settings
