@@ -15,8 +15,13 @@
       @include generate-variables($typography);
     }
 
-    @include generate-variables($display);
-    @include generate-variables($layout);
+    @if map.get($generators, 'content', 'display') {
+      @include generate-variables($display);
+    }
+
+    @if map.get($generators, 'content', 'layout') {
+      @include generate-variables($layout);
+    }
 
     @if map.get($generators, 'content', 'print') {
       @include generate-variables($print);
