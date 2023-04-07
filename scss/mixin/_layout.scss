@@ -124,7 +124,7 @@
 // Create instinctive flex layout.
 @mixin layout-flex(
   $gap: m,
-  $width-variable: --col-width
+  $width-variable: get-css-variable(--col-width)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
@@ -135,6 +135,6 @@
   gap: $gap;
 
   > * {
-    flex: 1 1 var(#{$width-variable});
+    flex: 1 1 $width-variable;
   }
 }

@@ -7,49 +7,47 @@
 @use 'button' as *;
 
 @mixin generate-styles {
-  @debug $generator;
-
-  @if map.get($generator, 'content', 'normalize') {
+  @if map.get($generators, 'content', 'normalize') {
     @include generate-normalize;
   }
 
-  @if map.get($generator, 'content', 'root') {
+  @if map.get($generators, 'content', 'root') {
     @include generate-root;
   }
 
-  @if map.get($generator, 'content', 'accessibility') {
+  @if map.get($generators, 'content', 'accessibility') {
     @include generate-accessibility;
   }
 
-  @if map.get($generator, 'content', 'default') {
+  @if map.get($generators, 'content', 'default') {
     @include generate-default;
   }
 
-  @if map.get($generator, 'content', 'divider') {
+  @if map.get($generators, 'content', 'divider') {
     @include generate-divider;
   }
 
-  @if map.get($generator, 'content', 'media') {
+  @if map.get($generators, 'content', 'media') {
     @include generate-media;
   }
 
-  @if map.get($generator, 'content', 'table') {
+  @if map.get($generators, 'content', 'table') {
     @include generate-table;
   }
 
-  @if map.get($generator, 'content', 'typography') {
+  @if map.get($generators, 'content', 'typography') {
     @include generate-typography;
   }
 
-  @if map.get($generator, 'content', 'utilities') {
+  @if map.get($generators, 'content', 'utilities') {
     @include generate-utilities;
   }
 
-  @if map.get($generator, 'content', 'print') {
+  @if map.get($generators, 'content', 'print') {
     @include generate-print;
   }
 
-  @if map.get($generator, 'form', 'btn') {
+  @if map.get($generators, 'form', 'btn') {
     @include generate-btn('.btn');
 
     .btn--primary { @include btn-variant(primary); }
@@ -58,7 +56,7 @@
     .btn--outline-secondary { @include btn-variant-outline(secondary); }
   }
 
-  @if map.get($generator, 'form', 'file-btn') {
+  @if map.get($generators, 'form', 'file-btn') {
     @include generate-file-btn(
       '.form-file',
       '::file-selector-button',
@@ -67,11 +65,11 @@
     );
   }
 
-  @if map.get($generator, 'form', 'form-label') {
+  @if map.get($generators, 'form', 'form-label') {
     @include generate-form-label;
   }
 
-  @if map.get($generator, 'form', 'form-control') {
+  @if map.get($generators, 'form', 'form-control') {
     @include generate-form-control(
       '.form-control',
       true,
@@ -80,7 +78,7 @@
     );
   }
 
-  @if map.get($generator, 'form', 'form-check') {
+  @if map.get($generators, 'form', 'form-check') {
     @include generate-form-check(
       '.form-check',
       '.form-check__control',
@@ -89,7 +87,7 @@
     );
   }
 
-  @if map.get($generator, 'form', 'form-switch') {
+  @if map.get($generators, 'form', 'form-switch') {
     @include generate-form-switch(
       '.form-switch',
       '.form-switch__control',
@@ -98,27 +96,27 @@
     );
   }
 
-  @if map.get($generator, 'form', 'form-fieldset') {
+  @if map.get($generators, 'form', 'form-fieldset') {
     @include generate-form-fieldset;
   }
 
-  @if map.get($generator, 'form', 'form-group') {
+  @if map.get($generators, 'form', 'form-group') {
     @include generate-form-group;
   }
 
-  @if map.get($generator, 'form', 'form-row') {
+  @if map.get($generators, 'form', 'form-row') {
     @include generate-form-row;
   }
 
-  @if map.get($generator, 'form', 'form-row') {
+  @if map.get($generators, 'form', 'form-row') {
     @include generate-form-row;
   }
 
-  @if map.get($generator, 'form', 'form-feedback') {
+  @if map.get($generators, 'form', 'form-feedback') {
     @include generate-form-feedback;
   }
 
-  @if map.get($generator, 'form', 'form-range') {
+  @if map.get($generators, 'form', 'form-range') {
     @include generate-form-range;
   }
 }

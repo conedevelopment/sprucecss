@@ -6,8 +6,6 @@
   .form-row {
     &--mixed {
       @include generate-variables($form-row);
-      --col-width: #{config('col-width', $form-row)};
-
       @include layout-flex(s);
     }
   }

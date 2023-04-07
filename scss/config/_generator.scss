@@ -1,7 +1,7 @@
 @use 'sass:map';
 
-$generator: () !default;
-$generator: map.deep-merge(
+$generators: () !default;
+$generators: map.deep-merge(
   (
     'content': (
       'normalize': true,
@@ -30,5 +30,5 @@ $generator: map.deep-merge(
       'form-range': true,
     )
   ),
-  $generator
+  $generators
 );

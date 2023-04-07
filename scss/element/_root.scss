@@ -12,14 +12,14 @@
       @include generate-variables($transition);
     }
 
-    @if map.get($generator, 'content', 'typography') {
+    @if map.get($generators, 'content', 'typography') {
       @include generate-variables($typography);
     }
 
     @include generate-variables($display);
     @include generate-variables($layout);
 
-    @if map.get($generator, 'content', 'print') {
+    @if map.get($generators, 'content', 'print') {
       @include generate-variables($print);
     }
   }
