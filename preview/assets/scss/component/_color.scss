@@ -1,21 +1,21 @@
 @use 'sass:map';
-@use 'spruce';
+@use 'spruce' as *;
 
 .colors {
-  @include spruce.layout-grid($minimum: 15rem);
+  @include layout-grid($minimum: 15rem);
 }
 
 .color-item {
   align-items: start;
   display: flex;
-  gap: spruce.spacer(m);
+  gap: spacer(m);
 
   &--bordered &__color {
-    box-shadow: 0 0 0 1px spruce.color(border) inset;
+    box-shadow: 0 0 0 1px color('border') inset;
   }
 
   &__color {
-    border-radius: spruce.config(border-radius-lg, spruce.$display);
+    border-radius: config('border-radius-lg', $display);
     flex-shrink: 0;
     height: 3rem;
     width: 3rem;
@@ -24,11 +24,11 @@
   &__caption {
     display: flex;
     flex-direction: column;
-    line-height: spruce.config('line-height-md', spruce.$typography);
+    line-height: config('line-height-md', $typography);
   }
 
   &__name {
-    color: spruce.color('heading');
+    color: color('heading');
     font-weight: 700;
   }
 
@@ -37,44 +37,44 @@
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, base) {
+@each $name, $value in map.get($colors, 'base') {
   .color-item--base-#{$name} .color-item__color {
-    background-color: spruce.color($name, base);
+    background-color: color($name, 'base');
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, selection) {
+@each $name, $value in map.get($colors, 'selection') {
   .color-item--selection-#{$name} .color-item__color {
-    background-color: spruce.color($name, selection);
+    background-color: color($name, 'selection');
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, alert) {
+@each $name, $value in map.get($colors, 'alert') {
   .color-item--alert-#{$name} .color-item__color {
-    background-color: spruce.color($name, alert);
+    background-color: color($name, 'alert');
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, btn) {
+@each $name, $value in map.get($colors, 'btn') {
   .color-item--btn-#{$name} .color-item__color {
-    background-color: spruce.color($name, btn);
+    background-color: color($name, 'btn');
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, form) {
+@each $name, $value in map.get($colors, 'form') {
   .color-item--form-#{$name} .color-item__color {
-    background-color: spruce.color($name, form);
+    background-color: color($name, 'form');
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, table) {
+@each $name, $value in map.get($colors, 'table') {
   .color-item--table-#{$name} .color-item__color {
-    background-color: spruce.color($name, table);
+    background-color: color($name, 'table');
   }
 }
 
-@each $name, $value in map.get(spruce.$colors, scrollbar) {
+@each $name, $value in map.get($colors, 'scrollbar') {
   .color-item--scrollbar-#{$name} .color-item__color {
-    background-color: spruce.color($name, scrollbar);
+    background-color: color($name, 'scrollbar');
   }
 }

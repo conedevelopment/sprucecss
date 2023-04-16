@@ -47,9 +47,9 @@ html(lang='en')
               select(id='theme-mode' class='form-control form-control--sm')
                 option(value='light') Light
                 option(value='dark') Dark
-          div(class='site-main__body')
-            h1(class='site-title')= title
-            div(class='site-main__content')
+          div(class='l-main__body')
+            h1(class='l-main__title')= title
+            div(class='l-main__content')
               block content
     script.
       if (localStorage.getItem('spruce-reading-direction')) {

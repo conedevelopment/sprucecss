@@ -5,13 +5,8 @@
 @forward 'config';
 @forward 'layout';
 @forward 'component';
-@use 'spruce';
 
-:root {
-  @include spruce.set-css-variable((
-    --container-gap: spruce.spacer-clamp(m, l)
-  ));
-}
+@use 'spruce';
 
 @include spruce.generate-form-check(
   '.wpcf7-list-item label',

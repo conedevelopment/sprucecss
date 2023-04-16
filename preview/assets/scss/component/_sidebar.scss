@@ -1,16 +1,16 @@
-@use 'spruce';
+@use 'spruce' as *;
 
 .sidebar-navigation {
-  @include spruce.clear-list;
-  @include spruce.layout-stack(s);
-  font-size: 1.1rem;
+  @include clear-list;
+  @include layout-stack('s');
+  font-size: 1.0375rem;
 
   a {
-    color: spruce.color(text);
+    color: color('text');
     text-decoration: none;
 
     &[aria-current='page'] {
-      color: spruce.color(primary);
+      color: color('primary');
       font-weight: 700;
     }
   }
