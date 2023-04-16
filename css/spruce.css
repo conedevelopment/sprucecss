@@ -585,33 +585,27 @@ h6 {
   line-height: calc(2px + 2ex + 2px);
 }
 
-h1,
-.h1 {
+h1 {
   font-size: clamp(2.0751953125rem, 2vw + 1rem, 2.44140625rem);
 }
 
-h2,
-.h2 {
+h2 {
   font-size: clamp(1.66015625rem, 2vw + 1rem, 1.953125rem);
 }
 
-h3,
-.h3 {
+h3 {
   font-size: clamp(1.328125rem, 2vw + 1rem, 1.5625rem);
 }
 
-h4,
-.h4 {
+h4 {
   font-size: clamp(1.0625rem, 2vw + 1rem, 1.25rem);
 }
 
-h5,
-.h5 {
+h5 {
   font-size: 1rem;
 }
 
-h6,
-.h6 {
+h6 {
   font-size: 1rem;
 }
 
@@ -730,7 +724,35 @@ samp {
   font-size: clamp(1.35rem, 2vw, 1.15rem);
 }
 
-/* stylelint-disable */
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.h1 {
+  font-size: clamp(2.0751953125rem, 2vw + 1rem, 2.44140625rem);
+}
+
+.h2 {
+  font-size: clamp(1.66015625rem, 2vw + 1rem, 1.953125rem);
+}
+
+.h3 {
+  font-size: clamp(1.328125rem, 2vw + 1rem, 1.5625rem);
+}
+
+.h4 {
+  font-size: clamp(1.0625rem, 2vw + 1rem, 1.25rem);
+}
+
+.h5 {
+  font-size: 1rem;
+}
+
+.h6 {
+  font-size: 1rem;
+}
+
 .btn {
   align-items: center;
   border-radius: 0.325rem;
@@ -1029,7 +1051,6 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 .form-control--sm {
   --webkit-date-line-height: 1.36;
-  font-size: 0.875rem;
   padding: 0.25em 0.5em;
 }
 .form-control--sm[type=color] {
@@ -1040,7 +1061,6 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 }
 .form-control--lg {
   --webkit-date-line-height: 1.387;
-  font-size: 1.125rem;
   padding: 0.65em 1em;
 }
 .form-control--lg[type=color] {
@@ -1078,10 +1098,6 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 
 .form-check--sm .form-check__control {
   font-size: 1rem;
-}
-
-.form-check--lg .form-check__control {
-  font-size: 1.125rem;
 }
 
 .form-check__control {
@@ -1156,10 +1172,6 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   font-size: 1rem;
 }
 
-.form-switch--lg .form-switch__control {
-  font-size: 1.125rem;
-}
-
 .form-switch__control {
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:hsl%28260, 4%, 70%%29;"/%3e%3c/svg%3e');
   -webkit-appearance: none;
@@ -1210,12 +1222,6 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 
 .form-switch__label {
   line-height: calc(2px + 2ex + 2px);
-}
-
-.form-description {
-  color: var(--spruce-form-color-text);
-  display: block;
-  line-height: 1.5;
 }
 
 fieldset {
@@ -1339,13 +1345,21 @@ legend {
 }
 
 .form-row--mixed {
-  --col-width: 20ch;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 .form-row--mixed > * {
-  flex: 1 1 var(--col-width);
+  flex: 1 1 var(--spruce-col-width);
+}
+
+.form-row--mixed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.form-row--mixed > * {
+  flex: 1 1 var(--spruce-col-width);
 }
 
 .field-feedback {
@@ -1404,5 +1418,3 @@ legend {
   height: 1rem;
   width: 1rem;
 }
-
-/* stylelint-enable */

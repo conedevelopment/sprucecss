@@ -1,7 +1,7 @@
-@use 'spruce';
+@use 'spruce' as *;
 
-@include spruce.generate-color-variables(
-  spruce.$dark-colors,
+@include generate-color-variables(
+  $dark-colors,
   ':root[data-theme-mode="dark"]'
 );
 
@@ -9,9 +9,9 @@
   color-scheme: dark;
 
   select.form-control:not([multiple]):not([size]) {
-    @include spruce.field-icon(
-      spruce.config('select', spruce.$form-icon, false),
-      spruce.color(select-foreground, form, true, spruce.$dark-colors)
+    @include field-icon(
+      config('select', $form-icon, false),
+      color(select-foreground, form, true, $dark-colors)
     );
   }
 }

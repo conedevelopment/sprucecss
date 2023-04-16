@@ -25,17 +25,6 @@
   false
 );
 
-@include spruce.font-face(
-  'Montserrat',
-  '../fonts/montserrat-v25-latin-ext_latin-regular.woff2'
-);
-
-@include spruce.font-face(
-  'Montserrat',
-  '../fonts/montserrat-v25-latin-ext_latin-700.woff2',
-  '700'
-);
-
 .btn--custom {
   @include spruce.btn-variant(custom);
   box-shadow: -3px 5px spruce.color(custom-foreground, btn);
@@ -55,8 +44,8 @@
 .section-title {
   border-block-end: 1px solid spruce.color(border);
   font-size: spruce.font-size(h4);
-  margin-block-end: spruce.spacer(s);
-  padding-block-end: spruce.spacer(xs);
+  margin-block-end: spruce.spacer(m);
+  padding-block-end: spruce.spacer(s);
 
   * + & {
     margin-block-start: spruce.spacer(l);

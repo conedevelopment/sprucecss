@@ -26,7 +26,7 @@ $spacer: 1.25rem;
     'utilities': (
       'typography': false,
     ),
-    'css-custom-properties': true,
+    'css-custom-properties': false,
   ),
   $btn: (
     'font-style': italic,
@@ -34,9 +34,6 @@ $spacer: 1.25rem;
   $btn-lg: (
     'border-radius': 0.25em,
     'text-transform': uppercase,
-  ),
-  $form-control: (
-    'font-weight': 300,
   ),
   $form-range: (
     'thumb-height': 2rem,
@@ -50,7 +47,7 @@ $spacer: 1.25rem;
       'btn': true,
     )
   ),
-  $typography: (
-    'font-weight-base': 300,
+  $layout: (
+    'container-width': 70rem,
   ),
 );

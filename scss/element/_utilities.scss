@@ -1,7 +1,6 @@
 @use '../function' as *;
 
 @mixin generate-utilities {
-  @debug setting('display', 'utilities');
   @if setting('display', 'utilities') == true {
     .hidden,
     [hidden] {

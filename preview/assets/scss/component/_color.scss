@@ -1,12 +1,12 @@
 @use 'sass:map';
 @use 'spruce';
 
-.color-items {
+.colors {
   @include spruce.layout-grid($minimum: 15rem);
 }
 
 .color-item {
-  align-items: center;
+  align-items: start;
   display: flex;
   gap: spruce.spacer(m);
 
@@ -16,12 +16,24 @@
 
   &__color {
     border-radius: spruce.config(border-radius-lg, spruce.$display);
+    flex-shrink: 0;
     height: 3rem;
     width: 3rem;
   }
 
   &__caption {
-    font-family: spruce.config('font-family-cursive', spruce.$typography);
+    display: flex;
+    flex-direction: column;
+    line-height: spruce.config('line-height-md', spruce.$typography);
+  }
+
+  &__name {
+    color: spruce.color('heading');
+    font-weight: 700;
+  }
+
+  &__value {
+    font-weight: 300;
   }
 }
 
