@@ -322,8 +322,8 @@ template {
   --spruce-base-color-code-background: #f6f2fd;
   --spruce-base-color-code-foreground: hsl(205, 100%, 2%);
   --spruce-base-color-heading: hsl(205, 100%, 2%);
-  --spruce-base-color-link-hover: #511dab;
   --spruce-base-color-link: hsl(262, 71%, 49%);
+  --spruce-base-color-link-hover: #511dab;
   --spruce-base-color-mark-background: hsl(50, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(205, 100%, 2%);
   --spruce-base-color-marker: hsl(262, 71%, 49%);
@@ -342,16 +342,16 @@ template {
 }
 
 :root {
-  --spruce-form-color-background-disabled: hsl(0, 0%, 95%);
   --spruce-form-color-background: hsl(0, 0%, 100%);
+  --spruce-form-color-background-disabled: hsl(0, 0%, 95%);
+  --spruce-form-color-border: hsl(260, 4%, 70%);
   --spruce-form-color-border-disabled: hsl(0, 0%, 90%);
   --spruce-form-color-border-focus: hsl(262, 71%, 49%);
-  --spruce-form-color-border: hsl(260, 4%, 70%);
   --spruce-form-color-check-background: hsl(262, 71%, 49%);
   --spruce-form-color-check-focus-ring: hsl(262, 71%, 49%);
   --spruce-form-color-check-foreground: hsl(0, 0%, 100%);
-  --spruce-form-color-invalid-focus-ring: rgba(219, 41, 41, 0.25);
   --spruce-form-color-invalid: hsl(0, 71%, 51%);
+  --spruce-form-color-invalid-focus-ring: rgba(219, 41, 41, 0.25);
   --spruce-form-color-label: hsl(205, 100%, 2%);
   --spruce-form-color-legend: hsl(205, 100%, 2%);
   --spruce-form-color-placeholder: hsl(208, 7%, 40%);
@@ -361,8 +361,8 @@ template {
   --spruce-form-color-ring-focus: rgba(101, 36, 214, 0.25);
   --spruce-form-color-select-foreground: hsl(205, 100%, 2%);
   --spruce-form-color-text: hsl(208, 7%, 30%);
-  --spruce-form-color-valid-focus-ring: rgba(0, 168, 84, 0.25);
   --spruce-form-color-valid: hsl(150, 100%, 33%);
+  --spruce-form-color-valid-focus-ring: rgba(0, 168, 84, 0.25);
 }
 
 :root {
