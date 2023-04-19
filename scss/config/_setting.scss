@@ -4,6 +4,7 @@ $settings: () !default;
 $settings: map.deep-merge(
   (
     'color-fallback': false,
+    'css-custom-properties': false,
     'html-smooth-scrolling': true,
     'hyphens': true,
     'optimal-responsive-font-size': '2vw + 1rem',
@@ -14,7 +15,6 @@ $settings: map.deep-merge(
       'display': true,
       'typography': true,
     ),
-    'css-custom-properties': false,
   ),
   $settings
 );

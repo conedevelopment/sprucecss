@@ -9,7 +9,7 @@ $typography: map.merge(
     'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
     'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
     'font-size-base': 1rem,
-    'font-size-lead': clamp(1.35rem, 2vw, 1.15rem),
+    'font-size-lead': clamp(1.15rem, 2vw, 1.35rem),
     'font-size-lg': 1.125rem,
     'font-size-ratio': 1.25,
     'font-size-sm': 0.875rem,
