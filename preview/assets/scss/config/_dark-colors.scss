@@ -62,16 +62,16 @@ $colors: (
     'foreground': $color-white,
   ),
   'scrollbar': (
-    'thumb-background': hsl(0deg 0% 100% / 0.15),
-    'thumb-background-hover':	hsl(0deg 0% 100% / 0.25),
-    'track-background':	hsl(0deg 0% 100% / 0.05),
+    'thumb-background': hsl(0deg 0% 100% / 15%),
+    'thumb-background-hover':	hsl(0deg 0% 100% / 25%),
+    'track-background':	hsl(0deg 0% 100% / 5%),
   ),
   'table': (
     'border': $color-gray-dark,
     'caption': $color-gray,
     'heading': $color-white,
-    'hover': hsl(0deg 0% 100% / 0.05),
+    'hover': hsl(0deg 0% 100% / 5%),
     'text': $color-gray,
-    'stripe': hsl(0deg 0% 100% / 0.025),
+    'stripe': hsl(0deg 0% 100% / 2.5%),
   )
 );
