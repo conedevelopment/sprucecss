@@ -43,8 +43,8 @@ $btn-sm: map.merge(
     'font-size': 0.8rem,
     'gap': map.get($spacers, 'xxs'),
     'icon-padding': 0.5em,
-    'icon-size': 0.85em,
-    'padding': 0.5em 1em,
+    'icon-size': 0.8rem,
+    'padding': 0.5em 0.75em,
   ),
   $btn-sm
 );

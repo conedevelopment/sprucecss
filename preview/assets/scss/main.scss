@@ -6,84 +6,84 @@
 @forward 'layout';
 @forward 'component';
 
-@use 'spruce';
+@use 'spruce' as *;
 
-@include spruce.generate-form-check(
+@include generate-form-check(
   '.wpcf7-list-item label',
   '.wpcf7-list-item input',
   '.wpcf7-list-item .wpcf7-list-item-label'
 );
 
-@include spruce.generate-table(
+@include generate-table(
   'table',
   false,
   false
 );
 
 .btn--custom {
-  @include spruce.btn-variant(custom);
-  box-shadow: -3px 5px spruce.color(custom-foreground, btn);
-  border: 3px solid spruce.color(custom-foreground, btn);
+  @include btn-variant('custom');
+  box-shadow: -3px 5px color('custom-foreground', 'btn');
+  border: 3px solid color('custom-foreground', 'btn');
   border-radius: 0;
-  font-family: spruce.config('font-family-cursive', spruce.$typography);
+  font-family: config('font-family-cursive', $typography);
 }
 
 .btn--tertiary {
-  @include spruce.btn-variant(tertiary);
+  @include btn-variant('tertiary');
 }
 
 .clear-btn {
-  @include spruce.clear-btn;
+  @include clear-btn;
 }
 
 .section-title {
-  border-block-end: 1px solid spruce.color(border);
-  font-size: spruce.font-size(h4);
-  margin-block-end: spruce.spacer(m);
-  padding-block-end: spruce.spacer(s);
+  border-block-end: 1px solid color('border');
+  font-size: font-size('h4');
+  margin-block-end: spacer('m');
+  padding-block-end: spacer('s');
 
   * + & {
-    margin-block-start: spruce.spacer(l);
+    margin-block-start: spacer('l');
   }
 }
 
 .ellipsis-1 {
-  @include spruce.text-ellipsis(1);
+  @include text-ellipsis(1);
 }
 
 .ellipsis-2 {
-  @include spruce.text-ellipsis(2);
+  @include text-ellipsis(2);
 }
 
 .selection-1 {
-  @include spruce.selection(secondary, $is-direct: true);
-  @include spruce.transition;
+  @include selection('secondary', $is-direct: true);
+  @include transition;
 }
 
 .selection-2 {
-  @include spruce.selection(aqua, $is-direct: true);
+  @include selection(aqua, $is-direct: true);
 }
 
 .ellipsis-btn {
-  @include spruce.text-ellipsis(1);
+  @include text-ellipsis(1);
   max-width: 10ch;
 }
 
 .scrollbar {
-  @include spruce.scrollbar;
-  @include spruce.layout-stack;
+  @include scrollbar;
+  @include layout-stack;
   max-height: 15rem;
   overflow: auto;
-  padding-inline-end: spruce.spacer(m);
+  padding-inline-end: spacer('m');
 }
 
 .custom-heading-size {
-  font-size: spruce.responsive-font-size(4rem, 30, 4vw);
+  font-size: responsive-font-size(4rem, 30, 4vw);
   font-family: 'Montserrat', sans-serif;
 }
 
 .custom-link {
-  @include spruce.transition(2s, background-color, linear);
+  @include transition(2s, background-color, linear);
 
   &:hover {
     background-color: aqua;
@@ -91,29 +91,37 @@
 }
 
 .cleared-list {
-  @include spruce.clear-list;
+  @include clear-list;
 }
 
 .card {
-  @include spruce.a11y-card-link('.card__link', true);
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.config(border-radius-lg, spruce.$display);
-  padding: spruce.spacer(m);
+  @include a11y-card-link('.card__link', true);
+  border: 1px solid color('border');
+  border-radius: config('border-radius-lg', $display);
+  padding: spacer('m');
 
   &__link {
-    color: spruce.color(heading);
-    font-size: spruce.font-size(h3);
+    color: color('heading');
+    font-size: font-size('h3');
     font-weight: 700;
     text-decoration: none;
   }
 }
 
 .break-long-url {
-  @include spruce.word-wrap;
+  @include word-wrap;
 }
 
 .btn-group {
   display: flex;
   flex-wrap: wrap;
-  gap: spruce.spacer(s);
+  gap: spacer('s');
+}
+
+.form-group {
+  &--height-test {
+    align-items: center;
+    display: flex;
+    gap: spacer('xs');
+  }
 }
