@@ -14,18 +14,19 @@ $form-switch: map.merge(
   $form-switch
 );
 
-$form-switch-sm: () !default;
-$form-switch-sm: map.merge(
-  (
-    'font-size': map.get($typography, 'font-size-base'),
-  ),
-  $form-switch-sm
-);
-
 $form-switch-lg: () !default;
 $form-switch-lg: map.merge(
   (
     'font-size': map.get($typography, 'size-lg'),
   ),
   $form-switch-lg
+);
+
+
+$form-switch-sm: () !default;
+$form-switch-sm: map.merge(
+  (
+    'font-size': map.get($typography, 'font-size-base'),
+  ),
+  $form-switch-sm
 );

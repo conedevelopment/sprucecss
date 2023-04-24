@@ -34,7 +34,7 @@ $font-sizes: map.merge(
     h3: math.pow(map.get($typography, 'font-size-ratio'), 2) * map.get($typography, 'font-size-base'),
     h4: math.pow(map.get($typography, 'font-size-ratio'), 1) * map.get($typography, 'font-size-base'),
     h5: map.get($typography, 'font-size-base'),
-    h6: map.get($typography, 'font-size-base')
+    h6: map.get($typography, 'font-size-base'),
   ),
   $font-sizes
 );

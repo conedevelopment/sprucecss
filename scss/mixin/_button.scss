@@ -16,18 +16,18 @@
     &:focus-visible {
       $ring-color: null;
 
-      @if map.has-key($colors, btn, $type + '-focus-ring') {
-        $ring-color: color($type + '-focus-ring', btn);
+      @if map.has-key($colors, 'btn', $type + '-focus-ring') {
+        $ring-color: color($type + '-focus-ring', 'btn');
       } @else {
-        $ring-color: color($type + '-background', btn);
+        $ring-color: color($type + '-background', 'btn');
       }
 
       @include focus-ring(
-        $type: map.get($btn, focus-ring-type),
+        $type: map.get($btn, 'focus-ring-type'),
         $ring-color: $ring-color,
-        $box-shadow-type: map.get($btn, focus-ring-box-shadow-type),
-        $ring-width: map.get($btn, focus-ring-width),
-        $ring-offset: map.get($btn, focus-ring-offset)
+        $box-shadow-type: map.get($btn, 'focus-ring-box-shadow-type'),
+        $ring-width: map.get($btn, 'focus-ring-width'),
+        $ring-offset: map.get($btn, 'focus-ring-offset')
       );
     }
   }
@@ -42,29 +42,29 @@
   $type: 'primary',
   $focus: true
 ) {
-  @if not map.has-key($colors, btn, $type + '-foreground') or not map.has-key($colors, btn, $type + '-background') {
+  @if not map.has-key($colors, 'btn', $type + '-foreground') or not map.has-key($colors, 'btn', $type + '-background') {
     @error 'The #{$type + '-foreground'} or #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
   }
 
   @include btn-focus-helper($type, $focus);
 
-  background-color: color($type + '-background', btn);
-  border-color: color($type + '-background', btn);
-  color: color($type + '-foreground', btn);
+  background-color: color($type + '-background', 'btn');
+  border-color: color($type + '-background', 'btn');
+  color: color($type + '-foreground', 'btn');
 
   &:hover {
-    @if map.has-key($colors, btn, $type + '-background-hover') {
-      background-color: color($type + '-background-hover', btn);
-      border-color: color($type + '-background-hover', btn);
+    @if map.has-key($colors, 'btn', $type + '-background-hover') {
+      background-color: color($type + '-background-hover', 'btn');
+      border-color: color($type + '-background-hover', 'btn');
     } @else {
-      background-color: color.adjust(color($type + '-background', btn, true), $lightness: -10%);
-      border-color: color.adjust(color($type + '-background', btn, true), $lightness: -10%);
+      background-color: color.adjust(color($type + '-background', 'btn', true), $lightness: -10%);
+      border-color: color.adjust(color($type + '-background', 'btn', true), $lightness: -10%);
     }
 
-    @if map.has-key($colors, btn, $type + '-foreground-hover') {
-      color: color($type + '-foreground-hover', btn);
+    @if map.has-key($colors, 'btn', $type + '-foreground-hover') {
+      color: color($type + '-foreground-hover', 'btn');
     } @else {
-      color: color($type + '-foreground', btn);
+      color: color($type + '-foreground', 'btn');
     }
   }
 }
@@ -78,18 +78,18 @@
   $type: primary,
   $focus: true
 ) {
-  @if not map.has-key($colors, btn, $type + '-foreground') or not map.has-key($colors, btn, $type + '-background') {
+  @if not map.has-key($colors, 'btn', $type + '-foreground') or not map.has-key($colors, 'btn', $type + '-background') {
     @error 'The #{$type + '-foreground'} or #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
   }
 
   @include btn-focus-helper($type, $focus);
 
   background-color: transparent;
-  border-color: color($type + '-background', btn);
-  color: color($type + '-background', btn);
+  border-color: color($type + '-background', 'btn');
+  color: color($type + '-background', 'btn');
 
   &:hover {
-    background-color: color($type + '-background', btn);
-    color: color($type + '-foreground', btn);
+    background-color: color($type + '-background', 'btn');
+    color: color($type + '-foreground', 'btn');
   }
 }

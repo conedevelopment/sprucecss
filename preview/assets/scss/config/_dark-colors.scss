@@ -2,8 +2,8 @@
 
 $color-black: hsl(206deg 100% 7%);
 $color-danger: hsl(0deg 71% 51%);
-$color-gray-dark: hsl(0deg 0% 100% / 8%);
 $color-gray: hsl(0deg 0% 97%);
+$color-gray-dark: hsl(0deg 0% 100% / 8%);
 $color-primary: hsl(261deg 54% 70%);
 $color-secondary: hsl(227deg 92% 55%);
 $color-success: hsl(150deg 100% 33%);
@@ -73,5 +73,5 @@ $colors: (
     'hover': hsl(0deg 0% 100% / 5%),
     'text': $color-gray,
     'stripe': hsl(0deg 0% 100% / 2.5%),
-  )
+  ),
 );

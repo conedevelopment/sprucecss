@@ -110,7 +110,7 @@
             $ring-color: color('valid-focus-ring', 'form', false),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
             $ring-width: config('focus-ring-width', $form-control, false),
-            $ring-offset: config('focus-ring-offset', $form-control, false),
+            $ring-offset: config('focus-ring-offset', $form-control, false)
           );
         }
       }
@@ -126,7 +126,7 @@
             $ring-color: color('invalid-focus-ring', 'form'),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
             $ring-width: config('focus-ring-width', $form-control, false),
-            $ring-offset: config('focus-ring-offset', $form-control, false),
+            $ring-offset: config('focus-ring-offset', $form-control, false)
           );
         }
       }

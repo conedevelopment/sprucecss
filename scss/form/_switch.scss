@@ -71,7 +71,7 @@
           $ring-color: color('check-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-check),
           $ring-width: config('focus-ring-width', $form-check),
-          $ring-offset: config('focus-ring-offset', $form-check),
+          $ring-offset: config('focus-ring-offset', $form-check)
         );
       }
 

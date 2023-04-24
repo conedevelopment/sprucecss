@@ -20,18 +20,19 @@ $form-check: map.merge(
   $form-check
 );
 
-$form-check-sm: () !default;
-$form-check-sm: map.merge(
-  (
-    'font-size': map.get($typography, 'font-size-base'),
-  ),
-  $form-check-sm
-);
-
 $form-check-lg: () !default;
 $form-check-lg: map.merge(
   (
     'font-size': map.get($typography, 'size-lg'),
   ),
   $form-check-lg
+);
+
+
+$form-check-sm: () !default;
+$form-check-sm: map.merge(
+  (
+    'font-size': map.get($typography, 'font-size-base'),
+  ),
+  $form-check-sm
 );

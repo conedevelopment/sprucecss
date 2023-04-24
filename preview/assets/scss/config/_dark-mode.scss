@@ -11,7 +11,7 @@
   select.form-control:not([multiple]):not([size]) {
     @include field-icon(
       config('select', $form-icon, false),
-      color(select-foreground, form, true, $dark-colors)
+      color('select-foreground', 'form', true, $dark-colors)
     );
   }
 }
