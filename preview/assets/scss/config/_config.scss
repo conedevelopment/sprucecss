@@ -18,6 +18,7 @@ $spacer: 1.25rem;
   ),
   $dark-colors: dark.$colors,
   $settings: (
+    'css-custom-properties': false,
     'color-fallback': false,
     'html-smooth-scrolling': true,
     'hyphens': true,
@@ -26,7 +27,6 @@ $spacer: 1.25rem;
     'utilities': (
       'typography': false,
     ),
-    'css-custom-properties': false,
   ),
   $btn-lg: (
     'border-radius': 0.25em,

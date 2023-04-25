@@ -8,7 +8,8 @@
 
   :root {
     @media (prefers-reduced-motion: no-preference) {
-      @include generate-variables($transition);
+      --#{$internal-prefix}duration: #{config('duration', $transition, false)};
+      --#{$internal-prefix}timing-function: #{config('timing-function', $transition, false)};
     }
 
     @if map.get($generators, 'content', 'typography') {
