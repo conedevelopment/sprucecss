@@ -853,8 +853,8 @@ samp {
   --spruce-font-size: 0.8rem;
   --spruce-gap: 0.25rem;
   --spruce-icon-padding: 0.5em;
-  --spruce-icon-size: 0.85em;
-  --spruce-padding: 0.5em 1em;
+  --spruce-icon-size: 0.8rem;
+  --spruce-padding: 0.5em 0.75em;
   font-size: var(--spruce-font-size);
   gap: var(--spruce-gap);
   padding: var(--spruce-padding);
@@ -973,8 +973,8 @@ samp {
   --spruce-font-size: 0.8rem;
   --spruce-gap: 0.25rem;
   --spruce-icon-padding: 0.5em;
-  --spruce-icon-size: 0.85em;
-  --spruce-padding: 0.5em 1em;
+  --spruce-icon-size: 0.8rem;
+  --spruce-padding: 0.5em 0.75em;
   font-size: var(--spruce-font-size);
   gap: var(--spruce-gap);
   padding: var(--spruce-padding);
