@@ -18,7 +18,7 @@ $colors: (
     'code-foreground': $color-white,
     'heading': $color-white,
     'link': $color-primary,
-    'link-hover': color.scale($color-primary, $lightness: -20%),
+    'link-hover': color.scale($color-primary, $lightness: 20%),
     'mark-background': hsl(50deg 100% 80%),
     'mark-foreground': $color-black,
     'marker': $color-primary,

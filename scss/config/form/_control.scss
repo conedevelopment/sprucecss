@@ -5,16 +5,16 @@
 $form-control: () !default;
 $form-control: map.merge(
   (
+    'border-radius': map.get($display, 'border-radius-sm'),
+    'border-width': 1px,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-type': box-shadow,
+    'focus-ring-width': 0.25rem,
     'font-size': map.get($typography, 'font-size-base'),
     'font-weight': null,
     'line-height': 1.5,
     'padding': 0.5em 0.75em,
-    'border-width': 1px,
-    'border-radius': map.get($display, 'border-radius-sm'),
-    'focus-ring-type': box-shadow,
-    'focus-ring-box-shadow-type': outside,
-    'focus-ring-width': 0.25rem,
-    'focus-ring-offset': 2px,
     'textarea-height': 6rem,
   ),
   $form-control

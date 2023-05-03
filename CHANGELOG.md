@@ -1,5 +1,9 @@
 # Spruce CSS Changelog
 
+## v2.0.0 (2023-05-03)
+
+...
+
 ## v1.2.1 (2023-01-28)
 
 ### Improvements

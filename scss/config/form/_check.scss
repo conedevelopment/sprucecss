@@ -5,17 +5,17 @@
 $form-check: () !default;
 $form-check: map.merge(
   (
-    'border-width': 1px,
     'border-radius': map.get($display, border-radius-sm),
+    'border-width': 1px,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-type': outline,
+    'focus-ring-width': 2px,
     'font-size': 1.125rem,
     'font-weight': map.get($form-check, 'font-weight'),
     'line-height': map.get($typography, 'line-height-heading'),
     'margin-block-start': 0.1em,
     'vertical-alignment': center,
-    'focus-ring-type': outline,
-    'focus-ring-box-shadow-type': outside,
-    'focus-ring-width': 2px,
-    'focus-ring-offset': 2px,
   ),
   $form-check
 );

@@ -18,15 +18,15 @@
   }
 
   @if map.get($settings, 'css-custom-properties') {
-    $excludeMap: $map;
-    $includeMap: ();
+    $exclude-map: $map;
+    $include-map: ();
 
     @if $exclude {
       @each $key, $value in $map {
         @if $value {
           @each $fraction in $exclude {
             @if string.index($key, $fraction) {
-              $excludeMap: map.remove($excludeMap, $key);
+              $exclude-map: map.remove($exclude-map, $key);
             }
           }
         }
@@ -38,7 +38,7 @@
         @if $value {
           @each $fraction in $include {
             @if string.index($key, $fraction) {
-              $includeMap: map.set($includeMap, $key, $value);
+              $include-map: map.set($include-map, $key, $value);
             }
           }
         }
@@ -46,7 +46,7 @@
     }
 
     @if $exclude {
-      @each $key, $value in $excludeMap {
+      @each $key, $value in $exclude-map {
         @if $value {
           --#{$internal-prefix}#{$key}: #{$value};
         }
@@ -54,7 +54,7 @@
     }
 
     @if $include {
-      @each $key, $value in $includeMap {
+      @each $key, $value in $include-map {
         @if $value {
           --#{$internal-prefix}#{$key}: #{$value};
         }

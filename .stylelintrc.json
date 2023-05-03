@@ -1,8 +1,7 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "rules": {
-    "function-parentheses-space-inside": "never-single-line",
-    "max-nesting-depth": 4,
+    "max-nesting-depth": 6,
     "selector-no-vendor-prefix": [true,
       {
         "ignoreSelectors": ["/-moz-.*/", "/-ms-.*/", "/-webkit-.*/"]

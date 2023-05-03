@@ -8,6 +8,12 @@
 
 @use 'spruce' as *;
 
+:root {
+  @include set-css-variable((
+    --section-gap: spacer-clamp('xl', 'xxl')
+  ));
+}
+
 @include generate-form-check(
   '.wpcf7-list-item label',
   '.wpcf7-list-item input',
