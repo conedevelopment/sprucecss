@@ -2,7 +2,28 @@
 
 ## v2.0.0 (2023-05-03)
 
-...
+### What's Changed
+- Reverse `prefers-reduced-motion` behavior.
+- Add CSS custom property mode through [css-custom-properties](https://sprucecss.com/docs/customization/settings/#css-custom-properties) setting.
+- Fix `selection` mixin
+- Use `margin-block-start` at `layout-stack`.
+- Rework utility handling.
+- Fix `::-webkit-slider-thumb` bug.
+- Reorganize generators.
+
+### Breaking changes
+- Because it is a major release, there are breaking changes:
+- The most significant change is the reorganization of variables. Almost all are in a Sass map and accessible with the [config()](https://sprucecss.com/docs/sass/functions/#config) function.
+- We modified the generators; please visit the [related page](https://sprucecss.com/docs/elements/generators/).
+
+### Misc
+- Clean up the complete documentation.
+- Update all of the Spruce UI components to v2.
+- Comment code.
+- Start with Sass tests.
+- Remove JS code from the package.
+- Update coding guides: use quotes when asking for a string value.
+- Remove namespaced imports to simplify to using of members.
 
 ## v1.2.1 (2023-01-28)
 
