@@ -1,6 +1,6 @@
 # Spruce CSS Changelog
 
-## v2.0.0 (2023-05-03)
+## v2.0.0 (2023-05-04)
 
 ### What's Changed
 - Reverse `prefers-reduced-motion` behavior.
