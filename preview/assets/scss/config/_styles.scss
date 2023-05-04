@@ -1,4 +1,3 @@
-@use 'spruce';
+@use 'spruce' as *;
 
-@include spruce.generate-content;
-@include spruce.generate-form;
+@include generate-styles;

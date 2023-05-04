@@ -1,0 +1,9 @@
+@use 'true' as *;
+@use '../../scss/config' as *;
+@use '../../scss/function/config' as *;
+
+@include describe('config()') {
+  @include it('should return "0.75em 1em" as the base padding for the button elements') {
+    @include assert-equal(config('padding', $btn), 0.75em 1em);
+  }
+}

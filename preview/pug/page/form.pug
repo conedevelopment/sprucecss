@@ -39,8 +39,14 @@ block content
         label(for='url' class='form-label') URL
         input(class='form-control' id='url' type='url')
       div(class='form-group')
+        label(for='color-sm' class='form-label') Color
+        input(class='form-control form-control--sm' id='color-sm' type='color' value='#6524d6')
+      div(class='form-group')
         label(for='color' class='form-label') Color
         input(class='form-control' id='color' type='color' value='#6524d6')
+      div(class='form-group')
+        label(for='color-lg' class='form-label') Color
+        input(class='form-control form-control--lg' id='color-lg' type='color' value='#6524d6')
       div(class='form-group')
         label(for='date' class='form-label') Date
         input(class='form-control' id='date' type='date')
@@ -284,7 +290,7 @@ block content
         div(class='form-group')
           label(for='state' class='form-label') State
           input(id='state' class='form-control' type='text')
-        div(class='form-group form-group--width-auto' style='--col-width: 8ch;')
+        div(class='form-group form-group--width-auto' style='--spruce-col-width: 8ch;')
           label(for='zip' class='form-label') Zip
           input(id='zip' class='form-control' type='text')
   script.

@@ -15,15 +15,17 @@
   #{$selector} {
     display: block;
 
+    &:focus {
+      outline: revert;
+    }
+
     &:focus-within#{$pseudo-selector} {
-      background-color: transparent;
-      box-shadow: 0 0 0 2px color($form-file-background + '-background', btn) inset;
-      color: color($form-file-background + '-background', btn);
+      background-color: color(config('background', $form-file, false) + '-background-hover', btn);
     }
 
     &#{$pseudo-selector} {
-      @include btn-variant($form-file-background, false);
-      margin-inline-end: spacer(s);
+      @include btn-variant(config('background', $form-file, false), false);
+      margin-inline-end: spacer('s');
     }
   }
 }

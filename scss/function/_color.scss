@@ -12,7 +12,7 @@
 /// @return {color} - The color value or the variable.
 @function color(
   $key,
-  $type: base,
+  $type: 'base',
   $only-color: false,
   $map: $colors
 ) {
@@ -40,8 +40,8 @@
 /// @param {color} $color - The color to get the contrast color.
 /// @return {color} - The contrast color.
 @function color-contrast($color) {
-  $color-brightness: round((red($color) * 299) + (green($color) * 587) + math.div(blue($color) * 114, 1000));
-  $light-color: round((red(#fff) * 299) + (green(#fff) * 587) + math.div(blue(#fff) * 114, 1000));
+  $color-brightness: math.round((color.red($color) * 299) + (color.green($color) * 587) + math.div(color.blue($color) * 114, 1000));
+  $light-color: math.round((color.red(#fff) * 299) + (color.green(#fff) * 587) + math.div(color.blue(#fff) * 114, 1000));
 
   @if abs($color-brightness) < math.div($light-color, 2) {
     @return hsl(0 0% 100%);

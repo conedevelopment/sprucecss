@@ -1,0 +1,9 @@
+@use 'sass:map';
+
+$form-row: () !default;
+$form-row: map.merge(
+  (
+    'col-width': 20ch,
+  ),
+  $form-row
+);

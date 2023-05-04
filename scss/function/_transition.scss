@@ -1,7 +1,10 @@
 @use 'sass:map';
 @use '../config' as *;
 
-// Get transition custom CSS properties
+/// Get transition custom CSS properties.
+/// @param {string} $key - The key name.
+/// @return {string} - The value of the key.
+/// @throws {error} - If the key doesn't exist.
 @function transition(
   $key
 ) {
@@ -9,5 +12,5 @@
     @error 'The #{$key} key name not supported, use duration or timing-function.';
   }
 
-  @return var(--#{$internal-prefix}transition-#{$key});
+  @return var(--#{$internal-prefix}#{$key});
 }

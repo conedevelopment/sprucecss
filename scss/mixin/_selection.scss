@@ -8,7 +8,7 @@
 /// @param {boolean} $is-direct - If true, the selection will be applied to the current element if false it will be applied to its children.
 /// @return {mixin} - The selection mixin.
 @mixin selection(
-  $background: primary,
+  $background: 'primary',
   $foreground: null,
   $is-direct: false
 ) {

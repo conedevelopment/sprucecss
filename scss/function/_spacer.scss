@@ -1,7 +1,10 @@
 @use 'sass:map';
 @use '../config' as *;
 
-// Get spacer value from $spacers Sass map
+/// Get spacer value from $spacers map.
+/// @param {string} $key - The key name.
+/// @return {string} - The value of the key.
+/// @throws {error} - If the key doesn't exist.
 @function spacer($key) {
   @if not map.has-key($spacers, $key) {
     @error 'The #{$key} key name doesn\'t exist at the $spacers map.';
@@ -10,11 +13,15 @@
   @return map.get($spacers, $key);
 }
 
-// Get value returned in a clamp from $spacers maps.
+/// Get value returned in a clamp from $spacers maps.
+/// @param {string} $min - The minimum value.
+/// @param {string} $max - The maximum value.
+/// @param {string} $optimal - The optimal value.
+/// @return {string} - The value returned in a clamp.
 @function spacer-clamp(
   $min,
   $max,
-  $optimal: map.get($settings, optimal-spacer-size)
+  $optimal: map.get($settings, 'optimal-spacer-size')
 ) {
   @if map.has-key($spacers, $min) {
     $min: map.get($spacers, $min);

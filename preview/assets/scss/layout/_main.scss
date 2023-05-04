@@ -1,35 +1,34 @@
-@use 'spruce';
+@use 'spruce' as *;
 
-.site-main {
-  padding-block: clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
-
-  &__container {
-    @include spruce.layout-center(
-      spruce.get-css-variable(--container-gap)
-    );
-  }
+.l-main {
+  padding-block: spacer-clamp('l', 'xl');
 
   &__inner {
     display: grid;
-    gap: spruce.spacer(l);
+    gap: spacer('l') spacer('xl');
     grid-template-columns: minmax(0, 1fr);
 
-    @include spruce.breakpoint(sm) {
+    @include breakpoint('sm') {
       grid-template-columns: minmax(0, 12rem) minmax(0, 3.5fr);
     }
   }
 
   &__sidebar {
-    @include spruce.layout-stack(m);
+    @include layout-stack('m');
   }
 
   &__body {
     margin-inline: auto;
     max-width: 100%;
-    width: 85ch;
+    width: 80ch;
+  }
+
+  &__title {
+    font-size: responsive-font-size(4rem);
+    margin-block: 0 spacer('l');
   }
 
   &__content {
-    @include spruce.layout-stack(spruce.spacer(s));
+    @include layout-stack('s');
   }
 }

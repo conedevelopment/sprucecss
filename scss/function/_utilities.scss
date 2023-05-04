@@ -1,3 +1,4 @@
+@use 'sass:string';
 @use '../config' as *;
 
 // Replace `$search` with `$replace` in `$string`
@@ -7,7 +8,7 @@
 // @param {String} $replace ('') - New value
 // @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
@@ -16,7 +17,10 @@
   @return $string;
 }
 
-// See https://codepen.io/kevinweber/pen/dXWoRw
+/// Escape a string to be used as a data URI.
+/// @param {String} $string - The string to escape.
+/// @return {String} - The escaped string.
+/// @author Kevin Weber - https://codepen.io/kevinweber/pen/dXWoRw
 @function svg-escape($svg) {
   @each $char, $encoded in $escaping-characters {
     $svg: str-replace($svg, $char, $encoded);

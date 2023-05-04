@@ -1,6 +1,6 @@
 {
   "name": "sprucecss",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "Spruce CSS - Another CSS Framework",
   "keywords": [
     "css",
@@ -25,8 +25,6 @@
     "autoprefixer": "postcss css/*.css -u autoprefixer --replace --no-map",
     "browser-sync": "browser-sync start --server --startPath \"preview/html/page/color.html\" --files \"**/*\" --directory --no-notify --no-open",
     "delete:dev-folder": "del-cli --force css",
-    "js:lint": "npx eslint \"js/**\"",
-    "js:lint:fix": "npx eslint \"js/**\" --fix",
     "prod": "npm-run-all delete:dev-folder sass:prod:expanded sass:prod:compressed autoprefixer",
     "pug": "pug --obj preview/pug/assets/data.json --watch preview/pug/ --out preview/html/ --pretty",
     "sass:preview": "sass --watch --update --style=expanded --no-source-map preview/assets/scss:preview/assets/css --load-path=scss",
@@ -34,21 +32,25 @@
     "sass:prod:compressed": "sass --no-source-map --style=compressed scss/spruce-styles.scss:css/spruce.min.css",
     "sass:lint": "stylelint scss/**/*.scss",
     "sass:lint:fix": "stylelint scss/**/*.scss --fix",
-    "start": "npm-run-all --parallel pug sass:preview browser-sync"
+    "start": "npm-run-all --parallel pug sass:preview browser-sync",
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "browser-sync": "^2.27.11",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.1",
     "del-cli": "^5.0.0",
-    "eslint": "^8.32.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
+    "jest": "^29.5.0",
+    "jest-environment-node-single-context": "^29.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^10.1.0",
     "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.57.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-sass-guidelines": "^9.0.1"
+    "sass": "^1.60.0",
+    "sass-true": "^7.0.0",
+    "stylelint": "^15.3.0",
+    "stylelint-config-sass-guidelines": "^10.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-node-single-context"
   }
 }

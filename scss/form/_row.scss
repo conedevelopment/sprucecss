@@ -5,9 +5,8 @@
 @mixin generate-form-row {
   .form-row {
     &--mixed {
-      --col-width: #{$form-row-col-width};
-
-      @include layout-flex(s);
+      @include generate-variables($form-row);
+      @include layout-flex('s');
     }
   }
 }

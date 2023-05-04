@@ -4,62 +4,63 @@
 
 @mixin generate-form-range {
   .form-range {
+    @include generate-variables($form-range);
     appearance: none;
-    margin-block-start: calc(#{$form-range-thumb-height} / 2 - #{$form-range-track-height} / 2);
+    margin-block-start: calc(#{config('thumb-height', $form-range)} / 2 - #{config('track-height', $form-range)} / 2);
 
     &:focus-visible {
       outline: none;
 
       &::-webkit-slider-thumb {
         @include focus-ring(
-          $type: $form-range-focus-ring-type,
+          $type: config('focus-ring-type', $form-range, false),
           $border-color: null,
-          $ring-color: color(range-thumb-focus-ring, form),
-          $box-shadow-type: $form-range-focus-ring-box-shadow-type,
-          $ring-width: $form-range-focus-ring-width,
-          $ring-offset: $form-range-focus-ring-offset
+          $ring-color: color('range-thumb-focus-ring', 'form'),
+          $box-shadow-type: config('focus-ring-box-shadow-type', $form-range, false),
+          $ring-width: config('focus-ring-width', $form-range, false),
+          $ring-offset: config('focus-ring-offset', $form-range, false)
         );
       }
 
       &::-moz-range-thumb {
         @include focus-ring(
-          $type: $form-range-focus-ring-type,
+          $type: config('focus-ring-type', $form-range, false),
           $border-color: null,
-          $ring-color: color(range-thumb-focus-ring, form),
-          $box-shadow-type: $form-range-focus-ring-box-shadow-type,
-          $ring-width: $form-range-focus-ring-width,
-          $ring-offset: $form-range-focus-ring-offset
+          $ring-color: color('range-thumb-focus-ring', 'form'),
+          $box-shadow-type: config('focus-ring-box-shadow-type', $form-range, false),
+          $ring-width: config('focus-ring-width', $form-range, false),
+          $ring-offset: config('focus-ring-offset', $form-range, false)
         );
       }
     }
 
     &::-webkit-slider-runnable-track {
-      background-color: color(range-track-background, form);
-      border-radius: $form-range-track-broder-radius;
-      height: $form-range-track-height;
+      background-color: color('range-track-background', 'form');
+      border-radius: config('track-border-radius', $form-range);
+      height: config('track-height', $form-range);
     }
 
     &::-moz-range-track {
-      background-color: color(range-track-background, form);
-      border-radius: $form-range-track-broder-radius;
-      height: $form-range-track-height;
+      background-color: color('range-track-background', 'form');
+      border-radius: config('track-border-radius', $form-range);
+      height: config('track-height', $form-range);
     }
 
     &::-webkit-slider-thumb {
       appearance: none;
-      background-color: color(range-thumb-background, form);
-      border-radius: $form-range-thumb-broder-radius;
-      height: $form-range-thumb-height;
-      margin-block-start: calc(#{$form-range-track-height} / 2 - #{$form-range-thumb-height} / 2);
-      width: 1rem;
+      background-color: color('range-thumb-background', 'form');
+      border-radius: config('thumb-border-radius', $form-range);
+      height: config('thumb-height', $form-range);
+      margin-block-start: calc(#{config('track-height', $form-range)} / 2 - #{config('thumb-height', $form-range)} / 2);
+      width: config('thumb-width', $form-range);
     }
 
     &::-moz-range-thumb {
-      background-color: color(range-thumb-background, form);
+      background-color: color('range-thumb-background', 'form');
       border: 0; /*Removes extra border that FF applies*/
-      border-radius: $form-range-thumb-broder-radius;
-      height: $form-range-thumb-height;
-      width: $form-range-thumb-width;
+      border-radius: config('thumb-border-radius', $form-range);
+      height: config('thumb-height', $form-range);
+      width: config('thumb-width', $form-range);
     }
   }
 }

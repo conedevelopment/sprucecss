@@ -1,10 +1,36 @@
 @use '../function' as *;
 
 @mixin generate-utilities {
-  @if setting(utilities) == true {
+  @if setting('display', 'utilities') == true {
     .hidden,
     [hidden] {
       display: none !important;
+    }
+  }
+
+  @if setting('typography', 'utilities') == true {
+    .h1 {
+      font-size: font-size('h1');
+    }
+
+    .h2 {
+      font-size: font-size('h2');
+    }
+
+    .h3 {
+      font-size: font-size('h3');
+    }
+
+    .h4 {
+      font-size: font-size('h4');
+    }
+
+    .h5 {
+      font-size: font-size('h5');
+    }
+
+    .h6 {
+      font-size: font-size('h6');
     }
   }
 }

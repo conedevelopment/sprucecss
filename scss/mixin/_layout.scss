@@ -3,13 +3,13 @@
 @use '../function' as *;
 @use '../config' as *;
 
-/// Create Center layout
+/// Create center layout.
 /// @param {string} $gap - The gap between the container and the content.
 /// @param {string} $max-width - The maximum width of the container.
 /// @return {mixin} - The centered layout.
 @mixin layout-center(
   $gap: m,
-  $max-width: $container-width
+  $max-width: config('container-width', $layout)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
@@ -20,9 +20,15 @@
   padding-inline: $gap;
 }
 
-// Create Stack layout
+/// Create stack layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {boolean} $width - The width of the elements.
+/// @param {string} $align - The horizontal alignment of the elements.
+/// @param {boolean} $important - Whether it should use the !important keyword.
+/// @param {number} $split - The number of element where it should split the layout.
+/// @return {mixin} - The stacked layout.
 @mixin layout-stack(
-  $gap: m,
+  $gap: 'm',
   $width: false,
   $align: none,
   $important: false,
@@ -77,9 +83,12 @@
   }
 }
 
-// Create Grid layout
+/// Create grid layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {string} $minimum - The minimum width of the elements.
+/// @return {mixin} - The grid layout.
 @mixin layout-grid(
-  $gap: m,
+  $gap: 'm',
   $minimum: 12.5rem
 ) {
   @if map.has-key($spacers, $gap) {
@@ -96,9 +105,12 @@
   }
 }
 
-// Create Sidebar Layout
+/// Create sidebar layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {string} $sidebar-width - The width of the sidebar.
+/// @return {mixin} - The sidebar layout.
 @mixin layout-sidebar(
-  $gap: m,
+  $gap: 'm',
   $sidebar-width: 18.75rem
 ) {
   @if map.has-key($spacers, $gap) {
@@ -121,10 +133,13 @@
   }
 }
 
-// Create instinctive flex layout.
+/// Create instinctive flex layout.
+/// @param {string} $gap - The gap between the the elements.
+/// @param {string} $width-variable - The width of the elements.
+/// @return {mixin} - The instinctive flex layout.
 @mixin layout-flex(
-  $gap: m,
-  $width-variable: --col-width
+  $gap: 'm',
+  $width-variable: get-css-variable(--col-width)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
@@ -135,6 +150,6 @@
   gap: $gap;
 
   > * {
-    flex: 1 1 var(#{$width-variable});
+    flex: 1 1 $width-variable;
   }
 }

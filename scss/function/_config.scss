@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'sass:string';
+@use 'setting' as *;
+@use '../config' as *;
+
+/// Get the value of a key from a map.
+/// @param {string} $key - The key name.
+/// @param {map} $map - The map to get the value from.
+/// @param {boolean} $custom-property - Whether to return the value as a CSS custom property.
+/// @return {string} - The value of the key.
+/// @throws {error} - If the key doesn't exist.
+@function config(
+  $key,
+  $map,
+  $custom-property: true
+) {
+  @if not map.has-key($map, $key) {
+    @error $key;
+    @error 'The #{$key} key name doesn\'t exist under #{$map} at the specified map.';
+  }
+
+  @if map.get($map, $key) == null {
+    @return null;
+  }
+
+  @if not $custom-property {
+    @return map.get($map, $key);
+  }
+
+  @if map.get($settings, 'css-custom-properties') {
+    @return var(--#{$internal-prefix}#{$key});
+  }
+
+  @return map.get($map, $key);
+}

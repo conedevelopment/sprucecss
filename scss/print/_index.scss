@@ -1,15 +1,16 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 @use '../mixin' as *;
 
 @mixin generate-print {
-  @if setting(print) == true {
+  @if setting('print') == true {
     @media print {
       @page {
-        margin: $print-page-margin;
+        margin: config('page-margin', $print);
       }
 
-      #{$print-hidden-elements} {
+      #{config('hidden-elements', $print, false)} {
         display: none !important;
       }
 

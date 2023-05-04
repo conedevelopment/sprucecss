@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../mixin' as *;
 @use '../config' as *;
@@ -9,25 +10,27 @@
   $has-sizes: true,
 ) {
   #{$selector}#{$pseudo-selector} {
+    @include generate-variables($btn, ('focus-'));
+
     align-items: center;
-    border-radius: $btn-border-radius;
+    border-radius: config('border-radius', $btn);
     border-style: solid;
-    border-width: $btn-outline-width;
+    border-width: config('outline-width', $btn);
     cursor: pointer;
     display: inline-flex;
-    font-family: $btn-font-family;
-    font-size: $btn-font-size;
-    font-style: $btn-font-style;
-    font-weight: $btn-font-weight;
-    gap: $btn-gap;
+    font-family: config('font-family', $btn);
+    font-size: config('font-size', $btn);
+    font-style: config('font-style', $btn);
+    font-weight: config('font-weight', $btn);
+    gap: config('gap', $btn);
     justify-content: center;
     line-height: 1;
-    padding: $btn-padding;
+    padding: config('padding', $btn);
     text-align: start;
     text-decoration: none;
-    text-transform: $btn-text-transform;
+    text-transform: config('text-transform', $btn);
     transition-duration: transition(duration);
-    transition-property: background-color,border-color, box-shadow, color;
+    transition-property: background-color, border-color, box-shadow, color;
     transition-timing-function: transition(timing-function);
   }
 
@@ -43,28 +46,26 @@
   }
 
   @if ($has-icons) {
-    // Icon button
     #{$selector}--icon {
-      padding: $btn-icon-padding;
+      padding: config('icon-padding', $btn);
 
       &#{$selector}--sm {
-        padding: $btn-icon-padding-sm;
+        padding: config('icon-padding', $btn-sm);
       }
 
       &#{$selector}--lg {
-        padding: $btn-icon-padding-lg;
+        padding: config('icon-padding', $btn-lg);
       }
     }
 
-    // Icons
     #{$selector}__icon {
       flex-shrink: 0;
-      height: $btn-icon-size;
-      width: $btn-icon-size;
+      height: config('icon-size', $btn);
+      width: config('icon-size', $btn);
 
       &--sm {
-        height: $btn-icon-size-sm;
-        width: $btn-icon-size-sm;
+        height: config('icon-size', $btn-sm);
+        width: config('icon-size', $btn-sm);
       }
     }
   }
@@ -72,21 +73,26 @@
   @if ($has-sizes) {
     // Sizes
     #{$selector}--sm#{$pseudo-selector} {
-      font-size: $btn-font-size-sm;
-      gap: $btn-gap-sm;
-      padding: $btn-padding-sm;
+      @include generate-variables($btn-sm);
+
+      font-size: config('font-size', $btn-sm);
+      gap: config('gap', $btn-sm);
+      padding: config('padding', $btn-sm);
     }
 
     #{$selector}--lg#{$pseudo-selector} {
-      gap: $btn-gap-lg;
-      padding: $btn-padding-lg;
+      @include generate-variables($btn-lg);
 
-      @include breakpoint(md) {
-        font-size: $btn-font-size-lg;
+      @if not map.get($settings, 'css-custom-properties') {
+        gap: config('gap', $btn-lg);
+        padding: config('padding', $btn-lg);
+
+        @include breakpoint(md) {
+          font-size: config('font-size', $btn-lg);
+        }
       }
     }
 
-    // Display types
     #{$selector}--block#{$pseudo-selector} {
       width: 100%;
     }

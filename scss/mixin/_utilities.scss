@@ -1,7 +1,9 @@
+@use 'sass:map';
 @use '../function' as *;
 @use '../config' as *;
 
-// Hide something from the screen but keep it visible for assistive technology
+/// Hide something from the screen but keep it visible for assistive technology.
+/// @return {mixin} - The visually hidden mixin.
 @mixin visually-hidden {
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;
@@ -14,7 +16,9 @@
   width: 1px !important;
 }
 
-// Crop text and display an ellipsis with multiline
+/// Crop text and display an ellipsis with multiline.
+/// @param {number} $number-of-lines - The number of lines.
+/// @return {mixin} - The text ellipsis mixin.
 @mixin text-ellipsis(
   $number-of-lines: 1
 ) {
@@ -34,13 +38,19 @@
   }
 }
 
-// Custom scrollbar
+/// Custom scrollbar.
+/// @param {string} $thumb-background-color - The background color of the thumb.
+/// @param {string} $thumb-background-color-hover - The background color of the thumb when hovered.
+/// @param {string} $track-background-color - The background color of the track.
+/// @param {string} $size - The size of the scrollbar.
+/// @param {string} $border-radius - The border radius of the scrollbar.
+/// @return {mixin} - The scrollbar mixin.
 @mixin scrollbar(
-  $thumb-background-color: color(thumb-background, scrollbar),
-  $thumb-background-color-hover: color(thumb-background-hover, scrollbar),
-  $track-background-color: color(track-background, scrollbar),
+  $thumb-background-color: color('thumb-background', 'scrollbar'),
+  $thumb-background-color-hover: color('thumb-background-hover', 'scrollbar'),
+  $track-background-color: color('track-background', 'scrollbar'),
   $size: 0.5rem,
-  $border-radius: $border-radius-sm
+  $border-radius: config('border-radius-sm', $display)
 ) {
   &::-webkit-scrollbar {
     height: $size;
@@ -62,7 +72,8 @@
   }
 }
 
-// Clear default button styles
+/// Clear default button styles.
+/// @return {mixin} - The clear button mixin.
 @mixin clear-btn {
   background: none;
   border: 0;
@@ -80,8 +91,14 @@
   padding: 0;
 }
 
-// More accessible card linking
-@mixin a11y-card-link($link, $at-root: false) {
+/// More accessible card linking.
+/// @param {string} $link - The link element's selector.
+/// @param {boolean} $at-root - Whether to use @at-root.
+/// @return {mixin} - The a11y card link mixin.
+@mixin a11y-card-link(
+  $link,
+  $at-root: false
+) {
   position: relative;
 
   @if $at-root == true {
@@ -101,9 +118,9 @@
   }
 }
 
-// Break long string
-// @author Chris Coyier
-// https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+/// Break long string
+/// @author Chris Coyier - https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+/// @return {mixin} - The word-wrap mixin.
 @mixin word-wrap {
   hyphens: auto;
   overflow-wrap: break-word;

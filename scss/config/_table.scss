@@ -2,13 +2,24 @@
 @use 'typography' as *;
 @use 'spacer' as *;
 
-$table-responsive-width: 40rem !default;
-$table-line-height: $line-height-md !default;
-$table-padding: map.get($spacers, s) !default;
-$table-padding-sm: map.get($spacers, xs) !default;
+$table: () !default;
+$table: map.merge(
+  (
+    'caption-font-size': null,
+    'caption-font-style': null,
+    'caption-font-weight': null,
+    'line-height': map.get($typography, 'line-height-md'),
+    'padding': map.get($spacers, 's'),
+    'responsive-width': 40rem,
+    'stripe': odd,
+  ),
+  $table
+);
 
-$table-caption-font-size: null !default;
-$table-caption-font-style: null !default;
-$table-caption-font-weight: null !default;
-
-$table-stripe: odd !default;
+$table-sm: () !default;
+$table-sm: map.merge(
+  (
+    'padding': map.get($spacers, 'xs'),
+  ),
+  $table-sm
+);

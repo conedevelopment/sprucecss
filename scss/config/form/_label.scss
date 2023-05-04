@@ -1,0 +1,11 @@
+@use 'sass:map';
+
+$form-label: () !default;
+$form-label: map.merge(
+  (
+    'font-size': null,
+    'font-style': null,
+    'font-weight': null,
+  ),
+  $form-label
+);

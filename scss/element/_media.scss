@@ -2,7 +2,6 @@
 @use '../mixin' as *;
 
 @mixin generate-media {
-  // Set responsive images and disable image select
   img {
     display: block;
     height: auto;
@@ -21,14 +20,8 @@
     margin-right: 0;
 
     figcaption {
-      margin-block-start: spacer(xs);
+      margin-block-start: spacer('xs');
       text-align: center;
     }
-  }
-
-  @if setting(utilities) == true {
-    .aspect-ratio-16-9 { aspect-ratio: 16 / 9; }
-    .aspect-ratio-4-3 { aspect-ratio: 4 / 3; }
-    .aspect-ratio-1 { aspect-ratio: 1; }
   }
 }

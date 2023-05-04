@@ -18,10 +18,10 @@ html(lang='en')
     link(rel='stylesheet' href=`../../assets/css/main.css?time=${time}`)
     link(rel='icon' href='../../assets/img/favicon-32x32.png' type='image/png')
   body
-    main(class='site-main')
-      div(class='site-main__container')
-        div(class='site-main__inner')
-          aside(class='site-main__sidebar')
+    main(class='l-main')
+      div(class='container')
+        div(class='l-main__inner')
+          aside(class='l-main__sidebar')
             ul(class='sidebar-navigation')
               li
                 a(href='color.html' aria-current=page === 'color' ? 'page' : '') Color
@@ -37,8 +37,6 @@ html(lang='en')
                 a(href='form.html' aria-current=page === 'form' ? 'page' : '') Form
               li
                 a(href='mixin.html' aria-current=page === 'mixin' ? 'page' : '') Mixin
-              li
-                a(href='js.html' aria-current=page === 'js' ? 'page' : '') JS
             div(class='form-group')
               label(class='form-label') Reading direction
               select(id='reading-direction' class='form-control form-control--sm')
@@ -49,9 +47,9 @@ html(lang='en')
               select(id='theme-mode' class='form-control form-control--sm')
                 option(value='light') Light
                 option(value='dark') Dark
-          div(class='site-main__body')
-            h1(class='site-title')= title
-            div(class='site-main__content')
+          div(class='l-main__body')
+            h1(class='l-main__title')= title
+            div(class='l-main__content')
               block content
     script.
       if (localStorage.getItem('spruce-reading-direction')) {

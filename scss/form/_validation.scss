@@ -1,17 +1,18 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 
-@mixin generate-field-feedback {
+@mixin generate-form-feedback {
   .field-feedback {
     display: block;
-    line-height: $line-height-md;
+    line-height: map.get($typography, 'line-height-md');
 
     &--valid {
-      color: color(success, alert);
+      color: color('success', 'alert');
     }
 
     &--invalid {
-      color: color(danger, alert);
+      color: color('danger', 'alert');
     }
   }
 }

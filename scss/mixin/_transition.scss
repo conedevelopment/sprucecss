@@ -1,5 +1,11 @@
 @use '../function' as *;
 
+/// Generates transiton related declarations.
+/// @param {string} $duration - The duration of the transition.
+/// @param {string} $property - The property to which the transition is applied.
+/// @param {string} $timing-function - The speed curve of the transition.
+/// @return {string} - The generated transition declarations.
+/// @throws {error} - If the duration or timing-function is invalid.
 @mixin transition(
   $duration: duration,
   $property: all,

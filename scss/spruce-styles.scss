@@ -1,4 +1,7 @@
-@use 'spruce' as *;
+@use 'spruce' as * with (
+  $settings: (
+    'css-custom-properties': true,
+  ),
+);
 
-@include generate-content;
-@include generate-form;
+@include generate-styles;

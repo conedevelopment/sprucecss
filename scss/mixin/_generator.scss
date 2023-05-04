@@ -1,64 +1,123 @@
+@use 'sass:map';
+@use '../config' as *;
 @use '../element' as *;
 @use '../plugin' as *;
 @use '../form' as *;
 @use '../print' as *;
 @use 'button' as *;
 
-// Generate content styling
-@mixin generate-content {
-  @include generate-normalize;
-  @include generate-root;
-  @include generate-accessibility;
-  @include generate-default;
-  @include generate-divider;
-  @include generate-media;
-  @include generate-table;
-  @include generate-typography;
-  @include generate-utilities;
-  @include generate-print;
-}
+/// Generate all the styles.
+@mixin generate-styles {
+  @if map.get($generators, 'content', 'normalize') {
+    @include generate-normalize;
+  }
 
-// Generate form styling
-@mixin generate-form {
-  /* stylelint-disable */
-  @include generate-btn('.btn');
+  @if map.get($generators, 'content', 'root') {
+    @include generate-root;
+  }
 
-  .btn--primary { @include btn-variant(primary); }
-  .btn--secondary { @include btn-variant(secondary); }
+  @if map.get($generators, 'content', 'accessibility') {
+    @include generate-accessibility;
+  }
 
-  .btn--outline-primary { @include btn-variant-outline(primary); }
-  .btn--outline-secondary { @include btn-variant-outline(secondary); }
+  @if map.get($generators, 'content', 'default') {
+    @include generate-default;
+  }
 
-  @include generate-file-btn(
-    '.form-file',
-    '::file-selector-button',
-    false,
-    true
-  );
-  @include generate-form-label;
-  @include generate-form-control(
-    '.form-control',
-    true,
-    true,
-    true
-  );
-  @include generate-form-check(
-    '.form-check',
-    '.form-check__control',
-    '.form-check__label',
-    true
-  );
-  @include generate-form-switch(
-    '.form-switch',
-    '.form-switch__control',
-    '.form-switch__label',
-    true
-  );
-  @include generate-form-description;
-  @include generate-fieldset;
-  @include generate-form-group;
-  @include generate-form-row;
-  @include generate-field-feedback;
-  @include generate-form-range;
-  /* stylelint-enable */
+  @if map.get($generators, 'content', 'divider') {
+    @include generate-divider;
+  }
+
+  @if map.get($generators, 'content', 'media') {
+    @include generate-media;
+  }
+
+  @if map.get($generators, 'content', 'table') {
+    @include generate-table;
+  }
+
+  @if map.get($generators, 'content', 'typography') {
+    @include generate-typography;
+  }
+
+  @if map.get($generators, 'content', 'utilities') {
+    @include generate-utilities;
+  }
+
+  @if map.get($generators, 'content', 'print') {
+    @include generate-print;
+  }
+
+  @if map.get($generators, 'form', 'btn') {
+    @include generate-btn('.btn');
+
+    .btn--primary { @include btn-variant(primary); }
+    .btn--secondary { @include btn-variant(secondary); }
+    .btn--outline-primary { @include btn-variant-outline(primary); }
+    .btn--outline-secondary { @include btn-variant-outline(secondary); }
+  }
+
+  @if map.get($generators, 'form', 'file-btn') {
+    @include generate-file-btn(
+      '.form-file',
+      '::file-selector-button',
+      false,
+      true
+    );
+  }
+
+  @if map.get($generators, 'form', 'form-label') {
+    @include generate-form-label;
+  }
+
+  @if map.get($generators, 'form', 'form-control') {
+    @include generate-form-control(
+      '.form-control',
+      true,
+      true,
+      true
+    );
+  }
+
+  @if map.get($generators, 'form', 'form-check') {
+    @include generate-form-check(
+      '.form-check',
+      '.form-check__control',
+      '.form-check__label',
+      true
+    );
+  }
+
+  @if map.get($generators, 'form', 'form-switch') {
+    @include generate-form-switch(
+      '.form-switch',
+      '.form-switch__control',
+      '.form-switch__label',
+      true
+    );
+  }
+
+  @if map.get($generators, 'form', 'form-fieldset') {
+    @include generate-form-fieldset;
+  }
+
+  @if map.get($generators, 'form', 'form-group') {
+    @include generate-form-group;
+  }
+
+  @if map.get($generators, 'form', 'form-row') {
+    @include generate-form-row;
+  }
+
+  @if map.get($generators, 'form', 'form-row') {
+    @include generate-form-row;
+  }
+
+  @if map.get($generators, 'form', 'form-feedback') {
+    @include generate-form-feedback;
+  }
+
+  @if map.get($generators, 'form', 'form-range') {
+    @include generate-form-range;
+  }
 }

@@ -2,7 +2,14 @@
 @use '../function' as *;
 @use '../config' as *;
 
-// Style field focus state
+/// Generate a from focus ring.
+/// @param {string} $type - The type of focus ring (box-shadow, outline).
+/// @param {string} $border-color - The border color.
+/// @param {string} $ring-color - The ring color.
+/// @param {string} $box-shadow-type - The box shadow type (outset, inset).
+/// @param {string} $ring-width - The ring width.
+/// @param {string} $ring-offset - The ring offset.
+/// @return {string} - The generated focus ring.
 @mixin focus-ring(
   $type: 'box-shadow',
   $border-color: null,
@@ -27,7 +34,10 @@
   }
 }
 
-// Style field disabled state
+/// Style field disabled input states.
+/// @param {string} $background - The background color.
+/// @param {string} $border - The border color.
+/// @return {string} - The generated disabled input states.
 @mixin field-disabled(
   $background,
   $border
@@ -37,7 +47,10 @@
   cursor: not-allowed;
 }
 
-// Get custom icon background for input and select fields
+/// Get custom icon background for input and select fields.
+/// @param {string} $icon - The icon (an SVG in string).
+/// @param {string} $color - The color.
+/// @return {string} - The generated icon background.
 @mixin field-icon(
   $icon,
   $color

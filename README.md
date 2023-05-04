@@ -18,17 +18,22 @@
 [![Back-end](https://img.shields.io/github/actions/workflow/status/conedevelopment/sprucecss/test.yml?branch=main&logo=github&style=for-the-badge&label=Test)](https://github.com/conedevelopment/sprucecss/actions/workflows/test.yml)
 [![License](https://img.shields.io/badge/license-MIT-2350f6?style=for-the-badge)](https://github.com/conedevelopment/sprucecss/blob/main/LICENSE)
 
+<img src="./.github/thumbnail-3.png" alt="The Spruce CSS logo, a minimalistic, low-level CSS framework caption and an abstract 3D illustration.">
+
 ## What is Spruce CSS?
 
 - It is a Sass-based, small framework that operates with just a few utility classes.
 - It takes advantage of the Sass members: variables, mixins, and functions.
 - It embraces Sass modules, so it uses @use and namespacing for import.
-- It is relatively small. Right now just over 1000 lines, but it will expand in the future. As we see right now, the maximum is somewhere near 2000 lines of code.
-- It is modern. By modern, we mean using the newest CSS features like the grid, aspect-ratio, logical properties, etc.
+- Spruce is a good choice if you prefer writing CSS instead of HTML. It uses just a few classic utility classes.
+- It is a relatively small (~7kb gzipped) framework with a smaller learning curve. The codebase is small but can add more to any project with the available mixins and functions.
+- It is that bunch of code you keep manually carrying from project to project.
+- It is themeable. You can create different themes using CSS custom properties like a dark one.
 - The generated CSS code is separated from the framework. You can use only the tools (variables, mixins, functions) in your project [without the generated styles](https://sprucecss.com/docs/elements/generators).
-- It uses just a few classical components (form elements mostly). We plan a separate component library for Spruce named UI.
+- Include just a few components. For UI, we have a separate project named [Spruce UI](/ui/getting-started/introduction), where you can find drop-in components.
 - [It comes with dark-mode](https://sprucecss.com/docs/customization/themes) (or any theme mode) support. It uses CSS custom properties, so it isn’t that hard to create a new color theme.
 - It doesn’t come with a classical grid system.
+-
 
 ## How to start with Spruce?
 
@@ -36,7 +41,7 @@ Firstly, we suggest checking out the documentation, precisely the [installation 
 
 There is nothing new if you previously used Sass unless you don’t know the newer [module system](https://sass-lang.com/blog/the-module-system-is-launched).
 
-To start a new Spruce-based project (or experiment), we suggest using our [starter kit](https://github.com/conedevelopment/sprucecss-starter-kit) containing a simple Sass build environment.
+We made a [Spruce CSS Eleventy Starter](https://github.com/conedevelopment/sprucecss-eleventy-starter), a boilerplate starter template based on the popular static site generator 11ty. It includes a basic compile setup and, of course, Spruce CSS. You can find more information about it on GitHub.
 
 ## Documentation
 
