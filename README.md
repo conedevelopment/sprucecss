@@ -33,7 +33,6 @@
 - Include just a few components. For UI, we have a separate project named [Spruce UI](/ui/getting-started/introduction), where you can find drop-in components.
 - [It comes with dark-mode](https://sprucecss.com/docs/customization/themes) (or any theme mode) support. It uses CSS custom properties, so it isn’t that hard to create a new color theme.
 - It doesn’t come with a classical grid system.
--
 
 ## How to start with Spruce?
 
