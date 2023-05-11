@@ -12,18 +12,19 @@
 - Reorganize generators.
 
 ### Breaking changes
-- Because it is a major release, there are breaking changes:
-- The most significant change is the reorganization of variables. Almost all are in a Sass map and accessible with the [config()](https://sprucecss.com/docs/sass/functions/#config) function.
-- We modified the generators; please visit the [related page](https://sprucecss.com/docs/elements/generators/).
+Because it is a major release, there are some breaking changes. In general, the changes are more of an optimization and reorganization.
 
-### Misc
+- The most significant change is the [reorganization of variables](https://sprucecss.com/docs/sass/variables/). Now, almost all are in a Sass map and accessible with the [config()](https://sprucecss.com/docs/sass/functions/#config) function. You must use the `config()` function if you plan to use CSS custom properties; otherwise, the `map.get` also works.
+- We modified the [generators](https://sprucecss.com/docs/elements/generators/). Now we have one main generator, `generate-styles`, and we can control its values through the [$generators](https://sprucecss.com/docs/sass/variables/#generators) map.
+
+### Others
 - Clean up the complete documentation.
 - Update all of the Spruce UI components to v2.
 - Comment code.
 - Start with Sass tests.
 - Remove JS code from the package.
 - Update coding guides: use quotes when asking for a string value.
-- Remove namespaced imports to simplify to using of members.
+- Remove namespaced imports to simplify the use of members (variables, functions, mixins).
 
 ## v1.2.1 (2023-01-28)
 
