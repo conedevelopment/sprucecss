@@ -5,31 +5,31 @@
 
 /// Create center layout.
 /// @param {string} $gap - The gap between the container and the content.
-/// @param {string} $max-width - The maximum width of the container.
+/// @param {string} $max-inline-size - The maximum width (inline-size) of the container.
 /// @return {mixin} - The centered layout.
 @mixin layout-center(
   $gap: m,
-  $max-width: config('container-width', $layout)
+  $max-inline-size: config('container-inline-size', $layout)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
   margin-inline: auto;
-  max-width: $max-width;
+  max-inline-size: $max-inline-size;
   padding-inline: $gap;
 }
 
 /// Create stack layout.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {boolean} $width - The width of the elements.
+/// @param {boolean} $inline-size - Whether it has explicit width (inline-size).
 /// @param {string} $align - The horizontal alignment of the elements.
 /// @param {boolean} $important - Whether it should use the !important keyword.
 /// @param {number} $split - The number of element where it should split the layout.
 /// @return {mixin} - The stacked layout.
 @mixin layout-stack(
   $gap: 'm',
-  $width: false,
+  $inline-size: false,
   $align: none,
   $important: false,
   $split: 0
@@ -55,8 +55,8 @@
     margin-block-end: 0;
     margin-block-start: 0;
 
-    @if $width and $align == none {
-      width: 100%;
+    @if $inline-size and $align == none {
+      inline-size: 100%;
     }
   }
 
@@ -70,7 +70,7 @@
 
   @if meta.type-of($split) == number and $split > 0 {
     &:only-child {
-      height: 100%;
+      block-size: 100%;
     }
 
     > :nth-child(#{$split}) {
@@ -85,7 +85,7 @@
 
 /// Create grid layout.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {string} $minimum - The minimum width of the elements.
+/// @param {string} $minimum - The minimum width (inline-size) of the elements.
 /// @return {mixin} - The grid layout.
 @mixin layout-grid(
   $gap: 'm',
@@ -98,7 +98,7 @@
   display: grid;
   gap: $gap;
 
-  @supports (width: min(#{$minimum}, 100%)) {
+  @supports (inline-size: min(#{$minimum}, 100%)) {
     & {
       grid-template-columns: repeat(auto-fit, minmax(min(#{$minimum}, 100%), 1fr));
     }
@@ -107,7 +107,7 @@
 
 /// Create sidebar layout.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {string} $sidebar-width - The width of the sidebar.
+/// @param {string} $sidebar-width - The width (flex-basis) of the sidebar.
 /// @return {mixin} - The sidebar layout.
 @mixin layout-sidebar(
   $gap: 'm',
@@ -129,17 +129,17 @@
   & > :last-child {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: 50%;
+    min-inline-size: 50%;
   }
 }
 
 /// Create instinctive flex layout.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {string} $width-variable - The width of the elements.
+/// @param {string} $inline-size-variable - The width (inline size) of the elements.
 /// @return {mixin} - The instinctive flex layout.
 @mixin layout-flex(
   $gap: 'm',
-  $width-variable: get-css-variable(--col-width)
+  $inline-size-variable: var(--col-inline-size)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
@@ -150,6 +150,6 @@
   gap: $gap;
 
   > * {
-    flex: 1 1 $width-variable;
+    flex: 1 1 $inline-size-variable;
   }
 }

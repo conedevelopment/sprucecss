@@ -72,13 +72,13 @@
 
 .ellipsis-btn {
   @include text-ellipsis(1);
-  max-width: 10ch;
+  max-inline-size: 10ch;
 }
 
 .scrollbar {
   @include scrollbar;
   @include layout-stack;
-  max-height: 15rem;
+  max-block-size: 15rem;
   overflow: auto;
   padding-inline-end: spacer('m');
 }

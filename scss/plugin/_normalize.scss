@@ -53,7 +53,7 @@
 
   hr {
     box-sizing: content-box; /* 1 */
-    height: 0; /* 1 */
+    block-size: 0; /* 1 */
     overflow: visible; /* 2 */
   }
 
@@ -242,7 +242,7 @@
     box-sizing: border-box; /* 1 */
     color: inherit; /* 2 */
     display: table; /* 1 */
-    max-width: 100%; /* 1 */
+    max-inline-size: 100%; /* 1 */
     padding: 0; /* 3 */
     white-space: normal; /* 1 */
   }
@@ -280,7 +280,7 @@
 
   [type="number"]::-webkit-inner-spin-button,
   [type="number"]::-webkit-outer-spin-button {
-    height: auto;
+    block-size: auto;
   }
 
   /**

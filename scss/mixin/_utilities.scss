@@ -5,15 +5,15 @@
 /// Hide something from the screen but keep it visible for assistive technology.
 /// @return {mixin} - The visually hidden mixin.
 @mixin visually-hidden {
+  block-size: 1px !important;
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;
-  height: 1px !important;
+  inline-size: 1px !important;
   margin: -1px !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
   white-space: nowrap !important;
-  width: 1px !important;
 }
 
 /// Crop text and display an ellipsis with multiline.
@@ -53,8 +53,8 @@
   $border-radius: config('border-radius-sm', $display)
 ) {
   &::-webkit-scrollbar {
-    height: $size;
-    width: $size;
+    block-size: $size;
+    inline-size: $size;
   }
 
   &::-webkit-scrollbar-thumb {

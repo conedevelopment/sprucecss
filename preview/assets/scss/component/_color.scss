@@ -17,8 +17,8 @@
   &__color {
     border-radius: config('border-radius-lg', $display);
     flex-shrink: 0;
-    height: 3rem;
-    width: 3rem;
+    block-size: 3rem;
+    inline-size: 3rem;
   }
 
   &__caption {

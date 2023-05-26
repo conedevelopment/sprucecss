@@ -22,12 +22,12 @@
     display: block;
     font-size: config('font-size', $form-control);
     font-weight: config('font-weight', $form-control);
+    inline-size: 100%;
     line-height: config('line-height', $form-control);
     padding: config('padding', $form-control);
     transition-duration: transition('duration');
     transition-property: border, box-shadow;
     transition-timing-function: transition('timing-function');
-    width: 100%;
 
     &::placeholder {
       color: color('placeholder', 'form');
@@ -43,7 +43,7 @@
         $border-color: color('border-focus', 'form'),
         $ring-color: color('ring-focus', 'form'),
         $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
-        $ring-width: config('focus-ring-width', $form-control, false),
+        $ring-size: config('focus-ring-size', $form-control, false),
         $ring-offset: config('focus-ring-offset', $form-control, false)
       );
     }
@@ -51,9 +51,9 @@
     &[type='color'] {
       @include generate-variables($form-control-color);
       aspect-ratio: config('aspect-ratio', $form-control-color);
-      height: config('height', $form-control-color);
+      block-size: config('block-size', $form-control-color);
+      inline-size: config('inline-size', $form-control-color);
       padding: config('padding', $form-control-color);
-      width: config('width', $form-control-color);
 
       &::-webkit-color-swatch-wrapper {
         padding: 0;
@@ -80,8 +80,8 @@
 
     @at-root {
       textarea#{$selector} {
-        height: config('textarea-height', $form-control);
-        min-height: config('textarea-height', $form-control);
+        block-size: config('textarea-height', $form-control);
+        min-block-size: config('textarea-height', $form-control);
         resize: vertical;
       }
     }
@@ -91,7 +91,7 @@
       &--invalid {
         background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
-        background-size: config('icon-width', $form-select, false) auto;
+        background-size: config('icon-inline-size', $form-select, false) auto;
         padding-inline-end: config('padding-right', $form-select, false);
 
         html[dir='rtl'] & {
@@ -109,7 +109,7 @@
             $border-color: color('valid', 'form'),
             $ring-color: color('valid-focus-ring', 'form', false),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
-            $ring-width: config('focus-ring-width', $form-control, false),
+            $ring-size: config('focus-ring-size', $form-control, false),
             $ring-offset: config('focus-ring-offset', $form-control, false)
           );
         }
@@ -125,7 +125,7 @@
             $border-color: color('invalid', 'form'),
             $ring-color: color('invalid-focus-ring', 'form'),
             $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
-            $ring-width: config('focus-ring-width', $form-control, false),
+            $ring-size: config('focus-ring-size', $form-control, false),
             $ring-offset: config('focus-ring-offset', $form-control, false)
           );
         }
@@ -147,9 +147,9 @@
 
           &[type='color'] {
             aspect-ratio: config('aspect-ratio', $form-control-color-sm);
-            height: config('height', $form-control-color-sm);
+            block-size: config('block-size', $form-control-color-sm);
+            inline-size: config('inline-size', $form-control-color-sm);
             padding: config('padding', $form-control-color-sm);
-            width: config('width', $form-control-color-sm);
           }
         }
       }
@@ -168,9 +168,9 @@
 
           &[type='color'] {
             aspect-ratio: config('aspect-ratio', $form-control-color-lg);
-            height: config('height', $form-control-color-lg);
+            height: config('block-size', $form-control-color-lg);
+            inline-size: config('inline-size', $form-control-color-lg);
             padding: config('padding', $form-control-color-lg);
-            width: config('width', $form-control-color-lg);
           }
         }
       }
@@ -183,7 +183,7 @@
         @include field-icon(config('select', $form-icon, false), color('select-foreground', 'form', true));
         background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
-        background-size: config('icon-width', $form-select, false) auto;
+        background-size: config('icon-inline-size', $form-select, false) auto;
         padding-inline-end: config('padding-right', $form-select, false);
 
         html[dir='rtl'] & {

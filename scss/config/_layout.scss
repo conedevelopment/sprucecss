@@ -3,7 +3,7 @@
 $layout: () !default;
 $layout: map.merge(
   (
-    'container-width': 84rem,
+    'container-inline-size': 84rem,
   ),
   $layout
 );

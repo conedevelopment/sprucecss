@@ -19,8 +19,8 @@
 
   &__body {
     margin-inline: auto;
-    max-width: 100%;
-    width: 80ch;
+    max-inline-size: 100%;
+    inline-size: 80ch;
   }
 
   &__title {

@@ -51,16 +51,16 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      block-size: 1em;
       border: config('border-width', $form-check) solid color('border', 'form');
       flex-shrink: 0;
       font-size: config('font-size', $form-check);
-      height: 1em;
+      inline-size: 1em;
       line-height: 1;
       margin-block-start: config('margin-block-start', $form-check);
       transition-duration: transition('duration');
       transition-property: border, box-shadow;
       transition-timing-function: transition('timing-function');
-      width: 1em;
 
       &[type='radio'] {
         border-radius: 50%;
@@ -76,7 +76,7 @@
           $border-color: color('border-focus', 'form'),
           $ring-color: color('check-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-check, false),
-          $ring-width: config('focus-ring-width', $form-check, false),
+          $ring-size: config('focus-ring-size', $form-check, false),
           $ring-offset: config('focus-ring-offset', $form-check, false)
         );
       }

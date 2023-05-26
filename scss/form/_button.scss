@@ -15,7 +15,7 @@
     align-items: center;
     border-radius: config('border-radius', $btn);
     border-style: solid;
-    border-width: config('outline-width', $btn);
+    border-width: config('outline-inline-size', $btn);
     cursor: pointer;
     display: inline-flex;
     font-family: config('font-family', $btn);
@@ -59,13 +59,13 @@
     }
 
     #{$selector}__icon {
+      block-size: config('icon-size', $btn);
       flex-shrink: 0;
-      height: config('icon-size', $btn);
-      width: config('icon-size', $btn);
+      inline-size: config('icon-size', $btn);
 
       &--sm {
-        height: config('icon-size', $btn-sm);
-        width: config('icon-size', $btn-sm);
+        block-size: config('icon-size', $btn-sm);
+        inline-size: config('icon-size', $btn-sm);
       }
     }
   }
@@ -94,7 +94,7 @@
     }
 
     #{$selector}--block#{$pseudo-selector} {
-      width: 100%;
+      inline-size: 100%;
     }
   }
 }

@@ -7,7 +7,7 @@
 /// @param {string} $border-color - The border color.
 /// @param {string} $ring-color - The ring color.
 /// @param {string} $box-shadow-type - The box shadow type (outset, inset).
-/// @param {string} $ring-width - The ring width.
+/// @param {string} $ring-size - The ring width.
 /// @param {string} $ring-offset - The ring offset.
 /// @return {string} - The generated focus ring.
 @mixin focus-ring(
@@ -15,21 +15,21 @@
   $border-color: null,
   $ring-color,
   $box-shadow-type: outset,
-  $ring-width: 2px,
+  $ring-size: 2px,
   $ring-offset: 2px
 ) {
   @if $type == 'box-shadow' {
     border-color: $border-color;
     @if $box-shadow-type == 'inset' {
-      box-shadow: 0 0 0 $ring-width $ring-color inset;
+      box-shadow: 0 0 0 $ring-size $ring-color inset;
     } @else {
-      box-shadow: 0 0 0 $ring-width $ring-color;
+      box-shadow: 0 0 0 $ring-size $ring-color;
     }
     outline: 2px solid transparent;
   }
 
   @if $type == 'outline' {
-    outline: $ring-width solid $ring-color;
+    outline: $ring-size solid $ring-color;
     outline-offset: $ring-offset;
   }
 }

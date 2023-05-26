@@ -9,8 +9,8 @@ $form-control: map.merge(
     'border-width': 1px,
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
+    'focus-ring-size': 0.25rem,
     'focus-ring-type': box-shadow,
-    'focus-ring-width': 0.25rem,
     'font-size': map.get($typography, 'font-size-base'),
     'font-weight': null,
     'line-height': 1.5,
@@ -43,9 +43,9 @@ $form-control-color: () !default;
 $form-control-color: map.merge(
   (
     'aspect-ratio': 1,
-    'height': 100%,
+    'block-size': 100%,
+    'inline-size': 2.625rem,
     'padding': 0.5em,
-    'width': 2.625rem,
   ),
   $form-control-color
 );
@@ -54,9 +54,9 @@ $form-control-color-lg: () !default;
 $form-control-color-lg: map.merge(
   (
     'aspect-ratio': 1,
-    'height': 100%,
+    'block-size': 100%,
+    'inline-size': 3.204rem,
     'padding': 0.5em,
-    'width': 3.204rem,
   ),
   $form-control-color-lg
 );
@@ -65,9 +65,9 @@ $form-control-color-sm: () !default;
 $form-control-color-sm: map.merge(
   (
     'aspect-ratio': 1,
-    'height': 100%,
+    'block-size': 100%,
+    'inline-size': 1.925rem,
     'padding': 0.25em,
-    'width': 1.925rem,
   ),
   $form-control-color-sm
 );

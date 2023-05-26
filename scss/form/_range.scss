@@ -17,7 +17,7 @@
           $border-color: null,
           $ring-color: color('range-thumb-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-range, false),
-          $ring-width: config('focus-ring-width', $form-range, false),
+          $ring-size: config('focus-ring-size', $form-range, false),
           $ring-offset: config('focus-ring-offset', $form-range, false)
         );
       }
@@ -28,7 +28,7 @@
           $border-color: null,
           $ring-color: color('range-thumb-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-range, false),
-          $ring-width: config('focus-ring-width', $form-range, false),
+          $ring-size: config('focus-ring-size', $form-range, false),
           $ring-offset: config('focus-ring-offset', $form-range, false)
         );
       }
@@ -36,31 +36,31 @@
 
     &::-webkit-slider-runnable-track {
       background-color: color('range-track-background', 'form');
+      block-size: config('track-height', $form-range);
       border-radius: config('track-border-radius', $form-range);
-      height: config('track-height', $form-range);
     }
 
     &::-moz-range-track {
       background-color: color('range-track-background', 'form');
+      block-size: config('track-height', $form-range);
       border-radius: config('track-border-radius', $form-range);
-      height: config('track-height', $form-range);
     }
 
     &::-webkit-slider-thumb {
       appearance: none;
       background-color: color('range-thumb-background', 'form');
+      block-size: config('thumb-height', $form-range);
       border-radius: config('thumb-border-radius', $form-range);
-      height: config('thumb-height', $form-range);
+      inline-size: config('thumb-inline-size', $form-range);
       margin-block-start: calc(#{config('track-height', $form-range)} / 2 - #{config('thumb-height', $form-range)} / 2);
-      width: config('thumb-width', $form-range);
     }
 
     &::-moz-range-thumb {
       background-color: color('range-thumb-background', 'form');
+      block-size: config('thumb-height', $form-range);
       border: 0; /*Removes extra border that FF applies*/
       border-radius: config('thumb-border-radius', $form-range);
-      height: config('thumb-height', $form-range);
-      width: config('thumb-width', $form-range);
+      inline-size: config('thumb-inline-size', $form-range);
     }
   }
 }

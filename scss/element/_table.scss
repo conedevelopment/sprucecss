@@ -24,7 +24,7 @@
 
     border-collapse: collapse;
     color: color('text', 'table');
-    width: 100%;
+    inline-size: 100%;
 
     caption {
       color: color(caption, table);

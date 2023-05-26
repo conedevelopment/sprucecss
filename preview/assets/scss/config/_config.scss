@@ -34,7 +34,7 @@ $spacer: 1.25rem;
   ),
   $form-range: (
     'thumb-height': 2rem,
-    'thumb-width': 3rem,
+    'thumb-inline-size': 3rem,
   ),
   $generators: (
     'content': (
@@ -45,6 +45,6 @@ $spacer: 1.25rem;
     ),
   ),
   $layout: (
-    'container-width': 70rem,
+    'container-inline-size': 70rem,
   ),
 );

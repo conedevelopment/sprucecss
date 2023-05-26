@@ -1,19 +1,19 @@
 @use 'spruce' as *;
 
 .container {
-  --container-width: #{config('container-width', $layout)};
+  --container-inline-size: #{config('container-inline-size', $layout)};
   --container-gap: #{spacer-clamp('m', 'l')};
 
   @include layout-center(
     var(--container-gap),
-    var(--container-width)
+    var(--container-inline-size)
   );
 
   &--wide {
-    --container-width: 100%;
+    --container-inline-size: 100%;
   }
 
   &--narrow {
-    --container-width: 50rem;
+    --container-inline-size: 50rem;
   }
 }

@@ -3,21 +3,20 @@
 
 @mixin generate-media {
   img {
+    block-size: auto;
     display: block;
-    height: auto;
-    max-width: 100%;
+    max-inline-size: 100%;
     user-select: none;
   }
 
   iframe {
+    block-size: 100%;
     display: block;
-    height: 100%;
-    width: 100%;
+    inline-size: 100%;
   }
 
   figure {
-    margin-left: 0;
-    margin-right: 0;
+    margin-inline: 0;
 
     figcaption {
       margin-block-start: spacer('xs');

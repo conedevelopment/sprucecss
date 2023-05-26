@@ -26,7 +26,7 @@
         $type: map.get($btn, 'focus-ring-type'),
         $ring-color: $ring-color,
         $box-shadow-type: map.get($btn, 'focus-ring-box-shadow-type'),
-        $ring-width: map.get($btn, 'focus-ring-width'),
+        $ring-size: map.get($btn, 'focus-ring-size'),
         $ring-offset: map.get($btn, 'focus-ring-offset')
       );
     }
