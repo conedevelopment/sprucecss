@@ -10,7 +10,7 @@ $table: map.merge(
     'caption-font-weight': null,
     'line-height': map.get($typography, 'line-height-md'),
     'padding': map.get($spacers, 's'),
-    'responsive-width': 40rem,
+    'responsive-inline-size': 40rem,
     'stripe': odd,
   ),
   $table
