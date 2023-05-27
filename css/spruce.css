@@ -1389,10 +1389,6 @@ legend {
     flex-direction: row;
   }
 }
-.form-group--stacked > * {
-  /* stylelint-disable */
-  /* stylelint-enable */
-}
 .form-group--stacked > * + * {
   border-start-end-radius: 0;
   border-start-start-radius: 0;
@@ -1429,23 +1425,13 @@ legend {
 }
 
 .form-row--mixed {
-  --spruce-col-inline-size: 20ch;
+  --inline-size: 20ch;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 .form-row--mixed > * {
-  flex: 1 1 var(--col-inline-size);
-}
-
-.form-row--mixed {
-  --spruce-col-inline-size: 20ch;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.form-row--mixed > * {
-  flex: 1 1 var(--col-inline-size);
+  flex: 1 1 var(--inline-size);
 }
 
 .field-feedback {
