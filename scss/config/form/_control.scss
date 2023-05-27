@@ -15,7 +15,7 @@ $form-control: map.merge(
     'font-weight': null,
     'line-height': 1.5,
     'padding': 0.5em 0.75em,
-    'textarea-height': 6rem,
+    'textarea-block-size': 6rem,
   ),
   $form-control
 );

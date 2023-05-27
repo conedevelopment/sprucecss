@@ -71,13 +71,11 @@
           }
         }
 
-        /* stylelint-disable */
         @include breakpoint('sm') {
           &:first-child {
             border-end-start-radius: config('border-radius', $form-control);
           }
         }
-        /* stylelint-enable */
 
         &:focus {
           z-index: 2;

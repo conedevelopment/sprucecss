@@ -6,7 +6,7 @@
   .form-range {
     @include generate-variables($form-range);
     appearance: none;
-    margin-block-start: calc(#{config('thumb-height', $form-range)} / 2 - #{config('track-height', $form-range)} / 2);
+    margin-block-start: calc(#{config('thumb-block-size', $form-range)} / 2 - #{config('track-block-size', $form-range)} / 2);
 
     &:focus-visible {
       outline: none;
@@ -36,28 +36,28 @@
 
     &::-webkit-slider-runnable-track {
       background-color: color('range-track-background', 'form');
-      block-size: config('track-height', $form-range);
+      block-size: config('track-block-size', $form-range);
       border-radius: config('track-border-radius', $form-range);
     }
 
     &::-moz-range-track {
       background-color: color('range-track-background', 'form');
-      block-size: config('track-height', $form-range);
+      block-size: config('track-block-size', $form-range);
       border-radius: config('track-border-radius', $form-range);
     }
 
     &::-webkit-slider-thumb {
       appearance: none;
       background-color: color('range-thumb-background', 'form');
-      block-size: config('thumb-height', $form-range);
+      block-size: config('thumb-block-size', $form-range);
       border-radius: config('thumb-border-radius', $form-range);
       inline-size: config('thumb-inline-size', $form-range);
-      margin-block-start: calc(#{config('track-height', $form-range)} / 2 - #{config('thumb-height', $form-range)} / 2);
+      margin-block-start: calc(#{config('track-block-size', $form-range)} / 2 - #{config('thumb-block-size', $form-range)} / 2);
     }
 
     &::-moz-range-thumb {
       background-color: color('range-thumb-background', 'form');
-      block-size: config('thumb-height', $form-range);
+      block-size: config('thumb-block-size', $form-range);
       border: 0; /*Removes extra border that FF applies*/
       border-radius: config('thumb-border-radius', $form-range);
       inline-size: config('thumb-inline-size', $form-range);

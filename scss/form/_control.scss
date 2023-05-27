@@ -80,8 +80,8 @@
 
     @at-root {
       textarea#{$selector} {
-        block-size: config('textarea-height', $form-control);
-        min-block-size: config('textarea-height', $form-control);
+        block-size: config('textarea-block-size', $form-control);
+        min-block-size: config('textarea-block-size', $form-control);
         resize: vertical;
       }
     }

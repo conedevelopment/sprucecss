@@ -3,7 +3,7 @@
 $form-row: () !default;
 $form-row: map.merge(
   (
-    'col-inline-size': 20ch,
+    'inline-size': 20ch,
   ),
   $form-row
 );

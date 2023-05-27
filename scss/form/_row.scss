@@ -5,7 +5,7 @@
 @mixin generate-form-row {
   .form-row {
     &--mixed {
-      @include generate-variables($form-row);
+      --inline-size: #{config('inline-size', $form-row, false)};
       @include layout-flex('s');
     }
   }

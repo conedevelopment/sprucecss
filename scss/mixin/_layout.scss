@@ -135,11 +135,11 @@
 
 /// Create instinctive flex layout.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {string} $inline-size-variable - The width (inline size) of the elements.
+/// @param {string} $inline-size - The width (inline size) of the elements.
 /// @return {mixin} - The instinctive flex layout.
 @mixin layout-flex(
   $gap: 'm',
-  $inline-size-variable: var(--col-inline-size)
+  $inline-size: var(--inline-size)
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
@@ -150,6 +150,6 @@
   gap: $gap;
 
   > * {
-    flex: 1 1 $inline-size-variable;
+    flex: 1 1 $inline-size;
   }
 }
