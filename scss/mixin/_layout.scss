@@ -107,11 +107,11 @@
 
 /// Create sidebar layout.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {string} $sidebar-width - The width (flex-basis) of the sidebar.
+/// @param {string} $inline-size - The width (flex-basis) of the sidebar.
 /// @return {mixin} - The sidebar layout.
 @mixin layout-sidebar(
   $gap: 'm',
-  $sidebar-width: 18.75rem
+  $inline-size: 18.75rem
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
@@ -122,7 +122,7 @@
   gap: $gap;
 
   & > :first-child {
-    flex-basis: $sidebar-width;
+    flex-basis: $inline-size;
     flex-grow: 1;
   }
 
