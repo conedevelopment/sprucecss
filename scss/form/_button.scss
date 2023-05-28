@@ -15,7 +15,7 @@
     align-items: center;
     border-radius: config('border-radius', $btn);
     border-style: solid;
-    border-width: config('outline-inline-size', $btn);
+    border-width: config('border-width', $btn);
     cursor: pointer;
     display: inline-flex;
     font-family: config('font-family', $btn);

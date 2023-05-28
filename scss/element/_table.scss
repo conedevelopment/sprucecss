@@ -9,12 +9,12 @@
 ) {
   @if ($has-responsive-table) {
     .table-responsive {
-      --min-inline-size: #{config('responsive-inline-size', $table)};
+      --inline-size: #{config('responsive-inline-size', $table, false)};
       -webkit-overflow-scrolling: touch;
       overflow-x: auto;
 
       table {
-        min-inline-size: var(--min-inline-size);
+        min-inline-size: var(--inline-size);
       }
     }
   }

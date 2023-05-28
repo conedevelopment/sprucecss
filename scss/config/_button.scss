@@ -7,6 +7,7 @@ $btn: () !default;
 $btn: map.merge(
   (
     'border-radius': map.get($display, 'border-radius-sm'),
+    'border-width': 1px,
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
     'focus-ring-size': 2px,
@@ -18,9 +19,8 @@ $btn: map.merge(
     'gap': map.get($spacers, 'xs'),
     'icon-padding': 0.75em,
     'icon-size': 1em,
-    'outline-inline-size': 1px,
     'padding': 0.75em 1em,
-    'shadow-inline-size': 0.25rem,
+    'shadow-size': 0.25rem,
     'text-transform': null,
   ),
   $btn
