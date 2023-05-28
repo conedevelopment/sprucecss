@@ -4,13 +4,7 @@
   padding-block: spacer-clamp('l', 'xl');
 
   &__inner {
-    display: grid;
-    gap: spacer('l') spacer('xl');
-    grid-template-columns: minmax(0, 1fr);
-
-    @include breakpoint('sm') {
-      grid-template-columns: minmax(0, 12rem) minmax(0, 3.5fr);
-    }
+    @include layout-sidebar('xl', 12rem);
   }
 
   &__sidebar {

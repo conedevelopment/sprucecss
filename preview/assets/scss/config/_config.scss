@@ -18,7 +18,7 @@ $spacer: 1.25rem;
   ),
   $dark-colors: dark.$colors,
   $settings: (
-    'css-custom-properties': true,
+    'css-custom-properties': false,
     'color-fallback': false,
     'html-smooth-scrolling': true,
     'hyphens': true,

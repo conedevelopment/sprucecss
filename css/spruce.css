@@ -514,12 +514,12 @@ figure figcaption {
 }
 
 .table-responsive {
-  --min-inline-size: var(--spruce-responsive-inline-size);
+  --inline-size: 40rem;
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
 .table-responsive table {
-  min-inline-size: var(--min-inline-size);
+  min-inline-size: var(--inline-size);
 }
 
 .table {
@@ -790,18 +790,18 @@ samp {
 
 .btn {
   --spruce-border-radius: 0.325rem;
+  --spruce-border-width: 1px;
   --spruce-font-size: 1rem;
   --spruce-font-weight: 500;
   --spruce-gap: 0.5rem;
   --spruce-icon-padding: 0.75em;
   --spruce-icon-size: 1em;
-  --spruce-outline-inline-size: 1px;
   --spruce-padding: 0.75em 1em;
-  --spruce-shadow-inline-size: 0.25rem;
+  --spruce-shadow-size: 0.25rem;
   align-items: center;
   border-radius: var(--spruce-border-radius);
   border-style: solid;
-  border-width: var(--spruce-outline-inline-size);
+  border-width: var(--spruce-border-width);
   cursor: pointer;
   display: inline-flex;
   font-size: var(--spruce-font-size);
@@ -930,18 +930,18 @@ samp {
 
 .form-file::file-selector-button {
   --spruce-border-radius: 0.325rem;
+  --spruce-border-width: 1px;
   --spruce-font-size: 1rem;
   --spruce-font-weight: 500;
   --spruce-gap: 0.5rem;
   --spruce-icon-padding: 0.75em;
   --spruce-icon-size: 1em;
-  --spruce-outline-inline-size: 1px;
   --spruce-padding: 0.75em 1em;
-  --spruce-shadow-inline-size: 0.25rem;
+  --spruce-shadow-size: 0.25rem;
   align-items: center;
   border-radius: var(--spruce-border-radius);
   border-style: solid;
-  border-width: var(--spruce-outline-inline-size);
+  border-width: var(--spruce-border-width);
   cursor: pointer;
   display: inline-flex;
   font-size: var(--spruce-font-size);

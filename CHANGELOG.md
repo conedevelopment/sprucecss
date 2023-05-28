@@ -1,5 +1,13 @@
 # Spruce CSS Changelog
 
+## v2.1.0 (2023-05-28)
+
+### What's Changed
+- Use `*-inline-size` and `*-block-size`.
+
+### Bugfix
+- Fix responsive table size.
+
 ## v2.0.0 (2023-05-04)
 
 ### What's Changed
