@@ -67,6 +67,13 @@
       color: color($type + '-foreground', 'btn');
     }
   }
+
+  @if map.has-key($colors, 'btn', $type + '-shadow') {
+    &-shadow {
+      box-shadow: 0 0.55rem 1rem -0.2rem color($type + '-shadow', 'btn'),
+                  0 0.15rem 0.35rem -0.185rem color($type + '-shadow', 'btn');
+    }
+  }
 }
 
 /// Generate a button variant with outline.
@@ -86,10 +93,26 @@
 
   background-color: transparent;
   border-color: color($type + '-background', 'btn');
-  color: color($type + '-background', 'btn');
+
+  @if map.has-key($colors, 'btn', $type + '-foreground-outline') {
+    color: color($type + '-foreground-outline', 'btn');
+  } @else {
+    color: color($type + '-background', 'btn');
+  }
 
   &:hover {
-    background-color: color($type + '-background', 'btn');
-    color: color($type + '-foreground', 'btn');
+    @if map.has-key($colors, 'btn', $type + '-background-hover') {
+      background-color: color($type + '-background-hover', 'btn');
+      border-color: color($type + '-background-hover', 'btn');
+    } @else {
+      background-color: color($type + '-background', 'btn');
+      border-color: color($type + '-background', 'btn');
+    }
+
+    @if map.has-key($colors, 'btn', $type + '-foreground-hover') {
+      color: color($type + '-foreground-hover', 'btn');
+    } @else {
+      color: color($type + '-foreground', 'btn');
+    }
   }
 }

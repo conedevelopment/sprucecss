@@ -26,6 +26,10 @@
   false
 );
 
+.btn--outline-dark {
+  @include btn-variant-outline('dark');
+}
+
 .btn--custom {
   @include btn-variant('custom');
   box-shadow: -3px 5px color('custom-foreground', 'btn');

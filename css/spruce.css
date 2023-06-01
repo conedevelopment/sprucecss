@@ -336,9 +336,11 @@ template {
   --spruce-btn-color-primary-background: hsl(262, 71%, 49%);
   --spruce-btn-color-primary-background-hover: #511daa;
   --spruce-btn-color-primary-foreground: hsl(0, 0%, 100%);
+  --spruce-btn-color-primary-shadow: #ceb9f3;
   --spruce-btn-color-secondary-background: hsl(227, 92%, 55%);
   --spruce-btn-color-secondary-background-hover: #0937dc;
   --spruce-btn-color-secondary-foreground: hsl(0, 0%, 100%);
+  --spruce-btn-color-secondary-shadow: #ced8fd;
 }
 
 :root {
@@ -884,6 +886,9 @@ samp {
   border-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
+.btn--primary-shadow {
+  box-shadow: 0 0.55rem 1rem -0.2rem var(--spruce-btn-color-primary-shadow), 0 0.15rem 0.35rem -0.185rem var(--spruce-btn-color-primary-shadow);
+}
 
 .btn--secondary {
   background-color: var(--spruce-btn-color-secondary-background);
@@ -899,6 +904,9 @@ samp {
   border-color: var(--spruce-btn-color-secondary-background-hover);
   color: var(--spruce-btn-color-secondary-foreground);
 }
+.btn--secondary-shadow {
+  box-shadow: 0 0.55rem 1rem -0.2rem var(--spruce-btn-color-secondary-shadow), 0 0.15rem 0.35rem -0.185rem var(--spruce-btn-color-secondary-shadow);
+}
 
 .btn--outline-primary {
   background-color: transparent;
@@ -910,7 +918,8 @@ samp {
   outline-offset: 2px;
 }
 .btn--outline-primary:hover {
-  background-color: var(--spruce-btn-color-primary-background);
+  background-color: var(--spruce-btn-color-primary-background-hover);
+  border-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
 }
 
@@ -924,7 +933,8 @@ samp {
   outline-offset: 2px;
 }
 .btn--outline-secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background);
+  background-color: var(--spruce-btn-color-secondary-background-hover);
+  border-color: var(--spruce-btn-color-secondary-background-hover);
   color: var(--spruce-btn-color-secondary-foreground);
 }
 
@@ -1010,6 +1020,9 @@ samp {
   background-color: var(--spruce-btn-color-primary-background-hover);
   border-color: var(--spruce-btn-color-primary-background-hover);
   color: var(--spruce-btn-color-primary-foreground);
+}
+.form-file::file-selector-button-shadow {
+  box-shadow: 0 0.55rem 1rem -0.2rem var(--spruce-btn-color-primary-shadow), 0 0.15rem 0.35rem -0.185rem var(--spruce-btn-color-primary-shadow);
 }
 
 .form-label {
