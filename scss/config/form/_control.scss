@@ -34,7 +34,7 @@ $form-control-sm: map.merge(
   (
     'border-radius': 0.35em,
     'font-size': map.get($typography, 'size-sm'),
-    'padding': 0.25em 0.5em,
+    'padding': 0.25em 0.75em,
   ),
   $form-control-sm
 );

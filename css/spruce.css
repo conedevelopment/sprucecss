@@ -918,8 +918,8 @@ samp {
   outline-offset: 2px;
 }
 .btn--outline-primary:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
-  border-color: var(--spruce-btn-color-primary-background-hover);
+  background-color: var(--spruce-btn-color-primary-background);
+  border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
 }
 
@@ -933,8 +933,8 @@ samp {
   outline-offset: 2px;
 }
 .btn--outline-secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background-hover);
-  border-color: var(--spruce-btn-color-secondary-background-hover);
+  background-color: var(--spruce-btn-color-secondary-background);
+  border-color: var(--spruce-btn-color-secondary-background);
   color: var(--spruce-btn-color-secondary-foreground);
 }
 
@@ -1132,7 +1132,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 .form-control--sm {
   --webkit-date-line-height: 1.36;
   --spruce-border-radius: 0.35em;
-  --spruce-padding: 0.25em 0.5em;
+  --spruce-padding: 0.25em 0.75em;
 }
 .form-control--sm[type=color] {
   --spruce-aspect-ratio: 1;
@@ -1185,7 +1185,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 
 .form-check--sm {
   --spruce-border-radius: 0.35em;
-  --spruce-padding: 0.25em 0.5em;
+  --spruce-padding: 0.25em 0.75em;
 }
 .form-check--sm .form-check__control {
   font-size: var(--spruce-font-size);
