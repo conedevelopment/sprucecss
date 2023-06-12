@@ -117,6 +117,10 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
   - [Post](https://sprucecss.com/ui/page/post)
 </details>
 
+## Templates
+
+  - **[Spruce Docs](https://github.com/conedevelopment/sprucecss-eleventy-documentation-template)** - A simple documentation template made with Eleventy.
+
 ## Contributing
 
 Thank you for considering contributing to Spruce CSS! The [contribution guide](https://sprucecss.com/docs/getting-started/contribution/) can be found in the documentation.
