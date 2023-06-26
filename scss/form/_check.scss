@@ -55,6 +55,7 @@
       border: config('border-width', $form-check) solid color('border', 'form');
       flex-shrink: 0;
       font-size: config('font-size', $form-check);
+      font-weight: config('font-weight', $form-check);
       inline-size: 1em;
       line-height: 1;
       margin-block-start: config('margin-block-start', $form-check);

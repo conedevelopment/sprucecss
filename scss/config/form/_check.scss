@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'label' as *;
 @use '../display' as *;
 @use '../typography' as *;
 
@@ -12,7 +13,7 @@ $form-check: map.merge(
     'focus-ring-size': 2px,
     'focus-ring-type': outline,
     'font-size': 1.125rem,
-    'font-weight': map.get($form-check, 'font-weight'),
+    'font-weight': map.get($form-label, 'font-weight'),
     'line-height': map.get($typography, 'line-height-heading'),
     'margin-block-start': 0.1em,
     'vertical-alignment': center,
@@ -27,7 +28,6 @@ $form-check-lg: map.merge(
   ),
   $form-check-lg
 );
-
 
 $form-check-sm: () !default;
 $form-check-sm: map.merge(
