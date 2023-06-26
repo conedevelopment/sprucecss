@@ -22,20 +22,20 @@
 
     &--row {
       --gap: #{spacer('xxs')} #{spacer('s')};
-      --label-inline-size: #{config('row-label-inline-size', $form-group, true)};
+      --label-inline-size: #{config('row-label-inline-size', $form-group, false)};
 
       align-items: center;
       display: grid;
       gap: var(--gap);
       grid-template-columns: minmax(0, 1fr);
 
-      @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, true)}) {
+      @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, false)}) {
         grid-template-columns: minmax(0, var(--label-inline-size)) minmax(0, 1fr);
       }
 
       .form-description,
       .field-feedback {
-        @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, true)}) {
+        @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, false)}) {
           grid-column-start: 2;
         }
       }
