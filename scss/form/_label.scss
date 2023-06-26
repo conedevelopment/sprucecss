@@ -5,6 +5,7 @@
 @mixin generate-form-label {
   .form-label {
     color: color('label', 'form');
+    font-family: map.get($form-label, 'font-family');
     font-size: map.get($form-label, 'font-size');
     font-style: map.get($form-label, 'font-style');
     font-weight: map.get($form-label, 'font-weight');

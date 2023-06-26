@@ -3,6 +3,7 @@
 $form-label: () !default;
 $form-label: map.merge(
   (
+    'font-family': null,
     'font-size': null,
     'font-style': null,
     'font-weight': null,
