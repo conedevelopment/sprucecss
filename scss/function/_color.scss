@@ -35,6 +35,27 @@
   @return var(--#{$internal-prefix}#{$type}-color-#{$key});
 }
 
+/// Get any - just - color value from $colors (or any) Sass map.
+/// @param {string} $key - The key name of the color.
+/// @param {string} $type - The type of the color group (base, dark, etc.).
+/// @param {map} $map - The map to get the color from.
+/// @return {color} - The color value.
+@function color-value(
+  $key,
+  $type: 'base',
+  $map: $colors
+) {
+  @if not map.has-key($map, $type, $key) {
+    @error 'The #{$key} key name doesn\'t exist under #{$type} at the specified map (default: $colors).';
+  }
+
+  @if map.get($map, $type, $key) == null {
+    @return null;
+  }
+
+  @return map.get($map, $type, $key);
+}
+
 /// Get a white or black contrast color for any color (on WCAG standards).
 /// Thanks for David Halford for this function: https://codepen.io/davidhalford/pen/ALrbEP
 /// @param {color} $color - The color to get the contrast color.

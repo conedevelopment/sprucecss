@@ -115,7 +115,7 @@
   padding: spacer('m');
 
   &__link {
-    color: color('heading');
+    color: color-value('heading');
     font-size: font-size('h3');
     font-weight: 700;
     text-decoration: none;
