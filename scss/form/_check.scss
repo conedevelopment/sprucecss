@@ -102,7 +102,8 @@
         }
       }
 
-      &:disabled {
+      &:disabled,
+      &.disabled {
         @include field-disabled(
           $background: color('background-disabled', 'form'),
           $border: color('border-disabled', 'form')

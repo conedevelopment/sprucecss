@@ -3,8 +3,9 @@
 $form-group: () !default;
 $form-group: map.merge(
   (
+    'gap': 1rem,
     'row-label-inline-size': 10rem,
-    'row-container-inline-size': 30rem,
+    'row-container-inline-size': 38rem,
   ),
   $form-group
 );

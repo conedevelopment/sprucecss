@@ -39,8 +39,7 @@
     outline-style: solid;
   }
 
-  #{$selector}:disabled,
-  #{$selector}--disabled {
+  #{$selector}:disabled {
     opacity: 0.5;
     pointer-events: none;
   }

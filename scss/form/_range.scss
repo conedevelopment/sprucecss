@@ -62,5 +62,10 @@
       border-radius: config('thumb-border-radius', $form-range);
       inline-size: config('thumb-inline-size', $form-range);
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   }
 }
