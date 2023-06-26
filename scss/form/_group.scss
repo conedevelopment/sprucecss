@@ -22,20 +22,20 @@
 
     &--row {
       --gap: #{spacer('xxs')} #{spacer('s')};
-      --label-column: 10rem;
+      --label-inline-size: #{config('row-label-inline-size', $form-group, true)};
 
       align-items: center;
       display: grid;
       gap: var(--gap);
       grid-template-columns: minmax(0, 1fr);
 
-      @include breakpoint('sm') {
-        grid-template-columns: minmax(0, var(--label-column)) minmax(0, 1fr);
+      @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, true)}) {
+        grid-template-columns: minmax(0, var(--label-inline-size)) minmax(0, 1fr);
       }
 
       .form-description,
       .field-feedback {
-        @include breakpoint('sm') {
+        @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, true)}) {
           grid-column-start: 2;
         }
       }
@@ -81,6 +81,10 @@
           z-index: 2;
         }
       }
+    }
+
+    &-container {
+      container: form-group-container / inline-size;
     }
   }
 }

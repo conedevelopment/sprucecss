@@ -1,0 +1,10 @@
+@use 'sass:map';
+
+$form-group: () !default;
+$form-group: map.merge(
+  (
+    'row-label-inline-size': 10rem,
+    'row-container-inline-size': 30rem,
+  ),
+  $form-group
+);
