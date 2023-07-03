@@ -58,7 +58,7 @@
       font-weight: config('font-weight', $form-check);
       inline-size: 1em;
       line-height: 1;
-      margin-block-start: config('margin-block-start', $form-check);
+      margin-block: config('margin-block', $form-check);
       transition-duration: transition('duration');
       transition-property: border, box-shadow;
       transition-timing-function: transition('timing-function');

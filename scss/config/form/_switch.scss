@@ -8,8 +8,9 @@ $form-switch: map.merge(
     'border-width': 1px,
     'font-size': 1.125rem,
     'font-weight': map.get($form-label, 'font-weight'),
-    'line-height': map.get($typography, 'line-height-heading'),
-    'margin-block-start': 0.25em,
+    'line-height': map.get($typography, 'line-height-md'),
+    'margin-block': 0.15em,
+    'vertical-alignment': center,
   ),
   $form-switch
 );
@@ -17,7 +18,7 @@ $form-switch: map.merge(
 $form-switch-lg: () !default;
 $form-switch-lg: map.merge(
   (
-    'font-size': map.get($typography, 'size-lg'),
+    'font-size': map.get($typography, 'font-size-lead'),
   ),
   $form-switch-lg
 );

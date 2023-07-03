@@ -11,7 +11,8 @@
   $has-sizes: false
 ) {
   #{$parent} {
-    align-items: center;
+    @include generate-variables($form-switch, ('focus-'));
+    align-items: config('vertical-alignment', $form-switch);
     display: inline-flex;
     gap: spacer('xs');
 
@@ -23,7 +24,7 @@
 
   @if ($has-sizes) {
     #{$parent}--sm {
-      @include generate-variables($form-switch-sm, ('focus-'));
+      @include generate-variables($form-switch-sm);
 
       @if not map.get($settings, 'css-custom-properties') {
         #{$input} {
@@ -33,7 +34,7 @@
     }
 
     #{$parent}--lg {
-      @include generate-variables($form-switch-lg, ('focus-'));
+      @include generate-variables($form-switch-lg);
 
       @if not map.get($settings, 'css-custom-properties') {
         #{$input} {
@@ -45,7 +46,6 @@
 
   @at-root {
     #{$input} {
-      @include generate-variables($form-switch, ('focus-'));
       @include field-icon(config('switch', $form-icon, false), color('border', 'form', 'true'));
       appearance: none;
       background-color: color('background', 'form');
@@ -59,7 +59,7 @@
       font-size: config('font-size', $form-switch);
       inline-size: 2em;
       line-height: 1;
-      margin-block-start: config('margin-block-start', $form-switch);
+      margin-block: config('margin-block', $form-switch);
       transition-duration: transition('duration');
       transition-property: background-position, border, box-shadow;
       transition-timing-function: transition('timing-function');
