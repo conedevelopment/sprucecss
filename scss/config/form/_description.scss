@@ -3,9 +3,9 @@
 $form-description: () !default;
 $form-description: map.merge(
   (
-    'font-size': null,
+    'font-size': 1em,
     'font-style': null,
-    'font-weight': null,
+    'font-weight': 400,
   ),
   $form-description
 );
