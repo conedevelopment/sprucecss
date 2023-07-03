@@ -7,10 +7,11 @@ $settings: map.deep-merge(
     'css-custom-properties': false,
     'html-smooth-scrolling': true,
     'hyphens': true,
-    'optimal-responsive-font-size': '2vw + 1rem',
+    'optimal-font-size': '2vw + 1rem',
     'optimal-spacer-size': '5vw',
     'prefix': 'spruce',
     'print': false,
+    'scaler': 15,
     'utilities': (
       'display': true,
       'typography': true,

@@ -30,9 +30,11 @@ $colors: (
     'primary-background': hsl(261deg 52% 59%),
     'primary-background-hover': hsl(261deg 52% 65%),
     'primary-foreground': $color-white,
+    'primary-shadow': color.adjust($color-primary, $lightness: -25%),
     'secondary-background': $color-secondary,
     'secondary-background-hover': color.adjust($color-secondary, $lightness: 5%),
     'secondary-foreground': $color-white,
+    'secondary-shadow': color.adjust($color-secondary, $lightness: -20%),
   ),
   'form': (
     'background': color.scale($color-black, $lightness: 5%),

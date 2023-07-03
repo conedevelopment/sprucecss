@@ -12,8 +12,8 @@
 @function font-size(
   $key,
   $fluid: true,
-  $scaler: 15,
-  $optimal-size: map.get($settings, 'optimal-responsive-font-size')
+  $scaler: map.get($settings, 'scaler'),
+  $optimal-size: map.get($settings, 'optimal-font-size')
 ) {
   @if not map.has-key($font-sizes, $key) {
     @error 'The #{$key} key name doesn\'t exist at the $font-sizes map.';
@@ -43,8 +43,8 @@
 /// @return {string} - The responsive font-size value.
 @function responsive-font-size(
   $size,
-  $scaler: 15,
-  $optimal-size: map.get($settings, 'optimal-responsive-font-size')
+  $scaler: map.get($settings, 'scaler'),
+  $optimal-size: map.get($settings, 'optimal-font-size')
 ) {
   @if $scaler < 0 or $scaler > 100 {
     @error 'The $scaler value must be between 0 and 100.';
