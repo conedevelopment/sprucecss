@@ -20,12 +20,10 @@
   padding-inline: $gap;
 }
 
-/// Create stack layout.
+/// Create stack layout with flex.
 /// @param {string} $gap - The gap between the the elements.
-/// @param {boolean} $inline-size - Whether it has explicit width (inline-size).
 /// @param {string} $align - The horizontal alignment of the elements.
-/// @param {boolean} $important - Whether it should use the !important keyword.
-/// @param {number} $split - The number of element where it should split the layout.
+/// @param {boolean} $important - Whether it should use the !important keyword at the margin reset.
 /// @return {mixin} - The stacked layout.
 @mixin layout-stack(
   $gap: 'm',

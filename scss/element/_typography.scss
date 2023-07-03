@@ -67,7 +67,7 @@
 
   ul,
   ol {
-    @include layout-stack('xxs', $inline-size: false);
+    @include layout-stack('xxs');
     list-style-position: inside;
 
     li {
