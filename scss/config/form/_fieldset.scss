@@ -5,7 +5,7 @@
 $form-fieldset: () !default;
 $form-fieldset: map.merge(
   (
-    'gap': map.get($spacers, 's'),
+    'layout-gap': map.get($spacers, 's'),
     'legend-font-size': clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}),
     'legend-font-weight': 700,
   ),

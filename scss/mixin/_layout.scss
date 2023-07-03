@@ -20,36 +20,49 @@
   padding-inline: $gap;
 }
 
-/// Create stack layout with flex.
+/// Create stack layout.
 /// @param {string} $gap - The gap between the the elements.
+/// @param {boolean} $inline-size - Whether it has explicit width (inline-size).
 /// @param {string} $align - The horizontal alignment of the elements.
-/// @param {boolean} $important - Whether it should use the !important keyword at the margin reset.
+/// @param {boolean} $important - Whether it should use the !important keyword.
 /// @return {mixin} - The stacked layout.
 @mixin layout-stack(
   $gap: 'm',
+  $inline-size: false,
   $align: none,
   $important: false
 ) {
   @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
-  display: flex;
-  flex-direction: column;
-  gap: $gap;
+
+  @if $align == left or $align == right {
+    display: flex;
+    flex-direction: column;
+  }
 
   @if $align == left {
-    align-items: start;
+    align-items: flex-start;
   }
 
   @if $align == right {
-    align-items: end;
+    align-items: flex-end;
   }
 
   > * {
+    margin-block-end: 0;
+    margin-block-start: 0;
+
+    @if $inline-size and $align == none {
+      inline-size: 100%;
+    }
+  }
+
+  > * + * {
     @if $important == true {
-      margin-block: 0 !important;
+      margin-block-start: $gap !important;
     } @else {
-      margin-block: 0;
+      margin-block-start: $gap;
     }
   }
 }
