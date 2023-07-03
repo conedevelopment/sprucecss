@@ -22,6 +22,14 @@
     }
   }
 
+  #{$parent}--vertical-center {
+    align-items: center;
+  }
+
+  #{$parent}--vertical-start {
+    align-items: flex-start;
+  }
+
   @if ($has-sizes) {
     #{$parent}--sm {
       @include generate-variables($form-switch-sm);
