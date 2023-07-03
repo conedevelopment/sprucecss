@@ -1,11 +1,29 @@
 @use 'sass:map';
+@use '../spacer' as *;
 
 $form-group: () !default;
 $form-group: map.merge(
   (
-    'gap': 1rem,
-    'row-label-inline-size': 10rem,
-    'row-container-inline-size': 38rem,
+    'gap': map.get($spacers, 'xs'),
   ),
   $form-group
+);
+
+$form-group-check: () !default;
+$form-group-check: map.merge(
+  (
+    'gap': map.get($spacers, 's'),
+  ),
+  $form-group-check
+);
+
+$form-group-row: () !default;
+$form-group-row: map.merge(
+  (
+    'container-inline-size': 38rem,
+    'gap': map.get($spacers, 'xxs') map.get($spacers, 's'),
+    'label-inline-size': 10rem,
+    'vertical-alignment': center,
+  ),
+  $form-group-row
 );

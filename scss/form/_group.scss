@@ -4,38 +4,42 @@
 
 @mixin generate-form-group {
   .form-group {
+    @include generate-variables($form-group);
+
     display: flex;
     flex-direction: column;
-    gap: spacer('xxs');
+    gap: config('gap', $form-group);
 
     &--horizontal-check {
+      @include generate-variables($form-group-check);
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: spacer('s');
+      gap: config('gap', $form-group-check);
     }
 
     &--vertical-check {
-      @include layout-stack('s', true, 'left');
-      gap: 0;
+      @include generate-variables($form-group-check);
+      align-items: start;
+      flex-direction: column;
+      gap: config('gap', $form-group-check);
     }
 
     &--row {
-      --gap: #{spacer('xxs')} #{spacer('s')};
-      --label-inline-size: #{config('row-label-inline-size', $form-group, false)};
+      @include generate-variables($form-group-row);
 
-      align-items: center;
+      align-items: config('vertical-alignment', $form-group-row);
       display: grid;
-      gap: var(--gap);
+      gap: config('gap', $form-group-row);
       grid-template-columns: minmax(0, 1fr);
 
-      @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, false)}) {
-        grid-template-columns: minmax(0, var(--label-inline-size)) minmax(0, 1fr);
+      @container form-group-container (inline-size > #{config('container-inline-size', $form-group-row, false)}) {
+        grid-template-columns: minmax(0, #{config('label-inline-size', $form-group-row)}) minmax(0, 1fr);
       }
 
       .form-description,
       .field-feedback {
-        @container form-group-container (inline-size > #{config('row-container-inline-size', $form-group, false)}) {
+        @container form-group-container (inline-size > #{config('container-inline-size', $form-group-row, false)}) {
           grid-column-start: 2;
         }
       }
