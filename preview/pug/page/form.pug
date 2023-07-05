@@ -245,7 +245,7 @@ block content
           span(class='form-label form-switch__label') Enable notifications
     fieldset(class='form-group-container')
       legend Form Group Row
-      div(class='form-group--row')
+      div(class='form-group--row form-group--row:vertical-start')
         label(for='first-name-row' class='form-label') First Name
         input(class='form-control' id='first-name-row' type='text')
         span(class='form-description') Just a help text for presentation purpose
@@ -280,6 +280,16 @@ block content
         input(class='form-control' type='text' aria-label='First Name')
         input(class='form-control' type='text' aria-label='Last Name')
         button(class='btn btn--primary') Submit
+      div(class='form-group--stacked')
+        div(class='form-group-label') $
+        input(class='form-control' type='text' aria-label='First Name')
+        input(class='form-control' type='text' aria-label='Last Name')
+        div(class='form-group-label') .00
+        div(class='form-group-label') .00
+      div(class='form-group--stacked:md')
+        div(class='form-group-label') $
+        input(class='form-control' type='text' aria-label='Price')
+        div(class='form-group-label') .00
     fieldset
       legend Validation
       div(class='form-row')

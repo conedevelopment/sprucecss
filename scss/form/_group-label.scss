@@ -1,0 +1,16 @@
+@use '../function' as *;
+@use '../config' as *;
+@use '../mixin' as *;
+
+@mixin generate-form-group-label {
+  .form-group-label {
+    @include generate-variables($form-control, $include: ('border-width', 'border-radius'));
+    align-items: center;
+    border: config('border-width', $form-control) solid color('border', 'form');
+    border-radius: config('border-radius', $form-control);
+    background-color: color('group-label-background', 'form');
+    color: color('group-label-foreground', 'form');
+    display: flex;
+    padding-inline: spacer('s');
+  }
+}

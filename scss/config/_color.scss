@@ -54,6 +54,8 @@ $colors: map.deep-merge(
       'check-background': $color-primary,
       'check-focus-ring': $color-primary,
       'check-foreground': $color-white,
+      'group-label-background': hsl(210deg 60% 98%),
+      'group-label-foreground': $color-gray,
       'invalid': $color-danger,
       'invalid-focus-ring': color.adjust($color-danger, $alpha: -0.75),
       'label': $color-black,

@@ -54,40 +54,26 @@
     }
 
     &--stacked {
-      @include generate-variables($form-control, $include: ('border-radius'));
       display: flex;
-      flex-direction: column;
-
-      @include breakpoint('sm') { flex-direction: row; }
 
       > * {
         + * {
+          border-radius: 0;
+          margin-inline-start: -1px;
+        }
+
+        &:first-child {
           border-start-end-radius: 0;
-          border-start-start-radius: 0;
-          margin-block-start: -1px;
-
-          @include breakpoint('sm') {
-            border-end-start-radius: 0;
-            border-start-end-radius: config('border-radius', $form-control);
-            margin-block-start: 0;
-            margin-inline-start: -1px;
-          }
-        }
-
-        &:not(:last-child) {
+          border-start-start-radius: config('border-radius', $form-control);
           border-end-end-radius: 0;
-          border-end-start-radius: 0;
-
-          @include breakpoint('sm') {
-            border-end-end-radius: 0;
-            border-start-end-radius: 0;
-          }
+          border-end-start-radius: config('border-radius', $form-control);
         }
 
-        @include breakpoint('sm') {
-          &:first-child {
-            border-end-start-radius: config('border-radius', $form-control);
-          }
+        &:last-child {
+          border-start-end-radius: config('border-radius', $form-control);
+          border-start-start-radius: 0;
+          border-end-end-radius: config('border-radius', $form-control);
+          border-end-start-radius: 0;
         }
 
         &:focus {

@@ -139,3 +139,7 @@
     gap: spacer('xs');
   }
 }
+
+.form-group--stacked\:md {
+  @include form-group-stacked('md');
+}
