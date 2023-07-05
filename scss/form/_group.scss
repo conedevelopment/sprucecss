@@ -33,11 +33,11 @@
       gap: config('gap', $form-group-row);
       grid-template-columns: minmax(0, 1fr);
 
-      &-vertical-center {
+      &\:vertical-center {
         align-items: center;
       }
 
-      &-vertical-start {
+      &\:vertical-start {
         align-items: flex-start;
       }
 
@@ -54,6 +54,7 @@
     }
 
     &--stacked {
+      @include generate-variables($form-control, $include: ('border-radius'));
       display: flex;
       flex-direction: column;
 

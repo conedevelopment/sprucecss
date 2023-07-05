@@ -3,7 +3,6 @@
 @use '../function' as *;
 @use '../mixin' as *;
 
-// Create custom checkbox and radio
 @mixin generate-form-switch(
   $parent,
   $input,
