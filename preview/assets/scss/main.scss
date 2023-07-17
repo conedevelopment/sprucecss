@@ -75,7 +75,7 @@
 }
 
 .selection-2 {
-  @include selection(aqua, $is-direct: true);
+  @include selection(#000, $is-direct: true);
 }
 
 .ellipsis-btn {

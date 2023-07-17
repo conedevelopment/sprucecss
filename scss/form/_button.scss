@@ -61,6 +61,7 @@
       block-size: config('icon-size', $btn);
       flex-shrink: 0;
       inline-size: config('icon-size', $btn);
+      pointer-events: none;
 
       &--sm {
         block-size: config('icon-size', $btn-sm);

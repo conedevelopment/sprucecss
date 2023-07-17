@@ -1,0 +1,63 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'spruce' as *;
+
+.alert {
+  align-items: center;
+  border: 1px solid;
+  border-left: 0.4rem solid;
+  border-radius: config('border-radius-sm', $display);
+  display: flex;
+  gap: spacer('m');
+  justify-content: space-between;
+  line-height: config('line-height-md', $typography);
+  padding: 0.65em 1em;
+
+  @each $name, $value in map.get($colors, 'alert') {
+    @at-root .alert--#{$name} {
+      background-color: color.scale($value, $lightness: 95%);
+      color: color.scale($value, $lightness: -30%);
+    }
+
+    @at-root .alert--#{$name} .alert__close {
+      background-color: color.scale($value, $lightness: -30%);
+      color: color.scale($value, $lightness: 90%);
+    }
+  }
+
+  @each $name, $value in map.get($colors, 'alert') {
+    @at-root [data-theme-mode='dark'] .alert--#{$name} {
+      background-color: transparent;
+      border-color: color.scale($value, $lightness: -30%);
+      color: color('text');
+    }
+  }
+
+  &__caption {
+    @include layout-stack('xxs');
+  }
+
+  &__close {
+    --dimension: 1.5rem;
+    @include clear-btn;
+    @include transition;
+    align-items: center;
+    block-size: var(--dimension);
+    border-radius: config('border-radius-sm', $display);
+    display: flex;
+    flex-shrink: 0;
+    inline-size: var(--dimension);
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      opacity: 0.75;
+    }
+
+    svg {
+      --dimension: 0.5rem;
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
+    }
+  }
+}
