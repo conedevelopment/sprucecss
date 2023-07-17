@@ -1,5 +1,25 @@
 # Spruce CSS Changelog
 
+## v2.2.0 (2023-07-17)
+
+In this release we have a lot of small changes and fixes with some improvement.
+
+### What's Changed
+- `.form-group--row`: now uses container query.
+- `.form-group--row`: add vertical alignment option.
+- Add disabled state range input.
+- Add `color-value` function to get only the color value.
+- `form-check`: add font-weight option.
+- Add drop-shadow button variants.
+- Change outline button generator, make it more customizable.
+- Add global font `scaler` option.
+- Add pointer-events: none; to the `.btn__icon`.
+
+### Bugfix
+- `form-label`: font-family not worked.
+- `form-description`: make it explicit.
+- And many more...
+
 ## v2.1.0 (2023-05-28)
 
 ### What's Changed
