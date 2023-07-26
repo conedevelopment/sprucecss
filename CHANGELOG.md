@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v2.2.1 (2023-07-26)
+
+### What's Changed
+- `.form-group--stacked`: fix the border-radius when only one element is present.
+
 ## v2.2.0 (2023-07-17)
 
 In this release we have a lot of small changes and fixes with some improvement.
