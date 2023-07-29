@@ -1,14 +1,13 @@
 <p>
-  <a href="https://sprucecss.com/#gh-light-mode-only">
-    <br/>
-    <img src="./.github/spruce-logo-dark.svg" alt="Spruce CSS" width="160">
-    <br/>
-  </a>
-  <a href="https://sprucecss.com/#gh-dark-mode-only">
-    <br/>
-    <img src="./.github/spruce-logo-light.svg" alt="Spruce CSS" width="160">
-    <br/>
-  </a>
+  <a href="https://sprucecss.com/">
+    <br>
+    <picture>
+        <source media="(prefers-color-scheme: light)" srcset="./.github/spruce-logo-dark.svg">
+        <source media="(prefers-color-scheme: dark)" srcset="./.github/spruce-logo-light.svg">
+        <img alt="Spruce CSS" width="140" src="./.github/spruce-logo-dark.svg">
+      </picture>
+    </a>
+    <br>
 </p>
 
 **Spruce CSS is an open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.**
