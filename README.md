@@ -2,12 +2,12 @@
   <a href="https://sprucecss.com/">
     <br>
     <picture>
-        <source media="(prefers-color-scheme: light)" srcset="./.github/spruce-logo-dark.svg">
-        <source media="(prefers-color-scheme: dark)" srcset="./.github/spruce-logo-light.svg">
-        <img alt="Spruce CSS" width="140" src="./.github/spruce-logo-dark.svg">
-      </picture>
-    </a>
+      <source media="(prefers-color-scheme: light)" srcset="./.github/spruce-logo-dark.svg">
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/spruce-logo-light.svg">
+      <img alt="Spruce CSS" width="140" src="./.github/spruce-logo-dark.svg">
+    </picture>
     <br>
+  </a>
 </p>
 
 **Spruce CSS is an open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.**
