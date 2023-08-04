@@ -14,6 +14,7 @@
         display: none !important;
       }
 
+      /* stylelint-disable-next-line selector-no-qualifying-type */
       a[href^='http']::after {
         content: ' (' attr(href) ')';
       }

@@ -121,6 +121,7 @@
     padding-inline-start: spacer('m');
   }
 
+  /* stylelint-disable-next-line selector-no-qualifying-type */
   abbr[title] {
     border-block-end: 1px dotted;
     cursor: help;

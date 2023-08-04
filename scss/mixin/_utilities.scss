@@ -32,6 +32,7 @@
 
     @supports (-webkit-line-clamp: $number-of-lines) {
       -webkit-box-orient: vertical;
+      /* stylelint-disable-next-line value-no-vendor-prefix */
       display: -webkit-box;
       -webkit-line-clamp: $number-of-lines;
     }

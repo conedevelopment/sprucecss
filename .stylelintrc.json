@@ -2,27 +2,8 @@
   "extends": "stylelint-config-sass-guidelines",
   "plugins": ["stylelint-order"],
   "rules": {
-    "max-nesting-depth": 6,
-    "selector-no-vendor-prefix": [true,
-      {
-        "ignoreSelectors": ["/-moz-.*/", "/-ms-.*/", "/-webkit-.*/"]
-      }
-    ],
-    "selector-no-qualifying-type": [
-      true,
-      {
-        "ignore": ["attribute"]
-      }
-    ],
-    "value-no-vendor-prefix": [
-      true,
-      {
-        "ignoreValues": ["box"]
-      }
-    ],
     "color-function-notation": "modern",
-    "selector-class-pattern": null,
-    "scss/percent-placeholder-pattern": null,
+    "max-nesting-depth": 4,
     "order/properties-alphabetical-order": true
   }
 }

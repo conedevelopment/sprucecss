@@ -25,6 +25,7 @@
       @each $key, $value in $map {
         @if $value {
           @each $fraction in $exclude {
+            /* stylelint-disable-next-line max-nesting-depth */
             @if string.index($key, $fraction) {
               $exclude-map: map.remove($exclude-map, $key);
             }
@@ -37,6 +38,7 @@
       @each $key, $value in $map {
         @if $value {
           @each $fraction in $include {
+            /* stylelint-disable-next-line max-nesting-depth */
             @if string.index($key, $fraction) {
               $include-map: map.set($include-map, $key, $value);
             }
