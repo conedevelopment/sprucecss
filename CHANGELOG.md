@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v2.2.2 (2023-08-17)
+
+### What's Changed
+- Forward plugin folder (generate-normalize mixin).
+
 ## v2.2.1 (2023-07-26)
 
 ### What's Changed
