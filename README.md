@@ -119,6 +119,7 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 ## Templates
 
   - **[Spruce Docs](https://github.com/conedevelopment/sprucecss-eleventy-documentation-template)** - A simple documentation template made with Eleventy.
+  - **[Root](https://github.com/conedevelopment/sprucecss-root-admin-template)** - A straightforward administration template with standard views and lots of components.
 
 ## Contributing
 
