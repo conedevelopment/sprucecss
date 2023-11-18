@@ -5,7 +5,7 @@
 $typography: () !default;
 $typography: map.merge(
   (
-    'font-family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
+    'font-family-base': #{Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
     'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
     'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
     'font-size-base': 1rem,
