@@ -1,6 +1,8 @@
 @use 'sass:map';
 @use '../function' as *;
 @use '../config' as *;
+@use 'form' as *;
+
 
 /// Hide something from the screen but keep it visible for assistive technology.
 /// @return {mixin} - The visually hidden mixin.
@@ -118,7 +120,7 @@
   }
 }
 
-/// Break long string
+/// Break long string.
 /// @author Chris Coyier - https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
 /// @return {mixin} - The word-wrap mixin.
 @mixin word-wrap {
@@ -127,4 +129,44 @@
   word-break: break-all;
   word-break: break-word;
   word-wrap: break-word;
+}
+
+/// Generate a focus ring.
+/// @param {string} $type - The type of the focus ring.
+/// @param {string} $btn-type - The type - hence color - of the button.
+/// @return {mixin} - The focus ring mixin.
+@mixin short-ring(
+  $type: 'input',
+  $btn-type: 'primary'
+) {
+  @if $type == 'input' {
+    @include focus-ring(
+      $type: config('focus-ring-type', $form-control, false),
+      $border-color: color('border-focus', 'form'),
+      $ring-color: color('ring-focus', 'form'),
+      $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
+      $ring-size: config('focus-ring-size', $form-control, false),
+      $ring-offset: config('focus-ring-offset', $form-control, false)
+    );
+  }
+
+  @if $type == 'button' {
+    $ring-color: null;
+
+    @if map.has-key($colors, 'btn', $btn-type + '-focus-ring') {
+      $ring-color: color($btn-type + '-focus-ring', 'btn');
+    } @else {
+      $ring-color: color($btn-type + '-background', 'btn');
+    }
+
+    &:focus {
+      @include focus-ring(
+        $type: config('focus-ring-type', $btn, false),
+        $ring-color: $ring-color,
+        $box-shadow-type: config('focus-ring-box-shadow-type', $btn, false),
+        $ring-size: config('focus-ring-size', $btn, false),
+        $ring-offset: config('focus-ring-offset', $btn, false)
+      );
+    }
+  }
 }
