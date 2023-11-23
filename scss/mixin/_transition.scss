@@ -1,3 +1,4 @@
+@use 'sass:string';
 @use '../function' as *;
 
 /// Generates transition related declarations.
@@ -16,7 +17,7 @@
   } @else {
     transition-duration: $duration;
   }
-  transition-property: $property;
+  transition-property: string.unquote($property);
   @if $timing-function == timing-function {
     transition-timing-function: transition($timing-function);
   } @else {

@@ -41,6 +41,9 @@ $spacer: 1.25rem;
     'border-radius': 0.25em,
     'text-transform': uppercase,
   ),
+  $form-fieldset: (
+    'legend-font-family': serif,
+  ),
   $form-range: (
     'thumb-block-size': 2rem,
     'thumb-inline-size': 2rem,
@@ -55,5 +58,8 @@ $spacer: 1.25rem;
   ),
   $layout: (
     'container-inline-size': 70rem,
+  ),
+  $typography: (
+    'letter-spacing-heading': 0.05em,
   ),
 );
