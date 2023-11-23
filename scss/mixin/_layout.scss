@@ -15,6 +15,7 @@
     $gap: map.get($spacers, $gap);
   }
 
+  inline-size: 100%;
   margin-inline: auto;
   max-inline-size: $max-inline-size;
   padding-inline: $gap;
