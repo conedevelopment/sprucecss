@@ -38,6 +38,7 @@
     color: color('heading');
     font-family: config('font-family-heading', $typography);
     font-weight: config('font-weight-heading', $typography);
+    letter-spacing: config('letter-spacing-heading', $typography);
     line-height: config('line-height-heading', $typography);
   }
 

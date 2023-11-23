@@ -18,6 +18,7 @@
 
   legend {
     color: color('legend', 'form');
+    font-family: config('legend-font-family', $form-fieldset);
     font-size: config('legend-font-size', $form-fieldset);
     font-weight: config('legend-font-weight', $form-fieldset);
   }
