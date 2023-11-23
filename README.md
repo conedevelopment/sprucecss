@@ -17,7 +17,7 @@
 [![Back-end](https://img.shields.io/github/actions/workflow/status/conedevelopment/sprucecss/test.yml?branch=main&logo=github&style=for-the-badge&label=Test)](https://github.com/conedevelopment/sprucecss/actions/workflows/test.yml)
 [![License](https://img.shields.io/badge/license-MIT-2350f6?style=for-the-badge)](https://github.com/conedevelopment/sprucecss/blob/main/LICENSE)
 
-<img src="./.github/thumbnail-4.png" alt="The Spruce CSS logo, a minimalistic, low-level CSS framework caption and an abstract 3D illustration.">
+<img src="./.github/thumbnail-5.png" alt="The Spruce CSS logo, a minimalistic, low-level CSS framework caption and an abstract 3D illustration.">
 
 ## What is Spruce CSS?
 
