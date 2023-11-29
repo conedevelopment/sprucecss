@@ -1,11 +1,44 @@
 @use 'sass:map';
+@use 'sass:string';
+@use 'sass:list';
 @use '../config' as *;
+
+/// Split a string into a list of values.
+/// @param {string} $value - The string to split.
+/// @param {string} $separator - The separator to split by.
+/// @return {list} - The list of values.
+@function split-values($value, $separator: ':') {
+  $colon-index: string.index($value, $separator);
+
+  @if $colon-index {
+    $first: string.slice($value, 1, $colon-index - 1);
+    $second: string.slice($value, $colon-index + 1);
+
+    @return ($first, $second);
+  }
+
+  @return null;
+}
 
 /// Get spacer value from $spacers map.
 /// @param {string} $key - The key name.
 /// @return {string} - The value of the key.
 /// @throws {error} - If the key doesn't exist.
 @function spacer($key) {
+  @if string.index($key, ':') {
+    $list: null;
+
+    @each $key in split-values($key) {
+      @if not map.has-key($spacers, $key) {
+        @error 'The #{$key} key name doesn\'t exist at the $spacers map.';
+      }
+
+      $list: list.append($list, map.get($spacers, $key));
+    }
+
+    @return $list;
+  }
+
   @if not map.has-key($spacers, $key) {
     @error 'The #{$key} key name doesn\'t exist at the $spacers map.';
   }

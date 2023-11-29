@@ -174,3 +174,37 @@
     @include short-ring('button', 'secondary');
   }
 }
+
+.spacer-wrapper {
+  align-items: center;
+  display: flex;
+  gap: spacer('m');
+}
+
+.spacer {
+  background-color: red;
+
+  div {
+    background-color: pink;
+    block-size: 2rem;
+    inline-size: 5rem;
+  }
+
+  &--one {
+    div {
+      margin: spacer('m');
+    }
+  }
+
+  &--two {
+    div {
+      margin: spacer('s');
+    }
+  }
+
+  &--three {
+    div {
+      margin: spacer('xxl:xl');
+    }
+  }
+}
