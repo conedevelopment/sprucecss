@@ -144,6 +144,10 @@
     padding: config('inline-padding', $typography);
   }
 
+  strong {
+    color: color('strong');
+  }
+
   .lead {
     font-size: config('font-size-lead', $typography);
   }

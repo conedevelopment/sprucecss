@@ -88,6 +88,11 @@
       "bordered": "false"
     },
     {
+      "name": "strong",
+      "value": "$color-black",
+      "bordered": "false"
+    },
+    {
       "name": "text",
       "value": "$color-gray",
       "bordered": "false"
