@@ -2,7 +2,7 @@
 @use 'spruce' as *;
 
 .colors {
-  @include layout-grid($minimum: 15rem);
+  @include layout-grid('s:m', $minimum: 15rem);
 }
 
 .color-item {

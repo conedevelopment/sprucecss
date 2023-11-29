@@ -1,5 +1,7 @@
 @use 'sass:map';
 @use 'sass:meta';
+@use 'sass:string';
+@use 'sass:list';
 @use '../function' as *;
 @use '../config' as *;
 
@@ -11,7 +13,9 @@
   $gap: m,
   $max-inline-size: config('container-inline-size', $layout)
 ) {
-  @if map.has-key($spacers, $gap) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
@@ -33,7 +37,9 @@
   $align: none,
   $important: false
 ) {
-  @if map.has-key($spacers, $gap) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
@@ -76,7 +82,9 @@
   $gap: 'm',
   $minimum: 12.5rem
 ) {
-  @if map.has-key($spacers, $gap) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
@@ -98,7 +106,9 @@
   $gap: 'm',
   $inline-size: 18.75rem
 ) {
-  @if map.has-key($spacers, $gap) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
