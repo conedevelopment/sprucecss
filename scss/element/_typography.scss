@@ -15,7 +15,7 @@
     line-height: config('line-height-base', $typography);
   }
 
-  @if setting(hyphens) {
+  @if setting('hyphens') {
     p,
     li,
     h1,
@@ -130,7 +130,7 @@
 
   mark {
     background-color: color('mark-background');
-    border-radius: config('inline-border-radius', $typography);
+    border-radius: config('border-radius', $typography);
     color: color('mark-foreground');
     padding: config('inline-padding', $typography);
   }
@@ -139,7 +139,7 @@
   kbd,
   samp {
     background-color: color('code-background');
-    border-radius: config('inline-border-radius', $typography);
+    border-radius: config('border-radius', $typography);
     color: color('code-foreground');
     padding: config('inline-padding', $typography);
   }

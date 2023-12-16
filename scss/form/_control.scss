@@ -25,9 +25,9 @@
     inline-size: 100%;
     line-height: config('line-height', $form-control);
     padding: config('padding', $form-control);
-    transition-duration: transition('duration');
+    transition-duration: config('duration', $transition);
     transition-property: border, box-shadow;
-    transition-timing-function: transition('timing-function');
+    transition-timing-function: config('timing-function', $transition);
 
     &::placeholder {
       color: color('placeholder', 'form');

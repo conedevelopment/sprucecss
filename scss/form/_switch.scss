@@ -67,9 +67,9 @@
       inline-size: 2em;
       line-height: 1;
       margin-block: config('margin-block', $form-switch);
-      transition-duration: transition('duration');
+      transition-duration: config('duration', $transition);
       transition-property: background-position, border, box-shadow;
-      transition-timing-function: transition('timing-function');
+      transition-timing-function: config('timing-function', $transition);
 
       &:focus-visible {
         @include focus-ring(

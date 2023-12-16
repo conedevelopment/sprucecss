@@ -13,9 +13,7 @@
   $gap: m,
   $max-inline-size: config('container-inline-size', $layout)
 ) {
-  @if meta.type-of($gap) == string and string.index($gap, ':') {
-    $gap: spacer($gap);
-  } @else if map.has-key($spacers, $gap) {
+  @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
@@ -37,9 +35,7 @@
   $align: none,
   $important: false
 ) {
-  @if meta.type-of($gap) == string and string.index($gap, ':') {
-    $gap: spacer($gap);
-  } @else if map.has-key($spacers, $gap) {
+  @if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 

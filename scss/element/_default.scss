@@ -32,9 +32,9 @@
   a {
     color: color('link');
     text-decoration: underline;
-    transition-duration: transition('duration');
+    transition-duration: config('duration', $transition);
     transition-property: color;
-    transition-timing-function: transition('timing-function');
+    transition-timing-function: config('timing-function', $transition);
 
     &:hover {
       color: color('link-hover');

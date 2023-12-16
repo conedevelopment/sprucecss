@@ -1,5 +1,6 @@
 @use 'sass:string';
 @use '../function' as *;
+@use '../config' as *;
 
 /// Generates transition related declarations.
 /// @param {string} $duration - The duration of the transition.
@@ -8,19 +9,11 @@
 /// @return {string} - The generated transition declarations.
 /// @throws {error} - If the duration or timing-function is invalid.
 @mixin transition(
-  $duration: duration,
+  $duration: config('duration', $transition),
   $property: all,
-  $timing-function: timing-function,
+  $timing-function: config('timing-function', $transition),
 ) {
-  @if $duration == duration {
-    transition-duration: transition($duration);
-  } @else {
-    transition-duration: $duration;
-  }
+  transition-duration: $duration;
   transition-property: string.unquote($property);
-  @if $timing-function == timing-function {
-    transition-timing-function: transition($timing-function);
-  } @else {
-    transition-timing-function: $timing-function;
-  }
+  transition-timing-function: $timing-function;
 }

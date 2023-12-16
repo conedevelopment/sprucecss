@@ -59,9 +59,9 @@
       inline-size: 1em;
       line-height: 1;
       margin-block: config('margin-block', $form-check);
-      transition-duration: transition('duration');
+      transition-duration: config('duration', $transition);
       transition-property: border, box-shadow;
-      transition-timing-function: transition('timing-function');
+      transition-timing-function: config('timing-function', $transition);
 
       &[type='radio'] {
         border-radius: 50%;

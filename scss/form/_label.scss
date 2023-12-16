@@ -10,6 +10,6 @@
     font-style: map.get($form-label, 'font-style');
     font-weight: map.get($form-label, 'font-weight');
     line-height: map.get($typography, 'line-height-md');
-    text-align: map.get($form-label, 'text-align');;
+    text-align: map.get($form-label, 'text-align');
   }
 }

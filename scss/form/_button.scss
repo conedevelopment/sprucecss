@@ -29,9 +29,9 @@
     text-align: start;
     text-decoration: none;
     text-transform: config('text-transform', $btn);
-    transition-duration: transition(duration);
+    transition-duration: config('duration', $transition);
     transition-property: background-color, border-color, box-shadow, color;
-    transition-timing-function: transition(timing-function);
+    transition-timing-function: config('timing-function', $transition);
   }
 
   #{$selector}:focus {

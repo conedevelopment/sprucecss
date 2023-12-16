@@ -5,6 +5,7 @@
 $typography: () !default;
 $typography: map.merge(
   (
+    'border-radius': map.get($display, 'border-radius-sm'),
     'font-family-base': #{Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
     'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
     'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
@@ -15,7 +16,6 @@ $typography: map.merge(
     'font-size-sm': 0.875rem,
     'font-weight-base': null,
     'font-weight-heading': 700,
-    'inline-border-radius': map.get($display, 'border-radius-sm'),
     'inline-padding': 0.1em 0.3em,
     'letter-spacing-heading': null,
     'line-height-base': 1.8,
