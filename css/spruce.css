@@ -329,6 +329,7 @@ template {
   --spruce-base-color-marker: hsl(262, 71%, 49%);
   --spruce-base-color-primary: hsl(262, 71%, 49%);
   --spruce-base-color-secondary: hsl(227, 92%, 55%);
+  --spruce-base-color-strong: hsl(205, 100%, 2%);
   --spruce-base-color-text: hsl(208, 9%, 42%);
 }
 
@@ -390,7 +391,8 @@ template {
 }
 
 :root {
-  --spruce-font-family-base: eravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif;
+  --spruce-border-radius: 0.425rem;
+  --spruce-font-family-base: Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif;
   --spruce-font-family-cursive: ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, DejaVu Sans Mono, monospace;
   --spruce-font-family-heading: Avenir, Avenir Next LT Pro, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif;
   --spruce-font-size-base: 1rem;
@@ -399,15 +401,14 @@ template {
   --spruce-font-size-ratio: 1.25;
   --spruce-font-size-sm: 0.875rem;
   --spruce-font-weight-heading: 700;
-  --spruce-inline-border-radius: 0.325rem;
   --spruce-inline-padding: 0.1em 0.3em;
   --spruce-line-height-base: 1.8;
   --spruce-line-height-heading: calc(2px + 2ex + 2px);
   --spruce-line-height-lg: 1.8;
   --spruce-line-height-md: 1.5;
   --spruce-line-height-sm: 1.2;
-  --spruce-border-radius-lg: 0.725rem;
-  --spruce-border-radius-sm: 0.325rem;
+  --spruce-border-radius-lg: 0.925rem;
+  --spruce-border-radius-sm: 0.425rem;
   --spruce-container-inline-size: 84rem;
   --spruce-page-margin: 2cm;
   --spruce-hidden-elements: header, footer, aside, nav, form, iframe, [class^="aspect-ratio"];
@@ -745,7 +746,7 @@ abbr[title] {
 
 mark {
   background-color: var(--spruce-base-color-mark-background);
-  border-radius: var(--spruce-inline-border-radius);
+  border-radius: var(--spruce-border-radius);
   color: var(--spruce-base-color-mark-foreground);
   padding: var(--spruce-inline-padding);
 }
@@ -754,9 +755,13 @@ code,
 kbd,
 samp {
   background-color: var(--spruce-base-color-code-background);
-  border-radius: var(--spruce-inline-border-radius);
+  border-radius: var(--spruce-border-radius);
   color: var(--spruce-base-color-code-foreground);
   padding: var(--spruce-inline-padding);
+}
+
+strong {
+  color: var(--spruce-base-color-strong);
 }
 
 .lead {
@@ -793,7 +798,7 @@ samp {
 }
 
 .btn {
-  --spruce-border-radius: 0.325rem;
+  --spruce-border-radius: 0.425rem;
   --spruce-border-width: 1px;
   --spruce-font-size: 1rem;
   --spruce-font-weight: 500;
@@ -941,7 +946,7 @@ samp {
 }
 
 .form-file::file-selector-button {
-  --spruce-border-radius: 0.325rem;
+  --spruce-border-radius: 0.425rem;
   --spruce-border-width: 1px;
   --spruce-font-size: 1rem;
   --spruce-font-weight: 500;
@@ -1034,7 +1039,7 @@ samp {
 
 .form-control {
   --webkit-date-line-height: 1.375;
-  --spruce-border-radius: 0.325rem;
+  --spruce-border-radius: 0.425rem;
   --spruce-border-width: 1px;
   --spruce-font-size: 1rem;
   --spruce-line-height: 1.5;
@@ -1166,7 +1171,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 }
 
 .form-check {
-  --spruce-border-radius: 0.325rem;
+  --spruce-border-radius: 0.425rem;
   --spruce-border-width: 1px;
   --spruce-font-size: 1.125rem;
   --spruce-line-height: 1.5;
@@ -1361,7 +1366,7 @@ legend {
 }
 
 .form-group-label {
-  --spruce-border-radius: 0.325rem;
+  --spruce-border-radius: 0.425rem;
   --spruce-border-width: 1px;
   align-items: center;
   background-color: var(--spruce-form-color-group-label-background);

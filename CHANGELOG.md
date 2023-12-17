@@ -1,6 +1,6 @@
 # Spruce CSS Changelog
 
-## v2.3.0 (2023-12-16)
+## v2.3.0 (2023-12-17)
 
 ### What's Changed
 - **NEW** `$form-fieldset`: add `legend-font-family` property.
@@ -9,9 +9,10 @@
 - **BUG** `layout-center()` mixin: add `inline-size: 100%;`.
 - **IMPROVEMENT** `layout-grid()`, `layout-flex()`, `layout-sidebar()` mixins: enable multiple `$gap` value like `'m:l'` to control both block and inline values.
 - **IMPROVEMENT** `spacer()` function: enable multiple value shorthand like `'m:l'` to control both block and inline values.
-- Remove the `transition()` function.
+- **BREAKING CHANGE** Remove the `transition()` function (you can migrate overt `config()` function or `transition()` mixin.).
 - **IMPROVEMENT** `transition()` mixin: enable multiple values for `property` with quotes.
 - **NEW** `focus-ring()` mixin: add a new mixin as a shorthand to access the two basic ring styling on focus quickly (input, button).
+- Modify the defaults for `config('border-radius-sm', $display)` and `config('border-radius-lg', $display)`.
 
 ## v2.2.2 (2023-08-17)
 

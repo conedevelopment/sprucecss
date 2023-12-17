@@ -4,7 +4,7 @@
   padding-block: spacer-clamp('l', 'xl');
 
   &__inner {
-    @include layout-sidebar('xl', 12rem);
+    @include layout-sidebar('m:xl', 12rem);
   }
 
   &__sidebar {

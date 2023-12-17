@@ -3,8 +3,8 @@
 $display: () !default;
 $display: map.merge(
   (
-    'border-radius-lg': 0.725rem,
-    'border-radius-sm': 0.325rem,
+    'border-radius-lg': 0.925rem,
+    'border-radius-sm': 0.425rem,
   ),
   $display
 );
