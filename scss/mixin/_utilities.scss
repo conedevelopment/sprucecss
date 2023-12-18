@@ -159,14 +159,12 @@
       $ring-color: color($btn-type + '-background', 'btn');
     }
 
-    &:focus {
-      @include focus-ring(
-        $type: config('focus-ring-type', $btn, false),
-        $ring-color: $ring-color,
-        $box-shadow-type: config('focus-ring-box-shadow-type', $btn, false),
-        $ring-size: config('focus-ring-size', $btn, false),
-        $ring-offset: config('focus-ring-offset', $btn, false)
-      );
-    }
+    @include focus-ring(
+      $type: config('focus-ring-type', $btn, false),
+      $ring-color: $ring-color,
+      $box-shadow-type: config('focus-ring-box-shadow-type', $btn, false),
+      $ring-size: config('focus-ring-size', $btn, false),
+      $ring-offset: config('focus-ring-offset', $btn, false)
+    );
   }
 }
