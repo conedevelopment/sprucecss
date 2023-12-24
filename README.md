@@ -59,10 +59,12 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 - [Appendix](https://sprucecss.com/docs/getting-started/appendix)
 
 ### Customization
+- [Variables](https://sprucecss.com/docs/customization/variables/)
 - [Settings](https://sprucecss.com/docs/customization/settings)
 - [Themes](https://sprucecss.com/docs/customization/themes)
 
 ### Sass
+- [Colors](https://sprucecss.com/docs/sass/colors/)
 - [Variables](https://sprucecss.com/docs/sass/variables)
 - [Mixins](https://sprucecss.com/docs/sass/mixins)
 - [Functions](https://sprucecss.com/docs/sass/functions)
@@ -77,44 +79,7 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 
 ## Components
 
-<details>
-  <summary>
-    <a href="https://sprucecss.com/ui/getting-started/introduction">This collection of reusable user interfaces</a> aims to help you create more coherently with Spruce CSS.
-  </summary>
-
-  ### Components
-
-  - [Accordion Card](https://sprucecss.com/ui/component/accordion-card)
-  - [Accordion List](https://sprucecss.com/ui/component/accordion-list)
-  - [Alert](https://sprucecss.com/ui/component/alert)
-  - [Auth Form](https://sprucecss.com/ui/component/auth-form)
-  - [Breadcrumb List](https://sprucecss.com/ui/component/breadcrumb-list)
-  - [Container](https://sprucecss.com/ui/component/container)
-  - [Cookie Consent](https://sprucecss.com/ui/component/cookie-consent)
-  - [Invoice](https://sprucecss.com/ui/component/invoice)
-  - [Pagination](https://sprucecss.com/ui/component/pagination)
-  - [Post Author](https://sprucecss.com/ui/component/post-author)
-  - [Post Card](https://sprucecss.com/ui/component/post-card)
-  - [Preloader](https://sprucecss.com/ui/component/preloader)
-  - [Site Navigation](https://sprucecss.com/ui/component/site-navigation)
-  - [Skip Link](https://sprucecss.com/ui/component/skip-link)
-  - [Theme Switcher](https://sprucecss.com/ui/component/theme-switcher)
-
-  ### Sections
-
-  - [Feature](https://sprucecss.com/ui/section/feature)
-  - [Gallery](https://sprucecss.com/ui/section/gallery)
-  - [Post Content](https://sprucecss.com/ui/section/post-content)
-  - [Post Heading](https://sprucecss.com/ui/section/post-heading)
-  - [Post List](https://sprucecss.com/ui/section/post-list)
-  - [Site Footer](https://sprucecss.com/ui/section/site-footer)
-  - [Site Header](https://sprucecss.com/ui/section/site-header)
-
-  ### Pages
-
-  - [Auth](https://sprucecss.com/ui/page/auth)
-  - [Post](https://sprucecss.com/ui/page/post)
-</details>
+<a href="https://sprucecss.com/ui/getting-started/introduction">This collection of reusable user interfaces</a> aims to help you create more coherently with Spruce CSS.
 
 ## Templates
 
