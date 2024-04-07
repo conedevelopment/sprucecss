@@ -43,7 +43,7 @@ We made a [Spruce CSS Eleventy Starter](https://github.com/conedevelopment/spruc
 
 ## Documentation
 
-For the complete documentation, please visit our site at [sprucecss.com](https://sprucecss.com). You can edit it at our [separate repository](https://github.com/conedevelopment/sprucecss-site).
+For the complete documentation, please visit our site at [sprucecss.com](https://sprucecss.com). You can edit it at our [separate repository](https://github.com/conedevelopment/sprucecss-site-eleventy).
 
 ### Getting Started
 
