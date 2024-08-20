@@ -28,7 +28,7 @@
 
   @if ($has-sizes) {
     #{$parent}--sm {
-    @include generate-variables($form-control-sm);
+      @include generate-variables($form-control-sm);
 
       #{$input} {
         font-size: config('font-size', $form-check-sm);

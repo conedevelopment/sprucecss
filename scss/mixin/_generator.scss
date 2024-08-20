@@ -102,7 +102,7 @@
   }
 
   @if map.get($generators, 'form', 'form-group-label') {
-    @include generate-form-group-label
+    @include generate-form-group-label;
   }
 
   @if map.get($generators, 'form', 'form-group') {

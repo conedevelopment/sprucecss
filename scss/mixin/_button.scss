@@ -70,8 +70,7 @@
 
   @if map.has-key($colors, 'btn', $type + '-shadow') {
     &-shadow {
-      box-shadow: 0 0.55em 1em -0.2em color($type + '-shadow', 'btn'),
-                  0 0.15em 0.35em -0.185em color($type + '-shadow', 'btn');
+      box-shadow: 0 0.55em 1em -0.2em color($type + '-shadow', 'btn'), 0 0.15em 0.35em -0.185em color($type + '-shadow', 'btn');
     }
   }
 }
