@@ -92,7 +92,7 @@
         background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
         background-size: config('icon-inline-size', $form-select, false) auto;
-        padding-inline-end: config('padding-right', $form-select, false);
+        padding-inline-end: config('padding-inline-end', $form-select, false);
 
         html[dir='rtl'] & {
           background-position: center left config('icon-right-offset', $form-select, false);
@@ -184,7 +184,7 @@
         background-position: center right config('icon-right-offset', $form-select, false);
         background-repeat: no-repeat;
         background-size: config('icon-inline-size', $form-select, false) auto;
-        padding-inline-end: config('padding-right', $form-select, false);
+        padding-inline-end: config('padding-inline-end', $form-select, false);
 
         html[dir='rtl'] & {
           background-position: center left config('icon-right-offset', $form-select, false);

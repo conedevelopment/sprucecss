@@ -5,7 +5,7 @@ $form-select: map.merge(
   (
     'icon-inline-size': 1.25em,
     'icon-right-offset': 0.5em,
-    'padding-right': calc(0.75em + 1.25em),
+    'padding-inline-end': calc(0.75em + 1.25em),
   ),
   $form-select
 );
