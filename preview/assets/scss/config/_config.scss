@@ -23,6 +23,14 @@ $spacer: 1.25rem;
       'tertiary-foreground': hsl(0deg 0% 100%),
       'tertiary-shadow-focus': color.adjust($color-tertiary, $alpha: -0.75),
     ),
+    form: (
+      'check-background': red,
+      'check-focus-ring': olive,
+      'check-foreground': aqua,
+      'switch-background': pink,
+      'switch-focus-ring': blue,
+      'switch-foreground': yellow,
+    ),
   ),
   $dark-colors: dark.$colors,
   $form-select: (
@@ -48,7 +56,7 @@ $spacer: 1.25rem;
     'icon-size': 1.25rem,
   ),
   $form-fieldset: (
-    'layout-gap': 5rem,
+    'layout-gap': 1rem,
     'legend-font-family': serif,
   ),
   $form-label: (

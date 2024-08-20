@@ -73,20 +73,20 @@
 
       &:focus-visible {
         @include focus-ring(
-          $type: config('focus-ring-type', $form-check),
-          $border-color: color('border-focus', 'form'),
-          $ring-color: color('check-focus-ring', 'form'),
-          $box-shadow-type: config('focus-ring-box-shadow-type', $form-check),
-          $ring-size: config('focus-ring-size', $form-check),
-          $ring-offset: config('focus-ring-offset', $form-check)
+          $type: config('focus-ring-type', $form-check, false),
+          $border-color: color('switch-background', 'form'),
+          $ring-color: color('switch-focus-ring', 'form'),
+          $box-shadow-type: config('focus-ring-box-shadow-type', $form-check, false),
+          $ring-size: config('focus-ring-size', $form-check, false),
+          $ring-offset: config('focus-ring-offset', $form-check, false)
         );
       }
 
       &:checked {
-        @include field-icon(config('switch', $form-icon, false), color('check-foreground', 'form', 'true'));
-        background-color: color('check-background', 'form');
+        @include field-icon(config('switch', $form-icon, false), color('switch-foreground', 'form', 'true'));
+        background-color: color('switch-background', 'form');
         background-position: right center;
-        border-color: color('check-background', 'form');
+        border-color: color('switch-background', 'form');
       }
 
       &:disabled {

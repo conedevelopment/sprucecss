@@ -74,7 +74,7 @@
       &:focus-visible {
         @include focus-ring(
           $type: config('focus-ring-type', $form-check, false),
-          $border-color: color('border-focus', 'form'),
+          $border-color: color('check-background', 'form'),
           $ring-color: color('check-focus-ring', 'form'),
           $box-shadow-type: config('focus-ring-box-shadow-type', $form-check, false),
           $ring-size: config('focus-ring-size', $form-check, false),
