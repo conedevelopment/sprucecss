@@ -3,7 +3,8 @@
   "plugins": ["stylelint-order"],
   "rules": {
     "max-nesting-depth": 6,
-    "selector-no-vendor-prefix": [true,
+    "selector-no-vendor-prefix": [
+      true,
       {
         "ignoreSelectors": ["/-moz-.*/", "/-ms-.*/", "/-webkit-.*/"]
       }
@@ -23,6 +24,7 @@
     "color-function-notation": "modern",
     "selector-class-pattern": null,
     "scss/percent-placeholder-pattern": null,
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "@stylistic/function-parentheses-space-inside": null
   }
 }
