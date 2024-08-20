@@ -4,7 +4,7 @@
 
 ### What's Changed
 - **FIX** `transition`: set a fallback default CSS custom property if user has reduced motion.
-- `$form-control˙: add `font-family` property.
+- `$form-control`: add `font-family` property.
 - `$form-label`: add `text-transform` property.
 - `$form-switch`: add separate colors.
 
