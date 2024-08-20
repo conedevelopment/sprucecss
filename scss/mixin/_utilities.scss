@@ -89,7 +89,7 @@
 // Clear list styles
 @mixin clear-list {
   list-style: none;
-  margin-inline: 0;
+  margin: 0;
   padding: 0;
 }
 

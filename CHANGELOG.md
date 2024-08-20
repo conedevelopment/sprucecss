@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v2.3.3 (2024-08-20)
+
+### What's Changed
+- Revert `clear-list` mixin's margin property.
+
 ## v2.3.2 (2024-08-20)
 
 ### What's Changed
