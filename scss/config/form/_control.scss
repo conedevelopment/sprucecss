@@ -11,6 +11,7 @@ $form-control: map.merge(
     'focus-ring-offset': 2px,
     'focus-ring-size': 0.25rem,
     'focus-ring-type': box-shadow,
+    'font-family': null,
     'font-size': map.get($typography, 'font-size-base'),
     'font-weight': null,
     'line-height': 1.5,

@@ -44,8 +44,15 @@ $spacer: 1.25rem;
   $btn-lg: (
     'text-transform': uppercase,
   ),
+  $btn-sm: (
+    'icon-size': 1.25rem,
+  ),
   $form-fieldset: (
+    'layout-gap': 5rem,
     'legend-font-family': serif,
+  ),
+  $form-label: (
+    'text-transform': uppercase,
   ),
   $form-range: (
     'thumb-block-size': 2rem,

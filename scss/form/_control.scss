@@ -20,6 +20,7 @@
     box-sizing: border-box;
     color: color('text', 'form');
     display: block;
+    font-family: config('font-family', $form-control);
     font-size: config('font-size', $form-control);
     font-weight: config('font-weight', $form-control);
     inline-size: 100%;
