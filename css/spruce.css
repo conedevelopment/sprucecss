@@ -365,6 +365,9 @@ template {
   --spruce-form-color-range-track-background: hsl(215, 63%, 93%);
   --spruce-form-color-ring-focus: rgba(101, 36, 214, 0.25);
   --spruce-form-color-select-foreground: hsl(205, 100%, 2%);
+  --spruce-form-color-switch-background: hsl(262, 71%, 49%);
+  --spruce-form-color-switch-focus-ring: hsl(262, 71%, 49%);
+  --spruce-form-color-switch-foreground: hsl(0, 0%, 100%);
   --spruce-form-color-text: hsl(208, 9%, 42%);
   --spruce-form-color-valid: hsl(150, 100%, 33%);
   --spruce-form-color-valid-focus-ring: rgba(0, 168, 84, 0.25);
@@ -412,6 +415,11 @@ template {
   --spruce-container-inline-size: 84rem;
   --spruce-page-margin: 2cm;
   --spruce-hidden-elements: header, footer, aside, nav, form, iframe, [class^="aspect-ratio"];
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --spruce-duration: 0;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -490,8 +498,7 @@ button {
 
 hr {
   border: 0;
-  -webkit-border-before: 1px solid var(--spruce-base-color-border);
-          border-block-start: 1px solid var(--spruce-base-color-border);
+  border-block-start: 1px solid var(--spruce-base-color-border);
 }
 
 img {
@@ -513,8 +520,7 @@ figure {
   margin-inline: 0;
 }
 figure figcaption {
-  -webkit-margin-before: 0.5rem;
-          margin-block-start: 0.5rem;
+  margin-block-start: 0.5rem;
   text-align: center;
 }
 
@@ -537,13 +543,11 @@ figure figcaption {
 }
 .table caption {
   color: var(--spruce-table-color-caption);
-  -webkit-margin-after: 1rem;
-          margin-block-end: 1rem;
+  margin-block-end: 1rem;
 }
 .table th,
 .table td {
-  -webkit-border-after: 1px solid var(--spruce-table-color-border);
-          border-block-end: 1px solid var(--spruce-table-color-border);
+  border-block-end: 1px solid var(--spruce-table-color-border);
   line-height: var(--spruce-line-height);
   padding: var(--spruce-padding);
 }
@@ -564,13 +568,11 @@ figure figcaption {
 }
 .table--in-line th:first-child,
 .table--in-line td:first-child {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
 }
 .table--in-line th:last-child,
 .table--in-line td:last-child {
-  -webkit-padding-end: 0;
-          padding-inline-end: 0;
+  padding-inline-end: 0;
 }
 .table--sm {
   --spruce-padding: 0.5rem;
@@ -655,15 +657,12 @@ ol {
 }
 ul > *,
 ol > * {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 ul > * + *,
 ol > * + * {
-  -webkit-margin-before: 0.25rem;
-          margin-block-start: 0.25rem;
+  margin-block-start: 0.25rem;
 }
 ul li,
 ol li {
@@ -676,8 +675,7 @@ ol li::marker {
 
 li > ul,
 li > ol {
-  -webkit-margin-before: 0.25rem;
-          margin-block-start: 0.25rem;
+  margin-block-start: 0.25rem;
 }
 
 dl dt {
@@ -688,58 +686,43 @@ dl dd {
   margin: 0;
 }
 dl dd + dt {
-  -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
+  margin-block-start: 1rem;
 }
 
 .quote {
-  -webkit-border-start: 0.5rem solid var(--spruce-base-color-blockquote-border);
-          border-inline-start: 0.5rem solid var(--spruce-base-color-blockquote-border);
-  -webkit-padding-start: 1.5rem;
-          padding-inline-start: 1.5rem;
+  border-inline-start: 0.5rem solid var(--spruce-base-color-blockquote-border);
+  padding-inline-start: 1.5rem;
 }
 .quote > * {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 .quote > * + * {
-  -webkit-margin-before: 0.5rem;
-          margin-block-start: 0.5rem;
+  margin-block-start: 0.5rem;
 }
 .quote blockquote {
-  -webkit-border-start: 0;
-          border-inline-start: 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  border-inline-start: 0;
+  padding-inline-start: 0;
 }
 .quote figcaption {
   text-align: start;
 }
 
 blockquote {
-  -webkit-border-start: 0.5rem solid var(--spruce-base-color-blockquote-border);
-          border-inline-start: 0.5rem solid var(--spruce-base-color-blockquote-border);
-  -webkit-margin-start: 0;
-          margin-inline-start: 0;
-  -webkit-padding-start: 1.5rem;
-          padding-inline-start: 1.5rem;
+  border-inline-start: 0.5rem solid var(--spruce-base-color-blockquote-border);
+  margin-inline-start: 0;
+  padding-inline-start: 1.5rem;
 }
 blockquote > * {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 blockquote > * + * {
-  -webkit-margin-before: 0.5rem;
-          margin-block-start: 0.5rem;
+  margin-block-start: 0.5rem;
 }
 
 abbr[title] {
-  -webkit-border-after: 1px dotted;
-          border-block-end: 1px dotted;
+  border-block-end: 1px dotted;
   cursor: help;
   text-decoration: none;
 }
@@ -1019,8 +1002,7 @@ strong {
   background-color: var(--spruce-btn-color-primary-background);
   border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
+  margin-inline-end: 1rem;
 }
 .form-file::file-selector-button:hover {
   background-color: var(--spruce-btn-color-primary-background-hover);
@@ -1112,8 +1094,7 @@ textarea.form-control {
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  -webkit-padding-end: 2em;
-          padding-inline-end: 2em;
+  padding-inline-end: 2em;
 }
 html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
   background-position: center left 0.5em;
@@ -1163,8 +1144,7 @@ select.form-control:not([multiple]):not([size]) {
   background-position: center right 0.5em;
   background-repeat: no-repeat;
   background-size: 1.25em auto;
-  -webkit-padding-end: 2em;
-          padding-inline-end: 2em;
+  padding-inline-end: 2em;
 }
 html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   background-position: center left 0.5em;
@@ -1310,11 +1290,15 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   transition-property: background-position, border, box-shadow;
   transition-timing-function: var(--spruce-timing-function);
 }
+.form-switch__control:focus-visible {
+  outline: 2px solid var(--spruce-form-color-switch-focus-ring);
+  outline-offset: 2px;
+}
 .form-switch__control:checked {
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:hsl%280, 0%, 100%%29;"/%3e%3c/svg%3e');
-  background-color: var(--spruce-form-color-check-background);
+  background-color: var(--spruce-form-color-switch-background);
   background-position: right center;
-  border-color: var(--spruce-form-color-check-background);
+  border-color: var(--spruce-form-color-switch-background);
 }
 .form-switch__control:disabled {
   background-color: var(--spruce-form-color-background-disabled);
@@ -1345,18 +1329,14 @@ fieldset {
   padding: 0;
 }
 fieldset > * {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 fieldset > * + * {
-  -webkit-margin-before: var(--spruce-layout-gap);
-          margin-block-start: var(--spruce-layout-gap);
+  margin-block-start: var(--spruce-layout-gap);
 }
 fieldset + fieldset {
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  margin-block-start: 3rem;
 }
 
 legend {
@@ -1428,8 +1408,7 @@ legend {
 }
 .form-group--stacked > * + * {
   border-radius: 0;
-  -webkit-margin-start: -1px;
-          margin-inline-start: -1px;
+  margin-inline-start: -1px;
 }
 .form-group--stacked > *:first-child {
   border-start-end-radius: 0;
@@ -1487,8 +1466,7 @@ legend {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  -webkit-margin-before: calc(var(--spruce-thumb-block-size) / 2 - var(--spruce-track-block-size) / 2);
-          margin-block-start: calc(var(--spruce-thumb-block-size) / 2 - var(--spruce-track-block-size) / 2);
+  margin-block-start: calc(var(--spruce-thumb-block-size) / 2 - var(--spruce-track-block-size) / 2);
 }
 .form-range:focus-visible {
   outline: none;
@@ -1518,8 +1496,7 @@ legend {
   block-size: var(--spruce-thumb-block-size);
   border-radius: var(--spruce-thumb-border-radius);
   inline-size: var(--spruce-thumb-inline-size);
-  -webkit-margin-before: calc(var(--spruce-track-block-size) / 2 - var(--spruce-thumb-block-size) / 2);
-          margin-block-start: calc(var(--spruce-track-block-size) / 2 - var(--spruce-thumb-block-size) / 2);
+  margin-block-start: calc(var(--spruce-track-block-size) / 2 - var(--spruce-thumb-block-size) / 2);
 }
 .form-range::-moz-range-thumb {
   background-color: var(--spruce-form-color-range-thumb-background);

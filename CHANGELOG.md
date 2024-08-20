@@ -1,5 +1,13 @@
 # Spruce CSS Changelog
 
+## v2.3.2 (2024-08-20)
+
+### What's Changed
+- **FIX** `transition`: set a fallback default CSS custom property if user has reduced motion.
+- `$form-control˙: add `font-family` property.
+- `$form-label`: add `text-transform` property.
+- `$form-switch`: add separate colors.
+
 ## v2.3.1 (2023-12-18)
 
 ### What's Changed
