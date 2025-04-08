@@ -7,17 +7,6 @@
   @include generate-color-variables;
 
   :root {
-    @if setting('css-custom-properties') {
-      @media (prefers-reduced-motion: reduce) {
-        --#{$internal-prefix}duration: 0;
-      }
-
-      @media (prefers-reduced-motion: no-preference) {
-        --#{$internal-prefix}duration: #{config('duration', $transition, false)};
-        --#{$internal-prefix}timing-function: #{config('timing-function', $transition, false)};
-      }
-    }
-
     @if map.get($generators, 'content', 'typography') {
       @include generate-variables($typography);
     }
@@ -32,6 +21,17 @@
 
     @if map.get($generators, 'content', 'print') {
       @include generate-variables($print);
+    }
+
+    @if setting('css-custom-properties') {
+      @media (prefers-reduced-motion: reduce) {
+        --#{$internal-prefix}duration: 0;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        --#{$internal-prefix}duration: #{config('duration', $transition, false)};
+        --#{$internal-prefix}timing-function: #{config('timing-function', $transition, false)};
+      }
     }
   }
 }

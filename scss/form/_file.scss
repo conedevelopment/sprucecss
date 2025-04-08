@@ -24,8 +24,8 @@
     }
 
     &#{$pseudo-selector} {
-      @include btn-variant(config('background', $form-file, false), false);
       margin-inline-end: spacer('s');
+      @include btn-variant(config('background', $form-file, false), false);
     }
   }
 }

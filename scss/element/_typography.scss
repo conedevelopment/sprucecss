@@ -68,8 +68,8 @@
 
   ul,
   ol {
-    @include layout-stack('xxs');
     list-style-position: inside;
+    @include layout-stack('xxs');
 
     li {
       list-style-position: outside;
@@ -101,9 +101,9 @@
   }
 
   .quote {
-    @include layout-stack('xs');
     border-inline-start: 0.5rem solid color('blockquote-border');
     padding-inline-start: spacer('m');
+    @include layout-stack('xs');
 
     blockquote {
       border-inline-start: 0;
@@ -116,10 +116,10 @@
   }
 
   blockquote {
-    @include layout-stack('xs');
     border-inline-start: 0.5rem solid color('blockquote-border');
     margin-inline-start: 0;
     padding-inline-start: spacer('m');
+    @include layout-stack('xs');
   }
 
   abbr[title] {

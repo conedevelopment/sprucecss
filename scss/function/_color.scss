@@ -61,8 +61,8 @@
 /// @param {color} $color - The color to get the contrast color.
 /// @return {color} - The contrast color.
 @function color-contrast($color) {
-  $color-brightness: math.round((color.red($color) * 299) + (color.green($color) * 587) + math.div(color.blue($color) * 114, 1000));
-  $light-color: math.round((color.red(#fff) * 299) + (color.green(#fff) * 587) + math.div(color.blue(#fff) * 114, 1000));
+  $color-brightness: math.round((color.channel($color, 'red', $space: rgb) * 299) + (color.channel($color, 'green', $space: rgb) * 587) + math.div(color.channel($color, 'blue', $space: rgb) * 114, 1000));
+  $light-color: math.round((color.channel(hsl(0deg 0% 100%), 'red', $space: rgb) * 299) + (color.channel(hsl(0deg 0% 100%), 'green', $space: rgb) * 587) + math.div(color.channel(hsl(0deg 0% 100%), 'blue', $space: rgb) * 114, 1000));
 
   @if math.abs($color-brightness) < math.div($light-color, 2) {
     @return hsl(0 0% 100%);

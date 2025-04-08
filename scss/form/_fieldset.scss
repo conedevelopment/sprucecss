@@ -4,12 +4,12 @@
 
 @mixin generate-form-fieldset {
   fieldset {
-    @include generate-variables($form-fieldset);
-    @include layout-stack(config('layout-gap', $form-fieldset));
-
     border: 0;
     margin: 0;
     padding: 0;
+
+    @include generate-variables($form-fieldset);
+    @include layout-stack(config('layout-gap', $form-fieldset));
 
     + fieldset {
       margin-block-start: spacer('l');
