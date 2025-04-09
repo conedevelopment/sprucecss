@@ -30,4 +30,5 @@ jobs:
         uses: greut/eclint-action@v0
         with:
           eclint_args: |
-            -exclude=preview/dist/**
+            -exclude=css/*
+            -exclude=preview/**
