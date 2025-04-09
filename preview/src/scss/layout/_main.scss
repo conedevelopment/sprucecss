@@ -9,9 +9,9 @@
 
   &__sidebar {
     &-inner {
-      @include layout-stack('m');
       inset-block-start: spacer('m');
       position: sticky;
+      @include layout-stack('m');
     }
   }
 

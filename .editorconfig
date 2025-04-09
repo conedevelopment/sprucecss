@@ -13,5 +13,5 @@ eclint_block_comment_start = /*
 eclint_block_comment = *
 eclint_block_comment_end = */
 
-[*.{scss,css,js,json}]
+[*.{scss,css,js,json,yml,md}]
 indent_size = 2

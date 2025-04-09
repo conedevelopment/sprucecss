@@ -319,11 +319,11 @@ template {
   --spruce-base-color-background: hsl(0, 0%, 100%);
   --spruce-base-color-blockquote-border: hsl(262, 71%, 49%);
   --spruce-base-color-border: hsl(215, 63%, 93%);
-  --spruce-base-color-code-background: #f6f2fd;
+  --spruce-base-color-code-background: hsl(262, 71%, 97%);
   --spruce-base-color-code-foreground: hsl(205, 100%, 2%);
   --spruce-base-color-heading: hsl(205, 100%, 2%);
   --spruce-base-color-link: hsl(262, 71%, 49%);
-  --spruce-base-color-link-hover: #511dab;
+  --spruce-base-color-link-hover: hsl(262, 71%, 39.2%);
   --spruce-base-color-mark-background: hsl(50, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(205, 100%, 2%);
   --spruce-base-color-marker: hsl(262, 71%, 49%);
@@ -335,13 +335,13 @@ template {
 
 :root {
   --spruce-btn-color-primary-background: hsl(262, 71%, 49%);
-  --spruce-btn-color-primary-background-hover: #511daa;
+  --spruce-btn-color-primary-background-hover: hsl(262, 71%, 39%);
   --spruce-btn-color-primary-foreground: hsl(0, 0%, 100%);
-  --spruce-btn-color-primary-shadow: #ceb9f3;
+  --spruce-btn-color-primary-shadow: hsl(262, 71%, 84%);
   --spruce-btn-color-secondary-background: hsl(227, 92%, 55%);
-  --spruce-btn-color-secondary-background-hover: #0937dc;
+  --spruce-btn-color-secondary-background-hover: hsl(227, 92%, 45%);
   --spruce-btn-color-secondary-foreground: hsl(0, 0%, 100%);
-  --spruce-btn-color-secondary-shadow: #ced8fd;
+  --spruce-btn-color-secondary-shadow: hsl(227, 92%, 90%);
 }
 
 :root {
@@ -356,21 +356,21 @@ template {
   --spruce-form-color-group-label-background: hsl(210, 60%, 98%);
   --spruce-form-color-group-label-foreground: hsl(208, 9%, 42%);
   --spruce-form-color-invalid: hsl(0, 71%, 51%);
-  --spruce-form-color-invalid-focus-ring: rgba(219, 41, 41, 0.25);
+  --spruce-form-color-invalid-focus-ring: hsla(0, 71%, 51%, 0.25);
   --spruce-form-color-label: hsl(205, 100%, 2%);
   --spruce-form-color-legend: hsl(205, 100%, 2%);
   --spruce-form-color-placeholder: hsl(208, 7%, 40%);
   --spruce-form-color-range-thumb-background: hsl(262, 71%, 49%);
   --spruce-form-color-range-thumb-focus-ring: hsl(262, 71%, 49%);
   --spruce-form-color-range-track-background: hsl(215, 63%, 93%);
-  --spruce-form-color-ring-focus: rgba(101, 36, 214, 0.25);
+  --spruce-form-color-ring-focus: hsla(262, 71%, 49%, 0.25);
   --spruce-form-color-select-foreground: hsl(205, 100%, 2%);
   --spruce-form-color-switch-background: hsl(262, 71%, 49%);
   --spruce-form-color-switch-focus-ring: hsl(262, 71%, 49%);
   --spruce-form-color-switch-foreground: hsl(0, 0%, 100%);
   --spruce-form-color-text: hsl(208, 9%, 42%);
   --spruce-form-color-valid: hsl(150, 100%, 33%);
-  --spruce-form-color-valid-focus-ring: rgba(0, 168, 84, 0.25);
+  --spruce-form-color-valid-focus-ring: hsla(150, 100%, 33%, 0.25);
 }
 
 :root {
@@ -999,10 +999,10 @@ strong {
   background-color: var(--spruce-btn-color-primary-background-hover);
 }
 .form-file::file-selector-button {
+  margin-inline-end: 1rem;
   background-color: var(--spruce-btn-color-primary-background);
   border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
-  margin-inline-end: 1rem;
 }
 .form-file::file-selector-button:hover {
   background-color: var(--spruce-btn-color-primary-background-hover);
@@ -1321,12 +1321,12 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 }
 
 fieldset {
-  --spruce-layout-gap: 1rem;
-  --spruce-legend-font-size: clamp(1rem, 5vw, 1.25rem);
-  --spruce-legend-font-weight: 700;
   border: 0;
   margin: 0;
   padding: 0;
+  --spruce-layout-gap: 1rem;
+  --spruce-legend-font-size: clamp(1rem, 5vw, 1.25rem);
+  --spruce-legend-font-weight: 700;
 }
 fieldset > * {
   margin-block-end: 0;
