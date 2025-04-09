@@ -31,3 +31,4 @@ jobs:
         with:
           eclint_args: |
             -exclude=css/*
+            -exclude=preview/*
