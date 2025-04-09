@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+        </script>
+        
+    
+
+
+
+
+
+
+
+
+
+<title>Media - Spruce CSS Preview</title>
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            
+                                <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/color/"
+                                                
+                                            >
+                                                Color
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/typography/"
+                                                
+                                            >
+                                                Typography
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/table/"
+                                                
+                                            >
+                                                Table
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/media/"
+                                                 aria-current="page" data-state="active"
+                                            >
+                                                Media
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/button/"
+                                                
+                                            >
+                                                Button
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/form/"
+                                                
+                                            >
+                                                Form
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/function/"
+                                                
+                                            >
+                                                Function
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/mixin/"
+                                                
+                                            >
+                                                Mixin
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/component/"
+                                                
+                                            >
+                                                Component
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        
+<div style="aspect-ratio: 16 / 9;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-6Xl9tBWt54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+</div>
+
+<img src="https://images.unsplash.com/photo-1482539259217-f31001045448?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="..."/>
+
+<figure class="figure"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="..."/>
+    <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+
+<div style="aspect-ratio: 4 / 3;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d41126.9496578375!2d17.890734642764393!3d46.95617814407089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shu!2shu!4v1646924792947!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
+</div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+    </body>
+</html>

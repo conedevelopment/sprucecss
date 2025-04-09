@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+        </script>
+        
+    
+
+
+
+
+
+
+
+
+
+<title>Function - Spruce CSS Preview</title>
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            
+                                <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/color/"
+                                                
+                                            >
+                                                Color
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/typography/"
+                                                
+                                            >
+                                                Typography
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/table/"
+                                                
+                                            >
+                                                Table
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/media/"
+                                                
+                                            >
+                                                Media
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/button/"
+                                                
+                                            >
+                                                Button
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/form/"
+                                                
+                                            >
+                                                Form
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/function/"
+                                                 aria-current="page" data-state="active"
+                                            >
+                                                Function
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/mixin/"
+                                                
+                                            >
+                                                Mixin
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/component/"
+                                                
+                                            >
+                                                Component
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        
+<h2 class="section-title">spacer</h2>
+<div class="spacer-wrapper">
+    <div class="spacer spacer--one">
+        <div></div>
+    </div>
+    <div class="spacer spacer--two">
+        <div></div>
+    </div>
+    <div class="spacer spacer--three">
+        <div></div>
+    </div>
+</div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+    </body>
+</html>

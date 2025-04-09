@@ -1,0 +1,386 @@
+---
+title: "Form"
+layout: "layout/base.html"
+---
+
+<form>
+    <fieldset>
+        <legend>Inputs</legend>
+        <div class="form-group">
+            <label class="form-label" for="email-address">Email address</label>
+            <input class="form-control" id="email-address" type="email" placeholder="hello@conedevelopment.com"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="number">Number</label>
+            <input class="form-control" id="number" type="number"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" id="password" type="password"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="search">Search</label>
+            <input class="form-control" id="search" type="search"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="tel">Telephone number</label>
+            <input class="form-control" id="tel" type="tel"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="text">Text</label>
+            <input class="form-control" id="text" type="text"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="text-disabled">Text (Disabled)</label>
+            <input class="form-control" id="text-disabled" type="text" disabled="disabled"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="text-small">Text (Small)</label>
+            <input class="form-control form-control--sm" id="text-small" type="text"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="text-large">Text (Large)</label>
+            <input class="form-control form-control--lg" id="text-large" type="text"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="url">URL</label>
+            <input class="form-control" id="url" type="url"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="color-sm">Color</label>
+            <input class="form-control form-control--sm" id="color-sm" type="color" value="#6524d6"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="color">Color</label>
+            <input class="form-control" id="color" type="color" value="#6524d6"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="color-lg">Color</label>
+            <input class="form-control form-control--lg" id="color-lg" type="color" value="#6524d6"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="date">Date</label>
+            <input class="form-control" id="date" type="date"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="datetime">Date / Time</label>
+            <input class="form-control" id="datetime" type="datetime"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="datetime-local">Date / Time local</label>
+            <input class="form-control" id="datetime-local" type="datetime-local"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="month">Month</label>
+            <input class="form-control" id="month" type="month"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="week">Week</label>
+            <input class="form-control" id="week" type="week"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="time">Time</label>
+            <input class="form-control" id="time" type="time"/>
+        </div>
+        <div class="form-row--mixed">
+            <div class="form-group" style="--inline-size: 5ch;">
+            <label class="form-label" for="time-test-1">Time</label>
+            <input class="form-control form-control--sm" id="time-test-1" type="time"/>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="email-address-test-1">Email address</label>
+            <input class="form-control form-control--sm" id="email-address-test-1" type="email"/>
+            </div>
+        </div>
+        <div class="form-row--mixed">
+            <div class="form-group">
+            <label class="form-label" for="time-test-2">Time</label>
+            <input class="form-control form-control" id="time-test-2" type="time"/>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="email-address-test-2">Email address</label>
+            <input class="form-control form-control" id="email-address-test-2" type="email"/>
+            </div>
+        </div>
+        <div class="form-row--mixed">
+            <div class="form-group">
+            <label class="form-label" for="time-test-3">Time</label>
+            <input class="form-control form-control--lg" id="time-test-3" type="time"/>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="email-address-test-3">Email address</label>
+            <input class="form-control form-control--lg" id="email-address-test-3" type="email"/>
+            </div>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Textarea</legend>
+        <div class="form-group">
+            <label class="form-label" for="textarea">Message</label>
+            <textarea class="form-control" id="textarea"></textarea>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>File Inputs</legend>
+        <div class="form-group">
+            <label class="form-label" for="avatar-lg">Avatar (Large)</label>
+            <input class="form-file form-file--lg" type="file" id="avatar-lg" accept="image/png, image/jpeg"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="avatar">Avatar</label>
+            <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="files">Files</label>
+            <input class="form-file form-file--sm" type="file" id="files" multiple="multiple" accept="image/png, image/jpeg"/>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Range</legend>
+        <div class="form-group">
+            <label class="form-label" for="rating">Your Rating</label>
+            <input class="form-range form-range--lg" type="range" id="rating" min="-10" max="10"/>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Range</legend>
+        <div class="form-group">
+            <label class="form-label" for="rating">Your Rating (disabled)</label>
+            <input class="form-range form-range--lg" type="range" id="rating" min="-10" max="10" disabled="disabled"/>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Selects</legend>
+        <div class="form-group">
+            <label class="form-label" for="front-end-frameworks-sm">Front-end Frameworks (Small)</label>
+            <select class="form-control form-control--sm" id="front-end-frameworks-sm">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="svelte">Svelte</option>
+            <option value="ember">Ember</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="front-end-frameworks">Front-end Frameworks</label>
+            <select class="form-control" id="front-end-frameworks">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="svelte">Svelte</option>
+            <option value="ember">Ember</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="front-end-frameworks-disabled">Front-end Frameworks</label>
+            <select class="form-control" id="front-end-frameworks-disabled" disabled="disabled">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="svelte">Svelte</option>
+            <option value="ember">Ember</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="front-end-frameworks-lg">Front-end Frameworks (Large)</label>
+            <select class="form-control form-control--lg" id="front-end-frameworks-lg">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="svelte">Svelte</option>
+            <option value="ember">Ember</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="front-end-frameworks-multiple">Front-end Frameworks (Multiple)</label>
+            <select class="form-control" id="front-end-frameworks-multiple" multiple="multiple">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="svelte">Svelte</option>
+            <option value="ember">Ember</option>
+            </select>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Radio (Vertical)</legend>
+        <div class="form-group form-group--vertical-check">
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="react" name="radio-example-vertical"/><span class="form-label form-check__label">React</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="vue" name="radio-example-vertical" disabled="disabled"/><span class="form-label form-check__label">Vue</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="svelte" name="radio-example-vertical"/><span class="form-label form-check__label">Svelte</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="ember" name="radio-example-vertical"/><span class="form-label form-check__label">Ember</span>
+            </label>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Radio (Horizontal)</legend>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/><span class="form-label form-check__label">React</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/><span class="form-label form-check__label">Vue</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/><span class="form-label form-check__label">Svelte</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/><span class="form-label form-check__label">Ember</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/><span class="form-label form-check__label">Aliquam sit amet suscipit orci. Sed mi ligula, auctor cursus lobortis in, venenatis quis elit. Praesent sit amet ex sagittis ante faucibus egestas ac sit amet tellus. Donec id massa eget urna fermentum dignissim vitae eget ex. Sed euismod leo urna, et suscipit nisl fringilla id.</span>
+            </label>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Checkbox</legend>
+        <div class="form-group form-group--vertical-check">
+            <label class="form-check">
+            <input class="form-check__control" type="checkbox" id="indeterminate" value="react" name="checkbox-example"/><span class="form-label form-check__label">React</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="checkbox" value="vue" name="checkbox-example" disabled="disabled"/><span class="form-label form-check__label">Vue</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="checkbox" value="svelte" name="checkbox-example"/><span class="form-label form-check__label">Svelte</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="checkbox" value="ember" name="checkbox-example"/><span class="form-label form-check__label">Ember</span>
+            </label>
+            <label class="form-check">
+            <input class="form-check__control" type="checkbox" value="ember" name="checkbox-example"/><span class="form-label form-check__label">Aliquam sit amet suscipit orci. Sed mi ligula, auctor cursus lobortis in, venenatis quis elit. Praesent sit amet ex sagittis ante faucibus egestas ac sit amet tellus. Donec id massa eget urna fermentum dignissim vitae eget ex. Sed euismod leo urna, et suscipit nisl fringilla id.</span>
+            </label>
+            <label class="form-check form-check--vertical-start">
+            <input class="form-check__control" type="checkbox" value="ember" name="checkbox-example"/><span class="form-label form-check__label">Aliquam sit amet suscipit orci. Sed mi ligula, auctor cursus lobortis in, venenatis quis elit. Praesent sit amet ex sagittis ante faucibus egestas ac sit amet tellus. Donec id massa eget urna fermentum dignissim vitae eget ex. Sed euismod leo urna, et suscipit nisl fringilla id.</span>
+            </label>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Checkbox (Sizes)</legend>
+        <div class="form-group form-group--vertical-check">
+            <label class="form-check form-check--lg">
+            <input class="form-check__control" type="checkbox" value="react" name="checkbox-example-sizes"/><span class="form-label form-check__label">React</span>
+            </label>
+            <label class="form-check form-check--lg">
+            <input class="form-check__control" type="checkbox" value="vue" name="checkbox-example-sizes"/><span class="form-label form-check__label">Vue</span>
+            </label>
+        </div>
+        <div class="form-group form-group--vertical-check">
+            <label class="form-check form-check--sm">
+            <input class="form-check__control" type="checkbox" value="svelte" name="checkbox-example-sizes"/><span class="form-label form-check__label">Svelte</span>
+            </label>
+            <label class="form-check form-check--sm">
+            <input class="form-check__control" type="checkbox" value="ember" name="checkbox-example-sizes"/><span class="form-label form-check__label">Ember</span>
+            </label>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Custom Checkbox</legend>
+        <div class="form-group"><span class="wpcf7-form-control-wrap acceptance-784"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item">
+                <label>
+                    <input type="checkbox" name="acceptance-784" value="1" aria-invalid="false"/><span class="wpcf7-list-item-label">I accept the <a href="#">privacy policy</a>.</span>
+                </label></span></span></span></div>
+        </fieldset>
+        <fieldset>
+        <legend>Switches</legend>
+        <div class="form-group form-group--vertical-check">
+            <label class="form-switch form-switch--sm"><span class="form-label form-switch__label">Enable notifications</span>
+            <input class="form-switch__control" type="checkbox" value="true"/>
+            </label>
+            <label class="form-switch">
+            <input class="form-switch__control" type="checkbox" value="true"/><span class="form-label form-switch__label">Aliquam sit amet suscipit orci. Sed mi ligula, auctor cursus lobortis in, venenatis quis elit. Praesent sit amet ex sagittis ante faucibus egestas ac sit amet tellus. Aliquam sit amet suscipit orci. Sed mi ligula, auctor cursus lobortis in, venenatis quis elit. Praesent sit amet ex sagittis ante faucibus egestas ac sit amet tellus.</span>
+            </label>
+            <label class="form-switch form-switch--lg form-switch--block"><span class="form-label form-switch__label">Enable notifications</span>
+            <input class="form-switch__control" type="checkbox" value="true"/>
+            </label>
+            <label class="form-switch form-switch--lg form-switch--block">
+            <input class="form-switch__control" type="checkbox" value="true" disabled="disabled"/><span class="form-label form-switch__label">Enable notifications</span>
+            </label>
+        </div>
+        </fieldset>
+        <fieldset class="form-group-container">
+        <legend>Form Group Row</legend>
+        <div class="form-group--row form-group--row:vertical-start">
+            <label class="form-label" for="first-name-row">First Name</label>
+            <input class="form-control" id="first-name-row" type="text"/><span class="form-description">Just a help text for presentation purpose</span>
+        </div>
+        <div class="form-group--row">
+            <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
+            <select class="form-control" id="front-end-frameworks-row">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="svelte">Svelte</option>
+            <option value="ember">Ember</option>
+            </select>
+        </div>
+        <div class="form-group--row">
+            <div class="form-label" id="row-radio-label">Radio (Horizontal)</div>
+            <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal-row" aria-describedby="row-radio-label"/><span class="form-label form-check__label">React</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal-row" aria-describedby="row-radio-label"/><span class="form-label form-check__label">Vue</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal-row" aria-describedby="row-radio-label"/><span class="form-label form-check__label">Svelte</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal-row" aria-describedby="row-radio-label"/><span class="form-label form-check__label">Ember</span>
+            </label>
+            </div>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Form Group Stacked</legend>
+        <div class="form-group--stacked">
+            <input class="form-control" type="text" aria-label="First Name"/>
+        </div>
+        <div class="form-group--stacked">
+            <input class="form-control" type="text" aria-label="First Name"/>
+            <input class="form-control" type="text" aria-label="Last Name"/>
+            <button class="btn btn--primary">Submit</button>
+        </div>
+        <div class="form-group--stacked">
+            <div class="form-group-label">$</div>
+            <input class="form-control" type="text" aria-label="First Name"/>
+            <input class="form-control" type="text" aria-label="Last Name"/>
+            <div class="form-group-label">.00</div>
+            <div class="form-group-label">.00</div>
+        </div>
+        <div class="form-group--stacked:md">
+            <div class="form-group-label">$</div>
+            <input class="form-control" type="text" aria-label="Price"/>
+            <div class="form-group-label">.00</div>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Validation</legend>
+        <div class="form-row">
+            <div class="form-group">
+            <label class="form-label" for="street-address">Street Address</label>
+            <input class="form-control form-control--valid" id="street-address" type="text" placeholder="Your street address..."/><span class="field-feedback field-feedback--valid">Looks fine</span>
+            </div>
+        </div>
+        <div class="form-row form-row--mixed">
+            <div class="form-group">
+            <label class="form-label" for="city">City</label>
+            <input class="form-control form-control--invalid" id="city" type="text"/><span class="field-feedback field-feedback--invalid">Not that fine</span>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="state">State</label>
+            <input class="form-control" id="state" type="text"/>
+            </div>
+            <div class="form-group form-group--width-auto" style="--spruce-col-width: 8ch;">
+            <label class="form-label" for="zip">Zip</label>
+            <input class="form-control" id="zip" type="text"/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<script>
+    var checkbox = document.getElementById('indeterminate');
+    checkbox.indeterminate = true;
+</script>

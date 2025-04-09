@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+        </script>
+        {% include "partial/meta.html" %}
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            {% if navigation.length > 0 %}
+                                <ul class="navigation-menu">
+                                    {% for item in navigation %}
+                                        <li>
+                                            <a
+                                                href="{{ item.url }}"
+                                                {{ helper.getLinkActiveState(item.url, page.url) | safe }}
+                                            >
+                                                {{ item.caption }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            <div class="form-group">
+                                <label class="form-label">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        {{ content | safe }}
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+    </body>
+</html>

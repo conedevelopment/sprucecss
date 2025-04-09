@@ -1,0 +1,208 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
+
+@forward 'config';
+@forward 'layout';
+@forward 'component';
+
+@use 'spruce' as *;
+
+:root {
+  @include set-css-variable((
+    --section-gap: spacer-clamp('xl', 'xxl')
+  ));
+}
+
+@include generate-form-check(
+  '.wpcf7-list-item label',
+  '.wpcf7-list-item input',
+  '.wpcf7-list-item .wpcf7-list-item-label'
+);
+
+@include generate-table(
+  'table',
+  false,
+  false
+);
+
+.btn--dark {
+  @include btn-variant('dark');
+}
+
+.btn--outline-dark {
+  @include btn-variant-outline('dark');
+}
+
+.btn--custom {
+  @include btn-variant('custom');
+  box-shadow: -3px 5px color('custom-foreground', 'btn');
+  border: 3px solid color('custom-foreground', 'btn');
+  border-radius: 0;
+  font-family: config('font-family-cursive', $typography);
+}
+
+.btn--tertiary {
+  @include btn-variant('tertiary');
+}
+
+.clear-btn {
+  @include clear-btn;
+}
+
+.section-title {
+  font-size: font-size('h4');
+  margin-block: 0 spacer('m');
+
+  * + & {
+    margin-block-start: spacer('l');
+  }
+}
+
+.ellipsis-1 {
+  @include text-ellipsis(1);
+}
+
+.ellipsis-2 {
+  @include text-ellipsis(2);
+}
+
+.selection-1 {
+  @include selection('secondary', $is-direct: true);
+  @include transition;
+}
+
+.selection-2 {
+  @include selection(#000, $is-direct: true);
+}
+
+.ellipsis-btn {
+  @include text-ellipsis(1);
+  max-inline-size: 10ch;
+}
+
+.scrollbar {
+  max-block-size: 15rem;
+  overflow: auto;
+  padding-inline-end: spacer('m');
+  @include scrollbar;
+  @include layout-stack;
+}
+
+.custom-heading-size {
+  font-size: responsive-font-size(4rem, 30, 4vw);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.custom-link {
+  @include transition(2s, background-color, linear);
+
+  &:hover {
+    background-color: aqua;
+  }
+}
+
+.cleared-list {
+  @include clear-list;
+}
+
+.card {
+  @include a11y-card-link('.card__link', true);
+  border: 1px solid color('border');
+  border-radius: config('border-radius-lg', $display);
+  padding: spacer('m');
+
+  &__link {
+    color: color-value('heading');
+    font-size: font-size('h3');
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+.break-long-url {
+  @include word-wrap;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacer('s');
+}
+
+.form-group {
+  &--height-test {
+    align-items: center;
+    display: flex;
+    gap: spacer('xs');
+  }
+}
+
+.form-group--stacked\:md {
+  @include form-group-stacked('md');
+}
+
+.ring-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ring-one,
+.ring-two {
+  --size: 3rem;
+  @include clear-btn;
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+
+.ring-one {
+  background-color: pink;
+
+  &:focus-visible {
+    @include short-ring('input');
+  }
+}
+
+.ring-two {
+  background-color: rebeccapurple;
+
+  &:focus-visible {
+    @include short-ring('button', 'secondary');
+  }
+}
+
+.spacer-wrapper {
+  align-items: center;
+  display: flex;
+  gap: spacer('m');
+}
+
+.spacer {
+  background-color: red;
+
+  div {
+    background-color: pink;
+    block-size: 2rem;
+    inline-size: 5rem;
+  }
+
+  &--one {
+    div {
+      margin: spacer('m');
+    }
+  }
+
+  &--two {
+    div {
+      margin: spacer('s');
+    }
+  }
+
+  &--three {
+    div {
+      margin: spacer('xxl:xl');
+    }
+  }
+}

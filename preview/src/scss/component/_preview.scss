@@ -1,0 +1,8 @@
+@use 'spruce' as *;
+
+.preview-group {
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacer('s');
+}

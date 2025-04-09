@@ -141,8 +141,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Preview's HTML and CSS
-preview/assets/css
-preview/html
+preview/src/assets/css
 
 # .map files
 *.map

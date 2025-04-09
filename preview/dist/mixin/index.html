@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+        </script>
+        
+    
+
+
+
+
+
+
+
+
+
+<title>Mixin - Spruce CSS Preview</title>
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            
+                                <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/color/"
+                                                
+                                            >
+                                                Color
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/typography/"
+                                                
+                                            >
+                                                Typography
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/table/"
+                                                
+                                            >
+                                                Table
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/media/"
+                                                
+                                            >
+                                                Media
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/button/"
+                                                
+                                            >
+                                                Button
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/form/"
+                                                
+                                            >
+                                                Form
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/function/"
+                                                
+                                            >
+                                                Function
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/mixin/"
+                                                 aria-current="page" data-state="active"
+                                            >
+                                                Mixin
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/component/"
+                                                
+                                            >
+                                                Component
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        
+<h2 class="section-title">short-ring</h2>
+<div class="ring-wrapper">
+    <button class="ring-one"></button>
+    <button class="ring-two"></button>
+</div>
+<h2 class="section-title">scrollbar</h2>
+<div class="scrollbar">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut diam lorem. Morbi porttitor venenatis dui, hendrerit volutpat dolor suscipit sed. Maecenas leo neque, pulvinar tempus ultricies a, eleifend eget sem. Fusce in egestas ex, nec ultricies eros. Pellentesque mollis egestas nulla, quis gravida urna facilisis sit amet. Nulla facilisi. Nam quis libero sem. Nulla eget justo eros. Nam rutrum a nunc et luctus. Nunc lobortis arcu metus, eget vehicula lacus malesuada quis. Cras quis elementum lacus. Quisque in ante dui. Curabitur vel rhoncus nisl.</p>
+    <p>Praesent molestie dui vitae lacinia commodo. Maecenas viverra ipsum accumsan venenatis lobortis. Nullam ligula nisl, hendrerit non consequat eu, aliquam ac turpis. Etiam convallis nibh non ante feugiat, eu posuere magna pharetra. Cras et odio varius, pellentesque ante in, ultrices dolor. Nulla id eleifend felis, nec porttitor eros. Nunc nec est posuere, vulputate tellus ut, commodo odio. Maecenas sagittis dolor vel rutrum lobortis. Mauris sit amet arcu id ipsum feugiat gravida aliquam vel tellus. Nam et aliquam diam. Nullam sit amet porttitor ligula, ut eleifend lacus. Sed tincidunt mollis sodales. Pellentesque feugiat sed dolor a faucibus. Donec eget eros nec mi dictum aliquam sit amet ut sapien.</p>
+</div>
+<h2 class="section-title">a11y-card-link</h2>
+<div class="card"><a class="card__link" href="#">Card link</a></div>
+<h2 class="section-title">text-ellipsis</h2>
+<div>
+    <p class="ellipsis-1"><strong>Multiline ellipsis test</strong> Pellentesque quis sapien quis ex tincidunt ornare sit amet eu neque. Fusce ut tempor nisl, vitae semper dui. Fusce sagittis felis orci, ut ultrices justo congue a. Aenean a auctor nisi, eu fringilla erat. Cras id lacinia lorem. Nunc porttitor lorem tortor, sit amet faucibus urna vestibulum ac. Sed facilisis tristique consequat. Fusce condimentum sed enim eu varius. Vestibulum scelerisque sapien vulputate maximus commodo. Fusce dictum erat nec felis convallis elementum. Suspendisse blandit nibh varius, varius lacus quis, commodo orci. Mauris non mollis tellus. Maecenas id consectetur erat, at cursus ipsum.</p>
+    <p class="ellipsis-2"><strong>Multiline ellipsis test</strong> Pellentesque quis sapien quis ex tincidunt ornare sit amet eu neque. Fusce ut tempor nisl, vitae semper dui. Fusce sagittis felis orci, ut ultrices justo congue a. Aenean a auctor nisi, eu fringilla erat. Cras id lacinia lorem. Nunc porttitor lorem tortor, sit amet faucibus urna vestibulum ac. Sed facilisis tristique consequat. Fusce condimentum sed enim eu varius. Vestibulum scelerisque sapien vulputate maximus commodo. Fusce dictum erat nec felis convallis elementum. Suspendisse blandit nibh varius, varius lacus quis, commodo orci. Mauris non mollis tellus. Maecenas id consectetur erat, at cursus ipsum.</p>
+    <button class="btn btn--primary"><span class="ellipsis-btn">Fusce dictum erat nec felis convallis</span></button>
+</div>
+<h2 class="section-title">selection</h2>
+<div>
+    <p class="selection-1">Sed facilisis tristique consequat. Fusce condimentum sed enim eu varius. Vestibulum scelerisque sapien vulputate maximus commodo. Fusce dictum erat nec felis convallis elementum. Suspendisse blandit nibh varius, varius lacus quis, commodo orci. Mauris non mollis tellus. Maecenas id consectetur erat, at cursus ipsum.</p>
+    <p class="selection-2">SELECTION Mauris non mollis tellus. Maecenas id consectetur erat, at cursus ipsum.</p>
+</div>
+<h2 class="section-title">clear-list</h2>
+<ul class="cleared-list">
+    <li>Cleared UL list</li>
+    <li>List item two</li>
+    <li>List item three</li>
+    <li>List item four</li>
+</ul>
+<h2 class="section-title">spacer-clamp</h2>
+<p class="spacer-clamp-mixin">Mauris non mollis tellus. Maecenas id consectetur erat, at cursus ipsum.</p>
+<h2 class="section-title">word-wrap</h2><a class="break-long-url" href="#">http://www.reallylong.link/rll/eHljLISQs4/VYnSQH4F8X3sNpWLpziElYnqUVCq8WmbR06lHV7vCttOFydbFBKzBovFUYDMl_SGFCRd3eWTUpIggT5TLgATzFQELX_YUMb4U6ah7UG/7sNSn6XjPWAke0FUy26kfo3ckKU0WtJbyeWNBoliQ4iI7ZIu0lSMD4E_AKRrWT_d27gw3/j/GA/xdi9_3xB3Lq2DcUndrHNPm0_iTVNbvxmodOkGqq3rsQwNU3G5mfWVAgKTTs64NlZ6NA11mQDTLLZQ_X6SCqZh3d8wnG2d2ZwrZ/3OU1hdOiWNKnry0Ml8_X/Oo3EZRHLGpv_mehdAfy4KOzDtsYYdeBfDTMj1QBwvVmh8r9sOqthOgtIE15muoY7dPw_SHWVSo8XoH68tdZr2nqm4NiOAjrchNnaS9LqpLD5Zd09_Tpj0hwgfQFAvlA0_0TQzI9xsV1bxB_zY9Y8a0DeP/_sijH9kCQV0rdKT8Fu6QcJ_MPELWSEmdvVqyBlLyjgWHcyAKzJNuU1CnLf425IOTLpjmAUVvCElISwCCdw1_4Klv4riPll1dfvZjU5QaBx3Vq/EZKK8Z247sL5vuap9pOW04CrkQzsLZF2RRLyZ98C5FWXJP9uD41SfTWR8f9ybpA1YaibXaQgTHgtHaFW/kbbmR3zl3LRhV0HZD9/vY4QyRoi4CHnZpF2wq/nDRLtY3Jy7AiBjUQGMi80UTmzucFY/2sV5VcvLObY7UrbVOlQax/dCjxP0NPAQMLJukneUmvf0C3uzoXm07DxynvusbvVejeexdxU9f5Hdqg1V8yKxYpD9NAOB5dPRBdSoT1uhO1IcVIziwdU0S5Ybmf7fqF06JjxIQQXetOf6w6d4P3BZER1FfD/WA7zj7p/KrqxK6ZMFu_npgHrWTI2qF7bn_nAzti9DyGCFaIyqKSmPMQVMyyF/VWjjF2bauMKliqzInbC9sE3pAf82Mgx570z3ThYHK/FRKT7YxrUWURUb1c2JF3vNs28t/G6c63XX0LTSloOpE1Ci1WNHdwzVKHVa1oz5MaW_1lW_Vb/km231/qu0rlV5hpQCH_0QqkJw7/p1uHBoWQq5TUxeH5RyfBwNI/8XYAa1ybPIGhtXQrnv7VYyG2P4pKkIXMjJkUHz4yAGSMT0C8ZShZHAG_xPmhhwpzXZaNsh4C44u5h/6sfjDD2a7YcfyxsGFd4bqfUqsJcwF7g1GbZeBeA68AsIGcA6ZOa_f1Rnzff858u/2X6yhCn53DSgHwQZIei1xo2OSI6Ia8UjgzW10hMr_fbkOuO64nqKTv9Rzk1cktR1lNnBCBZUaU2I0uUlsp4ELG1073iKab_kkPx0jfxNc6F9abeCp3zrTxu6Foo_bplsKdRUZe25wI_hVpc7PUzIxe/Agaf9/WQwO7azadwWDkJJfAHNruhwH6yVfS5JVR_4DT7CcjdowIV2_bNFmJjCljqn__vBn04FsT6nhCBpFCKV5vmGJtXI935staZS1eSp230RFl3hlCEkUxovrAvXKyPVv1OrndCeylLR8mGkUc/rTnl04YgMlqqflSOFdVIcqqH1JvgrhMFtW/myZ/R06O3dKMxppl2Az8NkU/OmYpcOZ4YrcCsFzpsVu2ybi6sjm_AYgC01zERrEoJ9ATX0BpxSdyjmF6XWZKP3iFcRsgv7otfGqzx1mMSVPBddS/jknevdQNezn3/7Qy/sUVKnS1sPEh0bNrxdJ4r1ovAM2Q1esGHxd7u67TA7iTJty3K5Zbh/poh7000k0ZjTLVhmP1PF2f0m3JjIsRoYJkUsjJNSBrnjflSJJbrjoKzFOdR2Og43phCRKDSRIBkZS6ZQULcYD2ptuQjppoTbcRuQhxsrhrEayABlU0KptmBX_tRrtj0zxzrpTxsiM0n_pzSFS0M4Os5EVkp9ZwqVKC6i7U8dafrpUAgk8VK_4pyQ3MFxk1eu2l_w/aS0yM96</a>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+@use 'spruce' as *;
+
+@include font-face(
+  'Montserrat',
+  '../font/montserrat-v25-latin-ext_latin-regular.woff2'
+);
+
+@include font-face(
+  'Montserrat',
+  '../font/montserrat-v25-latin-ext_latin-700.woff2',
+  700
+);

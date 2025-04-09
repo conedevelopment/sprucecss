@@ -1,0 +1,18 @@
+{% if page.url.length > 1 %}
+    {% set pageTitle = title + ' - ' + site.name %}
+{% else %}
+    {% set pageTitle = site.name + ' - Minimal, modern CSS framework' %}
+{% endif %}
+
+{% if site.name === title %}
+    {% set pageTitle = title %}
+{% endif %}
+
+{% set siteTitle = site.name %}
+{% set currentUrl = site.url + page.url %}
+
+{% if metaTitle %}
+    {% set pageTitle = metaTitle %}
+{% endif %}
+
+<title>{{ pageTitle }}</title>

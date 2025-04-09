@@ -1,0 +1,16 @@
+@use 'spruce' as *;
+
+.navigation-menu {
+  @include clear-list;
+  @include layout-stack('xs');
+
+  a {
+    color: color('text');
+    text-decoration: none;
+
+    &[aria-current='page'] {
+      color: color('primary');
+      font-weight: 700;
+    }
+  }
+}

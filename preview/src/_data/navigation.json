@@ -1,0 +1,38 @@
+[
+  {
+    "caption": "Color",
+    "url": "/color/"
+  },
+  {
+    "caption": "Typography",
+    "url": "/typography/"
+  },
+  {
+    "caption": "Table",
+    "url": "/table/"
+  },
+  {
+    "caption": "Media",
+    "url": "/media/"
+  },
+  {
+    "caption": "Button",
+    "url": "/button/"
+  },
+  {
+    "caption": "Form",
+    "url": "/form/"
+  },
+  {
+    "caption": "Function",
+    "url": "/function/"
+  },
+  {
+    "caption": "Mixin",
+    "url": "/mixin/"
+  },
+  {
+    "caption": "Component",
+    "url": "/component/"
+  }
+]

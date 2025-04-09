@@ -1,0 +1,82 @@
+@use 'sass:color';
+@use 'dark-colors' as dark;
+
+$color-tertiary: hsl(337deg 55% 43%);
+$spacer: 1.25rem;
+
+@use 'spruce' with (
+  $colors: (
+    'btn': (
+      'custom-background': hsl(0deg 0% 100%),
+      'custom-background-hover': hsl(332deg 49% 29%),
+      'custom-foreground': hsl(0deg 0% 0%),
+      'custom-foreground-hover': hsl(0deg 0% 100%),
+      'dark-background': hsl(0deg 0% 0%),
+      'dark-background-hover': hsl(0deg 0% 20%),
+      'dark-foreground': hsl(0deg 0% 100%),
+      'dark-outline-border': hsl(260deg 4% 70%),
+      'dark-outline-foreground': hsl(0deg 0% 0%),
+      'dark-outline-foreground-hover': hsl(0deg 0% 100%),
+      'dark-outline-background-hover': hsl(0deg 0% 0%),
+      'dark-outline-focus-ring': hsl(295deg 100% 50%),
+      'tertiary-background': $color-tertiary,
+      'tertiary-foreground': hsl(0deg 0% 100%),
+      'tertiary-shadow-focus': color.adjust($color-tertiary, $alpha: -0.75),
+    ),
+    form: (
+      'check-background': red,
+      'check-focus-ring': olive,
+      'check-foreground': aqua,
+      'switch-background': pink,
+      'switch-focus-ring': blue,
+      'switch-foreground': yellow,
+    ),
+  ),
+  $dark-colors: dark.$colors,
+  $form-select: (
+    'padding-inline-end': 4rem,
+  ),
+  $settings: (
+    'css-custom-properties': true,
+    'color-fallback': false,
+    'html-smooth-scrolling': true,
+    'hyphens': true,
+    'prefix': 'spruce',
+    'print': true,
+    'scaler': 25,
+    'utilities': (
+      'typography': true,
+    ),
+  ),
+  $btn-lg: (
+    'text-transform': uppercase,
+  ),
+  $btn-sm: (
+    'icon-size': 1.25rem,
+  ),
+  $form-fieldset: (
+    'layout-gap': 1rem,
+    'legend-font-family': serif,
+  ),
+  $form-label: (
+    'text-transform': uppercase,
+  ),
+  $form-range: (
+    'thumb-block-size': 2rem,
+    'thumb-inline-size': 2rem,
+  ),
+  $generators: (
+    'content': (
+      'normalize': true,
+    ),
+    'form': (
+      'btn': true,
+    ),
+  ),
+  $layout: (
+    'container-inline-size': 70rem,
+  ),
+  $typography: (
+    'letter-spacing-heading': 0.05em,
+  ),
+);

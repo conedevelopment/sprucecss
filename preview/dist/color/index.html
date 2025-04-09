@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+        </script>
+        
+    
+
+
+
+
+
+
+
+
+
+<title>color - Spruce CSS Preview</title>
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            
+                                <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/color/"
+                                                 aria-current="page" data-state="active"
+                                            >
+                                                Color
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/typography/"
+                                                
+                                            >
+                                                Typography
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/table/"
+                                                
+                                            >
+                                                Table
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/media/"
+                                                
+                                            >
+                                                Media
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/button/"
+                                                
+                                            >
+                                                Button
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/form/"
+                                                
+                                            >
+                                                Form
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/function/"
+                                                
+                                            >
+                                                Function
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/mixin/"
+                                                
+                                            >
+                                                Mixin
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/component/"
+                                                
+                                            >
+                                                Component
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        
+<h2 class="section-title">Alert</h2>
+<div class="colors">
+    <div class="color-item color-item--alert-danger "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">danger</span><span class="color-item__value">$color-danger</span></span></div>
+    <div class="color-item color-item--alert-info "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">info</span><span class="color-item__value">hsl(195deg 100% 42%)</span></span></div>
+    <div class="color-item color-item--alert-success "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">success</span><span class="color-item__value">$color-success</span></span></div>
+    <div class="color-item color-item--alert-warning "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">warning</span><span class="color-item__value">hsl(48deg 89% 55%)</span></span></div>
+</div>
+<h2 class="section-title">Base</h2>
+<div class="colors">
+    <div class="color-item color-item--base-background color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">background</span><span class="color-item__value">$color-white</span></span></div>
+    <div class="color-item color-item--base-blockquote-border "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">blockquote-border</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--base-border color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">border</span><span class="color-item__value">$color-gray-light</span></span></div>
+    <div class="color-item color-item--base-code-background color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">code-background</span><span class="color-item__value">color.change($color-primary, $lightness: 97%)</span></span></div>
+    <div class="color-item color-item--base-code-foreground "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">code-foreground</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--base-heading "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">heading</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--base-link "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">link</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--base-link-hover "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">link-hover</span><span class="color-item__value">color.scale($color-primary, $lightness: -20%)</span></span></div>
+    <div class="color-item color-item--base-mark-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">mark-background</span><span class="color-item__value">hsl(50deg 100% 80%)</span></span></div>
+    <div class="color-item color-item--base-mark-foreground "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">mark-foreground</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--base-marker "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">marker</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--base-primary "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">primary</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--base-secondary "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">secondary</span><span class="color-item__value">$color-secondary</span></span></div>
+    <div class="color-item color-item--base-strong "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">strong</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--base-text "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">text</span><span class="color-item__value">$color-gray</span></span></div>
+</div>
+<h2 class="section-title">Button</h2>
+<div class="colors">
+    <div class="color-item color-item--btn-primary-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">primary-background</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--btn-primary-background-hover "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">primary-background-hover</span><span class="color-item__value">color.adjust($color-primary, $lightness: -10%)</span></span></div>
+    <div class="color-item color-item--btn-primary-foreground color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">primary-foreground</span><span class="color-item__value">$color-white</span></span></div>
+    <div class="color-item color-item--btn-secondary-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">secondary-background</span><span class="color-item__value">$color-secondary</span></span></div>
+    <div class="color-item color-item--btn-secondary-background-hover "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">secondary-background-hover</span><span class="color-item__value">color.adjust($color-secondary, $lightness: -10%)</span></span></div>
+    <div class="color-item color-item--btn-secondary-foreground color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">secondary-foreground</span><span class="color-item__value">$color-white</span></span></div>
+</div>
+<h2 class="section-title">Form</h2>
+<div class="colors">
+    <div class="color-item color-item--form-background color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">background</span><span class="color-item__value">$color-white</span></span></div>
+    <div class="color-item color-item--form-background-disabled color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">background-disabled</span><span class="color-item__value">hsl(0deg 0% 95%)</span></span></div>
+    <div class="color-item color-item--form-border "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">border</span><span class="color-item__value">hsl(260deg 4% 70%)</span></span></div>
+    <div class="color-item color-item--form-border-disabled "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">border-disabled</span><span class="color-item__value">$color-gray-light</span></span></div>
+    <div class="color-item color-item--form-border-focus "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">border-focus</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--form-check-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">check-background</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--form-check-focus-ring "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">check-focus-ring</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--form-check-foreground color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">check-foreground</span><span class="color-item__value">$color-white</span></span></div>
+    <div class="color-item color-item--form-invalid "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">invalid</span><span class="color-item__value">$color-danger</span></span></div>
+    <div class="color-item color-item--form-invalid-focus-ring "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">invalid-focus-ring</span><span class="color-item__value">color.adjust($color-danger, $alpha: -0.75)</span></span></div>
+    <div class="color-item color-item--form-label "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">label</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--form-legend "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">legend</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--form-placeholder "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">placeholder</span><span class="color-item__value">hsl(208deg 7% 40%)</span></span></div>
+    <div class="color-item color-item--form-range-thumb-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">range-thumb-background</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--form-range-thumb-focus-ring "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">range-thumb-focus-ring</span><span class="color-item__value">$color-primary</span></span></div>
+    <div class="color-item color-item--form-range-track-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">range-track-background</span><span class="color-item__value">$color-gray-light</span></span></div>
+    <div class="color-item color-item--form-ring-focus "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">ring-focus</span><span class="color-item__value">color.adjust($color-primary, $alpha: -0.75)</span></span></div>
+    <div class="color-item color-item--form-select-foreground "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">select-foreground</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--form-text "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">text</span><span class="color-item__value">$color-gray</span></span></div>
+    <div class="color-item color-item--form-valid "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">valid</span><span class="color-item__value">$color-success</span></span></div>
+    <div class="color-item color-item--form-valid-focus-ring "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">valid-focus-ring</span><span class="color-item__value">color.adjust($color-success, $alpha: -0.75)</span></span></div>
+</div>
+<h2 class="section-title">Selection</h2>
+<div class="colors">
+    <div class="color-item color-item--selection-foreground color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">foreground</span><span class="color-item__value">$color-white</span></span></div>
+    <div class="color-item color-item--selection-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">background</span><span class="color-item__value">$color-primary</span></span></div>
+</div>
+<h2 class="section-title">Scrollbar</h2>
+<div class="colors">
+    <div class="color-item color-item--scrollbar-thumb-background "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">thumb-background</span><span class="color-item__value">hsl(0deg 0% 0% / 15%)</span></span></div>
+    <div class="color-item color-item--scrollbar-thumb-background-hover "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">thumb-background-hover</span><span class="color-item__value">hsl(0deg 0% 0% / 25%)</span></span></div>
+    <div class="color-item color-item--scrollbar-track-background color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">track-background</span><span class="color-item__value">hsl(0deg 0% 0% / 5%)</span></span></div>
+</div>
+<h2 class="section-title">Table</h2>
+<div class="colors">
+    <div class="color-item color-item--table-border "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">border</span><span class="color-item__value">$color-gray-light</span></span></div>
+    <div class="color-item color-item--table-caption "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">caption</span><span class="color-item__value">$color-gray</span></span></div>
+    <div class="color-item color-item--table-heading "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">heading</span><span class="color-item__value">$color-black</span></span></div>
+    <div class="color-item color-item--table-hover "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">hover</span><span class="color-item__value">hsl(0deg 0% 0% / 5%)</span></span></div>
+    <div class="color-item color-item--table-stripe color-item--bordered"><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">stripe</span><span class="color-item__value">hsl(0deg 0% 0% / 2.5%)</span></span></div>
+    <div class="color-item color-item--table-text "><span class="color-item__color"></span><span class="color-item__caption"><span class="color-item__name">text</span><span class="color-item__value">$color-gray</span></span></div>
+</div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+    </body>
+</html>
