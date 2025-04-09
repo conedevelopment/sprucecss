@@ -29,6 +29,4 @@ jobs:
       - name: Check adherence to EditorConfig
         uses: greut/eclint-action@v0
         with:
-          eclint_args: |
-            -exclude=css/*
-            -exclude=preview/**
+          eclint_args: '-exclude=css/* -exclude=preview/**'
