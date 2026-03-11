@@ -610,8 +610,7 @@ h3,
 h4,
 h5,
 h6 {
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   overflow-wrap: break-word;
 }
 
@@ -862,14 +861,14 @@ strong {
   inline-size: 100%;
 }
 
+.btn--primary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-primary-background);
+  outline-offset: 2px;
+}
 .btn--primary {
   background-color: var(--spruce-btn-color-primary-background);
   border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
-}
-.btn--primary:focus-visible {
-  outline: 2px solid var(--spruce-btn-color-primary-background);
-  outline-offset: 2px;
 }
 .btn--primary:hover {
   background-color: var(--spruce-btn-color-primary-background-hover);
@@ -880,14 +879,14 @@ strong {
   box-shadow: 0 0.55em 1em -0.2em var(--spruce-btn-color-primary-shadow), 0 0.15em 0.35em -0.185em var(--spruce-btn-color-primary-shadow);
 }
 
+.btn--secondary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-secondary-background);
+  outline-offset: 2px;
+}
 .btn--secondary {
   background-color: var(--spruce-btn-color-secondary-background);
   border-color: var(--spruce-btn-color-secondary-background);
   color: var(--spruce-btn-color-secondary-foreground);
-}
-.btn--secondary:focus-visible {
-  outline: 2px solid var(--spruce-btn-color-secondary-background);
-  outline-offset: 2px;
 }
 .btn--secondary:hover {
   background-color: var(--spruce-btn-color-secondary-background-hover);
@@ -898,14 +897,14 @@ strong {
   box-shadow: 0 0.55em 1em -0.2em var(--spruce-btn-color-secondary-shadow), 0 0.15em 0.35em -0.185em var(--spruce-btn-color-secondary-shadow);
 }
 
+.btn--outline-primary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-primary-background);
+  outline-offset: 2px;
+}
 .btn--outline-primary {
   background-color: transparent;
   border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-background);
-}
-.btn--outline-primary:focus-visible {
-  outline: 2px solid var(--spruce-btn-color-primary-background);
-  outline-offset: 2px;
 }
 .btn--outline-primary:hover {
   background-color: var(--spruce-btn-color-primary-background);
@@ -913,14 +912,14 @@ strong {
   color: var(--spruce-btn-color-primary-foreground);
 }
 
+.btn--outline-secondary:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-secondary-background);
+  outline-offset: 2px;
+}
 .btn--outline-secondary {
   background-color: transparent;
   border-color: var(--spruce-btn-color-secondary-background);
   color: var(--spruce-btn-color-secondary-background);
-}
-.btn--outline-secondary:focus-visible {
-  outline: 2px solid var(--spruce-btn-color-secondary-background);
-  outline-offset: 2px;
 }
 .btn--outline-secondary:hover {
   background-color: var(--spruce-btn-color-secondary-background);

@@ -21,4 +21,4 @@ $settings: map.deep-merge(
 );
 
 // We use this value to prefix our CSS variables. The only difference to the default prefix value that we add the '-' suffix.
-$internal-prefix: if(map.get($settings, prefix), map.get($settings, prefix) + '-', '');
+$internal-prefix: if(sass(map.get($settings, prefix)): map.get($settings, prefix) + '-'; else: '');

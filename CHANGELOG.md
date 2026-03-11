@@ -1,5 +1,10 @@
 # Spruce CSS Changelog
 
+## v2.3.5 (2026-03-11)
+
+### What's Changed
+- Clear Sass if deprecation warnings
+
 ## v2.3.4 (2025-04-09)
 
 ### What's Changed
