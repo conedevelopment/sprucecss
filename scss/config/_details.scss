@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use 'display' as *;
+@use 'spacer' as *;
+
+$details: () !default;
+$details: map.merge(
+  (
+    'border-radius': map.get($display, 'border-radius-sm'),
+    'border-width': 1px,
+    'gap': map.get($spacers, 'xs'),
+    'icon-size': 1em,
+    'padding': map.get($spacers, 's'),
+    'summary-font-weight': 600,
+  ),
+  $details
+);

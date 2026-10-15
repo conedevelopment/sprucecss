@@ -1,0 +1,37 @@
+@use '../config' as *;
+@use '../function' as *;
+@use '../mixin' as *;
+
+@mixin generate-dialog(
+  $selector: 'dialog'
+) {
+  :where(#{$selector}) {
+    @include generate-variables($dialog, $hook: 'dialog');
+
+    background-color: color('background');
+    border: config('border-width', $dialog) solid color('border');
+    border-radius: config('border-radius', $dialog);
+    box-shadow: shadow('xl');
+    color: color('text');
+    max-block-size: calc(100dvb - #{spacer('l')});
+    max-inline-size: min(calc(100vi - #{spacer('m')}), #{config('inline-size', $dialog)});
+    padding: config('padding', $dialog);
+
+    > * + * {
+      margin-block-start: spacer('s');
+    }
+
+    > :first-child {
+      margin-block-start: 0;
+    }
+
+    > :last-child {
+      margin-block-end: 0;
+    }
+
+    &::backdrop {
+      backdrop-filter: config('backdrop-filter', $dialog);
+      background-color: var(--#{$internal-prefix}base-color-overlay, #{color('overlay', $only-color: true)});
+    }
+  }
+}

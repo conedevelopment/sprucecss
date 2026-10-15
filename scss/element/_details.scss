@@ -1,0 +1,89 @@
+@use '../config' as *;
+@use '../function' as *;
+@use '../mixin' as *;
+
+@mixin generate-details(
+  $selector: 'details'
+) {
+  :where(#{$selector}) {
+    @include generate-variables($details, $hook: 'details');
+
+    border: config('border-width', $details) solid color('border');
+    border-radius: config('border-radius', $details);
+
+    > summary {
+      align-items: center;
+      color: color('heading');
+      cursor: pointer;
+      display: flex;
+      font-weight: config('summary-font-weight', $details);
+      gap: config('gap', $details);
+      justify-content: space-between;
+      list-style: none;
+      padding: config('padding', $details);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        background-color: currentcolor;
+        block-size: config('icon-size', $details);
+        content: '';
+        flex-shrink: 0;
+        inline-size: config('icon-size', $details);
+        mask: url('#{svg-escape(str-replace(config('select', $form-icon, false), '#COLOR#', hsl(0deg 0% 0%)))}') center / contain no-repeat;
+        transition-duration: config('duration', $transition);
+        transition-property: rotate;
+        transition-timing-function: config('timing-function', $transition);
+      }
+
+      &:focus-visible {
+        border-radius: config('border-radius', $details);
+        outline: 2px solid color('focus-ring');
+        outline-offset: 2px;
+      }
+    }
+
+    &[open] > summary::after {
+      rotate: 180deg;
+    }
+
+    > :not(summary) {
+      margin-block: 0;
+      padding-inline: config('padding', $details);
+    }
+
+    > :not(summary):last-child {
+      padding-block-end: config('padding', $details);
+    }
+
+    > :not(summary) + :not(summary) {
+      margin-block-start: config('gap', $details);
+    }
+
+    // Animate the opening and closing where the browser can transition to an auto size.
+    @supports (interpolate-size: allow-keywords) {
+      @include motion-safe {
+        interpolate-size: allow-keywords;
+
+        &::details-content {
+          block-size: 0;
+          overflow-y: clip;
+          transition-behavior: allow-discrete;
+          transition-duration: config('duration', $transition);
+          transition-property: block-size, content-visibility;
+          transition-timing-function: config('timing-function', $transition);
+        }
+
+        &[open]::details-content {
+          block-size: auto;
+        }
+      }
+    }
+  }
+
+  :where(#{$selector}) + :where(#{$selector}) {
+    margin-block-start: config('gap', $details, false);
+  }
+}

@@ -1,0 +1,35 @@
+@use 'true' as *;
+@use '../../scss/config' as *;
+@use '../../scss/function/font-size' as *;
+
+@include describe('font-size()') {
+  @include it('should return the static h5 size') {
+    @include assert-equal(font-size('h5', false), 1rem);
+  }
+
+  @include it('should not make a size fluid when it would be smaller than the base size') {
+    @include assert-equal(font-size('h5'), 1rem);
+  }
+
+  @include it('returns the static h1 size from the ratio') {
+    @include assert-equal(font-size('h1', false), 2.44140625rem);
+  }
+
+  @include it('returns a fluid clamp() for the h1 size') {
+    @include assert-equal('#{font-size('h1')}', 'clamp(2.0751953125rem, 2vw + 1rem, 2.44140625rem)');
+  }
+
+  @include it('uses a custom scaler and optimal size') {
+    @include assert-equal('#{font-size('h1', true, 50, '5vw')}', 'clamp(1.220703125rem, 5vw, 2.44140625rem)');
+  }
+}
+
+@include describe('responsive-font-size()') {
+  @include it('returns a clamp() with the default scaler') {
+    @include assert-equal('#{responsive-font-size(2rem)}', 'clamp(1.7rem, 2vw + 1rem, 2rem)');
+  }
+
+  @include it('accepts a custom scaler and optimal size') {
+    @include assert-equal('#{responsive-font-size(4rem, 50, '4vw')}', 'clamp(2rem, 4vw, 4rem)');
+  }
+}

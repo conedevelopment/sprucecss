@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../function' as *;
 @use '../config' as *;
+@use 'form' as *;
 
 /// Generate color variables.
 /// @param {map} $colors - The colors map.
@@ -17,6 +18,71 @@
           --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
         }
       }
+    }
+  }
+}
+
+/// Regenerate the SVG field icons (select arrow, check marks, switch knob, validation icons) for a color map.
+/// The icons are data URIs, so they can't follow CSS custom properties; use this mixin when you change the related colors under a selector (dark mode, styles).
+/// @param {map} $colors - The colors map (only the defined keys are used).
+/// @param {string} $scope - The scope selector (like ':root[data-theme-mode="dark"]').
+/// @param {string} $control - The form control selector.
+/// @param {string} $check - The form check control selector.
+/// @param {string} $switch - The form switch control selector.
+/// @param {string} $suffix - An optional suffix for every control selector (like a :not() filter).
+/// @return {string} - The generated icon declarations.
+@mixin generate-field-icons(
+  $colors,
+  $scope,
+  $control: '.form-control',
+  $check: '.form-check__control',
+  $switch: '.form-switch__control',
+  $suffix: ''
+) {
+  $form: map.get($colors, 'form');
+  $alert: map.get($colors, 'alert');
+
+  @if $form and map.get($form, 'select-foreground') {
+    #{$scope} select#{$control}:not([multiple]):not([size])#{$suffix} {
+      @include field-icon(config('select', $form-icon, false), map.get($form, 'select-foreground'));
+    }
+  }
+
+  @if $form and map.get($form, 'check-foreground') {
+    #{$scope} #{$check}:checked[type='checkbox']#{$suffix} {
+      @include field-icon(config('checkbox', $form-icon, false), map.get($form, 'check-foreground'));
+    }
+
+    #{$scope} #{$check}:checked[type='radio']#{$suffix} {
+      @include field-icon(config('radio', $form-icon, false), map.get($form, 'check-foreground'));
+    }
+
+    #{$scope} #{$check}:indeterminate[type='checkbox']#{$suffix} {
+      @include field-icon(config('checkbox-indeterminate', $form-icon, false), map.get($form, 'check-foreground'));
+    }
+  }
+
+  @if $form and map.get($form, 'border') {
+    #{$scope} #{$switch}:not(:checked)#{$suffix} {
+      @include field-icon(config('switch', $form-icon, false), map.get($form, 'border'));
+    }
+  }
+
+  @if $form and map.get($form, 'switch-foreground') {
+    #{$scope} #{$switch}:checked#{$suffix} {
+      @include field-icon(config('switch', $form-icon, false), map.get($form, 'switch-foreground'));
+    }
+  }
+
+  @if $alert and map.get($alert, 'success') {
+    #{$scope} #{$control}--valid#{$suffix} {
+      @include field-icon(config('valid', $form-icon, false), map.get($alert, 'success'));
+    }
+  }
+
+  @if $alert and map.get($alert, 'danger') {
+    #{$scope} #{$control}--invalid#{$suffix} {
+      @include field-icon(config('invalid', $form-icon, false), map.get($alert, 'danger'));
     }
   }
 }

@@ -1,5 +1,100 @@
 # Spruce CSS Changelog
 
+## v3.0.0 (2026-10-03)
+
+The biggest Spruce CSS release so far: **design styles** (one markup, many looks), a built-in dark mode, new elements, new tokens, more customization options for every element and AI skills. The public Sass API stays compatible with v2: no mixin, function, variable or map key was removed or renamed, and with the default configuration every v2 declaration is still generated. The changes in the default output are listed under [Changes in the default output](#changes-in-the-default-output).
+
+### Design styles (new)
+- **NEW** Style presets: restyle the same markup with `data-spruce-style="…"` on `<html>` or on any element. Built-in presets: `minimal`, `brutalist`, `soft`, `glass`, `corporate`, `playful`, `editorial`, `terminal`.
+- **NEW** `$styles` map (extend or overwrite the presets), `$style-presets`, `$style-shorthands` (`radius-sm`, `radius-md`, `radius-lg`, `border-width`).
+- **NEW** `styles` setting (`attribute`, `default`, `font-path`, `include`) and `styles` content generator (off by default). Set `'default'` to apply a style at compile time without the attribute.
+- **NEW** Style hooks: in custom property mode every component value can be overwritten from any ancestor with a namespaced custom property, like `--spruce-btn-padding` or `--spruce-form-control-border-radius`. Controlled by the new `style-hooks` setting (default: `true`).
+- **NEW** Presets can ship fonts with a `font-faces` list. The Brutalist preset bundles Archivo and Archivo Black (`font/`, SIL OFL) with tuned `ascent-override`/`descent-override`, so uppercase labels are vertically centered; the Editorial preset bundles Fraunces for its headings and uses a sans-serif body. Set `font-path` to `null` to skip the `@font-face` rules.
+- **NEW** `generate-style()`, `generate-style-presets()` mixins and `style-rule-selector()` function. Preset rules stop at the boundary of a nested scope with a different style.
+- **NEW** `generate-variables()` mixin: `$hook` argument.
+
+### Dark mode (new)
+- **NEW** `dark-mode` content generator (off by default): generates the dark color custom properties, `color-scheme: dark` and the regenerated SVG field icons.
+- **NEW** `$default-dark-colors` map (a complete dark palette); your `$dark-colors` map is deep-merged into it.
+- **NEW** `dark-mode` setting (`selector`, `light-selector`, `prefers-color-scheme`) to follow the system preference too.
+- **NEW** `dark-mode()` mixin, which works at the root level and inside a rule.
+- **NEW** `generate-field-icons()` mixin to regenerate the select, checkbox, radio, switch and validation icons for any color map.
+
+### Elements
+- **NEW** `details` / `summary` styling (`details` generator, `$details` map).
+- **NEW** `dialog` styling with backdrop (`dialog` generator, `$dialog` map).
+- **NEW** `progress` (with indeterminate state) and `meter` styling (`progress` generator, `$progress` map). The tracks are flat in every browser (Firefox's default gradient on the meter is removed).
+- **NEW** `pre` code block styling and `pre code` reset, `kbd` with border, monospace font stack for `code`, `kbd`, `samp`, `pre`.
+- **NEW** `video` is responsive.
+- **NEW** `.sr-only-focusable` class.
+- **NEW** Opt-in text utilities (`'utilities': ('text': true)`): `.text-start`, `.text-center`, `.text-end`, `.text-sm`, `.text-lg`, `.text-muted`, `.text-mono`, `.text-uppercase`, `.text-balance`, `.text-pretty`, `.text-nowrap`, `.text-truncate`.
+- **NEW** Opt-in layout utilities (`'utilities': ('layout': true)`): `.l-center`, `.l-stack`, `.l-cluster`, `.l-grid`, `.l-sidebar`, `.l-switcher`, `.l-reel`, configurable with custom properties.
+
+### Buttons
+- **NEW** Variants: `.btn--danger`, `.btn--outline-danger`, `.btn--soft-{primary|secondary|danger}`, `.btn--ghost-{primary|secondary|danger}`, `.btn--link`.
+- **NEW** Modifiers: `.btn--pill`, `.btn--loading`, `.btn--disabled` / `[aria-disabled='true']` (it was documented but missing).
+- **NEW** `.btn-group` and `.btn-group--vertical` (`btn-group` generator, `generate-btn-group()` mixin).
+- **NEW** `btn-variant-soft()`, `btn-variant-ghost()`, `btn-variant-link()` mixins.
+- **NEW** `$btn` keys: `box-shadow`, `disabled-opacity`, `letter-spacing`, `line-height`.
+- **NEW** `generate-btn()` mixin: `$has-modifiers` argument.
+
+### Forms
+- **NEW** `.form-range--sm` and `.form-range--lg` (they were documented but missing), `$form-range-sm`, `$form-range-lg` maps.
+- **NEW** `.form-label--required` with the `required-content` and `required-gap` keys of `$form-label`; `$form-label` `line-height` key.
+- **NEW** Read-only state for `.form-control` (`background-readonly` form color, `null` by default).
+- **NEW** `$form-control` keys: `box-shadow`, `letter-spacing`.
+
+### Tables
+- **NEW** `.table--bordered`, `.table--middle`, `.table--sticky-header`.
+- **NEW** `$table` keys: `border-width`, `caption-text-align`, `heading-font-size`, `heading-font-weight`, `heading-letter-spacing`, `heading-text-transform`, `vertical-align`; `heading-background` table color.
+
+### Tokens, variables and settings
+- **NEW** `$shadows` map (`xs`, `sm`, `md`, `lg`, `xl`, `inner`), generated as `--spruce-shadow-*` in custom property mode.
+- **NEW** `$z-indexes` map.
+- **NEW** `$display` keys: `border-radius-md`, `border-radius-pill`, `border-width-base`.
+- **NEW** `$typography` keys: `blockquote-border-width`, `blockquote-font-size`, `blockquote-font-style`, `font-family-mono`, `font-size-code`, `font-weight-strong`, `letter-spacing-base`, `link-font-weight`, `link-text-decoration`, `link-text-decoration-hover`, `link-text-decoration-thickness`, `link-text-underline-offset`, `list-gap`, `pre-border-radius`, `pre-padding`, `text-transform-heading`, `text-wrap-base`, `text-wrap-heading`.
+- **NEW** `$divider` and `$media` maps.
+- **NEW** Colors: base `border-strong`, `focus-ring`, `kbd-border`, `muted`, `overlay`, `pre-background`, `pre-foreground`, `surface`, `surface-muted`; btn `danger-*`; form `background-readonly`, `progress-background`, `progress-foreground`, `required`; table `heading-background`.
+- **NEW** Settings: `accent-color`, `dark-mode`, `reduced-motion`, `scroll-margin`, `style-hooks`, `styles`, `utilities.layout`, `utilities.text`.
+- **NEW** Generators: content `dark-mode`, `details`, `dialog`, `progress`, `styles`; form `btn-group`.
+
+### Functions and mixins
+- **NEW** `shadow()`, `radius()`, `z-index()`, `color-alpha()`, `color-tint()` functions.
+- **NEW** `breakpoint-down()`, `breakpoint-between()`, `container-query()` mixins.
+- **NEW** `layout-cluster()`, `layout-switcher()`, `layout-reel()` mixins.
+- **NEW** `visually-hidden-focusable()`, `motion-safe()`, `motion-reduce()`, `cover()` mixins.
+- **IMPROVEMENT** `layout-flex()` mixin: accepts the `'m:l'` gap shorthand.
+- **IMPROVEMENT** `visually-hidden()` mixin: adds `clip-path: inset(50%)` next to the deprecated `clip`.
+
+### AI skills (new)
+- **NEW** The package ships agent skills in the `skills/` folder: `sprucecss`, `sprucecss-library` (use the Spruce UI components, blocks and pages from the online library), `sprucecss-styles`, `sprucecss-spacing` (spacing from the parent), `sprucecss-list-layout` (lists whose items sit side by side), `sprucecss-blocks` (block anatomy, components, pages, logical properties), `sprucecss-block-rhythm` (one background, one padding between the blocks of a page) and one design skill per style preset.
+
+### Bug fixes
+- **FIX** `$form-control-lg`, `$form-control-sm`, `$form-check-lg` used non-existing `size-lg` / `size-sm` typography keys, so their `font-size` was always `null`. Small and large inputs and large checkboxes now get their intended font sizes.
+- **FIX** `.form-check--sm` and `.form-check--lg` generated the `$form-control-sm/lg` variables instead of `$form-check-sm/lg` in custom property mode, so the size modifiers had no effect.
+- **FIX** `spacer('xs:m')` returned a list with a leading `null`.
+- **FIX** The large color input used the physical `height` property instead of `block-size` without the custom property mode.
+- **FIX** The switch icons used the `'true'` string instead of the `true` boolean when getting the raw color.
+- **FIX** `config()` printed the key name as a separate error before the real error message.
+
+### Changes in the default output
+These are visual changes with the default configuration; review them when you upgrade.
+- Headings use `text-wrap: balance` (set `'text-wrap-heading': null` in `$typography` to turn it off).
+- `code`, `kbd`, `samp`, `pre` use the `font-family-mono` stack instead of the browser's `monospace`.
+- `kbd` has a border and an inset shadow; `pre` has a background, padding and radius, and `pre code` no longer gets the inline code background.
+- `details`, `dialog`, `progress` and `meter` are styled. The selectors use `:where()`, so their specificity is zero and any of your existing styles win. Turn them off with the `details`, `dialog` and `progress` generators.
+- `html` gets `accent-color: color('primary')` for native controls (turn it off with the `accent-color` setting).
+- The small/large form control and checkbox fixes above change their sizes.
+- In custom property mode the component custom properties reference their hooks (`--spruce-padding: var(--spruce-btn-padding, 0.75em 1em)`); `figcaption`, links and lists use custom properties. The computed values are the same.
+
+### Tooling
+- Update every dependency; replace the unmaintained `npm-run-all` with `npm-run-all2`.
+- Replace Jest with the Node.js test runner (`node --test`); the Sass test suite works again and covers the new functions.
+- Add `sass` and `style` entry points to `package.json` (for `pkg:sprucecss` imports and CSS bundlers).
+- **NEW** `css/spruce.complete.css` and `css/spruce.complete.min.css`: a compiled bundle with every opt-in feature (dark mode, style presets, layout and text utilities) for plain CSS and CDN users.
+- The CI workflow runs the unit tests and the production build.
+- The preview got a style switcher, an overview page, a styles comparison page and pages for every new element, layout and utility.
+
 ## v2.3.5 (2026-03-11)
 
 ### What's Changed

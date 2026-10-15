@@ -5,7 +5,7 @@
 .alert {
   align-items: center;
   border: 1px solid;
-  border-left: 0.4rem solid;
+  border-inline-start: 0.4rem solid;
   border-radius: config('border-radius-sm', $display);
   display: flex;
   gap: spacer('m');

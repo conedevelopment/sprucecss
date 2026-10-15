@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use 'spacer' as *;
+
+$media: () !default;
+$media: map.merge(
+  (
+    'figcaption-font-size': null,
+    'figcaption-font-style': null,
+    'figcaption-margin-block-start': map.get($spacers, 'xs'),
+    'figcaption-text-align': center,
+    'img-border-radius': null,
+  ),
+  $media
+);

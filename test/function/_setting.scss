@@ -1,0 +1,23 @@
+@use 'true' as *;
+@use '../../scss/function/setting' as *;
+
+@include describe('setting()') {
+  @include it('returns a top-level setting') {
+    @include assert-equal(setting('prefix'), 'spruce');
+    @include assert-equal(setting('scaler'), 15);
+  }
+
+  @include it('returns the defaults of the new v3 settings') {
+    @include assert-true(setting('accent-color'));
+    @include assert-true(setting('style-hooks'));
+    @include assert-false(setting('reduced-motion'));
+    @include assert-equal(setting('scroll-margin'), null);
+  }
+
+  @include it('returns a nested setting with $group') {
+    @include assert-true(setting('display', 'utilities'));
+    @include assert-false(setting('layout', 'utilities'));
+    @include assert-equal(setting('attribute', 'styles'), 'data-spruce-style');
+    @include assert-equal(setting('selector', 'dark-mode'), ':root[data-theme-mode="dark"]');
+  }
+}

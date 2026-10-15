@@ -1,0 +1,82 @@
+@use 'true' as *;
+@use '../../scss/mixin/breakpoint' as *;
+
+@include describe('breakpoint()') {
+  @include it('outputs a min-width media query') {
+    @include assert {
+      @include output {
+        @include breakpoint('md') { color: red; }
+      }
+
+      @include expect {
+        @media (min-width: 64em) { color: red; }
+      }
+    }
+  }
+
+  @include it('adds the custom logic') {
+    @include assert {
+      @include output {
+        @include breakpoint('sm', 'screen') { color: red; }
+      }
+
+      @include expect {
+        @media screen and (min-width: 48em) { color: red; }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint-down()') {
+  @include it('outputs a max-width range media query') {
+    @include assert {
+      @include output {
+        @include breakpoint-down('lg') { color: red; }
+      }
+
+      @include expect {
+        @media (width < 80em) { color: red; }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint-between()') {
+  @include it('outputs a range between two breakpoints') {
+    @include assert {
+      @include output {
+        @include breakpoint-between('md', 'xl') { color: red; }
+      }
+
+      @include expect {
+        @media (64em <= width < 90em) { color: red; }
+      }
+    }
+  }
+}
+
+@include describe('container-query()') {
+  @include it('accepts a breakpoint name') {
+    @include assert {
+      @include output {
+        @include container-query('sm') { color: red; }
+      }
+
+      @include expect {
+        @container (inline-size > 48em) { color: red; }
+      }
+    }
+  }
+
+  @include it('accepts a size and a container name') {
+    @include assert {
+      @include output {
+        @include container-query(30rem, 'card') { color: red; }
+      }
+
+      @include expect {
+        @container card (inline-size > 30rem) { color: red; }
+      }
+    }
+  }
+}

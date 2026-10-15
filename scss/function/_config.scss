@@ -15,8 +15,7 @@
   $custom-property: true
 ) {
   @if not map.has-key($map, $key) {
-    @error $key;
-    @error 'The #{$key} key name doesn\'t exist under #{$map} at the specified map.';
+    @error 'The #{$key} key name doesn\'t exist at the specified map.';
   }
 
   @if map.get($map, $key) == null {

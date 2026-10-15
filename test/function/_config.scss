@@ -6,4 +6,21 @@
   @include it('should return "0.75em 1em" as the base padding for the button elements') {
     @include assert-equal(config('padding', $btn), 0.75em 1em);
   }
+
+  @include it('returns the raw value without the custom property mode') {
+    @include assert-equal(config('border-radius-lg', $display), 0.925rem);
+  }
+
+  @include it('returns the raw value with $custom-property: false') {
+    @include assert-equal(config('font-size', $btn-sm, false), 0.8rem);
+  }
+
+  @include it('returns null for a null key') {
+    @include assert-equal(config('font-family', $btn), null);
+  }
+
+  @include it('reads the fixed small and large form control font sizes') {
+    @include assert-equal(config('font-size', $form-control-sm), 0.875rem);
+    @include assert-equal(config('font-size', $form-control-lg), 1.125rem);
+  }
 }

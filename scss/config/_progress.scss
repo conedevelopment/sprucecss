@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use 'display' as *;
+
+$progress: () !default;
+$progress: map.merge(
+  (
+    'block-size': 0.5rem,
+    'border-radius': map.get($display, 'border-radius-pill'),
+  ),
+  $progress
+);

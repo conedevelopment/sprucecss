@@ -1,0 +1,198 @@
+@use 'true' as *;
+@use '../../scss/mixin/layout' as *;
+
+@include describe('layout-center()') {
+  @include it('centers the element with a maximum width') {
+    @include assert {
+      @include output {
+        @include layout-center('s', 60rem);
+      }
+
+      @include expect {
+        inline-size: 100%;
+        margin-inline: auto;
+        max-inline-size: 60rem;
+        padding-inline: 1rem;
+      }
+    }
+  }
+}
+
+@include describe('layout-stack()') {
+  @include it('adds a margin between the children') {
+    @include assert {
+      @include output {
+        @include layout-stack('s');
+      }
+
+      @include expect {
+        > * {
+          margin-block-end: 0;
+          margin-block-start: 0;
+        }
+
+        > * + * {
+          margin-block-start: 1rem;
+        }
+      }
+    }
+  }
+
+  @include it('aligns to the start and uses !important') {
+    @include assert {
+      @include output {
+        @include layout-stack(2rem, false, left, true);
+      }
+
+      @include expect {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        > * {
+          margin-block-end: 0;
+          margin-block-start: 0;
+        }
+
+        > * + * {
+          margin-block-start: 2rem !important;
+        }
+      }
+    }
+  }
+}
+
+@include describe('layout-grid()') {
+  @include it('creates an auto-fit grid') {
+    @include assert {
+      @include output {
+        @include layout-grid('s:m', 10rem);
+      }
+
+      @include expect {
+        display: grid;
+        gap: 1rem 1.5rem;
+
+        @supports (inline-size: min(10rem, 100%)) {
+          & {
+            grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('layout-sidebar()') {
+  @include it('creates a sidebar layout') {
+    @include assert {
+      @include output {
+        @include layout-sidebar('m', 15rem);
+      }
+
+      @include expect {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        & > :first-child {
+          flex-basis: 15rem;
+          flex-grow: 1;
+        }
+
+        & > :last-child {
+          flex-basis: 0;
+          flex-grow: 999;
+          min-inline-size: 50%;
+        }
+      }
+    }
+  }
+}
+
+@include describe('layout-flex()') {
+  @include it('accepts the colon shorthand for the gap') {
+    @include assert {
+      @include output {
+        @include layout-flex('xs:s', 12rem);
+      }
+
+      @include expect {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+
+        > * {
+          flex: 1 1 12rem;
+        }
+      }
+    }
+  }
+}
+
+@include describe('layout-cluster()') {
+  @include it('creates a wrapping cluster') {
+    @include assert {
+      @include output {
+        @include layout-cluster('xs', center, flex-start);
+      }
+
+      @include expect {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include describe('layout-switcher()') {
+  @include it('switches from a row to a column at the threshold') {
+    @include assert {
+      @include output {
+        @include layout-switcher(40rem, 's', 3);
+      }
+
+      @include expect {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        > * {
+          flex-basis: calc((40rem - 100%) * 999);
+          flex-grow: 1;
+        }
+
+        > :nth-last-child(n + 4),
+        > :nth-last-child(n + 4) ~ * {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include describe('layout-reel()') {
+  @include it('creates a scroll snapping row') {
+    @include assert {
+      @include output {
+        @include layout-reel(16rem, 's');
+      }
+
+      @include expect {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: inline mandatory;
+
+        > * {
+          flex: 0 0 16rem;
+          scroll-snap-align: start;
+        }
+      }
+    }
+  }
+}

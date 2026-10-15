@@ -1,0 +1,103 @@
+@use 'true' as *;
+@use '../../scss/config' as *;
+@use '../../scss/mixin/css-variable' as *;
+@use '../../scss/mixin/font-face' as *;
+@use '../../scss/mixin/selection' as *;
+@use '../../scss/mixin/transition' as *;
+
+@include describe('set-css-variable()') {
+  @include it('adds the prefix to the custom properties') {
+    @include assert {
+      @include output {
+        @include set-css-variable((--gap: 1rem, --size: 2rem));
+      }
+
+      @include expect {
+        --spruce-gap: 1rem;
+        --spruce-size: 2rem;
+      }
+    }
+  }
+}
+
+@include describe('font-face()') {
+  @include it('outputs a @font-face rule') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face('Inter', '/fonts/inter.woff2', 700, italic);
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-display: swap;
+          font-family: 'Inter';
+          font-style: italic;
+          font-weight: 700;
+          src: url('/fonts/inter.woff2') format('woff2');
+        }
+      }
+    }
+  }
+}
+
+@include describe('selection()') {
+  @include it('uses a base color and calculates the foreground') {
+    @include assert {
+      @include output {
+        @include selection('primary', $is-direct: true);
+      }
+
+      @include expect {
+        &::selection {
+          background-color: var(--spruce-base-color-primary);
+          color: hsl(0 0% 100%);
+        }
+      }
+    }
+  }
+
+  @include it('uses a raw color on the children') {
+    @include assert {
+      @include output {
+        @include selection(hsl(0deg 0% 100%));
+      }
+
+      @include expect {
+        ::selection {
+          background-color: hsl(0deg 0% 100%);
+          color: hsl(0 100% 0%);
+        }
+      }
+    }
+  }
+}
+
+@include describe('transition()') {
+  @include it('uses the default transition settings') {
+    @include assert {
+      @include output {
+        @include transition;
+      }
+
+      @include expect {
+        transition-duration: 0.15s;
+        transition-property: all;
+        transition-timing-function: ease-in-out;
+      }
+    }
+  }
+
+  @include it('accepts a list of properties') {
+    @include assert {
+      @include output {
+        @include transition(0.3s, 'opacity, transform', linear);
+      }
+
+      @include expect {
+        transition-duration: 0.3s;
+        transition-property: opacity, transform;
+        transition-timing-function: linear;
+      }
+    }
+  }
+}

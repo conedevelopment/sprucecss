@@ -1,0 +1,103 @@
+@use '../config' as *;
+@use '../function' as *;
+@use '../mixin' as *;
+
+@mixin generate-progress {
+  :where(progress, meter) {
+    @include generate-variables($progress, $hook: 'progress');
+
+    appearance: none;
+    background-color: color('progress-background', 'form');
+    // Firefox paints a gradient on the meter track; keep it flat.
+    background-image: none;
+    block-size: config('block-size', $progress);
+    border: 0;
+    border-radius: config('border-radius', $progress);
+    display: block;
+    inline-size: 100%;
+    overflow: hidden;
+  }
+
+  :where(progress) {
+    color: color('progress-foreground', 'form');
+
+    &::-webkit-progress-bar {
+      background-color: color('progress-background', 'form');
+    }
+
+    &::-webkit-progress-value {
+      background-color: color('progress-foreground', 'form');
+      border-radius: config('border-radius', $progress);
+      transition: inline-size config('duration', $transition) config('timing-function', $transition);
+    }
+
+    &::-moz-progress-bar {
+      background-color: color('progress-foreground', 'form');
+      border-radius: config('border-radius', $progress);
+    }
+
+    &:indeterminate {
+      background-image: linear-gradient(90deg, transparent 0%, #{color('progress-foreground', 'form')} 50%, transparent 100%);
+      background-repeat: no-repeat;
+      background-size: 40% 100%;
+
+      @include motion-safe {
+        animation: #{$internal-prefix}progress-indeterminate 1.5s ease-in-out infinite;
+      }
+
+      &::-webkit-progress-bar {
+        background-color: transparent;
+      }
+
+      &::-moz-progress-bar {
+        background-color: transparent;
+      }
+    }
+  }
+
+  :where(meter) {
+    &::-webkit-meter-bar {
+      background: color('progress-background', 'form');
+      block-size: 100%;
+      border: 0;
+      border-radius: config('border-radius', $progress);
+    }
+
+    &::-webkit-meter-optimum-value {
+      background: color('success', 'alert');
+      border-radius: config('border-radius', $progress);
+    }
+
+    &::-webkit-meter-suboptimum-value {
+      background: color('warning', 'alert');
+      border-radius: config('border-radius', $progress);
+    }
+
+    &::-webkit-meter-even-less-good-value {
+      background: color('danger', 'alert');
+      border-radius: config('border-radius', $progress);
+    }
+
+    &:-moz-meter-optimum::-moz-meter-bar {
+      background: color('success', 'alert');
+    }
+
+    &:-moz-meter-sub-optimum::-moz-meter-bar {
+      background: color('warning', 'alert');
+    }
+
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+      background: color('danger', 'alert');
+    }
+  }
+
+  @keyframes #{$internal-prefix}progress-indeterminate {
+    from {
+      background-position: -40% 0;
+    }
+
+    to {
+      background-position: 140% 0;
+    }
+  }
+}

@@ -11,6 +11,9 @@
           if (localStorage.getItem('spruce-theme-mode')) {
             document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
           }
+          if (localStorage.getItem('spruce-style')) {
+            document.documentElement.setAttribute('data-spruce-style', localStorage.getItem('spruce-style'));
+          }
         </script>
         {% include "partial/meta.html" %}
         <link rel="stylesheet" href="/css/main.css">
@@ -36,14 +39,23 @@
                                 </ul>
                             {% endif %}
                             <div class="form-group">
-                                <label class="form-label">Reading direction</label>
+                                <label class="form-label" for="style-switcher">Style</label>
+                                <select class="form-control form-control--sm" id="style-switcher">
+                                    <option value="">Default</option>
+                                    {% for style in styles %}
+                                        <option value="{{ style.name }}">{{ style.label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="reading-direction">Reading direction</label>
                                 <select class="form-control form-control--sm" id="reading-direction">
                                     <option value="ltr">LTR</option>
                                     <option value="rtl">RTL</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Theme mode</label>
+                                <label class="form-label" for="theme-mode">Theme mode</label>
                                 <select class="form-control form-control--sm" id="theme-mode">
                                     <option value="light">Light</option>
                                     <option value="dark">Dark</option>
@@ -64,8 +76,13 @@
             if (localStorage.getItem('spruce-theme-mode')) {
                 document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
             }
+            if (localStorage.getItem('spruce-style')) {
+                document.getElementById('style-switcher').value = localStorage.getItem('spruce-style');
+            }
         </script>
         <script src="/js/reading-direction.js"></script>
         <script src="/js/theme-mode.js"></script>
+        <script src="/js/style-switcher.js"></script>
+        <script src="/js/preview.js"></script>
     </body>
 </html>

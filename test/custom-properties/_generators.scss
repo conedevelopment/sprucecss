@@ -1,0 +1,315 @@
+@use 'true' as *;
+@use '../../scss/spruce' as *;
+
+@include describe('generate-root() in custom property mode') {
+  @include it('outputs the typography, display and shadow custom properties') {
+    @include assert {
+      @include output(false) {
+        @include generate-root;
+      }
+
+      @include contains-string('--spruce-shadow-xs: 0 1px 2px hsla(0, 0%, 0%, 0.05);');
+    }
+  }
+
+  @include it('outputs the media custom properties') {
+    @include assert {
+      @include output(false) {
+        @include generate-root;
+      }
+
+      @include contains-string('--spruce-figcaption-text-align: center;');
+    }
+  }
+
+  @include it('turns off the duration for reduced motion') {
+    @include assert {
+      @include output(false) {
+        @include generate-root;
+      }
+
+      @include contains-string('--spruce-duration: 0;');
+    }
+  }
+}
+
+@include describe('generate-btn() in custom property mode') {
+  @include it('outputs the hooked custom properties') {
+    @include assert {
+      @include output(false) {
+        @include generate-btn('.btn');
+      }
+
+      @include contains(false) {
+        .btn {
+          --spruce-padding: var(--spruce-btn-padding, 0.75em 1em);
+          --spruce-border-radius: var(--spruce-btn-border-radius, 0.425rem);
+          padding: var(--spruce-padding);
+          border-radius: var(--spruce-border-radius);
+        }
+
+        .btn--sm {
+          --spruce-padding: var(--spruce-btn-sm-padding, 0.5em 0.75em);
+        }
+
+        .btn--pill {
+          border-radius: var(--spruce-border-radius-pill);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-form-check() in custom property mode') {
+  @include it('uses the form check size maps (bug fix in v3)') {
+    @include assert {
+      @include output(false) {
+        @include generate-form-check('.form-check', '.form-check__control', '.form-check__label', true);
+      }
+
+      @include contains(false) {
+        .form-check--sm {
+          --spruce-font-size: var(--spruce-form-check-sm-font-size, 1rem);
+        }
+
+        .form-check--lg {
+          --spruce-font-size: var(--spruce-form-check-lg-font-size, 1.125rem);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-form-range() in custom property mode') {
+  @include it('sizes the range through custom properties') {
+    @include assert {
+      @include output(false) {
+        @include generate-form-range;
+      }
+
+      @include contains(false) {
+        .form-range--sm {
+          --spruce-thumb-block-size: var(--spruce-form-range-sm-thumb-block-size, 0.75rem);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-divider() in custom property mode') {
+  @include it('reads the divider hooks') {
+    @include assert {
+      @include output(false) {
+        @include generate-divider;
+      }
+
+      @include contains(false) {
+        hr {
+          --spruce-border-width: var(--spruce-divider-border-width, 1px);
+          border-block-start: var(--spruce-border-width) var(--spruce-border-style) var(--spruce-base-color-border, hsl(215, 63%, 93%));
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-utilities() with the opt-in groups') {
+  @include it('outputs the text utilities') {
+    @include assert {
+      @include output(false) {
+        @include generate-utilities;
+      }
+
+      @include contains(false) {
+        .text-center {
+          text-align: center;
+        }
+
+        .text-balance {
+          text-wrap: balance;
+        }
+
+        .text-truncate {
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @include it('outputs the layout utilities') {
+    @include assert {
+      @include output(false) {
+        @include generate-utilities;
+      }
+
+      @include contains(false) {
+        .l-stack {
+          --stack-gap: 1.5rem;
+        }
+
+        .l-stack > * + * {
+          margin-block-start: var(--stack-gap);
+        }
+
+        .l-cluster {
+          display: flex;
+          gap: var(--cluster-gap);
+        }
+
+        .l-reel {
+          scroll-snap-type: inline mandatory;
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-default() with the opt-in settings') {
+  @include it('adds the scroll margin to the target') {
+    @include assert {
+      @include output(false) {
+        @include generate-default;
+      }
+
+      @include contains(false) {
+        :target {
+          scroll-margin-block-start: 3rem;
+        }
+      }
+    }
+  }
+
+  @include it('turns off the animations for reduced motion') {
+    @include assert {
+      @include output(false) {
+        @include generate-default;
+      }
+
+      @include contains-string('animation-duration: 0.01ms !important;');
+    }
+  }
+}
+
+@include describe('generate-print() with the print setting') {
+  @include it('outputs the print styles') {
+    @include assert {
+      @include output(false) {
+        @include generate-print;
+      }
+
+      @include contains-string('@page');
+    }
+  }
+}
+
+@include describe('generate-dark-mode()') {
+  @include it('outputs the default dark palette under the dark selector') {
+    @include assert {
+      @include output(false) {
+        @include generate-dark-mode;
+      }
+
+      @include contains(false) {
+        :root[data-theme-mode='dark'] {
+          color-scheme: dark;
+          --spruce-base-color-background: hsl(206, 100%, 7%);
+        }
+      }
+    }
+  }
+
+  @include it('regenerates the field icons for the dark colors') {
+    @include assert {
+      @include output(false) {
+        @include generate-dark-mode;
+      }
+
+      @include contains-string(':root[data-theme-mode="dark"] select.form-control:not([multiple]):not([size])');
+    }
+  }
+}
+
+@include describe('generate-style()') {
+  @include it('expands the shorthands and sets the colors on the attribute scope') {
+    @include assert {
+      @include output(false) {
+        @include generate-style('test', (
+          'tokens': ('radius-sm': 0, 'btn-padding': 2em),
+          'colors': ('base': ('primary': hsl(0deg 100% 50%))),
+        ));
+      }
+
+      @include contains(false) {
+        [data-spruce-style='test'] {
+          --spruce-border-radius-sm: 0;
+          --spruce-btn-border-radius: 0;
+          --spruce-form-control-border-radius: 0;
+          --spruce-btn-padding: 2em;
+          --spruce-base-color-primary: hsl(0, 100%, 50%);
+          background-color: var(--spruce-base-color-background, hsl(0, 0%, 100%));
+        }
+      }
+    }
+  }
+
+  @include it('scopes the rules and stops them at a nested, different style') {
+    @include assert {
+      @include output(false) {
+        @include generate-style('test', ('rules': ('.btn': ('text-transform': uppercase))));
+      }
+
+      @include contains-string('.btn:not([data-spruce-style]:not([data-spruce-style="test"]) *)');
+    }
+  }
+
+  @include it('outputs the dark colors and rules in the dark mode context') {
+    @include assert {
+      @include output(false) {
+        @include generate-style('test', (
+          'colors': ('base': ('primary': red)),
+          'dark-colors': ('base': ('primary': blue)),
+          'dark-rules': ('&': ('color-scheme': dark)),
+        ));
+      }
+
+      @include contains-string(':root[data-theme-mode="dark"] [data-spruce-style="test"],');
+    }
+  }
+
+  @include it('accepts a custom scope') {
+    @include assert {
+      @include output(false) {
+        @include generate-style('test', ('tokens': ('shadow-md': none)), '.promo');
+      }
+
+      @include contains(false) {
+        .promo {
+          --spruce-shadow-md: none;
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-style-presets()') {
+  @include it('outputs every built-in preset') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains-string('[data-spruce-style="minimal"] {');
+    }
+  }
+
+  @include it('outputs the terminal preset') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains-string('[data-spruce-style="terminal"] {');
+    }
+  }
+}

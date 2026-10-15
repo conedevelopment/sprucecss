@@ -26,3 +26,58 @@
     @error 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
+
+/// Return a media query for a breakpoint based on max-width (below the breakpoint).
+/// @param {string} $breakpoint - The breakpoint name.
+/// @return {string} - The media query.
+/// @throws {error} - If the breakpoint doesn't exist.
+@mixin breakpoint-down($breakpoint) {
+  @if not map.has-key($breakpoints, $breakpoint) {
+    @error 'Invalid breakpoint: #{$breakpoint}.';
+  }
+
+  @media (width < #{map.get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+/// Return a media query between two breakpoints (min inclusive, max exclusive).
+/// @param {string} $min - The lower breakpoint name.
+/// @param {string} $max - The upper breakpoint name.
+/// @return {string} - The media query.
+/// @throws {error} - If any of the breakpoints doesn't exist.
+@mixin breakpoint-between(
+  $min,
+  $max
+) {
+  @if not map.has-key($breakpoints, $min) or not map.has-key($breakpoints, $max) {
+    @error 'Invalid breakpoint: #{$min} or #{$max}.';
+  }
+
+  @media (#{map.get($breakpoints, $min)} <= width < #{map.get($breakpoints, $max)}) {
+    @content;
+  }
+}
+
+/// Return a container query for a breakpoint name or any size value.
+/// @param {string|number} $size - The breakpoint name or a size value.
+/// @param {string} $name - The name of the container (optional).
+/// @return {string} - The container query.
+@mixin container-query(
+  $size,
+  $name: null
+) {
+  @if map.has-key($breakpoints, $size) {
+    $size: map.get($breakpoints, $size);
+  }
+
+  @if $name {
+    @container #{$name} (inline-size > #{$size}) {
+      @content;
+    }
+  } @else {
+    @container (inline-size > #{$size}) {
+      @content;
+    }
+  }
+}

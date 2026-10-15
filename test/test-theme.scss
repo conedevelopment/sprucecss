@@ -1,0 +1,36 @@
+// A custom prefix, a class-based dark mode that follows the system, the hooks off,
+// a default style, a font path, an include list and a project-defined style preset with a font face.
+@use '../scss/spruce' with (
+  $dark-colors: (
+    'base': (
+      'background': hsl(0deg 0% 3%),
+    ),
+  ),
+  $settings: (
+    'css-custom-properties': true,
+    'dark-mode': (
+      'light-selector': '.light',
+      'prefers-color-scheme': true,
+      'selector': '.dark',
+    ),
+    'prefix': 'sp',
+    'style-hooks': false,
+    'styles': (
+      'default': 'minimal',
+      'font-path': '/fonts/',
+      'include': ('soft', 'brand'),
+    ),
+  ),
+  $styles: (
+    'brand': (
+      'label': 'Brand',
+      'tokens': ('radius-lg': 2rem),
+      'colors': ('base': ('primary': hsl(330deg 80% 50%))),
+      'font-faces': (
+        ('font-family': 'Brand Sans', 'src': 'brand-sans.woff2', 'ascent-override': 90%),
+      ),
+    ),
+  ),
+);
+
+@forward 'theme';

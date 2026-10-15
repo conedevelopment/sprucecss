@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
 
-    @include generate-variables($form-fieldset);
+    @include generate-variables($form-fieldset, $hook: 'form-fieldset');
     @include layout-stack(config('layout-gap', $form-fieldset));
 
     + fieldset {

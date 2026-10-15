@@ -3,13 +3,13 @@
 @use '../config' as *;
 @use 'form' as *;
 
-
 /// Hide something from the screen but keep it visible for assistive technology.
 /// @return {mixin} - The visually hidden mixin.
 @mixin visually-hidden {
   block-size: 1px !important;
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
   inline-size: 1px !important;
   margin: -1px !important;
   overflow: hidden !important;
@@ -167,4 +167,36 @@
       $ring-offset: config('focus-ring-offset', $btn, false)
     );
   }
+}
+
+/// Visually hide an element until it (or an element inside it) gets the focus (like a skip link).
+/// @return {mixin} - The visually hidden focusable mixin.
+@mixin visually-hidden-focusable {
+  &:not(:focus, :focus-within) {
+    @include visually-hidden;
+  }
+}
+
+/// Apply the content only when the user doesn't prefer reduced motion.
+/// @return {mixin} - The motion safe media query.
+@mixin motion-safe {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+/// Apply the content only when the user prefers reduced motion.
+/// @return {mixin} - The motion reduce media query.
+@mixin motion-reduce {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+/// Make an element fill its positioned parent.
+/// @param {string} $position - The position value (absolute, fixed).
+/// @return {mixin} - The cover mixin.
+@mixin cover($position: absolute) {
+  inset: 0;
+  position: $position;
 }

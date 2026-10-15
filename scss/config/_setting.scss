@@ -3,17 +3,34 @@
 $settings: () !default;
 $settings: map.deep-merge(
   (
+    'accent-color': true,
     'color-fallback': false,
     'css-custom-properties': false,
+    'dark-mode': (
+      'light-selector': '[data-theme-mode="light"]',
+      'prefers-color-scheme': false,
+      'selector': ':root[data-theme-mode="dark"]',
+    ),
     'html-smooth-scrolling': true,
     'hyphens': true,
     'optimal-font-size': '2vw + 1rem',
     'optimal-spacer-size': '5vw',
     'prefix': 'spruce',
     'print': false,
+    'reduced-motion': false,
     'scaler': 15,
+    'scroll-margin': null,
+    'style-hooks': true,
+    'styles': (
+      'attribute': 'data-spruce-style',
+      'default': null,
+      'font-path': '../font/',
+      'include': null,
+    ),
     'utilities': (
       'display': true,
+      'layout': false,
+      'text': false,
       'typography': true,
     ),
   ),

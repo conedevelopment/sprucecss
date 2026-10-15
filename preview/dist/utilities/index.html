@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+          if (localStorage.getItem('spruce-style')) {
+            document.documentElement.setAttribute('data-spruce-style', localStorage.getItem('spruce-style'));
+          }
+        </script>
+        
+    
+
+
+
+
+
+
+
+
+
+<title>Utilities - Spruce CSS Preview</title>
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            
+                                <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/"
+                                                
+                                            >
+                                                Overview
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/styles/"
+                                                
+                                            >
+                                                Styles
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/color/"
+                                                
+                                            >
+                                                Color
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/typography/"
+                                                
+                                            >
+                                                Typography
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/table/"
+                                                
+                                            >
+                                                Table
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/media/"
+                                                
+                                            >
+                                                Media
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/button/"
+                                                
+                                            >
+                                                Button
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/form/"
+                                                
+                                            >
+                                                Form
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/details-and-dialog/"
+                                                
+                                            >
+                                                Details &amp; Dialog
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/progress/"
+                                                
+                                            >
+                                                Progress &amp; Meter
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/layout/"
+                                                
+                                            >
+                                                Layout
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/utilities/"
+                                                 aria-current="page" data-state="active"
+                                            >
+                                                Utilities
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/function/"
+                                                
+                                            >
+                                                Function
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/mixin/"
+                                                
+                                            >
+                                                Mixin
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/component/"
+                                                
+                                            >
+                                                Component
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="style-switcher">Style</label>
+                                <select class="form-control form-control--sm" id="style-switcher">
+                                    <option value="">Default</option>
+                                    
+                                        <option value="minimal">Minimal</option>
+                                    
+                                        <option value="brutalist">Brutalist</option>
+                                    
+                                        <option value="soft">Soft</option>
+                                    
+                                        <option value="glass">Glass</option>
+                                    
+                                        <option value="corporate">Corporate</option>
+                                    
+                                        <option value="playful">Playful</option>
+                                    
+                                        <option value="editorial">Editorial</option>
+                                    
+                                        <option value="terminal">Terminal</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="reading-direction">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="theme-mode">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        
+<p class="lead">Opt-in text utilities (<code>'utilities': ('text': true)</code>) and the always available accessibility helpers.</p>
+
+<h2 class="section-title">Text alignment</h2>
+<p class="text-start">.text-start — aligned to the start.</p>
+<p class="text-center">.text-center — centered.</p>
+<p class="text-end">.text-end — aligned to the end.</p>
+
+<h2 class="section-title">Text styles</h2>
+<p class="text-sm">.text-sm — a smaller text.</p>
+<p class="text-lg">.text-lg — a larger text.</p>
+<p class="text-muted">.text-muted — a secondary, muted text.</p>
+<p class="text-mono">.text-mono — monospace text.</p>
+<p class="text-uppercase">.text-uppercase — uppercase text.</p>
+
+<h2 class="section-title">Text wrapping</h2>
+<h3 class="text-balance">.text-balance — a long heading that is balanced over multiple lines for nicer reading</h3>
+<p class="text-pretty">.text-pretty — avoids orphans at the end of paragraphs. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor mi, vivamus bibendum erat lacus.</p>
+<p class="text-truncate">.text-truncate — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor mi, vivamus bibendum erat lacus, quis tincidunt urna dictum non.</p>
+<p class="text-nowrap">.text-nowrap — this text never wraps.</p>
+
+<h2 class="section-title">Accessibility</h2>
+<p>The next link is visible only on focus (<code>.sr-only-focusable</code>): <a class="sr-only-focusable" href="#main">Skip to content</a></p>
+<p>The next text is only for screen readers (<code>.sr-only</code>): <span class="sr-only">Hidden text</span></p>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+            if (localStorage.getItem('spruce-style')) {
+                document.getElementById('style-switcher').value = localStorage.getItem('spruce-style');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+        <script src="/js/style-switcher.js"></script>
+        <script src="/js/preview.js"></script>
+    </body>
+</html>

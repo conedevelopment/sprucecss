@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use 'spruce' as *;
 
 .colors {
@@ -34,47 +33,5 @@
 
   &__value {
     font-weight: 300;
-  }
-}
-
-@each $name, $value in map.get($colors, 'base') {
-  .color-item--base-#{$name} .color-item__color {
-    background-color: color($name, 'base');
-  }
-}
-
-@each $name, $value in map.get($colors, 'selection') {
-  .color-item--selection-#{$name} .color-item__color {
-    background-color: color($name, 'selection');
-  }
-}
-
-@each $name, $value in map.get($colors, 'alert') {
-  .color-item--alert-#{$name} .color-item__color {
-    background-color: color($name, 'alert');
-  }
-}
-
-@each $name, $value in map.get($colors, 'btn') {
-  .color-item--btn-#{$name} .color-item__color {
-    background-color: color($name, 'btn');
-  }
-}
-
-@each $name, $value in map.get($colors, 'form') {
-  .color-item--form-#{$name} .color-item__color {
-    background-color: color($name, 'form');
-  }
-}
-
-@each $name, $value in map.get($colors, 'table') {
-  .color-item--table-#{$name} .color-item__color {
-    background-color: color($name, 'table');
-  }
-}
-
-@each $name, $value in map.get($colors, 'scrollbar') {
-  .color-item--scrollbar-#{$name} .color-item__color {
-    background-color: color($name, 'scrollbar');
   }
 }

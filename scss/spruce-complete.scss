@@ -1,0 +1,18 @@
+// The complete bundle: every opt-in feature (dark mode, style presets, layout and text utilities) turned on.
+@use 'spruce' as * with (
+  $settings: (
+    'css-custom-properties': true,
+    'utilities': (
+      'layout': true,
+      'text': true,
+    ),
+  ),
+  $generators: (
+    'content': (
+      'dark-mode': true,
+      'styles': true,
+    ),
+  ),
+);
+
+@include generate-styles;

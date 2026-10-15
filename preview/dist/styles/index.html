@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+          if (localStorage.getItem('spruce-reading-direction')) {
+            document.documentElement.setAttribute('dir', localStorage.getItem('spruce-reading-direction'));
+          }
+          if (localStorage.getItem('spruce-theme-mode')) {
+            document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
+          }
+          if (localStorage.getItem('spruce-style')) {
+            document.documentElement.setAttribute('data-spruce-style', localStorage.getItem('spruce-style'));
+          }
+        </script>
+        
+    
+
+
+
+
+
+
+
+
+
+<title>Styles - Spruce CSS Preview</title>
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="l-main">
+            <div class="container">
+                <div class="l-main__inner">
+                    <aside class="l-main__sidebar">
+                        <div class="l-main__sidebar-inner">
+                            
+                                <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/"
+                                                
+                                            >
+                                                Overview
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/styles/"
+                                                 aria-current="page" data-state="active"
+                                            >
+                                                Styles
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/color/"
+                                                
+                                            >
+                                                Color
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/typography/"
+                                                
+                                            >
+                                                Typography
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/table/"
+                                                
+                                            >
+                                                Table
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/media/"
+                                                
+                                            >
+                                                Media
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/button/"
+                                                
+                                            >
+                                                Button
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/form/"
+                                                
+                                            >
+                                                Form
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/details-and-dialog/"
+                                                
+                                            >
+                                                Details &amp; Dialog
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/progress/"
+                                                
+                                            >
+                                                Progress &amp; Meter
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/layout/"
+                                                
+                                            >
+                                                Layout
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/utilities/"
+                                                
+                                            >
+                                                Utilities
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/function/"
+                                                
+                                            >
+                                                Function
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/mixin/"
+                                                
+                                            >
+                                                Mixin
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/component/"
+                                                
+                                            >
+                                                Component
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="style-switcher">Style</label>
+                                <select class="form-control form-control--sm" id="style-switcher">
+                                    <option value="">Default</option>
+                                    
+                                        <option value="minimal">Minimal</option>
+                                    
+                                        <option value="brutalist">Brutalist</option>
+                                    
+                                        <option value="soft">Soft</option>
+                                    
+                                        <option value="glass">Glass</option>
+                                    
+                                        <option value="corporate">Corporate</option>
+                                    
+                                        <option value="playful">Playful</option>
+                                    
+                                        <option value="editorial">Editorial</option>
+                                    
+                                        <option value="terminal">Terminal</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="reading-direction">Reading direction</label>
+                                <select class="form-control form-control--sm" id="reading-direction">
+                                    <option value="ltr">LTR</option>
+                                    <option value="rtl">RTL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="theme-mode">Theme mode</label>
+                                <select class="form-control form-control--sm" id="theme-mode">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="l-main__body">
+                        
+<h1>Styles</h1>
+<p class="lead">Every preset below renders the very same markup; only the <code>data-spruce-style</code> attribute differs. Styles can be scoped to any element, not just <code>&lt;html&gt;</code>.</p>
+
+<div class="style-grid">
+    <section class="style-card">
+        <header class="style-card__header">
+            <h2 class="style-card__title">Default</h2>
+            <p class="style-card__description">The Spruce CSS defaults, without any style attribute.</p>
+        </header>
+        <div class="style-card__body">
+            
+            
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="default-email">Email address</label>
+            <input class="form-control" id="default-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="default-plan">Plan</label>
+            <select class="form-control" id="default-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="default-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="default-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="default-range">Seats</label>
+            <input class="form-range" id="default-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+        </div>
+    </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Minimal <code>minimal</code></h2>
+                <p class="style-card__description">Quiet, monochrome and flat. Hairline borders, small radii, no decorative shadows; the content does the talking.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="minimal">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="minimal-email">Email address</label>
+            <input class="form-control" id="minimal-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="minimal-plan">Plan</label>
+            <select class="form-control" id="minimal-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="minimal-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="minimal-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="minimal-range">Seats</label>
+            <input class="form-range" id="minimal-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Brutalist <code>brutalist</code></h2>
+                <p class="style-card__description">Neo-brutalism: thick black outlines, hard offset shadows, zero radius, loud yellow and pink, uppercase labels.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="brutalist">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="brutalist-email">Email address</label>
+            <input class="form-control" id="brutalist-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="brutalist-plan">Plan</label>
+            <select class="form-control" id="brutalist-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="brutalist-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="brutalist-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="brutalist-range">Seats</label>
+            <input class="form-range" id="brutalist-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Soft <code>soft</code></h2>
+                <p class="style-card__description">Soft UI: generous rounding, pastel surfaces, pill-shaped buttons and large diffused shadows.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="soft">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="soft-email">Email address</label>
+            <input class="form-control" id="soft-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="soft-plan">Plan</label>
+            <select class="form-control" id="soft-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="soft-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="soft-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="soft-range">Seats</label>
+            <input class="form-range" id="soft-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Glass <code>glass</code></h2>
+                <p class="style-card__description">Glassmorphism: a soft pastel mesh backdrop seen through frosted, translucent and blurred surfaces.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="glass">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="glass-email">Email address</label>
+            <input class="form-control" id="glass-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="glass-plan">Plan</label>
+            <select class="form-control" id="glass-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="glass-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="glass-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="glass-range">Seats</label>
+            <input class="form-range" id="glass-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Corporate <code>corporate</code></h2>
+                <p class="style-card__description">Enterprise and dense: sharp 2px corners, a confident blue, neutral grays, bottom-lined inputs and clear focus states.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="corporate">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="corporate-email">Email address</label>
+            <input class="form-control" id="corporate-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="corporate-plan">Plan</label>
+            <select class="form-control" id="corporate-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="corporate-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="corporate-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="corporate-range">Seats</label>
+            <input class="form-range" id="corporate-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Playful <code>playful</code></h2>
+                <p class="style-card__description">Bubbly and vivid: rounded type, chunky 2px outlines, pill buttons with a pressable 3D lip and candy colors.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="playful">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="playful-email">Email address</label>
+            <input class="form-control" id="playful-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="playful-plan">Plan</label>
+            <select class="form-control" id="playful-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="playful-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="playful-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="playful-range">Seats</label>
+            <input class="form-range" id="playful-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Editorial <code>editorial</code></h2>
+                <p class="style-card__description">Magazine and print: Fraunces serif headings over clean sans-serif text, paper tones, hairline rules, small-caps labels and a single ink-red accent.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="editorial">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="editorial-email">Email address</label>
+            <input class="form-control" id="editorial-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="editorial-plan">Plan</label>
+            <select class="form-control" id="editorial-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="editorial-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="editorial-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="editorial-range">Seats</label>
+            <input class="form-range" id="editorial-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">Terminal <code>terminal</code></h2>
+                <p class="style-card__description">Retro command line: monospace everything, phosphor green on near-black, square corners, glowing text and prompt markers.</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="terminal">
+                
+                
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="terminal-email">Email address</label>
+            <input class="form-control" id="terminal-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="terminal-plan">Plan</label>
+            <select class="form-control" id="terminal-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="terminal-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="terminal-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="terminal-range">Seats</label>
+            <input class="form-range" id="terminal-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+            </div>
+        </section>
+    
+</div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem('spruce-reading-direction')) {
+                document.getElementById('reading-direction').value = localStorage.getItem('spruce-reading-direction');
+            }
+            if (localStorage.getItem('spruce-theme-mode')) {
+                document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
+            }
+            if (localStorage.getItem('spruce-style')) {
+                document.getElementById('style-switcher').value = localStorage.getItem('spruce-style');
+            }
+        </script>
+        <script src="/js/reading-direction.js"></script>
+        <script src="/js/theme-mode.js"></script>
+        <script src="/js/style-switcher.js"></script>
+        <script src="/js/preview.js"></script>
+    </body>
+</html>

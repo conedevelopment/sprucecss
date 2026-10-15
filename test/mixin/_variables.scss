@@ -1,0 +1,20 @@
+@use 'true' as *;
+@use '../../scss/mixin/variables' as *;
+
+@include describe('generate-variables()') {
+  @include it('should not output anything without the custom property mode') {
+    @include assert {
+      @include output {
+        .btn {
+          @include generate-variables(('padding': 1rem), $hook: 'btn');
+        }
+      }
+
+      @include expect {
+        .btn {
+          // nothing
+        }
+      }
+    }
+  }
+}

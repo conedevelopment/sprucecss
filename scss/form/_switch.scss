@@ -10,7 +10,7 @@
   $has-sizes: false
 ) {
   #{$parent} {
-    @include generate-variables($form-switch, ('focus-'));
+    @include generate-variables($form-switch, ('focus-'), $hook: 'form-switch');
     align-items: config('vertical-alignment', $form-switch);
     display: inline-flex;
     gap: spacer('xs');
@@ -31,7 +31,7 @@
 
   @if ($has-sizes) {
     #{$parent}--sm {
-      @include generate-variables($form-switch-sm);
+      @include generate-variables($form-switch-sm, $hook: 'form-switch-sm');
 
       @if not map.get($settings, 'css-custom-properties') {
         #{$input} {
@@ -41,7 +41,7 @@
     }
 
     #{$parent}--lg {
-      @include generate-variables($form-switch-lg);
+      @include generate-variables($form-switch-lg, $hook: 'form-switch-lg');
 
       @if not map.get($settings, 'css-custom-properties') {
         #{$input} {
@@ -53,7 +53,7 @@
 
   @at-root {
     #{$input} {
-      @include field-icon(config('switch', $form-icon, false), color('border', 'form', 'true'));
+      @include field-icon(config('switch', $form-icon, false), color('border', 'form', true));
       appearance: none;
       background-color: color('background', 'form');
       background-position: left center;
@@ -83,7 +83,7 @@
       }
 
       &:checked {
-        @include field-icon(config('switch', $form-icon, false), color('switch-foreground', 'form', 'true'));
+        @include field-icon(config('switch', $form-icon, false), color('switch-foreground', 'form', true));
         background-color: color('switch-background', 'form');
         background-position: right center;
         border-color: color('switch-background', 'form');

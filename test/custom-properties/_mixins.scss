@@ -1,0 +1,69 @@
+@use 'true' as *;
+@use '../../scss/spruce' as *;
+
+@include describe('generate-variables() in custom property mode') {
+  @include it('outputs the variables and skips the null values') {
+    @include assert {
+      @include output {
+        @include generate-variables(('gap': 1rem, 'unset': null));
+      }
+
+      @include expect {
+        --spruce-gap: 1rem;
+      }
+    }
+  }
+
+  @include it('reads the namespaced style hook first') {
+    @include assert {
+      @include output {
+        @include generate-variables(('padding': 1rem), $hook: 'card');
+      }
+
+      @include expect {
+        --spruce-padding: var(--spruce-card-padding, 1rem);
+      }
+    }
+  }
+
+  @include it('excludes the keys that match a fraction') {
+    @include assert {
+      @include output {
+        @include generate-variables(('focus-ring-size': 2px, 'gap': 1rem), ('focus-'));
+      }
+
+      @include expect {
+        --spruce-gap: 1rem;
+      }
+    }
+  }
+
+  @include it('includes only the keys that match a fraction') {
+    @include assert {
+      @include output {
+        @include generate-variables(('border-radius': 0, 'border-width': 1px, 'gap': 1rem), $include: ('border-'));
+      }
+
+      @include expect {
+        --spruce-border-radius: 0;
+        --spruce-border-width: 1px;
+      }
+    }
+  }
+}
+
+@include describe('transition() in custom property mode') {
+  @include it('uses the custom properties') {
+    @include assert {
+      @include output {
+        @include transition;
+      }
+
+      @include expect {
+        transition-duration: var(--spruce-duration);
+        transition-property: all;
+        transition-timing-function: var(--spruce-timing-function);
+      }
+    }
+  }
+}

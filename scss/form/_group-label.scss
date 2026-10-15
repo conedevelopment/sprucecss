@@ -4,7 +4,7 @@
 
 @mixin generate-form-group-label {
   .form-group-label {
-    @include generate-variables($form-control, $include: ('border-width', 'border-radius'));
+    @include generate-variables($form-control, $include: ('border-width', 'border-radius'), $hook: 'form-control');
     align-items: center;
     background-color: color('group-label-background', 'form');
     border: config('border-width', $form-control) solid color('border', 'form');

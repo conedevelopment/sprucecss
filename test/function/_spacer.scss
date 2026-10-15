@@ -1,0 +1,42 @@
+@use 'true' as *;
+@use '../../scss/config' as *;
+@use '../../scss/function/spacer' as *;
+
+@include describe('spacer()') {
+  @include it('should return a single spacer value') {
+    @include assert-equal(spacer('m'), 1.5rem);
+  }
+
+  @include it('should return two values with the colon shorthand') {
+    @include assert-equal(spacer('xs:m'), 0.5rem 1.5rem);
+  }
+
+  @include it('returns every default spacer') {
+    @include assert-equal(spacer('xxs'), 0.25rem);
+    @include assert-equal(spacer('xxxl'), 10rem);
+  }
+}
+
+@include describe('split-values()') {
+  @include it('splits a string at the colon') {
+    @include assert-equal(split-values('m:l'), ('m', 'l'));
+  }
+
+  @include it('uses a custom separator') {
+    @include assert-equal(split-values('m/l', '/'), ('m', 'l'));
+  }
+
+  @include it('returns null without a separator') {
+    @include assert-equal(split-values('m'), null);
+  }
+}
+
+@include describe('spacer-clamp()') {
+  @include it('should return a clamp() with the spacer values') {
+    @include assert-equal('#{spacer-clamp('m', 'l')}', 'clamp(1.5rem, 5vw, 3rem)');
+  }
+
+  @include it('accepts raw values and a custom optimal size') {
+    @include assert-equal('#{spacer-clamp(2rem, 'xl', '3vw')}', 'clamp(2rem, 3vw, 4.5rem)');
+  }
+}

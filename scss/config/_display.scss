@@ -4,7 +4,10 @@ $display: () !default;
 $display: map.merge(
   (
     'border-radius-lg': 0.925rem,
+    'border-radius-md': 0.675rem,
+    'border-radius-pill': 62.5rem,
     'border-radius-sm': 0.425rem,
+    'border-width-base': 1px,
   ),
   $display
 );

@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use 'display' as *;
+@use 'spacer' as *;
+
+$dialog: () !default;
+$dialog: map.merge(
+  (
+    'backdrop-filter': none,
+    'border-radius': map.get($display, 'border-radius-lg'),
+    'border-width': 1px,
+    'inline-size': 40rem,
+    'padding': map.get($spacers, 'm'),
+  ),
+  $dialog
+);

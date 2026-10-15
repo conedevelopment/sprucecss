@@ -1,0 +1,49 @@
+@use 'true' as *;
+@use '../../scss/config' as *;
+@use '../../scss/function/color' as *;
+
+@include describe('color()') {
+  @include it('returns the custom property of a base color') {
+    @include assert-equal(color('primary'), var(--spruce-base-color-primary));
+  }
+
+  @include it('returns the custom property of a color from another group') {
+    @include assert-equal(color('danger', 'alert'), var(--spruce-alert-color-danger));
+  }
+
+  @include it('returns the raw color with $only-color') {
+    @include assert-equal(color('primary', $only-color: true), $color-primary);
+  }
+
+  @include it('returns null for a null color') {
+    @include assert-equal(color('background-readonly', 'form'), null);
+  }
+
+  @include it('reads the colors from a custom map') {
+    @include assert-equal(color('background', 'base', true, ('base': ('background': hsl(0deg 0% 0%)))), hsl(0deg 0% 0%));
+  }
+}
+
+@include describe('color-value()') {
+  @include it('returns the raw color value') {
+    @include assert-equal(color-value('primary-background', 'btn'), $color-primary);
+  }
+
+  @include it('returns null for a null color') {
+    @include assert-equal(color-value('heading-background', 'table'), null);
+  }
+}
+
+@include describe('color-contrast()') {
+  @include it('returns white for a dark color') {
+    @include assert-equal(color-contrast(hsl(0deg 0% 5%)), hsl(0 0% 100%));
+  }
+
+  @include it('returns black for a light color') {
+    @include assert-equal(color-contrast(hsl(0deg 0% 100%)), hsl(0 100% 0%));
+  }
+
+  @include it('returns white for the default primary color') {
+    @include assert-equal(color-contrast($color-primary), hsl(0 0% 100%));
+  }
+}

@@ -1,0 +1,32 @@
+---
+title: "Styles"
+layout: "layout/base.html"
+---
+
+<h1>Styles</h1>
+<p class="lead">Every preset below renders the very same markup; only the <code>data-spruce-style</code> attribute differs. Styles can be scoped to any element, not just <code>&lt;html&gt;</code>.</p>
+
+<div class="style-grid">
+    <section class="style-card">
+        <header class="style-card__header">
+            <h2 class="style-card__title">Default</h2>
+            <p class="style-card__description">The Spruce CSS defaults, without any style attribute.</p>
+        </header>
+        <div class="style-card__body">
+            {% set uid = 'default' %}
+            {% include "partial/sample.html" %}
+        </div>
+    </section>
+    {% for style in styles %}
+        <section class="style-card">
+            <header class="style-card__header">
+                <h2 class="style-card__title">{{ style.label }} <code>{{ style.name }}</code></h2>
+                <p class="style-card__description">{{ style.description }}</p>
+            </header>
+            <div class="style-card__body" data-spruce-style="{{ style.name }}">
+                {% set uid = style.name %}
+                {% include "partial/sample.html" %}
+            </div>
+        </section>
+    {% endfor %}
+</div>

@@ -1,7 +1,7 @@
 {
   "name": "sprucecss",
-  "version": "2.3.5",
-  "description": "Spruce CSS - Another CSS Framework",
+  "version": "3.0.0",
+  "description": "Spruce CSS - A modern, customizable, Sass-powered CSS framework with swappable design styles",
   "keywords": [
     "css",
     "css-framework",
@@ -10,9 +10,16 @@
     "responsive",
     "sass",
     "sass-framework",
-    "web"
+    "web",
+    "design-system",
+    "design-tokens",
+    "css-custom-properties",
+    "dark-mode",
+    "themes"
   ],
   "type": "module",
+  "style": "css/spruce.css",
+  "sass": "scss/spruce.scss",
   "author": "Cone (https://conedevelopment.com)",
   "homepage": "https://sprucecss.com",
   "repository": {
@@ -26,31 +33,28 @@
     "autoprefixer": "postcss css/*.css -u autoprefixer --replace --no-map",
     "delete:dev-folder": "del-cli --force css",
     "eleventy:serve": "npx eleventy --serve",
-    "prod": "npm-run-all delete:dev-folder sass:prod:expanded sass:prod:compressed autoprefixer",
-    "sass:preview": "sass --watch --update --style=expanded --no-source-map preview/src/scss:preview/src/css --load-path=scss",
-    "sass:prod:expanded": "sass --no-source-map --style=expanded scss/spruce-styles.scss:css/spruce.css",
-    "sass:prod:compressed": "sass --no-source-map --style=compressed scss/spruce-styles.scss:css/spruce.min.css",
+    "prod": "npm-run-all delete:dev-folder sass:prod:expanded sass:prod:compressed sass:prod:complete sass:prod:complete:compressed autoprefixer",
     "sass:lint": "stylelint scss/**/*.scss",
     "sass:lint:fix": "stylelint scss/**/*.scss --fix",
+    "sass:preview": "sass --watch --update --style=expanded --no-source-map preview/src/scss:preview/src/css --load-path=scss",
+    "sass:prod:complete": "sass --no-source-map --style=expanded scss/spruce-complete.scss:css/spruce.complete.css",
+    "sass:prod:complete:compressed": "sass --no-source-map --style=compressed scss/spruce-complete.scss:css/spruce.complete.min.css",
+    "sass:prod:compressed": "sass --no-source-map --style=compressed scss/spruce-styles.scss:css/spruce.min.css",
+    "sass:prod:expanded": "sass --no-source-map --style=expanded scss/spruce-styles.scss:css/spruce.css",
     "start": "npm-run-all --parallel sass:preview eleventy:serve",
-    "test": "jest"
+    "test": "node --test test/*.test.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "autoprefixer": "^10.4.27",
+    "@11ty/eleventy": "^3.1.6",
+    "autoprefixer": "^10.6.1",
     "del-cli": "^7.0.0",
-    "jest": "^30.3.0",
-    "jest-environment-node-single-context": "^29.4.0",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^11.0.1",
-    "sass": "^1.98.0",
+    "npm-run-all2": "^9.0.3",
+    "postcss-cli": "^12.0.0",
+    "sass": "^1.105.1",
     "sass-true": "^10.1.0",
-    "stylelint": "^17.4.0",
+    "stylelint": "^17.16.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
-    "stylelint-order": "^8.0.0"
-  },
-  "jest": {
-    "testEnvironment": "jest-environment-node-single-context"
+    "stylelint-order": "^8.1.1"
   }
 }

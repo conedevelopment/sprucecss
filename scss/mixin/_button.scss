@@ -124,3 +124,102 @@
     }
   }
 }
+
+/// Generate a ghost (transparent) button variant. The hover background is a translucent mix of the variant's color.
+/// @param {string} $type - The type of the button for the color value.
+/// @param {boolean} $focus - If the focus ring should be generated.
+/// @return {string} - The generated ghost button variant.
+/// @throws {error} - If the color key doesn't exist.
+@mixin btn-variant-ghost(
+  $type: 'primary',
+  $focus: true
+) {
+  @if not map.has-key($colors, 'btn', $type + '-background') {
+    @error 'The #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
+  }
+
+  $foreground: color($type + '-background', 'btn');
+
+  @if map.has-key($colors, 'btn', $type + '-ghost-foreground') {
+    $foreground: color($type + '-ghost-foreground', 'btn');
+  }
+
+  @include btn-focus-helper($type, $focus);
+
+  background-color: transparent;
+  border-color: transparent;
+  color: $foreground;
+
+  &:hover {
+    @if map.has-key($colors, 'btn', $type + '-ghost-background-hover') {
+      background-color: color($type + '-ghost-background-hover', 'btn');
+    } @else {
+      background-color: color-mix(in srgb, #{color($type + '-background', 'btn')} 12%, transparent);
+    }
+
+    border-color: transparent;
+    color: $foreground;
+  }
+}
+
+/// Generate a soft (tinted) button variant. The background is a light mix of the variant's color.
+/// @param {string} $type - The type of the button for the color value.
+/// @param {boolean} $focus - If the focus ring should be generated.
+/// @return {string} - The generated soft button variant.
+/// @throws {error} - If the color key doesn't exist.
+@mixin btn-variant-soft(
+  $type: 'primary',
+  $focus: true
+) {
+  @if not map.has-key($colors, 'btn', $type + '-background') {
+    @error 'The #{$type + '-background'} key name doesn\'t exist under btn at the $colors map.';
+  }
+
+  $foreground: color($type + '-background', 'btn');
+
+  @if map.has-key($colors, 'btn', $type + '-soft-foreground') {
+    $foreground: color($type + '-soft-foreground', 'btn');
+  }
+
+  @include btn-focus-helper($type, $focus);
+
+  border-color: transparent;
+  color: $foreground;
+
+  @if map.has-key($colors, 'btn', $type + '-soft-background') {
+    background-color: color($type + '-soft-background', 'btn');
+  } @else {
+    background-color: color-mix(in srgb, #{color($type + '-background', 'btn')} 14%, transparent);
+  }
+
+  &:hover {
+    @if map.has-key($colors, 'btn', $type + '-soft-background-hover') {
+      background-color: color($type + '-soft-background-hover', 'btn');
+    } @else {
+      background-color: color-mix(in srgb, #{color($type + '-background', 'btn')} 24%, transparent);
+    }
+
+    border-color: transparent;
+    color: $foreground;
+  }
+}
+
+/// Generate a button that looks like a link but keeps the button's sizing.
+/// @param {boolean} $focus - If the focus ring should be generated.
+/// @return {string} - The generated link button variant.
+@mixin btn-variant-link(
+  $focus: true
+) {
+  @include btn-focus-helper('primary', $focus);
+
+  background-color: transparent;
+  border-color: transparent;
+  color: color('link');
+  text-decoration: underline;
+
+  &:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: color('link-hover');
+  }
+}

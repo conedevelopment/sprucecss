@@ -1,0 +1,8 @@
+@use 'true' as *;
+@use '../../scss/function/css-variable' as *;
+
+@include describe('get-css-variable()') {
+  @include it('adds the prefix and wraps the name in var()') {
+    @include assert-equal(get-css-variable(--section-gap), var(--spruce-section-gap));
+  }
+}

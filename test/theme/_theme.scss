@@ -1,0 +1,175 @@
+@use 'sass:map';
+@use 'true' as *;
+@use '../../scss/spruce' as *;
+
+@include describe('the prefix setting') {
+  @include it('changes the custom property names') {
+    @include assert-equal(color('primary'), var(--sp-base-color-primary));
+    @include assert-equal(config('border-radius-sm', $display), var(--sp-border-radius-sm));
+    @include assert-equal(shadow('lg'), var(--sp-shadow-lg));
+  }
+
+  @include it('is used by the CSS variable helpers') {
+    @include assert-equal(get-css-variable(--gap), var(--sp-gap));
+  }
+}
+
+@include describe('generate-variables() with the hooks turned off') {
+  @include it('outputs the plain values') {
+    @include assert {
+      @include output {
+        @include generate-variables(('padding': 1rem), $hook: 'btn');
+      }
+
+      @include expect {
+        --sp-padding: 1rem;
+      }
+    }
+  }
+}
+
+@include describe('dark-mode() with custom settings') {
+  @include it('uses the custom dark mode selector') {
+    @include assert {
+      @include output(false) {
+        @include dark-mode {
+          .logo { opacity: 0.8; }
+        }
+      }
+
+      @include contains(false) {
+        .dark .logo { opacity: 0.8; }
+      }
+    }
+  }
+
+  @include it('follows the system preference unless the light mode is chosen') {
+    @include assert {
+      @include output(false) {
+        @include dark-mode {
+          .logo { opacity: 0.8; }
+        }
+      }
+
+      @include contains-string(':root:not(.light) .logo');
+    }
+  }
+}
+
+@include describe('generate-dark-mode() with a custom palette') {
+  @include it('merges $dark-colors into the default dark palette') {
+    @include assert {
+      @include output(false) {
+        @include generate-dark-mode;
+      }
+
+      @include contains(false) {
+        .dark {
+          --sp-base-color-background: hsl(0, 0%, 3%);
+          --sp-base-color-primary: hsl(261, 54%, 70%);
+        }
+      }
+    }
+  }
+
+  @include it('adds the prefers-color-scheme media query') {
+    @include assert {
+      @include output(false) {
+        @include generate-dark-mode;
+      }
+
+      @include contains-string('@media (prefers-color-scheme: dark)');
+    }
+  }
+}
+
+@include describe('generate-style-presets() with the style settings') {
+  @include it('applies the default style to :root') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets($scoped: false);
+      }
+
+      @include contains(false) {
+        :root {
+          --sp-btn-font-weight: 500;
+          --sp-border-radius-lg: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @include it('scopes the default style rules away from the attribute scopes') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets($scoped: false);
+      }
+
+      @include contains-string(':root a:not([data-spruce-style] *)');
+    }
+  }
+
+  @include it('generates the included presets') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains-string('[data-spruce-style="soft"] {');
+    }
+  }
+
+  @include it('generates a project-defined preset') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains(false) {
+        [data-spruce-style='brand'] {
+          --sp-border-radius-lg: 2rem;
+          --sp-dialog-border-radius: 2rem;
+          --sp-base-color-primary: hsl(330, 80%, 50%);
+        }
+      }
+    }
+  }
+
+  @include it('outputs the font faces of a generated preset under the font path') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains-string('src: url("/fonts/brand-sans.woff2") format("woff2");');
+    }
+  }
+
+  @include it('keeps the descriptors of a font face') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains-string('ascent-override: 90%;');
+    }
+  }
+
+  @include it('outputs the style dark palette with the custom dark selector') {
+    @include assert {
+      @include output(false) {
+        @include generate-style-presets;
+      }
+
+      @include contains-string('.dark [data-spruce-style="soft"],');
+    }
+  }
+}
+
+@include describe('the merged $styles map') {
+  @include it('keeps the built-in presets next to the custom one') {
+    @include assert-true(map.has-key($styles, 'brutalist'));
+    @include assert-true(map.has-key($styles, 'terminal'));
+    @include assert-true(map.has-key($styles, 'brand'));
+  }
+}

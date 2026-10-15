@@ -1,0 +1,16 @@
+@use 'true' as *;
+@use '../../scss/mixin/theme' as *;
+
+@include describe('style-rule-selector()') {
+  @include it('adds the exclusion to every selector of a list') {
+    @include assert-equal('#{style-rule-selector('.btn, h1', '.x *')}', '.btn:not(.x *), h1:not(.x *)');
+  }
+
+  @include it('inserts the exclusion before a pseudo-element') {
+    @include assert-equal('#{style-rule-selector('h1::before', '.x *')}', 'h1:not(.x *)::before');
+  }
+
+  @include it('keeps the parent selector as it is') {
+    @include assert-equal('#{style-rule-selector('&', '.x *')}', '&');
+  }
+}

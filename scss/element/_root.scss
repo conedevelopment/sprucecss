@@ -13,6 +13,16 @@
 
     @if map.get($generators, 'content', 'display') {
       @include generate-variables($display);
+
+      @if setting('css-custom-properties') {
+        @each $key, $value in $shadows {
+          --#{$internal-prefix}shadow-#{$key}: #{$value};
+        }
+      }
+    }
+
+    @if map.get($generators, 'content', 'media') {
+      @include generate-variables($media);
     }
 
     @if map.get($generators, 'content', 'layout') {

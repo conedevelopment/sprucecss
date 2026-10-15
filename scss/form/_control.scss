@@ -11,12 +11,13 @@
 ) {
   #{$selector} {
     --webkit-date-line-height: 1.375;
-    @include generate-variables($form-control, ('focus-'));
+    @include generate-variables($form-control, ('focus-'), $hook: 'form-control');
 
     appearance: none;
     background-color: color('background', 'form');
     border: config('border-width', $form-control) solid color('border', 'form');
     border-radius: config('border-radius', $form-control);
+    box-shadow: config('box-shadow', $form-control);
     box-sizing: border-box;
     color: color('text', 'form');
     display: block;
@@ -24,6 +25,7 @@
     font-size: config('font-size', $form-control);
     font-weight: config('font-weight', $form-control);
     inline-size: 100%;
+    letter-spacing: config('letter-spacing', $form-control);
     line-height: config('line-height', $form-control);
     padding: config('padding', $form-control);
     transition-duration: config('duration', $transition);
@@ -50,7 +52,7 @@
     }
 
     &[type='color'] {
-      @include generate-variables($form-control-color);
+      @include generate-variables($form-control-color, $hook: 'form-control-color');
       aspect-ratio: config('aspect-ratio', $form-control-color);
       block-size: config('block-size', $form-control-color);
       inline-size: config('inline-size', $form-control-color);
@@ -69,6 +71,10 @@
         border: 0;
         border-radius: config('border-radius', $form-control);
       }
+    }
+
+    &[readonly] {
+      background-color: color('background-readonly', 'form');
     }
 
     &[disabled],
@@ -136,10 +142,10 @@
     @if ($has-sizes) {
       &--sm {
         --webkit-date-line-height: 1.36;
-        @include generate-variables($form-control-sm);
+        @include generate-variables($form-control-sm, $hook: 'form-control-sm');
 
         &[type='color'] {
-          @include generate-variables($form-control-color-sm);
+          @include generate-variables($form-control-color-sm, $hook: 'form-control-color-sm');
         }
 
         @if not map.get($settings, 'css-custom-properties') {
@@ -157,10 +163,10 @@
 
       &--lg {
         --webkit-date-line-height: 1.387;
-        @include generate-variables($form-control-lg);
+        @include generate-variables($form-control-lg, $hook: 'form-control-lg');
 
         &[type='color'] {
-          @include generate-variables($form-control-color-lg);
+          @include generate-variables($form-control-color-lg, $hook: 'form-control-color-lg');
         }
 
         @if not map.get($settings, 'css-custom-properties') {
@@ -169,7 +175,7 @@
 
           &[type='color'] {
             aspect-ratio: config('aspect-ratio', $form-control-color-lg);
-            height: config('block-size', $form-control-color-lg);
+            block-size: config('block-size', $form-control-color-lg);
             inline-size: config('inline-size', $form-control-color-lg);
             padding: config('padding', $form-control-color-lg);
           }

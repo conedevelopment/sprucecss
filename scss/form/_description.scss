@@ -5,7 +5,7 @@
 
 @mixin generate-form-description {
   .form-description {
-    @include generate-variables($form-description);
+    @include generate-variables($form-description, $hook: 'form-description');
 
     color: color('text', 'form');
     display: block;

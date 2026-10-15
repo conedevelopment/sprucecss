@@ -11,7 +11,7 @@
   $has-sizes: false
 ) {
   #{$parent} {
-    @include generate-variables($form-check, ('focus-'));
+    @include generate-variables($form-check, ('focus-'), $hook: 'form-check');
 
     align-items: config('vertical-alignment', $form-check);
     display: inline-flex;
@@ -28,18 +28,22 @@
 
   @if ($has-sizes) {
     #{$parent}--sm {
-      @include generate-variables($form-control-sm);
+      @include generate-variables($form-check-sm, $hook: 'form-check-sm');
 
-      #{$input} {
-        font-size: config('font-size', $form-check-sm);
+      @if not map.get($settings, 'css-custom-properties') {
+        #{$input} {
+          font-size: config('font-size', $form-check-sm);
+        }
       }
     }
 
     #{$parent}--lg {
-      @include generate-variables($form-control-lg);
+      @include generate-variables($form-check-lg, $hook: 'form-check-lg');
 
-      #{$input} {
-        font-size: config('font-size', $form-check-lg);
+      @if not map.get($settings, 'css-custom-properties') {
+        #{$input} {
+          font-size: config('font-size', $form-check-lg);
+        }
       }
     }
   }

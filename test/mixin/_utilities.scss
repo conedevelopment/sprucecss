@@ -1,0 +1,243 @@
+@use 'true' as *;
+@use '../../scss/mixin/utilities' as *;
+
+@include describe('visually-hidden()') {
+  @include it('hides the element visually') {
+    @include assert {
+      @include output {
+        @include visually-hidden;
+      }
+
+      @include expect {
+        block-size: 1px !important;
+        border: 0 !important;
+        clip: rect(0, 0, 0, 0) !important;
+        clip-path: inset(50%) !important;
+        inline-size: 1px !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        white-space: nowrap !important;
+      }
+    }
+  }
+}
+
+@include describe('visually-hidden-focusable()') {
+  @include it('hides the element only while it is not focused') {
+    @include assert {
+      @include output {
+        @include visually-hidden-focusable;
+      }
+
+      @include contains {
+        &:not(:focus, :focus-within) {
+          clip-path: inset(50%) !important;
+          position: absolute !important;
+        }
+      }
+    }
+  }
+}
+
+@include describe('text-ellipsis()') {
+  @include it('crops a single line') {
+    @include assert {
+      @include output {
+        @include text-ellipsis;
+      }
+
+      @include expect {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @include it('crops multiple lines with line-clamp') {
+    @include assert {
+      @include output {
+        @include text-ellipsis(3);
+      }
+
+      @include expect {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: inherit;
+
+        @supports (-webkit-line-clamp: 3) {
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+        }
+      }
+    }
+  }
+}
+
+@include describe('scrollbar()') {
+  @include it('styles the webkit scrollbar with the given values') {
+    @include assert {
+      @include output {
+        @include scrollbar(red, blue, green, 1rem, 0);
+      }
+
+      @include expect {
+        &::-webkit-scrollbar {
+          block-size: 1rem;
+          inline-size: 1rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: red;
+          border-radius: 0;
+
+          &:hover {
+            background: blue;
+          }
+        }
+
+        &::-webkit-scrollbar-track {
+          background: green;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+@include describe('clear-btn()') {
+  @include it('resets the button styles') {
+    @include assert {
+      @include output {
+        @include clear-btn;
+      }
+
+      @include expect {
+        background: none;
+        border: 0;
+        color: inherit;
+        cursor: pointer;
+        font: inherit;
+        outline: inherit;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include describe('clear-list()') {
+  @include it('resets the list styles') {
+    @include assert {
+      @include output {
+        @include clear-list;
+      }
+
+      @include expect {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include describe('a11y-card-link()') {
+  @include it('stretches the link over the card') {
+    @include assert {
+      @include output {
+        @include a11y-card-link('.card__link');
+      }
+
+      @include expect {
+        position: relative;
+
+        .card__link::before {
+          content: '';
+          inset: 0;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+@include describe('word-wrap()') {
+  @include it('breaks long words') {
+    @include assert {
+      @include output {
+        @include word-wrap;
+      }
+
+      @include expect {
+        hyphens: auto;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        word-break: break-word;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@include describe('short-ring()') {
+  @include it('outputs the input focus ring') {
+    @include assert {
+      @include output {
+        @include short-ring('input');
+      }
+
+      @include expect {
+        border-color: var(--spruce-form-color-border-focus);
+        box-shadow: 0 0 0 0.25rem var(--spruce-form-color-ring-focus);
+        outline: 2px solid transparent;
+      }
+    }
+  }
+
+  @include it('outputs the button focus ring') {
+    @include assert {
+      @include output {
+        @include short-ring('button', 'secondary');
+      }
+
+      @include expect {
+        outline: 2px solid var(--spruce-btn-color-secondary-background);
+        outline-offset: 2px;
+      }
+    }
+  }
+}
+
+@include describe('motion-safe() and motion-reduce()') {
+  @include it('wraps the content in the reduced motion media queries') {
+    @include assert {
+      @include output {
+        @include motion-safe { transition: none; }
+        @include motion-reduce { animation: none; }
+      }
+
+      @include expect {
+        @media (prefers-reduced-motion: no-preference) { transition: none; }
+        @media (prefers-reduced-motion: reduce) { animation: none; }
+      }
+    }
+  }
+}
+
+@include describe('cover()') {
+  @include it('fills the positioned parent') {
+    @include assert {
+      @include output {
+        @include cover(fixed);
+      }
+
+      @include expect {
+        inset: 0;
+        position: fixed;
+      }
+    }
+  }
+}

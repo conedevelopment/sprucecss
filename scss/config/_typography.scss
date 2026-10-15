@@ -1,28 +1,47 @@
 @use 'sass:map';
 @use 'sass:math';
 @use 'display' as *;
+@use 'spacer' as *;
 
 $typography: () !default;
 $typography: map.merge(
   (
+    'blockquote-border-width': 0.5rem,
+    'blockquote-font-size': null,
+    'blockquote-font-style': null,
     'border-radius': map.get($display, 'border-radius-sm'),
     'font-family-base': #{Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
     'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
     'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
+    'font-family-mono': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
     'font-size-base': 1rem,
+    'font-size-code': null,
     'font-size-lead': clamp(1.15rem, 2vw, 1.35rem),
     'font-size-lg': 1.125rem,
     'font-size-ratio': 1.25,
     'font-size-sm': 0.875rem,
     'font-weight-base': null,
     'font-weight-heading': 700,
+    'font-weight-strong': null,
     'inline-padding': 0.1em 0.3em,
+    'letter-spacing-base': null,
     'letter-spacing-heading': null,
-    'line-height-base': 1.8,
+    'line-height-base': 1.5,
     'line-height-heading': calc(2px + 2ex + 2px),
     'line-height-lg': 1.8,
     'line-height-md': 1.5,
     'line-height-sm': 1.2,
+    'link-font-weight': null,
+    'link-text-decoration': underline,
+    'link-text-decoration-hover': null,
+    'link-text-decoration-thickness': null,
+    'link-text-underline-offset': null,
+    'list-gap': map.get($spacers, 'xxs'),
+    'pre-border-radius': map.get($display, 'border-radius-sm'),
+    'pre-padding': map.get($spacers, 's'),
+    'text-transform-heading': null,
+    'text-wrap-base': null,
+    'text-wrap-heading': balance,
   ),
   $typography
 );

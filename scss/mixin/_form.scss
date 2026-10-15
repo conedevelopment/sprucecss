@@ -70,7 +70,7 @@
     @error 'The #{$breakpoint} not exists in the breakpoints map.';
   }
 
-  @include generate-variables($form-control, $include: ('border-radius'));
+  @include generate-variables($form-control, $include: ('border-radius'), $hook: 'form-control');
   display: flex;
   flex-direction: column;
 

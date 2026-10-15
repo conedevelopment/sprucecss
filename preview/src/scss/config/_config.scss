@@ -23,14 +23,6 @@ $spacer: 1.25rem;
       'tertiary-foreground': hsl(0deg 0% 100%),
       'tertiary-shadow-focus': color.adjust($color-tertiary, $alpha: -0.75),
     ),
-    form: (
-      'check-background': red,
-      'check-focus-ring': olive,
-      'check-foreground': aqua,
-      'switch-background': pink,
-      'switch-focus-ring': blue,
-      'switch-foreground': yellow,
-    ),
   ),
   $dark-colors: dark.$colors,
   $form-select: (
@@ -43,8 +35,12 @@ $spacer: 1.25rem;
     'hyphens': true,
     'prefix': 'spruce26',
     'print': true,
+    'reduced-motion': true,
     'scaler': 25,
+    'scroll-margin': 2rem,
     'utilities': (
+      'layout': true,
+      'text': true,
       'typography': true,
     ),
   ),
@@ -67,14 +63,16 @@ $spacer: 1.25rem;
   ),
   $generators: (
     'content': (
+      'dark-mode': true,
       'normalize': true,
+      'styles': true,
     ),
     'form': (
       'btn': true,
     ),
   ),
   $layout: (
-    'container-inline-size': 70rem,
+    'container-inline-size': 100rem,
   ),
   $typography: (
     'letter-spacing-heading': 0.05em,

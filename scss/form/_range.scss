@@ -1,10 +1,42 @@
+@use 'sass:map';
 @use '../config' as *;
 @use '../function' as *;
 @use '../mixin' as *;
 
-@mixin generate-form-range {
+/// Output the track and thumb sizing declarations for a range map (used by the sizes without custom properties).
+/// @param {map} $map - The range map.
+@mixin range-size($map) {
+  margin-block-start: calc(#{map.get($map, 'thumb-block-size')} / 2 - #{map.get($map, 'track-block-size')} / 2);
+
+  &::-webkit-slider-runnable-track {
+    block-size: map.get($map, 'track-block-size');
+    border-radius: map.get($map, 'track-border-radius');
+  }
+
+  &::-moz-range-track {
+    block-size: map.get($map, 'track-block-size');
+    border-radius: map.get($map, 'track-border-radius');
+  }
+
+  &::-webkit-slider-thumb {
+    block-size: map.get($map, 'thumb-block-size');
+    border-radius: map.get($map, 'thumb-border-radius');
+    inline-size: map.get($map, 'thumb-inline-size');
+    margin-block-start: calc(#{map.get($map, 'track-block-size')} / 2 - #{map.get($map, 'thumb-block-size')} / 2);
+  }
+
+  &::-moz-range-thumb {
+    block-size: map.get($map, 'thumb-block-size');
+    border-radius: map.get($map, 'thumb-border-radius');
+    inline-size: map.get($map, 'thumb-inline-size');
+  }
+}
+
+@mixin generate-form-range(
+  $has-sizes: true
+) {
   .form-range {
-    @include generate-variables($form-range);
+    @include generate-variables($form-range, $hook: 'form-range');
     appearance: none;
     margin-block-start: calc(#{config('thumb-block-size', $form-range)} / 2 - #{config('track-block-size', $form-range)} / 2);
 
@@ -66,6 +98,24 @@
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
+    }
+
+    @if $has-sizes {
+      &--sm {
+        @include generate-variables($form-range-sm, $hook: 'form-range-sm');
+
+        @if not map.get($settings, 'css-custom-properties') {
+          @include range-size($form-range-sm);
+        }
+      }
+
+      &--lg {
+        @include generate-variables($form-range-lg, $hook: 'form-range-lg');
+
+        @if not map.get($settings, 'css-custom-properties') {
+          @include range-size($form-range-lg);
+        }
+      }
     }
   }
 }

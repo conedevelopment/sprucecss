@@ -5,13 +5,20 @@
 $table: () !default;
 $table: map.merge(
   (
+    'border-width': 1px,
     'caption-font-size': null,
     'caption-font-style': null,
     'caption-font-weight': null,
+    'caption-text-align': null,
+    'heading-font-size': null,
+    'heading-font-weight': null,
+    'heading-letter-spacing': null,
+    'heading-text-transform': null,
     'line-height': map.get($typography, 'line-height-md'),
     'padding': map.get($spacers, 's'),
     'responsive-inline-size': 40rem,
     'stripe': odd,
+    'vertical-align': null,
   ),
   $table
 );

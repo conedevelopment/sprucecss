@@ -1,0 +1,366 @@
+@use 'true' as *;
+@use '../../scss/element' as *;
+@use '../../scss/print' as *;
+
+@include describe('generate-accessibility()') {
+  @include it('outputs the screen reader helpers') {
+    @include assert {
+      @include output(false) {
+        @include generate-accessibility;
+      }
+
+      @include contains(false) {
+        .sr-only {
+          clip-path: inset(50%) !important;
+          position: absolute !important;
+        }
+
+        .sr-only-focusable:not(:focus, :focus-within) {
+          position: absolute !important;
+        }
+
+        [tabindex='-1']:focus {
+          outline: none !important;
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-default()') {
+  @include it('outputs the base element styles') {
+    @include assert {
+      @include output(false) {
+        @include generate-default;
+      }
+
+      @include contains(false) {
+        html {
+          box-sizing: border-box;
+          accent-color: var(--spruce-base-color-primary);
+        }
+
+        body {
+          background: var(--spruce-base-color-background);
+          color: var(--spruce-base-color-text);
+        }
+
+        a {
+          color: var(--spruce-base-color-link);
+          text-decoration: underline;
+        }
+
+        a:hover {
+          color: var(--spruce-base-color-link-hover);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-divider()') {
+  @include it('outputs the hr style') {
+    @include assert {
+      @include output(false) {
+        @include generate-divider;
+      }
+
+      @include expect(false) {
+        hr {
+          border: 0;
+          border-block-start: 1px solid var(--spruce-base-color-border);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-media()') {
+  @include it('outputs responsive media and figure captions') {
+    @include assert {
+      @include output(false) {
+        @include generate-media;
+      }
+
+      @include contains(false) {
+        img {
+          block-size: auto;
+          display: block;
+          max-inline-size: 100%;
+        }
+
+        video {
+          block-size: auto;
+          max-inline-size: 100%;
+        }
+
+        figure figcaption {
+          margin-block-start: 0.5rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-root()') {
+  @include it('outputs the color custom properties on :root') {
+    @include assert {
+      @include output(false) {
+        @include generate-root;
+      }
+
+      @include contains-string('--spruce-base-color-primary: hsl(262, 71%, 49%);');
+    }
+  }
+
+  @include it('outputs the new v3 colors') {
+    @include assert {
+      @include output(false) {
+        @include generate-root;
+      }
+
+      @include contains-string('--spruce-base-color-surface: hsl(0, 0%, 100%);');
+    }
+  }
+}
+
+@include describe('generate-table()') {
+  @include it('outputs the table and its modifiers') {
+    @include assert {
+      @include output(false) {
+        @include generate-table;
+      }
+
+      @include contains(false) {
+        .table {
+          border-collapse: collapse;
+          inline-size: 100%;
+        }
+
+        .table th,
+        .table td {
+          border-block-end: 1px solid var(--spruce-table-color-border);
+          padding: 1rem;
+        }
+
+        .table--striped > tbody > tr:nth-child(odd) {
+          background-color: var(--spruce-table-color-stripe);
+        }
+
+        .table--bordered th,
+        .table--bordered td {
+          border: 1px solid var(--spruce-table-color-border);
+        }
+
+        .table--middle th,
+        .table--middle td {
+          vertical-align: middle;
+        }
+
+        .table--sticky-header thead th {
+          inset-block-start: 0;
+          position: sticky;
+        }
+
+        .table--sm th,
+        .table--sm td {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @include it('accepts a custom selector without variations') {
+    @include assert {
+      @include output(false) {
+        @include generate-table('.content table', false, false);
+      }
+
+      @include contains(false) {
+        .content table {
+          border-collapse: collapse;
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-typography()') {
+  @include it('outputs the typography styles') {
+    @include assert {
+      @include output(false) {
+        @include generate-typography;
+      }
+
+      @include contains(false) {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: var(--spruce-base-color-heading);
+          text-wrap: balance;
+        }
+
+        kbd {
+          border: 1px solid var(--spruce-base-color-kbd-border);
+        }
+
+        pre {
+          background-color: var(--spruce-base-color-pre-background);
+          overflow-x: auto;
+          padding: 1rem;
+        }
+
+        pre code {
+          background-color: transparent;
+          padding: 0;
+        }
+
+        .lead {
+          font-size: clamp(1.15rem, 2vw, 1.35rem);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-utilities()') {
+  @include it('outputs the default utilities') {
+    @include assert {
+      @include output(false) {
+        @include generate-utilities;
+      }
+
+      @include contains(false) {
+        .hidden,
+        [hidden] {
+          display: none !important;
+        }
+
+        .h5 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-print()') {
+  @include it('outputs nothing while the print setting is off') {
+    @include assert {
+      @include output {
+        @include generate-print;
+      }
+
+      @include expect {
+        // nothing
+      }
+    }
+  }
+}
+
+@include describe('generate-details()') {
+  @include it('styles the details and summary elements with zero specificity') {
+    @include assert {
+      @include output(false) {
+        @include generate-details;
+      }
+
+      @include contains(false) {
+        :where(details) {
+          border: 1px solid var(--spruce-base-color-border);
+          border-radius: 0.425rem;
+        }
+
+        :where(details) > summary {
+          cursor: pointer;
+          list-style: none;
+          padding: 1rem;
+        }
+
+        :where(details)[open] > summary::after {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+
+  @include it('animates the content where auto sizes can transition') {
+    @include assert {
+      @include output(false) {
+        @include generate-details;
+      }
+
+      @include contains-string('@supports (interpolate-size: allow-keywords)');
+    }
+  }
+
+  @include it('opens the content to its auto size') {
+    @include assert {
+      @include output(false) {
+        @include generate-details;
+      }
+
+      @include contains-string(':where(details)[open]::details-content');
+    }
+  }
+
+  @include it('accepts a custom selector') {
+    @include assert {
+      @include output(false) {
+        @include generate-details('.accordion');
+      }
+
+      @include contains-string(':where(.accordion) > summary');
+    }
+  }
+}
+
+@include describe('generate-dialog()') {
+  @include it('styles the dialog and its backdrop') {
+    @include assert {
+      @include output(false) {
+        @include generate-dialog;
+      }
+
+      @include contains(false) {
+        :where(dialog) {
+          border-radius: 0.925rem;
+          padding: 1.5rem;
+        }
+
+        :where(dialog)::backdrop {
+          background-color: var(--spruce-base-color-overlay, hsla(205, 100%, 2%, 0.55));
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-progress()') {
+  @include it('styles the progress and meter elements') {
+    @include assert {
+      @include output(false) {
+        @include generate-progress;
+      }
+
+      @include contains(false) {
+        :where(progress, meter) {
+          block-size: 0.5rem;
+          inline-size: 100%;
+        }
+
+        :where(progress)::-webkit-progress-value {
+          background-color: var(--spruce-form-color-progress-foreground);
+        }
+
+        :where(meter)::-webkit-meter-optimum-value {
+          background: var(--spruce-alert-color-success);
+        }
+      }
+    }
+  }
+}

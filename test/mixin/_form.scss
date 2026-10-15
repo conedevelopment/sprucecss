@@ -1,0 +1,101 @@
+@use 'true' as *;
+@use '../../scss/function' as *;
+@use '../../scss/config' as *;
+@use '../../scss/mixin/form' as *;
+
+@include describe('focus-ring()') {
+  @include it('outputs a box-shadow ring') {
+    @include assert {
+      @include output {
+        @include focus-ring('box-shadow', blue, red, outset, 3px);
+      }
+
+      @include expect {
+        border-color: blue;
+        box-shadow: 0 0 0 3px red;
+        outline: 2px solid transparent;
+      }
+    }
+  }
+
+  @include it('outputs an inset box-shadow ring') {
+    @include assert {
+      @include output {
+        @include focus-ring('box-shadow', null, red, 'inset', 2px);
+      }
+
+      @include expect {
+        box-shadow: 0 0 0 2px red inset;
+        outline: 2px solid transparent;
+      }
+    }
+  }
+
+  @include it('outputs an outline ring') {
+    @include assert {
+      @include output {
+        @include focus-ring('outline', null, red, outset, 2px, 4px);
+      }
+
+      @include expect {
+        outline: 2px solid red;
+        outline-offset: 4px;
+      }
+    }
+  }
+}
+
+@include describe('field-disabled()') {
+  @include it('outputs the disabled field styles') {
+    @include assert {
+      @include output {
+        @include field-disabled(gray, silver);
+      }
+
+      @include expect {
+        background-color: gray;
+        border-color: silver;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@include describe('field-icon()') {
+  @include it('outputs the colored SVG as a background image') {
+    @include assert {
+      @include output {
+        @include field-icon('<svg><path style="fill:#COLOR#;"/></svg>', red);
+      }
+
+      @include expect {
+        background-image: url('data:image/svg+xml,%3csvg%3e%3cpath style="fill:red;"/%3e%3c/svg%3e');
+      }
+    }
+  }
+}
+
+@include describe('form-group-stacked()') {
+  @include it('stacks the items and switches to a row at the breakpoint') {
+    @include assert {
+      @include output {
+        @include form-group-stacked('md');
+      }
+
+      @include contains {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  @include it('switches to a row at the breakpoint') {
+    @include assert {
+      @include output {
+        @include form-group-stacked('md');
+      }
+
+      @include contains-string('@media (min-width: 64em)');
+    }
+  }
+}

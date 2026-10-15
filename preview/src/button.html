@@ -7,11 +7,58 @@ layout: "layout/base.html"
 <div class="preview-group">
     <button class="btn btn--primary">Primary</button>
     <button class="btn btn--secondary">Secondary</button>
+    <button class="btn btn--danger">Danger</button>
 </div>
 <h3 class="section-title">Outline</h3>
 <div class="preview-group">
     <button class="btn btn--outline-primary">Primary outline</button>
     <button class="btn btn--outline-secondary">Secondary outline</button>
+    <button class="btn btn--outline-danger">Danger outline</button>
+</div>
+<h3 class="section-title">Soft</h3>
+<div class="preview-group">
+    <button class="btn btn--soft-primary">Primary soft</button>
+    <button class="btn btn--soft-secondary">Secondary soft</button>
+    <button class="btn btn--soft-danger">Danger soft</button>
+</div>
+<h3 class="section-title">Ghost</h3>
+<div class="preview-group">
+    <button class="btn btn--ghost-primary">Primary ghost</button>
+    <button class="btn btn--ghost-secondary">Secondary ghost</button>
+    <button class="btn btn--ghost-danger">Danger ghost</button>
+</div>
+<h3 class="section-title">Link</h3>
+<div class="preview-group">
+    <button class="btn btn--link">Looks like a link</button>
+</div>
+<h3 class="section-title">Pill</h3>
+<div class="preview-group">
+    <button class="btn btn--primary btn--pill btn--sm">Small pill</button>
+    <button class="btn btn--primary btn--pill">Pill</button>
+    <button class="btn btn--outline-primary btn--pill btn--lg">Large pill</button>
+</div>
+<h3 class="section-title">Loading</h3>
+<div class="preview-group">
+    <button class="btn btn--primary btn--loading" aria-busy="true">Saving</button>
+    <button class="btn btn--outline-primary btn--loading" aria-busy="true">Saving</button>
+    <button class="btn btn--secondary" data-toggle-loading>Click to load</button>
+</div>
+<h3 class="section-title">Group</h3>
+<div class="preview-group">
+    <div class="btn-group" role="group" aria-label="Text alignment">
+        <button class="btn btn--outline-primary" aria-pressed="true">Left</button>
+        <button class="btn btn--outline-primary">Center</button>
+        <button class="btn btn--outline-primary">Right</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Actions">
+        <button class="btn btn--primary">Save</button>
+        <button class="btn btn--primary">Save as…</button>
+    </div>
+    <div class="btn-group btn-group--vertical" role="group" aria-label="Vertical group">
+        <button class="btn btn--outline-secondary">Top</button>
+        <button class="btn btn--outline-secondary">Middle</button>
+        <button class="btn btn--outline-secondary">Bottom</button>
+    </div>
 </div>
 <h3 class="section-title">Sizes</h3>
 <div class="preview-group">
@@ -23,6 +70,12 @@ layout: "layout/base.html"
 <div class="preview-group">
     <button class="btn btn--primary" disabled="disabled">Save</button>
     <button class="btn btn--secondary" disabled="disabled">Save</button>
+    <a class="btn btn--primary btn--disabled" aria-disabled="true">Disabled link</a>
+</div>
+<h3 class="section-title">Block</h3>
+<div class="l-stack" style="--stack-gap: 0.5rem;">
+    <button class="btn btn--primary btn--block">Block button</button>
+    <button class="btn btn--outline-primary btn--block">Block button</button>
 </div>
 <h3 class="section-title">Shadow button</h3>
 <div class="preview-group">

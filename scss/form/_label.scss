@@ -9,8 +9,14 @@
     font-size: map.get($form-label, 'font-size');
     font-style: map.get($form-label, 'font-style');
     font-weight: map.get($form-label, 'font-weight');
-    line-height: map.get($typography, 'line-height-md');
+    line-height: if(sass(map.get($form-label, 'line-height')): map.get($form-label, 'line-height'); else: map.get($typography, 'line-height-md'));
     text-align: map.get($form-label, 'text-align');
     text-transform: map.get($form-label, 'text-transform');
+  }
+
+  .form-label--required::after {
+    color: color('required', 'form');
+    content: '#{map.get($form-label, 'required-content')}';
+    margin-inline-start: map.get($form-label, 'required-gap');
   }
 }

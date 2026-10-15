@@ -1,0 +1,16 @@
+// The CSS custom property mode with the opt-in settings turned on.
+@use '../scss/spruce' with (
+  $settings: (
+    'color-fallback': true,
+    'css-custom-properties': true,
+    'print': true,
+    'reduced-motion': true,
+    'scroll-margin': 3rem,
+    'utilities': (
+      'layout': true,
+      'text': true,
+    ),
+  ),
+);
+
+@forward 'custom-properties';

@@ -1,0 +1,295 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:selector';
+@use 'sass:string';
+@use '../function' as *;
+@use '../config' as *;
+@use 'color' as *;
+
+/// Output the content in dark mode context, based on the `dark-mode` settings.
+/// Use it at the root level (with nested rules) or inside a rule (with declarations).
+/// @param {string} $scope - An optional scope selector (like a style attribute). Without it, the content goes directly under the dark mode selector.
+/// @return {mixin} - The dark mode wrapped content.
+@mixin dark-mode($scope: null) {
+  $selector: setting('selector', 'dark-mode');
+  $light-selector: setting('light-selector', 'dark-mode');
+  $targets: ($selector,);
+
+  @if $scope and $scope != ':root' {
+    $targets: ('#{$selector} #{$scope}', '#{$selector}#{$scope}');
+  }
+
+  @if & {
+    $nested: ();
+
+    @each $target in $targets {
+      $nested: list.append($nested, selector.nest($target, &), $separator: comma);
+    }
+
+    @at-root #{$nested} {
+      @content;
+    }
+  } @else {
+    #{$targets} {
+      @content;
+    }
+  }
+
+  @if setting('prefers-color-scheme', 'dark-mode') {
+    $media-selector: ':root:not(#{$light-selector})';
+    $media-targets: ($media-selector,);
+
+    @if $scope and $scope != ':root' {
+      $media-targets: ('#{$media-selector} #{$scope}', '#{$media-selector}#{$scope}');
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @if & {
+        $nested: ();
+
+        @each $target in $media-targets {
+          $nested: list.append($nested, selector.nest($target, &), $separator: comma);
+        }
+
+        @at-root #{$nested} {
+          @content;
+        }
+      } @else {
+        #{$media-targets} {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+/// Output the color custom properties of a color map as declarations (inside a rule).
+/// @param {map} $colors - The colors map.
+/// @return {mixin} - The custom property declarations.
+@mixin color-declarations($colors) {
+  @each $key, $value in $colors {
+    @each $name, $color in $value {
+      @if $color {
+        --#{$internal-prefix}#{$key}-color-#{$name}: #{$color};
+      }
+    }
+  }
+}
+
+/// Generate the dark mode: the dark color custom properties, the color scheme and the regenerated field icons.
+/// @param {map} $colors - The dark colors map (default: `$dark-colors` deep-merged into `$default-dark-colors`).
+/// @return {mixin} - The dark mode styles.
+@mixin generate-dark-mode(
+  $colors: map.deep-merge($default-dark-colors, $dark-colors)
+) {
+  @include dark-mode {
+    @include color-declarations($colors);
+    color-scheme: dark;
+
+    @include generate-field-icons($colors, '&');
+  }
+}
+
+/// Make the rule selectors of a style stop at the boundary of a nested, different style scope.
+/// @param {string} $selectors - The (comma separated) selectors.
+/// @param {string} $exclusion - The selector of the elements to leave out (with their descendants).
+/// @return {string} - The modified selectors.
+@function style-rule-selector(
+  $selectors,
+  $exclusion
+) {
+  $result: ();
+
+  @each $part in string.split($selectors, ',') {
+    @while string.index($part, ' ') == 1 {
+      $part: string.slice($part, 2);
+    }
+
+    $pseudo-index: string.index($part, '::');
+
+    @if string.index($part, '&') {
+      $result: list.append($result, $part, $separator: comma);
+    } @else if $pseudo-index {
+      $result: list.append($result, '#{string.slice($part, 1, $pseudo-index - 1)}:not(#{$exclusion})#{string.slice($part, $pseudo-index)}', $separator: comma);
+    } @else {
+      $result: list.append($result, '#{$part}:not(#{$exclusion})', $separator: comma);
+    }
+  }
+
+  @return list.join($result, (), $separator: comma);
+}
+
+/// Output a rules map (selector => declarations).
+/// @param {map} $rules - The rules map.
+/// @param {string} $exclusion - The selector of the elements to leave out.
+@mixin style-rules(
+  $rules,
+  $exclusion
+) {
+  @each $selector, $declarations in $rules {
+    #{style-rule-selector($selector, $exclusion)} {
+      @each $property, $value in $declarations {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
+
+/// Generate one style preset (design style) under a scope.
+/// @param {string} $name - The name of the style.
+/// @param {map} $style - The style map (tokens, colors, dark-colors, rules, dark-rules).
+/// @param {string} $scope - The scope selector. Default: the style attribute selector, like [data-spruce-style="brutalist"].
+/// @return {mixin} - The style declarations.
+/// @throws {error} - If the CSS custom property mode is turned off.
+@mixin generate-style(
+  $name,
+  $style,
+  $scope: null
+) {
+  @if not setting('css-custom-properties') {
+    @error 'The style presets work through CSS custom properties; please set the `css-custom-properties` setting to `true`.';
+  }
+
+  $attribute: setting('attribute', 'styles');
+
+  @if not $scope {
+    $scope: '[#{$attribute}="#{$name}"]';
+  }
+
+  // The rules and icons don't leak into a nested scope with a different style.
+  $exclusion: '[#{$attribute}]:not([#{$attribute}="#{$name}"]) *';
+
+  @if $scope == ':root' {
+    $exclusion: '[#{$attribute}] *';
+  }
+
+  @each $group in ('colors', 'dark-colors') {
+    @if map.get($style, $group) {
+      @each $type, $values in map.get($style, $group) {
+        @each $key, $value in $values {
+          @if not map.has-key($colors, $type, $key) {
+            @warn 'The #{$name} style sets the #{$type}.#{$key} color, which doesn\'t exist in $colors, so nothing uses it. Add it to $colors first.';
+          }
+        }
+      }
+    }
+  }
+
+  $tokens: map.get($style, 'tokens');
+  $colors: map.get($style, 'colors');
+  $dark-colors: map.get($style, 'dark-colors');
+  $rules: map.get($style, 'rules');
+  $dark-rules: map.get($style, 'dark-rules');
+
+  #{$scope} {
+    @if $tokens {
+      @each $token, $value in $tokens {
+        @if map.has-key($style-shorthands, $token) {
+          @each $hook in map.get($style-shorthands, $token) {
+            --#{$internal-prefix}#{$hook}: #{$value};
+          }
+        } @else {
+          --#{$internal-prefix}#{$token}: #{$value};
+        }
+      }
+    }
+
+    @if $colors {
+      @include color-declarations($colors);
+    }
+
+    background-color: color('background');
+    color: color('text');
+    font-family: config('font-family-base', $typography);
+    line-height: config('line-height-base', $typography);
+
+    @if $rules {
+      @include style-rules($rules, $exclusion);
+    }
+  }
+
+  @if $colors {
+    @include generate-field-icons($colors, $scope, $suffix: ':not(#{$exclusion})');
+  }
+
+  // In dark mode, the style keeps its own palette: the light colors with the dark overrides on top.
+  $dark-map: $colors;
+
+  @if $dark-colors {
+    $dark-map: if(sass($colors): map.deep-merge($colors, $dark-colors); else: $dark-colors);
+  }
+
+  @if $dark-map or $dark-rules {
+    @include dark-mode($scope) {
+      @if $dark-map {
+        @include color-declarations($dark-map);
+        @include generate-field-icons($dark-map, '&', $suffix: ':not(#{$exclusion})');
+      }
+
+      @if $dark-rules {
+        @include style-rules($dark-rules, $exclusion);
+      }
+    }
+  }
+}
+
+/// Output the `@font-face` rules of a style (the `font-faces` list), based on the `font-path` setting.
+/// Every key of a face is a descriptor; `src` is the file name under `font-path`.
+/// @param {map} $style - The style map.
+/// @return {mixin} - The font face rules.
+@mixin style-font-faces(
+  $style
+) {
+  $path: setting('font-path', 'styles');
+  $faces: map.get($style, 'font-faces');
+
+  @if $path and $faces {
+    @each $face in $faces {
+      @font-face {
+        @each $descriptor, $value in $face {
+          @if $descriptor == 'src' {
+            src: url('#{$path}#{$value}') format('woff2');
+          } @else {
+            #{$descriptor}: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+/// Generate the style presets from the `$styles` map, based on the `styles` settings.
+/// @param {map} $styles - The styles map.
+/// @param {boolean} $scoped - Whether to generate the attribute scoped styles.
+/// @return {mixin} - The style presets.
+/// @throws {error} - If the default style doesn't exist.
+@mixin generate-style-presets(
+  $styles: $styles,
+  $scoped: true
+) {
+  $default: setting('default', 'styles');
+  $include: setting('include', 'styles');
+
+  // The font faces go first and only once per style, even if the style is the default and scoped too.
+  @each $name, $style in $styles {
+    @if $name == $default or ($scoped and (not $include or list.index($include, $name))) {
+      @include style-font-faces($style);
+    }
+  }
+
+  @if $default {
+    @if not map.has-key($styles, $default) {
+      @error 'The #{$default} style doesn\'t exist at the $styles map.';
+    }
+
+    @include generate-style($default, map.get($styles, $default), ':root');
+  }
+
+  @if $scoped {
+    @each $name, $style in $styles {
+      @if not $include or list.index($include, $name) {
+        @include generate-style($name, $style);
+      }
+    }
+  }
+}

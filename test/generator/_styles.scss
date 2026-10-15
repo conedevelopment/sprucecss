@@ -1,0 +1,62 @@
+@use 'true' as *;
+@use '../../scss/mixin/generator' as *;
+
+@include describe('generate-styles()') {
+  @include it('outputs normalize, the elements and the forms') {
+    @include assert {
+      @include output(false) {
+        @include generate-styles;
+      }
+
+      @include contains(false) {
+        .btn--primary {
+          background-color: var(--spruce-btn-color-primary-background);
+        }
+
+        .btn--danger {
+          background-color: var(--spruce-btn-color-danger-background);
+        }
+
+        .btn--outline-danger {
+          background-color: transparent;
+        }
+
+        .btn--link {
+          text-decoration: underline;
+        }
+
+        .btn-group {
+          display: inline-flex;
+        }
+
+        .form-control {
+          appearance: none;
+        }
+
+        .form-range {
+          appearance: none;
+        }
+      }
+    }
+  }
+
+  @include it('includes normalize.css') {
+    @include assert {
+      @include output(false) {
+        @include generate-styles;
+      }
+
+      @include contains-string('-webkit-text-size-adjust: 100%;');
+    }
+  }
+
+  @include it('includes the new v3 elements') {
+    @include assert {
+      @include output(false) {
+        @include generate-styles;
+      }
+
+      @include contains-string(':where(details) > summary');
+    }
+  }
+}

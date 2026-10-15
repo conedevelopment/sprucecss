@@ -26,7 +26,7 @@
 /// @throws {error} - If the key doesn't exist.
 @function spacer($key) {
   @if string.index($key, ':') {
-    $list: null;
+    $list: ();
 
     @each $key in split-values($key) {
       @if not map.has-key($spacers, $key) {

@@ -5,6 +5,7 @@
 @use '../form' as *;
 @use '../print' as *;
 @use 'button' as *;
+@use 'theme' as *;
 
 /// Generate all the styles.
 @mixin generate-styles {
@@ -40,6 +41,18 @@
     @include generate-typography;
   }
 
+  @if map.get($generators, 'content', 'details') {
+    @include generate-details;
+  }
+
+  @if map.get($generators, 'content', 'dialog') {
+    @include generate-dialog;
+  }
+
+  @if map.get($generators, 'content', 'progress') {
+    @include generate-progress;
+  }
+
   @if map.get($generators, 'content', 'utilities') {
     @include generate-utilities;
   }
@@ -53,8 +66,21 @@
 
     .btn--primary { @include btn-variant(primary); }
     .btn--secondary { @include btn-variant(secondary); }
+    .btn--danger { @include btn-variant(danger); }
     .btn--outline-primary { @include btn-variant-outline(primary); }
     .btn--outline-secondary { @include btn-variant-outline(secondary); }
+    .btn--outline-danger { @include btn-variant-outline(danger); }
+    .btn--soft-primary { @include btn-variant-soft(primary); }
+    .btn--soft-secondary { @include btn-variant-soft(secondary); }
+    .btn--soft-danger { @include btn-variant-soft(danger); }
+    .btn--ghost-primary { @include btn-variant-ghost(primary); }
+    .btn--ghost-secondary { @include btn-variant-ghost(secondary); }
+    .btn--ghost-danger { @include btn-variant-ghost(danger); }
+    .btn--link { @include btn-variant-link; }
+  }
+
+  @if map.get($generators, 'form', 'btn-group') {
+    @include generate-btn-group;
   }
 
   @if map.get($generators, 'form', 'file-btn') {
@@ -123,5 +149,15 @@
 
   @if map.get($generators, 'form', 'form-description') {
     @include generate-form-description;
+  }
+
+  @if map.get($generators, 'content', 'dark-mode') {
+    @include generate-dark-mode;
+  }
+
+  @if map.get($generators, 'content', 'styles') {
+    @include generate-style-presets;
+  } @else if map.get($settings, 'styles', 'default') {
+    @include generate-style-presets($scoped: false);
   }
 }

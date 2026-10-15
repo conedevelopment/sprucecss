@@ -12,7 +12,12 @@
     font-family: config('font-family-base', $typography);
     font-size: config('font-size-base', $typography);
     font-weight: config('font-weight-base', $typography);
+    letter-spacing: config('letter-spacing-base', $typography);
     line-height: config('line-height-base', $typography);
+  }
+
+  p {
+    text-wrap: config('text-wrap-base', $typography);
   }
 
   @if setting('hyphens') {
@@ -40,6 +45,8 @@
     font-weight: config('font-weight-heading', $typography);
     letter-spacing: config('letter-spacing-heading', $typography);
     line-height: config('line-height-heading', $typography);
+    text-transform: config('text-transform-heading', $typography);
+    text-wrap: config('text-wrap-heading', $typography);
   }
 
   h1 {
@@ -69,7 +76,7 @@
   ul,
   ol {
     list-style-position: inside;
-    @include layout-stack('xxs');
+    @include layout-stack(config('list-gap', $typography));
 
     li {
       list-style-position: outside;
@@ -82,7 +89,7 @@
 
   li > ul,
   li > ol {
-    margin-block-start: spacer('xxs');
+    margin-block-start: config('list-gap', $typography);
   }
 
   dl {
@@ -101,7 +108,7 @@
   }
 
   .quote {
-    border-inline-start: 0.5rem solid color('blockquote-border');
+    border-inline-start: config('blockquote-border-width', $typography) solid color('blockquote-border');
     padding-inline-start: spacer('m');
     @include layout-stack('xs');
 
@@ -116,7 +123,9 @@
   }
 
   blockquote {
-    border-inline-start: 0.5rem solid color('blockquote-border');
+    border-inline-start: config('blockquote-border-width', $typography) solid color('blockquote-border');
+    font-size: config('blockquote-font-size', $typography);
+    font-style: config('blockquote-font-style', $typography);
     margin-inline-start: 0;
     padding-inline-start: spacer('m');
     @include layout-stack('xs');
@@ -137,6 +146,14 @@
 
   code,
   kbd,
+  samp,
+  pre {
+    font-family: config('font-family-mono', $typography);
+    font-size: config('font-size-code', $typography);
+  }
+
+  code,
+  kbd,
   samp {
     background-color: color('code-background');
     border-radius: config('border-radius', $typography);
@@ -144,8 +161,35 @@
     padding: config('inline-padding', $typography);
   }
 
+  kbd {
+    border: 1px solid color('kbd-border');
+    box-shadow: inset 0 -1px 0 color('kbd-border');
+  }
+
+  pre {
+    background-color: color('pre-background');
+    border-radius: config('pre-border-radius', $typography);
+    color: color('pre-foreground');
+    overflow-x: auto;
+    padding: config('pre-padding', $typography);
+    tab-size: 2;
+
+    code {
+      background-color: transparent;
+      border-radius: 0;
+      color: inherit;
+      font-size: inherit;
+      padding: 0;
+    }
+  }
+
   strong {
     color: color('strong');
+  }
+
+  strong,
+  b {
+    font-weight: config('font-weight-strong', $typography);
   }
 
   .lead {

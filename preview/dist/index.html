@@ -11,6 +11,9 @@
           if (localStorage.getItem('spruce-theme-mode')) {
             document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
           }
+          if (localStorage.getItem('spruce-style')) {
+            document.documentElement.setAttribute('data-spruce-style', localStorage.getItem('spruce-style'));
+          }
         </script>
         
     
@@ -35,6 +38,24 @@
                         <div class="l-main__sidebar-inner">
                             
                                 <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/"
+                                                 aria-current="page"
+                                            >
+                                                Overview
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/styles/"
+                                                
+                                            >
+                                                Styles
+                                            </a>
+                                        </li>
                                     
                                         <li>
                                             <a
@@ -92,6 +113,42 @@
                                     
                                         <li>
                                             <a
+                                                href="/details-and-dialog/"
+                                                
+                                            >
+                                                Details &amp; Dialog
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/progress/"
+                                                
+                                            >
+                                                Progress &amp; Meter
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/layout/"
+                                                
+                                            >
+                                                Layout
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/utilities/"
+                                                
+                                            >
+                                                Utilities
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
                                                 href="/function/"
                                                 
                                             >
@@ -120,14 +177,37 @@
                                 </ul>
                             
                             <div class="form-group">
-                                <label class="form-label">Reading direction</label>
+                                <label class="form-label" for="style-switcher">Style</label>
+                                <select class="form-control form-control--sm" id="style-switcher">
+                                    <option value="">Default</option>
+                                    
+                                        <option value="minimal">Minimal</option>
+                                    
+                                        <option value="brutalist">Brutalist</option>
+                                    
+                                        <option value="soft">Soft</option>
+                                    
+                                        <option value="glass">Glass</option>
+                                    
+                                        <option value="corporate">Corporate</option>
+                                    
+                                        <option value="playful">Playful</option>
+                                    
+                                        <option value="editorial">Editorial</option>
+                                    
+                                        <option value="terminal">Terminal</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="reading-direction">Reading direction</label>
                                 <select class="form-control form-control--sm" id="reading-direction">
                                     <option value="ltr">LTR</option>
                                     <option value="rtl">RTL</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Theme mode</label>
+                                <label class="form-label" for="theme-mode">Theme mode</label>
                                 <select class="form-control form-control--sm" id="theme-mode">
                                     <option value="light">Light</option>
                                     <option value="dark">Dark</option>
@@ -137,6 +217,87 @@
                     </aside>
                     <main class="l-main__body">
                         
+<h1>Spruce CSS 3.0.0 preview</h1>
+<p class="lead">A sandbox for every element, option and style of Spruce CSS. Use the sidebar to switch the style, the reading direction and the theme mode.</p>
+
+
+
+<div class="sample">
+    <div class="sample__intro">
+        <h2>Ship faster with Spruce</h2>
+        <p class="lead">One markup, many looks. Switch the style and every element follows.</p>
+        <p>A paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <code>inline code</code>, a <mark>highlight</mark> and a <kbd>Ctrl</kbd> + <kbd>K</kbd> shortcut.</p>
+    </div>
+    <div class="preview-group">
+        <button class="btn btn--primary" type="button">Primary</button>
+        <button class="btn btn--secondary" type="button">Secondary</button>
+        <button class="btn btn--outline-primary" type="button">Outline</button>
+        <button class="btn btn--soft-primary" type="button">Soft</button>
+        <button class="btn btn--ghost-primary" type="button">Ghost</button>
+    </div>
+    <form class="sample__form" onsubmit="return false;">
+        <div class="form-group">
+            <label class="form-label form-label--required" for="overview-email">Email address</label>
+            <input class="form-control" id="overview-email" type="email" placeholder="hello@example.com" required/>
+            <span class="form-description">We never share your email.</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="overview-plan">Plan</label>
+            <select class="form-control" id="overview-plan">
+                <option>Starter</option>
+                <option>Team</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+        <div class="form-group form-group--horizontal-check">
+            <label class="form-check">
+                <input class="form-check__control" type="checkbox" checked/>
+                <span class="form-label form-check__label">Newsletter</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="overview-radio" checked/>
+                <span class="form-label form-check__label">Monthly</span>
+            </label>
+            <label class="form-check">
+                <input class="form-check__control" type="radio" name="overview-radio"/>
+                <span class="form-label form-check__label">Yearly</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Dark UI</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="overview-range">Seats</label>
+            <input class="form-range" id="overview-range" type="range" min="1" max="50" value="12"/>
+        </div>
+    </form>
+    <div class="form-group">
+        <span class="form-label">Storage used</span>
+        <progress max="100" value="64">64%</progress>
+    </div>
+    <details>
+        <summary>What is a design style?</summary>
+        <p>A style is a set of tokens and a few rules. The markup stays the same; only the look changes.</p>
+    </details>
+    <div class="table-responsive">
+        <table class="table table--striped">
+            <thead>
+                <tr><th scope="col">Plan</th><th scope="col">Seats</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Starter</td><td>1</td><td>$0</td></tr>
+                <tr><td>Team</td><td>10</td><td>$49</td></tr>
+                <tr><td>Enterprise</td><td>Unlimited</td><td>Custom</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <blockquote>
+        <p>“Simplicity is the ultimate sophistication.”</p>
+    </blockquote>
+</div>
+
+
                     </main>
                 </div>
             </div>
@@ -148,8 +309,13 @@
             if (localStorage.getItem('spruce-theme-mode')) {
                 document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
             }
+            if (localStorage.getItem('spruce-style')) {
+                document.getElementById('style-switcher').value = localStorage.getItem('spruce-style');
+            }
         </script>
         <script src="/js/reading-direction.js"></script>
         <script src="/js/theme-mode.js"></script>
+        <script src="/js/style-switcher.js"></script>
+        <script src="/js/preview.js"></script>
     </body>
 </html>

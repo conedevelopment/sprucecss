@@ -1,0 +1,21 @@
+---
+title: "Progress & Meter"
+layout: "layout/base.html"
+---
+
+<h2 class="section-title">Progress</h2>
+<div class="l-stack" style="--stack-gap: 1rem;">
+    <progress max="100" value="15">15%</progress>
+    <progress max="100" value="60">60%</progress>
+    <progress max="100" value="100">100%</progress>
+</div>
+
+<h2 class="section-title">Indeterminate</h2>
+<progress aria-label="Loading"></progress>
+
+<h2 class="section-title">Meter</h2>
+<div class="l-stack" style="--stack-gap: 1rem;">
+    <meter min="0" max="100" low="30" high="70" optimum="80" value="90">90</meter>
+    <meter min="0" max="100" low="30" high="70" optimum="80" value="50">50</meter>
+    <meter min="0" max="100" low="30" high="70" optimum="80" value="20">20</meter>
+</div>

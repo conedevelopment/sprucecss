@@ -1,0 +1,52 @@
+---
+title: "Details & Dialog"
+layout: "layout/base.html"
+---
+
+<h2 class="section-title">Details</h2>
+<details>
+    <summary>What is Spruce CSS?</summary>
+    <p>A Sass-based, minimalistic CSS framework to get the foundation right for any web-based project.</p>
+</details>
+<details open>
+    <summary>Is it open by default?</summary>
+    <p>Use the <code>open</code> attribute to render it expanded.</p>
+    <p>Every direct child (other than the <code>summary</code>) gets the same inline padding.</p>
+</details>
+<details name="faq">
+    <summary>Exclusive accordion (name attribute) — one</summary>
+    <p>Details elements with the same <code>name</code> attribute behave like an accordion.</p>
+</details>
+<details name="faq">
+    <summary>Exclusive accordion (name attribute) — two</summary>
+    <p>Opening this one closes the other.</p>
+</details>
+
+<h2 class="section-title">Dialog</h2>
+<div class="preview-group">
+    <button class="btn btn--primary" type="button" data-open-dialog="dialog-basic">Open dialog</button>
+    <button class="btn btn--outline-primary" type="button" data-open-dialog="dialog-form">Open form dialog</button>
+</div>
+
+<dialog id="dialog-basic" aria-labelledby="dialog-basic-title">
+    <h2 id="dialog-basic-title" class="h4">Delete project?</h2>
+    <p>This action can’t be undone. The project and its files will be removed permanently.</p>
+    <div class="preview-group">
+        <button class="btn btn--danger" type="button" data-close-dialog>Delete</button>
+        <button class="btn btn--ghost-secondary" type="button" data-close-dialog>Cancel</button>
+    </div>
+</dialog>
+
+<dialog id="dialog-form" aria-labelledby="dialog-form-title">
+    <form method="dialog" class="l-stack">
+        <h2 id="dialog-form-title" class="h4">Invite a teammate</h2>
+        <div class="form-group">
+            <label class="form-label form-label--required" for="invite-email">Email</label>
+            <input class="form-control" id="invite-email" type="email" autofocus/>
+        </div>
+        <div class="preview-group">
+            <button class="btn btn--primary" value="send">Send invite</button>
+            <button class="btn btn--ghost-secondary" value="cancel">Cancel</button>
+        </div>
+    </form>
+</dialog>

@@ -6,66 +6,50 @@
 /// @param {map} $map - The map to generate the CSS custom properties from.
 /// @param {list} $exclude - The list of keys (or a segment of it) to exclude.
 /// @param {list} $include - The list of keys (or a segment of it) to include.
+/// @param {string} $hook - The name of the style hook. If set (and the style-hooks setting is on), every value can be overwritten from any ancestor with a namespaced custom property (--prefix-hook-key).
 /// @return {string} - The generated CSS custom properties.
 /// @throws {error} - If you use both $exclude and $include arguments.
 @mixin generate-variables(
   $map,
   $exclude: null,
-  $include: null
+  $include: null,
+  $hook: null
 ) {
   @if $exclude and $include {
     @error 'You can\'t use both $exclude and $include arguments.';
   }
 
   @if map.get($settings, 'css-custom-properties') {
-    $exclude-map: $map;
-    $include-map: ();
+    $filtered-map: ();
+    $fractions: ();
 
     @if $exclude {
-      @each $key, $value in $map {
-        @if $value {
-          @each $fraction in $exclude {
-            @if string.index($key, $fraction) {
-              $exclude-map: map.remove($exclude-map, $key);
-            }
+      $fractions: $exclude;
+    } @else if $include {
+      $fractions: $include;
+    }
+
+    @each $key, $value in $map {
+      @if $value {
+        $is-matching: false;
+
+        @each $fraction in $fractions {
+          @if string.index($key, $fraction) {
+            $is-matching: true;
           }
         }
-      }
-    }
 
-    @if $include {
-      @each $key, $value in $map {
-        @if $value {
-          @each $fraction in $include {
-            @if string.index($key, $fraction) {
-              $include-map: map.set($include-map, $key, $value);
-            }
-          }
+        @if ($exclude and not $is-matching) or ($include and $is-matching) or (not $exclude and not $include) {
+          $filtered-map: map.set($filtered-map, $key, $value);
         }
       }
     }
 
-    @if $exclude {
-      @each $key, $value in $exclude-map {
-        @if $value {
-          --#{$internal-prefix}#{$key}: #{$value};
-        }
-      }
-    }
-
-    @if $include {
-      @each $key, $value in $include-map {
-        @if $value {
-          --#{$internal-prefix}#{$key}: #{$value};
-        }
-      }
-    }
-
-    @if not $exclude and not $include {
-      @each $key, $value in $map {
-        @if $value {
-          --#{$internal-prefix}#{$key}: #{$value};
-        }
+    @each $key, $value in $filtered-map {
+      @if $hook and map.get($settings, 'style-hooks') {
+        --#{$internal-prefix}#{$key}: var(--#{$internal-prefix}#{$hook}-#{$key}, #{$value});
+      } @else {
+        --#{$internal-prefix}#{$key}: #{$value};
       }
     }
   }

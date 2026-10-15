@@ -357,6 +357,56 @@ layout: "layout/base.html"
         </div>
         </fieldset>
         <fieldset>
+        <legend>Required, read-only and placeholder</legend>
+        <div class="form-group">
+            <label class="form-label form-label--required" for="required-name">Full name</label>
+            <input class="form-control" id="required-name" type="text" required placeholder="Jane Doe"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="readonly-id">Account ID (read-only)</label>
+            <input class="form-control" id="readonly-id" type="text" value="ACC-2026-0042" readonly/>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Range (Sizes)</legend>
+        <div class="form-group">
+            <label class="form-label" for="range-sm">Small</label>
+            <input class="form-range form-range--sm" id="range-sm" type="range"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="range-md">Regular</label>
+            <input class="form-range" id="range-md" type="range"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="range-lg">Large</label>
+            <input class="form-range form-range--lg" id="range-lg" type="range"/>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Switch (Sizes)</legend>
+        <div class="form-group form-group--vertical-check">
+            <label class="form-switch form-switch--sm">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Small switch</span>
+            </label>
+            <label class="form-switch">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Regular switch</span>
+            </label>
+            <label class="form-switch form-switch--lg">
+                <input class="form-switch__control" type="checkbox" checked/>
+                <span class="form-label form-switch__label">Large switch</span>
+            </label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Indeterminate checkbox</legend>
+        <label class="form-check">
+            <input class="form-check__control" type="checkbox" data-indeterminate/>
+            <span class="form-label form-check__label">Select all</span>
+        </label>
+    </fieldset>
+    <fieldset>
         <legend>Validation</legend>
         <div class="form-row">
             <div class="form-group">

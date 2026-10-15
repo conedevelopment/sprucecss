@@ -8,14 +8,16 @@
   $pseudo-selector: null,
   $has-icons: true,
   $has-sizes: true,
+  $has-modifiers: true,
 ) {
   #{$selector}#{$pseudo-selector} {
-    @include generate-variables($btn, ('focus-'));
+    @include generate-variables($btn, ('focus-'), $hook: 'btn');
 
     align-items: center;
     border-radius: config('border-radius', $btn);
     border-style: solid;
     border-width: config('border-width', $btn);
+    box-shadow: config('box-shadow', $btn);
     cursor: pointer;
     display: inline-flex;
     font-family: config('font-family', $btn);
@@ -24,7 +26,8 @@
     font-weight: config('font-weight', $btn);
     gap: config('gap', $btn);
     justify-content: center;
-    line-height: 1;
+    letter-spacing: config('letter-spacing', $btn);
+    line-height: config('line-height', $btn);
     padding: config('padding', $btn);
     text-align: start;
     text-decoration: none;
@@ -40,7 +43,7 @@
   }
 
   #{$selector}:disabled {
-    opacity: 0.5;
+    opacity: config('disabled-opacity', $btn);
     pointer-events: none;
   }
 
@@ -73,7 +76,7 @@
   @if ($has-sizes) {
     // Sizes
     #{$selector}--sm#{$pseudo-selector} {
-      @include generate-variables($btn-sm);
+      @include generate-variables($btn-sm, $hook: 'btn-sm');
 
       font-size: config('font-size', $btn-sm);
       gap: config('gap', $btn-sm);
@@ -81,7 +84,7 @@
     }
 
     #{$selector}--lg#{$pseudo-selector} {
-      @include generate-variables($btn-lg);
+      @include generate-variables($btn-lg, $hook: 'btn-lg');
 
       @if not map.get($settings, 'css-custom-properties') {
         gap: config('gap', $btn-lg);
@@ -95,6 +98,107 @@
 
     #{$selector}--block#{$pseudo-selector} {
       inline-size: 100%;
+    }
+  }
+
+  @if ($has-modifiers and not $pseudo-selector) {
+    #{$selector}--disabled,
+    #{$selector}[aria-disabled='true'] {
+      opacity: config('disabled-opacity', $btn);
+      pointer-events: none;
+    }
+
+    #{$selector}--pill {
+      border-radius: radius('pill');
+    }
+
+    #{$selector}--loading {
+      pointer-events: none;
+      position: relative;
+      -webkit-text-fill-color: transparent;
+
+      > * {
+        visibility: hidden;
+      }
+
+      &::after {
+        animation: #{$internal-prefix}btn-spin 0.6s linear infinite;
+        block-size: 1em;
+        border: 0.15em solid currentcolor;
+        border-inline-end-color: transparent;
+        border-radius: 50%;
+        content: '';
+        inline-size: 1em;
+        inset: 0;
+        margin: auto;
+        position: absolute;
+
+        @include motion-reduce {
+          animation-duration: 1.5s;
+        }
+      }
+    }
+
+    @keyframes #{$internal-prefix}btn-spin {
+      to {
+        rotate: 360deg;
+      }
+    }
+  }
+}
+
+@mixin generate-btn-group(
+  $selector: '.btn-group',
+  $btn-selector: '.btn'
+) {
+  #{$selector} {
+    display: inline-flex;
+    flex-wrap: nowrap;
+
+    > #{$btn-selector} {
+      position: relative;
+
+      &:hover,
+      &:focus-visible,
+      &[aria-pressed='true'],
+      &[aria-current] {
+        z-index: 1;
+      }
+    }
+
+    > #{$btn-selector} + #{$btn-selector} {
+      margin-inline-start: calc(#{config('border-width', $btn, false)} * -1);
+    }
+
+    > #{$btn-selector}:not(:last-child) {
+      border-end-end-radius: 0;
+      border-start-end-radius: 0;
+    }
+
+    > #{$btn-selector}:not(:first-child) {
+      border-end-start-radius: 0;
+      border-start-start-radius: 0;
+    }
+
+    &--vertical {
+      flex-direction: column;
+
+      > #{$btn-selector} + #{$btn-selector} {
+        margin-block-start: calc(#{config('border-width', $btn, false)} * -1);
+        margin-inline-start: 0;
+      }
+
+      > #{$btn-selector}:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+
+      > #{$btn-selector}:first-child:not(:last-child) {
+        border-radius: config('border-radius', $btn) config('border-radius', $btn) 0 0;
+      }
+
+      > #{$btn-selector}:last-child:not(:first-child) {
+        border-radius: 0 0 config('border-radius', $btn) config('border-radius', $btn);
+      }
     }
   }
 }

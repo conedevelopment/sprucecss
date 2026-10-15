@@ -1,0 +1,63 @@
+@use 'true' as *;
+@use '../../scss/mixin/theme' as *;
+
+@include describe('dark-mode()') {
+  @include it('wraps rules in the dark mode selector at the root') {
+    @include assert {
+      @include output($selector: false) {
+        @include dark-mode {
+          .logo { opacity: 0.8; }
+        }
+      }
+
+      @include expect($selector: false) {
+        :root[data-theme-mode='dark'] .logo { opacity: 0.8; }
+      }
+    }
+  }
+
+  @include it('nests the parent selector when used inside a rule') {
+    @include assert {
+      @include output($selector: false) {
+        .card {
+          @include dark-mode { color: white; }
+        }
+      }
+
+      @include expect($selector: false) {
+        :root[data-theme-mode='dark'] .card { color: white; }
+      }
+    }
+  }
+
+  @include it('combines a scope with the dark mode selector') {
+    @include assert {
+      @include output($selector: false) {
+        @include dark-mode('.scope') {
+          color: white;
+        }
+      }
+
+      @include expect($selector: false) {
+        :root[data-theme-mode='dark'] .scope,
+        :root[data-theme-mode='dark'].scope {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@include describe('color-declarations()') {
+  @include it('outputs the color custom properties as declarations') {
+    @include assert {
+      @include output {
+        @include color-declarations(('base': ('text': red, 'unset': null)));
+      }
+
+      @include expect {
+        --spruce-base-color-text: red;
+      }
+    }
+  }
+}

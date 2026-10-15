@@ -11,6 +11,9 @@
           if (localStorage.getItem('spruce-theme-mode')) {
             document.documentElement.setAttribute('data-theme-mode', localStorage.getItem('spruce-theme-mode'));
           }
+          if (localStorage.getItem('spruce-style')) {
+            document.documentElement.setAttribute('data-spruce-style', localStorage.getItem('spruce-style'));
+          }
         </script>
         
     
@@ -35,6 +38,24 @@
                         <div class="l-main__sidebar-inner">
                             
                                 <ul class="navigation-menu">
+                                    
+                                        <li>
+                                            <a
+                                                href="/"
+                                                
+                                            >
+                                                Overview
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/styles/"
+                                                
+                                            >
+                                                Styles
+                                            </a>
+                                        </li>
                                     
                                         <li>
                                             <a
@@ -92,6 +113,42 @@
                                     
                                         <li>
                                             <a
+                                                href="/details-and-dialog/"
+                                                
+                                            >
+                                                Details &amp; Dialog
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/progress/"
+                                                
+                                            >
+                                                Progress &amp; Meter
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/layout/"
+                                                
+                                            >
+                                                Layout
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
+                                                href="/utilities/"
+                                                
+                                            >
+                                                Utilities
+                                            </a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a
                                                 href="/function/"
                                                 
                                             >
@@ -120,14 +177,37 @@
                                 </ul>
                             
                             <div class="form-group">
-                                <label class="form-label">Reading direction</label>
+                                <label class="form-label" for="style-switcher">Style</label>
+                                <select class="form-control form-control--sm" id="style-switcher">
+                                    <option value="">Default</option>
+                                    
+                                        <option value="minimal">Minimal</option>
+                                    
+                                        <option value="brutalist">Brutalist</option>
+                                    
+                                        <option value="soft">Soft</option>
+                                    
+                                        <option value="glass">Glass</option>
+                                    
+                                        <option value="corporate">Corporate</option>
+                                    
+                                        <option value="playful">Playful</option>
+                                    
+                                        <option value="editorial">Editorial</option>
+                                    
+                                        <option value="terminal">Terminal</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="reading-direction">Reading direction</label>
                                 <select class="form-control form-control--sm" id="reading-direction">
                                     <option value="ltr">LTR</option>
                                     <option value="rtl">RTL</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Theme mode</label>
+                                <label class="form-label" for="theme-mode">Theme mode</label>
                                 <select class="form-control form-control--sm" id="theme-mode">
                                     <option value="light">Light</option>
                                     <option value="dark">Dark</option>
@@ -143,13 +223,20 @@
 
 <img src="https://images.unsplash.com/photo-1482539259217-f31001045448?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="..."/>
 
-<figure class="figure"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="..."/>
+<figure class="figure"><img loading="lazy"  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="..."/>
     <figcaption class="figure-caption">A caption for the above image.</figcaption>
 </figure>
 
 <div style="aspect-ratio: 4 / 3;">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d41126.9496578375!2d17.890734642764393!3d46.95617814407089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shu!2shu!4v1646924792947!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
 </div>
+
+<figure>
+    <video controls preload="none" width="640" poster="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=1280&amp;q=60">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"/>
+    </video>
+    <figcaption>A responsive video element.</figcaption>
+</figure>
 
                     </main>
                 </div>
@@ -162,8 +249,13 @@
             if (localStorage.getItem('spruce-theme-mode')) {
                 document.getElementById('theme-mode').value = localStorage.getItem('spruce-theme-mode');
             }
+            if (localStorage.getItem('spruce-style')) {
+                document.getElementById('style-switcher').value = localStorage.getItem('spruce-style');
+            }
         </script>
         <script src="/js/reading-direction.js"></script>
         <script src="/js/theme-mode.js"></script>
+        <script src="/js/style-switcher.js"></script>
+        <script src="/js/preview.js"></script>
     </body>
 </html>

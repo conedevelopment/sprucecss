@@ -1,0 +1,85 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'color' as *;
+@use '../config' as *;
+
+/// Get a shadow value from the $shadows map.
+/// @param {string} $key - The key name of the shadow (xs, sm, md, lg, xl, inner).
+/// @return {string} - The CSS custom property (in custom property mode) or the shadow value.
+/// @throws {error} - If the key doesn't exist.
+@function shadow($key) {
+  @if not map.has-key($shadows, $key) {
+    @error 'The #{$key} key name doesn\'t exist at the $shadows map.';
+  }
+
+  @if map.get($settings, 'css-custom-properties') {
+    @return var(--#{$internal-prefix}shadow-#{$key});
+  }
+
+  @return map.get($shadows, $key);
+}
+
+/// Get a border-radius value from the $display map.
+/// @param {string} $key - The size of the radius (sm, md, lg, pill).
+/// @return {string} - The CSS custom property (in custom property mode) or the radius value.
+/// @throws {error} - If the key doesn't exist.
+@function radius($key: 'sm') {
+  @if not map.has-key($display, 'border-radius-#{$key}') {
+    @error 'The border-radius-#{$key} key name doesn\'t exist at the $display map.';
+  }
+
+  @if map.get($settings, 'css-custom-properties') {
+    @return var(--#{$internal-prefix}border-radius-#{$key});
+  }
+
+  @return map.get($display, 'border-radius-#{$key}');
+}
+
+/// Get a z-index value from the $z-indexes map.
+/// @param {string} $key - The name of the layer (dropdown, sticky, fixed, overlay, modal, popover, toast, tooltip).
+/// @return {number} - The z-index value.
+/// @throws {error} - If the key doesn't exist.
+@function z-index($key) {
+  @if not map.has-key($z-indexes, $key) {
+    @error 'The #{$key} key name doesn\'t exist at the $z-indexes map.';
+  }
+
+  @return map.get($z-indexes, $key);
+}
+
+/// Get a transparent version of a color using color-mix(). It works at runtime, so it follows themes and styles.
+/// @param {string} $key - The key name of the color.
+/// @param {number} $alpha - The opacity between 0 and 1.
+/// @param {string} $type - The type of the color group (base, btn, form, etc.).
+/// @return {string} - The color-mix() declaration.
+@function color-alpha(
+  $key,
+  $alpha: 0.5,
+  $type: 'base'
+) {
+  @if meta.type-of($alpha) != 'number' or $alpha < 0 or $alpha > 1 {
+    @error 'The $alpha value must be a number between 0 and 1.';
+  }
+
+  @return color-mix(in srgb, #{color($key, $type)} #{math.percentage($alpha)}, transparent);
+}
+
+/// Mix a color with another one using color-mix(). It works at runtime, so it follows themes and styles.
+/// @param {string} $key - The key name of the color.
+/// @param {number} $amount - The amount of the mixed in color in percentage.
+/// @param {string} $type - The type of the color group (base, btn, form, etc.).
+/// @param {color} $with - The color to mix with (white tints, black shades).
+/// @return {string} - The color-mix() declaration.
+@function color-tint(
+  $key,
+  $amount: 10%,
+  $type: 'base',
+  $with: hsl(0deg 0% 100%)
+) {
+  @if math.unit($amount) != '%' {
+    @error 'The $amount value must be a percentage.';
+  }
+
+  @return color-mix(in srgb, #{color($key, $type)}, #{$with} #{$amount});
+}

@@ -132,7 +132,9 @@
   $gap: 'm',
   $inline-size: var(--inline-size)
 ) {
-  @if map.has-key($spacers, $gap) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
     $gap: map.get($spacers, $gap);
   }
 
@@ -142,5 +144,83 @@
 
   > * {
     flex: 1 1 $inline-size;
+  }
+}
+
+/// Create cluster layout (wrapping inline items, like tags or buttons).
+/// @param {string} $gap - The gap between the elements.
+/// @param {string} $justify - The justify-content value.
+/// @param {string} $align - The align-items value.
+/// @return {mixin} - The cluster layout.
+@mixin layout-cluster(
+  $gap: 's',
+  $justify: flex-start,
+  $align: center
+) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
+  align-items: $align;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  justify-content: $justify;
+}
+
+/// Create switcher layout (a row that switches to a column under a threshold, without media queries).
+/// @param {string} $threshold - The container width (inline-size) where the layout switches.
+/// @param {string} $gap - The gap between the elements.
+/// @param {number} $limit - Over this number of elements, the layout is always stacked.
+/// @return {mixin} - The switcher layout.
+@mixin layout-switcher(
+  $threshold: 30rem,
+  $gap: 'm',
+  $limit: 4
+) {
+  @if meta.type-of($gap) == string and string.index($gap, ':') {
+    $gap: spacer($gap);
+  } @else if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+
+  > * {
+    flex-basis: calc((#{$threshold} - 100%) * 999);
+    flex-grow: 1;
+  }
+
+  > :nth-last-child(n + #{$limit + 1}),
+  > :nth-last-child(n + #{$limit + 1}) ~ * {
+    flex-basis: 100%;
+  }
+}
+
+/// Create reel layout (a horizontally scrollable row of items).
+/// @param {string} $item-inline-size - The width (inline-size) of the items.
+/// @param {string} $gap - The gap between the elements.
+/// @return {mixin} - The reel layout.
+@mixin layout-reel(
+  $item-inline-size: 18rem,
+  $gap: 'm'
+) {
+  @if map.has-key($spacers, $gap) {
+    $gap: map.get($spacers, $gap);
+  }
+
+  display: flex;
+  gap: $gap;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+
+  > * {
+    flex: 0 0 $item-inline-size;
+    scroll-snap-align: start;
   }
 }

@@ -1,0 +1,41 @@
+@use 'true' as *;
+@use '../../scss/spruce' as *;
+
+@include describe('config() in custom property mode') {
+  @include it('returns the custom property') {
+    @include assert-equal(config('border-radius-lg', $display), var(--spruce-border-radius-lg));
+  }
+
+  @include it('returns the raw value with $custom-property: false') {
+    @include assert-equal(config('border-radius-lg', $display, false), 0.925rem);
+  }
+}
+
+@include describe('token functions in custom property mode') {
+  @include it('return custom properties, so the styles can change them') {
+    @include assert-equal(shadow('md'), var(--spruce-shadow-md));
+    @include assert-equal(radius('pill'), var(--spruce-border-radius-pill));
+  }
+
+  @include it('z-index() always returns the raw value') {
+    @include assert-equal(z-index('toast'), 1070);
+  }
+}
+
+@include describe('color() with the color fallback') {
+  @include it('adds the raw color as the fallback') {
+    @include assert-equal('#{color('primary')}', 'var(--spruce-base-color-primary, hsl(262, 71%, 49%))');
+  }
+
+  @include it('still returns null for null colors') {
+    @include assert-equal(color('background-readonly', 'form'), null);
+  }
+}
+
+@include describe('setting() with the configured values') {
+  @include it('returns the overwritten settings') {
+    @include assert-true(setting('css-custom-properties'));
+    @include assert-equal(setting('scroll-margin'), 3rem);
+    @include assert-true(setting('text', 'utilities'));
+  }
+}

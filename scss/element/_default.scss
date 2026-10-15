@@ -11,6 +11,10 @@
   html {
     box-sizing: border-box;
 
+    @if setting('accent-color') {
+      accent-color: color('primary');
+    }
+
     @if setting('html-smooth-scrolling') {
       @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth;
@@ -31,13 +35,17 @@
 
   a {
     color: color('link');
-    text-decoration: underline;
+    font-weight: config('link-font-weight', $typography);
+    text-decoration: config('link-text-decoration', $typography);
+    text-decoration-thickness: config('link-text-decoration-thickness', $typography);
+    text-underline-offset: config('link-text-underline-offset', $typography);
     transition-duration: config('duration', $transition);
     transition-property: color;
     transition-timing-function: config('timing-function', $transition);
 
     &:hover {
       color: color('link-hover');
+      text-decoration: config('link-text-decoration-hover', $typography);
     }
   }
 
@@ -49,5 +57,24 @@
   a,
   button {
     touch-action: manipulation;
+  }
+
+  @if setting('scroll-margin') {
+    :target {
+      scroll-margin-block-start: setting('scroll-margin');
+    }
+  }
+
+  @if setting('reduced-motion') {
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      ::before,
+      ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   }
 }

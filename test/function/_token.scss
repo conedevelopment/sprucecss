@@ -1,0 +1,77 @@
+@use 'true' as *;
+@use '../../scss/config' as *;
+@use '../../scss/function/token' as *;
+
+@include describe('shadow()') {
+  @include it('should return the raw shadow value without custom properties') {
+    @include assert-equal(shadow('xs'), 0 1px 2px hsl(0deg 0% 0% / 5%));
+  }
+}
+
+@include describe('shadow() more') {
+  @include it('returns the inner shadow') {
+    @include assert-equal(shadow('inner'), inset 0 2px 4px 0 hsl(0deg 0% 0% / 5%));
+  }
+}
+
+@include describe('radius()') {
+  @include it('should return the small radius by default') {
+    @include assert-equal(radius(), 0.425rem);
+  }
+
+  @include it('should return the large radius') {
+    @include assert-equal(radius('lg'), 0.925rem);
+  }
+
+  @include it('should return the pill radius') {
+    @include assert-equal(radius('pill'), 62.5rem);
+  }
+}
+
+@include describe('z-index()') {
+  @include it('should return the modal layer') {
+    @include assert-equal(z-index('modal'), 1050);
+  }
+
+  @include it('keeps the layers in order') {
+    @include assert-true(z-index('dropdown') < z-index('sticky'));
+    @include assert-true(z-index('modal') < z-index('toast'));
+    @include assert-true(z-index('toast') < z-index('tooltip'));
+  }
+}
+
+@include describe('color-alpha()') {
+  @include it('should return a color-mix() with transparent') {
+    @include assert-equal(
+      color-alpha('primary', 0.25),
+      color-mix(in srgb, var(--spruce-base-color-primary) 25%, transparent)
+    );
+  }
+}
+
+@include describe('color-alpha() more') {
+  @include it('accepts another color group') {
+    @include assert-equal(
+      color-alpha('danger-background', 0.5, 'btn'),
+      color-mix(in srgb, var(--spruce-btn-color-danger-background) 50%, transparent)
+    );
+  }
+}
+
+@include describe('color-tint()') {
+  @include it('should mix the color with white by default') {
+    @include assert-equal(
+      color-tint('primary', 20%),
+      color-mix(in srgb, var(--spruce-base-color-primary), hsl(0deg 0% 100%) 20%)
+    );
+  }
+}
+
+@include describe('color-tint() more') {
+  @include it('mixes with a custom color') {
+    @include assert-equal(
+      color-tint('primary', 40%, 'base', hsl(0deg 0% 0%)),
+      color-mix(in srgb, var(--spruce-base-color-primary), hsl(0deg 0% 0%) 40%)
+    );
+  }
+}

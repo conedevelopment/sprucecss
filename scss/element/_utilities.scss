@@ -1,4 +1,6 @@
+@use '../config' as *;
 @use '../function' as *;
+@use '../mixin' as *;
 
 @mixin generate-utilities {
   @if setting('display', 'utilities') == true {
@@ -31,6 +33,99 @@
 
     .h6 {
       font-size: font-size('h6');
+    }
+  }
+
+  @if setting('text', 'utilities') == true {
+    .text-start {
+      text-align: start;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-end {
+      text-align: end;
+    }
+
+    .text-sm {
+      font-size: config('font-size-sm', $typography);
+    }
+
+    .text-lg {
+      font-size: config('font-size-lg', $typography);
+    }
+
+    .text-muted {
+      color: color('muted');
+    }
+
+    .text-mono {
+      font-family: config('font-family-mono', $typography);
+    }
+
+    .text-uppercase {
+      text-transform: uppercase;
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    .text-pretty {
+      text-wrap: pretty;
+    }
+
+    .text-nowrap {
+      white-space: nowrap;
+    }
+
+    .text-truncate {
+      @include text-ellipsis;
+    }
+  }
+
+  @if setting('layout', 'utilities') == true {
+    .l-center {
+      --center-gap: #{spacer('m')};
+      --center-inline-size: #{config('container-inline-size', $layout, false)};
+      @include layout-center(var(--center-gap), var(--center-inline-size));
+    }
+
+    .l-stack {
+      --stack-gap: #{spacer('m')};
+      @include layout-stack(var(--stack-gap));
+    }
+
+    .l-cluster {
+      --cluster-gap: #{spacer('s')};
+      --cluster-justify: flex-start;
+      @include layout-cluster(var(--cluster-gap), var(--cluster-justify));
+    }
+
+    .l-grid {
+      --grid-gap: #{spacer('m')};
+      --grid-min: 12.5rem;
+      @include layout-grid(var(--grid-gap), var(--grid-min));
+    }
+
+    .l-sidebar {
+      --sidebar-gap: #{spacer('m')};
+      --sidebar-inline-size: 18.75rem;
+      @include layout-sidebar(var(--sidebar-gap), var(--sidebar-inline-size));
+    }
+
+    .l-switcher {
+      --switcher-gap: #{spacer('m')};
+      --switcher-threshold: 30rem;
+      @include layout-switcher(var(--switcher-threshold), var(--switcher-gap));
+    }
+
+    .l-reel {
+      --reel-gap: #{spacer('m')};
+      --reel-item-inline-size: 18rem;
+      @include layout-reel(var(--reel-item-inline-size), var(--reel-gap));
     }
   }
 }

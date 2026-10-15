@@ -1,0 +1,11 @@
+@use 'sass:map';
+
+$divider: () !default;
+$divider: map.merge(
+  (
+    'border-style': solid,
+    'border-width': 1px,
+    'margin-block': null,
+  ),
+  $divider
+);

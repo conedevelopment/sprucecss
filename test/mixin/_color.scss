@@ -1,0 +1,44 @@
+@use 'true' as *;
+@use '../../scss/mixin/color' as *;
+
+$test-colors: (
+  'base': (
+    'background': hsl(0deg 0% 100%),
+    'empty': null,
+  ),
+  'form': (
+    'select-foreground': hsl(0deg 0% 0%),
+  ),
+);
+
+@include describe('generate-color-variables()') {
+  @include it('outputs the colors under the selector and skips the null values') {
+    @include assert {
+      @include output($selector: false) {
+        @include generate-color-variables($test-colors, '.theme');
+      }
+
+      @include expect($selector: false) {
+        .theme {
+          --spruce-base-color-background: hsl(0, 0%, 100%);
+        }
+
+        .theme {
+          --spruce-form-color-select-foreground: hsl(0, 0%, 0%);
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-field-icons()') {
+  @include it('regenerates only the icons of the defined colors') {
+    @include assert {
+      @include output($selector: false) {
+        @include generate-field-icons($test-colors, '.theme');
+      }
+
+      @include contains-string('.theme select.form-control:not([multiple]):not([size])');
+    }
+  }
+}

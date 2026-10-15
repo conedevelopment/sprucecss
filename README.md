@@ -28,8 +28,11 @@
 - It is a relatively small (~7kb gzipped) framework with a smaller learning curve. The codebase is small but can add more to any project with the available mixins and functions.
 - It is that bunch of code you keep manually carrying from project to project.
 - It is themeable. You can create different themes using CSS custom properties like a dark one.
+- **New in v3: design styles.** The same markup can look minimal, brutalist, soft, glass, corporate, playful, editorial or terminal with a single `data-spruce-style` attribute — or [create your own](https://sprucecss.com/docs/customization/styles).
+- **New in v3: built-in dark mode**, `details`, `dialog`, `progress` and `meter` styling, more button variants, shadow and radius tokens, opt-in layout and text utilities.
+- **New in v3: AI skills.** The package ships [agent skills](./skills/) so AI coding assistants write idiomatic Spruce CSS.
 - The generated CSS code is separated from the framework. You can use only the tools (variables, mixins, functions) in your project [without the generated styles](https://sprucecss.com/docs/elements/generators).
-- Include just a few components. For UI, we have a separate project named [Spruce UI](/ui/getting-started/introduction), where you can find drop-in components.
+- Include just a few components. For UI, we have a separate project named [Spruce UI](https://sprucecss.com/ui/getting-started/introduction), where you can find drop-in components.
 - [It comes with dark-mode](https://sprucecss.com/docs/customization/themes) (or any theme mode) support. It uses CSS custom properties, so it isn’t that hard to create a new color theme.
 - It doesn’t come with a classical grid system.
 
@@ -54,14 +57,15 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 - [Inclusivity and Accessibility](https://sprucecss.com/docs/getting-started/accessibility)
 - [Internationalization](https://sprucecss.com/docs/getting-started/internationalization)
 - [Print](https://sprucecss.com/docs/getting-started/print)
-- [JS](https://sprucecss.com/docs/getting-started/js)
+- [Upgrade to v3](https://sprucecss.com/docs/getting-started/upgrade)
 - [Contribution](https://sprucecss.com/docs/getting-started/contribution)
 - [Appendix](https://sprucecss.com/docs/getting-started/appendix)
 
 ### Customization
 - [Variables](https://sprucecss.com/docs/customization/variables/)
 - [Settings](https://sprucecss.com/docs/customization/settings)
-- [Themes](https://sprucecss.com/docs/customization/themes)
+- [Themes and Dark Mode](https://sprucecss.com/docs/customization/themes)
+- [Styles](https://sprucecss.com/docs/customization/styles)
 
 ### Sass
 - [Colors](https://sprucecss.com/docs/sass/colors/)
@@ -76,6 +80,13 @@ For the complete documentation, please visit our site at [sprucecss.com](https:/
 - [Buttons](https://sprucecss.com/docs/elements/buttons)
 - [Forms](https://sprucecss.com/docs/elements/forms)
 - [Media](https://sprucecss.com/docs/elements/media)
+- [Details and Dialog](https://sprucecss.com/docs/elements/details-and-dialog)
+- [Progress and Meter](https://sprucecss.com/docs/elements/progress-and-meter)
+- [Layout](https://sprucecss.com/docs/elements/layout)
+- [Utilities](https://sprucecss.com/docs/elements/utilities)
+
+### AI
+- [AI Skills](https://sprucecss.com/docs/ai/skills)
 
 ## Components
 

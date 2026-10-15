@@ -6,7 +6,7 @@
 $form-check: () !default;
 $form-check: map.merge(
   (
-    'border-radius': map.get($display, border-radius-sm),
+    'border-radius': map.get($display, 'border-radius-sm'),
     'border-width': 1px,
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
@@ -24,7 +24,7 @@ $form-check: map.merge(
 $form-check-lg: () !default;
 $form-check-lg: map.merge(
   (
-    'font-size': map.get($typography, 'size-lg'),
+    'font-size': map.get($typography, 'font-size-lg'),
   ),
   $form-check-lg
 );

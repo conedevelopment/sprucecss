@@ -1,0 +1,154 @@
+@use 'true' as *;
+@use '../../scss/mixin/button' as *;
+
+@include describe('btn-variant()') {
+  @include it('outputs the colors, the hover state, the focus ring and the shadow modifier') {
+    @include assert {
+      @include output($selector: false) {
+        .btn--primary { @include btn-variant('primary'); }
+      }
+
+      @include expect($selector: false) {
+        .btn--primary:focus-visible {
+          outline: 2px solid var(--spruce-btn-color-primary-background);
+          outline-offset: 2px;
+        }
+
+        .btn--primary {
+          background-color: var(--spruce-btn-color-primary-background);
+          border-color: var(--spruce-btn-color-primary-background);
+          color: var(--spruce-btn-color-primary-foreground);
+        }
+
+        .btn--primary:hover {
+          background-color: var(--spruce-btn-color-primary-background-hover);
+          border-color: var(--spruce-btn-color-primary-background-hover);
+          color: var(--spruce-btn-color-primary-foreground);
+        }
+
+        .btn--primary-shadow {
+          box-shadow: 0 0.55em 1em -0.2em var(--spruce-btn-color-primary-shadow), 0 0.15em 0.35em -0.185em var(--spruce-btn-color-primary-shadow);
+        }
+      }
+    }
+  }
+
+  @include it('skips the focus ring when $focus is false') {
+    @include assert {
+      @include output($selector: false) {
+        .btn--danger { @include btn-variant('danger', false); }
+      }
+
+      @include expect($selector: false) {
+        .btn--danger {
+          background-color: var(--spruce-btn-color-danger-background);
+          border-color: var(--spruce-btn-color-danger-background);
+          color: var(--spruce-btn-color-danger-foreground);
+        }
+
+        .btn--danger:hover {
+          background-color: var(--spruce-btn-color-danger-background-hover);
+          border-color: var(--spruce-btn-color-danger-background-hover);
+          color: var(--spruce-btn-color-danger-foreground);
+        }
+      }
+    }
+  }
+}
+
+@include describe('btn-variant-outline()') {
+  @include it('uses a transparent background and fills it on hover') {
+    @include assert {
+      @include output($selector: false) {
+        .btn--outline { @include btn-variant-outline('secondary', false); }
+      }
+
+      @include expect($selector: false) {
+        .btn--outline {
+          background-color: transparent;
+          border-color: var(--spruce-btn-color-secondary-background);
+          color: var(--spruce-btn-color-secondary-background);
+        }
+
+        .btn--outline:hover {
+          background-color: var(--spruce-btn-color-secondary-background);
+          border-color: var(--spruce-btn-color-secondary-background);
+          color: var(--spruce-btn-color-secondary-foreground);
+        }
+      }
+    }
+  }
+}
+
+@include describe('btn-variant-soft()') {
+  @include it('mixes a tinted background at runtime') {
+    @include assert {
+      @include output($selector: false) {
+        .btn--soft { @include btn-variant-soft('primary', false); }
+      }
+
+      @include expect($selector: false) {
+        .btn--soft {
+          border-color: transparent;
+          color: var(--spruce-btn-color-primary-background);
+          background-color: color-mix(in srgb, var(--spruce-btn-color-primary-background) 14%, transparent);
+        }
+
+        .btn--soft:hover {
+          background-color: color-mix(in srgb, var(--spruce-btn-color-primary-background) 24%, transparent);
+          border-color: transparent;
+          color: var(--spruce-btn-color-primary-background);
+        }
+      }
+    }
+  }
+}
+
+@include describe('btn-variant-ghost()') {
+  @include it('is transparent and tinted on hover') {
+    @include assert {
+      @include output($selector: false) {
+        .btn--ghost { @include btn-variant-ghost('primary', false); }
+      }
+
+      @include expect($selector: false) {
+        .btn--ghost {
+          background-color: transparent;
+          border-color: transparent;
+          color: var(--spruce-btn-color-primary-background);
+        }
+
+        .btn--ghost:hover {
+          background-color: color-mix(in srgb, var(--spruce-btn-color-primary-background) 12%, transparent);
+          border-color: transparent;
+          color: var(--spruce-btn-color-primary-background);
+        }
+      }
+    }
+  }
+}
+
+@include describe('btn-variant-link()') {
+  @include it('looks like a link') {
+    @include assert {
+      @include output($selector: false) {
+        .btn--link { @include btn-variant-link(false); }
+      }
+
+      @include expect($selector: false) {
+        .btn--link {
+          background-color: transparent;
+          border-color: transparent;
+          color: var(--spruce-base-color-link);
+          text-decoration: underline;
+        }
+
+        .btn--link:hover {
+          background-color: transparent;
+          border-color: transparent;
+          color: var(--spruce-base-color-link-hover);
+        }
+      }
+    }
+  }
+}

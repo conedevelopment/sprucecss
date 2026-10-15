@@ -20,7 +20,7 @@
   }
 
   #{$selector} {
-    @include generate-variables($table, ('stripe'));
+    @include generate-variables($table, ('stripe'), $hook: 'table');
 
     border-collapse: collapse;
     color: color('text', 'table');
@@ -32,19 +32,29 @@
       font-style: config('caption-font-style', $table);
       font-weight: config('caption-font-weight', $table);
       margin-block-end: spacer('s');
+      text-align: config('caption-text-align', $table);
     }
 
     th,
     td {
-      border-block-end: 1px solid color('border', 'table');
+      border-block-end: config('border-width', $table) solid color('border', 'table');
       line-height: config('line-height', $table);
       padding: config('padding', $table);
+      vertical-align: config('vertical-align', $table);
     }
 
     th {
       color: color('heading', 'table');
+      font-size: config('heading-font-size', $table);
+      font-weight: config('heading-font-weight', $table);
+      letter-spacing: config('heading-letter-spacing', $table);
       text-align: inherit;
       text-align: -webkit-match-parent;
+      text-transform: config('heading-text-transform', $table);
+    }
+
+    thead th {
+      background-color: color('heading-background', 'table');
     }
 
     @if ($has-variations) {
@@ -80,11 +90,34 @@
       }
 
       &--sm {
-        @include generate-variables($table-sm);
+        @include generate-variables($table-sm, $hook: 'table-sm');
 
         th,
         td {
           padding: config('padding', $table-sm);
+        }
+      }
+
+      &--bordered {
+        th,
+        td {
+          border: config('border-width', $table) solid color('border', 'table');
+        }
+      }
+
+      &--middle {
+        th,
+        td {
+          vertical-align: middle;
+        }
+      }
+
+      &--sticky-header {
+        thead th {
+          background-color: var(--#{$internal-prefix}table-color-heading-background, #{color('background')});
+          inset-block-start: 0;
+          position: sticky;
+          z-index: 1;
         }
       }
 

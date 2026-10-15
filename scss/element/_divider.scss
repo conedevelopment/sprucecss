@@ -1,8 +1,13 @@
+@use '../config' as *;
 @use '../function' as *;
+@use '../mixin' as *;
 
 @mixin generate-divider {
   hr {
+    @include generate-variables($divider, $hook: 'divider');
+
     border: 0;
-    border-block-start: 1px solid color('border');
+    border-block-start: config('border-width', $divider) config('border-style', $divider) color('border');
+    margin-block: config('margin-block', $divider);
   }
 }

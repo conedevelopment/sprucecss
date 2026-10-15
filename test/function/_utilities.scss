@@ -1,0 +1,22 @@
+@use 'true' as *;
+@use '../../scss/function/utilities' as *;
+
+@include describe('str-replace()') {
+  @include it('replaces every occurrence') {
+    @include assert-equal(str-replace('a-b-c', '-', '+'), 'a+b+c');
+  }
+
+  @include it('removes the search string by default') {
+    @include assert-equal(str-replace('fill:#COLOR#;', '#COLOR#'), 'fill:;');
+  }
+
+  @include it('returns the original string when nothing matches') {
+    @include assert-equal(str-replace('spruce', 'x', 'y'), 'spruce');
+  }
+}
+
+@include describe('svg-escape()') {
+  @include it('escapes the special characters and adds the data URI prefix') {
+    @include assert-equal(svg-escape('<svg fill="#fff">(x)</svg>'), 'data:image/svg+xml,%3csvg fill="%23fff"%3e%28x%29%3c/svg%3e');
+  }
+}

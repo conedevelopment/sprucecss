@@ -4,14 +4,14 @@
 
 @mixin generate-form-group {
   .form-group {
-    @include generate-variables($form-group);
+    @include generate-variables($form-group, $hook: 'form-group');
 
     display: flex;
     flex-direction: column;
     gap: config('gap', $form-group);
 
     &--horizontal-check {
-      @include generate-variables($form-group-check);
+      @include generate-variables($form-group-check, $hook: 'form-group-check');
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -19,14 +19,14 @@
     }
 
     &--vertical-check {
-      @include generate-variables($form-group-check);
+      @include generate-variables($form-group-check, $hook: 'form-group-check');
       align-items: start;
       flex-direction: column;
       gap: config('gap', $form-group-check);
     }
 
     &--row {
-      @include generate-variables($form-group-row);
+      @include generate-variables($form-group-row, $hook: 'form-group-row');
 
       align-items: config('vertical-alignment', $form-group-row);
       display: grid;
@@ -45,12 +45,14 @@
         grid-template-columns: minmax(0, #{config('label-inline-size', $form-group-row)}) minmax(0, 1fr);
       }
 
+      /* stylelint-disable selector-no-qualifying-type */
       .form-description,
       .field-feedback {
         @container form-group-container (inline-size > #{config('container-inline-size', $form-group-row, false)}) {
           grid-column-start: 2;
         }
       }
+      /* stylelint-enable selector-no-qualifying-type */
     }
 
     &--stacked {

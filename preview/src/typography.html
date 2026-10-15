@@ -82,5 +82,15 @@ layout: "layout/base.html"
     <li>List item three</li>
     <li>List item four</li>
 </ol>
+<h2 class="section-title">Code block</h2>
+<pre><code>@use 'sprucecss/scss/spruce' as *;
+
+.card {
+  border-radius: config('border-radius-lg', $display);
+  box-shadow: shadow('md');
+  padding: spacer('m');
+}</code></pre>
+<h2 class="section-title">Keyboard and sample output</h2>
+<p>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to open the command palette. The terminal printed <samp>Build finished in 1.2s</samp>.</p>
 <p class="h1">Heading level #1</p>
 <p class="hidden">This is a hidden paragraph.</p>

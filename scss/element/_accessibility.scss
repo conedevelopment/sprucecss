@@ -5,6 +5,10 @@
     @include visually-hidden;
   }
 
+  .sr-only-focusable {
+    @include visually-hidden-focusable;
+  }
+
   [tabindex='-1']:focus {
     outline: none !important;
   }
