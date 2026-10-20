@@ -38,10 +38,10 @@ Every other file only does `@use 'sprucecss/scss/spruce' as *;` to access the he
 ## Rules for writing Spruce code
 
 1. **Never hardcode design values** that exist as tokens. Use the getters:
-   - `color('primary')`, `color('danger', 'alert')`, `color('primary-background', 'btn')`
-   - `spacer('m')`, `spacer('xs:m')` (block:inline), `spacer-clamp('m', 'l')` (fluid)
-   - `font-size('h3')` (fluid), `config('border-radius-lg', $display)`, `radius('md')`, `shadow('md')`, `z-index('modal')`
-   - `color-alpha('primary', 0.15)`, `color-tint('primary', 85%)` (runtime color-mix, follow themes)
+    - `color('primary')`, `color('danger', 'alert')`, `color('primary-background', 'btn')`
+    - `spacer('m')`, `spacer('xs:m')` (block:inline), `spacer-clamp('m', 'l')` (fluid)
+    - `font-size('h3')` (fluid), `config('border-radius-lg', $display)`, `radius('md')`, `shadow('md')`, `z-index('modal')`
+    - `color-alpha('primary', 0.15)`, `color-tint('primary', 85%)` (runtime color-mix, follow themes)
 2. **Use the layout mixins** instead of grids: `layout-stack`, `layout-cluster`, `layout-grid`, `layout-sidebar`, `layout-switcher`, `layout-center`, `layout-flex`, `layout-reel`. The spacing comes from the parent: a flex column with a `gap` for sections, `layout-stack()` for every text group (never a bare `<div>` around a heading and a paragraph), no margin resets on the children (see the `sprucecss-spacing` skill).
 3. **Responsive:** `@include breakpoint('md') {}`, `breakpoint-down('md')`, `breakpoint-between('md', 'xl')`, `container-query(30rem)`. Prefer intrinsic layouts first.
 4. **Interaction:** `@include transition;` for transitions, `@include short-ring('button')` / `focus-ring(...)` for focus, `@include motion-safe {}` for animation.
